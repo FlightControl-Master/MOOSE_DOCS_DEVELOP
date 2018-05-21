@@ -56,7 +56,7 @@ build_script:
       # There is no .git folder.
       Remove-Item c:\Projects\Moose-Docs\.appveyor -Force
       dir c:\Projects\Moose-Docs
-      Copy-Item c:\Projects\Moose-Docs . -Recurse -Force
+      Copy-Item c:\Projects\Moose-Docs\. . -Recurse -Force
       dir .
       echo "Commit to GITHUB"
       git config --global credential.helper store  
