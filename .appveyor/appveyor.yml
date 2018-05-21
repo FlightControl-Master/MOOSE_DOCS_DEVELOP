@@ -54,8 +54,10 @@ build_script:
       Get-ChildItem . -directory -exclude "$Exclude" | git rm -r $_.FullName
       # Clean the Moose_Docs files from the .appveyor folder
       # There is no .git folder.
-      Remove-Item c:\Projects\Moose-Docs\.appveyor -Force
       dir c:\Projects\Moose-Docs
+      Remove-Item c:\Projects\Moose-Docs\.appveyor -Force
+      Remove-Item c:\Projects\Moose-Docs\.git -Force
+      cd c:\Projects\Moose-Docs-Develop
       Copy-Item -Path "c:\Projects\Moose-Docs\*" -Destination "." -Recurse -Force -Verbose
       dir .
       echo "Commit to GITHUB"
