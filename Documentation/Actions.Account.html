@@ -1181,20 +1181,18 @@ which are excellent tools to be reused in an OO environment!.</p>
    </div>
   </nav>
   
-<img src="..\Images\AI_Combat_Air_Patrol.JPG" alt="Banner Image"/>   
+<img src="..\Images\MOOSE.JPG" alt="Banner Image"/>   
 <div  id="content">
   <div class="w3-container w3-theme-d5" id="module_title">
-    <h1>Module <strong>AI.AI_A2A_Cap</strong></h1>
+    <h1>Module <strong>Actions.Account</strong></h1>
   </div>
   <div class="w3-container w3-white" id="module_description">
     
-<p><strong>AI</strong> -- (R2.2) - Models the process of Combat Air Patrol (CAP) for airplanes.</p>
+<p><strong>Actions</strong> - ACT<em>ACCOUNT</em> classes <strong>account for</strong> (detect, count &amp; report) various DCS events occuring on <a href="Wrapper.Unit.html">Wrapper.Unit</a>s.</p>
 
     
 
-<hr/>
-
-<h3>Author: <strong>FlightControl</strong></h3>
+<p><img src="..\Presentations\ACT_ACCOUNT\Dia1.JPG" alt="Banner Image"/></p>
 
 <hr/>
 
@@ -1202,108 +1200,42 @@ which are excellent tools to be reused in an OO environment!.</p>
   </div>
   <div class="w3-container w3-theme-d2"><h2><strong>Global(s)</strong></h2></div>
   <div class="w3-theme-d2 w3-margin-top ">
-    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##AI_A2A_CAP')">
+    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##ACT_ACCOUNT')">
       <tr>
-        <td class="style="width:40%;"><p><h2>Global <strong>AI_A2A_CAP</strong></h2></p></td>
+        <td class="style="width:40%;"><p><h2>Global <strong>ACT_ACCOUNT</strong></h2></p></td>
         <td class="style="width:60%;">
-<p>The AI<em>A2A</em>CAP class implements the core functions to patrol a <a href="Zone.html">Zone</a> by an AI <a href="Wrapper.Group.html">Wrapper.Group</a> or <a href="Wrapper.Group.html">Wrapper.Group</a> 
-and automatically engage any airborne enemies that are within a certain range or within a certain zone.</p>
+
 </td>
       </tr>
     </table>
   </div>
-  <div id= "#Globals##AI_A2A_CAP" class="w3-container w3-white w3-padding-small">
+  <div id= "#Globals##ACT_ACCOUNT" class="w3-container w3-white w3-padding-small">
     <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(AI_A2A_CAP)">#AI_A2A_CAP</a>
-<a id="AI_A2A_CAP" ><strong>AI_A2A_CAP</strong></a>
-    
-<p>The AI<em>A2A</em>CAP class implements the core functions to patrol a <a href="Zone.html">Zone</a> by an AI <a href="Wrapper.Group.html">Wrapper.Group</a> or <a href="Wrapper.Group.html">Wrapper.Group</a> 
-and automatically engage any airborne enemies that are within a certain range or within a certain zone.</p>
-
+    <a href="##(ACT_ACCOUNT)">#ACT_ACCOUNT</a>
+<a id="ACT_ACCOUNT" ><strong>ACT_ACCOUNT</strong></a>
     
 
-<p><img src="..\Presentations\AI_CAP\Dia3.JPG" alt="Process"/></p>
 
-<p>The AI<em>A2A</em>CAP is assigned a <a href="Wrapper.Group.html">Wrapper.Group</a> and this must be done before the AI<em>A2A</em>CAP process can be started using the <strong>Start</strong> event.</p>
+</div>
 
-<p><img src="..\Presentations\AI_CAP\Dia4.JPG" alt="Process"/></p>
+  </div>
+  <div class="w3-theme-d2 w3-margin-top ">
+    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##ACT_ACCOUNT_DEADS')">
+      <tr>
+        <td class="style="width:40%;"><p><h2>Global <strong>ACT_ACCOUNT_DEADS</strong></h2></p></td>
+        <td class="style="width:60%;">
 
-<p>The AI will fly towards the random 3D point within the patrol zone, using a random speed within the given altitude and speed limits.
-Upon arrival at the 3D point, a new random 3D point will be selected within the patrol zone using the given limits.</p>
+</td>
+      </tr>
+    </table>
+  </div>
+  <div id= "#Globals##ACT_ACCOUNT_DEADS" class="w3-container w3-white w3-padding-small">
+    <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<p><img src="..\Presentations\AI_CAP\Dia5.JPG" alt="Process"/></p>
-
-<p>This cycle will continue.</p>
-
-<p><img src="..\Presentations\AI_CAP\Dia6.JPG" alt="Process"/></p>
-
-<p>During the patrol, the AI will detect enemy targets, which are reported through the <strong>Detected</strong> event.</p>
-
-<p><img src="..\Presentations\AI_CAP\Dia9.JPG" alt="Process"/></p>
-
-<p>When enemies are detected, the AI will automatically engage the enemy.</p>
-
-<p><img src="..\Presentations\AI_CAP\Dia10.JPG" alt="Process"/></p>
-
-<p>Until a fuel or damage treshold has been reached by the AI, or when the AI is commanded to RTB.
-When the fuel treshold has been reached, the airplane will fly towards the nearest friendly airbase and will land.</p>
-
-<p><img src="..\Presentations\AI_CAP\Dia13.JPG" alt="Process"/></p>
-
-<h2>1. AI<em>A2A</em>CAP constructor</h2>
-
-<ul>
-    <li><a href="##(AI_A2A_CAP).New">AI_A2A_CAP.New</a>(): Creates a new AI<em>A2A</em>CAP object.</li>
-</ul>
-
-<h2>2. AI<em>A2A</em>CAP is a FSM</h2>
-
-<p><img src="..\Presentations\AI_CAP\Dia2.JPG" alt="Process"/></p>
-
-<h3>2.1 AI<em>A2A</em>CAP States</h3>
-
-<ul>
-    <li><strong>None</strong> ( Group ): The process is not started yet.</li>
-    <li><strong>Patrolling</strong> ( Group ): The AI is patrolling the Patrol Zone.</li>
-    <li><strong>Engaging</strong> ( Group ): The AI is engaging the bogeys.</li>
-    <li><strong>Returning</strong> ( Group ): The AI is returning to Base..</li>
-</ul>
-
-<h3>2.2 AI<em>A2A</em>CAP Events</h3>
-
-<ul>
-    <li>**<a href="AI_Patrol.html##(AI_PATROL_ZONE).Start">AI_Patrol#AI_PATROL_ZONE.Start</a>**: Start the process.</li>
-    <li>**<a href="AI_Patrol.html##(AI_PATROL_ZONE).Route">AI_Patrol#AI_PATROL_ZONE.Route</a>**: Route the AI to a new random 3D point within the Patrol Zone.</li>
-    <li>**<a href="##(AI_A2A_CAP).Engage">AI_A2A_CAP.Engage</a>**: Let the AI engage the bogeys.</li>
-    <li>**<a href="##(AI_A2A_CAP).Abort">AI_A2A_CAP.Abort</a>**: Aborts the engagement and return patrolling in the patrol zone.</li>
-    <li>**<a href="AI_Patrol.html##(AI_PATROL_ZONE).RTB">AI_Patrol#AI_PATROL_ZONE.RTB</a>**: Route the AI to the home base.</li>
-    <li>**<a href="AI_Patrol.html##(AI_PATROL_ZONE).Detect">AI_Patrol#AI_PATROL_ZONE.Detect</a>**: The AI is detecting targets.</li>
-    <li>**<a href="AI_Patrol.html##(AI_PATROL_ZONE).Detected">AI_Patrol#AI_PATROL_ZONE.Detected</a>**: The AI has detected new targets.</li>
-    <li>**<a href="##(AI_A2A_CAP).Destroy">AI_A2A_CAP.Destroy</a>**: The AI has destroyed a bogey <a href="Wrapper.Unit.html">Wrapper.Unit</a>.</li>
-    <li>**<a href="##(AI_A2A_CAP).Destroyed">AI_A2A_CAP.Destroyed</a>**: The AI has destroyed all bogeys <a href="Wrapper.Unit.html">Wrapper.Unit</a>s assigned in the CAS task.</li>
-    <li><strong>Status</strong> ( Group ): The AI is checking status (fuel and damage). When the tresholds have been reached, the AI will RTB.</li>
-</ul>
-
-<h2>3. Set the Range of Engagement</h2>
-
-<p><img src="..\Presentations\AI_CAP\Dia11.JPG" alt="Range"/></p>
-
-<p>An optional range can be set in meters, 
-that will define when the AI will engage with the detected airborne enemy targets.
-The range can be beyond or smaller than the range of the Patrol Zone.
-The range is applied at the position of the AI.
-Use the method <a href="AI_CAP.html##(AI_A2A_CAP).SetEngageRange">AI_CAP#AI_A2A_CAP.SetEngageRange</a>() to define that range.</p>
-
-<h2>4. Set the Zone of Engagement</h2>
-
-<p><img src="..\Presentations\AI_CAP\Dia12.JPG" alt="Zone"/></p>
-
-<p>An optional <a href="Zone.html">Zone</a> can be set, 
-that will define when the AI will engage with the detected airborne enemy targets.
-Use the method <a href="AI_Cap.html##(AI_A2A_CAP).SetEngageZone">AI_Cap#AI_A2A_CAP.SetEngageZone</a>() to define that Zone.</p>
-
-<hr/>
+    <a href="##(ACT_ACCOUNT_DEADS)">#ACT_ACCOUNT_DEADS</a>
+<a id="ACT_ACCOUNT_DEADS" ><strong>ACT_ACCOUNT_DEADS</strong></a>
+    
 
 
 </div>
@@ -1311,23 +1243,88 @@ Use the method <a href="AI_Cap.html##(AI_A2A_CAP).SetEngageZone">AI_Cap#AI_A2A_C
   </div>
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>
   
-  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AI.AI_A2A_Cap)" >Type <strong>AI.AI_A2A_Cap</strong></a></h2></div>
+  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Actions.Account)" >Type <strong>Actions.Account</strong></a></h2></div>
   <div class="w3-container w3-white w3-padding-16" id="module_current_type">
     <div class="w3-white" id="record_type">
 </div>
 
   </div>
-  <div onclick="myFunction('#Types##AI_A2A_CAP')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AI_A2A_CAP)">Type <strong>AI_A2A_CAP</strong></a></h2></div>
-  <div id= "#Types##AI_A2A_CAP" class="w3-container w3-white w3-padding-16" id="module_other_types">
+  <div onclick="myFunction('#Types##ACT_ACCOUNT')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(ACT_ACCOUNT)">Type <strong>ACT_ACCOUNT</strong></a></h2></div>
+  <div id= "#Types##ACT_ACCOUNT" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="AI.AI_A2A_Patrol.html##(AI_A2A_PATROL)">AI.AI_A2A_Patrol#AI_A2A_PATROL</a> </h3>
+     <h3> Extends <a href="Core.Fsm.html##(FSM_PROCESS)">Core.Fsm#FSM_PROCESS</a> </h3>
+  
+<h1><a href="##(ACT_ACCOUNT)">#ACT_ACCOUNT</a> FSM class, extends <a href="Fsm.html##(FSM_PROCESS)">Fsm#FSM_PROCESS</a></h1>
+
+<h2>ACT_ACCOUNT state machine:</h2>
+
+<p>This class is a state machine: it manages a process that is triggered by events causing state transitions to occur.</p>
+
+  
+<p>All derived classes from this class will start with the class name, followed by a _. See the relevant derived class descriptions below.
+Each derived class follows exactly the same process, using the same events and following the same state transitions, 
+but will have <strong>different implementation behaviour</strong> upon each event or state transition.</p>
+
+<h3>ACT_ACCOUNT States</h3>
+
+<ul>
+    <li><strong>Asigned</strong>: The player is assigned.</li>
+    <li><strong>Waiting</strong>: Waiting for an event.</li>
+    <li><strong>Report</strong>: Reporting.</li>
+    <li><strong>Account</strong>: Account for an event.</li>
+    <li><strong>Accounted</strong>: All events have been accounted for, end of the process.</li>
+    <li><strong>Failed</strong>: Failed the process.</li>
+</ul>
+
+<h3>ACT_ACCOUNT Events</h3>
+
+<ul>
+    <li><strong>Start</strong>: Start the process.</li>
+    <li><strong>Wait</strong>: Wait for an event.</li>
+    <li><strong>Report</strong>: Report the status of the accounting.</li>
+    <li><strong>Event</strong>: An event happened, process the event.</li>
+    <li><strong>More</strong>: More targets.</li>
+    <li><strong>NoMore (*)</strong>: No more targets.</li>
+    <li><strong>Fail (*)</strong>: The action process has failed.</li>
+</ul>
+
+<p>(*) End states of the process.</p>
+
+<h3>ACT_ACCOUNT state transition methods:</h3>
+
+<p>State transition functions can be set <strong>by the mission designer</strong> customizing or improving the behaviour of the state.
+There are 2 moments when state transition methods will be called by the state machine:</p>
+
+<ul>
+    <li><p><strong>Before</strong> the state transition. 
+    The state transition method needs to start with the name <strong>OnBefore + the name of the state</strong>. 
+    If the state transition method returns false, then the processing of the state transition will not be done!
+    If you want to change the behaviour of the AIControllable at this event, return false, 
+    but then you'll need to specify your own logic using the AIControllable!</p></li>
+    <li><p><strong>After</strong> the state transition. 
+    The state transition method needs to start with the name <strong>OnAfter + the name of the state</strong>. 
+    These state transition methods need to provide a return value, which is specified at the function description.</p>
+    </li>
+</ul>
+
 <div class="fields">
   <h3>Field(s)</h3>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
-<a id="#(AI_A2A_CAP).Accomplished" ><strong>AI_A2A_CAP.Accomplished</strong></a>
+    #string
+<a id="#(ACT_ACCOUNT).ClassName" ><strong>ACT_ACCOUNT.ClassName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(ACT_ACCOUNT).DisplayCount" ><strong>ACT_ACCOUNT.DisplayCount</strong></a>
     
 
 
@@ -1338,62 +1335,7 @@ Use the method <a href="AI_Cap.html##(AI_A2A_CAP).SetEngageZone">AI_Cap#AI_A2A_C
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
-<a id="#(AI_A2A_CAP).AttackSetUnit" ><strong>AI_A2A_CAP.AttackSetUnit</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2A_CAP).EngageMaxSpeed" ><strong>AI_A2A_CAP.EngageMaxSpeed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2A_CAP).EngageMinSpeed" ><strong>AI_A2A_CAP.EngageMinSpeed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2A_CAP).EngageRange" ><strong>AI_A2A_CAP.EngageRange</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2A_CAP).EngageZone" ><strong>AI_A2A_CAP.EngageZone</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AI_A2A_CAP).Engaging" ><strong>AI_A2A_CAP.Engaging</strong></a>
+<a id="#(ACT_ACCOUNT).TargetSetUnit" ><strong>ACT_ACCOUNT.TargetSetUnit</strong></a>
     
 
 
@@ -1406,1296 +1348,58 @@ Use the method <a href="AI_Cap.html##(AI_A2A_CAP).SetEngageZone">AI_Cap#AI_A2A_C
 <div>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4" onclick="myFunction('#Functions##Abort')">
-<h6><a id="#(AI_A2A_CAP).Abort" ><strong>AI_A2A_CAP:Abort()</strong></a></h6>
-</div>
-    
-<p>Synchronous Event Trigger for Event Abort.</p>
-
-<div id= "#Functions##Abort" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##Accomplish')">
-<h6><a id="#(AI_A2A_CAP).Accomplish" ><strong>AI_A2A_CAP:Accomplish()</strong></a></h6>
-</div>
-    
-<p>Synchronous Event Trigger for Event Accomplish.</p>
-
-<div id= "#Functions##Accomplish" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##AttackRoute')">
-<h6><a id="#(AI_A2A_CAP).AttackRoute" ><strong>AI_A2A_CAP.AttackRoute(AICap, Fsm)</strong></a></h6>
-</div>
-    
-
-
-<div id= "#Functions##AttackRoute" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half"><p></p></div>
-    </div>
-      <div class="w3-row">
-        <strong>Fsm</strong></div>
-          <div class="w3-half"><p></p></div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##Destroy')">
-<h6><a id="#(AI_A2A_CAP).Destroy" ><strong>AI_A2A_CAP:Destroy()</strong></a></h6>
-</div>
-    
-<p>Synchronous Event Trigger for Event Destroy.</p>
-
-<div id= "#Functions##Destroy" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##Engage')">
-<h6><a id="#(AI_A2A_CAP).Engage" ><strong>AI_A2A_CAP:Engage()</strong></a></h6>
-</div>
-    
-<p>Synchronous Event Trigger for Event Engage.</p>
-
-<div id= "#Functions##Engage" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##Fired')">
-<h6><a id="#(AI_A2A_CAP).Fired" ><strong>AI_A2A_CAP:Fired()</strong></a></h6>
-</div>
-    
-<p>Synchronous Event Trigger for Event Fired.</p>
-
-<div id= "#Functions##Fired" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
 <div class="w3-theme-l4" onclick="myFunction('#Functions##New')">
-<h6><a id="#(AI_A2A_CAP).New" ><strong>AI_A2A_CAP:New(AICap, PatrolZone, PatrolFloorAltitude, PatrolCeilingAltitude, PatrolMinSpeed, PatrolMaxSpeed, EngageMinSpeed, EngageMaxSpeed, PatrolAltType)</strong></a></h6>
+<h6><a id="#(ACT_ACCOUNT).New" ><strong>ACT_ACCOUNT:New()</strong></a></h6>
 </div>
     
-<p>Creates a new AI<em>A2A</em>CAP object</p>
+<p>Creates a new DESTROY process.</p>
 
 <div id= "#Functions##New" class="w3-hide w3-white">
   <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Return value:</strong></h5>
+        
+<p><a href="##(ACT_ACCOUNT)">#ACT_ACCOUNT</a>:</p>
+
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##onafterEvent')">
+<h6><a id="#(ACT_ACCOUNT).onafterEvent" ><strong>ACT_ACCOUNT:onafterEvent(ProcessUnit, Event, From, To)</strong></a></h6>
+</div>
+    
+<p>StateMachine callback function</p>
+
+<div id= "#Functions##onafterEvent" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
     <h5><strong>Parameters:</strong></h5>
       <div class="w3-row">
     </div>
       <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
+          <div class="w3-half"><a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>ProcessUnit</strong></div>
           <div class="w3-half"><p></p></div>
     </div>
       <div class="w3-row">
-          <div class="w3-half"><a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
-        <strong>PatrolZone</strong></div>
-          <div class="w3-half">
-<p>The <a href="Zone.html">Zone</a> where the patrol needs to be executed.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="DCS.html##(Altitude)">DCS#Altitude</a>
-        <strong>PatrolFloorAltitude</strong></div>
-          <div class="w3-half">
-<p>The lowest altitude in meters where to execute the patrol.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="DCS.html##(Altitude)">DCS#Altitude</a>
-        <strong>PatrolCeilingAltitude</strong></div>
-          <div class="w3-half">
-<p>The highest altitude in meters where to execute the patrol.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="DCS.html##(Speed)">DCS#Speed</a>
-        <strong>PatrolMinSpeed</strong></div>
-          <div class="w3-half">
-<p>The minimum speed of the <a href="Wrapper.Group.html">Wrapper.Group</a> in km/h.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="DCS.html##(Speed)">DCS#Speed</a>
-        <strong>PatrolMaxSpeed</strong></div>
-          <div class="w3-half">
-<p>The maximum speed of the <a href="Wrapper.Group.html">Wrapper.Group</a> in km/h.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="DCS.html##(Speed)">DCS#Speed</a>
-        <strong>EngageMinSpeed</strong></div>
-          <div class="w3-half">
-<p>The minimum speed of the <a href="Wrapper.Group.html">Wrapper.Group</a> in km/h when engaging a target.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="DCS.html##(Speed)">DCS#Speed</a>
-        <strong>EngageMaxSpeed</strong></div>
-          <div class="w3-half">
-<p>The maximum speed of the <a href="Wrapper.Group.html">Wrapper.Group</a> in km/h when engaging a target.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="DCS.html##(AltitudeType)">DCS#AltitudeType</a>
-        <strong>PatrolAltType</strong></div>
-          <div class="w3-half">
-<p>The altitude type ("RADIO"=="AGL", "BARO"=="ASL"). Defaults to RADIO</p>
-</div>
-    </div>
-    <h5><strong>Return value:</strong></h5>
-        
-<p><a href="##(AI_A2A_CAP)">#AI_A2A_CAP</a>:</p>
-
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##OnAfterAbort')">
-<h6><a id="#(AI_A2A_CAP).OnAfterAbort" ><strong>AI_A2A_CAP:OnAfterAbort(AICap, From, Event, To)</strong></a></h6>
-</div>
-    
-<p>OnAfter Transition Handler for Event Abort.</p>
-
-<div id= "#Functions##OnAfterAbort" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The Group Object managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
           <div class="w3-half">#string
         <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##OnAfterAccomplish')">
-<h6><a id="#(AI_A2A_CAP).OnAfterAccomplish" ><strong>AI_A2A_CAP:OnAfterAccomplish(AICap, From, Event, To)</strong></a></h6>
-</div>
-    
-<p>OnAfter Transition Handler for Event Accomplish.</p>
-
-<div id= "#Functions##OnAfterAccomplish" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The Group Object managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##OnAfterDestroy')">
-<h6><a id="#(AI_A2A_CAP).OnAfterDestroy" ><strong>AI_A2A_CAP:OnAfterDestroy(AICap, From, Event, To)</strong></a></h6>
-</div>
-    
-<p>OnAfter Transition Handler for Event Destroy.</p>
-
-<div id= "#Functions##OnAfterDestroy" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The Group Object managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##OnAfterEngage')">
-<h6><a id="#(AI_A2A_CAP).OnAfterEngage" ><strong>AI_A2A_CAP:OnAfterEngage(AICap, From, Event, To)</strong></a></h6>
-</div>
-    
-<p>OnAfter Transition Handler for Event Engage.</p>
-
-<div id= "#Functions##OnAfterEngage" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The Group Object managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##OnAfterFired')">
-<h6><a id="#(AI_A2A_CAP).OnAfterFired" ><strong>AI_A2A_CAP:OnAfterFired(AICap, From, Event, To)</strong></a></h6>
-</div>
-    
-<p>OnAfter Transition Handler for Event Fired.</p>
-
-<div id= "#Functions##OnAfterFired" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The Group Object managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##OnBeforeAbort')">
-<h6><a id="#(AI_A2A_CAP).OnBeforeAbort" ><strong>AI_A2A_CAP:OnBeforeAbort(AICap, From, Event, To)</strong></a></h6>
-</div>
-    
-<p>OnBefore Transition Handler for Event Abort.</p>
-
-<div id= "#Functions##OnBeforeAbort" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The Group Object managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-    <h5><strong>Return value:</strong></h5>
-        
-<h1>boolean:</h1>
-<p>Return false to cancel Transition.</p>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##OnBeforeAccomplish')">
-<h6><a id="#(AI_A2A_CAP).OnBeforeAccomplish" ><strong>AI_A2A_CAP:OnBeforeAccomplish(AICap, From, Event, To)</strong></a></h6>
-</div>
-    
-<p>OnBefore Transition Handler for Event Accomplish.</p>
-
-<div id= "#Functions##OnBeforeAccomplish" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The Group Object managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-    <h5><strong>Return value:</strong></h5>
-        
-<h1>boolean:</h1>
-<p>Return false to cancel Transition.</p>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##OnBeforeDestroy')">
-<h6><a id="#(AI_A2A_CAP).OnBeforeDestroy" ><strong>AI_A2A_CAP:OnBeforeDestroy(AICap, From, Event, To)</strong></a></h6>
-</div>
-    
-<p>OnBefore Transition Handler for Event Destroy.</p>
-
-<div id= "#Functions##OnBeforeDestroy" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The Group Object managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-    <h5><strong>Return value:</strong></h5>
-        
-<h1>boolean:</h1>
-<p>Return false to cancel Transition.</p>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##OnBeforeEngage')">
-<h6><a id="#(AI_A2A_CAP).OnBeforeEngage" ><strong>AI_A2A_CAP:OnBeforeEngage(AICap, From, Event, To)</strong></a></h6>
-</div>
-    
-<p>OnBefore Transition Handler for Event Engage.</p>
-
-<div id= "#Functions##OnBeforeEngage" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The Group Object managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-    <h5><strong>Return value:</strong></h5>
-        
-<h1>boolean:</h1>
-<p>Return false to cancel Transition.</p>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##OnBeforeFired')">
-<h6><a id="#(AI_A2A_CAP).OnBeforeFired" ><strong>AI_A2A_CAP:OnBeforeFired(AICap, From, Event, To)</strong></a></h6>
-</div>
-    
-<p>OnBefore Transition Handler for Event Fired.</p>
-
-<div id= "#Functions##OnBeforeFired" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The Group Object managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-    <h5><strong>Return value:</strong></h5>
-        
-<h1>boolean:</h1>
-<p>Return false to cancel Transition.</p>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##OnEnterEngaging')">
-<h6><a id="#(AI_A2A_CAP).OnEnterEngaging" ><strong>AI_A2A_CAP:OnEnterEngaging(AICap, From, Event, To)</strong></a></h6>
-</div>
-    
-<p>OnEnter Transition Handler for State Engaging.</p>
-
-<div id= "#Functions##OnEnterEngaging" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The Group Object managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##OnEventDead')">
-<h6><a id="#(AI_A2A_CAP).OnEventDead" ><strong>AI_A2A_CAP:OnEventDead(EventData)</strong></a></h6>
-</div>
-    
-
-
-<div id= "#Functions##OnEventDead" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
-        <strong>EventData</strong></div>
           <div class="w3-half"><p></p></div>
     </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##OnLeaveEngaging')">
-<h6><a id="#(AI_A2A_CAP).OnLeaveEngaging" ><strong>AI_A2A_CAP:OnLeaveEngaging(AICap, From, Event, To)</strong></a></h6>
-</div>
-    
-<p>OnLeave Transition Handler for State Engaging.</p>
-
-<div id= "#Functions##OnLeaveEngaging" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The Group Object managed by the FSM.</p>
-</div>
-    </div>
       <div class="w3-row">
           <div class="w3-half">#string
         <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-    <h5><strong>Return value:</strong></h5>
-        
-<h1>boolean:</h1>
-<p>Return false to cancel Transition.</p>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##Resume')">
-<h6><a id="#(AI_A2A_CAP).Resume" ><strong>AI_A2A_CAP.Resume(AICap)</strong></a></h6>
-</div>
-    
-
-
-<div id= "#Functions##Resume" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
           <div class="w3-half"><p></p></div>
     </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##SetEngageRange')">
-<h6><a id="#(AI_A2A_CAP).SetEngageRange" ><strong>AI_A2A_CAP:SetEngageRange(EngageRange)</strong></a></h6>
-</div>
-    
-<p>Set the Engage Range when the AI will engage with airborne enemies. </p>
-
-<div id= "#Functions##SetEngageRange" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#number
-        <strong>EngageRange</strong></div>
-          <div class="w3-half">
-<p>The Engage Range.</p>
-</div>
-    </div>
-    <h5><strong>Return value:</strong></h5>
-        
-<p><a href="##(AI_A2A_CAP)">#AI_A2A_CAP</a>:
-self</p>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##SetEngageZone')">
-<h6><a id="#(AI_A2A_CAP).SetEngageZone" ><strong>AI_A2A_CAP:SetEngageZone(EngageZone)</strong></a></h6>
-</div>
-    
-<p>Set the Engage Zone which defines where the AI will engage bogies. </p>
-
-<div id= "#Functions##SetEngageZone" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Core.Zone.html##(ZONE)">Core.Zone#ZONE</a>
-        <strong>EngageZone</strong></div>
-          <div class="w3-half">
-<p>The zone where the AI is performing CAP.</p>
-</div>
-    </div>
-    <h5><strong>Return value:</strong></h5>
-        
-<p><a href="##(AI_A2A_CAP)">#AI_A2A_CAP</a>:
-self</p>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##__Abort')">
-<h6><a id="#(AI_A2A_CAP).__Abort" ><strong>AI_A2A_CAP:__Abort(Delay)</strong></a></h6>
-</div>
-    
-<p>Asynchronous Event Trigger for Event Abort.</p>
-
-<div id= "#Functions##__Abort" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#number
-        <strong>Delay</strong></div>
-          <div class="w3-half">
-<p>The delay in seconds.</p>
-</div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##__Accomplish')">
-<h6><a id="#(AI_A2A_CAP).__Accomplish" ><strong>AI_A2A_CAP:__Accomplish(Delay)</strong></a></h6>
-</div>
-    
-<p>Asynchronous Event Trigger for Event Accomplish.</p>
-
-<div id= "#Functions##__Accomplish" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#number
-        <strong>Delay</strong></div>
-          <div class="w3-half">
-<p>The delay in seconds.  </p>
-</div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##__Destroy')">
-<h6><a id="#(AI_A2A_CAP).__Destroy" ><strong>AI_A2A_CAP:__Destroy(Delay)</strong></a></h6>
-</div>
-    
-<p>Asynchronous Event Trigger for Event Destroy.</p>
-
-<div id= "#Functions##__Destroy" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#number
-        <strong>Delay</strong></div>
-          <div class="w3-half">
-<p>The delay in seconds.</p>
-</div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##__Engage')">
-<h6><a id="#(AI_A2A_CAP).__Engage" ><strong>AI_A2A_CAP:__Engage(Delay)</strong></a></h6>
-</div>
-    
-<p>Asynchronous Event Trigger for Event Engage.</p>
-
-<div id= "#Functions##__Engage" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#number
-        <strong>Delay</strong></div>
-          <div class="w3-half">
-<p>The delay in seconds.</p>
-</div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##__Fired')">
-<h6><a id="#(AI_A2A_CAP).__Fired" ><strong>AI_A2A_CAP:__Fired(Delay)</strong></a></h6>
-</div>
-    
-<p>Asynchronous Event Trigger for Event Fired.</p>
-
-<div id= "#Functions##__Fired" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#number
-        <strong>Delay</strong></div>
-          <div class="w3-half">
-<p>The delay in seconds.</p>
-</div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##onafterAbort')">
-<h6><a id="#(AI_A2A_CAP).onafterAbort" ><strong>AI_A2A_CAP:onafterAbort(AICap, From, Event, To)</strong></a></h6>
-</div>
-    
-
-
-<div id= "#Functions##onafterAbort" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The AI Group managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
       <div class="w3-row">
           <div class="w3-half">#string
         <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##onafterAccomplish')">
-<h6><a id="#(AI_A2A_CAP).onafterAccomplish" ><strong>AI_A2A_CAP:onafterAccomplish(AICap, From, Event, To)</strong></a></h6>
-</div>
-    
-
-
-<div id= "#Functions##onafterAccomplish" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The Group Object managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##onafterDestroy')">
-<h6><a id="#(AI_A2A_CAP).onafterDestroy" ><strong>AI_A2A_CAP:onafterDestroy(AICap, From, Event, To, EventData)</strong></a></h6>
-</div>
-    
-
-
-<div id= "#Functions##onafterDestroy" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The Group Object managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
-        <strong>EventData</strong></div>
           <div class="w3-half"><p></p></div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##onafterEngage')">
-<h6><a id="#(AI_A2A_CAP).onafterEngage" ><strong>AI_A2A_CAP:onafterEngage(AICap, From, Event, To, AttackSetUnit)</strong></a></h6>
-</div>
-    
-
-
-<div id= "#Functions##onafterEngage" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The AICap Object managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-        <strong>AttackSetUnit</strong></div>
-          <div class="w3-half"><p></p></div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##onafterPatrol')">
-<h6><a id="#(AI_A2A_CAP).onafterPatrol" ><strong>AI_A2A_CAP:onafterPatrol(AICap, From, Event, To)</strong></a></h6>
-</div>
-    
-<p>onafter State Transition for Event Patrol.</p>
-
-<div id= "#Functions##onafterPatrol" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The AI Group managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
     </div>
 </div>
 
@@ -2707,10 +1411,10 @@ self</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4" onclick="myFunction('#Functions##onafterStart')">
-<h6><a id="#(AI_A2A_CAP).onafterStart" ><strong>AI_A2A_CAP:onafterStart(AICap, From, Event, To)</strong></a></h6>
+<h6><a id="#(ACT_ACCOUNT).onafterStart" ><strong>ACT_ACCOUNT:onafterStart(ProcessUnit, Event, From, To)</strong></a></h6>
 </div>
     
-<p>onafter State Transition for Event Patrol.</p>
+<p>StateMachine callback function</p>
 
 <div id= "#Functions##onafterStart" class="w3-hide w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -2718,32 +1422,24 @@ self</p>
       <div class="w3-row">
     </div>
       <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The AI Group managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
+          <div class="w3-half"><a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>ProcessUnit</strong></div>
+          <div class="w3-half"><p></p></div>
     </div>
       <div class="w3-row">
           <div class="w3-half">#string
         <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half">#string
+        <strong>From</strong></div>
+          <div class="w3-half"><p></p></div>
     </div>
       <div class="w3-row">
           <div class="w3-half">#string
         <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
-</div>
+          <div class="w3-half"><p></p></div>
     </div>
 </div>
 
@@ -2754,44 +1450,473 @@ self</p>
 <div>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4" onclick="myFunction('#Functions##onbeforeEngage')">
-<h6><a id="#(AI_A2A_CAP).onbeforeEngage" ><strong>AI_A2A_CAP:onbeforeEngage(AICap, From, Event, To)</strong></a></h6>
+<div class="w3-theme-l4" onclick="myFunction('#Functions##onenterWaiting')">
+<h6><a id="#(ACT_ACCOUNT).onenterWaiting" ><strong>ACT_ACCOUNT:onenterWaiting(ProcessUnit, Event, From, To)</strong></a></h6>
 </div>
     
+<p>StateMachine callback function</p>
 
-
-<div id= "#Functions##onbeforeEngage" class="w3-hide w3-white">
+<div id= "#Functions##onenterWaiting" class="w3-hide w3-white">
   <div class="w3-container w3-white" id="functiontype">
     <h5><strong>Parameters:</strong></h5>
       <div class="w3-row">
     </div>
       <div class="w3-row">
-          <div class="w3-half"><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-        <strong>AICap</strong></div>
-          <div class="w3-half">
-<p>The Group Object managed by the FSM.</p>
-</div>
-    </div>
-      <div class="w3-row">
-          <div class="w3-half">#string
-        <strong>From</strong></div>
-          <div class="w3-half">
-<p>The From State string.</p>
-</div>
+          <div class="w3-half"><a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>ProcessUnit</strong></div>
+          <div class="w3-half"><p></p></div>
     </div>
       <div class="w3-row">
           <div class="w3-half">#string
         <strong>Event</strong></div>
-          <div class="w3-half">
-<p>The Event string.</p>
-</div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half">#string
+        <strong>From</strong></div>
+          <div class="w3-half"><p></p></div>
     </div>
       <div class="w3-row">
           <div class="w3-half">#string
         <strong>To</strong></div>
-          <div class="w3-half">
-<p>The To State string.</p>
+          <div class="w3-half"><p></p></div>
+    </div>
 </div>
+
+</div>
+</div>
+
+</div>
+</div>  
+</div>
+
+  </div>
+  <div onclick="myFunction('#Types##ACT_ACCOUNT_DEADS')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(ACT_ACCOUNT_DEADS)">Type <strong>ACT_ACCOUNT_DEADS</strong></a></h2></div>
+  <div id= "#Types##ACT_ACCOUNT_DEADS" class="w3-container w3-white w3-padding-16" id="module_other_types">
+    <div class="w3-white" id="record_type">
+     <h3> Extends <a href="##(ACT_ACCOUNT)">#ACT_ACCOUNT</a> </h3>
+  
+<h1><a href="##(ACT_ACCOUNT_DEADS)">#ACT_ACCOUNT_DEADS</a> FSM class, extends <a href="Fsm.Account.html##(ACT_ACCOUNT)">Fsm.Account#ACT_ACCOUNT</a></h1>
+
+<p>The ACT<em>ACCOUNT</em>DEADS class accounts (detects, counts and reports) successful kills of DCS units.</p>
+
+  
+<p>The process is given a <a href="Set.html">Set</a> of units that will be tracked upon successful destruction.
+The process will end after each target has been successfully destroyed.
+Each successful dead will trigger an Account state transition that can be scored, modified or administered.</p>
+
+
+<h2>ACT<em>ACCOUNT</em>DEADS constructor:</h2>
+
+<ul>
+    <li><a href="##(ACT_ACCOUNT_DEADS).New">ACT_ACCOUNT_DEADS.New</a>(): Creates a new ACT<em>ACCOUNT</em>DEADS object.
+    </li>
+</ul>
+
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(ACT_ACCOUNT_DEADS).ClassName" ><strong>ACT_ACCOUNT_DEADS.ClassName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(ACT_ACCOUNT_DEADS).DisplayCategory" ><strong>ACT_ACCOUNT_DEADS.DisplayCategory</strong></a>
+    
+
+
+    
+<p> Targets is the default display category</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(ACT_ACCOUNT_DEADS).DisplayCount" ><strong>ACT_ACCOUNT_DEADS.DisplayCount</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(ACT_ACCOUNT_DEADS).DisplayInterval" ><strong>ACT_ACCOUNT_DEADS.DisplayInterval</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(ACT_ACCOUNT_DEADS).DisplayMessage" ><strong>ACT_ACCOUNT_DEADS.DisplayMessage</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(ACT_ACCOUNT_DEADS).DisplayTime" ><strong>ACT_ACCOUNT_DEADS.DisplayTime</strong></a>
+    
+
+
+    
+<p> 10 seconds is the default</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
+<a id="#(ACT_ACCOUNT_DEADS).TargetSetUnit" ><strong>ACT_ACCOUNT_DEADS.TargetSetUnit</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##Init')">
+<h6><a id="#(ACT_ACCOUNT_DEADS).Init" ><strong>ACT_ACCOUNT_DEADS:Init(FsmAccount)</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##Init" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <strong>FsmAccount</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##New')">
+<h6><a id="#(ACT_ACCOUNT_DEADS).New" ><strong>ACT_ACCOUNT_DEADS:New(TargetSetUnit, TaskName)</strong></a></h6>
+</div>
+    
+<p>Creates a new DESTROY process.</p>
+
+<div id= "#Functions##New" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+          <div class="w3-half"><a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
+        <strong>TargetSetUnit</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half">#string
+        <strong>TaskName</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##OnEventHit')">
+<h6><a id="#(ACT_ACCOUNT_DEADS).OnEventHit" ><strong>ACT_ACCOUNT_DEADS:OnEventHit(EventData)</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##OnEventHit" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+          <div class="w3-half"><a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##onafterEvent')">
+<h6><a id="#(ACT_ACCOUNT_DEADS).onafterEvent" ><strong>ACT_ACCOUNT_DEADS:onafterEvent(ProcessUnit, Task, From, Event, To, EventData)</strong></a></h6>
+</div>
+    
+<p>StateMachine callback function</p>
+
+<div id= "#Functions##onafterEvent" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+          <div class="w3-half"><a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>ProcessUnit</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half"><a href="Tasking.Task.html##(TASK)">Tasking.Task#TASK</a>
+        <strong>Task</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half">#string
+        <strong>From</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half">#string
+        <strong>Event</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half">#string
+        <strong>To</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half"><a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##onenterAccountForOther')">
+<h6><a id="#(ACT_ACCOUNT_DEADS).onenterAccountForOther" ><strong>ACT_ACCOUNT_DEADS:onenterAccountForOther(ProcessUnit, Task, From, Event, To, EventData)</strong></a></h6>
+</div>
+    
+<p>StateMachine callback function</p>
+
+<div id= "#Functions##onenterAccountForOther" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+          <div class="w3-half"><a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>ProcessUnit</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half"><a href="Tasking.Task.html##(TASK)">Tasking.Task#TASK</a>
+        <strong>Task</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half">#string
+        <strong>From</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half">#string
+        <strong>Event</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half">#string
+        <strong>To</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half"><a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##onenterAccountForPlayer')">
+<h6><a id="#(ACT_ACCOUNT_DEADS).onenterAccountForPlayer" ><strong>ACT_ACCOUNT_DEADS:onenterAccountForPlayer(ProcessUnit, Task, From, Event, To, EventData)</strong></a></h6>
+</div>
+    
+<p>StateMachine callback function</p>
+
+<div id= "#Functions##onenterAccountForPlayer" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+          <div class="w3-half"><a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>ProcessUnit</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half"><a href="Tasking.Task.html##(TASK)">Tasking.Task#TASK</a>
+        <strong>Task</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half">#string
+        <strong>From</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half">#string
+        <strong>Event</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half">#string
+        <strong>To</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half"><a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##onenterReport')">
+<h6><a id="#(ACT_ACCOUNT_DEADS).onenterReport" ><strong>ACT_ACCOUNT_DEADS:onenterReport(ProcessUnit, Event, From, To, Task)</strong></a></h6>
+</div>
+    
+<p>StateMachine callback function</p>
+
+<div id= "#Functions##onenterReport" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+          <div class="w3-half"><a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>ProcessUnit</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half">#string
+        <strong>Event</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half">#string
+        <strong>From</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+          <div class="w3-half">#string
+        <strong>To</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+      <div class="w3-row">
+        <strong>Task</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##onfuncEventCrash')">
+<h6><a id="#(ACT_ACCOUNT_DEADS).onfuncEventCrash" ><strong>ACT_ACCOUNT_DEADS:onfuncEventCrash(EventData)</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##onfuncEventCrash" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+          <div class="w3-half"><a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong></div>
+          <div class="w3-half"><p></p></div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##onfuncEventDead')">
+<h6><a id="#(ACT_ACCOUNT_DEADS).onfuncEventDead" ><strong>ACT_ACCOUNT_DEADS:onfuncEventDead(EventData)</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##onfuncEventDead" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+          <div class="w3-half"><a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong></div>
+          <div class="w3-half"><p></p></div>
     </div>
 </div>
 
@@ -2806,7 +1931,7 @@ self</p>
 </div>
 <script>
 function myLoadFunction() {
-    document.getElementById("myHeader").style.backgroundImage = "url('../Images/AI_Combat_Air_Patrol.JPG')";
+    document.getElementById("myHeader").style.backgroundImage = "url('../Images/MOOSE.JPG')";
 }
 </script>
 
