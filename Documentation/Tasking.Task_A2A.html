@@ -1181,98 +1181,163 @@ which are excellent tools to be reused in an OO environment!.</p>
    </div>
   </nav>
   
-<img src="..\Images\CleanUp_Airbases.JPG" alt="Banner Image"/>   
+<img src="..\Images\MOOSE.JPG" alt="Banner Image"/>   
 <div  id="content">
   <div class="w3-container w3-theme-d5" id="module_title">
-    <h1>Module <strong>Functional.CleanUp</strong></h1>
+    <h1>Module <strong>Tasking.Task_A2A</strong></h1>
   </div>
   <div class="w3-container w3-white" id="module_description">
     
-<p><strong>Functional</strong> -- The CLEANUP_AIRBASE class keeps an area clean of crashing or colliding airplanes.</p>
+<p><strong>Tasking</strong> - The TASK_A2A models tasks for players in Air to Air engagements.</p>
 
     
-<p>It also prevents airplanes from firing within this area.</p>
 
 <hr/>
 
 <h3>Author: <strong>FlightControl</strong></h3>
+
 <h3>Contributions:</h3>
 
 <hr/>
-
+<p>  </p>
 
   </div>
   <div class="w3-container w3-theme-d2"><h2><strong>Global(s)</strong></h2></div>
   <div class="w3-theme-d2 w3-margin-top ">
-    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##CLEANUP_AIRBASE')">
+    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##TASK_A2A')">
       <tr>
-        <td class="style="width:40%;"><p><h2>Global <strong>CLEANUP_AIRBASE</strong></h2></p></td>
+        <td class="style="width:40%;"><p><h2>Global <strong>TASK_A2A</strong></h2></p></td>
         <td class="style="width:60%;">
-<p>Keeps airbases clean, and tries to guarantee continuous airbase operations, even under combat.</p>
+<p>Defines Air To Air tasks for a <a href="Set.html">Set</a> of Target Units, 
+based on the tasking capabilities defined in <a href="Tasking.Task.html##(TASK)">Tasking.Task#TASK</a>.</p>
 </td>
       </tr>
     </table>
   </div>
-  <div id= "#Globals##CLEANUP_AIRBASE" class="w3-container w3-white w3-padding-small">
+  <div id= "#Globals##TASK_A2A" class="w3-container w3-white w3-padding-small">
     <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(CLEANUP_AIRBASE)">#CLEANUP_AIRBASE</a>
-<a id="CLEANUP_AIRBASE" ><strong>CLEANUP_AIRBASE</strong></a>
+    <a href="##(TASK_A2A)">#TASK_A2A</a>
+<a id="TASK_A2A" ><strong>TASK_A2A</strong></a>
     
-<p>Keeps airbases clean, and tries to guarantee continuous airbase operations, even under combat.</p>
+<p>Defines Air To Air tasks for a <a href="Set.html">Set</a> of Target Units, 
+based on the tasking capabilities defined in <a href="Tasking.Task.html##(TASK)">Tasking.Task#TASK</a>.</p>
 
     
-
-<p>Specific airbases need to be provided that need to be guarded. Each airbase registered, will be guarded within a zone of 8 km around the airbase.
-Any unit that fires a missile, or shoots within the zone of an airbase, will be monitored by CLEANUP_AIRBASE.
-Within the 8km zone, units cannot fire any missile, which prevents the airbase runway to receive missile or bomb hits. 
-Any airborne or ground unit that is on the runway below 30 meters (default value) will be automatically removed if it is damaged.</p>
-
-<p>This is not a full 100% secure implementation. It is still possible that CLEANUP_AIRBASE cannot prevent (in-time) to keep the airbase clean.
-The following situations may happen that will still stop the runway of an airbase:</p>
+<p>The TASK_A2A is implemented using a <a href="Core.Fsm.html##(FSM_TASK)">Core.Fsm#FSM_TASK</a>, and has the following statuses:</p>
 
 <ul>
-    <li>A damaged unit is not removed on time when above the runway, and crashes on the runway.</li>
-    <li>A bomb or missile is still able to dropped on the runway.</li>
-    <li>Units collide on the airbase, and could not be removed on time.</li>
+    <li><strong>None</strong>: Start of the process</li>
+    <li><strong>Planned</strong>: The A2A task is planned.</li>
+    <li><strong>Assigned</strong>: The A2A task is assigned to a <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>.</li>
+    <li><strong>Success</strong>: The A2A task is successfully completed.</li>
+    <li><strong>Failed</strong>: The A2A task has failed. This will happen if the player exists the task early, without communicating a possible cancellation to HQ.</li>
 </ul>
 
-<p>When a unit is within the airbase zone and needs to be monitored,
-its status will be checked every 0.25 seconds! This is required to ensure that the airbase is kept clean.
-But as a result, there is more CPU overload.</p>
+<h1>1) Set the scoring of achievements in an A2A attack.</h1>
 
-<p>So as an advise, I suggest you use the CLEANUP_AIRBASE class with care:</p>
+<p>Scoring or penalties can be given in the following circumstances:</p>
 
 <ul>
-    <li>Only monitor airbases that really need to be monitored!</li>
-    <li>Try not to monitor airbases that are likely to be invaded by enemy troops.
-    For these airbases, there is little use to keep them clean, as they will be invaded anyway...</li>
+    <li><a href="##(TASK_A2A).SetScoreOnDestroy">TASK_A2A.SetScoreOnDestroy</a>(): Set a score when a target in scope of the A2A attack, has been destroyed.</li>
+    <li><a href="##(TASK_A2A).SetScoreOnSuccess">TASK_A2A.SetScoreOnSuccess</a>(): Set a score when all the targets in scope of the A2A attack, have been destroyed.</li>
+    <li><a href="##(TASK_A2A).SetPenaltyOnFailed">TASK_A2A.SetPenaltyOnFailed</a>(): Set a penalty when the A2A attack has failed.</li>
 </ul>
 
-<p>By following the above guidelines, you can add airbase cleanup with acceptable CPU overhead.</p>
 
-<h2>1. CLEANUP_AIRBASE Constructor</h2>
+</div>
 
-<p>Creates the main object which is preventing the airbase to get polluted with debris on the runway, which halts the airbase.</p>
+  </div>
+  <div class="w3-theme-d2 w3-margin-top ">
+    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##TASK_A2A_ENGAGE')">
+      <tr>
+        <td class="style="width:40%;"><p><h2>Global <strong>TASK_A2A_ENGAGE</strong></h2></p></td>
+        <td class="style="width:60%;">
+<p>Defines an engage task for a human player to be executed.</p>
+</td>
+      </tr>
+    </table>
+  </div>
+  <div id= "#Globals##TASK_A2A_ENGAGE" class="w3-container w3-white w3-padding-small">
+    <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<pre><code> -- Clean these Zones.
- CleanUpAirports = CLEANUP_AIRBASE:New( { AIRBASE.Caucasus.Tbilisi, AIRBASE.Caucasus.Kutaisi )
+    <a href="##(TASK_A2A_ENGAGE)">#TASK_A2A_ENGAGE</a>
+<a id="TASK_A2A_ENGAGE" ><strong>TASK_A2A_ENGAGE</strong></a>
+    
+<p>Defines an engage task for a human player to be executed.</p>
 
- -- or
- CleanUpTbilisi = CLEANUP_AIRBASE:New( AIRBASE.Caucasus.Tbilisi )
- CleanUpKutaisi = CLEANUP_AIRBASE:New( AIRBASE.Caucasus.Kutaisi )
-</code></pre>
+    
+<p>When enemy planes are close to human players, use this task type is used urge the players to get out there!</p>
 
-<h2>2. Add or Remove airbases</h2>
+<p>The TASK<em>A2A</em>ENGAGE is used by the <a href="Tasking.Task_A2A_Dispatcher.html##(TASK_A2A_DISPATCHER)">Tasking.Task_A2A_Dispatcher#TASK_A2A_DISPATCHER</a> to automatically create engage tasks 
+based on detected airborne enemy targets intruding friendly airspace.</p>
 
-<p>The method <a href="##(CLEANUP_AIRBASE).AddAirbase">CLEANUP_AIRBASE.AddAirbase</a>() to add an airbase to the cleanup validation process.
-The method <a href="##(CLEANUP_AIRBASE).RemoveAirbase">CLEANUP_AIRBASE.RemoveAirbase</a>() removes an airbase from the cleanup validation process.</p>
+<p>The task is defined for a <a href="Tasking.Mission.html##(MISSION)">Tasking.Mission#MISSION</a>, where a friendly <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a> consisting of GROUPs with one human players each, is engaging the targets.
+The task is given a name and a briefing, that is used in the menu structure and in the reporting.</p>
 
-<h2>3. Clean missiles and bombs within the airbase zone.</h2>
 
-<p>When missiles or bombs hit the runway, the airbase operations stop.
-Use the method <a href="##(CLEANUP_AIRBASE).SetCleanMissiles">CLEANUP_AIRBASE.SetCleanMissiles</a>() to control the cleaning of missiles, which will prevent airbases to stop.
-Note that this method will not allow anymore airbases to be attacked, so there is a trade-off here to do.</p>
+</div>
+
+  </div>
+  <div class="w3-theme-d2 w3-margin-top ">
+    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##TASK_A2A_INTERCEPT')">
+      <tr>
+        <td class="style="width:40%;"><p><h2>Global <strong>TASK_A2A_INTERCEPT</strong></h2></p></td>
+        <td class="style="width:60%;">
+<p>Defines an intercept task for a human player to be executed.</p>
+</td>
+      </tr>
+    </table>
+  </div>
+  <div id= "#Globals##TASK_A2A_INTERCEPT" class="w3-container w3-white w3-padding-small">
+    <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="##(TASK_A2A_INTERCEPT)">#TASK_A2A_INTERCEPT</a>
+<a id="TASK_A2A_INTERCEPT" ><strong>TASK_A2A_INTERCEPT</strong></a>
+    
+<p>Defines an intercept task for a human player to be executed.</p>
+
+    
+<p>When enemy planes need to be intercepted by human players, use this task type to urgen the players to get out there!</p>
+
+<p>The TASK<em>A2A</em>INTERCEPT is used by the <a href="Tasking.Task_A2A_Dispatcher.html##(TASK_A2A_DISPATCHER)">Tasking.Task_A2A_Dispatcher#TASK_A2A_DISPATCHER</a> to automatically create intercept tasks 
+based on detected airborne enemy targets intruding friendly airspace.</p>
+
+<p>The task is defined for a <a href="Tasking.Mission.html##(MISSION)">Tasking.Mission#MISSION</a>, where a friendly <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a> consisting of GROUPs with one human players each, is intercepting the targets.
+The task is given a name and a briefing, that is used in the menu structure and in the reporting.</p>
+
+
+</div>
+
+  </div>
+  <div class="w3-theme-d2 w3-margin-top ">
+    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##TASK_A2A_SWEEP')">
+      <tr>
+        <td class="style="width:40%;"><p><h2>Global <strong>TASK_A2A_SWEEP</strong></h2></p></td>
+        <td class="style="width:60%;">
+<p>Defines a sweep task for a human player to be executed.</p>
+</td>
+      </tr>
+    </table>
+  </div>
+  <div id= "#Globals##TASK_A2A_SWEEP" class="w3-container w3-white w3-padding-small">
+    <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="##(TASK_A2A_SWEEP)">#TASK_A2A_SWEEP</a>
+<a id="TASK_A2A_SWEEP" ><strong>TASK_A2A_SWEEP</strong></a>
+    
+<p>Defines a sweep task for a human player to be executed.</p>
+
+    
+<p>A sweep task needs to be given when targets were detected but somehow the detection was lost.
+Most likely, these enemy planes are hidden in the mountains or are flying under radar.
+These enemy planes need to be sweeped by human players, and use this task type to urge the players to get out there and find those enemy fighters.</p>
+
+<p>The TASK<em>A2A</em>SWEEP is used by the <a href="Tasking.Task_A2A_Dispatcher.html##(TASK_A2A_DISPATCHER)">Tasking.Task_A2A_Dispatcher#TASK_A2A_DISPATCHER</a> to automatically create sweep tasks 
+based on detected airborne enemy targets intruding friendly airspace, for which the detection has been lost for more than 60 seconds.</p>
+
+<p>The task is defined for a <a href="Tasking.Mission.html##(MISSION)">Tasking.Mission#MISSION</a>, where a friendly <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a> consisting of GROUPs with one human players each, is sweeping the targets.
+The task is given a name and a briefing, that is used in the menu structure and in the reporting.</p>
 
 
 </div>
@@ -1280,28 +1345,28 @@ Note that this method will not allow anymore airbases to be attacked, so there i
   </div>
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>
   
-  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Functional.CleanUp)" >Type <strong>Functional.CleanUp</strong></a></h2></div>
+  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Tasking.Task_A2A)" >Type <strong>Tasking.Task_A2A</strong></a></h2></div>
   <div class="w3-container w3-white w3-padding-16" id="module_current_type">
     <div class="w3-white" id="record_type">
 </div>
 
   </div>
-  <div onclick="myFunction('#Types##CLEANUP_AIRBASE')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(CLEANUP_AIRBASE)">Type <strong>CLEANUP_AIRBASE</strong></a></h2></div>
-  <div id= "#Types##CLEANUP_AIRBASE" class="w3-container w3-white w3-padding-16" id="module_other_types">
+  <div onclick="myFunction('#Types##TASK_A2A')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(TASK_A2A)">Type <strong>TASK_A2A</strong></a></h2></div>
+  <div id= "#Types##TASK_A2A" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="##(CLEANUP_AIRBASE.__)">#CLEANUP_AIRBASE.__</a> </h3>
+     <h3> Extends <a href="Tasking.Task.html##(TASK)">Tasking.Task#TASK</a> </h3>
+  
+<p>The TASK_A2A class</p>
+
 <div class="fields">
   <h3>Field(s)</h3>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
-<a id="#(CLEANUP_AIRBASE).__" ><strong>CLEANUP_AIRBASE.__</strong></a>
+    <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
+<a id="#(TASK_A2A).TargetSetUnit" ><strong>TASK_A2A.TargetSetUnit</strong></a>
     
 
-
-    
-<p> @field #CLEANUP<em>AIRBASE.</em>_</p>
 
 </div>
 
@@ -1312,21 +1377,103 @@ Note that this method will not allow anymore airbases to be attacked, so there i
 <div>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4" onclick="myFunction('#Functions##AddAirbase')">
-<h6><a id="#(CLEANUP_AIRBASE).AddAirbase" ><strong>CLEANUP_AIRBASE:AddAirbase(AirbaseName)</strong></a></h6>
+<div class="w3-theme-l4" onclick="myFunction('#Functions##GetGoalTotal')">
+<h6><a id="#(TASK_A2A).GetGoalTotal" ><strong>TASK_A2A:GetGoalTotal()</strong></a></h6>
 </div>
     
-<p>Adds an airbase to the airbase validation list.</p>
 
-<div id= "#Functions##AddAirbase" class="w3-hide w3-white">
+
+<div id= "#Functions##GetGoalTotal" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##GetPlannedMenuText')">
+<h6><a id="#(TASK_A2A).GetPlannedMenuText" ><strong>TASK_A2A:GetPlannedMenuText()</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##GetPlannedMenuText" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##GetRendezVousCoordinate')">
+<h6><a id="#(TASK_A2A).GetRendezVousCoordinate" ><strong>TASK_A2A:GetRendezVousCoordinate(TaskUnit)</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##GetRendezVousCoordinate" class="w3-hide w3-white">
   <div class="w3-container w3-white" id="functiontype">
     <h5><strong>Parameter:</strong></h5>
       <div class="w3-row">
     </div>
       <div class="w3-row">
         <div class="w3-half">
-          #string
-        <strong>AirbaseName</strong>
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h5><strong>Return values:</strong></h5>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>The Coordinate object referencing to the 2D point where the RendezVous point is located on the map.</p>
+
+        </div>
+        <div class="w3-half">
+          #number:
+        </div>
+        <div class="w3-half">
+          
+<p>The RendezVousRange that defines when the player is considered to have arrived at the RendezVous point.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##GetRendezVousZone')">
+<h6><a id="#(TASK_A2A).GetRendezVousZone" ><strong>TASK_A2A:GetRendezVousZone(TaskUnit)</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##GetRendezVousZone" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
         </div>
         <div class="w3-half">
           <p></p>
@@ -1335,11 +1482,91 @@ Note that this method will not allow anymore airbases to be attacked, so there i
     <h5><strong>Return value:</strong></h5>
     <div class="w3-row">
       <div class="w3-half">
-        <a href="##(CLEANUP_AIRBASE)">#CLEANUP_AIRBASE</a>:
+        <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>:
       </div>
       <div class="w3-half">
         
+<p>The Zone object where the RendezVous is located on the map.</p>
 
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##GetTargetCoordinate')">
+<h6><a id="#(TASK_A2A).GetTargetCoordinate" ><strong>TASK_A2A:GetTargetCoordinate(TaskUnit)</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##GetTargetCoordinate" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>The Coordinate object where the Target is located on the map.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##GetTargetZone')">
+<h6><a id="#(TASK_A2A).GetTargetZone" ><strong>TASK_A2A:GetTargetZone(TaskUnit)</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##GetTargetZone" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>The Zone object where the Target is located on the map.</p>
 
       </div>
     </div>
@@ -1353,69 +1580,98 @@ Note that this method will not allow anymore airbases to be attacked, so there i
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4" onclick="myFunction('#Functions##New')">
-<h6><a id="#(CLEANUP_AIRBASE).New" ><strong>CLEANUP_AIRBASE:New(AirbaseNames)</strong></a></h6>
+<h6><a id="#(TASK_A2A).New" ><strong>TASK_A2A:New(Mission, SetAttack, TaskName, UnitSetTargets, TargetDistance, TargetZone, TargetSetUnit, TaskType, TaskBriefing)</strong></a></h6>
 </div>
     
-<p>Creates the main object which is handling the cleaning of the debris within the given Zone Names.</p>
+<p>Instantiates a new TASK_A2A.</p>
 
 <div id= "#Functions##New" class="w3-hide w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h5><strong>Parameters:</strong></h5>
       <div class="w3-row">
     </div>
       <div class="w3-row">
         <div class="w3-half">
-          #list&lt;#string&gt;
-        <strong>AirbaseNames</strong>
+          <a href="Tasking.Mission.html##(MISSION)">Tasking.Mission#MISSION</a>
+        <strong>Mission</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+        <strong>SetAttack</strong>
         </div>
         <div class="w3-half">
           
-<p>Is a table of airbase names where the debris should be cleaned. Also a single string can be passed with one airbase name.</p>
+<p>The set of groups for which the Task can be assigned.</p>
 
         </div>
-    </div>
-    <h5><strong>Return value:</strong></h5>
-    <div class="w3-row">
-      <div class="w3-half">
-        <a href="##(CLEANUP_AIRBASE)">#CLEANUP_AIRBASE</a>:
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
-    </div>
-      <h5><strong>Usage:</strong></h5>
-    <pre class="example"><code> -- Clean these Zones.
-CleanUpAirports = CLEANUP_AIRBASE:New( { AIRBASE.Caucasus.Tbilisi, AIRBASE.Caucasus.Kutaisi )
-or
-CleanUpTbilisi = CLEANUP_AIRBASE:New( AIRBASE.Caucasus.Tbilisi )
-CleanUpKutaisi = CLEANUP_AIRBASE:New( AIRBASE.Caucasus.Kutaisi )</code></pre>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4" onclick="myFunction('#Functions##RemoveAirbase')">
-<h6><a id="#(CLEANUP_AIRBASE).RemoveAirbase" ><strong>CLEANUP_AIRBASE:RemoveAirbase(AirbaseName)</strong></a></h6>
-</div>
-    
-<p>Removes an airbase from the airbase validation list.</p>
-
-<div id= "#Functions##RemoveAirbase" class="w3-hide w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
-      <div class="w3-row">
     </div>
       <div class="w3-row">
         <div class="w3-half">
           #string
-        <strong>AirbaseName</strong>
+        <strong>TaskName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The name of the Task.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
+        <strong>UnitSetTargets</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>TargetDistance</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The distance to Target when the Player is considered to have "arrived" at the engagement range.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
+        <strong>TargetZone</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The target zone, if known.
+If the TargetZone parameter is specified, the player will be routed to the center of the zone where all the targets are assumed to be.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>TargetSetUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>TaskType</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>TaskBriefing</strong>
         </div>
         <div class="w3-half">
           <p></p>
@@ -1424,7 +1680,521 @@ CleanUpKutaisi = CLEANUP_AIRBASE:New( AIRBASE.Caucasus.Kutaisi )</code></pre>
     <h5><strong>Return value:</strong></h5>
     <div class="w3-row">
       <div class="w3-half">
-        <a href="##(CLEANUP_AIRBASE)">#CLEANUP_AIRBASE</a>:
+        <a href="##(TASK_A2A)">#TASK_A2A</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##ReportOrder')">
+<h6><a id="#(TASK_A2A).ReportOrder" ><strong>TASK_A2A:ReportOrder(ReportGroup)</strong></a></h6>
+</div>
+    
+<p>Return the relative distance to the target vicinity from the player, in order to sort the targets in the reports per distance from the threats.</p>
+
+<div id= "#Functions##ReportOrder" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ReportGroup</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##SetGoalTotal')">
+<h6><a id="#(TASK_A2A).SetGoalTotal" ><strong>TASK_A2A:SetGoalTotal()</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##SetGoalTotal" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##SetRendezVousCoordinate')">
+<h6><a id="#(TASK_A2A).SetRendezVousCoordinate" ><strong>TASK_A2A:SetRendezVousCoordinate(RendezVousCoordinate, RendezVousRange, TaskUnit)</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##SetRendezVousCoordinate" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+        <strong>RendezVousCoordinate</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The Coordinate object referencing to the 2D point where the RendezVous point is located on the map.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>RendezVousRange</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The RendezVousRange that defines when the player is considered to have arrived at the RendezVous point.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##SetRendezVousZone')">
+<h6><a id="#(TASK_A2A).SetRendezVousZone" ><strong>TASK_A2A:SetRendezVousZone(RendezVousZone, TaskUnit)</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##SetRendezVousZone" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
+        <strong>RendezVousZone</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The Zone object where the RendezVous is located on the map.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##SetTargetCoordinate')">
+<h6><a id="#(TASK_A2A).SetTargetCoordinate" ><strong>TASK_A2A:SetTargetCoordinate(TargetCoordinate, TaskUnit)</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##SetTargetCoordinate" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+        <strong>TargetCoordinate</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The Coordinate object where the Target is located on the map.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##SetTargetSetUnit')">
+<h6><a id="#(TASK_A2A).SetTargetSetUnit" ><strong>TASK_A2A:SetTargetSetUnit(TargetSetUnit)</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##SetTargetSetUnit" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
+        <strong>TargetSetUnit</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The set of targets.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##SetTargetZone')">
+<h6><a id="#(TASK_A2A).SetTargetZone" ><strong>TASK_A2A:SetTargetZone(TargetZone, TaskUnit, Altitude, Heading)</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##SetTargetZone" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
+        <strong>TargetZone</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The Zone object where the Target is located on the map.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Altitude</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Heading</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##UpdateTaskInfo')">
+<h6><a id="#(TASK_A2A).UpdateTaskInfo" ><strong>TASK_A2A:UpdateTaskInfo(DetectedItem)</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##UpdateTaskInfo" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DetectedItem</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##onafterGoal')">
+<h6><a id="#(TASK_A2A).onafterGoal" ><strong>TASK_A2A:onafterGoal(TaskUnit, From, Event, To)</strong></a></h6>
+</div>
+    
+<p>This method checks every 10 seconds if the goal has been reached of the task.</p>
+
+<div id= "#Functions##onafterGoal" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>From</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>To</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+</div>
+
+  </div>
+  <div onclick="myFunction('#Types##TASK_A2A_ENGAGE')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(TASK_A2A_ENGAGE)">Type <strong>TASK_A2A_ENGAGE</strong></a></h2></div>
+  <div id= "#Types##TASK_A2A_ENGAGE" class="w3-container w3-white w3-padding-16" id="module_other_types">
+    <div class="w3-white" id="record_type">
+     <h3> Extends <a href="Tasking.Task.html##(TASK)">Tasking.Task#TASK</a> </h3>
+  
+<p>The TASK<em>A2A</em>ENGAGE class</p>
+
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
+<a id="#(TASK_A2A_ENGAGE).TargetSetUnit" ><strong>TASK_A2A_ENGAGE.TargetSetUnit</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##New')">
+<h6><a id="#(TASK_A2A_ENGAGE).New" ><strong>TASK_A2A_ENGAGE:New(Mission, SetGroup, TaskName, TargetSetUnit, TaskBriefing)</strong></a></h6>
+</div>
+    
+<p>Instantiates a new TASK<em>A2A</em>ENGAGE.</p>
+
+<div id= "#Functions##New" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Tasking.Mission.html##(MISSION)">Tasking.Mission#MISSION</a>
+        <strong>Mission</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+        <strong>SetGroup</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The set of groups for which the Task can be assigned.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>TaskName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The name of the Task.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
+        <strong>TargetSetUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>TaskBriefing</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The briefing of the task.</p>
+
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(TASK_A2A_ENGAGE)">#TASK_A2A_ENGAGE</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##SetScoreOnFail')">
+<h6><a id="#(TASK_A2A_ENGAGE).SetScoreOnFail" ><strong>TASK_A2A_ENGAGE:SetScoreOnFail(PlayerName, Penalty, TaskUnit)</strong></a></h6>
+</div>
+    
+<p>Set a penalty when the A2A attack has failed.</p>
+
+<div id= "#Functions##SetScoreOnFail" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>PlayerName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The name of the player.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Penalty</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The penalty in points, must be a negative value!</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(TASK_A2A_ENGAGE)">#TASK_A2A_ENGAGE</a>:
       </div>
       <div class="w3-half">
         
@@ -1441,40 +2211,114 @@ CleanUpKutaisi = CLEANUP_AIRBASE:New( AIRBASE.Caucasus.Kutaisi )</code></pre>
 <div>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4" onclick="myFunction('#Functions##SetCleanMissiles')">
-<h6><a id="#(CLEANUP_AIRBASE).SetCleanMissiles" ><strong>CLEANUP_AIRBASE:SetCleanMissiles(CleanMissiles)</strong></a></h6>
+<div class="w3-theme-l4" onclick="myFunction('#Functions##SetScoreOnProgress')">
+<h6><a id="#(TASK_A2A_ENGAGE).SetScoreOnProgress" ><strong>TASK_A2A_ENGAGE:SetScoreOnProgress(PlayerName, Score, TaskUnit)</strong></a></h6>
 </div>
     
-<p>Enables or disables the cleaning of missiles within the airbase zones.</p>
+<p>Set a score when a target in scope of the A2A attack, has been destroyed .</p>
 
-    
-<p>Airbase operations stop when a missile or bomb is dropped at a runway.
-Note that when this method is used, the airbase operations won't stop if
-the missile or bomb was cleaned within the airbase zone, which is 8km from the center of the airbase.
-However, there is a trade-off to make. Attacks on airbases won't be possible anymore if this method is used.
-Note, one can also use the method <a href="##(CLEANUP_AIRBASE).RemoveAirbase">CLEANUP_AIRBASE.RemoveAirbase</a>() to remove the airbase from the control process as a whole,
-when an enemy unit is near. That is also an option...</p>
-
-<div id= "#Functions##SetCleanMissiles" class="w3-hide w3-white">
+<div id= "#Functions##SetScoreOnProgress" class="w3-hide w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h5><strong>Parameters:</strong></h5>
       <div class="w3-row">
     </div>
       <div class="w3-row">
         <div class="w3-half">
           #string
-        <strong>CleanMissiles</strong>
+        <strong>PlayerName</strong>
         </div>
         <div class="w3-half">
           
-<p>(Default=true) If true, missiles fired are immediately destroyed. If false missiles are not controlled.</p>
+<p>The name of the player.</p>
 
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Score</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The score in points to be granted when task process has been achieved.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
         </div>
     </div>
     <h5><strong>Return value:</strong></h5>
     <div class="w3-row">
       <div class="w3-half">
-        <a href="##(CLEANUP_AIRBASE)">#CLEANUP_AIRBASE</a>:
+        <a href="##(TASK_A2A_ENGAGE)">#TASK_A2A_ENGAGE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##SetScoreOnSuccess')">
+<h6><a id="#(TASK_A2A_ENGAGE).SetScoreOnSuccess" ><strong>TASK_A2A_ENGAGE:SetScoreOnSuccess(PlayerName, Score, TaskUnit)</strong></a></h6>
+</div>
+    
+<p>Set a score when all the targets in scope of the A2A attack, have been destroyed.</p>
+
+<div id= "#Functions##SetScoreOnSuccess" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>PlayerName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The name of the player.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Score</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The score in points.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(TASK_A2A_ENGAGE)">#TASK_A2A_ENGAGE</a>:
       </div>
       <div class="w3-half">
         
@@ -1492,19 +2336,22 @@ when an enemy unit is near. That is also an option...</p>
 </div>
 
   </div>
-  <div onclick="myFunction('#Types##CLEANUP_AIRBASE.__')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(CLEANUP_AIRBASE.__)">Type <strong>CLEANUP_AIRBASE.__</strong></a></h2></div>
-  <div id= "#Types##CLEANUP_AIRBASE.__" class="w3-container w3-white w3-padding-16" id="module_other_types">
+  <div onclick="myFunction('#Types##TASK_A2A_INTERCEPT')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(TASK_A2A_INTERCEPT)">Type <strong>TASK_A2A_INTERCEPT</strong></a></h2></div>
+  <div id= "#Types##TASK_A2A_INTERCEPT" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Core.Base.html##(BASE)">Core.Base#BASE</a> </h3>
+     <h3> Extends <a href="Tasking.Task.html##(TASK)">Tasking.Task#TASK</a> </h3>
+  
+<p>The TASK<em>A2A</em>INTERCEPT class</p>
+
 <div class="fields">
   <h3>Field(s)</h3>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #map&lt;#string,Wrapper.Airbase#AIRBASE&gt;
-<a id="#(CLEANUP_AIRBASE.__).Airbases" ><strong>CLEANUP_AIRBASE.__.Airbases</strong></a>
+    <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
+<a id="#(TASK_A2A_INTERCEPT).TargetSetUnit" ><strong>TASK_A2A_INTERCEPT.TargetSetUnit</strong></a>
     
-<p>Map of Airbases.</p>
+
 
 </div>
 
@@ -1512,6 +2359,621 @@ when an enemy unit is near. That is also an option...</p>
 </div>
 <div class="functions">
   <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##New')">
+<h6><a id="#(TASK_A2A_INTERCEPT).New" ><strong>TASK_A2A_INTERCEPT:New(Mission, SetGroup, TaskName, TargetSetUnit, TaskBriefing)</strong></a></h6>
+</div>
+    
+<p>Instantiates a new TASK<em>A2A</em>INTERCEPT.</p>
+
+<div id= "#Functions##New" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Tasking.Mission.html##(MISSION)">Tasking.Mission#MISSION</a>
+        <strong>Mission</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+        <strong>SetGroup</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The set of groups for which the Task can be assigned.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>TaskName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The name of the Task.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
+        <strong>TargetSetUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>TaskBriefing</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The briefing of the task.</p>
+
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(TASK_A2A_INTERCEPT)">#TASK_A2A_INTERCEPT</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##SetScoreOnFail')">
+<h6><a id="#(TASK_A2A_INTERCEPT).SetScoreOnFail" ><strong>TASK_A2A_INTERCEPT:SetScoreOnFail(PlayerName, Penalty, TaskUnit)</strong></a></h6>
+</div>
+    
+<p>Set a penalty when the A2A attack has failed.</p>
+
+<div id= "#Functions##SetScoreOnFail" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>PlayerName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The name of the player.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Penalty</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The penalty in points, must be a negative value!</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(TASK_A2A_INTERCEPT)">#TASK_A2A_INTERCEPT</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##SetScoreOnProgress')">
+<h6><a id="#(TASK_A2A_INTERCEPT).SetScoreOnProgress" ><strong>TASK_A2A_INTERCEPT:SetScoreOnProgress(PlayerName, Score, TaskUnit)</strong></a></h6>
+</div>
+    
+<p>Set a score when a target in scope of the A2A attack, has been destroyed .</p>
+
+<div id= "#Functions##SetScoreOnProgress" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>PlayerName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The name of the player.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Score</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The score in points to be granted when task process has been achieved.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(TASK_A2A_INTERCEPT)">#TASK_A2A_INTERCEPT</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##SetScoreOnSuccess')">
+<h6><a id="#(TASK_A2A_INTERCEPT).SetScoreOnSuccess" ><strong>TASK_A2A_INTERCEPT:SetScoreOnSuccess(PlayerName, Score, TaskUnit)</strong></a></h6>
+</div>
+    
+<p>Set a score when all the targets in scope of the A2A attack, have been destroyed.</p>
+
+<div id= "#Functions##SetScoreOnSuccess" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>PlayerName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The name of the player.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Score</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The score in points.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(TASK_A2A_INTERCEPT)">#TASK_A2A_INTERCEPT</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+</div>
+
+  </div>
+  <div onclick="myFunction('#Types##TASK_A2A_SWEEP')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(TASK_A2A_SWEEP)">Type <strong>TASK_A2A_SWEEP</strong></a></h2></div>
+  <div id= "#Types##TASK_A2A_SWEEP" class="w3-container w3-white w3-padding-16" id="module_other_types">
+    <div class="w3-white" id="record_type">
+     <h3> Extends <a href="Tasking.Task.html##(TASK)">Tasking.Task#TASK</a> </h3>
+  
+<p>The TASK<em>A2A</em>SWEEP class</p>
+
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
+<a id="#(TASK_A2A_SWEEP).TargetSetUnit" ><strong>TASK_A2A_SWEEP.TargetSetUnit</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##New')">
+<h6><a id="#(TASK_A2A_SWEEP).New" ><strong>TASK_A2A_SWEEP:New(Mission, SetGroup, TaskName, TargetSetUnit, TaskBriefing)</strong></a></h6>
+</div>
+    
+<p>Instantiates a new TASK<em>A2A</em>SWEEP.</p>
+
+<div id= "#Functions##New" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Tasking.Mission.html##(MISSION)">Tasking.Mission#MISSION</a>
+        <strong>Mission</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+        <strong>SetGroup</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The set of groups for which the Task can be assigned.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>TaskName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The name of the Task.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
+        <strong>TargetSetUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>TaskBriefing</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The briefing of the task.</p>
+
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(TASK_A2A_SWEEP)">#TASK_A2A_SWEEP</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##SetScoreOnFail')">
+<h6><a id="#(TASK_A2A_SWEEP).SetScoreOnFail" ><strong>TASK_A2A_SWEEP:SetScoreOnFail(PlayerName, Penalty, TaskUnit)</strong></a></h6>
+</div>
+    
+<p>Set a penalty when the A2A attack has failed.</p>
+
+<div id= "#Functions##SetScoreOnFail" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>PlayerName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The name of the player.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Penalty</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The penalty in points, must be a negative value!</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(TASK_A2A_SWEEP)">#TASK_A2A_SWEEP</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##SetScoreOnProgress')">
+<h6><a id="#(TASK_A2A_SWEEP).SetScoreOnProgress" ><strong>TASK_A2A_SWEEP:SetScoreOnProgress(PlayerName, Score, TaskUnit)</strong></a></h6>
+</div>
+    
+<p>Set a score when a target in scope of the A2A attack, has been destroyed .</p>
+
+<div id= "#Functions##SetScoreOnProgress" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>PlayerName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The name of the player.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Score</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The score in points to be granted when task process has been achieved.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(TASK_A2A_SWEEP)">#TASK_A2A_SWEEP</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##SetScoreOnSuccess')">
+<h6><a id="#(TASK_A2A_SWEEP).SetScoreOnSuccess" ><strong>TASK_A2A_SWEEP:SetScoreOnSuccess(PlayerName, Score, TaskUnit)</strong></a></h6>
+</div>
+    
+<p>Set a score when all the targets in scope of the A2A attack, have been destroyed.</p>
+
+<div id= "#Functions##SetScoreOnSuccess" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>PlayerName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The name of the player.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Score</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The score in points.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(TASK_A2A_SWEEP)">#TASK_A2A_SWEEP</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4" onclick="myFunction('#Functions##onafterGoal')">
+<h6><a id="#(TASK_A2A_SWEEP).onafterGoal" ><strong>TASK_A2A_SWEEP:onafterGoal(TaskUnit, From, Event, To)</strong></a></h6>
+</div>
+    
+
+
+<div id= "#Functions##onafterGoal" class="w3-hide w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>TaskUnit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>From</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>To</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
 </div>  
 </div>
 
@@ -1519,7 +2981,7 @@ when an enemy unit is near. That is also an option...</p>
 </div>
 <script>
 function myLoadFunction() {
-    document.getElementById("myHeader").style.backgroundImage = "url('../Images/CleanUp_Airbases.JPG')";
+    document.getElementById("myHeader").style.backgroundImage = "url('../Images/MOOSE.JPG')";
 }
 </script>
 
