@@ -1178,184 +1178,87 @@ which are excellent tools to be reused in an OO environment!.</p>
    </div>
   </nav>
   
-<img src="..\Images\Task_Cargo_Transport.JPG" alt="Banner Image"/>   
+<img src="..\Images\Warehouse.JPG" alt="Banner Image"/>   
 <div  id="content">
   <div class="w3-container w3-theme-d5" id="module_title">
-    <h1>Module <strong>Tasking.Task_Cargo_Transport</strong></h1>
+    <h1>Module <strong>Functional.Warehouse</strong></h1>
   </div>
   <div class="w3-container w3-white" id="module_description">
     
-<p><strong>Tasking</strong> -- Models tasks for players to transport cargo.</p>
+<p><strong>Functional</strong> - (R2.4) - Manages assets of an airbase and transportation to other airbases upon request.</p>
 
     
 
-<p><strong>Specific features:</strong></p>
+
+<p>Features:</p>
 
 <ul>
-    <li>Creates a task to transport <a href="Cargo.Cargo.html">Cargo.Cargo</a> to and between deployment zones.</li>
-    <li>Derived from the TASK_CARGO class, which is derived from the TASK class.</li>
-    <li>Orchestrate the task flow, so go from Planned to Assigned to Success, Failed or Cancelled.</li>
-    <li>Co-operation tasking, so a player joins a group of players executing the same task.</li>
+    <li>Holds (virtual) assests such as intrantry groups in stock.</li>
+    <li>Manages requests of assets from other airbases or warehouses.</li>
+    <li>Take care of transportation to other airbases.</li>
+    <li>Different means of automatic transportation (planes, helicopters, selfpropelled).</li>
 </ul>
 
-
-<p><strong>A complete task menu system to allow players to:</strong></p>
-
-<ul>
-    <li>Join the task, abort the task.</li>
-    <li>Mark the task location on the map.</li>
-    <li>Provide details of the target.</li>
-    <li>Route to the cargo.</li>
-    <li>Route to the deploy zones.</li>
-    <li>Load/Unload cargo.</li>
-    <li>Board/Unboard cargo.</li>
-    <li>Slingload cargo.</li>
-    <li>Display the task briefing.</li>
-</ul>
-
-
-<p><strong>A complete mission menu system to allow players to:</strong></p>
-
-<ul>
-    <li>Join a task, abort the task.</li>
-    <li>Display task reports.</li>
-    <li>Display mission statistics.</li>
-    <li>Mark the task locations on the map.</li>
-    <li>Provide details of the targets.</li>
-    <li>Display the mission briefing.</li>
-    <li>Provide status updates as retrieved from the command center.</li>
-    <li>Automatically assign a random task as part of a mission.</li>
-    <li>Manually assign a specific task as part of a mission.</li>
-</ul>
-
-
-<p> <strong>A settings system, using the settings menu:</strong></p>
-
-<ul>
-    <li>Tweak the duration of the display of messages.</li>
-    <li>Switch between metric and imperial measurement system.</li>
-    <li>Switch between coordinate formats used in messages: BR, BRA, LL DMS, LL DDM, MGRS.</li>
-    <li>Different settings modes for A2G and A2A operations.</li>
-    <li>Various other options.</li>
-</ul>
+<h1>QUICK START GUIDE</h1>
 
 <hr/>
 
-<p>Please read through the <a href="Tasking.Task_Cargo.html">Tasking.Task_Cargo</a> process to understand the mechanisms of tasking and cargo tasking and handling.</p>
-
-<p>Enjoy!
-FC</p>
-
-<hr/>
+<h3>Authors: <strong>funkyfranky</strong></h3>
 
 
   </div>
   <div class="w3-container w3-theme-d2"><h2><strong>Global(s)</strong></h2></div>
   <div class="w3-theme-d2 w3-margin-top ">
-    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##TASK_CARGO_TRANSPORT')">
+    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##WAREHOUSE')">
       <tr>
-        <td class="style="width:40%;"><p><h2>Global <strong>TASK_CARGO_TRANSPORT</strong></h2></p></td>
+        <td class="style="width:40%;"><p><h2>Global <strong>WAREHOUSE</strong></h2></p></td>
         <td class="style="width:60%;">
-<p>Orchestrates the task for players to transport cargo to or between deployment zones.</p>
+<p>Manages ground assets of an airbase and offers the possibility to transport them to another airbase or warehouse.</p>
 </td>
       </tr>
     </table>
   </div>
-  <div id= "#Globals##TASK_CARGO_TRANSPORT" class="w3-container w3-white w3-padding-small">
+  <div id= "#Globals##WAREHOUSE" class="w3-container w3-white w3-padding-small">
     <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(TASK_CARGO_TRANSPORT)">#TASK_CARGO_TRANSPORT</a>
-<a id="TASK_CARGO_TRANSPORT" ><strong>TASK_CARGO_TRANSPORT</strong></a>
+    <a href="##(WAREHOUSE)">#WAREHOUSE</a>
+<a id="WAREHOUSE" ><strong>WAREHOUSE</strong></a>
     
-<p>Orchestrates the task for players to transport cargo to or between deployment zones.</p>
+<p>Manages ground assets of an airbase and offers the possibility to transport them to another airbase or warehouse.</p>
 
     
-
-<p>Transport tasks are suited to govern the process of transporting cargo to specific deployment zones.
-Typically, this task is executed by helicopter pilots, but it can also be executed by ground forces!</p>
 
 <hr/>
 
-<p>A transport task can be created manually, but actually, it is better to <strong>GENERATE</strong> these tasks using the 
-<a href="Tasking.Task_Cargo_Dispatcher.html">Tasking.Task_Cargo_Dispatcher</a> module.</p>
+<h1>Demo Missions</h1>
 
-<p>Using the dispatcher, transport tasks can be created much more easy.</p>
-
-<h1>1) Create a transport task manually (code it).</h1>
-
-<p>Although it is recommended to use the dispatcher, you can create a transport task yourself as a mission designer.
-It is easy, as it works just like any other task setup.</p>
-
-<h2>1.1) Create a command center.</h2>
-
-<p>First you need to create a command center using the <a href="Tasking.CommandCenter.html##(COMMANDCENTER).New">Tasking.CommandCenter#COMMANDCENTER.New</a>() constructor.</p>
-
-<pre><code>local CommandCenter = COMMANDCENTER
-   :New( HQ, "Lima" ) -- Create the CommandCenter.
-</code></pre>
-
-<h2>1.2) Create a mission.</h2>
-
-<p>Tasks work in a mission, which groups these tasks to achieve a joint mission goal.
-A command center can govern multiple missions.
-Create a new mission, using the <a href="Tasking.Mission.html##(MISSION).New">Tasking.Mission#MISSION.New</a>() constructor.</p>
-
-<pre><code>-- Declare the Mission for the Command Center.
-local Mission = MISSION
-  :New( CommandCenter, 
-        "Overlord", 
-        "High", 
-        "Transport the cargo to the deploy zones.", 
-        coalition.side.RED 
-      ) 
-</code></pre>
-
-<h2>1.3) Create the transport cargo task.</h2>
-
-<p>So, now that we have a command center and a mission, we now create the transport task.
-We create the transport task using the <a href="##(TASK_CARGO_TRANSPORT).New">TASK_CARGO_TRANSPORT.New</a>() constructor.</p>
-
-<p>Because a transport task will not generate the cargo itself, you'll need to create it first.
-The cargo in this case will be the downed pilot!</p>
-
-<pre><code>-- Here we define the "cargo set", which is a collection of cargo objects.
--- The cargo set will be the input for the cargo transportation task.
--- So a transportation object is handling a cargo set, which is automatically refreshed when new cargo is added/deleted.
-local CargoSet = SET_CARGO:New():FilterTypes( "Cargo" ):FilterStart()
-
--- Now we add cargo into the battle scene.
-local PilotGroup = GROUP:FindByName( "Engineers" )
-
--- CARGO_GROUP can be used to setup cargo with a GROUP object underneath.
--- We name this group Engineers.
--- Note that the name of the cargo is "Engineers".
--- The cargoset "CargoSet" will embed all defined cargo of type "Pilots" (prefix) into its set.
-local CargoGroup = CARGO_GROUP:New( PilotGroup, "Cargo", "Engineer Team 1", 500 )
-</code></pre>
-
-<p>What is also needed, is to have a set of <a href="Core.Group.html">Core.Group</a>s defined that contains the clients of the players.</p>
-
-<pre><code>-- Allocate the Transport, which are the helicopter to retrieve the pilot, that can be manned by players.
-local GroupSet = SET_GROUP:New():FilterPrefixes( "Transport" ):FilterStart()
-</code></pre>
-
-<p>Now that we have a CargoSet and a GroupSet, we can now create the TransportTask manually.</p>
-
-<pre><code>-- Declare the transport task.
-local TransportTask = TASK_CARGO_TRANSPORT
-  :New( Mission, 
-        GroupSet, 
-        "Transport Engineers", 
-        CargoSet, 
-        "Fly behind enemy lines, and retrieve the downed pilot." 
-      )
-</code></pre>
-
-<p>So you can see, setting up a transport task manually is a lot of work.
-It is better you use the cargo dispatcher to create transport tasks and it will work as it is intended.
-By doing this, cargo transport tasking will become a dynamic experience.</p>
+<h3>None.</h3>
 
 <hr/>
+
+<h1>YouTube Channel</h1>
+
+<h3>None.</h3>
+
+<hr/>
+
+<p><img src="..\Presentations\WAREHOUSE\Warehouse_Main.JPG" alt="Banner Image"/></p>
+
+<h1>What is a warehouse?</h1>
+<p>A warehouse is an abstract object that can hold virtual assets in stock. It is usually associated with a particular airbase.
+If another airbase or warehouse requests assets, the corresponding troops are spawned at the warehouse and being transported to the requestor.</p>
+
+<h2>What assets can be stored?</h2>
+<p>Any kind of ground or airborn asset can be stored. Ships not supported at the moment due to the fact that airbases are bound to airbases which are
+normally not located near the sea.</p>
+
+
+
+<hr/>
+
+<h1>USAGE GUIDE</h1>
+
+
 
 
 </div>
@@ -1363,120 +1266,251 @@ By doing this, cargo transport tasking will become a dynamic experience.</p>
   </div>
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>
   
-  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Tasking.Task_Cargo_Transport)" >Type <strong>Tasking.Task_Cargo_Transport</strong></a></h2></div>
+  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Functional.Warehouse)" >Type <strong>Functional.Warehouse</strong></a></h2></div>
   <div class="w3-container w3-white w3-padding-16" id="module_current_type">
     <div class="w3-white" id="record_type">
 </div>
 
   </div>
-  <div onclick="myFunction('#Types##TASK_CARGO_TRANSPORT')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(TASK_CARGO_TRANSPORT)">Type <strong>TASK_CARGO_TRANSPORT</strong></a></h2></div>
-  <div id= "#Types##TASK_CARGO_TRANSPORT" class="w3-container w3-white w3-padding-16" id="module_other_types">
+  <div onclick="myFunction('#Types##WAREHOUSE')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(WAREHOUSE)">Type <strong>WAREHOUSE</strong></a></h2></div>
+  <div id= "#Types##WAREHOUSE" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Tasking.Task_CARGO.html##(TASK_CARGO)">Tasking.Task_CARGO#TASK_CARGO</a> </h3>
+     <h3> Extends <a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a> </h3>
+  
+<p>WAREHOUSE class.</p>
+
 <div class="fields">
   <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="##(WAREHOUSE.Attribute)">#WAREHOUSE.Attribute</a>
+<a id="#(WAREHOUSE).Attribute" ><strong>WAREHOUSE.Attribute</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE).ClassName" ><strong>WAREHOUSE.ClassName</strong></a>
+    
+<p>Name of the class.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(WAREHOUSE).Debug" ><strong>WAREHOUSE.Debug</strong></a>
+    
+<p>If true, send debug messages to all.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="##(WAREHOUSE.Descriptor)">#WAREHOUSE.Descriptor</a>
+<a id="#(WAREHOUSE).Descriptor" ><strong>WAREHOUSE.Descriptor</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(WAREHOUSE).Report" ><strong>WAREHOUSE.Report</strong></a>
+    
+<p>If true, send status messages to coalition.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="##(WAREHOUSE.TransportType)">#WAREHOUSE.TransportType</a>
+<a id="#(WAREHOUSE).TransportType" ><strong>WAREHOUSE.TransportType</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(WAREHOUSE).assetid" ><strong>WAREHOUSE.assetid</strong></a>
+    
+<p>Unique id of asset items in stock. Essentially a running number starting at one and incremented when a new asset is added.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="DCS.html##(Airbase.Category)">DCS#Airbase.Category</a>
+<a id="#(WAREHOUSE).category" ><strong>WAREHOUSE.category</strong></a>
+    
+<p>Category of the home airbase, i.e. airdrome, helipad/farp or ship.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="DCS.html##(Coalition)">DCS#Coalition</a>
+<a id="#(WAREHOUSE).coalition" ><strong>WAREHOUSE.coalition</strong></a>
+    
+<p>Coalition the warehouse belongs to.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+<a id="#(WAREHOUSE).coordinate" ><strong>WAREHOUSE.coordinate</strong></a>
+    
+<p>Coordinate of the warehouse.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Wrapper.Airbase.html##(AIRBASE)">Wrapper.Airbase#AIRBASE</a>
+<a id="#(WAREHOUSE).homebase" ><strong>WAREHOUSE.homebase</strong></a>
+    
+<p>Airbase the warehouse belongs to.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(WAREHOUSE).markerid" ><strong>WAREHOUSE.markerid</strong></a>
+    
+<p>ID of the warehouse marker at the airbase.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(WAREHOUSE).queue" ><strong>WAREHOUSE.queue</strong></a>
+    
+<p>Table holding all queued requests. Table entries are of type <a href="##(WAREHOUSE).Queueitem">WAREHOUSE.Queueitem</a>.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Zone.html##(ZONE)">Core.Zone#ZONE</a>
+<a id="#(WAREHOUSE).spawnzone" ><strong>WAREHOUSE.spawnzone</strong></a>
+    
+<p>Zone in which assets are spawned.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(WAREHOUSE).stock" ><strong>WAREHOUSE.stock</strong></a>
+    
+<p>Table holding all assets in stock. Table entries are of type <a href="##(WAREHOUSE).Stockitem">WAREHOUSE.Stockitem</a>.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE).version" ><strong>WAREHOUSE.version</strong></a>
+    
+<p>Warehouse class version.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE).wid" ><strong>WAREHOUSE.wid</strong></a>
+    
+<p>Identifier of the warehouse printed before other output to DCS.log file.</p>
+
+</div>
+
+</div>   
 </div>
 <div class="functions">
   <h3>Function(s)</h3>
 <div>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsAllCargoTransported')">
-<h6><a id="#(TASK_CARGO_TRANSPORT).IsAllCargoTransported" ><strong>TASK_CARGO_TRANSPORT:IsAllCargoTransported()</strong></a></h6>
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddAsset')">
+<h6><a id="#(WAREHOUSE).AddAsset" ><strong>WAREHOUSE:AddAsset(templategroupname, ngroups)</strong></a></h6>
 </div>
     
+<p>Add an airplane group to the warehouse stock.</p>
 
-
-<div id= "#Functions##IsAllCargoTransported" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
-    <div class="w3-row">
-      <div class="w3-half">
-        #boolean:
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(TASK_CARGO_TRANSPORT).New" ><strong>TASK_CARGO_TRANSPORT:New(Mission, SetGroup, TaskName, SetCargo, TaskBriefing)</strong></a></h6>
-</div>
-    
-<p>Instantiates a new TASK_CARGO_TRANSPORT.</p>
-
-<div id= "#Functions##New" class="w3-show w3-white">
+<div id= "#Functions##AddAsset" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
     <h5><strong>Parameters:</strong></h5>
       <div class="w3-row">
     </div>
       <div class="w3-row">
         <div class="w3-half">
-          <a href="Tasking.Mission.html##(MISSION)">Tasking.Mission#MISSION</a>
-        <strong>Mission</strong>
-        </div>
-        <div class="w3-half">
-          <p></p>
-        </div>
-    </div>
-      <div class="w3-row">
-        <div class="w3-half">
-          <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
-        <strong>SetGroup</strong>
-        </div>
-        <div class="w3-half">
-          
-<p>The set of groups for which the Task can be assigned.</p>
-
-        </div>
-    </div>
-      <div class="w3-row">
-        <div class="w3-half">
           #string
-        <strong>TaskName</strong>
+        <strong>templategroupname</strong>
         </div>
         <div class="w3-half">
           
-<p>The name of the Task.</p>
+<p>Name of the late activated template group as defined in the mission editor.</p>
 
         </div>
     </div>
       <div class="w3-row">
         <div class="w3-half">
-          <a href="Core.Set.html##(SET_CARGO)">Core.Set#SET_CARGO</a>
-        <strong>SetCargo</strong>
+          #number
+        <strong>ngroups</strong>
         </div>
         <div class="w3-half">
           
-<p>The scope of the cargo to be transported.</p>
-
-        </div>
-    </div>
-      <div class="w3-row">
-        <div class="w3-half">
-          #string
-        <strong>TaskBriefing</strong>
-        </div>
-        <div class="w3-half">
-          
-<p>The Cargo Task briefing.</p>
+<p>Number of groups to add to the warehouse stock. Default is 1.</p>
 
         </div>
     </div>
     <h5><strong>Return value:</strong></h5>
     <div class="w3-row">
       <div class="w3-half">
-        <a href="##(TASK_CARGO_TRANSPORT)">#TASK_CARGO_TRANSPORT</a>:
+        <a href="##(WAREHOUSE)">#WAREHOUSE</a>:
       </div>
       <div class="w3-half">
         
@@ -1493,20 +1527,99 @@ By doing this, cargo transport tasking will become a dynamic experience.</p>
 <div>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportOrder')">
-<h6><a id="#(TASK_CARGO_TRANSPORT).ReportOrder" ><strong>TASK_CARGO_TRANSPORT:ReportOrder(ReportGroup)</strong></a></h6>
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddRequest')">
+<h6><a id="#(WAREHOUSE).AddRequest" ><strong>WAREHOUSE:AddRequest(Airbase, AssetDescriptor, AssetDescriptorValue, nAsset, TransportType, nTransport, Prio, airbase)</strong></a></h6>
 </div>
     
+<p>On before "Request" event.</p>
 
+    
+<p>Checks if the request can be fullfilled.</p>
 
-<div id= "#Functions##ReportOrder" class="w3-show w3-white">
+<div id= "#Functions##AddRequest" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h5><strong>Parameters:</strong></h5>
       <div class="w3-row">
     </div>
       <div class="w3-row">
         <div class="w3-half">
-        <strong>ReportGroup</strong>
+          <a href="Wrapper.Airbase.html##(AIRBASE)">Wrapper.Airbase#AIRBASE</a>
+        <strong>Airbase</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>airbase requesting supply.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(WAREHOUSE.Descriptor)">#WAREHOUSE.Descriptor</a>
+        <strong>AssetDescriptor</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Descriptor describing the asset that is requested.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>AssetDescriptorValue</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Value of the asset descriptor. Type depends on descriptor, i.e. could be a string, etc.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>nAsset</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Number of groups requested that match the asset specification.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(WAREHOUSE.TransportType)">#WAREHOUSE.TransportType</a>
+        <strong>TransportType</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Type of transport.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>nTransport</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Number of transport units requested.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Prio</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Priority of the request. Number ranging from 1=high to 100=low.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>airbase</strong>
         </div>
         <div class="w3-half">
           <p></p>
@@ -1521,48 +1634,1174 @@ By doing this, cargo transport tasking will become a dynamic experience.</p>
 <div>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onafterGoal')">
-<h6><a id="#(TASK_CARGO_TRANSPORT).onafterGoal" ><strong>TASK_CARGO_TRANSPORT:onafterGoal(TaskUnit, From, Event, To)</strong></a></h6>
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Delivered')">
+<h6><a id="#(WAREHOUSE).Delivered" ><strong>WAREHOUSE:Delivered(group)</strong></a></h6>
 </div>
     
+<p>Triggers the FSM event "Delivered".</p>
 
+    
+<p>A group has been delivered from the warehouse to another airbase or warehouse.</p>
 
-<div id= "#Functions##onafterGoal" class="w3-show w3-white">
+<div id= "#Functions##Delivered" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+        <strong>group</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Group that was delivered.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetStockInfo')">
+<h6><a id="#(WAREHOUSE).GetStockInfo" ><strong>WAREHOUSE:GetStockInfo(stock)</strong></a></h6>
+</div>
+    
+<p>Returns the number of assets for each generalized attribute.</p>
+
+<div id= "#Functions##GetStockInfo" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>stock</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The stock of the warehouse.</p>
+
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        #table:
+      </div>
+      <div class="w3-half">
+        
+<p>Data table holding the numbers.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##NewAirbase')">
+<h6><a id="#(WAREHOUSE).NewAirbase" ><strong>WAREHOUSE:NewAirbase(airbase)</strong></a></h6>
+</div>
+    
+<p>WAREHOUSE constructor.</p>
+
+    
+<p>Creates a new WAREHOUSE object accociated with an airbase.</p>
+
+<div id= "#Functions##NewAirbase" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Airbase.html##(AIRBASE)">Wrapper.Airbase#AIRBASE</a>
+        <strong>airbase</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The airbase at which the warehouse is constructed.</p>
+
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(WAREHOUSE)">#WAREHOUSE</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Request')">
+<h6><a id="#(WAREHOUSE).Request" ><strong>WAREHOUSE:Request(Request)</strong></a></h6>
+</div>
+    
+<p>Triggers the FSM event "Request".</p>
+
+    
+<p>Executes a request if possible.</p>
+
+<div id= "#Functions##Request" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(WAREHOUSE.Queueitem)">#WAREHOUSE.Queueitem</a>
+        <strong>Request</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Information table of the request.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetSpawnZone')">
+<h6><a id="#(WAREHOUSE).SetSpawnZone" ><strong>WAREHOUSE:SetSpawnZone(zone)</strong></a></h6>
+</div>
+    
+<p>Set a zone where the (ground) assets of the warehouse are spawned once requested.</p>
+
+<div id= "#Functions##SetSpawnZone" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Zone.html##(ZONE)">Core.Zone#ZONE</a>
+        <strong>zone</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The spawn zone.</p>
+
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(WAREHOUSE)">#WAREHOUSE</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Start')">
+<h6><a id="#(WAREHOUSE).Start" ><strong>WAREHOUSE:Start()</strong></a></h6>
+</div>
+    
+<p>Triggers the FSM event "Start".</p>
+
+    
+<p>Starts the warehouse.</p>
+
+<div id= "#Functions##Start" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Status')">
+<h6><a id="#(WAREHOUSE).Status" ><strong>WAREHOUSE:Status()</strong></a></h6>
+</div>
+    
+<p>Triggers the FSM event "Status".</p>
+
+    
+<p>Queue is updated and requests are executed.</p>
+
+<div id= "#Functions##Status" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_Arrived')">
+<h6><a id="#(WAREHOUSE)._Arrived" ><strong>WAREHOUSE._Arrived(Group, self)</strong></a></h6>
+</div>
+    
+<p>Task function for last waypoint.</p>
+
+    
+<p>Triggering the Delivered event.</p>
+
+<div id= "#Functions##_Arrived" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+        <strong>Group</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The group that arrived.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(WAREHOUSE)">#WAREHOUSE</a>
+        <strong>self</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_CheckQueue')">
+<h6><a id="#(WAREHOUSE)._CheckQueue" ><strong>WAREHOUSE:_CheckQueue()</strong></a></h6>
+</div>
+    
+<p>Sorts the queue and checks if the request can be fullfilled.</p>
+
+<div id= "#Functions##_CheckQueue" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(WAREHOUSE.Queueitem)">#WAREHOUSE.Queueitem</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>Chosen request.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_DeleteQueueItem')">
+<h6><a id="#(WAREHOUSE)._DeleteQueueItem" ><strong>WAREHOUSE:_DeleteQueueItem(_uid)</strong></a></h6>
+</div>
+    
+<p>Delete item from queue.</p>
+
+<div id= "#Functions##_DeleteQueueItem" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>_uid</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The id of the item to be deleted.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_DeleteStockItem')">
+<h6><a id="#(WAREHOUSE)._DeleteStockItem" ><strong>WAREHOUSE:_DeleteStockItem(_uid)</strong></a></h6>
+</div>
+    
+<p>Delete item from stock.</p>
+
+<div id= "#Functions##_DeleteStockItem" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>_uid</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The unique id of the item to be deleted.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_DisplayStockItems')">
+<h6><a id="#(WAREHOUSE)._DisplayStockItems" ><strong>WAREHOUSE:_DisplayStockItems(stock)</strong></a></h6>
+</div>
+    
+<p>Filter stock assets by table entry.</p>
+
+<div id= "#Functions##_DisplayStockItems" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>stock</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Table holding all assets in stock of the warehouse. Each entry is of type <a href="##(WAREHOUSE).Stockitem">WAREHOUSE.Stockitem</a>.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_FilterStock')">
+<h6><a id="#(WAREHOUSE)._FilterStock" ><strong>WAREHOUSE:_FilterStock(stock, item, value)</strong></a></h6>
+</div>
+    
+<p>Filter stock assets by table entry.</p>
+
+<div id= "#Functions##_FilterStock" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
     <h5><strong>Parameters:</strong></h5>
       <div class="w3-row">
     </div>
       <div class="w3-row">
         <div class="w3-half">
-        <strong>TaskUnit</strong>
+          #table
+        <strong>stock</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Table holding all assets in stock of the warehouse. Each entry is of type <a href="##(WAREHOUSE).Stockitem">WAREHOUSE.Stockitem</a>.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>item</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Descriptor</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>value</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Value of the descriptor.</p>
+
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        #table:
+      </div>
+      <div class="w3-half">
+        
+<p>Filtered stock items table.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_GetAttribute')">
+<h6><a id="#(WAREHOUSE)._GetAttribute" ><strong>WAREHOUSE:_GetAttribute(groupname)</strong></a></h6>
+</div>
+    
+<p>Get the generalized attribute of a group.</p>
+
+<div id= "#Functions##_GetAttribute" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>groupname</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Name of the group.</p>
+
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(WAREHOUSE.Attribute)">#WAREHOUSE.Attribute</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>Generalized attribute of the group.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_HasAttribute')">
+<h6><a id="#(WAREHOUSE)._HasAttribute" ><strong>WAREHOUSE:_HasAttribute(groupname, attribute)</strong></a></h6>
+</div>
+    
+<p>Check if a group has a generalized attribute.</p>
+
+<div id= "#Functions##_HasAttribute" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>groupname</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Name of the group.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(WAREHOUSE.Attribute)">#WAREHOUSE.Attribute</a>
+        <strong>attribute</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Attribute to check.</p>
+
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+<p>True if group has the specified attribute.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_PrintQueue')">
+<h6><a id="#(WAREHOUSE)._PrintQueue" ><strong>WAREHOUSE:_PrintQueue()</strong></a></h6>
+</div>
+    
+<p>Prints the queue to DCS.log file.</p>
+
+<div id= "#Functions##_PrintQueue" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_RouteAir')">
+<h6><a id="#(WAREHOUSE)._RouteAir" ><strong>WAREHOUSE:_RouteAir(Airplane, ToAirbase, Speed, Aircraft)</strong></a></h6>
+</div>
+    
+<p>Route the airplane from one airbase another.</p>
+
+<div id= "#Functions##_RouteAir" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+        <strong>Airplane</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Airplane group to be routed.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Airbase.html##(AIRBASE)">Wrapper.Airbase#AIRBASE</a>
+        <strong>ToAirbase</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Destination airbase.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Speed</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Speed in km/h. Default is 80% of max possible speed the group can do.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Aircraft</strong>
         </div>
         <div class="w3-half">
           <p></p>
         </div>
     </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_RouteGround')">
+<h6><a id="#(WAREHOUSE)._RouteGround" ><strong>WAREHOUSE:_RouteGround(Group, Coordinate, Speed)</strong></a></h6>
+</div>
+    
+<p>Route ground units to destination.</p>
+
+<div id= "#Functions##_RouteGround" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
       <div class="w3-row">
         <div class="w3-half">
+          <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+        <strong>Group</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The ground group.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+        <strong>Coordinate</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>of the destination.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Speed</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Speed in km/h to drive to the destination coordinate. Default is 60% of max possible speed the unit can go.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_SortQueue')">
+<h6><a id="#(WAREHOUSE)._SortQueue" ><strong>WAREHOUSE:_SortQueue()</strong></a></h6>
+</div>
+    
+<p>Sort requests queue wrt prio and request uid.</p>
+
+<div id= "#Functions##_SortQueue" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##__Delivered')">
+<h6><a id="#(WAREHOUSE).__Delivered" ><strong>WAREHOUSE:__Delivered(delay, group)</strong></a></h6>
+</div>
+    
+<p>Triggers the FSM event "Delivered" after a delay.</p>
+
+    
+<p>A group has been delivered from the warehouse to another airbase or warehouse.</p>
+
+<div id= "#Functions##__Delivered" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>delay</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Delay in seconds.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+        <strong>group</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Group that was delivered.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##__Request')">
+<h6><a id="#(WAREHOUSE).__Request" ><strong>WAREHOUSE:__Request(Delay, Request)</strong></a></h6>
+</div>
+    
+<p>Triggers the FSM event "Request" after a delay.</p>
+
+    
+<p>Executes a request if possible.</p>
+
+<div id= "#Functions##__Request" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Delay</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Delay in seconds.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(WAREHOUSE.Queueitem)">#WAREHOUSE.Queueitem</a>
+        <strong>Request</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Information table of the request.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##__Start')">
+<h6><a id="#(WAREHOUSE).__Start" ><strong>WAREHOUSE:__Start(delay)</strong></a></h6>
+</div>
+    
+<p>Triggers the FSM event "Start" after a delay.</p>
+
+    
+<p>Starts the warehouse.</p>
+
+<div id= "#Functions##__Start" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>delay</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Delay in seconds.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##__Status')">
+<h6><a id="#(WAREHOUSE).__Status" ><strong>WAREHOUSE:__Status(delay)</strong></a></h6>
+</div>
+    
+<p>Triggers the FSM event "Status" after a delay.</p>
+
+    
+<p>Queue is updated and requests are executed.</p>
+
+<div id= "#Functions##__Status" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>delay</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Delay in seconds.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onafterDelivered')">
+<h6><a id="#(WAREHOUSE).onafterDelivered" ><strong>WAREHOUSE:onafterDelivered(From, Event, To, Group)</strong></a></h6>
+</div>
+    
+<p>Warehouse</p>
+
+<div id= "#Functions##onafterDelivered" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
         <strong>From</strong>
         </div>
         <div class="w3-half">
-          <p></p>
+          
+<p>From state.</p>
+
         </div>
     </div>
       <div class="w3-row">
         <div class="w3-half">
+          #string
         <strong>Event</strong>
         </div>
         <div class="w3-half">
-          <p></p>
+          
+<p>Event.</p>
+
         </div>
     </div>
       <div class="w3-row">
         <div class="w3-half">
+          #string
         <strong>To</strong>
         </div>
         <div class="w3-half">
-          <p></p>
+          
+<p>To state.</p>
+
         </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+        <strong>Group</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The group that was delivered.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onafterRequest')">
+<h6><a id="#(WAREHOUSE).onafterRequest" ><strong>WAREHOUSE:onafterRequest(From, Event, To, Request)</strong></a></h6>
+</div>
+    
+<p>On after "Request" event.</p>
+
+    
+<p>Initiates the transport of the assets to the requesting airbase.</p>
+
+<div id= "#Functions##onafterRequest" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>From</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>From state.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>To</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>To state.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(WAREHOUSE.Queueitem)">#WAREHOUSE.Queueitem</a>
+        <strong>Request</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Information table of the request.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onafterStart')">
+<h6><a id="#(WAREHOUSE).onafterStart" ><strong>WAREHOUSE:onafterStart(From, Event, To)</strong></a></h6>
+</div>
+    
+<p>Warehouse</p>
+
+<div id= "#Functions##onafterStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>From</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>From state.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>To</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>To state.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onafterStatus')">
+<h6><a id="#(WAREHOUSE).onafterStatus" ><strong>WAREHOUSE:onafterStatus(From, Event, To)</strong></a></h6>
+</div>
+    
+<p>Warehouse</p>
+
+<div id= "#Functions##onafterStatus" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>From</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>From state.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>To</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>To state.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onbeforeRequest')">
+<h6><a id="#(WAREHOUSE).onbeforeRequest" ><strong>WAREHOUSE:onbeforeRequest(From, Event, To, Request)</strong></a></h6>
+</div>
+    
+<p>On before "Request" event.</p>
+
+    
+<p>Checks if the request can be fullfilled.</p>
+
+<div id= "#Functions##onbeforeRequest" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>From</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>From state.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>To</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>To state.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(WAREHOUSE.Queueitem)">#WAREHOUSE.Queueitem</a>
+        <strong>Request</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Information table of the request.</p>
+
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+<p>If true, request is granted.</p>
+
+      </div>
     </div>
 </div>
 
@@ -1574,10 +2813,509 @@ By doing this, cargo transport tasking will become a dynamic experience.</p>
 </div>
 
   </div>
+  <div onclick="myFunction('#Types##WAREHOUSE.Attribute')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(WAREHOUSE.Attribute)">Type <strong>WAREHOUSE.Attribute</strong></a></h2></div>
+  <div id= "#Types##WAREHOUSE.Attribute" class="w3-container w3-white w3-padding-16" id="module_other_types">
+    <div class="w3-white" id="record_type">
+  
+<p>Warehouse unit categories.</p>
+
+  
+<p>These are used for</p>
+
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Attribute).ARTILLERY" ><strong>WAREHOUSE.Attribute.ARTILLERY</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Attribute).ATTACKHELICOPTER" ><strong>WAREHOUSE.Attribute.ATTACKHELICOPTER</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Attribute).AWACS" ><strong>WAREHOUSE.Attribute.AWACS</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Attribute).BOMBER" ><strong>WAREHOUSE.Attribute.BOMBER</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Attribute).FIGHTER" ><strong>WAREHOUSE.Attribute.FIGHTER</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Attribute).INFANTRY" ><strong>WAREHOUSE.Attribute.INFANTRY</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Attribute).OTHER" ><strong>WAREHOUSE.Attribute.OTHER</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Attribute).SHIP" ><strong>WAREHOUSE.Attribute.SHIP</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Attribute).TANK" ><strong>WAREHOUSE.Attribute.TANK</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Attribute).TANKER" ><strong>WAREHOUSE.Attribute.TANKER</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Attribute).TRANSPORT_APC" ><strong>WAREHOUSE.Attribute.TRANSPORT_APC</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Attribute).TRANSPORT_HELO" ><strong>WAREHOUSE.Attribute.TRANSPORT_HELO</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Attribute).TRANSPORT_PLANE" ><strong>WAREHOUSE.Attribute.TRANSPORT_PLANE</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Attribute).TRUCK" ><strong>WAREHOUSE.Attribute.TRUCK</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+</div>  
+</div>
+
+  </div>
+  <div onclick="myFunction('#Types##WAREHOUSE.Descriptor')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(WAREHOUSE.Descriptor)">Type <strong>WAREHOUSE.Descriptor</strong></a></h2></div>
+  <div id= "#Types##WAREHOUSE.Descriptor" class="w3-container w3-white w3-padding-16" id="module_other_types">
+    <div class="w3-white" id="record_type">
+  
+<p>Descriptors enumerator describing the type of the asset in stock.</p>
+
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Descriptor).ATTRIBUTE" ><strong>WAREHOUSE.Descriptor.ATTRIBUTE</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Descriptor).CATEGORY" ><strong>WAREHOUSE.Descriptor.CATEGORY</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Descriptor).ID" ><strong>WAREHOUSE.Descriptor.ID</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Descriptor).TEMPLATENAME" ><strong>WAREHOUSE.Descriptor.TEMPLATENAME</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Descriptor).UNITTYPE" ><strong>WAREHOUSE.Descriptor.UNITTYPE</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+</div>  
+</div>
+
+  </div>
+  <div onclick="myFunction('#Types##WAREHOUSE.Queueitem')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(WAREHOUSE.Queueitem)">Type <strong>WAREHOUSE.Queueitem</strong></a></h2></div>
+  <div id= "#Types##WAREHOUSE.Queueitem" class="w3-container w3-white w3-padding-16" id="module_other_types">
+    <div class="w3-white" id="record_type">
+  
+<p>Item of the warehouse queue table.</p>
+
+  
+<p>queueitem={uid=self.qid, prio=Prio, airbase=Airbase, assetdesc=AssetDescriptor, assetdescval=AssetDescriptorValue, nasset=nAsset, transporttype=TransportType, ntransport=nTransport}</p>
+
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Wrapper.Airbase.html##(AIRBASE)">Wrapper.Airbase#AIRBASE</a>
+<a id="#(WAREHOUSE.Queueitem).airbase" ><strong>WAREHOUSE.Queueitem.airbase</strong></a>
+    
+<p>Requesting airbase.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="##(WAREHOUSE.Descriptor)">#WAREHOUSE.Descriptor</a>
+<a id="#(WAREHOUSE.Queueitem).assetdesc" ><strong>WAREHOUSE.Queueitem.assetdesc</strong></a>
+    
+<p>Descriptor of the requested asset.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="DCS.html##(Airbase.Category)">DCS#Airbase.Category</a>
+<a id="#(WAREHOUSE.Queueitem).category" ><strong>WAREHOUSE.Queueitem.category</strong></a>
+    
+<p>Category of the requesting airbase, i.e. airdrome, helipad/farp or ship.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(WAREHOUSE.Queueitem).nasset" ><strong>WAREHOUSE.Queueitem.nasset</strong></a>
+    
+<p>Number of asset groups requested.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(WAREHOUSE.Queueitem).ntransport" ><strong>WAREHOUSE.Queueitem.ntransport</strong></a>
+    
+<p>Number of transport units requested.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(WAREHOUSE.Queueitem).prio" ><strong>WAREHOUSE.Queueitem.prio</strong></a>
+    
+<p>Priority of the request.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="##(WAREHOUSE.TransportType)">#WAREHOUSE.TransportType</a>
+<a id="#(WAREHOUSE.Queueitem).transporttype" ><strong>WAREHOUSE.Queueitem.transporttype</strong></a>
+    
+<p>Transport unit type.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(WAREHOUSE.Queueitem).uid" ><strong>WAREHOUSE.Queueitem.uid</strong></a>
+    
+<p>Unique id of the queue item.</p>
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+</div>  
+</div>
+
+  </div>
+  <div onclick="myFunction('#Types##WAREHOUSE.Stockitem')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(WAREHOUSE.Stockitem)">Type <strong>WAREHOUSE.Stockitem</strong></a></h2></div>
+  <div id= "#Types##WAREHOUSE.Stockitem" class="w3-container w3-white w3-padding-16" id="module_other_types">
+    <div class="w3-white" id="record_type">
+  
+<p>Item of the warehouse stock table.</p>
+
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="##(WAREHOUSE.Attribute)">#WAREHOUSE.Attribute</a>
+<a id="#(WAREHOUSE.Stockitem).attribute" ><strong>WAREHOUSE.Stockitem.attribute</strong></a>
+    
+<p>Generalized attribute of the group.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="DCS.html##(Group.Category)">DCS#Group.Category</a>
+<a id="#(WAREHOUSE.Stockitem).category" ><strong>WAREHOUSE.Stockitem.category</strong></a>
+    
+<p>Category of the group.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(WAREHOUSE.Stockitem).id" ><strong>WAREHOUSE.Stockitem.id</strong></a>
+    
+<p>Unique id of the asset.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Stockitem).templatename" ><strong>WAREHOUSE.Stockitem.templatename</strong></a>
+    
+<p>Name of the template group.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Stockitem).unittype" ><strong>WAREHOUSE.Stockitem.unittype</strong></a>
+    
+<p>Type of the first unit of the group as obtained by the Object.getTypeName() DCS API function.</p>
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+</div>  
+</div>
+
+  </div>
+  <div onclick="myFunction('#Types##WAREHOUSE.TransportType')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(WAREHOUSE.TransportType)">Type <strong>WAREHOUSE.TransportType</strong></a></h2></div>
+  <div id= "#Types##WAREHOUSE.TransportType" class="w3-container w3-white w3-padding-16" id="module_other_types">
+    <div class="w3-white" id="record_type">
+  
+<p>Cargo transport type.</p>
+
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.TransportType).AIRPLANE" ><strong>WAREHOUSE.TransportType.AIRPLANE</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.TransportType).APC" ><strong>WAREHOUSE.TransportType.APC</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.TransportType).HELICOPTER" ><strong>WAREHOUSE.TransportType.HELICOPTER</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.TransportType).SELFPROPELLED" ><strong>WAREHOUSE.TransportType.SELFPROPELLED</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.TransportType).SHIP" ><strong>WAREHOUSE.TransportType.SHIP</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.TransportType).TRAIN" ><strong>WAREHOUSE.TransportType.TRAIN</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+</div>  
+</div>
+
+  </div>
 </div>
 <script>
 function myLoadFunction() {
-    document.getElementById("myHeader").style.backgroundImage = "url('../Images/Task_Cargo_Transport.JPG')";
+    document.getElementById("myHeader").style.backgroundImage = "url('../Images/Warehouse.JPG')";
 }
 </script>
 
