@@ -805,11 +805,11 @@ for further explanation and examples.</p>
      <div class="w3-col s12 m6 l4">
        <div class="w3-card-4 w3-white w3-margin">
          <div class="w3-display-container w3-text-white w3-text-shadow">
-           <img src= "../Images/Warehouse.JPG" alt="Image" style="height-min:120px;">
+           <img src= "../Images/MOOSE.JPG" alt="Image" style="height-min:120px;">
            <div class="w3-display-bottommiddle w3-container style="word-break:break-word;"><h3><strong><a href="Functional.Warehouse.html">Functional.Warehouse</a></strong></h3></div>
          </div>
          <div class="w3-padding-large w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Functional</strong> - (R2.4) - Manages assets of an airbase and transportation to other airbases upon request.</p>
+<p><strong>Functional</strong> - (R2.5) - Simulation of logistic operations.</p>
 </p></div>
          
        </div>         
@@ -1583,6 +1583,9 @@ can be used to switch off the initial delay. Because there is no delay by defaul
     
 
 
+    
+<p> Don't repeat the group from Take-Off till Landing and back Take-Off by ReSpawning.</p>
+
 </div>
 
 </div>   
@@ -1807,17 +1810,6 @@ can be used to switch off the initial delay. Because there is no delay by defaul
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(SPAWN).SpawnInitLivery" ><strong>SPAWN.SpawnInitLivery</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(SPAWN).SpawnIsScheduled" ><strong>SPAWN.SpawnIsScheduled</strong></a>
     
@@ -1987,7 +1979,7 @@ can be used to switch off the initial delay. Because there is no delay by defaul
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #boolean
 <a id="#(SPAWN).SpawnUnControlled" ><strong>SPAWN.SpawnUnControlled</strong></a>
     
 
@@ -2004,7 +1996,7 @@ can be used to switch off the initial delay. Because there is no delay by defaul
 
 
     
-<p> Flag that indicates if all the Groups of the SpawnGroup need to be visible when Spawned.</p>
+<p> When the first Spawn executes, all the Groups need to be made visible before start.</p>
 
 </div>
 
@@ -2049,7 +2041,29 @@ can be used to switch off the initial delay. Because there is no delay by defaul
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
+<a id="#(SPAWN).livery_id" ><strong>SPAWN.livery_id</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
 <a id="#(SPAWN).skill" ><strong>SPAWN.skill</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).uncontrolled" ><strong>SPAWN.uncontrolled</strong></a>
     
 
 
@@ -2578,7 +2592,7 @@ Spawn_Helicopter:InitCleanUp( 20 )  -- CleanUp the spawning of the helicopters e
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##InitCoalition')">
-<h6><a id="#(SPAWN).InitCoalition" ><strong>SPAWN:InitCoalition(Coaliton, Coalition)</strong></a></h6>
+<h6><a id="#(SPAWN).InitCoalition" ><strong>SPAWN:InitCoalition(Coalition)</strong></a></h6>
 </div>
     
 <p>Sets the coalition of the spawned group.</p>
@@ -2588,26 +2602,18 @@ Spawn_Helicopter:InitCleanUp( 20 )  -- CleanUp the spawning of the helicopters e
 
 <div id= "#Functions##InitCoalition" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h5><strong>Parameter:</strong></h5>
       <div class="w3-row">
     </div>
       <div class="w3-row">
         <div class="w3-half">
-          <a href="##(DCS.coalition)">#DCS.coalition</a>
-        <strong>Coaliton</strong>
-        </div>
-        <div class="w3-half">
-          
-<p>Coaliton of the group as number of enumerator, i.e. 0=coaliton.side.NEUTRAL, 1=coaliton.side.RED, 2=coalition.side.BLUE.</p>
-
-        </div>
-    </div>
-      <div class="w3-row">
-        <div class="w3-half">
+          <a href="DCS.html##(coalition.side)">DCS#coalition.side</a>
         <strong>Coalition</strong>
         </div>
         <div class="w3-half">
-          <p></p>
+          
+<p>Coalition of the group as number of enumerator, i.e. 0=coaliton.side.NEUTRAL, 1=coaliton.side.RED, 2=coalition.side.BLUE.</p>
+
         </div>
     </div>
     <h5><strong>Return value:</strong></h5>
@@ -4057,7 +4063,7 @@ local SpawnObject = SPAWN
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SpawnAtAirbase')">
-<h6><a id="#(SPAWN).SpawnAtAirbase" ><strong>SPAWN:SpawnAtAirbase(SpawnAirbase, Takeoff, TakeoffAltitude, TerminalType, EmergencyAirSpawn)</strong></a></h6>
+<h6><a id="#(SPAWN).SpawnAtAirbase" ><strong>SPAWN:SpawnAtAirbase(SpawnAirbase, Takeoff, TakeoffAltitude, TerminalType, EmergencyAirSpawn, Parkingdata)</strong></a></h6>
 </div>
     
 <p>Will spawn a group at an <a href="Wrapper.Airbase.html">Wrapper.Airbase</a>.</p>
@@ -4142,6 +4148,17 @@ You need to provide the <strong>exact name</strong> of the airbase as the parame
         <div class="w3-half">
           
 <p>(optional) If true (default), groups are spawned in air if there is no parking spot at the airbase. If false, nothing is spawned if no parking spot is available.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>Parkingdata</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) Table holding the coordinates and terminal ids for all units of the group. Spawning will be forced to happen at exactily these spots!</p>
 
         </div>
     </div>

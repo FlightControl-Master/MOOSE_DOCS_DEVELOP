@@ -805,11 +805,11 @@ for further explanation and examples.</p>
      <div class="w3-col s12 m6 l4">
        <div class="w3-card-4 w3-white w3-margin">
          <div class="w3-display-container w3-text-white w3-text-shadow">
-           <img src= "../Images/Warehouse.JPG" alt="Image" style="height-min:120px;">
+           <img src= "../Images/MOOSE.JPG" alt="Image" style="height-min:120px;">
            <div class="w3-display-bottommiddle w3-container style="word-break:break-word;"><h3><strong><a href="Functional.Warehouse.html">Functional.Warehouse</a></strong></h3></div>
          </div>
          <div class="w3-padding-large w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Functional</strong> - (R2.4) - Manages assets of an airbase and transportation to other airbases upon request.</p>
+<p><strong>Functional</strong> - (R2.5) - Simulation of logistic operations.</p>
 </p></div>
          
        </div>         
@@ -1387,7 +1387,18 @@ Use the following Zone validation methods on the group:</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -1426,10 +1437,21 @@ Use the following Zone validation methods on the group:</p>
 <h6><a id="#(GROUP).Activate" ><strong>GROUP:Activate()</strong></a></h6>
 </div>
     
-<p>Activates a GROUP.</p>
+<p>Activates a late activated GROUP.</p>
 
 <div id= "#Functions##Activate" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(GROUP)">#GROUP</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
@@ -1887,6 +1909,48 @@ Ship:Destroy( false ) -- Don't generate an event upon destruction.
       <div class="w3-half">
         
 <p>The country identifier or nil if the DCS Group is not existing or alive.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetDCSDesc')">
+<h6><a id="#(GROUP).GetDCSDesc" ><strong>GROUP:GetDCSDesc(n)</strong></a></h6>
+</div>
+    
+<p>Returns the DCS descriptor table of the nth unit of the group.</p>
+
+<div id= "#Functions##GetDCSDesc" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>n</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(Optional) The number of the unit for which the dscriptor is returned.</p>
+
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="DCS.html##(Object.Desc)">DCS#Object.Desc</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>The descriptor of the first unit of the group or #nil if the group does not exist any more.   </p>
 
       </div>
     </div>
@@ -2565,6 +2629,37 @@ amount of fuel in the group.</p>
 <div>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetRange')">
+<h6><a id="#(GROUP).GetRange" ><strong>GROUP:GetRange()</strong></a></h6>
+</div>
+    
+<p>Returns the maximum range of the group.</p>
+
+    
+<p>If the group is heterogenious and consists of different units, the smallest range of all units is returned.</p>
+
+<div id= "#Functions##GetRange" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>Range in meters.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetSize')">
 <h6><a id="#(GROUP).GetSize" ><strong>GROUP:GetSize()</strong></a></h6>
 </div>
@@ -3055,24 +3150,16 @@ amount of fuel in the group.</p>
 
 <div id= "#Functions##InAir" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return values:</strong></h5>
+    <h5><strong>Return value:</strong></h5>
     <div class="w3-row">
-        <div class="w3-half">
-          #boolean:
-        </div>
-        <div class="w3-half">
-          
-<p>true if in the first unit of the group is in the air.</p>
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+<p>true if in the first unit of the group is in the air or #nil if the GROUP is not existing or not alive.   </p>
 
-        </div>
-        <div class="w3-half">
-          #nil:
-        </div>
-        <div class="w3-half">
-          
-<p>The GROUP is not existing or not alive.  </p>
-
-        </div>
+      </div>
     </div>
 </div>
 

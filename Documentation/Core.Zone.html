@@ -805,11 +805,11 @@ for further explanation and examples.</p>
      <div class="w3-col s12 m6 l4">
        <div class="w3-card-4 w3-white w3-margin">
          <div class="w3-display-container w3-text-white w3-text-shadow">
-           <img src= "../Images/Warehouse.JPG" alt="Image" style="height-min:120px;">
+           <img src= "../Images/MOOSE.JPG" alt="Image" style="height-min:120px;">
            <div class="w3-display-bottommiddle w3-container style="word-break:break-word;"><h3><strong><a href="Functional.Warehouse.html">Functional.Warehouse</a></strong></h3></div>
          </div>
          <div class="w3-padding-large w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Functional</strong> - (R2.4) - Manages assets of an airbase and transportation to other airbases upon request.</p>
+<p><strong>Functional</strong> - (R2.5) - Simulation of logistic operations.</p>
 </p></div>
          
        </div>         
@@ -1584,26 +1584,6 @@ This class is an abstract BASE class for derived classes, and is not meant to be
 </div>
 
   </div>
-  <div class="w3-theme-d2 w3-margin-top ">
-    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##heading')">
-      <tr>
-        <td class="style="width:40%;"><p><h2>Global <strong>heading</strong></h2></p></td>
-        <td class="style="width:60%;">
-
-</td>
-      </tr>
-    </table>
-  </div>
-  <div id= "#Globals##heading" class="w3-container w3-white w3-padding-small">
-    <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<a id="heading" ><strong>heading</strong></a>
-    
-
-
-</div>
-
-  </div>
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>
   
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Core.Zone)" >Type <strong>Core.Zone</strong></a></h2></div>
@@ -1859,7 +1839,7 @@ This class is an abstract BASE class for derived classes, and is not meant to be
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(ZONE_AIRBASE).New" ><strong>ZONE_AIRBASE:New(ZoneName, ZoneAirbase, Radius, AirbaseName)</strong></a></h6>
+<h6><a id="#(ZONE_AIRBASE).New" ><strong>ZONE_AIRBASE:New(AirbaseName, Radius)</strong></a></h6>
 </div>
     
 <p>Constructor to create a ZONE_AIRBASE instance, taking the zone name, a zone <a href="Wrapper.Airbase.html##(AIRBASE)">Wrapper.Airbase#AIRBASE</a> and a radius.</p>
@@ -1872,22 +1852,11 @@ This class is an abstract BASE class for derived classes, and is not meant to be
       <div class="w3-row">
         <div class="w3-half">
           #string
-        <strong>ZoneName</strong>
+        <strong>AirbaseName</strong>
         </div>
         <div class="w3-half">
           
-<p>Name of the zone.</p>
-
-        </div>
-    </div>
-      <div class="w3-row">
-        <div class="w3-half">
-          <a href="Wrapper.Airbase.html##(AIRBASE)">Wrapper.Airbase#AIRBASE</a>
-        <strong>ZoneAirbase</strong>
-        </div>
-        <div class="w3-half">
-          
-<p>The <a href="Wrapper.Airbase.html">Wrapper.Airbase</a> as the center of the zone.</p>
+<p>Name of the airbase.</p>
 
         </div>
     </div>
@@ -1898,16 +1867,8 @@ This class is an abstract BASE class for derived classes, and is not meant to be
         </div>
         <div class="w3-half">
           
-<p>The radius of the zone.</p>
+<p>(Optional)The radius of the zone in meters. Default 4000 meters.</p>
 
-        </div>
-    </div>
-      <div class="w3-row">
-        <div class="w3-half">
-        <strong>AirbaseName</strong>
-        </div>
-        <div class="w3-half">
-          <p></p>
         </div>
     </div>
     <h5><strong>Return value:</strong></h5>
@@ -2697,6 +2658,7 @@ end
     </div>
       <div class="w3-row">
         <div class="w3-half">
+          #number
         <strong>ZoneProbability</strong>
         </div>
         <div class="w3-half">
@@ -2704,6 +2666,17 @@ end
 <p>A value between 0 and 1. 0 = 0% and 1 = 100% probability.</p>
 
         </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(ZONE_BASE)">#ZONE_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
     </div>
 </div>
 

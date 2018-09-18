@@ -805,11 +805,11 @@ for further explanation and examples.</p>
      <div class="w3-col s12 m6 l4">
        <div class="w3-card-4 w3-white w3-margin">
          <div class="w3-display-container w3-text-white w3-text-shadow">
-           <img src= "../Images/Warehouse.JPG" alt="Image" style="height-min:120px;">
+           <img src= "../Images/MOOSE.JPG" alt="Image" style="height-min:120px;">
            <div class="w3-display-bottommiddle w3-container style="word-break:break-word;"><h3><strong><a href="Functional.Warehouse.html">Functional.Warehouse</a></strong></h3></div>
          </div>
          <div class="w3-padding-large w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Functional</strong> - (R2.4) - Manages assets of an airbase and transportation to other airbases upon request.</p>
+<p><strong>Functional</strong> - (R2.5) - Simulation of logistic operations.</p>
 </p></div>
          
        </div>         
@@ -1205,7 +1205,7 @@ which are excellent tools to be reused in an OO environment!.</p>
 
 <h3>Author: <strong>FlightControl</strong></h3>
 
-<h3>Contributions:</h3>
+<h3>Contributions: <strong>funkyfranky</strong></h3>
 
 <hr/>
 
@@ -1442,26 +1442,10 @@ is implemented in the AIRBASE class as <a href="##(AIRBASE).GetName">AIRBASE.Get
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    <a href="##(AIRBASE.TerminalType)">#AIRBASE.TerminalType</a>
 <a id="#(AIRBASE).TerminalType" ><strong>AIRBASE.TerminalType</strong></a>
     
-<p>Terminal Types of parking spots.</p>
 
-    
-<p>See also https://wiki.hoggitworld.com/view/DCS_func_getParking</p>
-
-<p>Supported types are:</p>
-
-<ul>
-    <li>AIRBASE.TerminalType.Runway = 16: Valid spawn points on runway.</li>
-    <li>AIRBASE.TerminalType.HelicopterOnly = 40: Special spots for Helicopers.</li>
-    <li>AIRBASE.TerminalType.Shelter = 68: Hardened Air Shelter. Currently only on Caucaus map.</li>
-    <li>AIRBASE.TerminalType.OpenMed = 72: Open/Shelter air airplane only.</li>
-    <li>AIRBASE.TerminalType.OpenBig = 104: Open air spawn points. Generally larger but does not guarantee large aircraft are capable of spawning there.</li>
-    <li>AIRBASE.TerminalType.OpenMedOrBig = 176: Combines OpenMed and OpenBig spots.</li>
-    <li>AIRBASE.TerminalType.HelicopterUnsable = 216: Combines HelicopterOnly, OpenMed and OpenBig.</li>
-    <li>AIRBASE.TerminalType.FighterAircraft = 244: Combines Shelter. OpenMed and OpenBig spots. So effectively all spots usable by fixed wing aircraft.</li>
-</ul>
 
 </div>
 
@@ -1621,7 +1605,7 @@ is implemented in the AIRBASE class as <a href="##(AIRBASE).GetName">AIRBASE.Get
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##FindFreeParkingSpotForAircraft')">
-<h6><a id="#(AIRBASE).FindFreeParkingSpotForAircraft" ><strong>AIRBASE:FindFreeParkingSpotForAircraft(group, terminaltype, scanradius, scanunits, scanstatics, scanscenery, verysafe, nspots)</strong></a></h6>
+<h6><a id="#(AIRBASE).FindFreeParkingSpotForAircraft" ><strong>AIRBASE:FindFreeParkingSpotForAircraft(group, terminaltype, scanradius, scanunits, scanstatics, scanscenery, verysafe, nspots, parkingdata)</strong></a></h6>
 </div>
     
 <p>Seach unoccupied parking spots at the airbase for a specific group of aircraft.</p>
@@ -1720,6 +1704,17 @@ The dimension of the spawned aircraft and of the potential obstacle are taken in
         <div class="w3-half">
           
 <p>(Optional) Number of freeparking spots requested. Default is the number of aircraft in the group. </p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>parkingdata</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(Optional) Parking spots data table. If not given it is automatically derived from the GetParkingSpotsTable() function.</p>
 
         </div>
     </div>
@@ -2330,6 +2325,229 @@ The dimension of the spawned aircraft and of the potential obstacle are taken in
 </div>
 
 </div>
+</div>  
+</div>
+
+  </div>
+  <div onclick="myFunction('#Types##AIRBASE.ParkingSpot')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AIRBASE.ParkingSpot)">Type <strong>AIRBASE.ParkingSpot</strong></a></h2></div>
+  <div id= "#Types##AIRBASE.ParkingSpot" class="w3-container w3-white w3-padding-16" id="module_other_types">
+    <div class="w3-white" id="record_type">
+  
+<p>AIRBASE.ParkingSpot ".Coordinate, ".TerminalID", ".TerminalType", ".TOAC", ".Free", ".TerminalID0", ".DistToRwy".</p>
+
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+<a id="#(AIRBASE.ParkingSpot).Coordinate" ><strong>AIRBASE.ParkingSpot.Coordinate</strong></a>
+    
+<p>Coordinate of the parking spot.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AIRBASE.ParkingSpot).DistToRwy" ><strong>AIRBASE.ParkingSpot.DistToRwy</strong></a>
+    
+<p>Distance to runway in meters. Currently bugged and giving the same number as the TerminalID.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AIRBASE.ParkingSpot).Free" ><strong>AIRBASE.ParkingSpot.Free</strong></a>
+    
+<p>This spot is currently free, i.e. there is no alive aircraft on it at the present moment.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AIRBASE.ParkingSpot).TOAC" ><strong>AIRBASE.ParkingSpot.TOAC</strong></a>
+    
+<p>Takeoff or landing aircarft. I.e. this stop is occupied currently by an aircraft until it took of or until it landed.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AIRBASE.ParkingSpot).TerminalID" ><strong>AIRBASE.ParkingSpot.TerminalID</strong></a>
+    
+<p>Terminal ID of the spot. Generally, this is not the same number as displayed in the mission editor.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AIRBASE.ParkingSpot).TerminalID0" ><strong>AIRBASE.ParkingSpot.TerminalID0</strong></a>
+    
+<p>Unknown what this means. If you know, please tell us!</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="##(AIRBASE.TerminalType)">#AIRBASE.TerminalType</a>
+<a id="#(AIRBASE.ParkingSpot).TerminalType" ><strong>AIRBASE.ParkingSpot.TerminalType</strong></a>
+    
+<p>Type of the spot, i.e. for which type of aircraft it can be used.</p>
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+</div>  
+</div>
+
+  </div>
+  <div onclick="myFunction('#Types##AIRBASE.TerminalType')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AIRBASE.TerminalType)">Type <strong>AIRBASE.TerminalType</strong></a></h2></div>
+  <div id= "#Types##AIRBASE.TerminalType" class="w3-container w3-white w3-padding-16" id="module_other_types">
+    <div class="w3-white" id="record_type">
+  
+<p>Terminal Types of parking spots.</p>
+
+  
+<p>See also https://wiki.hoggitworld.com/view/DCS_func_getParking</p>
+
+<p>Supported types are:</p>
+
+<ul>
+    <li>AIRBASE.TerminalType.Runway = 16: Valid spawn points on runway.</li>
+    <li>AIRBASE.TerminalType.HelicopterOnly = 40: Special spots for Helicopers.</li>
+    <li>AIRBASE.TerminalType.Shelter = 68: Hardened Air Shelter. Currently only on Caucaus map.</li>
+    <li>AIRBASE.TerminalType.OpenMed = 72: Open/Shelter air airplane only.</li>
+    <li>AIRBASE.TerminalType.OpenBig = 104: Open air spawn points. Generally larger but does not guarantee large aircraft are capable of spawning there.</li>
+    <li>AIRBASE.TerminalType.OpenMedOrBig = 176: Combines OpenMed and OpenBig spots.</li>
+    <li>AIRBASE.TerminalType.HelicopterUnsable = 216: Combines HelicopterOnly, OpenMed and OpenBig.</li>
+    <li>AIRBASE.TerminalType.FighterAircraft = 244: Combines Shelter. OpenMed and OpenBig spots. So effectively all spots usable by fixed wing aircraft.</li>
+</ul>
+
+
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AIRBASE.TerminalType).FighterAircraft" ><strong>AIRBASE.TerminalType.FighterAircraft</strong></a>
+    
+<p>244: Combines Shelter. OpenMed and OpenBig spots. So effectively all spots usable by fixed wing aircraft.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AIRBASE.TerminalType).HelicopterOnly" ><strong>AIRBASE.TerminalType.HelicopterOnly</strong></a>
+    
+<p>40: Special spots for Helicopers.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AIRBASE.TerminalType).HelicopterUnsable" ><strong>AIRBASE.TerminalType.HelicopterUnsable</strong></a>
+    
+<p>216: Combines HelicopterOnly, OpenMed and OpenBig.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AIRBASE.TerminalType).HelicopterUsable" ><strong>AIRBASE.TerminalType.HelicopterUsable</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AIRBASE.TerminalType).OpenBig" ><strong>AIRBASE.TerminalType.OpenBig</strong></a>
+    
+<p>104: Open air spawn points. Generally larger but does not guarantee large aircraft are capable of spawning there.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AIRBASE.TerminalType).OpenMed" ><strong>AIRBASE.TerminalType.OpenMed</strong></a>
+    
+<p>72: Open/Shelter air airplane only.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AIRBASE.TerminalType).OpenMedOrBig" ><strong>AIRBASE.TerminalType.OpenMedOrBig</strong></a>
+    
+<p>176: Combines OpenMed and OpenBig spots.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AIRBASE.TerminalType).Runway" ><strong>AIRBASE.TerminalType.Runway</strong></a>
+    
+<p>16: Valid spawn points on runway.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AIRBASE.TerminalType).Shelter" ><strong>AIRBASE.TerminalType.Shelter</strong></a>
+    
+<p>68: Hardened Air Shelter. Currently only on Caucaus map.</p>
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
 </div>  
 </div>
 
