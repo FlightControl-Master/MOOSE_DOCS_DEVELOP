@@ -1662,17 +1662,6 @@ Use <a href="##(AI_CARGO_DISPATCHER).SetHomeZone">AI_CARGO_DISPATCHER.SetHomeZon
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(AI_CARGO_DISPATCHER).DeployAirbasesSet" ><strong>AI_CARGO_DISPATCHER.DeployAirbasesSet</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
 <a id="#(AI_CARGO_DISPATCHER).DeployInnerRadius" ><strong>AI_CARGO_DISPATCHER.DeployInnerRadius</strong></a>
     
 
@@ -1750,17 +1739,6 @@ Use <a href="##(AI_CARGO_DISPATCHER).SetHomeZone">AI_CARGO_DISPATCHER.SetHomeZon
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(AI_CARGO_DISPATCHER).HomeBase" ><strong>AI_CARGO_DISPATCHER.HomeBase</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
 <a id="#(AI_CARGO_DISPATCHER).HomeZone" ><strong>AI_CARGO_DISPATCHER.HomeZone</strong></a>
     
 
@@ -1771,19 +1749,8 @@ Use <a href="##(AI_CARGO_DISPATCHER).SetHomeZone">AI_CARGO_DISPATCHER.SetHomeZon
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(AI_CARGO_DISPATCHER).MonitorTimeInterval" ><strong>AI_CARGO_DISPATCHER.MonitorTimeInterval</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_CARGO_DISPATCHER).PickupAirbasesSet" ><strong>AI_CARGO_DISPATCHER.PickupAirbasesSet</strong></a>
     
 
 
@@ -1931,99 +1898,6 @@ SetCarriers = SET_GROUP:New():FilterPrefixes( "APC" ):FilterStart()
 SetCargos = SET_CARGO:New():FilterTypes( "Infantry" ):FilterStart()
 SetDeployZone = SET_ZONE:New():FilterPrefixes( "Deploy" ):FilterStart()
 AICargoDispatcher = AI_CARGO_DISPATCHER:New( SetCarrier, SetCargo )
-</code></pre>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##NewWithAirbases')">
-<h6><a id="#(AI_CARGO_DISPATCHER).NewWithAirbases" ><strong>AI_CARGO_DISPATCHER:NewWithAirbases(SetCarrier, SetCargo, PickupAirbasesSet, DeployAirbasesSet, SetCarriers, SetCargos)</strong></a></h6>
-</div>
-    
-<p>Creates a new AI_CARGO_DISPATCHER object.</p>
-
-<div id= "#Functions##NewWithAirbases" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-        <div class="w3-half">
-          <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
-        <strong>SetCarrier</strong>
-        </div>
-        <div class="w3-half">
-          <p></p>
-        </div>
-    </div>
-      <div class="w3-row">
-        <div class="w3-half">
-          <a href="Core.Set.html##(SET_CARGO)">Core.Set#SET_CARGO</a>
-        <strong>SetCargo</strong>
-        </div>
-        <div class="w3-half">
-          <p></p>
-        </div>
-    </div>
-      <div class="w3-row">
-        <div class="w3-half">
-          <a href="Core.Set.html##(SET_AIRBASE)">Core.Set#SET_AIRBASE</a>
-        <strong>PickupAirbasesSet</strong>
-        </div>
-        <div class="w3-half">
-          <p></p>
-        </div>
-    </div>
-      <div class="w3-row">
-        <div class="w3-half">
-          <a href="Core.Set.html##(SET_AIRBASE)">Core.Set#SET_AIRBASE</a>
-        <strong>DeployAirbasesSet</strong>
-        </div>
-        <div class="w3-half">
-          <p></p>
-        </div>
-    </div>
-      <div class="w3-row">
-        <div class="w3-half">
-        <strong>SetCarriers</strong>
-        </div>
-        <div class="w3-half">
-          <p></p>
-        </div>
-    </div>
-      <div class="w3-row">
-        <div class="w3-half">
-        <strong>SetCargos</strong>
-        </div>
-        <div class="w3-half">
-          <p></p>
-        </div>
-    </div>
-    <h5><strong>Return value:</strong></h5>
-    <div class="w3-row">
-      <div class="w3-half">
-        <a href="##(AI_CARGO_DISPATCHER)">#AI_CARGO_DISPATCHER</a>:
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
-    </div>
-      <h5><strong>Usage:</strong></h5>
-    <pre class="example"><code>
--- Create a new cargo dispatcher
-SetCarriers = SET_GROUP:New():FilterPrefixes( "APC" ):FilterStart()
-SetCargos = SET_CARGO:New():FilterTypes( "Infantry" ):FilterStart()
-PickupAirbasesSet = SET_AIRBASES:New()
-DeployAirbasesSet = SET_AIRBASES:New()
-AICargoDispatcher = AI_CARGO_DISPATCHER:New( SetCarrier, SetCargo, PickupAirbasesSet, DeployAirbasesSet )
 </code></pre>
 
 </div>
@@ -3487,52 +3361,6 @@ AICargoDispatcher:SetDeploySpeed( 200, 100 )
 <div>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetHomeBase')">
-<h6><a id="#(AI_CARGO_DISPATCHER).SetHomeBase" ><strong>AI_CARGO_DISPATCHER:SetHomeBase(HomeBase)</strong></a></h6>
-</div>
-    
-<p>Set the home airbase.</p>
-
-    
-<p>This is for air units, i.e. helicopters and airplanes.
-When there is nothing anymore to pickup, the carriers will go back to their home base. They will await here new orders.</p>
-
-<div id= "#Functions##SetHomeBase" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
-      <div class="w3-row">
-    </div>
-      <div class="w3-row">
-        <div class="w3-half">
-          <a href="Wrapper.Airbase.html##(AIRBASE)">Wrapper.Airbase#AIRBASE</a>
-        <strong>HomeBase</strong>
-        </div>
-        <div class="w3-half">
-          
-<p>Airbase where the carriers will go after all pickup assignments are done.</p>
-
-        </div>
-    </div>
-    <h5><strong>Return value:</strong></h5>
-    <div class="w3-row">
-      <div class="w3-half">
-        <a href="##(AI_CARGO_DISPATCHER)">#AI_CARGO_DISPATCHER</a>:
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div>
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetHomeZone')">
 <h6><a id="#(AI_CARGO_DISPATCHER).SetHomeZone" ><strong>AI_CARGO_DISPATCHER:SetHomeZone(HomeZone)</strong></a></h6>
 </div>
@@ -3578,6 +3406,46 @@ local HomeZone = ZONE:New( "Home" )
 AICargoDispatcher:SetHomeZone( HomeZone )
 </code></pre>
 
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetMonitorTimeInterval')">
+<h6><a id="#(AI_CARGO_DISPATCHER).SetMonitorTimeInterval" ><strong>AI_CARGO_DISPATCHER:SetMonitorTimeInterval(MonitorTimeInterval)</strong></a></h6>
+</div>
+    
+<p>Set the monitor time interval.</p>
+
+<div id= "#Functions##SetMonitorTimeInterval" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameter:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>MonitorTimeInterval</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(AI_CARGO_DISPATCHER)">#AI_CARGO_DISPATCHER</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
 </div>
 
 </div>
