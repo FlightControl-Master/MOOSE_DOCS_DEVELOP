@@ -1334,8 +1334,9 @@ You can use this event handler to post messages to players, or provide status up
  -- @param Wrapper.Group#GROUP CarrierGroup The group object that contains the CarrierUnits.
  -- @param Core.Point#COORDINATE Coordinate The coordinate of the pickup location.
  -- @param #number Speed The velocity in meters per second on which the CarrierGroup is routed towards the pickup Coordinate.
+ -- @param #number Height Height in meters to move to the pickup coordinate.
  -- @param Core.Zone#ZONE_AIRBASE PickupZone (optional) The zone from where the cargo is picked up. Note that the zone is optional and may not be provided, but for AI_CARGO_DISPATCHER_AIRBASE there will always be a PickupZone, as the pickup location is an airbase zone.
- function CLASS:OnAfterPickup( From, Event, To, CarrierGroup, Coordinate, Speed, PickupZone )
+ function CLASS:OnAfterPickup( From, Event, To, CarrierGroup, Coordinate, Speed, Height, PickupZone )
 
    -- Write here your own code.
 
@@ -1462,8 +1463,9 @@ You can use this event handler to post messages to players, or provide status up
  -- @param Wrapper.Group#GROUP CarrierGroup The group object that contains the CarrierUnits.
  -- @param Core.Point#COORDINATE Coordinate The deploy coordinate.
  -- @param #number Speed The velocity in meters per second on which the CarrierGroup is routed towards the deploy Coordinate.
+ -- @param #number Height Height in meters to move to the deploy coordinate.
  -- @param Core.Zone#ZONE DeployZone The zone wherein the cargo is deployed. This can be any zone type, like a ZONE, ZONE_GROUP, ZONE_AIRBASE.
- function CLASS:OnAfterDeploy( From, Event, To, CarrierGroup, Coordinate, Speed, DeployZone )
+ function CLASS:OnAfterDeploy( From, Event, To, CarrierGroup, Coordinate, Speed, Height, DeployZone )
 
    -- Write here your own code.
 
@@ -1582,8 +1584,9 @@ You can use this event handler to post messages to players, or provide status up
  -- @param Wrapper.Group#GROUP CarrierGroup The group object that contains the CarrierUnits.
  -- @param Core.Point#COORDINATE Coordinate The home coordinate the Carrier will arrive and stop it's activities.
  -- @param #number Speed The velocity in meters per second on which the CarrierGroup is routed towards the home Coordinate.
+ -- @param #number Height Height in meters to move to the home coordinate.
  -- @param Core.Zone#ZONE HomeZone The zone wherein the carrier will return when all cargo has been transported. This can be any zone type, like a ZONE, ZONE_GROUP, ZONE_AIRBASE.
- function CLASS:OnAfterHome( From, Event, To, CarrierGroup, Coordinate, Speed, HomeZone )
+ function CLASS:OnAfterHome( From, Event, To, CarrierGroup, Coordinate, Speed, Height, HomeZone )
 
    -- Write here your own code.
 
@@ -1598,6 +1601,7 @@ You can use this event handler to post messages to players, or provide status up
 <ul>
     <li><a href="##(AI_CARGO_DISPATCHER).SetPickupRadius">AI_CARGO_DISPATCHER.SetPickupRadius</a>(): Sets or randomizes the pickup location for the carrier around the cargo coordinate in a radius defined an outer and optional inner radius. </li>
     <li><a href="##(AI_CARGO_DISPATCHER).SetPickupSpeed">AI_CARGO_DISPATCHER.SetPickupSpeed</a>(): Set the speed or randomizes the speed in km/h to pickup the cargo.</li>
+    <li><a href="##(AI_CARGO_DISPATCHER).SetPickupHeight">AI_CARGO_DISPATCHER.SetPickupHeight</a>(): Set the height or randomizes the height in meters to pickup the cargo.</li>
 </ul>
 
 <h1>4) Set the deploy parameters.</h1>
@@ -1607,6 +1611,7 @@ You can use this event handler to post messages to players, or provide status up
 <ul>
     <li><a href="##(AI_CARGO_DISPATCHER).SetDeployRadius">AI_CARGO_DISPATCHER.SetDeployRadius</a>(): Sets or randomizes the deploy location for the carrier around the cargo coordinate in a radius defined an outer and an optional inner radius. </li>
     <li><a href="##(AI_CARGO_DISPATCHER).SetDeploySpeed">AI_CARGO_DISPATCHER.SetDeploySpeed</a>(): Set the speed or randomizes the speed in km/h to deploy the cargo.</li>
+    <li><a href="##(AI_CARGO_DISPATCHER).SetDeployHeight">AI_CARGO_DISPATCHER.SetDeployHeight</a>(): Set the height or randomizes the height in meters to deploy the cargo.</li>
 </ul>
 
 <h1>5) Set the home zone when there isn't any more cargo to pickup.</h1>
@@ -1673,7 +1678,29 @@ Use <a href="##(AI_CARGO_DISPATCHER).SetHomeZone">AI_CARGO_DISPATCHER.SetHomeZon
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
+<a id="#(AI_CARGO_DISPATCHER).DeployMaxHeight" ><strong>AI_CARGO_DISPATCHER.DeployMaxHeight</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
 <a id="#(AI_CARGO_DISPATCHER).DeployMaxSpeed" ><strong>AI_CARGO_DISPATCHER.DeployMaxSpeed</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AI_CARGO_DISPATCHER).DeployMinHeight" ><strong>AI_CARGO_DISPATCHER.DeployMinHeight</strong></a>
     
 
 
@@ -1783,7 +1810,29 @@ Use <a href="##(AI_CARGO_DISPATCHER).SetHomeZone">AI_CARGO_DISPATCHER.SetHomeZon
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
+<a id="#(AI_CARGO_DISPATCHER).PickupMaxHeight" ><strong>AI_CARGO_DISPATCHER.PickupMaxHeight</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
 <a id="#(AI_CARGO_DISPATCHER).PickupMaxSpeed" ><strong>AI_CARGO_DISPATCHER.PickupMaxSpeed</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AI_CARGO_DISPATCHER).PickupMinHeight" ><strong>AI_CARGO_DISPATCHER.PickupMinHeight</strong></a>
     
 
 
@@ -1986,7 +2035,7 @@ AICargoDispatcher = AI_CARGO_DISPATCHER:New( SetCarrier, SetCargo, SetDeployZone
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnAfterDeploy')">
-<h6><a id="#(AI_CARGO_DISPATCHER).OnAfterDeploy" ><strong>AI_CARGO_DISPATCHER:OnAfterDeploy(From, Event, To, CarrierGroup, Coordinate, Speed, DeployZone)</strong></a></h6>
+<h6><a id="#(AI_CARGO_DISPATCHER).OnAfterDeploy" ><strong>AI_CARGO_DISPATCHER:OnAfterDeploy(From, Event, To, CarrierGroup, Coordinate, Speed, Height, DeployZone)</strong></a></h6>
 </div>
     
 <p>Deploy event handler OnAfter for AI_CARGO_DISPATCHER.</p>
@@ -2063,6 +2112,17 @@ You can use this event handler to post messages to players, or provide status up
         <div class="w3-half">
           
 <p>The velocity in meters per second on which the CarrierGroup is routed towards the deploy Coordinate.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Height</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Height in meters to move to the deploy coordinate.</p>
 
         </div>
     </div>
@@ -2166,7 +2226,7 @@ You can use this event handler to post messages to players, or provide status up
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnAfterHome')">
-<h6><a id="#(AI_CARGO_DISPATCHER).OnAfterHome" ><strong>AI_CARGO_DISPATCHER:OnAfterHome(From, Event, To, CarrierGroup, Coordinate, Speed, HomeZone)</strong></a></h6>
+<h6><a id="#(AI_CARGO_DISPATCHER).OnAfterHome" ><strong>AI_CARGO_DISPATCHER:OnAfterHome(From, Event, To, CarrierGroup, Coordinate, Speed, Height, HomeZone)</strong></a></h6>
 </div>
     
 <p>Home event handler OnAfter for AI_CARGO_DISPATCHER.</p>
@@ -2244,6 +2304,17 @@ If there is no HomeZone is specified, the CarrierGroup will stay at the current 
         <div class="w3-half">
           
 <p>The velocity in meters per second on which the CarrierGroup is routed towards the home Coordinate.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Height</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Height in meters to move to the home coordinate.</p>
 
         </div>
     </div>
@@ -2631,7 +2702,7 @@ You can use this event handler to post messages to players, or provide status up
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnAfterPickup')">
-<h6><a id="#(AI_CARGO_DISPATCHER).OnAfterPickup" ><strong>AI_CARGO_DISPATCHER:OnAfterPickup(From, Event, To, CarrierGroup, Coordinate, Speed, PickupZone)</strong></a></h6>
+<h6><a id="#(AI_CARGO_DISPATCHER).OnAfterPickup" ><strong>AI_CARGO_DISPATCHER:OnAfterPickup(From, Event, To, CarrierGroup, Coordinate, Speed, Height, PickupZone)</strong></a></h6>
 </div>
     
 <p>Pickup event handler OnAfter for AI_CARGO_DISPATCHER.</p>
@@ -2708,6 +2779,17 @@ You can use this event handler to post messages to players, or provide status up
         <div class="w3-half">
           
 <p>The velocity in meters per second on which the CarrierGroup is routed towards the pickup Coordinate.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Height</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Height in meters to move to the pickup coordinate.</p>
 
         </div>
     </div>
@@ -3225,6 +3307,71 @@ Note that this event is triggered repeatedly until all cargo (units) have been u
 <div>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetDeployHeight')">
+<h6><a id="#(AI_CARGO_DISPATCHER).SetDeployHeight" ><strong>AI_CARGO_DISPATCHER:SetDeployHeight(MaxHeight, MinHeight)</strong></a></h6>
+</div>
+    
+<p>Set the height or randomizes the height in meters to fly and deploy the cargo.</p>
+
+    
+<p> The default height is 200 meters.</p>
+
+<div id= "#Functions##SetDeployHeight" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>MaxHeight</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The maximum height to fly to the cargo deploy location.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>MinHeight</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The minimum height to fly to the cargo deploy location.</p>
+
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(AI_CARGO_DISPATCHER)">#AI_CARGO_DISPATCHER</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+      <h5><strong>Usage:</strong></h5>
+    <pre class="example"><code>
+-- Create a new cargo dispatcher
+AICargoDispatcherHelicopter = AI_CARGO_DISPATCHER_HELICOPTER:New( SetCarrier, SetCargo, SetDeployZone )
+
+-- Set the minimum deploy fly height to be 50 meters and the maximum height to be 200 meters.
+AICargoDispatcherHelicopter:SetDeployHeight( 200, 50 )
+</code></pre>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetDeployRadius')">
 <h6><a id="#(AI_CARGO_DISPATCHER).SetDeployRadius" ><strong>AI_CARGO_DISPATCHER:SetDeployRadius(OuterRadius, InnerRadius)</strong></a></h6>
 </div>
@@ -3446,6 +3593,71 @@ AICargoDispatcher:SetHomeZone( HomeZone )
 
       </div>
     </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetPickupHeight')">
+<h6><a id="#(AI_CARGO_DISPATCHER).SetPickupHeight" ><strong>AI_CARGO_DISPATCHER:SetPickupHeight(MaxHeight, MinHeight)</strong></a></h6>
+</div>
+    
+<p>Set the height or randomizes the height in meters to fly and pickup the cargo.</p>
+
+    
+<p>The default height is 200 meters.</p>
+
+<div id= "#Functions##SetPickupHeight" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h5><strong>Parameters:</strong></h5>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>MaxHeight</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The maximum height to fly to the cargo pickup location.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>MinHeight</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The minimum height to fly to the cargo pickup location.</p>
+
+        </div>
+    </div>
+    <h5><strong>Return value:</strong></h5>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(AI_CARGO_DISPATCHER)">#AI_CARGO_DISPATCHER</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+      <h5><strong>Usage:</strong></h5>
+    <pre class="example"><code>
+-- Create a new cargo dispatcher
+AICargoDispatcherHelicopter = AI_CARGO_DISPATCHER_HELICOPTER:New( SetCarrier, SetCargo, SetDeployZone )
+
+-- Set the minimum pickup fly height to be 50 meters and the maximum height to be 200 meters.
+AICargoDispatcherHelicopter:SetPickupHeight( 200, 50 )
+</code></pre>
+
 </div>
 
 </div>
