@@ -1230,19 +1230,31 @@ which are excellent tools to be reused in an OO environment!.</p>
 
     
 
+<p>AI_CARGO_DISPATCHER is the <strong>base class</strong> for:</p>
+
+<ul>
+    <li><a href="AI.AI_Cargo_Dispatcher_APC.html##(AI_CARGO_DISPATCHER_APC)">AI.AI_Cargo_Dispatcher_APC#AI_CARGO_DISPATCHER_APC</a></li>
+    <li><a href="AI.AI_Cargo_Dispatcher_Helicopter.html##(AI_CARGO_DISPATCHER_HELICOPTER)">AI.AI_Cargo_Dispatcher_Helicopter#AI_CARGO_DISPATCHER_HELICOPTER</a></li>
+    <li><a href="AI.AI_Cargo_Dispatcher_Airplane.html##(AI_CARGO_DISPATCHER_AIRPLANE)">AI.AI_Cargo_Dispatcher_Airplane#AI_CARGO_DISPATCHER_AIRPLANE</a></li>
+</ul>
+
+<hr/>
+
 <p>Carrier equipment can be mobilized to intelligently transport infantry and other cargo within the simulation.
 The AI_CARGO_DISPATCHER module uses the <a href="Cargo.Cargo.html">Cargo.Cargo</a> capabilities within the MOOSE framework, to enable Carrier GROUP objects 
 to transport <a href="Cargo.Cargo.html">Cargo.Cargo</a> towards several deploy zones.
 <a href="Cargo.Cargo.html">Cargo.Cargo</a> must be declared within the mission to make the AI_CARGO_DISPATCHER object recognize the cargo.
 Please consult the <a href="Cargo.Cargo.html">Cargo.Cargo</a> module for more information. </p>
 
-<h1>1) AI_CARGO_DISPATCHER constructor</h1>
+<h1>1) AI_CARGO_DISPATCHER constructor.</h1>
 
 <ul>
     <li><a href="##(AI_CARGO_DISPATCHER).New">AI_CARGO_DISPATCHER.New</a>(): Creates a new AI_CARGO_DISPATCHER object.</li>
 </ul>
 
-<h1>2) AI_CARGO_DISPATCHER is a FSM</h1>
+<hr/>
+
+<h1>2) AI_CARGO_DISPATCHER is a Finite State Machine.</h1>
 
 <p>This section must be read as follows. Each of the rows indicate a state transition, triggered through an event, and with an ending state of the event was executed.
 The first column is the <strong>From</strong> state, the second column the <strong>Event</strong>, and the third column the <strong>To</strong> state.</p>
@@ -1275,15 +1287,14 @@ and the resulting state will be the <strong>To</strong> state.</p>
     <li><p>Monitoring => Home => Monitoring</p></li>
 </ul>
 
-
-<h2>2.1) AI_CARGO_DISPATCHER States</h2>
+<h2>2.1) AI_CARGO_DISPATCHER States.</h2>
 
 <ul>
     <li><strong>Monitoring</strong>: The process is dispatching.</li>
     <li><strong>Idle</strong>: The process is idle.</li>
 </ul>
 
-<h2>2.2) AI_CARGO_DISPATCHER Events</h2>
+<h2>2.2) AI_CARGO_DISPATCHER Events.</h2>
 
 <ul>
     <li><p><strong>Start</strong>: Start the transport process.</p></li>
@@ -1300,6 +1311,8 @@ and the resulting state will be the <strong>To</strong> state.</p>
     <li><p><strong>Deployed</strong>: All cargo is unloaded from the carriers in the group.</p></li>
     <li><p><strong>Home</strong>: A Carrier is going home.</p></li>
 </ul>
+
+<hr/>
 
 <h1>3) Enhance your mission scripts with <strong>Tailored</strong> Event Handling!</h1>
 

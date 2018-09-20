@@ -1255,7 +1255,7 @@ CARGO derived objects must be declared within the mission to make the AI_CARGO_D
 
 <hr/>
 
-<h2>1. AI_CARGO_DISPATCHER_HELICOPTER constructor</h2>
+<h1>1. AI_CARGO_DISPATCHER_HELICOPTER constructor.</h1>
 
 <ul>
     <li><a href="##(AI_CARGO_DISPATCHER)">#AI_CARGO_DISPATCHER</a>(): Creates a new AI_CARGO_DISPATCHER_HELICOPTER object.</li>
@@ -1263,31 +1263,71 @@ CARGO derived objects must be declared within the mission to make the AI_CARGO_D
 
 <hr/>
 
-<h2>2. AI_CARGO_DISPATCHER_HELICOPTER is a FSM</h2>
+<h1>2. AI_CARGO_DISPATCHER_HELICOPTER is a Finite State Machine.</h1>
 
-<p><img src="..\Presentations\AI_CARGO_DISPATCHER_HELICOPTER\Dia3.JPG" alt="Process"/></p>
+<p>This section must be read as follows. Each of the rows indicate a state transition, triggered through an event, and with an ending state of the event was executed.
+The first column is the <strong>From</strong> state, the second column the <strong>Event</strong>, and the third column the <strong>To</strong> state.</p>
 
-<h3>2.1. AI_CARGO_DISPATCHER_HELICOPTER States</h3>
+<p>So, each of the rows have the following structure.</p>
+
+<ul>
+    <li><strong>From</strong> => <strong>Event</strong> => <strong>To</strong></li>
+</ul>
+
+<p>Important to know is that an event can only be executed if the <strong>current state</strong> is the <strong>From</strong> state.
+This, when an <strong>Event</strong> that is being triggered has a <strong>From</strong> state that is equal to the <strong>Current</strong> state of the state machine, the event will be executed,
+and the resulting state will be the <strong>To</strong> state.</p>
+
+<p>These are the different possible state transitions of this state machine implementation: </p>
+
+<ul>
+    <li><p>Idle => Start => Monitoring</p></li>
+    <li><p>Monitoring => Monitor => Monitoring</p></li>
+    <li><p>Monitoring => Stop => Idle</p></li>
+    <li><p>Monitoring => Pickup => Monitoring</p></li>
+    <li><p>Monitoring => Load => Monitoring</p></li>
+    <li><p>Monitoring => Loading => Monitoring</p></li>
+    <li><p>Monitoring => Loaded => Monitoring</p></li>
+    <li><p>Monitoring => PickedUp => Monitoring</p></li>
+    <li><p>Monitoring => Deploy => Monitoring</p></li>
+    <li><p>Monitoring => Unload => Monitoring</p></li>
+    <li><p>Monitoring => Unloaded => Monitoring</p></li>
+    <li><p>Monitoring => Deployed => Monitoring</p></li>
+    <li><p>Monitoring => Home => Monitoring</p></li>
+</ul>
+
+
+<h2>2.1) AI_CARGO_DISPATCHER States.</h2>
 
 <ul>
     <li><strong>Monitoring</strong>: The process is dispatching.</li>
     <li><strong>Idle</strong>: The process is idle.</li>
 </ul>
 
-<h3>2.2. AI_CARGO_DISPATCHER_HELICOPTER Events</h3>
+<h2>2.2) AI_CARGO_DISPATCHER Events.</h2>
 
 <ul>
-    <li><strong>Monitor</strong>: Monitor and take action.</li>
-    <li><strong>Start</strong>: Start the transport process.</li>
-    <li><strong>Stop</strong>: Stop the transport process.</li>
-    <li><strong>Pickup</strong>: Pickup cargo.</li>
-    <li><strong>Load</strong>: Load the cargo.</li>
-    <li><strong>Loaded</strong>: Flag that the cargo is loaded.</li>
-    <li><strong>Deploy</strong>: Deploy cargo to a location.</li>
-    <li><strong>Unload</strong>: Unload the cargo.</li>
-    <li><strong>Unloaded</strong>: Flag that the cargo is unloaded.</li>
-    <li><strong>Home</strong>: A Helicopter is going home.</li>
+    <li><p><strong>Start</strong>: Start the transport process.</p></li>
+    <li><p><strong>Stop</strong>: Stop the transport process.</p></li>
+    <li><p><strong>Monitor</strong>: Monitor and take action.</p></li>
+    <li><p><strong>Pickup</strong>: Pickup cargo.</p></li>
+    <li><p><strong>Load</strong>: Load the cargo.</p></li>
+    <li><p><strong>Loading</strong>: The dispatcher is coordinating the loading of a cargo.</p></li>
+    <li><p><strong>Loaded</strong>: Flag that the cargo is loaded.</p></li>
+    <li><p><strong>PickedUp</strong>: The dispatcher has loaded all requested cargo into the CarrierGroup.</p></li>
+    <li><p><strong>Deploy</strong>: Deploy cargo to a location.</p></li>
+    <li><p><strong>Unload</strong>: Unload the cargo.</p></li>
+    <li><p><strong>Unloaded</strong>: Flag that the cargo is unloaded.</p></li>
+    <li><p><strong>Deployed</strong>: All cargo is unloaded from the carriers in the group.</p></li>
+    <li><p><strong>Home</strong>: A Carrier is going home.</p></li>
 </ul>
+
+<h2>2.3) Enhance your mission scripts with <strong>Tailored</strong> Event Handling!</h2>
+
+<p>Within your mission, you can capture these events when triggered, and tailor the events with your own code!
+Check out the <a href="AI.AI_Cargo_Dispatcher_APC.html##(AI_CARGO_DISPATCHER)">AI.AI_Cargo_Dispatcher_APC#AI_CARGO_DISPATCHER</a> class at chapter 3 for details on the different event handlers that are available and how to use them.</p>
+
+<p><strong>There are a lot of templates available that allows you to quickly setup an event handler for a specific event type!</strong></p>
 
 <hr/>
 
@@ -1296,8 +1336,9 @@ CARGO derived objects must be declared within the mission to make the AI_CARGO_D
 <p>Several parameters can be set to pickup cargo:</p>
 
 <ul>
-    <li><a href="##(AI_CARGO_DISPATCHER)">#AI_CARGO_DISPATCHER</a>(): Sets or randomizes the pickup location for the helicopter around the cargo coordinate in a radius defined an outer and optional inner radius. </li>
-    <li><a href="##(AI_CARGO_DISPATCHER)">#AI_CARGO_DISPATCHER</a>(): Set the speed or randomizes the speed in km/h to pickup the cargo.</li>
+    <li><a href="##(AI_CARGO_DISPATCHER_HELICOPTER).SetPickupRadius">AI_CARGO_DISPATCHER_HELICOPTER.SetPickupRadius</a>(): Sets or randomizes the pickup location for the helicopter around the cargo coordinate in a radius defined an outer and optional inner radius. </li>
+    <li><a href="##(AI_CARGO_DISPATCHER_HELICOPTER).SetPickupSpeed">AI_CARGO_DISPATCHER_HELICOPTER.SetPickupSpeed</a>(): Set the speed or randomizes the speed in km/h to pickup the cargo.</li>
+    <li><a href="##(AI_CARGO_DISPATCHER_HELICOPTER).SetPickupHeight">AI_CARGO_DISPATCHER_HELICOPTER.SetPickupHeight</a>(): Set the height or randomizes the height in meters to pickup the cargo.</li>
 </ul>
 
 <hr/>
@@ -1307,8 +1348,9 @@ CARGO derived objects must be declared within the mission to make the AI_CARGO_D
 <p>Several parameters can be set to deploy cargo:</p>
 
 <ul>
-    <li><a href="##(AI_CARGO_DISPATCHER)">#AI_CARGO_DISPATCHER</a>(): Sets or randomizes the deploy location for the helicopter around the cargo coordinate in a radius defined an outer and an optional inner radius. </li>
-    <li><a href="##(AI_CARGO_DISPATCHER)">#AI_CARGO_DISPATCHER</a>(): Set the speed or randomizes the speed in km/h to deploy the cargo.</li>
+    <li><a href="##(AI_CARGO_DISPATCHER_HELICOPTER).SetDeployRadius">AI_CARGO_DISPATCHER_HELICOPTER.SetDeployRadius</a>(): Sets or randomizes the deploy location for the helicopter around the cargo coordinate in a radius defined an outer and an optional inner radius. </li>
+    <li><a href="##(AI_CARGO_DISPATCHER_HELICOPTER).SetDeploySpeed">AI_CARGO_DISPATCHER_HELICOPTER.SetDeploySpeed</a>(): Set the speed or randomizes the speed in km/h to deploy the cargo.</li>
+    <li><a href="##(AI_CARGO_DISPATCHER_HELICOPTER).SetDeployHeight">AI_CARGO_DISPATCHER_HELICOPTER.SetDeployHeight</a>(): Set the height or randomizes the height in meters to deploy the cargo.</li>
 </ul>
 
 <hr/>
@@ -1316,7 +1358,7 @@ CARGO derived objects must be declared within the mission to make the AI_CARGO_D
 <h2>5. Set the home zone when there isn't any more cargo to pickup.</h2>
 
 <p>A home zone can be specified to where the Helicopters will move when there isn't any cargo left for pickup.
-Use <a href="##(AI_CARGO_DISPATCHER)">#AI_CARGO_DISPATCHER</a>() to specify the home zone.</p>
+Use <a href="##(AI_CARGO_DISPATCHER_HELICOPTER).SetHomeZone">AI_CARGO_DISPATCHER_HELICOPTER.SetHomeZone</a>() to specify the home zone.</p>
 
 <p>If no home zone is specified, the helicopters will wait near the deploy zone for a new pickup command.   </p>
 
@@ -1400,7 +1442,7 @@ Use <a href="##(AI_CARGO_DISPATCHER)">#AI_CARGO_DISPATCHER</a>() to specify the 
         </div>
         <div class="w3-half">
           
-<p>The collection of Helicopter <a href="Wrapper.Group.html">Wrapper.Group</a>s.</p>
+<p>The set of <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a> objects of helicopters that will transport the cargo.</p>
 
         </div>
     </div>
@@ -1411,7 +1453,7 @@ Use <a href="##(AI_CARGO_DISPATCHER)">#AI_CARGO_DISPATCHER</a>() to specify the 
         </div>
         <div class="w3-half">
           
-<p>The collection of <a href="Cargo.Cargo.html">Cargo.Cargo</a> derived objects.</p>
+<p>The set of <a href="Cargo.Cargo.html##(CARGO)">Cargo.Cargo#CARGO</a> objects, which can be CARGO_GROUP, CARGO_CRATE, CARGO_SLINGLOAD objects.</p>
 
         </div>
     </div>
@@ -1422,7 +1464,7 @@ Use <a href="##(AI_CARGO_DISPATCHER)">#AI_CARGO_DISPATCHER</a>() to specify the 
         </div>
         <div class="w3-half">
           
-<p>(optional) The collection of pickup <a href="Zone.html">Zone</a>s, which are used to where the cargo can be picked up by the APCs. If nil, then cargo can be picked up everywhere. </p>
+<p>(optional) The set of pickup zones, which are used to where the cargo can be picked up by the APCs. If nil, then cargo can be picked up everywhere. </p>
 
         </div>
     </div>
@@ -1433,7 +1475,7 @@ Use <a href="##(AI_CARGO_DISPATCHER)">#AI_CARGO_DISPATCHER</a>() to specify the 
         </div>
         <div class="w3-half">
           
-<p>The collection of deploy <a href="Zone.html">Zone</a>s, which are used to where the cargo will be deployed by the Helicopters. </p>
+<p>The set of deploy zones, which are used to where the cargo will be deployed by the Helicopters. </p>
 
         </div>
     </div>
