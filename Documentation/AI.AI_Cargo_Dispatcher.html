@@ -1201,7 +1201,7 @@ which are excellent tools to be reused in an OO environment!.</p>
 
     
 
-<p><strong>Features:</strong></p>
+<h2>Features:</h2>
 
 <ul>
     <li><p>AI_CARGO_DISPATCHER is the <strong>base class</strong> for:</p>
@@ -1216,7 +1216,18 @@ which are excellent tools to be reused in an OO environment!.</p>
     <li><p>Different options can be setup to tweak the cargo transporation behaviour.</p></li>
 </ul>
 
-<h2>The dispatcher concept</h2>
+<hr/>
+
+<h2>Test Missions:</h2>
+
+<p>Test missions can be located on the main GITHUB site.</p>
+
+<p>[FlightControl-Master/MOOSE_MISSIONS/AID - AI Dispatching/AID-CGO - AI Cargo Dispatching/] <br/>
+(https://github.com/FlightControl-Master/MOOSE_MISSIONS/tree/develop/AID%20-%20AI%20Dispatching/AID-CGO%20-%20AI%20Cargo%20Dispatching)</p>
+
+<hr/>
+
+<h2>The dispatcher concept.</h2>
 
 <p>Carrier equipment can be mobilized to intelligently transport infantry and other cargo within the simulation.
 The AI_CARGO_DISPATCHER module uses the <a href="Cargo.Cargo.html">Cargo.Cargo</a> capabilities within the MOOSE framework, to enable Carrier GROUP objects 
@@ -1224,12 +1235,14 @@ to transport <a href="Cargo.Cargo.html">Cargo.Cargo</a> towards several deploy z
 <a href="Cargo.Cargo.html">Cargo.Cargo</a> must be declared within the mission to make the AI_CARGO_DISPATCHER object recognize the cargo.
 Please consult the <a href="Cargo.Cargo.html">Cargo.Cargo</a> module for more information. </p>
 
-<h1>Why cargo dispatching?</h1>
+
+<h2>Why cargo dispatching?</h2>
 
 <p>It provides a realistic way of distributing your army forces around the battlefield, and to provide a quick means of cargo transportation.
 Instead of having troops or cargo to "appear" suddenly at certain locations, the dispatchers will pickup the cargo and transport it.
 It also allows to enforce or retreat your army from certain zones when needed, using helicopters or APCs.
 Airplanes can transport cargo over larger distances between the airfields.</p>
+
 
 <h2>What is a cargo object then?</h2>
 
@@ -1249,11 +1262,13 @@ A MOOSE cargo object also has properties, like the type of cargo, the logical na
 <p>For more information, please consult the <a href="Cargo.Cargo.html">Cargo.Cargo</a> module documentation. Please read through it, because it will explain how to setup the cargo objects for use
 within your dispatchers.</p>
 
+
 <h2>Do I need to do a lot of coding to setup a dispatcher?</h2>
 
 <p>No! It requires a bit of studying to set it up, but once you understand the different components that use the cargo dispatcher, it becomes very easy.
 Also, the dispatchers work in a true dynamic environment. The carriers and cargo, pickup and deploy zones can be created dynamically in your mission,
 and will automatically be recognized by the dispatcher.</p>
+
 
 <h2>Is the dispatcher causing a lot of CPU overhead?</h2>
 
@@ -1263,6 +1278,7 @@ We are working to minimize the impact of those.
 That being said, the DCS simulator is limited. It is just impossible to deploy hundreds of cargo over the battlefield, hundreds of helicopters transporting, 
 without any performance impact. The amount of helicopters that are active and flying in your simulation influences more the performance than the dispatchers.
 It really comes down to trying it out and getting experienced with what is possible and what is not (or too much).</p>
+
 
 <h2>Are the dispatchers a "black box" in terms of the logic?</h2>
 
@@ -1276,6 +1292,7 @@ The events are listed below, and so are the options, but here are a couple of ex
      because it is an indication that troops are planned to join.</p></li>
 </ul>
 
+
 <h2>Are there options that you can set to modify the behaviour of the carries?</h2>
 
 <p>Yes, there are options to configure:</p>
@@ -1287,16 +1304,11 @@ The events are listed below, and so are the options, but here are a couple of ex
     <li>the speed of the carriers. This is an important parameter, because depending on the tactication situation, speed will influence the detection by radars.</li>
 </ul>
 
+
 <h2>Can the zones be of any zone type?</h2>
 
 <p>Yes, please ensure that the zones are declared using the <a href="Core.Zone.html">Core.Zone</a> classes.
 Possible zones that function at the moment are ZONE, ZONE_GROUP, ZONE_UNIT, ZONE_POLYGON.</p>
-
-<hr/>
-
-<h3>Test Missions</h3>
-
-<p><a href="https://github.com/FlightControl-Master/MOOSE_MISSIONS/tree/develop/AID%20-%20AI%20Dispatching/AID-CGO%20-%20AI%20Cargo%20Dispatching">AI Cargo Dispatcher test missions</a></p>
 
 <hr/>
 
@@ -1757,8 +1769,9 @@ You can use this event handler to post messages to players, or provide status up
  end      
 </code></pre>
 
+<hr/>
 
-<h1>3) Set the pickup parameters.</h1>
+<h1>4) Set the pickup parameters.</h1>
 
 <p>Several parameters can be set to pickup cargo:</p>
 
@@ -1768,7 +1781,9 @@ You can use this event handler to post messages to players, or provide status up
     <li><a href="##(AI_CARGO_DISPATCHER).SetPickupHeight">AI_CARGO_DISPATCHER.SetPickupHeight</a>(): Set the height or randomizes the height in meters to pickup the cargo.</li>
 </ul>
 
-<h1>4) Set the deploy parameters.</h1>
+<hr/>
+
+<h1>5) Set the deploy parameters.</h1>
 
 <p>Several parameters can be set to deploy cargo:</p>
 
@@ -1778,7 +1793,9 @@ You can use this event handler to post messages to players, or provide status up
     <li><a href="##(AI_CARGO_DISPATCHER).SetDeployHeight">AI_CARGO_DISPATCHER.SetDeployHeight</a>(): Set the height or randomizes the height in meters to deploy the cargo.</li>
 </ul>
 
-<h1>5) Set the home zone when there isn't any more cargo to pickup.</h1>
+<hr/>
+
+<h1>6) Set the home zone when there isn't any more cargo to pickup.</h1>
 
 <p>A home zone can be specified to where the Carriers will move when there isn't any cargo left for pickup.
 Use <a href="##(AI_CARGO_DISPATCHER).SetHomeZone">AI_CARGO_DISPATCHER.SetHomeZone</a>() to specify the home zone.</p>
