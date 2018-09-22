@@ -1338,7 +1338,7 @@ In other words, the cargo set <code>CargoSetWorkmaterials</code> will incorporat
 
 <p>The cargo sets are extremely important for the AI cargo transportation dispatchers and the cargo transporation tasking.</p>
 
-<h1>5) Declare MOOSE cargo within the mission editor!!!</h1>
+<h1>5) Declare cargo directly in the mission editor!</h1>
 
 <p>But I am not finished! There is something more, that is even more great!
 Imagine the mission designers having to code all these lines every time it wants to embed cargo within a mission.</p>
@@ -1354,10 +1354,11 @@ Imagine the mission designers having to code all these lines every time it wants
 <p>This would be extremely tiring and a huge overload.
 However, the MOOSE framework allows to declare MOOSE cargo objects within the mission editor!!!</p>
 
-<p>So, at mission startup, MOOSE will search for objects following a special naming convention, and will create for you dynamically
-cargo objects at mission start!!!
-These cargo objects can then be automatically incorporated within cargo set(s)!!!
-In other words, your mission would be reduced to about a few lines of code, providing you with a full dynamic cargo handling mission!</p>
+<p>So, at mission startup, MOOSE will search for objects following a special naming convention, and will <strong>create</strong> for you <strong>dynamically
+cargo objects</strong> at <strong>mission start</strong>!!! -- These cargo objects can then be automatically incorporated within cargo set(s)!!!
+In other words, your mission will be reduced to about a few lines of code, providing you with a full dynamic cargo handling mission!</p>
+
+<h2>5.1) Use #CARGO tags in the mission editor:</h2>
 
 <p>MOOSE can create automatically cargo objects, if the name of the cargo contains the <strong>#CARGO</strong> tag.
 When a mission starts, MOOSE will scan all group and static objects it found for the presence of the #CARGO tag.
@@ -1395,12 +1396,17 @@ In other words, with very minimal code as explained in the above code section, y
 <p>The above code example has the <code>CargoSetWorkmaterials</code>, which is a SET_CARGO collection and will include the CARGO_ objects of the type "Workmaterials". <br/>
 And there is NO cargo object actually declared within the script! However, if you would open the mission, there would be hundreds of cargo objects...</p>
 
-<p>The #CARGO tag even allows for several options to be specified, which are important to learn.
-For example, the following #CARGO naming in the group name of the object, will create a group cargo object for MOOSE.</p>
+<p>The #CARGO tag even allows for several options to be specified, which are important to learn.</p>
 
-<p>  `Infantry #CARGO(T=Workmaterials,RR=500,NR=25)´</p>
+<h2>5.2) The #CARGO tag to create CARGO_GROUP objects:</h2>
 
-<p>This will create a cargo object:</p>
+<p>You can also use the #CARGO tag on <strong>group</strong> objects of the mission editor.</p>
+
+<p>For example, the following #CARGO naming in the <strong>group name</strong> of the object, will create a CARGO_GROUP object when the mission starts.</p>
+
+<p>  <code>Infantry #CARGO(T=Workmaterials,RR=500,NR=25)</code></p>
+
+<p>This will create a CARGO_GROUP object:</p>
 
 <ul>
     <li>with the group name <code>Infantry #CARGO</code></li>
@@ -1413,6 +1419,36 @@ For example, the following #CARGO naming in the group name of the object, will c
 <p>So the overall syntax of the #CARGO naming tag and arguments are:</p>
 
 <p>  <code>GroupName #CARGO(T=CargoTypeName,RR=Range,NR=Range)</code></p>
+
+<ul>
+    <li><strong>T=</strong> Provide a text that contains the type name of the cargo object. This type name can be used to filter cargo within a SET_CARGO object.</li>
+    <li><strong>RR=</strong> Provide the minimal range in meters when the report to the carrier, and board to the carrier.
+     Note that this option is optional, so can be omitted. The default value of the RR is 250 meters.</li>
+    <li><strong>NR=</strong> Provide the maximum range in meters when the cargo units will be boarded within the carrier during boarding.
+     Note that this option is optional, so can be omitted. The default value of the RR is 10 meters.</li>
+</ul>
+
+<h2>5.2) The #CARGO tag to create CARGO_CRATE objects:</h2>
+
+<p>You can also use the #CARGO tag on <strong>static</strong> objects, including <strong>static cargo</strong> objects of the mission editor.</p>
+
+<p>For example, the following #CARGO naming in the <strong>static name</strong> of the object, will create a CARGO_CRATE object when the mission starts.</p>
+
+<p>  <code>Static #CARGO(T=Workmaterials,RR=500,NR=25)</code></p>
+
+<p>This will create a CARGO_CRATE object:</p>
+
+<ul>
+    <li>with the group name <code>Static #CARGO</code></li>
+    <li>is of type <code>Workmaterials</code></li>
+    <li>will report when a carrier is within 500 meters</li>
+    <li>will board to carriers when the carrier is within 500 meters from the cargo object</li>
+    <li>will dissapear when the cargo is within 25 meters from the carrier during boarding</li>
+</ul>
+
+<p>So the overall syntax of the #CARGO naming tag and arguments are:</p>
+
+<p>  <code>StaticName #CARGO(T=CargoTypeName,RR=Range,NR=Range)</code></p>
 
 <ul>
     <li><strong>T=</strong> Provide a text that contains the type name of the cargo object. This type name can be used to filter cargo within a SET_CARGO object.</li>
