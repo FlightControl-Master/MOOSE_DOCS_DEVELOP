@@ -39,39 +39,6 @@ This class models cargo to be transported between **zones**!
   * Infantry loaded as cargo, will unboard in case enemies are nearby and will help defending the vehicles.
   * Different ranges can be setup for enemy defenses.
 
-**Test Missions:**
-
-   * [**AID-CGO-100 - APC - Pickup and Deploy**]  
-   Creates an AI cargo dispatcher, and dispatches various cargo using various APCs around the battle field.
-   Note that the APCs have different cargo limits, so the cargo groups will only board when there is sufficient space within the APC.
-   
-   * [**AID-CGO-110 - APC - Deploy at Group Zones**]  
-   Creates an AI cargo dispatcher, and dispatches various cargo using various APCs around the battle field.
-   The caro infantry are spread out over the battlefield...
-   The cargo infantry will be deployed around the ZONE_GROUP object!
-   Check the script!
-
-   * [**AID-CGO-120 - APC - Pickup and Deploy Large**]  
-   Creates an AI cargo dispatcher, and dispatches various cargo using various APCs around the battle field.
-   Cargo is transported to random zones around the battle field.
-   
-   * [**AID-CGO-140 - APC - Event Handling**]  
-   Creates an AI cargo dispatcher, and dispatches various cargo using various APCs around the battle field.
-   Cargo is transported to random zones around the battle field.
-   Every time a carrier is picking up a cargo, or is dropping a cargo, or is returning home, messages are displayed.
-   This demonstrates the usage of event handlers, how to capture them, and how you can tailor your own code within the event handler code sections.
-   
-   * [**AID-CGO-150 - APC - Manpads against enemy helicopters**]  
-   Creates an AI cargo dispatcher, and dispatches various cargo using various APCs around the battle field.
-   The APCs are manned with infantry carrying stingers, so when the enemy helicopters arrive too close to the APCs, the manpads will unboard and will defend the APCs.
-
-   * [**AID-CGO-151 - APC - Manpads and not defending the carrier**]  
-   Creates an AI cargo dispatcher, and dispatches various cargo using various APCs around the battle field.
-   The APCs are manned with infantry carrying stingers, however, carrier defenses are disables, because the CombatRadius is 0.
-   When the enemy helicopters arrive too close to the APCs, the manpads will NOT unboard and will NOT defend the APCs.
-
-
----
 
 ### 1.2. [**AI\_CARGO\_DISPATCHER\_HELICOPTER**](Documentation/AI.AI_Cargo_Dispatcher_Helicopter.html)
 
@@ -88,8 +55,6 @@ This class models cargo to be transported between **zones**!
   * Helicopters will orbit the deploy zones when there is no space for landing until the deploy zone is free.
 
 
----
-
 ### 1.3. [**AI\_CARGO\_DISPATCHER\_AIRPLANE**](Documentation/AI.AI_Cargo_Dispatcher_Airplane.html)
 
 ![AI_Cargo_Dispatcher_Airplane](Images\AI_Cargo_Dispatching_For_Airplanes.JPG)
@@ -101,6 +66,7 @@ This class models cargo to be transported between **airbases**!
 
   * The airplanes will fly towards the pickup airbases to pickup the cargo.
   * The airplanes will fly towards the deploy airbases to deploy the cargo.
+
 
 ===
 
@@ -164,44 +130,7 @@ The cargo dispatcher will implement for you mechanisms to create cargo transport
    * Various other options.
 
 
-**Test Missions:**
-
-   * [**TAD-CGO-001 - Transport Test**]  
-     Creates a task cargo dispatcher, and adds a cargo transport task to transport engineers towards a stadium.
-
-   * [**TAD-CGO-002 - Transport Test - Crate**]  
-     Creates a task cargo dispatcher, and adds a cargo transport task to transport a crate.
-
-   * [**TAD-CGO-003 - Transport Test - Infantry and Crate**]	  
-     Creates a task cargo dispatcher, and adds a cargo transport task to transport a crate and an infantry group.
-
-   * [**TAD-CGO-004 - Transport Test - Infantry and Slingload**]  
-     Creates a task cargo dispatcher, and adds a cargo transport task to transport an infantry group and slingload a crate.
-
-   * [**TAD-CGO-005 - Transport Test - Various Cargo**]  
-     Creates a task cargo dispatcher, and adds a cargo transport task to transport various cargo.
-     Note that the Communication truck moving nearby the stationary cargo is taking care of the cargo reporting.
-     So, when the carrier is nearby the cargo, the communication truck will report to the carrier the cargo presence.
-
-   * [**TAD-CGO-006 - Transport Test - Multiple Clients**]  
-     Creates a task cargo dispatcher, and adds a cargo transport task to transport various cargo for multiple player slots (clients).
-     So this simulates cargo transportation task in co-operation mode.
-
-   * [**TAD-CGO-007 - Transport Test - Cargo Fun**]  
-     Creates a task cargo dispatcher, and adds a cargo transport task to transport various cargo for multiple player slots (clients).
-     So this simulates cargo transportation task in co-operation mode, to transport lots of cargo around.
-
-   * [**TAD-CGO-008 - Transport Test - PickedUp and Deployed Handling**]  
-     Based on TAD-CGO-007, but now adds custom events when cargo is picked up and deployed.
-     When cargo is deployed, random enemy forces will be spawned into the sim, which provides an extra challenge!
-
-   * [**TAD-CGO-009 - Transport Test - Respawning Cargo**]  
-     When the cargo is destroyed, the cargo will be respawned automatically.
-
-   * [**TAD-CGO-010 - Transport Test - Register Cargos**]  
-     Demonstrates how to shorten your cargo declaration scripts by declaring your cargo into your mission file using the #CARGO naming syntax!
-
-
+===
 
 ## 3. The cargo system explained.
 
@@ -209,6 +138,8 @@ The following section provides a detailed explanation on the cargo system, how t
 
 https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Cargo.Cargo.html
 
+
+===
 
 ## 4. Cargo management classes.
 

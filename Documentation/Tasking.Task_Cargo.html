@@ -1201,15 +1201,35 @@ which are excellent tools to be reused in an OO environment!.</p>
 
     
 
+<h2>Features:</h2>
+
+<ul>
+    <li><p>TASK_CARGO is the <strong>base class</strong> for:</p>
+    
+    <ul>
+        <li><a href="Tasking.Task_Cargo_Transport.html##(TASK_CARGO_TRANSPORT)">Tasking.Task_Cargo_Transport#TASK_CARGO_TRANSPORT</a></li>
+        <li><a href="Tasking.Task_Cargo_CSAR.html##(TASK_CARGO_CSAR)">Tasking.Task_Cargo_CSAR#TASK_CARGO_CSAR</a></li>
+    </ul></li>
+</ul>
+
+
 <hr/>
 
-<h1>1) Tasking system.</h1>
+<h2>Test Missions:</h2>
 
-<h4>If you are not yet aware what the MOOSE tasking system is about, read FIRST the explanation on tasking **<a href="Tasking.Task.html">Tasking.Task</a>**.</h4>
+<p>Test missions can be located on the main GITHUB site.</p>
+
+<p><a href="https://github.com/FlightControl-Master/MOOSE_MISSIONS/tree/develop/TAD%20-%20Task%20Dispatching/CGO%20-%20Cargo%20Dispatching">FlightControl-Master/MOOSE_MISSIONS/TAD - Task Dispatching/CGO - Cargo Dispatching/</a></p>
 
 <hr/>
 
-<h1>2) Context of cargo tasking.</h1>
+<h2>Tasking system.</h2>
+
+<h4>If you are not yet aware what the MOOSE tasking system is about, read FIRST the explanation on the <a href="Tasking.Task.html">Tasking.Task</a> module.</h4>
+
+<hr/>
+
+<h2>Context of cargo tasking.</h2>
 
 <p>The Moose framework provides various CARGO classes that allow DCS physical or logical objects to be transported or sling loaded by Carriers.
 The CARGO_ classes, as part of the MOOSE core, are able to Board, Load, UnBoard and UnLoad cargo between Carrier units.</p>
@@ -1228,7 +1248,7 @@ So please browse further below to understand how to use it from a player perspec
 
 <hr/>
 
-<h1>3) Cargo tasking from a player perspective.</h1>
+<h2>Cargo tasking from a player perspective.</h2>
 
 <p>A human player can join the battle field in a client airborne slot or a ground vehicle within the CA module (ALT-J).
 The player needs to accept the task from the task overview list within the mission, using the menus.</p>
@@ -1251,19 +1271,19 @@ an extra <strong>Cargo (Radio) Menu</strong> that contains the CARGO objects tha
 In the menu, you'll find for each CARGO, that is part of the scope of the task, various actions that can be completed.
 Depending on the location of your Carrier unit, the menu options will vary.</p>
 
-<h2>3.1) Joining a Cargo Transport Task</h2>
+<h3>Joining a Cargo Transport Task</h3>
 
 <p>Once you've joined a task, using the <strong>Join Planned Task Menu</strong>, 
 you can Pickup cargo from a pickup location and Deploy cargo in deployment zones, using the <strong>Task Action Menu</strong>.</p>
 
-<h2>3.2) Task Action Menu.</h2>
+<h3>Task Action Menu.</h3>
 
 <p>When a player has joined a <strong><code>CARGO</code></strong> task (type), for that player only, 
 it's <strong>Task Action Menu</strong> will show an additional menu options.</p>
 
 <p>From within this menu, you will be able to route to a cargo location, deploy zone, and load/unload cargo.</p>
 
-<h2>3.3) Pickup cargo by Boarding, Loading and Sling Loading.</h2>
+<h3>Pickup cargo by Boarding, Loading and Sling Loading.</h3>
 
 <p>There are three different ways how cargo can be picked up:</p>
 
@@ -1345,7 +1365,7 @@ When using BR coordinate display format, the <strong>distance and angle will cha
 These routing options will only be shown, when your carrier bays have cargo loaded.
 So, only when there is something to be deployed from your carrier, the deploy options will be shown.</p>
 
-<h3>3.3.1) Pickup Cargo.</h3>
+<h4>Pickup Cargo.</h4>
 
 <p>In order to pickup cargo, use the <strong>task action menu</strong> to <strong>route to a specific cargo</strong>.
 When a cargo route is selected, the HQ will send you routing messages indicating the location of the cargo.</p>
@@ -1361,7 +1381,7 @@ When a cargo route is selected, the HQ will send you routing messages indicating
 <p>It takes a bit of skill to land a helicopter near a cargo to be loaded, but that is part of the game, isn't it?
 Expecially when you are landing in a "hot" zone, so when cargo is under immediate threat of fire.</p>
 
-<h3>3.3.2) Board Cargo (infantry).</h3>
+<h4>Board Cargo (infantry).</h4>
 
 <p><img src="../Tasking/Boarding_Ready.png" alt=""/>  </p>
 
@@ -1408,7 +1428,7 @@ The near range as added because carriers can be large or small, depending on the
     <li>The carrier must remain stationary when the boarding sequence has started until further notified.</li>
 </ul>
 
-<h3>3.3.3) Load Cargo.</h3>
+<h4>Load Cargo.</h4>
 
 <p>Cargo can be loaded into vehicles or helicopters or airplanes, as long as the carrier is sufficiently near to the cargo object.</p>
 
@@ -1436,7 +1456,7 @@ Select the <strong>Load cargo...</strong> sub menu, and a further detailed menu 
     As stated, this requires some pilot skills :-)</li>
 </ul>
 
-<h3>3.3.4) Sling Load Cargo (helicopters only).</h3>
+<h4>Sling Load Cargo (helicopters only).</h4>
 
 <p>If your Carrier is within the <strong>Loading Range of the cargo</strong>, and the cargo is <strong>stationary</strong>, the <strong>cargo can also be sling loaded</strong>!
 Note that this is only possible for helicopters.</p>
@@ -1448,7 +1468,7 @@ Use the normal DCS sling loading menu system to hook the cargo you the cable att
 As stated, this requires some pilot skills :-)</p>
 
 
-<h2>3.4) Deploy cargo by Unboarding, Unloading and Sling Deploying.</h2>
+<h3>Deploy cargo by Unboarding, Unloading and Sling Deploying.</h3>
 
 <h4><strong>Deploying the relevant cargo within deploy zones, will make you achieve cargo transportation tasks!!!</strong></h4>
 
@@ -1496,7 +1516,7 @@ Note that for LL, there are two sub formats. (See pickup).</p>
 <img src="../Tasking/Task_Cargo_Settings.JPG" alt="Task_Types"/> <br/>
 Use the <strong>Settings Menu</strong> to select the coordinate format that you would like to use for location determination.</p>
 
-<h3>3.4.1) Unboard Cargo.</h3>
+<h4>Unboard Cargo.</h4>
 
 <p>If your carrier contains cargo, and the cargo is <strong>moveable</strong>, the <strong>cargo can be unboarded</strong>!
 You can only unload cargo if there is cargo within your cargo bays within the carrier.</p>
@@ -1538,7 +1558,7 @@ so it is required to await the full completion of the unboarding process.</p>
 
 <p><strong>Deploying a cargo within a deployment zone, may complete a deployment task! So ensure that you deploy the right cargo at the right deployment zone!</strong></p>
 
-<h3>3.4.2) Unload Cargo.</h3>
+<h4>Unload Cargo.</h4>
 
 <p>If your carrier contains cargo, and the cargo is <strong>stationary</strong>, the <strong>cargo can be unloaded</strong>, but not unboarded!
 You can only unload cargo if there is cargo within your cargo bays within the carrier.</p>
@@ -1572,7 +1592,7 @@ If there is no truck near to the unload area, no message will be sent to your ca
 <p><strong>Deploying a cargo within a deployment zone, may complete a deployment task! So ensure that you deploy the right cargo at the right deployment zone!</strong></p>
 
 
-<h3>3.4.3) Sling Deploy Cargo (helicopters only).</h3>
+<h4>Sling Deploy Cargo (helicopters only).</h4>
 
 <p>If your Carrier is within the <strong>deploy zone</strong>, and the cargo is <strong>stationary</strong>, the <strong>cargo can also be sling deploying</strong>!
 Note that this is only possible for helicopters.</p>
@@ -1581,7 +1601,7 @@ Note that this is only possible for helicopters.</p>
 
 <p><strong>Deploying a cargo within a deployment zone, may complete a deployment task! So ensure that you deploy the right cargo at the right deployment zone!</strong></p>
 
-<h2>4) Cargo tasking from a mission designer perspective.</h2>
+<h2>Cargo tasking from a mission designer perspective.</h2>
 
 <p>Please consult the documentation how to implement the derived classes of SET_CARGO in:</p>
 
@@ -1716,19 +1736,8 @@ based on the tasking capabilities defined in <a href="Tasking.Task.html##(TASK)"
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    <a href="Cargo.Cargo.html##(CARGO)">Cargo.Cargo#CARGO</a>
 <a id="#(FSM_PROCESS).Cargo" ><strong>FSM_PROCESS.Cargo</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(FSM_PROCESS).DeployZone" ><strong>FSM_PROCESS.DeployZone</strong></a>
     
 
 
@@ -1765,7 +1774,7 @@ based on the tasking capabilities defined in <a href="Tasking.Task.html##(TASK)"
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(TASK_CARGO).CargoLimit" ><strong>TASK_CARGO.CargoLimit</strong></a>
     
 
