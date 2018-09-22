@@ -1499,11 +1499,14 @@ Use <a href="##(AI_CARGO_DISPATCHER_APC).SetHomeZone">AI_CARGO_DISPATCHER_APC.Se
     </div>
       <h5><strong>Usage:</strong></h5>
     <pre class="example"><code>
--- Create a new cargo dispatcher for the set of APCs, with a combatradius of 500.
-APCSet = SET_GROUP:New():FilterPrefixes( "APC" ):FilterStart()
-CargoSet = SET_CARGO:New():FilterTypes( "Infantry" ):FilterStart()
-DeployZoneSet = SET_ZONE:New():FilterPrefixes( "Deploy" ):FilterStart()
-AICargoDispatcher = AI_CARGO_DISPATCHER_APC:New( APCSet, CargoSet, nil, DeployZoneSet, 500 )
+     -- An AI dispatcher object for a vehicle squadron, moving infantry from pickup zones to deploy zones.
+
+     local SetCargoInfantry = SET_CARGO:New():FilterTypes( "Infantry" ):FilterStart()
+     local SetAPC = SET_GROUP:New():FilterPrefixes( "APC" ):FilterStart()
+     local SetDeployZones = SET_ZONE:New():FilterPrefixes( "Deploy" ):FilterStart()
+     
+     AICargoDispatcherAPC = AI_CARGO_DISPATCHER_APC:New( SetAPC, SetCargoInfantry, nil, SetDeployZones ) 
+     AICargoDispatcherAPC:Start()
 </code></pre>
 
 </div>

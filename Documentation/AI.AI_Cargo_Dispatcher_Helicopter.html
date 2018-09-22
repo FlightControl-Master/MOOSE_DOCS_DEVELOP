@@ -1491,11 +1491,15 @@ Use <a href="##(AI_CARGO_DISPATCHER_HELICOPTER).SetHomeZone">AI_CARGO_DISPATCHER
     </div>
       <h5><strong>Usage:</strong></h5>
     <pre class="example"><code>
--- Create a new cargo dispatcher
-HelicopterSet = SET_GROUP:New():FilterPrefixes( "Helicopter" ):FilterStart()
-CargoSet = SET_CARGO:New():FilterTypes( "Infantry" ):FilterStart()
-DeployZoneSet = SET_ZONE:New():FilterPrefixes( "Deploy" ):FilterStart()
-AICargoDispatcher = AI_CARGO_DISPATCHER_HELICOPTER:New( HelicopterSet, SetCargo, nil, DeployZoneSet )
+     -- An AI dispatcher object for a helicopter squadron, moving infantry from pickup zones to deploy zones.
+
+     local SetCargoInfantry = SET_CARGO:New():FilterTypes( "Infantry" ):FilterStart()
+     local SetHelicopter = SET_GROUP:New():FilterPrefixes( "Helicopter" ):FilterStart()
+     local SetPickupZones = SET_ZONE:New():FilterPrefixes( "Pickup" ):FilterStart()
+     local SetDeployZones = SET_ZONE:New():FilterPrefixes( "Deploy" ):FilterStart()
+     
+     AICargoDispatcherHelicopter = AI_CARGO_DISPATCHER_HELICOPTER:New( SetHelicopter, SetCargoInfantry, SetPickupZones, SetDeployZones ) 
+     AICargoDispatcherHelicopter:Start()
 </code></pre>
 
 </div>
