@@ -1203,7 +1203,6 @@ which are excellent tools to be reused in an OO environment!.</p>
 
 <p><strong>Features:</strong></p>
 
-
 <ul>
     <li><p>AI_CARGO_DISPATCHER is the <strong>base class</strong> for:</p>
     
@@ -1342,42 +1341,45 @@ Please consult the <a href="Cargo.Cargo.html">Cargo.Cargo</a> module for more in
     <li><a href="##(AI_CARGO_DISPATCHER).New">AI_CARGO_DISPATCHER.New</a>(): Creates a new AI_CARGO_DISPATCHER object.</li>
 </ul>
 
-<p>This are some example of AI cargo dispatcher objects created.</p>
+<p>Find below some examples of AI cargo dispatcher objects created.</p>
 
-<ul>
-    <li><p>An AI dispatcher object for a helicopter squadron, moving infantry from pickup zones to deploy zones.</p>
-    
-    <p>   local SetCargoInfantry = SET_CARGO:New():FilterTypes( "Infantry" ):FilterStart()
-       local SetHelicopter = SET_GROUP:New():FilterPrefixes( "Helicopter" ):FilterStart()
-       local SetPickupZones = SET_ZONE:New():FilterPrefixes( "Pickup" ):FilterStart()
-       local SetDeployZones = SET_ZONE:New():FilterPrefixes( "Deploy" ):FilterStart()</p>
-    
-    <p>   AICargoDispatcherHelicopter = AI_CARGO_DISPATCHER_HELICOPTER:New( SetHelicopter, SetCargoInfantry, SetPickupZones, SetDeployZones ) 
-       AICargoDispatcherHelicopter:SetHomeZone( ZONE:FindByName( "Home" ) )</p></li>
-    <li><p>An AI dispatcher object for a vehicle squadron, moving infantry from pickup zones to deploy zones.</p>
-    
-    <p>   local SetCargoInfantry = SET_CARGO:New():FilterTypes( "Infantry" ):FilterStart()
-       local SetAPC = SET_GROUP:New():FilterPrefixes( "APC" ):FilterStart()
-       local SetDeployZones = SET_ZONE:New():FilterPrefixes( "Deploy" ):FilterStart()</p>
-    
-    <p>   AICargoDispatcherAPC = AI_CARGO_DISPATCHER_APC:New( SetAPC, SetCargoInfantry, nil, SetDeployZones ) 
-       AICargoDispatcherAPC:Start()</p></li>
-    <li><p>An AI dispatcher object for an airplane squadron, moving infantry and vehicles from pickup airbases to deploy airbases.</p>
-    
-    <p>   local CargoInfantrySet = SET_CARGO:New():FilterTypes( "Infantry" ):FilterStart()
-       local AirplanesSet = SET_GROUP:New():FilterPrefixes( "Airplane" ):FilterStart()
-       local PickupZoneSet = SET_ZONE:New()
-       local DeployZoneSet = SET_ZONE:New()</p>
-    
-    <p>   PickupZoneSet:AddZone( ZONE_AIRBASE:New( AIRBASE.Caucasus.Gudauta ) )
-       DeployZoneSet:AddZone( ZONE_AIRBASE:New( AIRBASE.Caucasus.Sochi_Adler ) )
-       DeployZoneSet:AddZone( ZONE_AIRBASE:New( AIRBASE.Caucasus.Maykop_Khanskaya ) )
-       DeployZoneSet:AddZone( ZONE_AIRBASE:New( AIRBASE.Caucasus.Mineralnye_Vody ) )
-       DeployZoneSet:AddZone( ZONE_AIRBASE:New( AIRBASE.Caucasus.Vaziani ) )</p>
-    
-    <p>   AICargoDispatcherAirplanes = AI_CARGO_DISPATCHER_AIRPLANE:New( AirplanesSet, CargoInfantrySet, PickupZoneSet, DeployZoneSet ) 
-       AICargoDispatcherAirplanes:SetHomeZone( ZONE_AIRBASE:New( AIRBASE.Caucasus.Kobuleti ) )</p></li>
-</ul>
+<h3>An AI dispatcher object for a helicopter squadron, moving infantry from pickup zones to deploy zones.</h3>
+
+<pre><code>   local SetCargoInfantry = SET_CARGO:New():FilterTypes( "Infantry" ):FilterStart()
+   local SetHelicopter = SET_GROUP:New():FilterPrefixes( "Helicopter" ):FilterStart()
+   local SetPickupZones = SET_ZONE:New():FilterPrefixes( "Pickup" ):FilterStart()
+   local SetDeployZones = SET_ZONE:New():FilterPrefixes( "Deploy" ):FilterStart()
+
+   AICargoDispatcherHelicopter = AI_CARGO_DISPATCHER_HELICOPTER:New( SetHelicopter, SetCargoInfantry, SetPickupZones, SetDeployZones ) 
+   AICargoDispatcherHelicopter:SetHomeZone( ZONE:FindByName( "Home" ) )
+</code></pre>
+
+<h3>An AI dispatcher object for a vehicle squadron, moving infantry from pickup zones to deploy zones.</h3>
+
+<pre><code>   local SetCargoInfantry = SET_CARGO:New():FilterTypes( "Infantry" ):FilterStart()
+   local SetAPC = SET_GROUP:New():FilterPrefixes( "APC" ):FilterStart()
+   local SetDeployZones = SET_ZONE:New():FilterPrefixes( "Deploy" ):FilterStart()
+
+   AICargoDispatcherAPC = AI_CARGO_DISPATCHER_APC:New( SetAPC, SetCargoInfantry, nil, SetDeployZones ) 
+   AICargoDispatcherAPC:Start()
+</code></pre>
+
+<h3>An AI dispatcher object for an airplane squadron, moving infantry and vehicles from pickup airbases to deploy airbases.</h3>
+
+<pre><code>   local CargoInfantrySet = SET_CARGO:New():FilterTypes( "Infantry" ):FilterStart()
+   local AirplanesSet = SET_GROUP:New():FilterPrefixes( "Airplane" ):FilterStart()
+   local PickupZoneSet = SET_ZONE:New()
+   local DeployZoneSet = SET_ZONE:New()
+
+   PickupZoneSet:AddZone( ZONE_AIRBASE:New( AIRBASE.Caucasus.Gudauta ) )
+   DeployZoneSet:AddZone( ZONE_AIRBASE:New( AIRBASE.Caucasus.Sochi_Adler ) )
+   DeployZoneSet:AddZone( ZONE_AIRBASE:New( AIRBASE.Caucasus.Maykop_Khanskaya ) )
+   DeployZoneSet:AddZone( ZONE_AIRBASE:New( AIRBASE.Caucasus.Mineralnye_Vody ) )
+   DeployZoneSet:AddZone( ZONE_AIRBASE:New( AIRBASE.Caucasus.Vaziani ) )
+
+   AICargoDispatcherAirplanes = AI_CARGO_DISPATCHER_AIRPLANE:New( AirplanesSet, CargoInfantrySet, PickupZoneSet, DeployZoneSet ) 
+   AICargoDispatcherAirplanes:SetHomeZone( ZONE_AIRBASE:New( AIRBASE.Caucasus.Kobuleti ) )
+</code></pre>
 
 <hr/>
 
