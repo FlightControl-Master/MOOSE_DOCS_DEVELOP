@@ -1614,25 +1614,1186 @@ Using this object reference, you can then remove ALL the menus and submenus unde
 </div>
 
   </div>
-  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>
-  
+  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>  
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_BASE)">Type <strong>MENU_BASE</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_BASE).ClearParentMenu">MENU_BASE:ClearParentMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_BASE).GetMenu">MENU_BASE:GetMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_BASE).MenuRemoveParent">MENU_BASE.MenuRemoveParent</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_BASE).MenuTag">MENU_BASE.MenuTag</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_BASE).MenuTime">MENU_BASE.MenuTime</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_BASE).New">MENU_BASE:New(MenuText, ParentMenu)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Consructor</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_BASE).SetParentMenu">MENU_BASE:SetParentMenu(MenuText, Menu)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_BASE).SetRemoveParent">MENU_BASE:SetRemoveParent(RemoveParent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_BASE).SetTag">MENU_BASE:SetTag(MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a tag for later selection of menu refresh.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_BASE).SetTime">MENU_BASE:SetTime(MenuTime)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a time stamp for later prevention of menu removal.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_COALITION)">Type <strong>MENU_COALITION</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION).Menus">MENU_COALITION.Menus</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION).New">MENU_COALITION:New(Coalition, MenuText, ParentMenu)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>MENU_COALITION constructor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION).Refresh">MENU_COALITION:Refresh()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Refreshes a radio item for a coalition</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION).Remove">MENU_COALITION:Remove(MenuTime, MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Removes the main menu and the sub menus recursively of this MENU_COALITION.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION).RemoveSubMenus">MENU_COALITION:RemoveSubMenus()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Removes the sub menus recursively of this MENU_COALITION.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION).ClearParentMenu">MENU_COALITION:ClearParentMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION).GetMenu">MENU_COALITION:GetMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION).MenuRemoveParent">MENU_COALITION.MenuRemoveParent</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION).MenuTag">MENU_COALITION.MenuTag</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION).MenuTime">MENU_COALITION.MenuTime</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION).New">MENU_COALITION:New(MenuText, ParentMenu)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Consructor</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION).SetParentMenu">MENU_COALITION:SetParentMenu(MenuText, Menu)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION).SetRemoveParent">MENU_COALITION:SetRemoveParent(RemoveParent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION).SetTag">MENU_COALITION:SetTag(MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a tag for later selection of menu refresh.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION).SetTime">MENU_COALITION:SetTime(MenuTime)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a time stamp for later prevention of menu removal.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_COALITION_COMMAND)">Type <strong>MENU_COALITION_COMMAND</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).New">MENU_COALITION_COMMAND:New(Coalition, MenuText, ParentMenu, CommandMenuFunction, CommandMenuArgument, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>MENU_COALITION constructor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).Refresh">MENU_COALITION_COMMAND:Refresh()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Refreshes a radio item for a coalition</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).Remove">MENU_COALITION_COMMAND:Remove(MenuTime, MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Removes a radio command item for a coalition</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).MenuCallHandler">MENU_COALITION_COMMAND.MenuCallHandler</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).New">MENU_COALITION_COMMAND:New(MenuText, ParentMenu, CommandMenuFunction, CommandMenuArguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Constructor</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).SetCommandMenuArguments">MENU_COALITION_COMMAND:SetCommandMenuArguments(CommandMenuArguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This sets the new command arguments of a menu, 
+so that if a menu is regenerated, or if command arguments change,
+that the arguments set for the menu are loosely coupled with the menu itself!!!
+If the arguments change, no new menu needs to be generated if the menu text is the same!!!</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).SetCommandMenuFunction">MENU_COALITION_COMMAND:SetCommandMenuFunction(CommandMenuFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This sets the new command function of a menu, 
+so that if a menu is regenerated, or if command function changes,
+that the function set for the menu is loosely coupled with the menu itself!!!
+If the function changes, no new menu needs to be generated if the menu text is the same!!!</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).ClearParentMenu">MENU_COALITION_COMMAND:ClearParentMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).GetMenu">MENU_COALITION_COMMAND:GetMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).MenuRemoveParent">MENU_COALITION_COMMAND.MenuRemoveParent</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).MenuTag">MENU_COALITION_COMMAND.MenuTag</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).MenuTime">MENU_COALITION_COMMAND.MenuTime</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).New">MENU_COALITION_COMMAND:New(MenuText, ParentMenu)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Consructor</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).SetParentMenu">MENU_COALITION_COMMAND:SetParentMenu(MenuText, Menu)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).SetRemoveParent">MENU_COALITION_COMMAND:SetRemoveParent(RemoveParent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).SetTag">MENU_COALITION_COMMAND:SetTag(MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a tag for later selection of menu refresh.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).SetTime">MENU_COALITION_COMMAND:SetTime(MenuTime)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a time stamp for later prevention of menu removal.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_COALITION_COMMAND)">Type <strong>MENU_COMMAND_BASE</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).MenuCallHandler">MENU_COALITION_COMMAND.MenuCallHandler</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).New">MENU_COALITION_COMMAND:New(MenuText, ParentMenu, CommandMenuFunction, CommandMenuArguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Constructor</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).SetCommandMenuArguments">MENU_COALITION_COMMAND:SetCommandMenuArguments(CommandMenuArguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This sets the new command arguments of a menu, 
+so that if a menu is regenerated, or if command arguments change,
+that the arguments set for the menu are loosely coupled with the menu itself!!!
+If the arguments change, no new menu needs to be generated if the menu text is the same!!!</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).SetCommandMenuFunction">MENU_COALITION_COMMAND:SetCommandMenuFunction(CommandMenuFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This sets the new command function of a menu, 
+so that if a menu is regenerated, or if command function changes,
+that the function set for the menu is loosely coupled with the menu itself!!!
+If the function changes, no new menu needs to be generated if the menu text is the same!!!</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).ClearParentMenu">MENU_COALITION_COMMAND:ClearParentMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).GetMenu">MENU_COALITION_COMMAND:GetMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).MenuRemoveParent">MENU_COALITION_COMMAND.MenuRemoveParent</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).MenuTag">MENU_COALITION_COMMAND.MenuTag</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).MenuTime">MENU_COALITION_COMMAND.MenuTime</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).New">MENU_COALITION_COMMAND:New(MenuText, ParentMenu)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Consructor</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).SetParentMenu">MENU_COALITION_COMMAND:SetParentMenu(MenuText, Menu)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).SetRemoveParent">MENU_COALITION_COMMAND:SetRemoveParent(RemoveParent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).SetTag">MENU_COALITION_COMMAND:SetTag(MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a tag for later selection of menu refresh.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_COALITION_COMMAND).SetTime">MENU_COALITION_COMMAND:SetTime(MenuTime)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a time stamp for later prevention of menu removal.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_GROUP)">Type <strong>MENU_GROUP</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).Group">MENU_GROUP.Group</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).GroupID">MENU_GROUP.GroupID</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).MenuPath">MENU_GROUP.MenuPath</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).Menus">MENU_GROUP.Menus</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).New">MENU_GROUP:New(Group, MenuText, ParentMenu)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>MENU_GROUP constructor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).Refresh">MENU_GROUP:Refresh()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Refreshes a new radio item for a group and submenus</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).Remove">MENU_GROUP:Remove(MenuTime, MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Removes the main menu and sub menus recursively of this MENU_GROUP.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).RemoveSubMenus">MENU_GROUP:RemoveSubMenus(MenuTime, MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Removes the sub menus recursively of this MENU_GROUP.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).ClearParentMenu">MENU_GROUP:ClearParentMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).GetMenu">MENU_GROUP:GetMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).MenuRemoveParent">MENU_GROUP.MenuRemoveParent</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).MenuTag">MENU_GROUP.MenuTag</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).MenuTime">MENU_GROUP.MenuTime</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).New">MENU_GROUP:New(MenuText, ParentMenu)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Consructor</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).SetParentMenu">MENU_GROUP:SetParentMenu(MenuText, Menu)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).SetRemoveParent">MENU_GROUP:SetRemoveParent(RemoveParent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).SetTag">MENU_GROUP:SetTag(MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a tag for later selection of menu refresh.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP).SetTime">MENU_GROUP:SetTime(MenuTime)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a time stamp for later prevention of menu removal.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_GROUP_COMMAND)">Type <strong>MENU_GROUP_COMMAND</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).Group">MENU_GROUP_COMMAND.Group</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).GroupID">MENU_GROUP_COMMAND.GroupID</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).MenuPath">MENU_GROUP_COMMAND.MenuPath</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).New">MENU_GROUP_COMMAND:New(Group, MenuText, ParentMenu, CommandMenuFunction, CommandMenuArgument, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creates a new radio command item for a group</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).Refresh">MENU_GROUP_COMMAND:Refresh()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Refreshes a radio item for a group</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).Remove">MENU_GROUP_COMMAND:Remove(MenuTime, MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Removes a menu structure for a group.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).MenuCallHandler">MENU_GROUP_COMMAND.MenuCallHandler</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).New">MENU_GROUP_COMMAND:New(MenuText, ParentMenu, CommandMenuFunction, CommandMenuArguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Constructor</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).SetCommandMenuArguments">MENU_GROUP_COMMAND:SetCommandMenuArguments(CommandMenuArguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This sets the new command arguments of a menu, 
+so that if a menu is regenerated, or if command arguments change,
+that the arguments set for the menu are loosely coupled with the menu itself!!!
+If the arguments change, no new menu needs to be generated if the menu text is the same!!!</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).SetCommandMenuFunction">MENU_GROUP_COMMAND:SetCommandMenuFunction(CommandMenuFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This sets the new command function of a menu, 
+so that if a menu is regenerated, or if command function changes,
+that the function set for the menu is loosely coupled with the menu itself!!!
+If the function changes, no new menu needs to be generated if the menu text is the same!!!</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).ClearParentMenu">MENU_GROUP_COMMAND:ClearParentMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).GetMenu">MENU_GROUP_COMMAND:GetMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).MenuRemoveParent">MENU_GROUP_COMMAND.MenuRemoveParent</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).MenuTag">MENU_GROUP_COMMAND.MenuTag</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).MenuTime">MENU_GROUP_COMMAND.MenuTime</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).New">MENU_GROUP_COMMAND:New(MenuText, ParentMenu)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Consructor</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).SetParentMenu">MENU_GROUP_COMMAND:SetParentMenu(MenuText, Menu)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).SetRemoveParent">MENU_GROUP_COMMAND:SetRemoveParent(RemoveParent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).SetTag">MENU_GROUP_COMMAND:SetTag(MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a tag for later selection of menu refresh.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND).SetTime">MENU_GROUP_COMMAND:SetTime(MenuTime)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a time stamp for later prevention of menu removal.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_GROUP_COMMAND_DELAYED)">Type <strong>MENU_GROUP_COMMAND_DELAYED</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).Group">MENU_GROUP_COMMAND_DELAYED.Group</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).GroupID">MENU_GROUP_COMMAND_DELAYED.GroupID</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).MenuPath">MENU_GROUP_COMMAND_DELAYED.MenuPath</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).MenuSet">MENU_GROUP_COMMAND_DELAYED.MenuSet</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).New">MENU_GROUP_COMMAND_DELAYED:New(Group, MenuText, ParentMenu, CommandMenuFunction, CommandMenuArgument, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creates a new radio command item for a group</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).Refresh">MENU_GROUP_COMMAND_DELAYED:Refresh()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Refreshes a radio item for a group</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).Remove">MENU_GROUP_COMMAND_DELAYED:Remove(MenuTime, MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Removes a menu structure for a group.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).Set">MENU_GROUP_COMMAND_DELAYED:Set()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Refreshes a radio item for a group</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).MenuCallHandler">MENU_GROUP_COMMAND_DELAYED.MenuCallHandler</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).New">MENU_GROUP_COMMAND_DELAYED:New(MenuText, ParentMenu, CommandMenuFunction, CommandMenuArguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Constructor</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).SetCommandMenuArguments">MENU_GROUP_COMMAND_DELAYED:SetCommandMenuArguments(CommandMenuArguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This sets the new command arguments of a menu, 
+so that if a menu is regenerated, or if command arguments change,
+that the arguments set for the menu are loosely coupled with the menu itself!!!
+If the arguments change, no new menu needs to be generated if the menu text is the same!!!</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).SetCommandMenuFunction">MENU_GROUP_COMMAND_DELAYED:SetCommandMenuFunction(CommandMenuFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This sets the new command function of a menu, 
+so that if a menu is regenerated, or if command function changes,
+that the function set for the menu is loosely coupled with the menu itself!!!
+If the function changes, no new menu needs to be generated if the menu text is the same!!!</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).ClearParentMenu">MENU_GROUP_COMMAND_DELAYED:ClearParentMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).GetMenu">MENU_GROUP_COMMAND_DELAYED:GetMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).MenuRemoveParent">MENU_GROUP_COMMAND_DELAYED.MenuRemoveParent</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).MenuTag">MENU_GROUP_COMMAND_DELAYED.MenuTag</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).MenuTime">MENU_GROUP_COMMAND_DELAYED.MenuTime</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).New">MENU_GROUP_COMMAND_DELAYED:New(MenuText, ParentMenu)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Consructor</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).SetParentMenu">MENU_GROUP_COMMAND_DELAYED:SetParentMenu(MenuText, Menu)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).SetRemoveParent">MENU_GROUP_COMMAND_DELAYED:SetRemoveParent(RemoveParent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).SetTag">MENU_GROUP_COMMAND_DELAYED:SetTag(MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a tag for later selection of menu refresh.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_COMMAND_DELAYED).SetTime">MENU_GROUP_COMMAND_DELAYED:SetTime(MenuTime)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a time stamp for later prevention of menu removal.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_GROUP_DELAYED)">Type <strong>MENU_GROUP_DELAYED</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).Group">MENU_GROUP_DELAYED.Group</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).GroupID">MENU_GROUP_DELAYED.GroupID</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).MenuPath">MENU_GROUP_DELAYED.MenuPath</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).MenuSet">MENU_GROUP_DELAYED.MenuSet</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).Menus">MENU_GROUP_DELAYED.Menus</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).New">MENU_GROUP_DELAYED:New(Group, MenuText, ParentMenu)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>MENU_GROUP_DELAYED constructor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).Refresh">MENU_GROUP_DELAYED:Refresh()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Refreshes a new radio item for a group and submenus</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).Remove">MENU_GROUP_DELAYED:Remove(MenuTime, MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Removes the main menu and sub menus recursively of this MENU_GROUP.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).RemoveSubMenus">MENU_GROUP_DELAYED:RemoveSubMenus(MenuTime, MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Removes the sub menus recursively of this MENU_GROUP_DELAYED.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).Set">MENU_GROUP_DELAYED:Set()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Refreshes a new radio item for a group and submenus</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).ClearParentMenu">MENU_GROUP_DELAYED:ClearParentMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).GetMenu">MENU_GROUP_DELAYED:GetMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).MenuRemoveParent">MENU_GROUP_DELAYED.MenuRemoveParent</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).MenuTag">MENU_GROUP_DELAYED.MenuTag</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).MenuTime">MENU_GROUP_DELAYED.MenuTime</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).New">MENU_GROUP_DELAYED:New(MenuText, ParentMenu)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Consructor</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).SetParentMenu">MENU_GROUP_DELAYED:SetParentMenu(MenuText, Menu)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).SetRemoveParent">MENU_GROUP_DELAYED:SetRemoveParent(RemoveParent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).SetTag">MENU_GROUP_DELAYED:SetTag(MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a tag for later selection of menu refresh.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_GROUP_DELAYED).SetTime">MENU_GROUP_DELAYED:SetTime(MenuTime)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a time stamp for later prevention of menu removal.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_MISSION)">Type <strong>MENU_MISSION</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).MenuPath">MENU_MISSION.MenuPath</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).Menus">MENU_MISSION.Menus</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).New">MENU_MISSION:New(MenuText, ParentMenu)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>MENU_MISSION constructor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).Refresh">MENU_MISSION:Refresh()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Refreshes a radio item for a mission</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).Remove">MENU_MISSION:Remove(MenuTime, MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Removes the main menu and the sub menus recursively of this MENU_MISSION.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).RemoveSubMenus">MENU_MISSION:RemoveSubMenus()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Removes the sub menus recursively of this MENU_MISSION.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).ClearParentMenu">MENU_MISSION:ClearParentMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).GetMenu">MENU_MISSION:GetMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).MenuRemoveParent">MENU_MISSION.MenuRemoveParent</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).MenuTag">MENU_MISSION.MenuTag</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).MenuTime">MENU_MISSION.MenuTime</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).New">MENU_MISSION:New(MenuText, ParentMenu)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Consructor</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).SetParentMenu">MENU_MISSION:SetParentMenu(MenuText, Menu)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).SetRemoveParent">MENU_MISSION:SetRemoveParent(RemoveParent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).SetTag">MENU_MISSION:SetTag(MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a tag for later selection of menu refresh.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION).SetTime">MENU_MISSION:SetTime(MenuTime)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a time stamp for later prevention of menu removal.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_MISSION_COMMAND)">Type <strong>MENU_MISSION_COMMAND</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).New">MENU_MISSION_COMMAND:New(MenuText, ParentMenu, CommandMenuFunction, CommandMenuArgument, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>MENU_MISSION constructor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).Refresh">MENU_MISSION_COMMAND:Refresh()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Refreshes a radio item for a mission</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).Remove">MENU_MISSION_COMMAND:Remove()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Removes a radio command item for a coalition</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).MenuCallHandler">MENU_MISSION_COMMAND.MenuCallHandler</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).New">MENU_MISSION_COMMAND:New(MenuText, ParentMenu, CommandMenuFunction, CommandMenuArguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Constructor</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).SetCommandMenuArguments">MENU_MISSION_COMMAND:SetCommandMenuArguments(CommandMenuArguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This sets the new command arguments of a menu, 
+so that if a menu is regenerated, or if command arguments change,
+that the arguments set for the menu are loosely coupled with the menu itself!!!
+If the arguments change, no new menu needs to be generated if the menu text is the same!!!</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).SetCommandMenuFunction">MENU_MISSION_COMMAND:SetCommandMenuFunction(CommandMenuFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This sets the new command function of a menu, 
+so that if a menu is regenerated, or if command function changes,
+that the function set for the menu is loosely coupled with the menu itself!!!
+If the function changes, no new menu needs to be generated if the menu text is the same!!!</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).ClearParentMenu">MENU_MISSION_COMMAND:ClearParentMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).GetMenu">MENU_MISSION_COMMAND:GetMenu(MenuText)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).MenuRemoveParent">MENU_MISSION_COMMAND.MenuRemoveParent</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).MenuTag">MENU_MISSION_COMMAND.MenuTag</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).MenuTime">MENU_MISSION_COMMAND.MenuTime</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).New">MENU_MISSION_COMMAND:New(MenuText, ParentMenu)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Consructor</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).SetParentMenu">MENU_MISSION_COMMAND:SetParentMenu(MenuText, Menu)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).SetRemoveParent">MENU_MISSION_COMMAND:SetRemoveParent(RemoveParent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).SetTag">MENU_MISSION_COMMAND:SetTag(MenuTag)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a tag for later selection of menu refresh.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MENU_MISSION_COMMAND).SetTime">MENU_MISSION_COMMAND:SetTime(MenuTime)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets a time stamp for later prevention of menu removal.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Core.Menu)" >Type <strong>Core.Menu</strong></a></h2></div>
   <div class="w3-container w3-white w3-padding-16" id="module_current_type">
     <div class="w3-white" id="record_type">
+<h2>
+      ==> <a href="##(Core.Menu)">Core.Menu</a>
+</h2>
 </div>
 
   </div>
-  <div onclick="myFunction('#Types##MENU_BASE')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_BASE)">Type <strong>MENU_BASE</strong></a></h2></div>
+  <div onclick="myFunction('#Types##MENU_BASE')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_MISSION_COMMAND)">Type <strong>MENU_BASE</strong></a></h2></div>
   <div id= "#Types##MENU_BASE" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Base.html##(BASE)">Base#BASE</a> </h3>
+<h2>
+      ==> <a href="##(MENU_MISSION_COMMAND)">MENU_MISSION_COMMAND</a>
+     , inherits from <a href="Base.html##(BASE)">Base#BASE</a>
+</h2>
 <div class="fields">
   <h3>Field(s)</h3>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(MENU_BASE).MenuRemoveParent" ><strong>MENU_BASE.MenuRemoveParent</strong></a>
+<a id="#(MENU_MISSION_COMMAND).MenuRemoveParent" ><strong>MENU_MISSION_COMMAND.MenuRemoveParent</strong></a>
     
 
 
@@ -1646,7 +2807,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(MENU_BASE).MenuTag" ><strong>MENU_BASE.MenuTag</strong></a>
+<a id="#(MENU_MISSION_COMMAND).MenuTag" ><strong>MENU_MISSION_COMMAND.MenuTag</strong></a>
     
 
 
@@ -1657,7 +2818,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(MENU_BASE).MenuTime" ><strong>MENU_BASE.MenuTime</strong></a>
+<a id="#(MENU_MISSION_COMMAND).MenuTime" ><strong>MENU_MISSION_COMMAND.MenuTime</strong></a>
     
 
 
@@ -1671,14 +2832,14 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearParentMenu')">
-<h6><a id="#(MENU_BASE).ClearParentMenu" ><strong>MENU_BASE:ClearParentMenu(MenuText)</strong></a></h6>
+<h4><a id="#(MENU_MISSION_COMMAND).ClearParentMenu" ><strong>MENU_MISSION_COMMAND:ClearParentMenu(MenuText)</strong></a></h4>
 </div>
     
 
 
 <div id= "#Functions##ClearParentMenu" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1699,14 +2860,14 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMenu')">
-<h6><a id="#(MENU_BASE).GetMenu" ><strong>MENU_BASE:GetMenu(MenuText)</strong></a></h6>
+<h4><a id="#(MENU_MISSION_COMMAND).GetMenu" ><strong>MENU_MISSION_COMMAND:GetMenu(MenuText)</strong></a></h4>
 </div>
     
 <p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
 
 <div id= "#Functions##GetMenu" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1720,7 +2881,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_BASE)">#MENU_BASE</a>:
@@ -1741,14 +2902,14 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(MENU_BASE).New" ><strong>MENU_BASE:New(MenuText, ParentMenu)</strong></a></h6>
+<h4><a id="#(MENU_MISSION_COMMAND).New" ><strong>MENU_MISSION_COMMAND:New(MenuText, ParentMenu)</strong></a></h4>
 </div>
     
 <p>Consructor</p>
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1767,7 +2928,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_BASE)">#MENU_BASE</a>:
@@ -1788,14 +2949,14 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetParentMenu')">
-<h6><a id="#(MENU_BASE).SetParentMenu" ><strong>MENU_BASE:SetParentMenu(MenuText, Menu)</strong></a></h6>
+<h4><a id="#(MENU_MISSION_COMMAND).SetParentMenu" ><strong>MENU_MISSION_COMMAND:SetParentMenu(MenuText, Menu)</strong></a></h4>
 </div>
     
 
 
 <div id= "#Functions##SetParentMenu" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1824,14 +2985,14 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetRemoveParent')">
-<h6><a id="#(MENU_BASE).SetRemoveParent" ><strong>MENU_BASE:SetRemoveParent(RemoveParent)</strong></a></h6>
+<h4><a id="#(MENU_MISSION_COMMAND).SetRemoveParent" ><strong>MENU_MISSION_COMMAND:SetRemoveParent(RemoveParent)</strong></a></h4>
 </div>
     
 <p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
 
 <div id= "#Functions##SetRemoveParent" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1845,7 +3006,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_BASE)">#MENU_BASE</a>:
@@ -1866,14 +3027,14 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTag')">
-<h6><a id="#(MENU_BASE).SetTag" ><strong>MENU_BASE:SetTag(MenuTag)</strong></a></h6>
+<h4><a id="#(MENU_MISSION_COMMAND).SetTag" ><strong>MENU_MISSION_COMMAND:SetTag(MenuTag)</strong></a></h4>
 </div>
     
 <p>Sets a tag for later selection of menu refresh.</p>
 
 <div id= "#Functions##SetTag" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1887,7 +3048,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_BASE)">#MENU_BASE</a>:
@@ -1908,14 +3069,14 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTime')">
-<h6><a id="#(MENU_BASE).SetTime" ><strong>MENU_BASE:SetTime(MenuTime)</strong></a></h6>
+<h4><a id="#(MENU_MISSION_COMMAND).SetTime" ><strong>MENU_MISSION_COMMAND:SetTime(MenuTime)</strong></a></h4>
 </div>
     
 <p>Sets a time stamp for later prevention of menu removal.</p>
 
 <div id= "#Functions##SetTime" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1926,7 +3087,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_BASE)">#MENU_BASE</a>:
@@ -1950,7 +3111,11 @@ Using this object reference, you can then remove ALL the menus and submenus unde
   <div onclick="myFunction('#Types##MENU_COALITION')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_COALITION)">Type <strong>MENU_COALITION</strong></a></h2></div>
   <div id= "#Types##MENU_COALITION" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Core.Menu.html##(MENU_BASE)">Core.Menu#MENU_BASE</a> </h3>
+<h2>
+      ==> <a href="##(MENU_COALITION)">MENU_COALITION</a>
+     , inherits from <a href="Core.Menu.html##(MENU_BASE)">Core.Menu#MENU_BASE</a>
+     , inherits from <a href="Base.html##(BASE)">Base#BASE</a>
+</h2>
 <div class="fields">
   <h3>Field(s)</h3>
 </div>
@@ -1960,7 +3125,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(MENU_COALITION).New" ><strong>MENU_COALITION:New(Coalition, MenuText, ParentMenu)</strong></a></h6>
+<h4><a id="#(MENU_COALITION).New" ><strong>MENU_COALITION:New(Coalition, MenuText, ParentMenu)</strong></a></h4>
 </div>
     
 <p>MENU_COALITION constructor.</p>
@@ -1970,7 +3135,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2006,7 +3171,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_COALITION)">#MENU_COALITION</a>:
@@ -2027,14 +3192,14 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Refresh')">
-<h6><a id="#(MENU_COALITION).Refresh" ><strong>MENU_COALITION:Refresh()</strong></a></h6>
+<h4><a id="#(MENU_COALITION).Refresh" ><strong>MENU_COALITION:Refresh()</strong></a></h4>
 </div>
     
 <p>Refreshes a radio item for a coalition</p>
 
 <div id= "#Functions##Refresh" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_COALITION)">#MENU_COALITION</a>:
@@ -2055,14 +3220,14 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Remove')">
-<h6><a id="#(MENU_COALITION).Remove" ><strong>MENU_COALITION:Remove(MenuTime, MenuTag)</strong></a></h6>
+<h4><a id="#(MENU_COALITION).Remove" ><strong>MENU_COALITION:Remove(MenuTime, MenuTag)</strong></a></h4>
 </div>
     
 <p>Removes the main menu and the sub menus recursively of this MENU_COALITION.</p>
 
 <div id= "#Functions##Remove" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2081,7 +3246,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #nil:
@@ -2102,7 +3267,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RemoveSubMenus')">
-<h6><a id="#(MENU_COALITION).RemoveSubMenus" ><strong>MENU_COALITION:RemoveSubMenus()</strong></a></h6>
+<h4><a id="#(MENU_COALITION).RemoveSubMenus" ><strong>MENU_COALITION:RemoveSubMenus()</strong></a></h4>
 </div>
     
 <p>Removes the sub menus recursively of this MENU_COALITION.</p>
@@ -2112,10 +3277,292 @@ Using this object reference, you can then remove ALL the menus and submenus unde
 
 <div id= "#Functions##RemoveSubMenus" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_COALITION)">#MENU_COALITION</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearParentMenu')">
+<h4><a id="#(MENU_COALITION).ClearParentMenu" ><strong>MENU_COALITION:ClearParentMenu(MenuText)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##ClearParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMenu')">
+<h4><a id="#(MENU_COALITION).GetMenu" ><strong>MENU_COALITION:GetMenu(MenuText)</strong></a></h4>
+</div>
+    
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+
+<div id= "#Functions##GetMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The text of the child menu.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(MENU_COALITION).New" ><strong>MENU_COALITION:New(MenuText, ParentMenu)</strong></a></h4>
+</div>
+    
+<p>Consructor</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ParentMenu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetParentMenu')">
+<h4><a id="#(MENU_COALITION).SetParentMenu" ><strong>MENU_COALITION:SetParentMenu(MenuText, Menu)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##SetParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Menu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetRemoveParent')">
+<h4><a id="#(MENU_COALITION).SetRemoveParent" ><strong>MENU_COALITION:SetRemoveParent(RemoveParent)</strong></a></h4>
+</div>
+    
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+<div id= "#Functions##SetRemoveParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>RemoveParent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>If true, the parent menu is automatically removed when this menu is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTag')">
+<h4><a id="#(MENU_COALITION).SetTag" ><strong>MENU_COALITION:SetTag(MenuTag)</strong></a></h4>
+</div>
+    
+<p>Sets a tag for later selection of menu refresh.</p>
+
+<div id= "#Functions##SetTag" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuTag</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A Tag or Key that will filter only menu items set with this key.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTime')">
+<h4><a id="#(MENU_COALITION).SetTime" ><strong>MENU_COALITION:SetTime(MenuTime)</strong></a></h4>
+</div>
+    
+<p>Sets a time stamp for later prevention of menu removal.</p>
+
+<div id= "#Functions##SetTime" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuTime</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
       </div>
       <div class="w3-half">
         
@@ -2136,7 +3583,12 @@ Using this object reference, you can then remove ALL the menus and submenus unde
   <div onclick="myFunction('#Types##MENU_COALITION_COMMAND')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_COALITION_COMMAND)">Type <strong>MENU_COALITION_COMMAND</strong></a></h2></div>
   <div id= "#Types##MENU_COALITION_COMMAND" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Core.Menu.html##(MENU_COMMAND_BASE)">Core.Menu#MENU_COMMAND_BASE</a> </h3>
+<h2>
+      ==> <a href="##(MENU_COALITION_COMMAND)">MENU_COALITION_COMMAND</a>
+     , inherits from <a href="Core.Menu.html##(MENU_COMMAND_BASE)">Core.Menu#MENU_COMMAND_BASE</a>
+     , inherits from <a href="Core.Menu.html##(MENU_BASE)">Core.Menu#MENU_BASE</a>
+     , inherits from <a href="Base.html##(BASE)">Base#BASE</a>
+</h2>
 <div class="fields">
   <h3>Field(s)</h3>
 </div>
@@ -2146,7 +3598,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(MENU_COALITION_COMMAND).New" ><strong>MENU_COALITION_COMMAND:New(Coalition, MenuText, ParentMenu, CommandMenuFunction, CommandMenuArgument, ...)</strong></a></h6>
+<h4><a id="#(MENU_COALITION_COMMAND).New" ><strong>MENU_COALITION_COMMAND:New(Coalition, MenuText, ParentMenu, CommandMenuFunction, CommandMenuArgument, ...)</strong></a></h4>
 </div>
     
 <p>MENU_COALITION constructor.</p>
@@ -2156,7 +3608,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2220,7 +3672,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_COALITION_COMMAND)">#MENU_COALITION_COMMAND</a>:
@@ -2241,14 +3693,14 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Refresh')">
-<h6><a id="#(MENU_COALITION_COMMAND).Refresh" ><strong>MENU_COALITION_COMMAND:Refresh()</strong></a></h6>
+<h4><a id="#(MENU_COALITION_COMMAND).Refresh" ><strong>MENU_COALITION_COMMAND:Refresh()</strong></a></h4>
 </div>
     
 <p>Refreshes a radio item for a coalition</p>
 
 <div id= "#Functions##Refresh" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_COALITION_COMMAND)">#MENU_COALITION_COMMAND</a>:
@@ -2269,14 +3721,14 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Remove')">
-<h6><a id="#(MENU_COALITION_COMMAND).Remove" ><strong>MENU_COALITION_COMMAND:Remove(MenuTime, MenuTag)</strong></a></h6>
+<h4><a id="#(MENU_COALITION_COMMAND).Remove" ><strong>MENU_COALITION_COMMAND:Remove(MenuTime, MenuTag)</strong></a></h4>
 </div>
     
 <p>Removes a radio command item for a coalition</p>
 
 <div id= "#Functions##Remove" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2295,7 +3747,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #nil:
@@ -2313,26 +3765,8 @@ Using this object reference, you can then remove ALL the menus and submenus unde
 
 </div>
 </div>  
-</div>
-
-  </div>
-  <div onclick="myFunction('#Types##MENU_COMMAND_BASE')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_COMMAND_BASE)">Type <strong>MENU_COMMAND_BASE</strong></a></h2></div>
-  <div id= "#Types##MENU_COMMAND_BASE" class="w3-container w3-white w3-padding-16" id="module_other_types">
-    <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Core.Menu.html##(MENU_BASE)">Core.Menu#MENU_BASE</a> </h3>
 <div class="fields">
   <h3>Field(s)</h3>
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #function
-<a id="#(MENU_COMMAND_BASE).MenuCallHandler" ><strong>MENU_COMMAND_BASE.MenuCallHandler</strong></a>
-    
-
-
-</div>
-
-</div>   
 </div>
 <div class="functions">
   <h3>Function(s)</h3>
@@ -2340,14 +3774,14 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(MENU_COMMAND_BASE).New" ><strong>MENU_COMMAND_BASE:New(MenuText, ParentMenu, CommandMenuFunction, CommandMenuArguments)</strong></a></h6>
+<h4><a id="#(MENU_COALITION_COMMAND).New" ><strong>MENU_COALITION_COMMAND:New(MenuText, ParentMenu, CommandMenuFunction, CommandMenuArguments)</strong></a></h4>
 </div>
     
 <p>Constructor</p>
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2382,7 +3816,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_COMMAND_BASE)">#MENU_COMMAND_BASE</a>:
@@ -2403,7 +3837,7 @@ Using this object reference, you can then remove ALL the menus and submenus unde
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetCommandMenuArguments')">
-<h6><a id="#(MENU_COMMAND_BASE).SetCommandMenuArguments" ><strong>MENU_COMMAND_BASE:SetCommandMenuArguments(CommandMenuArguments)</strong></a></h6>
+<h4><a id="#(MENU_COALITION_COMMAND).SetCommandMenuArguments" ><strong>MENU_COALITION_COMMAND:SetCommandMenuArguments(CommandMenuArguments)</strong></a></h4>
 </div>
     
 <p>This sets the new command arguments of a menu, 
@@ -2413,7 +3847,7 @@ If the arguments change, no new menu needs to be generated if the menu text is t
 
 <div id= "#Functions##SetCommandMenuArguments" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2424,7 +3858,7 @@ If the arguments change, no new menu needs to be generated if the menu text is t
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_COMMAND_BASE)">#MENU_COMMAND_BASE</a>:
@@ -2445,7 +3879,7 @@ If the arguments change, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetCommandMenuFunction')">
-<h6><a id="#(MENU_COMMAND_BASE).SetCommandMenuFunction" ><strong>MENU_COMMAND_BASE:SetCommandMenuFunction(CommandMenuFunction)</strong></a></h6>
+<h4><a id="#(MENU_COALITION_COMMAND).SetCommandMenuFunction" ><strong>MENU_COALITION_COMMAND:SetCommandMenuFunction(CommandMenuFunction)</strong></a></h4>
 </div>
     
 <p>This sets the new command function of a menu, 
@@ -2455,7 +3889,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
 <div id= "#Functions##SetCommandMenuFunction" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2466,10 +3900,760 @@ If the function changes, no new menu needs to be generated if the menu text is t
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_COMMAND_BASE)">#MENU_COMMAND_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearParentMenu')">
+<h4><a id="#(MENU_COALITION_COMMAND).ClearParentMenu" ><strong>MENU_COALITION_COMMAND:ClearParentMenu(MenuText)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##ClearParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMenu')">
+<h4><a id="#(MENU_COALITION_COMMAND).GetMenu" ><strong>MENU_COALITION_COMMAND:GetMenu(MenuText)</strong></a></h4>
+</div>
+    
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+
+<div id= "#Functions##GetMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The text of the child menu.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(MENU_COALITION_COMMAND).New" ><strong>MENU_COALITION_COMMAND:New(MenuText, ParentMenu)</strong></a></h4>
+</div>
+    
+<p>Consructor</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ParentMenu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetParentMenu')">
+<h4><a id="#(MENU_COALITION_COMMAND).SetParentMenu" ><strong>MENU_COALITION_COMMAND:SetParentMenu(MenuText, Menu)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##SetParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Menu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetRemoveParent')">
+<h4><a id="#(MENU_COALITION_COMMAND).SetRemoveParent" ><strong>MENU_COALITION_COMMAND:SetRemoveParent(RemoveParent)</strong></a></h4>
+</div>
+    
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+<div id= "#Functions##SetRemoveParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>RemoveParent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>If true, the parent menu is automatically removed when this menu is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTag')">
+<h4><a id="#(MENU_COALITION_COMMAND).SetTag" ><strong>MENU_COALITION_COMMAND:SetTag(MenuTag)</strong></a></h4>
+</div>
+    
+<p>Sets a tag for later selection of menu refresh.</p>
+
+<div id= "#Functions##SetTag" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuTag</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A Tag or Key that will filter only menu items set with this key.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTime')">
+<h4><a id="#(MENU_COALITION_COMMAND).SetTime" ><strong>MENU_COALITION_COMMAND:SetTime(MenuTime)</strong></a></h4>
+</div>
+    
+<p>Sets a time stamp for later prevention of menu removal.</p>
+
+<div id= "#Functions##SetTime" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuTime</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+</div>
+
+  </div>
+  <div onclick="myFunction('#Types##MENU_COMMAND_BASE')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_COALITION_COMMAND)">Type <strong>MENU_COMMAND_BASE</strong></a></h2></div>
+  <div id= "#Types##MENU_COMMAND_BASE" class="w3-container w3-white w3-padding-16" id="module_other_types">
+    <div class="w3-white" id="record_type">
+<h2>
+      ==> <a href="##(MENU_COALITION_COMMAND)">MENU_COALITION_COMMAND</a>
+     , inherits from <a href="Core.Menu.html##(MENU_BASE)">Core.Menu#MENU_BASE</a>
+     , inherits from <a href="Base.html##(BASE)">Base#BASE</a>
+</h2>
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #function
+<a id="#(MENU_COALITION_COMMAND).MenuCallHandler" ><strong>MENU_COALITION_COMMAND.MenuCallHandler</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(MENU_COALITION_COMMAND).New" ><strong>MENU_COALITION_COMMAND:New(MenuText, ParentMenu, CommandMenuFunction, CommandMenuArguments)</strong></a></h4>
+</div>
+    
+<p>Constructor</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ParentMenu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuFunction</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuArguments</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_COMMAND_BASE)">#MENU_COMMAND_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetCommandMenuArguments')">
+<h4><a id="#(MENU_COALITION_COMMAND).SetCommandMenuArguments" ><strong>MENU_COALITION_COMMAND:SetCommandMenuArguments(CommandMenuArguments)</strong></a></h4>
+</div>
+    
+<p>This sets the new command arguments of a menu, 
+so that if a menu is regenerated, or if command arguments change,
+that the arguments set for the menu are loosely coupled with the menu itself!!!
+If the arguments change, no new menu needs to be generated if the menu text is the same!!!</p>
+
+<div id= "#Functions##SetCommandMenuArguments" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuArguments</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_COMMAND_BASE)">#MENU_COMMAND_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetCommandMenuFunction')">
+<h4><a id="#(MENU_COALITION_COMMAND).SetCommandMenuFunction" ><strong>MENU_COALITION_COMMAND:SetCommandMenuFunction(CommandMenuFunction)</strong></a></h4>
+</div>
+    
+<p>This sets the new command function of a menu, 
+so that if a menu is regenerated, or if command function changes,
+that the function set for the menu is loosely coupled with the menu itself!!!
+If the function changes, no new menu needs to be generated if the menu text is the same!!!</p>
+
+<div id= "#Functions##SetCommandMenuFunction" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuFunction</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_COMMAND_BASE)">#MENU_COMMAND_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #function
+<a id="#(MENU_COALITION_COMMAND).MenuCallHandler" ><strong>MENU_COALITION_COMMAND.MenuCallHandler</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearParentMenu')">
+<h4><a id="#(MENU_COALITION_COMMAND).ClearParentMenu" ><strong>MENU_COALITION_COMMAND:ClearParentMenu(MenuText)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##ClearParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMenu')">
+<h4><a id="#(MENU_COALITION_COMMAND).GetMenu" ><strong>MENU_COALITION_COMMAND:GetMenu(MenuText)</strong></a></h4>
+</div>
+    
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+
+<div id= "#Functions##GetMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The text of the child menu.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(MENU_COALITION_COMMAND).New" ><strong>MENU_COALITION_COMMAND:New(MenuText, ParentMenu)</strong></a></h4>
+</div>
+    
+<p>Consructor</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ParentMenu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetParentMenu')">
+<h4><a id="#(MENU_COALITION_COMMAND).SetParentMenu" ><strong>MENU_COALITION_COMMAND:SetParentMenu(MenuText, Menu)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##SetParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Menu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetRemoveParent')">
+<h4><a id="#(MENU_COALITION_COMMAND).SetRemoveParent" ><strong>MENU_COALITION_COMMAND:SetRemoveParent(RemoveParent)</strong></a></h4>
+</div>
+    
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+<div id= "#Functions##SetRemoveParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>RemoveParent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>If true, the parent menu is automatically removed when this menu is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTag')">
+<h4><a id="#(MENU_COALITION_COMMAND).SetTag" ><strong>MENU_COALITION_COMMAND:SetTag(MenuTag)</strong></a></h4>
+</div>
+    
+<p>Sets a tag for later selection of menu refresh.</p>
+
+<div id= "#Functions##SetTag" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuTag</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A Tag or Key that will filter only menu items set with this key.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTime')">
+<h4><a id="#(MENU_COALITION_COMMAND).SetTime" ><strong>MENU_COALITION_COMMAND:SetTime(MenuTime)</strong></a></h4>
+</div>
+    
+<p>Sets a time stamp for later prevention of menu removal.</p>
+
+<div id= "#Functions##SetTime" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuTime</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
       </div>
       <div class="w3-half">
         
@@ -2490,7 +4674,11 @@ If the function changes, no new menu needs to be generated if the menu text is t
   <div onclick="myFunction('#Types##MENU_GROUP')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_GROUP)">Type <strong>MENU_GROUP</strong></a></h2></div>
   <div id= "#Types##MENU_GROUP" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Core.Menu.html##(MENU_BASE)">Core.Menu#MENU_BASE</a> </h3>
+<h2>
+      ==> <a href="##(MENU_GROUP)">MENU_GROUP</a>
+     , inherits from <a href="Core.Menu.html##(MENU_BASE)">Core.Menu#MENU_BASE</a>
+     , inherits from <a href="Base.html##(BASE)">Base#BASE</a>
+</h2>
 <div class="fields">
   <h3>Field(s)</h3>
 <div>   
@@ -2533,7 +4721,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(MENU_GROUP).New" ><strong>MENU_GROUP:New(Group, MenuText, ParentMenu)</strong></a></h6>
+<h4><a id="#(MENU_GROUP).New" ><strong>MENU_GROUP:New(Group, MenuText, ParentMenu)</strong></a></h4>
 </div>
     
 <p>MENU_GROUP constructor.</p>
@@ -2543,7 +4731,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2579,7 +4767,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_GROUP)">#MENU_GROUP</a>:
@@ -2600,14 +4788,14 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Refresh')">
-<h6><a id="#(MENU_GROUP).Refresh" ><strong>MENU_GROUP:Refresh()</strong></a></h6>
+<h4><a id="#(MENU_GROUP).Refresh" ><strong>MENU_GROUP:Refresh()</strong></a></h4>
 </div>
     
 <p>Refreshes a new radio item for a group and submenus</p>
 
 <div id= "#Functions##Refresh" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_GROUP)">#MENU_GROUP</a>:
@@ -2628,14 +4816,14 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Remove')">
-<h6><a id="#(MENU_GROUP).Remove" ><strong>MENU_GROUP:Remove(MenuTime, MenuTag)</strong></a></h6>
+<h4><a id="#(MENU_GROUP).Remove" ><strong>MENU_GROUP:Remove(MenuTime, MenuTag)</strong></a></h4>
 </div>
     
 <p>Removes the main menu and sub menus recursively of this MENU_GROUP.</p>
 
 <div id= "#Functions##Remove" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2656,7 +4844,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #nil:
@@ -2677,14 +4865,14 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RemoveSubMenus')">
-<h6><a id="#(MENU_GROUP).RemoveSubMenus" ><strong>MENU_GROUP:RemoveSubMenus(MenuTime, MenuTag)</strong></a></h6>
+<h4><a id="#(MENU_GROUP).RemoveSubMenus" ><strong>MENU_GROUP:RemoveSubMenus(MenuTime, MenuTag)</strong></a></h4>
 </div>
     
 <p>Removes the sub menus recursively of this MENU_GROUP.</p>
 
 <div id= "#Functions##RemoveSubMenus" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2705,7 +4893,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_GROUP)">#MENU_GROUP</a>:
@@ -2723,13 +4911,333 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
 </div>
 </div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP).Group" ><strong>MENU_GROUP.Group</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP).GroupID" ><strong>MENU_GROUP.GroupID</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP).MenuPath" ><strong>MENU_GROUP.MenuPath</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearParentMenu')">
+<h4><a id="#(MENU_GROUP).ClearParentMenu" ><strong>MENU_GROUP:ClearParentMenu(MenuText)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##ClearParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMenu')">
+<h4><a id="#(MENU_GROUP).GetMenu" ><strong>MENU_GROUP:GetMenu(MenuText)</strong></a></h4>
+</div>
+    
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+
+<div id= "#Functions##GetMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The text of the child menu.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(MENU_GROUP).New" ><strong>MENU_GROUP:New(MenuText, ParentMenu)</strong></a></h4>
+</div>
+    
+<p>Consructor</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ParentMenu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetParentMenu')">
+<h4><a id="#(MENU_GROUP).SetParentMenu" ><strong>MENU_GROUP:SetParentMenu(MenuText, Menu)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##SetParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Menu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetRemoveParent')">
+<h4><a id="#(MENU_GROUP).SetRemoveParent" ><strong>MENU_GROUP:SetRemoveParent(RemoveParent)</strong></a></h4>
+</div>
+    
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+<div id= "#Functions##SetRemoveParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>RemoveParent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>If true, the parent menu is automatically removed when this menu is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTag')">
+<h4><a id="#(MENU_GROUP).SetTag" ><strong>MENU_GROUP:SetTag(MenuTag)</strong></a></h4>
+</div>
+    
+<p>Sets a tag for later selection of menu refresh.</p>
+
+<div id= "#Functions##SetTag" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuTag</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A Tag or Key that will filter only menu items set with this key.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTime')">
+<h4><a id="#(MENU_GROUP).SetTime" ><strong>MENU_GROUP:SetTime(MenuTime)</strong></a></h4>
+</div>
+    
+<p>Sets a time stamp for later prevention of menu removal.</p>
+
+<div id= "#Functions##SetTime" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuTime</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
 </div>
 
   </div>
   <div onclick="myFunction('#Types##MENU_GROUP_COMMAND')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_GROUP_COMMAND)">Type <strong>MENU_GROUP_COMMAND</strong></a></h2></div>
   <div id= "#Types##MENU_GROUP_COMMAND" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Core.Menu.html##(MENU_COMMAND_BASE)">Core.Menu#MENU_COMMAND_BASE</a> </h3>
+<h2>
+      ==> <a href="##(MENU_GROUP_COMMAND)">MENU_GROUP_COMMAND</a>
+     , inherits from <a href="Core.Menu.html##(MENU_COMMAND_BASE)">Core.Menu#MENU_COMMAND_BASE</a>
+     , inherits from <a href="Core.Menu.html##(MENU_BASE)">Core.Menu#MENU_BASE</a>
+     , inherits from <a href="Base.html##(BASE)">Base#BASE</a>
+</h2>
 <div class="fields">
   <h3>Field(s)</h3>
 <div>   
@@ -2772,14 +5280,14 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(MENU_GROUP_COMMAND).New" ><strong>MENU_GROUP_COMMAND:New(Group, MenuText, ParentMenu, CommandMenuFunction, CommandMenuArgument, ...)</strong></a></h6>
+<h4><a id="#(MENU_GROUP_COMMAND).New" ><strong>MENU_GROUP_COMMAND:New(Group, MenuText, ParentMenu, CommandMenuFunction, CommandMenuArgument, ...)</strong></a></h4>
 </div>
     
 <p>Creates a new radio command item for a group</p>
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2841,7 +5349,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_GROUP_COMMAND)">#MENU_GROUP_COMMAND</a>:
@@ -2862,14 +5370,14 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Refresh')">
-<h6><a id="#(MENU_GROUP_COMMAND).Refresh" ><strong>MENU_GROUP_COMMAND:Refresh()</strong></a></h6>
+<h4><a id="#(MENU_GROUP_COMMAND).Refresh" ><strong>MENU_GROUP_COMMAND:Refresh()</strong></a></h4>
 </div>
     
 <p>Refreshes a radio item for a group</p>
 
 <div id= "#Functions##Refresh" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_GROUP_COMMAND)">#MENU_GROUP_COMMAND</a>:
@@ -2890,14 +5398,14 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Remove')">
-<h6><a id="#(MENU_GROUP_COMMAND).Remove" ><strong>MENU_GROUP_COMMAND:Remove(MenuTime, MenuTag)</strong></a></h6>
+<h4><a id="#(MENU_GROUP_COMMAND).Remove" ><strong>MENU_GROUP_COMMAND:Remove(MenuTime, MenuTag)</strong></a></h4>
 </div>
     
 <p>Removes a menu structure for a group.</p>
 
 <div id= "#Functions##Remove" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2918,10 +5426,511 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #nil:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP_COMMAND).Group" ><strong>MENU_GROUP_COMMAND.Group</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP_COMMAND).GroupID" ><strong>MENU_GROUP_COMMAND.GroupID</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP_COMMAND).MenuPath" ><strong>MENU_GROUP_COMMAND.MenuPath</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(MENU_GROUP_COMMAND).New" ><strong>MENU_GROUP_COMMAND:New(MenuText, ParentMenu, CommandMenuFunction, CommandMenuArguments)</strong></a></h4>
+</div>
+    
+<p>Constructor</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ParentMenu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuFunction</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuArguments</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_COMMAND_BASE)">#MENU_COMMAND_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetCommandMenuArguments')">
+<h4><a id="#(MENU_GROUP_COMMAND).SetCommandMenuArguments" ><strong>MENU_GROUP_COMMAND:SetCommandMenuArguments(CommandMenuArguments)</strong></a></h4>
+</div>
+    
+<p>This sets the new command arguments of a menu, 
+so that if a menu is regenerated, or if command arguments change,
+that the arguments set for the menu are loosely coupled with the menu itself!!!
+If the arguments change, no new menu needs to be generated if the menu text is the same!!!</p>
+
+<div id= "#Functions##SetCommandMenuArguments" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuArguments</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_COMMAND_BASE)">#MENU_COMMAND_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetCommandMenuFunction')">
+<h4><a id="#(MENU_GROUP_COMMAND).SetCommandMenuFunction" ><strong>MENU_GROUP_COMMAND:SetCommandMenuFunction(CommandMenuFunction)</strong></a></h4>
+</div>
+    
+<p>This sets the new command function of a menu, 
+so that if a menu is regenerated, or if command function changes,
+that the function set for the menu is loosely coupled with the menu itself!!!
+If the function changes, no new menu needs to be generated if the menu text is the same!!!</p>
+
+<div id= "#Functions##SetCommandMenuFunction" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuFunction</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_COMMAND_BASE)">#MENU_COMMAND_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP_COMMAND).Group" ><strong>MENU_GROUP_COMMAND.Group</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP_COMMAND).GroupID" ><strong>MENU_GROUP_COMMAND.GroupID</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP_COMMAND).MenuPath" ><strong>MENU_GROUP_COMMAND.MenuPath</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearParentMenu')">
+<h4><a id="#(MENU_GROUP_COMMAND).ClearParentMenu" ><strong>MENU_GROUP_COMMAND:ClearParentMenu(MenuText)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##ClearParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMenu')">
+<h4><a id="#(MENU_GROUP_COMMAND).GetMenu" ><strong>MENU_GROUP_COMMAND:GetMenu(MenuText)</strong></a></h4>
+</div>
+    
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+
+<div id= "#Functions##GetMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The text of the child menu.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(MENU_GROUP_COMMAND).New" ><strong>MENU_GROUP_COMMAND:New(MenuText, ParentMenu)</strong></a></h4>
+</div>
+    
+<p>Consructor</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ParentMenu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetParentMenu')">
+<h4><a id="#(MENU_GROUP_COMMAND).SetParentMenu" ><strong>MENU_GROUP_COMMAND:SetParentMenu(MenuText, Menu)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##SetParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Menu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetRemoveParent')">
+<h4><a id="#(MENU_GROUP_COMMAND).SetRemoveParent" ><strong>MENU_GROUP_COMMAND:SetRemoveParent(RemoveParent)</strong></a></h4>
+</div>
+    
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+<div id= "#Functions##SetRemoveParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>RemoveParent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>If true, the parent menu is automatically removed when this menu is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTag')">
+<h4><a id="#(MENU_GROUP_COMMAND).SetTag" ><strong>MENU_GROUP_COMMAND:SetTag(MenuTag)</strong></a></h4>
+</div>
+    
+<p>Sets a tag for later selection of menu refresh.</p>
+
+<div id= "#Functions##SetTag" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuTag</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A Tag or Key that will filter only menu items set with this key.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTime')">
+<h4><a id="#(MENU_GROUP_COMMAND).SetTime" ><strong>MENU_GROUP_COMMAND:SetTime(MenuTime)</strong></a></h4>
+</div>
+    
+<p>Sets a time stamp for later prevention of menu removal.</p>
+
+<div id= "#Functions##SetTime" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuTime</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
       </div>
       <div class="w3-half">
         
@@ -2942,7 +5951,12 @@ If the function changes, no new menu needs to be generated if the menu text is t
   <div onclick="myFunction('#Types##MENU_GROUP_COMMAND_DELAYED')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_GROUP_COMMAND_DELAYED)">Type <strong>MENU_GROUP_COMMAND_DELAYED</strong></a></h2></div>
   <div id= "#Types##MENU_GROUP_COMMAND_DELAYED" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Core.Menu.html##(MENU_COMMAND_BASE)">Core.Menu#MENU_COMMAND_BASE</a> </h3>
+<h2>
+      ==> <a href="##(MENU_GROUP_COMMAND_DELAYED)">MENU_GROUP_COMMAND_DELAYED</a>
+     , inherits from <a href="Core.Menu.html##(MENU_COMMAND_BASE)">Core.Menu#MENU_COMMAND_BASE</a>
+     , inherits from <a href="Core.Menu.html##(MENU_BASE)">Core.Menu#MENU_BASE</a>
+     , inherits from <a href="Base.html##(BASE)">Base#BASE</a>
+</h2>
 <div class="fields">
   <h3>Field(s)</h3>
 <div>   
@@ -2996,14 +6010,14 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(MENU_GROUP_COMMAND_DELAYED).New" ><strong>MENU_GROUP_COMMAND_DELAYED:New(Group, MenuText, ParentMenu, CommandMenuFunction, CommandMenuArgument, ...)</strong></a></h6>
+<h4><a id="#(MENU_GROUP_COMMAND_DELAYED).New" ><strong>MENU_GROUP_COMMAND_DELAYED:New(Group, MenuText, ParentMenu, CommandMenuFunction, CommandMenuArgument, ...)</strong></a></h4>
 </div>
     
 <p>Creates a new radio command item for a group</p>
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3065,7 +6079,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_GROUP_COMMAND_DELAYED)">#MENU_GROUP_COMMAND_DELAYED</a>:
@@ -3086,14 +6100,14 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Refresh')">
-<h6><a id="#(MENU_GROUP_COMMAND_DELAYED).Refresh" ><strong>MENU_GROUP_COMMAND_DELAYED:Refresh()</strong></a></h6>
+<h4><a id="#(MENU_GROUP_COMMAND_DELAYED).Refresh" ><strong>MENU_GROUP_COMMAND_DELAYED:Refresh()</strong></a></h4>
 </div>
     
 <p>Refreshes a radio item for a group</p>
 
 <div id= "#Functions##Refresh" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_GROUP_COMMAND_DELAYED)">#MENU_GROUP_COMMAND_DELAYED</a>:
@@ -3114,14 +6128,14 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Remove')">
-<h6><a id="#(MENU_GROUP_COMMAND_DELAYED).Remove" ><strong>MENU_GROUP_COMMAND_DELAYED:Remove(MenuTime, MenuTag)</strong></a></h6>
+<h4><a id="#(MENU_GROUP_COMMAND_DELAYED).Remove" ><strong>MENU_GROUP_COMMAND_DELAYED:Remove(MenuTime, MenuTag)</strong></a></h4>
 </div>
     
 <p>Removes a menu structure for a group.</p>
 
 <div id= "#Functions##Remove" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3142,7 +6156,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #nil:
@@ -3163,17 +6177,540 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Set')">
-<h6><a id="#(MENU_GROUP_COMMAND_DELAYED).Set" ><strong>MENU_GROUP_COMMAND_DELAYED:Set()</strong></a></h6>
+<h4><a id="#(MENU_GROUP_COMMAND_DELAYED).Set" ><strong>MENU_GROUP_COMMAND_DELAYED:Set()</strong></a></h4>
 </div>
     
 <p>Refreshes a radio item for a group</p>
 
 <div id= "#Functions##Set" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_GROUP_COMMAND_DELAYED)">#MENU_GROUP_COMMAND_DELAYED</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP_COMMAND_DELAYED).Group" ><strong>MENU_GROUP_COMMAND_DELAYED.Group</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP_COMMAND_DELAYED).GroupID" ><strong>MENU_GROUP_COMMAND_DELAYED.GroupID</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP_COMMAND_DELAYED).MenuPath" ><strong>MENU_GROUP_COMMAND_DELAYED.MenuPath</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(MENU_GROUP_COMMAND_DELAYED).MenuSet" ><strong>MENU_GROUP_COMMAND_DELAYED.MenuSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(MENU_GROUP_COMMAND_DELAYED).New" ><strong>MENU_GROUP_COMMAND_DELAYED:New(MenuText, ParentMenu, CommandMenuFunction, CommandMenuArguments)</strong></a></h4>
+</div>
+    
+<p>Constructor</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ParentMenu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuFunction</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuArguments</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_COMMAND_BASE)">#MENU_COMMAND_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetCommandMenuArguments')">
+<h4><a id="#(MENU_GROUP_COMMAND_DELAYED).SetCommandMenuArguments" ><strong>MENU_GROUP_COMMAND_DELAYED:SetCommandMenuArguments(CommandMenuArguments)</strong></a></h4>
+</div>
+    
+<p>This sets the new command arguments of a menu, 
+so that if a menu is regenerated, or if command arguments change,
+that the arguments set for the menu are loosely coupled with the menu itself!!!
+If the arguments change, no new menu needs to be generated if the menu text is the same!!!</p>
+
+<div id= "#Functions##SetCommandMenuArguments" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuArguments</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_COMMAND_BASE)">#MENU_COMMAND_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetCommandMenuFunction')">
+<h4><a id="#(MENU_GROUP_COMMAND_DELAYED).SetCommandMenuFunction" ><strong>MENU_GROUP_COMMAND_DELAYED:SetCommandMenuFunction(CommandMenuFunction)</strong></a></h4>
+</div>
+    
+<p>This sets the new command function of a menu, 
+so that if a menu is regenerated, or if command function changes,
+that the function set for the menu is loosely coupled with the menu itself!!!
+If the function changes, no new menu needs to be generated if the menu text is the same!!!</p>
+
+<div id= "#Functions##SetCommandMenuFunction" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuFunction</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_COMMAND_BASE)">#MENU_COMMAND_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP_COMMAND_DELAYED).Group" ><strong>MENU_GROUP_COMMAND_DELAYED.Group</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP_COMMAND_DELAYED).GroupID" ><strong>MENU_GROUP_COMMAND_DELAYED.GroupID</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP_COMMAND_DELAYED).MenuPath" ><strong>MENU_GROUP_COMMAND_DELAYED.MenuPath</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(MENU_GROUP_COMMAND_DELAYED).MenuSet" ><strong>MENU_GROUP_COMMAND_DELAYED.MenuSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearParentMenu')">
+<h4><a id="#(MENU_GROUP_COMMAND_DELAYED).ClearParentMenu" ><strong>MENU_GROUP_COMMAND_DELAYED:ClearParentMenu(MenuText)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##ClearParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMenu')">
+<h4><a id="#(MENU_GROUP_COMMAND_DELAYED).GetMenu" ><strong>MENU_GROUP_COMMAND_DELAYED:GetMenu(MenuText)</strong></a></h4>
+</div>
+    
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+
+<div id= "#Functions##GetMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The text of the child menu.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(MENU_GROUP_COMMAND_DELAYED).New" ><strong>MENU_GROUP_COMMAND_DELAYED:New(MenuText, ParentMenu)</strong></a></h4>
+</div>
+    
+<p>Consructor</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ParentMenu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetParentMenu')">
+<h4><a id="#(MENU_GROUP_COMMAND_DELAYED).SetParentMenu" ><strong>MENU_GROUP_COMMAND_DELAYED:SetParentMenu(MenuText, Menu)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##SetParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Menu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetRemoveParent')">
+<h4><a id="#(MENU_GROUP_COMMAND_DELAYED).SetRemoveParent" ><strong>MENU_GROUP_COMMAND_DELAYED:SetRemoveParent(RemoveParent)</strong></a></h4>
+</div>
+    
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+<div id= "#Functions##SetRemoveParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>RemoveParent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>If true, the parent menu is automatically removed when this menu is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTag')">
+<h4><a id="#(MENU_GROUP_COMMAND_DELAYED).SetTag" ><strong>MENU_GROUP_COMMAND_DELAYED:SetTag(MenuTag)</strong></a></h4>
+</div>
+    
+<p>Sets a tag for later selection of menu refresh.</p>
+
+<div id= "#Functions##SetTag" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuTag</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A Tag or Key that will filter only menu items set with this key.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTime')">
+<h4><a id="#(MENU_GROUP_COMMAND_DELAYED).SetTime" ><strong>MENU_GROUP_COMMAND_DELAYED:SetTime(MenuTime)</strong></a></h4>
+</div>
+    
+<p>Sets a time stamp for later prevention of menu removal.</p>
+
+<div id= "#Functions##SetTime" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuTime</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
       </div>
       <div class="w3-half">
         
@@ -3194,7 +6731,11 @@ If the function changes, no new menu needs to be generated if the menu text is t
   <div onclick="myFunction('#Types##MENU_GROUP_DELAYED')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_GROUP_DELAYED)">Type <strong>MENU_GROUP_DELAYED</strong></a></h2></div>
   <div id= "#Types##MENU_GROUP_DELAYED" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Core.Menu.html##(MENU_BASE)">Core.Menu#MENU_BASE</a> </h3>
+<h2>
+      ==> <a href="##(MENU_GROUP_DELAYED)">MENU_GROUP_DELAYED</a>
+     , inherits from <a href="Core.Menu.html##(MENU_BASE)">Core.Menu#MENU_BASE</a>
+     , inherits from <a href="Base.html##(BASE)">Base#BASE</a>
+</h2>
 <div class="fields">
   <h3>Field(s)</h3>
 <div>   
@@ -3248,7 +6789,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(MENU_GROUP_DELAYED).New" ><strong>MENU_GROUP_DELAYED:New(Group, MenuText, ParentMenu)</strong></a></h6>
+<h4><a id="#(MENU_GROUP_DELAYED).New" ><strong>MENU_GROUP_DELAYED:New(Group, MenuText, ParentMenu)</strong></a></h4>
 </div>
     
 <p>MENU_GROUP_DELAYED constructor.</p>
@@ -3258,7 +6799,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3294,7 +6835,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_GROUP_DELAYED)">#MENU_GROUP_DELAYED</a>:
@@ -3315,14 +6856,14 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Refresh')">
-<h6><a id="#(MENU_GROUP_DELAYED).Refresh" ><strong>MENU_GROUP_DELAYED:Refresh()</strong></a></h6>
+<h4><a id="#(MENU_GROUP_DELAYED).Refresh" ><strong>MENU_GROUP_DELAYED:Refresh()</strong></a></h4>
 </div>
     
 <p>Refreshes a new radio item for a group and submenus</p>
 
 <div id= "#Functions##Refresh" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_GROUP_DELAYED)">#MENU_GROUP_DELAYED</a>:
@@ -3343,14 +6884,14 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Remove')">
-<h6><a id="#(MENU_GROUP_DELAYED).Remove" ><strong>MENU_GROUP_DELAYED:Remove(MenuTime, MenuTag)</strong></a></h6>
+<h4><a id="#(MENU_GROUP_DELAYED).Remove" ><strong>MENU_GROUP_DELAYED:Remove(MenuTime, MenuTag)</strong></a></h4>
 </div>
     
 <p>Removes the main menu and sub menus recursively of this MENU_GROUP.</p>
 
 <div id= "#Functions##Remove" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3371,7 +6912,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #nil:
@@ -3392,14 +6933,14 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RemoveSubMenus')">
-<h6><a id="#(MENU_GROUP_DELAYED).RemoveSubMenus" ><strong>MENU_GROUP_DELAYED:RemoveSubMenus(MenuTime, MenuTag)</strong></a></h6>
+<h4><a id="#(MENU_GROUP_DELAYED).RemoveSubMenus" ><strong>MENU_GROUP_DELAYED:RemoveSubMenus(MenuTime, MenuTag)</strong></a></h4>
 </div>
     
 <p>Removes the sub menus recursively of this MENU_GROUP_DELAYED.</p>
 
 <div id= "#Functions##RemoveSubMenus" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3420,7 +6961,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_GROUP_DELAYED)">#MENU_GROUP_DELAYED</a>:
@@ -3441,17 +6982,343 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Set')">
-<h6><a id="#(MENU_GROUP_DELAYED).Set" ><strong>MENU_GROUP_DELAYED:Set()</strong></a></h6>
+<h4><a id="#(MENU_GROUP_DELAYED).Set" ><strong>MENU_GROUP_DELAYED:Set()</strong></a></h4>
 </div>
     
 <p>Refreshes a new radio item for a group and submenus</p>
 
 <div id= "#Functions##Set" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_GROUP_DELAYED)">#MENU_GROUP_DELAYED</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP_DELAYED).Group" ><strong>MENU_GROUP_DELAYED.Group</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP_DELAYED).GroupID" ><strong>MENU_GROUP_DELAYED.GroupID</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_GROUP_DELAYED).MenuPath" ><strong>MENU_GROUP_DELAYED.MenuPath</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(MENU_GROUP_DELAYED).MenuSet" ><strong>MENU_GROUP_DELAYED.MenuSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearParentMenu')">
+<h4><a id="#(MENU_GROUP_DELAYED).ClearParentMenu" ><strong>MENU_GROUP_DELAYED:ClearParentMenu(MenuText)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##ClearParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMenu')">
+<h4><a id="#(MENU_GROUP_DELAYED).GetMenu" ><strong>MENU_GROUP_DELAYED:GetMenu(MenuText)</strong></a></h4>
+</div>
+    
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+
+<div id= "#Functions##GetMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The text of the child menu.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(MENU_GROUP_DELAYED).New" ><strong>MENU_GROUP_DELAYED:New(MenuText, ParentMenu)</strong></a></h4>
+</div>
+    
+<p>Consructor</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ParentMenu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetParentMenu')">
+<h4><a id="#(MENU_GROUP_DELAYED).SetParentMenu" ><strong>MENU_GROUP_DELAYED:SetParentMenu(MenuText, Menu)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##SetParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Menu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetRemoveParent')">
+<h4><a id="#(MENU_GROUP_DELAYED).SetRemoveParent" ><strong>MENU_GROUP_DELAYED:SetRemoveParent(RemoveParent)</strong></a></h4>
+</div>
+    
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+<div id= "#Functions##SetRemoveParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>RemoveParent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>If true, the parent menu is automatically removed when this menu is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTag')">
+<h4><a id="#(MENU_GROUP_DELAYED).SetTag" ><strong>MENU_GROUP_DELAYED:SetTag(MenuTag)</strong></a></h4>
+</div>
+    
+<p>Sets a tag for later selection of menu refresh.</p>
+
+<div id= "#Functions##SetTag" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuTag</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A Tag or Key that will filter only menu items set with this key.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTime')">
+<h4><a id="#(MENU_GROUP_DELAYED).SetTime" ><strong>MENU_GROUP_DELAYED:SetTime(MenuTime)</strong></a></h4>
+</div>
+    
+<p>Sets a time stamp for later prevention of menu removal.</p>
+
+<div id= "#Functions##SetTime" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuTime</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
       </div>
       <div class="w3-half">
         
@@ -3472,7 +7339,11 @@ If the function changes, no new menu needs to be generated if the menu text is t
   <div onclick="myFunction('#Types##MENU_MISSION')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_MISSION)">Type <strong>MENU_MISSION</strong></a></h2></div>
   <div id= "#Types##MENU_MISSION" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Core.Menu.html##(MENU_BASE)">Core.Menu#MENU_BASE</a> </h3>
+<h2>
+      ==> <a href="##(MENU_MISSION)">MENU_MISSION</a>
+     , inherits from <a href="Core.Menu.html##(MENU_BASE)">Core.Menu#MENU_BASE</a>
+     , inherits from <a href="Base.html##(BASE)">Base#BASE</a>
+</h2>
 <div class="fields">
   <h3>Field(s)</h3>
 <div>   
@@ -3493,7 +7364,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(MENU_MISSION).New" ><strong>MENU_MISSION:New(MenuText, ParentMenu)</strong></a></h6>
+<h4><a id="#(MENU_MISSION).New" ><strong>MENU_MISSION:New(MenuText, ParentMenu)</strong></a></h4>
 </div>
     
 <p>MENU_MISSION constructor.</p>
@@ -3503,7 +7374,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3528,7 +7399,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_MISSION)">#MENU_MISSION</a>:
@@ -3549,14 +7420,14 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Refresh')">
-<h6><a id="#(MENU_MISSION).Refresh" ><strong>MENU_MISSION:Refresh()</strong></a></h6>
+<h4><a id="#(MENU_MISSION).Refresh" ><strong>MENU_MISSION:Refresh()</strong></a></h4>
 </div>
     
 <p>Refreshes a radio item for a mission</p>
 
 <div id= "#Functions##Refresh" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_MISSION)">#MENU_MISSION</a>:
@@ -3577,14 +7448,14 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Remove')">
-<h6><a id="#(MENU_MISSION).Remove" ><strong>MENU_MISSION:Remove(MenuTime, MenuTag)</strong></a></h6>
+<h4><a id="#(MENU_MISSION).Remove" ><strong>MENU_MISSION:Remove(MenuTime, MenuTag)</strong></a></h4>
 </div>
     
 <p>Removes the main menu and the sub menus recursively of this MENU_MISSION.</p>
 
 <div id= "#Functions##Remove" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3603,7 +7474,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #nil:
@@ -3624,7 +7495,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RemoveSubMenus')">
-<h6><a id="#(MENU_MISSION).RemoveSubMenus" ><strong>MENU_MISSION:RemoveSubMenus()</strong></a></h6>
+<h4><a id="#(MENU_MISSION).RemoveSubMenus" ><strong>MENU_MISSION:RemoveSubMenus()</strong></a></h4>
 </div>
     
 <p>Removes the sub menus recursively of this MENU_MISSION.</p>
@@ -3634,10 +7505,303 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
 <div id= "#Functions##RemoveSubMenus" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_MISSION)">#MENU_MISSION</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MENU_MISSION).MenuPath" ><strong>MENU_MISSION.MenuPath</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearParentMenu')">
+<h4><a id="#(MENU_MISSION).ClearParentMenu" ><strong>MENU_MISSION:ClearParentMenu(MenuText)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##ClearParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMenu')">
+<h4><a id="#(MENU_MISSION).GetMenu" ><strong>MENU_MISSION:GetMenu(MenuText)</strong></a></h4>
+</div>
+    
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+
+<div id= "#Functions##GetMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The text of the child menu.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(MENU_MISSION).New" ><strong>MENU_MISSION:New(MenuText, ParentMenu)</strong></a></h4>
+</div>
+    
+<p>Consructor</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ParentMenu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetParentMenu')">
+<h4><a id="#(MENU_MISSION).SetParentMenu" ><strong>MENU_MISSION:SetParentMenu(MenuText, Menu)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##SetParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Menu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetRemoveParent')">
+<h4><a id="#(MENU_MISSION).SetRemoveParent" ><strong>MENU_MISSION:SetRemoveParent(RemoveParent)</strong></a></h4>
+</div>
+    
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+<div id= "#Functions##SetRemoveParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>RemoveParent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>If true, the parent menu is automatically removed when this menu is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTag')">
+<h4><a id="#(MENU_MISSION).SetTag" ><strong>MENU_MISSION:SetTag(MenuTag)</strong></a></h4>
+</div>
+    
+<p>Sets a tag for later selection of menu refresh.</p>
+
+<div id= "#Functions##SetTag" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuTag</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A Tag or Key that will filter only menu items set with this key.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTime')">
+<h4><a id="#(MENU_MISSION).SetTime" ><strong>MENU_MISSION:SetTime(MenuTime)</strong></a></h4>
+</div>
+    
+<p>Sets a time stamp for later prevention of menu removal.</p>
+
+<div id= "#Functions##SetTime" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuTime</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
       </div>
       <div class="w3-half">
         
@@ -3658,7 +7822,12 @@ If the function changes, no new menu needs to be generated if the menu text is t
   <div onclick="myFunction('#Types##MENU_MISSION_COMMAND')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MENU_MISSION_COMMAND)">Type <strong>MENU_MISSION_COMMAND</strong></a></h2></div>
   <div id= "#Types##MENU_MISSION_COMMAND" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Core.Menu.html##(MENU_COMMAND_BASE)">Core.Menu#MENU_COMMAND_BASE</a> </h3>
+<h2>
+      ==> <a href="##(MENU_MISSION_COMMAND)">MENU_MISSION_COMMAND</a>
+     , inherits from <a href="Core.Menu.html##(MENU_COMMAND_BASE)">Core.Menu#MENU_COMMAND_BASE</a>
+     , inherits from <a href="Core.Menu.html##(MENU_BASE)">Core.Menu#MENU_BASE</a>
+     , inherits from <a href="Base.html##(BASE)">Base#BASE</a>
+</h2>
 <div class="fields">
   <h3>Field(s)</h3>
 </div>
@@ -3668,7 +7837,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(MENU_MISSION_COMMAND).New" ><strong>MENU_MISSION_COMMAND:New(MenuText, ParentMenu, CommandMenuFunction, CommandMenuArgument, ...)</strong></a></h6>
+<h4><a id="#(MENU_MISSION_COMMAND).New" ><strong>MENU_MISSION_COMMAND:New(MenuText, ParentMenu, CommandMenuFunction, CommandMenuArgument, ...)</strong></a></h4>
 </div>
     
 <p>MENU_MISSION constructor.</p>
@@ -3678,7 +7847,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3731,7 +7900,7 @@ If the function changes, no new menu needs to be generated if the menu text is t
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_MISSION_COMMAND)">#MENU_MISSION_COMMAND</a>:
@@ -3752,14 +7921,14 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Refresh')">
-<h6><a id="#(MENU_MISSION_COMMAND).Refresh" ><strong>MENU_MISSION_COMMAND:Refresh()</strong></a></h6>
+<h4><a id="#(MENU_MISSION_COMMAND).Refresh" ><strong>MENU_MISSION_COMMAND:Refresh()</strong></a></h4>
 </div>
     
 <p>Refreshes a radio item for a mission</p>
 
 <div id= "#Functions##Refresh" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MENU_MISSION_COMMAND)">#MENU_MISSION_COMMAND</a>:
@@ -3780,17 +7949,452 @@ If the function changes, no new menu needs to be generated if the menu text is t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Remove')">
-<h6><a id="#(MENU_MISSION_COMMAND).Remove" ><strong>MENU_MISSION_COMMAND:Remove()</strong></a></h6>
+<h4><a id="#(MENU_MISSION_COMMAND).Remove" ><strong>MENU_MISSION_COMMAND:Remove()</strong></a></h4>
 </div>
     
 <p>Removes a radio command item for a coalition</p>
 
 <div id= "#Functions##Remove" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #nil:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(MENU_MISSION_COMMAND).New" ><strong>MENU_MISSION_COMMAND:New(MenuText, ParentMenu, CommandMenuFunction, CommandMenuArguments)</strong></a></h4>
+</div>
+    
+<p>Constructor</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ParentMenu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuFunction</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuArguments</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_COMMAND_BASE)">#MENU_COMMAND_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetCommandMenuArguments')">
+<h4><a id="#(MENU_MISSION_COMMAND).SetCommandMenuArguments" ><strong>MENU_MISSION_COMMAND:SetCommandMenuArguments(CommandMenuArguments)</strong></a></h4>
+</div>
+    
+<p>This sets the new command arguments of a menu, 
+so that if a menu is regenerated, or if command arguments change,
+that the arguments set for the menu are loosely coupled with the menu itself!!!
+If the arguments change, no new menu needs to be generated if the menu text is the same!!!</p>
+
+<div id= "#Functions##SetCommandMenuArguments" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuArguments</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_COMMAND_BASE)">#MENU_COMMAND_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetCommandMenuFunction')">
+<h4><a id="#(MENU_MISSION_COMMAND).SetCommandMenuFunction" ><strong>MENU_MISSION_COMMAND:SetCommandMenuFunction(CommandMenuFunction)</strong></a></h4>
+</div>
+    
+<p>This sets the new command function of a menu, 
+so that if a menu is regenerated, or if command function changes,
+that the function set for the menu is loosely coupled with the menu itself!!!
+If the function changes, no new menu needs to be generated if the menu text is the same!!!</p>
+
+<div id= "#Functions##SetCommandMenuFunction" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>CommandMenuFunction</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_COMMAND_BASE)">#MENU_COMMAND_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearParentMenu')">
+<h4><a id="#(MENU_MISSION_COMMAND).ClearParentMenu" ><strong>MENU_MISSION_COMMAND:ClearParentMenu(MenuText)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##ClearParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMenu')">
+<h4><a id="#(MENU_MISSION_COMMAND).GetMenu" ><strong>MENU_MISSION_COMMAND:GetMenu(MenuText)</strong></a></h4>
+</div>
+    
+<p>Gets a <a href="Menu.html">Menu</a> from a parent <a href="Menu.html">Menu</a></p>
+
+<div id= "#Functions##GetMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The text of the child menu.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(MENU_MISSION_COMMAND).New" ><strong>MENU_MISSION_COMMAND:New(MenuText, ParentMenu)</strong></a></h4>
+</div>
+    
+<p>Consructor</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ParentMenu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetParentMenu')">
+<h4><a id="#(MENU_MISSION_COMMAND).SetParentMenu" ><strong>MENU_MISSION_COMMAND:SetParentMenu(MenuText, Menu)</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##SetParentMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuText</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Menu</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetRemoveParent')">
+<h4><a id="#(MENU_MISSION_COMMAND).SetRemoveParent" ><strong>MENU_MISSION_COMMAND:SetRemoveParent(RemoveParent)</strong></a></h4>
+</div>
+    
+<p>Sets a <a href="Menu.html">Menu</a> to remove automatically the parent menu when the menu removed is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+<div id= "#Functions##SetRemoveParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>RemoveParent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>If true, the parent menu is automatically removed when this menu is the last child menu of that parent <a href="Menu.html">Menu</a>.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTag')">
+<h4><a id="#(MENU_MISSION_COMMAND).SetTag" ><strong>MENU_MISSION_COMMAND:SetTag(MenuTag)</strong></a></h4>
+</div>
+    
+<p>Sets a tag for later selection of menu refresh.</p>
+
+<div id= "#Functions##SetTag" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>MenuTag</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A Tag or Key that will filter only menu items set with this key.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTime')">
+<h4><a id="#(MENU_MISSION_COMMAND).SetTime" ><strong>MENU_MISSION_COMMAND:SetTime(MenuTime)</strong></a></h4>
+</div>
+    
+<p>Sets a time stamp for later prevention of menu removal.</p>
+
+<div id= "#Functions##SetTime" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>MenuTime</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(MENU_BASE)">#MENU_BASE</a>:
       </div>
       <div class="w3-half">
         

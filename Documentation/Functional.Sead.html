@@ -1227,18 +1227,482 @@ which are excellent tools to be reused in an OO environment!.</p>
 </div>
 
   </div>
-  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>
-  
+  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>  
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(SEAD)">Type <strong>SEAD</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).ClassName">SEAD.ClassName</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).New">SEAD.New(table, self, SEADGroupPrefixes)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creates the main object which is handling defensive actions for SA sites or moving SA vehicles.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventShot">SEAD.OnEventShot(EventData, self)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Detects if an SA site was shot with an anti radiation missile.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).SEADGroupPrefixes">SEAD.SEADGroupPrefixes</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).TargetSkill">SEAD.TargetSkill</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).ClassID">SEAD.ClassID</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The ID number of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).ClassName">SEAD.ClassName</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The name of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).ClassNameAndID">SEAD.ClassNameAndID</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The name of the class concatenated with the ID number of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).ClearState">SEAD:ClearState(Object, StateName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Clear the state of an object.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).CreateEventBirth">SEAD:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Birth Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).CreateEventCrash">SEAD:CreateEventCrash(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Crash Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).CreateEventDead">SEAD:CreateEventDead(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Dead Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).CreateEventRemoveUnit">SEAD:CreateEventRemoveUnit(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Remove Unit Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).CreateEventTakeoff">SEAD:CreateEventTakeoff(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Takeoff Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).E">SEAD:E(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Log an exception which will be traced always.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).EventDispatcher">SEAD:EventDispatcher()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the event dispatcher</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).EventRemoveAll">SEAD:EventRemoveAll()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Remove all subscribed events</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).F">SEAD:F(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).F2">SEAD:F2(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call level 2.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).F3">SEAD:F3(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call level 3.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).GetClassID">SEAD:GetClassID()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassID of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).GetClassName">SEAD:GetClassName()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassName of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).GetClassNameAndID">SEAD:GetClassNameAndID()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassName + ClassID of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).GetEventPriority">SEAD:GetEventPriority()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the Class <a href="Event.html">Event</a> processing Priority.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).GetParent">SEAD:GetParent(Child, FromClass)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to retrieve the Parent class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).GetState">SEAD:GetState(Object, Key)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get a Value given a Key from the Object.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).HandleEvent">SEAD:HandleEvent(Event, EventFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Subscribe to a DCS Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).I">SEAD:I(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Log an information which will be traced always.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).Inherit">SEAD:Inherit(Child, Parent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to inherit from a parent class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).IsInstanceOf">SEAD:IsInstanceOf(ClassName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to check if an object is an (sub)instance of a class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).IsTrace">SEAD:IsTrace()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Enquires if tracing is on (for the class).</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).New">SEAD:New()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>BASE constructor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEvent">SEAD:OnEvent(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an object is completely destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventBaseCaptured">SEAD:OnEventBaseCaptured(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a ground unit captures either an airbase or a farp.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventBirth">SEAD:OnEventBirth(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any object is spawned into the mission.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventCrash">SEAD:OnEventCrash(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventDead">SEAD:OnEventDead(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an object is dead.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventEjection">SEAD:OnEventEjection(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a pilot ejects from an aircraft
+initiator : The unit that has ejected </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventEngineShutdown">SEAD:OnEventEngineShutdown(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft shuts down its engines.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventEngineStartup">SEAD:OnEventEngineStartup(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft starts its engines.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventHit">SEAD:OnEventHit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs whenever an object is hit by a weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventHumanFailure">SEAD:OnEventHumanFailure(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any system fails on a human controlled aircraft.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventLand">SEAD:OnEventLand(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft lands at an airbase, farp or ship
+initiator : The unit that has landed
+place: Object that the unit landed on.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventMissionEnd">SEAD:OnEventMissionEnd(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a mission ends</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventMissionStart">SEAD:OnEventMissionStart(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a mission starts </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventPilotDead">SEAD:OnEventPilotDead(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when the pilot of an aircraft is killed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventPlayerEnterUnit">SEAD:OnEventPlayerEnterUnit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any player assumes direct control of a unit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventPlayerLeaveUnit">SEAD:OnEventPlayerLeaveUnit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any player relieves control of a unit to the AI.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventRefueling">SEAD:OnEventRefueling(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventRefuelingStop">SEAD:OnEventRefuelingStop(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft is finished taking fuel.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventShootingEnd">SEAD:OnEventShootingEnd(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any unit stops firing its weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventShootingStart">SEAD:OnEventShootingStart(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventShot">SEAD:OnEventShot(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs whenever any unit in a mission fires a weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).OnEventTakeoff">SEAD:OnEventTakeoff(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).ScheduleOnce">SEAD:ScheduleOnce(Start, SchedulerFunction, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Schedule a new time event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).ScheduleRepeat">SEAD:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Schedule a new time event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).ScheduleStop">SEAD:ScheduleStop(SchedulerFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Stops the Schedule.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).Scheduler">SEAD.Scheduler</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).SetEventPriority">SEAD:SetEventPriority(EventPriority)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set the Class <a href="Event.html">Event</a> processing Priority.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).SetState">SEAD:SetState(Object, Key, Value)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set a state or property of the Object given a Key and a Value.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).T">SEAD:T(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 1.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).T2">SEAD:T2(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 2.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).T3">SEAD:T3(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 3.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).TraceAll">SEAD:TraceAll(TraceAll)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace all methods in MOOSE</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).TraceClass">SEAD:TraceClass(Class)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set tracing for a class</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).TraceClassMethod">SEAD:TraceClassMethod(Class, Method)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set tracing for a specific method of  class</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).TraceLevel">SEAD:TraceLevel(Level)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set trace level</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).TraceOnOff">SEAD:TraceOnOff(TraceOnOff)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set trace on or off
+Note that when trace is off, no BASE.Debug statement is performed, increasing performance!
+When Moose is loaded statically, (as one file), tracing is switched off by default.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).UnHandleEvent">SEAD:UnHandleEvent(Event)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>UnSubscribe to a DCS event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD)._">SEAD._</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD)._F">SEAD:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD)._T">SEAD:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).__">SEAD.__</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SEAD).onEvent">SEAD:onEvent(event)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+  </table>
+ </div>
+
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Functional.Sead)" >Type <strong>Functional.Sead</strong></a></h2></div>
   <div class="w3-container w3-white w3-padding-16" id="module_current_type">
     <div class="w3-white" id="record_type">
+<h2>
+      ==> <a href="##(Functional.Sead)">Functional.Sead</a>
+</h2>
 </div>
 
   </div>
   <div onclick="myFunction('#Types##SEAD')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(SEAD)">Type <strong>SEAD</strong></a></h2></div>
   <div id= "#Types##SEAD" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Core.Base.html##(BASE)">Core.Base#BASE</a> </h3>
+<h2>
+      ==> <a href="##(SEAD)">SEAD</a>
+     , inherits from <a href="Core.Base.html##(BASE)">Core.Base#BASE</a>
+</h2>
   
 <p>The SEAD class</p>
 
@@ -1284,7 +1748,7 @@ which are excellent tools to be reused in an OO environment!.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(SEAD).New" ><strong>SEAD.New(table, self, SEADGroupPrefixes)</strong></a></h6>
+<h4><a id="#(SEAD).New" ><strong>SEAD.New(table, self, SEADGroupPrefixes)</strong></a></h4>
 </div>
     
 <p>Creates the main object which is handling defensive actions for SA sites or moving SA vehicles.</p>
@@ -1295,7 +1759,7 @@ Chances are big that the missile will miss.</p>
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
         <div class="w3-half">
         <strong>table</strong>
@@ -1322,7 +1786,7 @@ Chances are big that the missile will miss.</p>
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
       </div>
@@ -1332,7 +1796,7 @@ Chances are big that the missile will miss.</p>
 
       </div>
     </div>
-      <h5><strong>Usage:</strong></h5>
+      <h3><strong>Usage:</strong></h3>
     <pre class="example"><code>-- CCCP SEAD Defenses
 -- Defends the Russian SA installations from SEAD attacks.
 SEAD_RU_SAM_Defenses = SEAD:New( { 'RU SA-6 Kub', 'RU SA-6 Defenses', 'RU MI-26 Troops', 'RU Attack Gori' } )</code></pre>
@@ -1347,7 +1811,7 @@ SEAD_RU_SAM_Defenses = SEAD:New( { 'RU SA-6 Kub', 'RU SA-6 Defenses', 'RU MI-26 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShot')">
-<h6><a id="#(SEAD).OnEventShot" ><strong>SEAD.OnEventShot(EventData, self)</strong></a></h6>
+<h4><a id="#(SEAD).OnEventShot" ><strong>SEAD.OnEventShot(EventData, self)</strong></a></h4>
 </div>
     
 <p>Detects if an SA site was shot with an anti radiation missile.</p>
@@ -1357,7 +1821,7 @@ SEAD_RU_SAM_Defenses = SEAD:New( { 'RU SA-6 Kub', 'RU SA-6 Defenses', 'RU MI-26 
 
 <div id= "#Functions##OnEventShot" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
         <div class="w3-half">
           <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
@@ -1370,6 +1834,2492 @@ SEAD_RU_SAM_Defenses = SEAD:New( { 'RU SA-6 Kub', 'RU SA-6 Defenses', 'RU MI-26 
       <div class="w3-row">
         <div class="w3-half">
         <strong>self</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(SEAD).ClassName" ><strong>SEAD.ClassName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(SEAD).SEADGroupPrefixes" ><strong>SEAD.SEADGroupPrefixes</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(SEAD).TargetSkill" ><strong>SEAD.TargetSkill</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearState')">
+<h4><a id="#(SEAD).ClearState" ><strong>SEAD:ClearState(Object, StateName)</strong></a></h4>
+</div>
+    
+<p>Clear the state of an object.</p>
+
+<div id= "#Functions##ClearState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that holds the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>StateName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is should be cleared.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventBirth')">
+<h4><a id="#(SEAD).CreateEventBirth" ><strong>SEAD:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</strong></a></h4>
+</div>
+    
+<p>Creation of a Birth Event.</p>
+
+<div id= "#Functions##CreateEventBirth" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>IniUnitName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating unit name.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>place</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>subplace</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventCrash')">
+<h4><a id="#(SEAD).CreateEventCrash" ><strong>SEAD:CreateEventCrash(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Crash Event.</p>
+
+<div id= "#Functions##CreateEventCrash" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventDead')">
+<h4><a id="#(SEAD).CreateEventDead" ><strong>SEAD:CreateEventDead(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Dead Event.</p>
+
+<div id= "#Functions##CreateEventDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventRemoveUnit')">
+<h4><a id="#(SEAD).CreateEventRemoveUnit" ><strong>SEAD:CreateEventRemoveUnit(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Remove Unit Event.</p>
+
+<div id= "#Functions##CreateEventRemoveUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventTakeoff')">
+<h4><a id="#(SEAD).CreateEventTakeoff" ><strong>SEAD:CreateEventTakeoff(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Takeoff Event.</p>
+
+<div id= "#Functions##CreateEventTakeoff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##E')">
+<h4><a id="#(SEAD).E" ><strong>SEAD:E(Arguments)</strong></a></h4>
+</div>
+    
+<p>Log an exception which will be traced always.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##E" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##EventDispatcher')">
+<h4><a id="#(SEAD).EventDispatcher" ><strong>SEAD:EventDispatcher()</strong></a></h4>
+</div>
+    
+<p>Returns the event dispatcher</p>
+
+<div id= "#Functions##EventDispatcher" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##EventRemoveAll')">
+<h4><a id="#(SEAD).EventRemoveAll" ><strong>SEAD:EventRemoveAll()</strong></a></h4>
+</div>
+    
+<p>Remove all subscribed events</p>
+
+<div id= "#Functions##EventRemoveAll" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F')">
+<h4><a id="#(SEAD).F" ><strong>SEAD:F(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F2')">
+<h4><a id="#(SEAD).F2" ><strong>SEAD:F2(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call level 2.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F3')">
+<h4><a id="#(SEAD).F3" ><strong>SEAD:F3(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call level 3.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassID')">
+<h4><a id="#(SEAD).GetClassID" ><strong>SEAD:GetClassID()</strong></a></h4>
+</div>
+    
+<p>Get the ClassID of the class instance.</p>
+
+<div id= "#Functions##GetClassID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassID of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassName')">
+<h4><a id="#(SEAD).GetClassName" ><strong>SEAD:GetClassName()</strong></a></h4>
+</div>
+    
+<p>Get the ClassName of the class instance.</p>
+
+<div id= "#Functions##GetClassName" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassName of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassNameAndID')">
+<h4><a id="#(SEAD).GetClassNameAndID" ><strong>SEAD:GetClassNameAndID()</strong></a></h4>
+</div>
+    
+<p>Get the ClassName + ClassID of the class instance.</p>
+
+    
+<p>The ClassName + ClassID is formatted as '%s#%09d'. </p>
+
+<div id= "#Functions##GetClassNameAndID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassName + ClassID of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetEventPriority')">
+<h4><a id="#(SEAD).GetEventPriority" ><strong>SEAD:GetEventPriority()</strong></a></h4>
+</div>
+    
+<p>Get the Class <a href="Event.html">Event</a> processing Priority.</p>
+
+    
+<p>The Event processing Priority is a number from 1 to 10, 
+reflecting the order of the classes subscribed to the Event to be processed.</p>
+
+<div id= "#Functions##GetEventPriority" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The <a href="Event.html">Event</a> processing Priority.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetParent')">
+<h4><a id="#(SEAD).GetParent" ><strong>SEAD:GetParent(Child, FromClass)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to retrieve the Parent class.</p>
+
+    
+<p>Note that the Parent class must be passed to call the parent class method.</p>
+
+<pre><code>self:GetParent(self):ParentMethod()
+
+
+</code></pre>
+
+<div id= "#Functions##GetParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(BASE)">#BASE</a>
+        <strong>Child</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Child class from which the Parent class needs to be retrieved.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>FromClass</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetState')">
+<h4><a id="#(SEAD).GetState" ><strong>SEAD:GetState(Object, Key)</strong></a></h4>
+</div>
+    
+<p>Get a Value given a Key from the Object.</p>
+
+    
+<p>Note that if the Object is destroyed, nillified or garbage collected, then the Values and Keys will also be gone.</p>
+
+<div id= "#Functions##GetState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that holds the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Key</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is used to retrieve the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>The Value retrieved or nil if the Key was not found and thus the Value could not be retrieved.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##HandleEvent')">
+<h4><a id="#(SEAD).HandleEvent" ><strong>SEAD:HandleEvent(Event, EventFunction)</strong></a></h4>
+</div>
+    
+<p>Subscribe to a DCS Event.</p>
+
+<div id= "#Functions##HandleEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTS)">Core.Event#EVENTS</a>
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>EventFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The function to be called when the event occurs for the unit.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##I')">
+<h4><a id="#(SEAD).I" ><strong>SEAD:I(Arguments)</strong></a></h4>
+</div>
+    
+<p>Log an information which will be traced always.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##I" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Inherit')">
+<h4><a id="#(SEAD).Inherit" ><strong>SEAD:Inherit(Child, Parent)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to inherit from a parent class.</p>
+
+<div id= "#Functions##Inherit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Child</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Child class that inherits.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(BASE)">#BASE</a>
+        <strong>Parent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Parent class that the Child inherits from.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>Child</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsInstanceOf')">
+<h4><a id="#(SEAD).IsInstanceOf" ><strong>SEAD:IsInstanceOf(ClassName)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to check if an object is an (sub)instance of a class.</p>
+
+    
+
+<h3>Examples:</h3>
+
+<ul>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( ZONE ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'ZONE' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'zone' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'BASE' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'GROUP' ) will return false</p></li>
+</ul>
+
+
+<div id= "#Functions##IsInstanceOf" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ClassName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the name of the class or the class itself to run the check against</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsTrace')">
+<h4><a id="#(SEAD).IsTrace" ><strong>SEAD:IsTrace()</strong></a></h4>
+</div>
+    
+<p>Enquires if tracing is on (for the class).</p>
+
+<div id= "#Functions##IsTrace" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(SEAD).New" ><strong>SEAD:New()</strong></a></h4>
+</div>
+    
+<p>BASE constructor.</p>
+
+    
+
+<p>This is an example how to use the BASE:New() constructor in a new class definition when inheriting from BASE.</p>
+
+<pre><code>function EVENT:New()
+  local self = BASE:Inherit( self, BASE:New() ) -- #EVENT
+  return self
+end
+  
+</code></pre>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEvent')">
+<h4><a id="#(SEAD).OnEvent" ><strong>SEAD:OnEvent(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an object is completely destroyed.</p>
+
+    
+<p>initiator : The unit that is was destroyed. </p>
+
+<div id= "#Functions##OnEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBaseCaptured')">
+<h4><a id="#(SEAD).OnEventBaseCaptured" ><strong>SEAD:OnEventBaseCaptured(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a ground unit captures either an airbase or a farp.</p>
+
+    
+<p>initiator : The unit that captured the base
+place: The airbase that was captured, can be a FARP or Airbase. When calling place:getCoalition() the faction will already be the new owning faction. </p>
+
+<div id= "#Functions##OnEventBaseCaptured" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBirth')">
+<h4><a id="#(SEAD).OnEventBirth" ><strong>SEAD:OnEventBirth(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any object is spawned into the mission.</p>
+
+    
+<p>initiator : The unit that was spawned </p>
+
+<div id= "#Functions##OnEventBirth" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventCrash')">
+<h4><a id="#(SEAD).OnEventCrash" ><strong>SEAD:OnEventCrash(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
+
+    
+<p>initiator : The unit that has crashed </p>
+
+<div id= "#Functions##OnEventCrash" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventDead')">
+<h4><a id="#(SEAD).OnEventDead" ><strong>SEAD:OnEventDead(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an object is dead.</p>
+
+    
+<p>initiator : The unit that is dead. </p>
+
+<div id= "#Functions##OnEventDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEjection')">
+<h4><a id="#(SEAD).OnEventEjection" ><strong>SEAD:OnEventEjection(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a pilot ejects from an aircraft
+initiator : The unit that has ejected </p>
+
+<div id= "#Functions##OnEventEjection" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEngineShutdown')">
+<h4><a id="#(SEAD).OnEventEngineShutdown" ><strong>SEAD:OnEventEngineShutdown(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft shuts down its engines.</p>
+
+    
+<p>initiator : The unit that is stopping its engines. </p>
+
+<div id= "#Functions##OnEventEngineShutdown" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEngineStartup')">
+<h4><a id="#(SEAD).OnEventEngineStartup" ><strong>SEAD:OnEventEngineStartup(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft starts its engines.</p>
+
+    
+<p>initiator : The unit that is starting its engines. </p>
+
+<div id= "#Functions##OnEventEngineStartup" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventHit')">
+<h4><a id="#(SEAD).OnEventHit" ><strong>SEAD:OnEventHit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs whenever an object is hit by a weapon.</p>
+
+    
+<p>initiator : The unit object the fired the weapon
+weapon: Weapon object that hit the target
+target: The Object that was hit. </p>
+
+<div id= "#Functions##OnEventHit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventHumanFailure')">
+<h4><a id="#(SEAD).OnEventHumanFailure" ><strong>SEAD:OnEventHumanFailure(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any system fails on a human controlled aircraft.</p>
+
+    
+<p>initiator : The unit that had the failure </p>
+
+<div id= "#Functions##OnEventHumanFailure" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventLand')">
+<h4><a id="#(SEAD).OnEventLand" ><strong>SEAD:OnEventLand(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft lands at an airbase, farp or ship
+initiator : The unit that has landed
+place: Object that the unit landed on.</p>
+
+    
+<p>Can be an Airbase Object, FARP, or Ships </p>
+
+<div id= "#Functions##OnEventLand" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventMissionEnd')">
+<h4><a id="#(SEAD).OnEventMissionEnd" ><strong>SEAD:OnEventMissionEnd(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a mission ends</p>
+
+<div id= "#Functions##OnEventMissionEnd" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventMissionStart')">
+<h4><a id="#(SEAD).OnEventMissionStart" ><strong>SEAD:OnEventMissionStart(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a mission starts </p>
+
+<div id= "#Functions##OnEventMissionStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPilotDead')">
+<h4><a id="#(SEAD).OnEventPilotDead" ><strong>SEAD:OnEventPilotDead(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when the pilot of an aircraft is killed.</p>
+
+    
+<p>Can occur either if the player is alive and crashes or if a weapon kills the pilot without completely destroying the plane.
+initiator : The unit that the pilot has died in. </p>
+
+<div id= "#Functions##OnEventPilotDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPlayerEnterUnit')">
+<h4><a id="#(SEAD).OnEventPlayerEnterUnit" ><strong>SEAD:OnEventPlayerEnterUnit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any player assumes direct control of a unit.</p>
+
+    
+<p>initiator : The unit that is being taken control of. </p>
+
+<div id= "#Functions##OnEventPlayerEnterUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPlayerLeaveUnit')">
+<h4><a id="#(SEAD).OnEventPlayerLeaveUnit" ><strong>SEAD:OnEventPlayerLeaveUnit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any player relieves control of a unit to the AI.</p>
+
+    
+<p>initiator : The unit that the player left. </p>
+
+<div id= "#Functions##OnEventPlayerLeaveUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventRefueling')">
+<h4><a id="#(SEAD).OnEventRefueling" ><strong>SEAD:OnEventRefueling(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
+
+    
+<p>initiator : The unit that is receiving fuel. </p>
+
+<div id= "#Functions##OnEventRefueling" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventRefuelingStop')">
+<h4><a id="#(SEAD).OnEventRefuelingStop" ><strong>SEAD:OnEventRefuelingStop(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft is finished taking fuel.</p>
+
+    
+<p>initiator : The unit that was receiving fuel. </p>
+
+<div id= "#Functions##OnEventRefuelingStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShootingEnd')">
+<h4><a id="#(SEAD).OnEventShootingEnd" ><strong>SEAD:OnEventShootingEnd(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any unit stops firing its weapon.</p>
+
+    
+<p>Event will always correspond with a shooting start event.
+initiator : The unit that was doing the shooing. </p>
+
+<div id= "#Functions##OnEventShootingEnd" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShootingStart')">
+<h4><a id="#(SEAD).OnEventShootingStart" ><strong>SEAD:OnEventShootingStart(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
+
+    
+<p>Most common with aircraft cannons (GAU-8), autocannons, and machine guns.
+initiator : The unit that is doing the shooing.
+target: The unit that is being targeted. </p>
+
+<div id= "#Functions##OnEventShootingStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShot')">
+<h4><a id="#(SEAD).OnEventShot" ><strong>SEAD:OnEventShot(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs whenever any unit in a mission fires a weapon.</p>
+
+    
+<p>But not any machine gun or autocannon based weapon, those are handled by EVENT.ShootingStart.</p>
+
+<div id= "#Functions##OnEventShot" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventTakeoff')">
+<h4><a id="#(SEAD).OnEventTakeoff" ><strong>SEAD:OnEventTakeoff(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
+
+    
+<p>initiator : The unit that tookoff
+place: Object from where the AI took-off from. Can be an Airbase Object, FARP, or Ships </p>
+
+<div id= "#Functions##OnEventTakeoff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleOnce')">
+<h4><a id="#(SEAD).ScheduleOnce" ><strong>SEAD:ScheduleOnce(Start, SchedulerFunction, ...)</strong></a></h4>
+</div>
+    
+<p>Schedule a new time event.</p>
+
+    
+<p>Note that the schedule will only take place if the scheduler is <em>started</em>. Even for a single schedule event, the scheduler needs to be started also.</p>
+
+<div id= "#Functions##ScheduleOnce" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Start</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds that will be waited before the scheduling is started, and the event function is called.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>...</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Optional arguments that can be given as part of scheduler. The arguments need to be given as a table { param1, param 2, ... }.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The ScheduleID of the planned schedule.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleRepeat')">
+<h4><a id="#(SEAD).ScheduleRepeat" ><strong>SEAD:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</strong></a></h4>
+</div>
+    
+<p>Schedule a new time event.</p>
+
+    
+<p>Note that the schedule will only take place if the scheduler is <em>started</em>. Even for a single schedule event, the scheduler needs to be started also.</p>
+
+<div id= "#Functions##ScheduleRepeat" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Start</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds that will be waited before the scheduling is started, and the event function is called.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Repeat</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the interval in seconds when the scheduler will call the event function.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>RandomizeFactor</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies a randomization factor between 0 and 1 to randomize the Repeat.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Stop</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds when the scheduler will be stopped.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>...</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Optional arguments that can be given as part of scheduler. The arguments need to be given as a table { param1, param 2, ... }.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The ScheduleID of the planned schedule.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleStop')">
+<h4><a id="#(SEAD).ScheduleStop" ><strong>SEAD:ScheduleStop(SchedulerFunction)</strong></a></h4>
+</div>
+    
+<p>Stops the Schedule.</p>
+
+<div id= "#Functions##ScheduleStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetEventPriority')">
+<h4><a id="#(SEAD).SetEventPriority" ><strong>SEAD:SetEventPriority(EventPriority)</strong></a></h4>
+</div>
+    
+<p>Set the Class <a href="Event.html">Event</a> processing Priority.</p>
+
+    
+<p>The Event processing Priority is a number from 1 to 10, 
+reflecting the order of the classes subscribed to the Event to be processed.</p>
+
+<div id= "#Functions##SetEventPriority" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>EventPriority</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The <a href="Event.html">Event</a> processing Priority.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetState')">
+<h4><a id="#(SEAD).SetState" ><strong>SEAD:SetState(Object, Key, Value)</strong></a></h4>
+</div>
+    
+<p>Set a state or property of the Object given a Key and a Value.</p>
+
+    
+<p>Note that if the Object is destroyed, nillified or garbage collected, then the Values and Keys will also be gone.</p>
+
+<div id= "#Functions##SetState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that will hold the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Key</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is used as a reference of the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Value</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The value to is stored in the object.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>The Value set. </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T')">
+<h4><a id="#(SEAD).T" ><strong>SEAD:T(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 1.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T2')">
+<h4><a id="#(SEAD).T2" ><strong>SEAD:T2(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 2.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T3')">
+<h4><a id="#(SEAD).T3" ><strong>SEAD:T3(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 3.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceAll')">
+<h4><a id="#(SEAD).TraceAll" ><strong>SEAD:TraceAll(TraceAll)</strong></a></h4>
+</div>
+    
+<p>Trace all methods in MOOSE</p>
+
+<div id= "#Functions##TraceAll" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>TraceAll</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>true = trace all methods in MOOSE.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceClass')">
+<h4><a id="#(SEAD).TraceClass" ><strong>SEAD:TraceClass(Class)</strong></a></h4>
+</div>
+    
+<p>Set tracing for a class</p>
+
+<div id= "#Functions##TraceClass" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Class</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceClassMethod')">
+<h4><a id="#(SEAD).TraceClassMethod" ><strong>SEAD:TraceClassMethod(Class, Method)</strong></a></h4>
+</div>
+    
+<p>Set tracing for a specific method of  class</p>
+
+<div id= "#Functions##TraceClassMethod" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Class</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Method</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceLevel')">
+<h4><a id="#(SEAD).TraceLevel" ><strong>SEAD:TraceLevel(Level)</strong></a></h4>
+</div>
+    
+<p>Set trace level</p>
+
+<div id= "#Functions##TraceLevel" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Level</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceOnOff')">
+<h4><a id="#(SEAD).TraceOnOff" ><strong>SEAD:TraceOnOff(TraceOnOff)</strong></a></h4>
+</div>
+    
+<p>Set trace on or off
+Note that when trace is off, no BASE.Debug statement is performed, increasing performance!
+When Moose is loaded statically, (as one file), tracing is switched off by default.</p>
+
+    
+<p>So tracing must be switched on manually in your mission if you are using Moose statically.
+When moose is loading dynamically (for moose class development), tracing is switched on by default.</p>
+
+<div id= "#Functions##TraceOnOff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>TraceOnOff</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Switch the tracing on or off.</p>
+
+        </div>
+    </div>
+      <h3><strong>Usage:</strong></h3>
+    <pre class="example"><code>-- Switch the tracing On
+BASE:TraceOnOff( true )
+
+-- Switch the tracing Off
+BASE:TraceOnOff( false )</code></pre>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##UnHandleEvent')">
+<h4><a id="#(SEAD).UnHandleEvent" ><strong>SEAD:UnHandleEvent(Event)</strong></a></h4>
+</div>
+    
+<p>UnSubscribe to a DCS event.</p>
+
+<div id= "#Functions##UnHandleEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTS)">Core.Event#EVENTS</a>
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_F')">
+<h4><a id="#(SEAD)._F" ><strong>SEAD:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h4>
+</div>
+    
+<p>Trace a function call.</p>
+
+    
+<p>This function is private.</p>
+
+<div id= "#Functions##_F" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoCurrentParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoFromParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_T')">
+<h4><a id="#(SEAD)._T" ><strong>SEAD:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic.</p>
+
+<div id= "#Functions##_T" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoCurrentParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoFromParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onEvent')">
+<h4><a id="#(SEAD).onEvent" ><strong>SEAD:onEvent(event)</strong></a></h4>
+</div>
+    
+
+
+    
+<p> TODO: Complete DCS#Event structure. <br/>
+- The main event handling function... This function captures all events generated for the class.
+ @param #BASE self
+ @param DCS#Event event</p>
+
+<div id= "#Functions##onEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>event</strong>
         </div>
         <div class="w3-half">
           <p></p>

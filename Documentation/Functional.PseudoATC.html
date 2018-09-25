@@ -1299,18 +1299,710 @@ pseudoATC:Start()
 </div>
 
   </div>
-  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>
-  
+  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>  
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(PSEUDOATC)">Type <strong>PSEUDOATC</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).AltidudeTimerToggle">PSEUDOATC:AltidudeTimerToggle(id)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Toggle report altitude reporting on/off.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).AltitudeTimeStart">PSEUDOATC:AltitudeTimeStart(id)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Start altitude reporting scheduler.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).AltitudeTimerStop">PSEUDOATC:AltitudeTimerStop(id)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Stop/destroy DCS scheduler function for reporting altitude.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).ChattyOff">PSEUDOATC:ChattyOff()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Chatty mode off.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).ChattyOn">PSEUDOATC:ChattyOn()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Chatty mode on.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).ClassName">PSEUDOATC.ClassName</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Name of the Class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).Debug">PSEUDOATC.Debug</a></td>
+    <td class="summary"><style="width:60%;">
+<p>If true, print debug info to dcs.log file.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).DebugOff">PSEUDOATC:DebugOff()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Debug mode off.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).DebugOn">PSEUDOATC:DebugOn()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Debug mode on.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).LocalAirports">PSEUDOATC:LocalAirports(id)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Create list of nearby airports sorted by distance to player unit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).MenuAirports">PSEUDOATC:MenuAirports(id)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Create "F10/Pseudo ATC/Local Airports/Airport Name/" menu items each containing weather report and BR request.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).MenuClear">PSEUDOATC:MenuClear(id)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Clear player menus.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).MenuRefresh">PSEUDOATC:MenuRefresh(id)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Refreshes all player menues.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).MenuWaypoints">PSEUDOATC:MenuWaypoints(id)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Create "F10/Pseudo ATC/Waypoints/<Waypoint i>  menu items.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).New">PSEUDOATC:New()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>PSEUDOATC contructor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).PlayerEntered">PSEUDOATC:PlayerEntered(unit)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Function called when a player enters a unit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).PlayerLanded">PSEUDOATC:PlayerLanded(unit, place)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Function called when a player has landed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).PlayerLeft">PSEUDOATC:PlayerLeft(unit)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Function called when a player leaves a unit or dies. </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).PlayerTakeOff">PSEUDOATC:PlayerTakeOff(unit, place)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Function called when a player took off.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).ReportBR">PSEUDOATC:ReportBR(id, position, location)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Report absolute bearing and range form player unit to airport.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).ReportHeight">PSEUDOATC:ReportHeight(id, dt, _clear)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Report altitude above ground level of player unit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).ReportWeather">PSEUDOATC:ReportWeather(id, position, location)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Weather Report.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).SetEventsMoose">PSEUDOATC:SetEventsMoose(switch)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Enable/disable event handling by MOOSE or DCS.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).SetMenuRefresh">PSEUDOATC:SetMenuRefresh(interval)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set time interval after which the F10 radio menu is refreshed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).SetMessageDuration">PSEUDOATC:SetMessageDuration(duration)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set duration how long messages are displayed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).SetReportAltInterval">PSEUDOATC:SetReportAltInterval(interval)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set time interval for reporting altitude until touchdown.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).Start">PSEUDOATC:Start()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Starts the PseudoATC event handlers.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC)._DisplayMessageToGroup">PSEUDOATC:_DisplayMessageToGroup(_unit, _text, _time, _clear)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Display message to group.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC)._GetPlayerUnitAndName">PSEUDOATC:_GetPlayerUnitAndName(_unitName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the unit of a player and the player name.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC)._OnBirth">PSEUDOATC:_OnBirth(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Function called my MOOSE event handler when a player enters a unit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC)._PlayerLanded">PSEUDOATC:_PlayerLanded(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Function called by MOOSE event handler when a player landed. </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC)._PlayerLeft">PSEUDOATC:_PlayerLeft(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Function called by MOOSE event handler when a player leaves a unit or dies. </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC)._PlayerTakeOff">PSEUDOATC:_PlayerTakeOff(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Function called by MOOSE/DCS event handler when a player took off. </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC)._myname">PSEUDOATC:_myname(unitname)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns a string which consits of this callsign and the player name.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).chatty">PSEUDOATC.chatty</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Display some messages on events like take-off and touchdown.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).eventsmoose">PSEUDOATC.eventsmoose</a></td>
+    <td class="summary"><style="width:60%;">
+<p>If true, events are handled by MOOSE. If false, events are handled directly by DCS eventhandler.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).id">PSEUDOATC.id</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Some ID to identify who we are in output of the DCS.log file.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).mdur">PSEUDOATC.mdur</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Duration in seconds how low messages to the player are displayed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).mrefresh">PSEUDOATC.mrefresh</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Interval in seconds after which the F10 menu is refreshed. E.g. by the closest airports. Default is 120 sec.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).onEvent">PSEUDOATC:onEvent(Event)</a></td>
+    <td class="summary"><style="width:60%;">
+<p> Event handler for suppressed groups.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).player">PSEUDOATC.player</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Table comprising each player info.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).talt">PSEUDOATC.talt</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Interval in seconds between reporting altitude until touchdown. Default 3 sec.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).version">PSEUDOATC.version</a></td>
+    <td class="summary"><style="width:60%;">
+<p>PSEUDOATC version.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).ClassID">PSEUDOATC.ClassID</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The ID number of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).ClassName">PSEUDOATC.ClassName</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The name of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).ClassNameAndID">PSEUDOATC.ClassNameAndID</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The name of the class concatenated with the ID number of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).ClearState">PSEUDOATC:ClearState(Object, StateName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Clear the state of an object.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).CreateEventBirth">PSEUDOATC:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Birth Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).CreateEventCrash">PSEUDOATC:CreateEventCrash(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Crash Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).CreateEventDead">PSEUDOATC:CreateEventDead(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Dead Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).CreateEventRemoveUnit">PSEUDOATC:CreateEventRemoveUnit(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Remove Unit Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).CreateEventTakeoff">PSEUDOATC:CreateEventTakeoff(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Takeoff Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).E">PSEUDOATC:E(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Log an exception which will be traced always.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).EventDispatcher">PSEUDOATC:EventDispatcher()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the event dispatcher</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).EventRemoveAll">PSEUDOATC:EventRemoveAll()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Remove all subscribed events</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).F">PSEUDOATC:F(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).F2">PSEUDOATC:F2(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call level 2.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).F3">PSEUDOATC:F3(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call level 3.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).GetClassID">PSEUDOATC:GetClassID()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassID of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).GetClassName">PSEUDOATC:GetClassName()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassName of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).GetClassNameAndID">PSEUDOATC:GetClassNameAndID()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassName + ClassID of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).GetEventPriority">PSEUDOATC:GetEventPriority()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the Class <a href="Event.html">Event</a> processing Priority.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).GetParent">PSEUDOATC:GetParent(Child, FromClass)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to retrieve the Parent class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).GetState">PSEUDOATC:GetState(Object, Key)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get a Value given a Key from the Object.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).HandleEvent">PSEUDOATC:HandleEvent(Event, EventFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Subscribe to a DCS Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).I">PSEUDOATC:I(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Log an information which will be traced always.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).Inherit">PSEUDOATC:Inherit(Child, Parent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to inherit from a parent class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).IsInstanceOf">PSEUDOATC:IsInstanceOf(ClassName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to check if an object is an (sub)instance of a class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).IsTrace">PSEUDOATC:IsTrace()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Enquires if tracing is on (for the class).</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).New">PSEUDOATC:New()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>BASE constructor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEvent">PSEUDOATC:OnEvent(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an object is completely destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventBaseCaptured">PSEUDOATC:OnEventBaseCaptured(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a ground unit captures either an airbase or a farp.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventBirth">PSEUDOATC:OnEventBirth(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any object is spawned into the mission.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventCrash">PSEUDOATC:OnEventCrash(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventDead">PSEUDOATC:OnEventDead(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an object is dead.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventEjection">PSEUDOATC:OnEventEjection(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a pilot ejects from an aircraft
+initiator : The unit that has ejected </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventEngineShutdown">PSEUDOATC:OnEventEngineShutdown(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft shuts down its engines.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventEngineStartup">PSEUDOATC:OnEventEngineStartup(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft starts its engines.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventHit">PSEUDOATC:OnEventHit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs whenever an object is hit by a weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventHumanFailure">PSEUDOATC:OnEventHumanFailure(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any system fails on a human controlled aircraft.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventLand">PSEUDOATC:OnEventLand(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft lands at an airbase, farp or ship
+initiator : The unit that has landed
+place: Object that the unit landed on.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventMissionEnd">PSEUDOATC:OnEventMissionEnd(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a mission ends</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventMissionStart">PSEUDOATC:OnEventMissionStart(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a mission starts </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventPilotDead">PSEUDOATC:OnEventPilotDead(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when the pilot of an aircraft is killed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventPlayerEnterUnit">PSEUDOATC:OnEventPlayerEnterUnit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any player assumes direct control of a unit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventPlayerLeaveUnit">PSEUDOATC:OnEventPlayerLeaveUnit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any player relieves control of a unit to the AI.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventRefueling">PSEUDOATC:OnEventRefueling(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventRefuelingStop">PSEUDOATC:OnEventRefuelingStop(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft is finished taking fuel.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventShootingEnd">PSEUDOATC:OnEventShootingEnd(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any unit stops firing its weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventShootingStart">PSEUDOATC:OnEventShootingStart(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventShot">PSEUDOATC:OnEventShot(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs whenever any unit in a mission fires a weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).OnEventTakeoff">PSEUDOATC:OnEventTakeoff(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).ScheduleOnce">PSEUDOATC:ScheduleOnce(Start, SchedulerFunction, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Schedule a new time event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).ScheduleRepeat">PSEUDOATC:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Schedule a new time event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).ScheduleStop">PSEUDOATC:ScheduleStop(SchedulerFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Stops the Schedule.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).Scheduler">PSEUDOATC.Scheduler</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).SetEventPriority">PSEUDOATC:SetEventPriority(EventPriority)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set the Class <a href="Event.html">Event</a> processing Priority.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).SetState">PSEUDOATC:SetState(Object, Key, Value)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set a state or property of the Object given a Key and a Value.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).T">PSEUDOATC:T(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 1.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).T2">PSEUDOATC:T2(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 2.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).T3">PSEUDOATC:T3(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 3.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).TraceAll">PSEUDOATC:TraceAll(TraceAll)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace all methods in MOOSE</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).TraceClass">PSEUDOATC:TraceClass(Class)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set tracing for a class</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).TraceClassMethod">PSEUDOATC:TraceClassMethod(Class, Method)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set tracing for a specific method of  class</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).TraceLevel">PSEUDOATC:TraceLevel(Level)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set trace level</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).TraceOnOff">PSEUDOATC:TraceOnOff(TraceOnOff)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set trace on or off
+Note that when trace is off, no BASE.Debug statement is performed, increasing performance!
+When Moose is loaded statically, (as one file), tracing is switched off by default.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).UnHandleEvent">PSEUDOATC:UnHandleEvent(Event)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>UnSubscribe to a DCS event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC)._">PSEUDOATC._</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC)._F">PSEUDOATC:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC)._T">PSEUDOATC:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).__">PSEUDOATC.__</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(PSEUDOATC).onEvent">PSEUDOATC:onEvent(event)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+  </table>
+ </div>
+
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Functional.PseudoATC)" >Type <strong>Functional.PseudoATC</strong></a></h2></div>
   <div class="w3-container w3-white w3-padding-16" id="module_current_type">
     <div class="w3-white" id="record_type">
+<h2>
+      ==> <a href="##(Functional.PseudoATC)">Functional.PseudoATC</a>
+</h2>
 </div>
 
   </div>
   <div onclick="myFunction('#Types##PSEUDOATC')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(PSEUDOATC)">Type <strong>PSEUDOATC</strong></a></h2></div>
   <div id= "#Types##PSEUDOATC" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Core.Base.html##(BASE)">Core.Base#BASE</a> </h3>
+<h2>
+      ==> <a href="##(PSEUDOATC)">PSEUDOATC</a>
+     , inherits from <a href="Core.Base.html##(BASE)">Core.Base#BASE</a>
+</h2>
   
 <ul>
     <li>PSEUDOATC class</li>
@@ -1435,14 +2127,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AltidudeTimerToggle')">
-<h6><a id="#(PSEUDOATC).AltidudeTimerToggle" ><strong>PSEUDOATC:AltidudeTimerToggle(id)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).AltidudeTimerToggle" ><strong>PSEUDOATC:AltidudeTimerToggle(id)</strong></a></h4>
 </div>
     
 <p>Toggle report altitude reporting on/off.</p>
 
 <div id= "#Functions##AltidudeTimerToggle" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1466,14 +2158,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AltitudeTimeStart')">
-<h6><a id="#(PSEUDOATC).AltitudeTimeStart" ><strong>PSEUDOATC:AltitudeTimeStart(id)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).AltitudeTimeStart" ><strong>PSEUDOATC:AltitudeTimeStart(id)</strong></a></h4>
 </div>
     
 <p>Start altitude reporting scheduler.</p>
 
 <div id= "#Functions##AltitudeTimeStart" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1497,14 +2189,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AltitudeTimerStop')">
-<h6><a id="#(PSEUDOATC).AltitudeTimerStop" ><strong>PSEUDOATC:AltitudeTimerStop(id)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).AltitudeTimerStop" ><strong>PSEUDOATC:AltitudeTimerStop(id)</strong></a></h4>
 </div>
     
 <p>Stop/destroy DCS scheduler function for reporting altitude.</p>
 
 <div id= "#Functions##AltitudeTimerStop" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1528,7 +2220,7 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ChattyOff')">
-<h6><a id="#(PSEUDOATC).ChattyOff" ><strong>PSEUDOATC:ChattyOff()</strong></a></h6>
+<h4><a id="#(PSEUDOATC).ChattyOff" ><strong>PSEUDOATC:ChattyOff()</strong></a></h4>
 </div>
     
 <p>Chatty mode off.</p>
@@ -1548,7 +2240,7 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ChattyOn')">
-<h6><a id="#(PSEUDOATC).ChattyOn" ><strong>PSEUDOATC:ChattyOn()</strong></a></h6>
+<h4><a id="#(PSEUDOATC).ChattyOn" ><strong>PSEUDOATC:ChattyOn()</strong></a></h4>
 </div>
     
 <p>Chatty mode on.</p>
@@ -1568,7 +2260,7 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##DebugOff')">
-<h6><a id="#(PSEUDOATC).DebugOff" ><strong>PSEUDOATC:DebugOff()</strong></a></h6>
+<h4><a id="#(PSEUDOATC).DebugOff" ><strong>PSEUDOATC:DebugOff()</strong></a></h4>
 </div>
     
 <p>Debug mode off.</p>
@@ -1588,7 +2280,7 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##DebugOn')">
-<h6><a id="#(PSEUDOATC).DebugOn" ><strong>PSEUDOATC:DebugOn()</strong></a></h6>
+<h4><a id="#(PSEUDOATC).DebugOn" ><strong>PSEUDOATC:DebugOn()</strong></a></h4>
 </div>
     
 <p>Debug mode on.</p>
@@ -1608,14 +2300,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##LocalAirports')">
-<h6><a id="#(PSEUDOATC).LocalAirports" ><strong>PSEUDOATC:LocalAirports(id)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).LocalAirports" ><strong>PSEUDOATC:LocalAirports(id)</strong></a></h4>
 </div>
     
 <p>Create list of nearby airports sorted by distance to player unit.</p>
 
 <div id= "#Functions##LocalAirports" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1639,14 +2331,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MenuAirports')">
-<h6><a id="#(PSEUDOATC).MenuAirports" ><strong>PSEUDOATC:MenuAirports(id)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).MenuAirports" ><strong>PSEUDOATC:MenuAirports(id)</strong></a></h4>
 </div>
     
 <p>Create "F10/Pseudo ATC/Local Airports/Airport Name/" menu items each containing weather report and BR request.</p>
 
 <div id= "#Functions##MenuAirports" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1670,14 +2362,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MenuClear')">
-<h6><a id="#(PSEUDOATC).MenuClear" ><strong>PSEUDOATC:MenuClear(id)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).MenuClear" ><strong>PSEUDOATC:MenuClear(id)</strong></a></h4>
 </div>
     
 <p>Clear player menus.</p>
 
 <div id= "#Functions##MenuClear" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1701,14 +2393,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MenuRefresh')">
-<h6><a id="#(PSEUDOATC).MenuRefresh" ><strong>PSEUDOATC:MenuRefresh(id)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).MenuRefresh" ><strong>PSEUDOATC:MenuRefresh(id)</strong></a></h4>
 </div>
     
 <p>Refreshes all player menues.</p>
 
 <div id= "#Functions##MenuRefresh" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1732,14 +2424,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MenuWaypoints')">
-<h6><a id="#(PSEUDOATC).MenuWaypoints" ><strong>PSEUDOATC:MenuWaypoints(id)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).MenuWaypoints" ><strong>PSEUDOATC:MenuWaypoints(id)</strong></a></h4>
 </div>
     
 <p>Create "F10/Pseudo ATC/Waypoints/<Waypoint i>  menu items.</p>
 
 <div id= "#Functions##MenuWaypoints" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1763,14 +2455,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(PSEUDOATC).New" ><strong>PSEUDOATC:New()</strong></a></h6>
+<h4><a id="#(PSEUDOATC).New" ><strong>PSEUDOATC:New()</strong></a></h4>
 </div>
     
 <p>PSEUDOATC contructor.</p>
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(PSEUDOATC)">#PSEUDOATC</a>:
@@ -1791,14 +2483,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##PlayerEntered')">
-<h6><a id="#(PSEUDOATC).PlayerEntered" ><strong>PSEUDOATC:PlayerEntered(unit)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).PlayerEntered" ><strong>PSEUDOATC:PlayerEntered(unit)</strong></a></h4>
 </div>
     
 <p>Function called when a player enters a unit.</p>
 
 <div id= "#Functions##PlayerEntered" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1822,14 +2514,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##PlayerLanded')">
-<h6><a id="#(PSEUDOATC).PlayerLanded" ><strong>PSEUDOATC:PlayerLanded(unit, place)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).PlayerLanded" ><strong>PSEUDOATC:PlayerLanded(unit, place)</strong></a></h4>
 </div>
     
 <p>Function called when a player has landed.</p>
 
 <div id= "#Functions##PlayerLanded" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1864,14 +2556,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##PlayerLeft')">
-<h6><a id="#(PSEUDOATC).PlayerLeft" ><strong>PSEUDOATC:PlayerLeft(unit)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).PlayerLeft" ><strong>PSEUDOATC:PlayerLeft(unit)</strong></a></h4>
 </div>
     
 <p>Function called when a player leaves a unit or dies. </p>
 
 <div id= "#Functions##PlayerLeft" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1895,14 +2587,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##PlayerTakeOff')">
-<h6><a id="#(PSEUDOATC).PlayerTakeOff" ><strong>PSEUDOATC:PlayerTakeOff(unit, place)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).PlayerTakeOff" ><strong>PSEUDOATC:PlayerTakeOff(unit, place)</strong></a></h4>
 </div>
     
 <p>Function called when a player took off.</p>
 
 <div id= "#Functions##PlayerTakeOff" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1937,14 +2629,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportBR')">
-<h6><a id="#(PSEUDOATC).ReportBR" ><strong>PSEUDOATC:ReportBR(id, position, location)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).ReportBR" ><strong>PSEUDOATC:ReportBR(id, position, location)</strong></a></h4>
 </div>
     
 <p>Report absolute bearing and range form player unit to airport.</p>
 
 <div id= "#Functions##ReportBR" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1990,14 +2682,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportHeight')">
-<h6><a id="#(PSEUDOATC).ReportHeight" ><strong>PSEUDOATC:ReportHeight(id, dt, _clear)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).ReportHeight" ><strong>PSEUDOATC:ReportHeight(id, dt, _clear)</strong></a></h4>
 </div>
     
 <p>Report altitude above ground level of player unit.</p>
 
 <div id= "#Functions##ReportHeight" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2033,7 +2725,7 @@ pseudoATC:Start()
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #number:
@@ -2054,7 +2746,7 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportWeather')">
-<h6><a id="#(PSEUDOATC).ReportWeather" ><strong>PSEUDOATC:ReportWeather(id, position, location)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).ReportWeather" ><strong>PSEUDOATC:ReportWeather(id, position, location)</strong></a></h4>
 </div>
     
 <p>Weather Report.</p>
@@ -2064,7 +2756,7 @@ pseudoATC:Start()
 
 <div id= "#Functions##ReportWeather" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2110,14 +2802,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetEventsMoose')">
-<h6><a id="#(PSEUDOATC).SetEventsMoose" ><strong>PSEUDOATC:SetEventsMoose(switch)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).SetEventsMoose" ><strong>PSEUDOATC:SetEventsMoose(switch)</strong></a></h4>
 </div>
     
 <p>Enable/disable event handling by MOOSE or DCS.</p>
 
 <div id= "#Functions##SetEventsMoose" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2141,14 +2833,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetMenuRefresh')">
-<h6><a id="#(PSEUDOATC).SetMenuRefresh" ><strong>PSEUDOATC:SetMenuRefresh(interval)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).SetMenuRefresh" ><strong>PSEUDOATC:SetMenuRefresh(interval)</strong></a></h4>
 </div>
     
 <p>Set time interval after which the F10 radio menu is refreshed.</p>
 
 <div id= "#Functions##SetMenuRefresh" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2172,14 +2864,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetMessageDuration')">
-<h6><a id="#(PSEUDOATC).SetMessageDuration" ><strong>PSEUDOATC:SetMessageDuration(duration)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).SetMessageDuration" ><strong>PSEUDOATC:SetMessageDuration(duration)</strong></a></h4>
 </div>
     
 <p>Set duration how long messages are displayed.</p>
 
 <div id= "#Functions##SetMessageDuration" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2203,14 +2895,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetReportAltInterval')">
-<h6><a id="#(PSEUDOATC).SetReportAltInterval" ><strong>PSEUDOATC:SetReportAltInterval(interval)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).SetReportAltInterval" ><strong>PSEUDOATC:SetReportAltInterval(interval)</strong></a></h4>
 </div>
     
 <p>Set time interval for reporting altitude until touchdown.</p>
 
 <div id= "#Functions##SetReportAltInterval" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2234,7 +2926,7 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Start')">
-<h6><a id="#(PSEUDOATC).Start" ><strong>PSEUDOATC:Start()</strong></a></h6>
+<h4><a id="#(PSEUDOATC).Start" ><strong>PSEUDOATC:Start()</strong></a></h4>
 </div>
     
 <p>Starts the PseudoATC event handlers.</p>
@@ -2251,14 +2943,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_DisplayMessageToGroup')">
-<h6><a id="#(PSEUDOATC)._DisplayMessageToGroup" ><strong>PSEUDOATC:_DisplayMessageToGroup(_unit, _text, _time, _clear)</strong></a></h6>
+<h4><a id="#(PSEUDOATC)._DisplayMessageToGroup" ><strong>PSEUDOATC:_DisplayMessageToGroup(_unit, _text, _time, _clear)</strong></a></h4>
 </div>
     
 <p>Display message to group.</p>
 
 <div id= "#Functions##_DisplayMessageToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2315,7 +3007,7 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_GetPlayerUnitAndName')">
-<h6><a id="#(PSEUDOATC)._GetPlayerUnitAndName" ><strong>PSEUDOATC:_GetPlayerUnitAndName(_unitName)</strong></a></h6>
+<h4><a id="#(PSEUDOATC)._GetPlayerUnitAndName" ><strong>PSEUDOATC:_GetPlayerUnitAndName(_unitName)</strong></a></h4>
 </div>
     
 <p>Returns the unit of a player and the player name.</p>
@@ -2325,7 +3017,7 @@ pseudoATC:Start()
 
 <div id= "#Functions##_GetPlayerUnitAndName" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2339,7 +3031,7 @@ pseudoATC:Start()
 
         </div>
     </div>
-    <h5><strong>Return values:</strong></h5>
+    <h3><strong>Return values:</strong></h3>
     <div class="w3-row">
         <div class="w3-half">
           <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>:
@@ -2375,14 +3067,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_OnBirth')">
-<h6><a id="#(PSEUDOATC)._OnBirth" ><strong>PSEUDOATC:_OnBirth(EventData)</strong></a></h6>
+<h4><a id="#(PSEUDOATC)._OnBirth" ><strong>PSEUDOATC:_OnBirth(EventData)</strong></a></h4>
 </div>
     
 <p>Function called my MOOSE event handler when a player enters a unit.</p>
 
 <div id= "#Functions##_OnBirth" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2404,14 +3096,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_PlayerLanded')">
-<h6><a id="#(PSEUDOATC)._PlayerLanded" ><strong>PSEUDOATC:_PlayerLanded(EventData)</strong></a></h6>
+<h4><a id="#(PSEUDOATC)._PlayerLanded" ><strong>PSEUDOATC:_PlayerLanded(EventData)</strong></a></h4>
 </div>
     
 <p>Function called by MOOSE event handler when a player landed. </p>
 
 <div id= "#Functions##_PlayerLanded" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2433,14 +3125,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_PlayerLeft')">
-<h6><a id="#(PSEUDOATC)._PlayerLeft" ><strong>PSEUDOATC:_PlayerLeft(EventData)</strong></a></h6>
+<h4><a id="#(PSEUDOATC)._PlayerLeft" ><strong>PSEUDOATC:_PlayerLeft(EventData)</strong></a></h4>
 </div>
     
 <p>Function called by MOOSE event handler when a player leaves a unit or dies. </p>
 
 <div id= "#Functions##_PlayerLeft" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2462,14 +3154,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_PlayerTakeOff')">
-<h6><a id="#(PSEUDOATC)._PlayerTakeOff" ><strong>PSEUDOATC:_PlayerTakeOff(EventData)</strong></a></h6>
+<h4><a id="#(PSEUDOATC)._PlayerTakeOff" ><strong>PSEUDOATC:_PlayerTakeOff(EventData)</strong></a></h4>
 </div>
     
 <p>Function called by MOOSE/DCS event handler when a player took off. </p>
 
 <div id= "#Functions##_PlayerTakeOff" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2491,7 +3183,7 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_myname')">
-<h6><a id="#(PSEUDOATC)._myname" ><strong>PSEUDOATC:_myname(unitname)</strong></a></h6>
+<h4><a id="#(PSEUDOATC)._myname" ><strong>PSEUDOATC:_myname(unitname)</strong></a></h4>
 </div>
     
 <p>Returns a string which consits of this callsign and the player name.</p>
@@ -2501,7 +3193,7 @@ pseudoATC:Start()
 
 <div id= "#Functions##_myname" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2525,14 +3217,14 @@ pseudoATC:Start()
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onEvent')">
-<h6><a id="#(PSEUDOATC).onEvent" ><strong>PSEUDOATC:onEvent(Event)</strong></a></h6>
+<h4><a id="#(PSEUDOATC).onEvent" ><strong>PSEUDOATC:onEvent(Event)</strong></a></h4>
 </div>
     
 <p> Event handler for suppressed groups.</p>
 
 <div id= "#Functions##onEvent" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2544,6 +3236,2569 @@ pseudoATC:Start()
           
 <p>Event data table. Holds event.id, event.initiator and event.target etc.</p>
 
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(PSEUDOATC).ClassName" ><strong>PSEUDOATC.ClassName</strong></a>
+    
+<p>Name of the Class.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(PSEUDOATC).Debug" ><strong>PSEUDOATC.Debug</strong></a>
+    
+<p>If true, print debug info to dcs.log file.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(PSEUDOATC).chatty" ><strong>PSEUDOATC.chatty</strong></a>
+    
+<p>Display some messages on events like take-off and touchdown.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(PSEUDOATC).eventsmoose" ><strong>PSEUDOATC.eventsmoose</strong></a>
+    
+<p>If true, events are handled by MOOSE. If false, events are handled directly by DCS eventhandler.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(PSEUDOATC).id" ><strong>PSEUDOATC.id</strong></a>
+    
+<p>Some ID to identify who we are in output of the DCS.log file.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(PSEUDOATC).mdur" ><strong>PSEUDOATC.mdur</strong></a>
+    
+<p>Duration in seconds how low messages to the player are displayed.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(PSEUDOATC).mrefresh" ><strong>PSEUDOATC.mrefresh</strong></a>
+    
+<p>Interval in seconds after which the F10 menu is refreshed. E.g. by the closest airports. Default is 120 sec.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(PSEUDOATC).player" ><strong>PSEUDOATC.player</strong></a>
+    
+<p>Table comprising each player info.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(PSEUDOATC).talt" ><strong>PSEUDOATC.talt</strong></a>
+    
+<p>Interval in seconds between reporting altitude until touchdown. Default 3 sec.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(PSEUDOATC).version" ><strong>PSEUDOATC.version</strong></a>
+    
+<p>PSEUDOATC version.</p>
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearState')">
+<h4><a id="#(PSEUDOATC).ClearState" ><strong>PSEUDOATC:ClearState(Object, StateName)</strong></a></h4>
+</div>
+    
+<p>Clear the state of an object.</p>
+
+<div id= "#Functions##ClearState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that holds the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>StateName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is should be cleared.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventBirth')">
+<h4><a id="#(PSEUDOATC).CreateEventBirth" ><strong>PSEUDOATC:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</strong></a></h4>
+</div>
+    
+<p>Creation of a Birth Event.</p>
+
+<div id= "#Functions##CreateEventBirth" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>IniUnitName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating unit name.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>place</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>subplace</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventCrash')">
+<h4><a id="#(PSEUDOATC).CreateEventCrash" ><strong>PSEUDOATC:CreateEventCrash(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Crash Event.</p>
+
+<div id= "#Functions##CreateEventCrash" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventDead')">
+<h4><a id="#(PSEUDOATC).CreateEventDead" ><strong>PSEUDOATC:CreateEventDead(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Dead Event.</p>
+
+<div id= "#Functions##CreateEventDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventRemoveUnit')">
+<h4><a id="#(PSEUDOATC).CreateEventRemoveUnit" ><strong>PSEUDOATC:CreateEventRemoveUnit(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Remove Unit Event.</p>
+
+<div id= "#Functions##CreateEventRemoveUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventTakeoff')">
+<h4><a id="#(PSEUDOATC).CreateEventTakeoff" ><strong>PSEUDOATC:CreateEventTakeoff(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Takeoff Event.</p>
+
+<div id= "#Functions##CreateEventTakeoff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##E')">
+<h4><a id="#(PSEUDOATC).E" ><strong>PSEUDOATC:E(Arguments)</strong></a></h4>
+</div>
+    
+<p>Log an exception which will be traced always.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##E" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##EventDispatcher')">
+<h4><a id="#(PSEUDOATC).EventDispatcher" ><strong>PSEUDOATC:EventDispatcher()</strong></a></h4>
+</div>
+    
+<p>Returns the event dispatcher</p>
+
+<div id= "#Functions##EventDispatcher" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##EventRemoveAll')">
+<h4><a id="#(PSEUDOATC).EventRemoveAll" ><strong>PSEUDOATC:EventRemoveAll()</strong></a></h4>
+</div>
+    
+<p>Remove all subscribed events</p>
+
+<div id= "#Functions##EventRemoveAll" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F')">
+<h4><a id="#(PSEUDOATC).F" ><strong>PSEUDOATC:F(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F2')">
+<h4><a id="#(PSEUDOATC).F2" ><strong>PSEUDOATC:F2(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call level 2.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F3')">
+<h4><a id="#(PSEUDOATC).F3" ><strong>PSEUDOATC:F3(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call level 3.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassID')">
+<h4><a id="#(PSEUDOATC).GetClassID" ><strong>PSEUDOATC:GetClassID()</strong></a></h4>
+</div>
+    
+<p>Get the ClassID of the class instance.</p>
+
+<div id= "#Functions##GetClassID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassID of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassName')">
+<h4><a id="#(PSEUDOATC).GetClassName" ><strong>PSEUDOATC:GetClassName()</strong></a></h4>
+</div>
+    
+<p>Get the ClassName of the class instance.</p>
+
+<div id= "#Functions##GetClassName" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassName of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassNameAndID')">
+<h4><a id="#(PSEUDOATC).GetClassNameAndID" ><strong>PSEUDOATC:GetClassNameAndID()</strong></a></h4>
+</div>
+    
+<p>Get the ClassName + ClassID of the class instance.</p>
+
+    
+<p>The ClassName + ClassID is formatted as '%s#%09d'. </p>
+
+<div id= "#Functions##GetClassNameAndID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassName + ClassID of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetEventPriority')">
+<h4><a id="#(PSEUDOATC).GetEventPriority" ><strong>PSEUDOATC:GetEventPriority()</strong></a></h4>
+</div>
+    
+<p>Get the Class <a href="Event.html">Event</a> processing Priority.</p>
+
+    
+<p>The Event processing Priority is a number from 1 to 10, 
+reflecting the order of the classes subscribed to the Event to be processed.</p>
+
+<div id= "#Functions##GetEventPriority" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The <a href="Event.html">Event</a> processing Priority.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetParent')">
+<h4><a id="#(PSEUDOATC).GetParent" ><strong>PSEUDOATC:GetParent(Child, FromClass)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to retrieve the Parent class.</p>
+
+    
+<p>Note that the Parent class must be passed to call the parent class method.</p>
+
+<pre><code>self:GetParent(self):ParentMethod()
+
+
+</code></pre>
+
+<div id= "#Functions##GetParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(BASE)">#BASE</a>
+        <strong>Child</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Child class from which the Parent class needs to be retrieved.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>FromClass</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetState')">
+<h4><a id="#(PSEUDOATC).GetState" ><strong>PSEUDOATC:GetState(Object, Key)</strong></a></h4>
+</div>
+    
+<p>Get a Value given a Key from the Object.</p>
+
+    
+<p>Note that if the Object is destroyed, nillified or garbage collected, then the Values and Keys will also be gone.</p>
+
+<div id= "#Functions##GetState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that holds the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Key</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is used to retrieve the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>The Value retrieved or nil if the Key was not found and thus the Value could not be retrieved.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##HandleEvent')">
+<h4><a id="#(PSEUDOATC).HandleEvent" ><strong>PSEUDOATC:HandleEvent(Event, EventFunction)</strong></a></h4>
+</div>
+    
+<p>Subscribe to a DCS Event.</p>
+
+<div id= "#Functions##HandleEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTS)">Core.Event#EVENTS</a>
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>EventFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The function to be called when the event occurs for the unit.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##I')">
+<h4><a id="#(PSEUDOATC).I" ><strong>PSEUDOATC:I(Arguments)</strong></a></h4>
+</div>
+    
+<p>Log an information which will be traced always.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##I" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Inherit')">
+<h4><a id="#(PSEUDOATC).Inherit" ><strong>PSEUDOATC:Inherit(Child, Parent)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to inherit from a parent class.</p>
+
+<div id= "#Functions##Inherit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Child</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Child class that inherits.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(BASE)">#BASE</a>
+        <strong>Parent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Parent class that the Child inherits from.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>Child</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsInstanceOf')">
+<h4><a id="#(PSEUDOATC).IsInstanceOf" ><strong>PSEUDOATC:IsInstanceOf(ClassName)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to check if an object is an (sub)instance of a class.</p>
+
+    
+
+<h3>Examples:</h3>
+
+<ul>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( ZONE ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'ZONE' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'zone' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'BASE' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'GROUP' ) will return false</p></li>
+</ul>
+
+
+<div id= "#Functions##IsInstanceOf" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ClassName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the name of the class or the class itself to run the check against</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsTrace')">
+<h4><a id="#(PSEUDOATC).IsTrace" ><strong>PSEUDOATC:IsTrace()</strong></a></h4>
+</div>
+    
+<p>Enquires if tracing is on (for the class).</p>
+
+<div id= "#Functions##IsTrace" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(PSEUDOATC).New" ><strong>PSEUDOATC:New()</strong></a></h4>
+</div>
+    
+<p>BASE constructor.</p>
+
+    
+
+<p>This is an example how to use the BASE:New() constructor in a new class definition when inheriting from BASE.</p>
+
+<pre><code>function EVENT:New()
+  local self = BASE:Inherit( self, BASE:New() ) -- #EVENT
+  return self
+end
+  
+</code></pre>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEvent')">
+<h4><a id="#(PSEUDOATC).OnEvent" ><strong>PSEUDOATC:OnEvent(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an object is completely destroyed.</p>
+
+    
+<p>initiator : The unit that is was destroyed. </p>
+
+<div id= "#Functions##OnEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBaseCaptured')">
+<h4><a id="#(PSEUDOATC).OnEventBaseCaptured" ><strong>PSEUDOATC:OnEventBaseCaptured(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a ground unit captures either an airbase or a farp.</p>
+
+    
+<p>initiator : The unit that captured the base
+place: The airbase that was captured, can be a FARP or Airbase. When calling place:getCoalition() the faction will already be the new owning faction. </p>
+
+<div id= "#Functions##OnEventBaseCaptured" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBirth')">
+<h4><a id="#(PSEUDOATC).OnEventBirth" ><strong>PSEUDOATC:OnEventBirth(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any object is spawned into the mission.</p>
+
+    
+<p>initiator : The unit that was spawned </p>
+
+<div id= "#Functions##OnEventBirth" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventCrash')">
+<h4><a id="#(PSEUDOATC).OnEventCrash" ><strong>PSEUDOATC:OnEventCrash(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
+
+    
+<p>initiator : The unit that has crashed </p>
+
+<div id= "#Functions##OnEventCrash" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventDead')">
+<h4><a id="#(PSEUDOATC).OnEventDead" ><strong>PSEUDOATC:OnEventDead(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an object is dead.</p>
+
+    
+<p>initiator : The unit that is dead. </p>
+
+<div id= "#Functions##OnEventDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEjection')">
+<h4><a id="#(PSEUDOATC).OnEventEjection" ><strong>PSEUDOATC:OnEventEjection(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a pilot ejects from an aircraft
+initiator : The unit that has ejected </p>
+
+<div id= "#Functions##OnEventEjection" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEngineShutdown')">
+<h4><a id="#(PSEUDOATC).OnEventEngineShutdown" ><strong>PSEUDOATC:OnEventEngineShutdown(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft shuts down its engines.</p>
+
+    
+<p>initiator : The unit that is stopping its engines. </p>
+
+<div id= "#Functions##OnEventEngineShutdown" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEngineStartup')">
+<h4><a id="#(PSEUDOATC).OnEventEngineStartup" ><strong>PSEUDOATC:OnEventEngineStartup(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft starts its engines.</p>
+
+    
+<p>initiator : The unit that is starting its engines. </p>
+
+<div id= "#Functions##OnEventEngineStartup" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventHit')">
+<h4><a id="#(PSEUDOATC).OnEventHit" ><strong>PSEUDOATC:OnEventHit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs whenever an object is hit by a weapon.</p>
+
+    
+<p>initiator : The unit object the fired the weapon
+weapon: Weapon object that hit the target
+target: The Object that was hit. </p>
+
+<div id= "#Functions##OnEventHit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventHumanFailure')">
+<h4><a id="#(PSEUDOATC).OnEventHumanFailure" ><strong>PSEUDOATC:OnEventHumanFailure(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any system fails on a human controlled aircraft.</p>
+
+    
+<p>initiator : The unit that had the failure </p>
+
+<div id= "#Functions##OnEventHumanFailure" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventLand')">
+<h4><a id="#(PSEUDOATC).OnEventLand" ><strong>PSEUDOATC:OnEventLand(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft lands at an airbase, farp or ship
+initiator : The unit that has landed
+place: Object that the unit landed on.</p>
+
+    
+<p>Can be an Airbase Object, FARP, or Ships </p>
+
+<div id= "#Functions##OnEventLand" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventMissionEnd')">
+<h4><a id="#(PSEUDOATC).OnEventMissionEnd" ><strong>PSEUDOATC:OnEventMissionEnd(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a mission ends</p>
+
+<div id= "#Functions##OnEventMissionEnd" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventMissionStart')">
+<h4><a id="#(PSEUDOATC).OnEventMissionStart" ><strong>PSEUDOATC:OnEventMissionStart(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a mission starts </p>
+
+<div id= "#Functions##OnEventMissionStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPilotDead')">
+<h4><a id="#(PSEUDOATC).OnEventPilotDead" ><strong>PSEUDOATC:OnEventPilotDead(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when the pilot of an aircraft is killed.</p>
+
+    
+<p>Can occur either if the player is alive and crashes or if a weapon kills the pilot without completely destroying the plane.
+initiator : The unit that the pilot has died in. </p>
+
+<div id= "#Functions##OnEventPilotDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPlayerEnterUnit')">
+<h4><a id="#(PSEUDOATC).OnEventPlayerEnterUnit" ><strong>PSEUDOATC:OnEventPlayerEnterUnit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any player assumes direct control of a unit.</p>
+
+    
+<p>initiator : The unit that is being taken control of. </p>
+
+<div id= "#Functions##OnEventPlayerEnterUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPlayerLeaveUnit')">
+<h4><a id="#(PSEUDOATC).OnEventPlayerLeaveUnit" ><strong>PSEUDOATC:OnEventPlayerLeaveUnit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any player relieves control of a unit to the AI.</p>
+
+    
+<p>initiator : The unit that the player left. </p>
+
+<div id= "#Functions##OnEventPlayerLeaveUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventRefueling')">
+<h4><a id="#(PSEUDOATC).OnEventRefueling" ><strong>PSEUDOATC:OnEventRefueling(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
+
+    
+<p>initiator : The unit that is receiving fuel. </p>
+
+<div id= "#Functions##OnEventRefueling" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventRefuelingStop')">
+<h4><a id="#(PSEUDOATC).OnEventRefuelingStop" ><strong>PSEUDOATC:OnEventRefuelingStop(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft is finished taking fuel.</p>
+
+    
+<p>initiator : The unit that was receiving fuel. </p>
+
+<div id= "#Functions##OnEventRefuelingStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShootingEnd')">
+<h4><a id="#(PSEUDOATC).OnEventShootingEnd" ><strong>PSEUDOATC:OnEventShootingEnd(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any unit stops firing its weapon.</p>
+
+    
+<p>Event will always correspond with a shooting start event.
+initiator : The unit that was doing the shooing. </p>
+
+<div id= "#Functions##OnEventShootingEnd" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShootingStart')">
+<h4><a id="#(PSEUDOATC).OnEventShootingStart" ><strong>PSEUDOATC:OnEventShootingStart(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
+
+    
+<p>Most common with aircraft cannons (GAU-8), autocannons, and machine guns.
+initiator : The unit that is doing the shooing.
+target: The unit that is being targeted. </p>
+
+<div id= "#Functions##OnEventShootingStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShot')">
+<h4><a id="#(PSEUDOATC).OnEventShot" ><strong>PSEUDOATC:OnEventShot(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs whenever any unit in a mission fires a weapon.</p>
+
+    
+<p>But not any machine gun or autocannon based weapon, those are handled by EVENT.ShootingStart.</p>
+
+<div id= "#Functions##OnEventShot" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventTakeoff')">
+<h4><a id="#(PSEUDOATC).OnEventTakeoff" ><strong>PSEUDOATC:OnEventTakeoff(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
+
+    
+<p>initiator : The unit that tookoff
+place: Object from where the AI took-off from. Can be an Airbase Object, FARP, or Ships </p>
+
+<div id= "#Functions##OnEventTakeoff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleOnce')">
+<h4><a id="#(PSEUDOATC).ScheduleOnce" ><strong>PSEUDOATC:ScheduleOnce(Start, SchedulerFunction, ...)</strong></a></h4>
+</div>
+    
+<p>Schedule a new time event.</p>
+
+    
+<p>Note that the schedule will only take place if the scheduler is <em>started</em>. Even for a single schedule event, the scheduler needs to be started also.</p>
+
+<div id= "#Functions##ScheduleOnce" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Start</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds that will be waited before the scheduling is started, and the event function is called.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>...</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Optional arguments that can be given as part of scheduler. The arguments need to be given as a table { param1, param 2, ... }.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The ScheduleID of the planned schedule.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleRepeat')">
+<h4><a id="#(PSEUDOATC).ScheduleRepeat" ><strong>PSEUDOATC:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</strong></a></h4>
+</div>
+    
+<p>Schedule a new time event.</p>
+
+    
+<p>Note that the schedule will only take place if the scheduler is <em>started</em>. Even for a single schedule event, the scheduler needs to be started also.</p>
+
+<div id= "#Functions##ScheduleRepeat" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Start</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds that will be waited before the scheduling is started, and the event function is called.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Repeat</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the interval in seconds when the scheduler will call the event function.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>RandomizeFactor</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies a randomization factor between 0 and 1 to randomize the Repeat.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Stop</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds when the scheduler will be stopped.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>...</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Optional arguments that can be given as part of scheduler. The arguments need to be given as a table { param1, param 2, ... }.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The ScheduleID of the planned schedule.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleStop')">
+<h4><a id="#(PSEUDOATC).ScheduleStop" ><strong>PSEUDOATC:ScheduleStop(SchedulerFunction)</strong></a></h4>
+</div>
+    
+<p>Stops the Schedule.</p>
+
+<div id= "#Functions##ScheduleStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetEventPriority')">
+<h4><a id="#(PSEUDOATC).SetEventPriority" ><strong>PSEUDOATC:SetEventPriority(EventPriority)</strong></a></h4>
+</div>
+    
+<p>Set the Class <a href="Event.html">Event</a> processing Priority.</p>
+
+    
+<p>The Event processing Priority is a number from 1 to 10, 
+reflecting the order of the classes subscribed to the Event to be processed.</p>
+
+<div id= "#Functions##SetEventPriority" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>EventPriority</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The <a href="Event.html">Event</a> processing Priority.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetState')">
+<h4><a id="#(PSEUDOATC).SetState" ><strong>PSEUDOATC:SetState(Object, Key, Value)</strong></a></h4>
+</div>
+    
+<p>Set a state or property of the Object given a Key and a Value.</p>
+
+    
+<p>Note that if the Object is destroyed, nillified or garbage collected, then the Values and Keys will also be gone.</p>
+
+<div id= "#Functions##SetState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that will hold the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Key</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is used as a reference of the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Value</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The value to is stored in the object.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>The Value set. </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T')">
+<h4><a id="#(PSEUDOATC).T" ><strong>PSEUDOATC:T(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 1.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T2')">
+<h4><a id="#(PSEUDOATC).T2" ><strong>PSEUDOATC:T2(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 2.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T3')">
+<h4><a id="#(PSEUDOATC).T3" ><strong>PSEUDOATC:T3(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 3.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceAll')">
+<h4><a id="#(PSEUDOATC).TraceAll" ><strong>PSEUDOATC:TraceAll(TraceAll)</strong></a></h4>
+</div>
+    
+<p>Trace all methods in MOOSE</p>
+
+<div id= "#Functions##TraceAll" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>TraceAll</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>true = trace all methods in MOOSE.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceClass')">
+<h4><a id="#(PSEUDOATC).TraceClass" ><strong>PSEUDOATC:TraceClass(Class)</strong></a></h4>
+</div>
+    
+<p>Set tracing for a class</p>
+
+<div id= "#Functions##TraceClass" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Class</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceClassMethod')">
+<h4><a id="#(PSEUDOATC).TraceClassMethod" ><strong>PSEUDOATC:TraceClassMethod(Class, Method)</strong></a></h4>
+</div>
+    
+<p>Set tracing for a specific method of  class</p>
+
+<div id= "#Functions##TraceClassMethod" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Class</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Method</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceLevel')">
+<h4><a id="#(PSEUDOATC).TraceLevel" ><strong>PSEUDOATC:TraceLevel(Level)</strong></a></h4>
+</div>
+    
+<p>Set trace level</p>
+
+<div id= "#Functions##TraceLevel" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Level</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceOnOff')">
+<h4><a id="#(PSEUDOATC).TraceOnOff" ><strong>PSEUDOATC:TraceOnOff(TraceOnOff)</strong></a></h4>
+</div>
+    
+<p>Set trace on or off
+Note that when trace is off, no BASE.Debug statement is performed, increasing performance!
+When Moose is loaded statically, (as one file), tracing is switched off by default.</p>
+
+    
+<p>So tracing must be switched on manually in your mission if you are using Moose statically.
+When moose is loading dynamically (for moose class development), tracing is switched on by default.</p>
+
+<div id= "#Functions##TraceOnOff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>TraceOnOff</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Switch the tracing on or off.</p>
+
+        </div>
+    </div>
+      <h3><strong>Usage:</strong></h3>
+    <pre class="example"><code>-- Switch the tracing On
+BASE:TraceOnOff( true )
+
+-- Switch the tracing Off
+BASE:TraceOnOff( false )</code></pre>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##UnHandleEvent')">
+<h4><a id="#(PSEUDOATC).UnHandleEvent" ><strong>PSEUDOATC:UnHandleEvent(Event)</strong></a></h4>
+</div>
+    
+<p>UnSubscribe to a DCS event.</p>
+
+<div id= "#Functions##UnHandleEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTS)">Core.Event#EVENTS</a>
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_F')">
+<h4><a id="#(PSEUDOATC)._F" ><strong>PSEUDOATC:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h4>
+</div>
+    
+<p>Trace a function call.</p>
+
+    
+<p>This function is private.</p>
+
+<div id= "#Functions##_F" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoCurrentParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoFromParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_T')">
+<h4><a id="#(PSEUDOATC)._T" ><strong>PSEUDOATC:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic.</p>
+
+<div id= "#Functions##_T" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoCurrentParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoFromParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onEvent')">
+<h4><a id="#(PSEUDOATC).onEvent" ><strong>PSEUDOATC:onEvent(event)</strong></a></h4>
+</div>
+    
+
+
+    
+<p> TODO: Complete DCS#Event structure. <br/>
+- The main event handling function... This function captures all events generated for the class.
+ @param #BASE self
+ @param DCS#Event event</p>
+
+<div id= "#Functions##onEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
         </div>
     </div>
 </div>

@@ -1412,18 +1412,1064 @@ The could avoid the lua garbage collection to accidentally/falsely deallocate th
 </div>
 
   </div>
-  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>
-  
+  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>  
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(RANGE)">Type <strong>RANGE</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).AddBombingTargetGroup">RANGE:AddBombingTargetGroup(group, goodhitrange, randommove)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Add all units of a group as bombing targets.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).AddBombingTargetUnit">RANGE:AddBombingTargetUnit(unit, goodhitrange, randommove)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Add a unit or static object as bombing target.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).AddBombingTargets">RANGE:AddBombingTargets(targetnames, goodhitrange, randommove)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Add bombing target(s) to range.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).AddStrafePit">RANGE:AddStrafePit(targetnames, boxlength, boxwidth, heading, inverseheading, goodpass, foulline)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Add new strafe pit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).AddStrafePitGroup">RANGE:AddStrafePitGroup(group, boxlength, boxwidth, heading, inverseheading, goodpass, foulline)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Add all units of a group as one new strafe target pit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).BombSmokeColor">RANGE.BombSmokeColor</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Color id used for smoking bomb targets.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).BombtrackThreshold">RANGE.BombtrackThreshold</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Bombs/rockets/missiles are only tracked if player-range distance is smaller than this threashold [m]. Default 25000 m.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).ClassName">RANGE.ClassName</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Name of the Class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).Debug">RANGE.Debug</a></td>
+    <td class="summary"><style="width:60%;">
+<p>If true, debug info is send as messages on the screen.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).DebugOFF">RANGE:DebugOFF()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Disable debug modus.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).DebugON">RANGE:DebugON()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Enable debug modus.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).Defaults">RANGE.Defaults</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Default range parameters.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).GetFoullineDistance">RANGE:GetFoullineDistance(namepit, namefoulline)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Measures the foule line distance between two unit or static objects.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).MenuAddedTo">RANGE.MenuAddedTo</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Table for monitoring which players already got an F10 menu.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).MenuF10">RANGE.MenuF10</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Main radio menu.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).Names">RANGE.Names</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Global list of all defined range names.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).New">RANGE:New(rangename)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>RANGE contructor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventBirth">RANGE:OnEventBirth(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Range event handler for event birth.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventHit">RANGE:OnEventHit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Range event handler for event hit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventShot">RANGE:OnEventShot(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Range event handler for event shot (when a unit releases a rocket or bomb (but not a fast firing gun). </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).PlayerSettings">RANGE.PlayerSettings</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Indiviual player settings.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).SetBombTargetSmokeColor">RANGE:SetBombTargetSmokeColor(colorid)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set smoke color for marking bomb targets.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).SetBombtrackThreshold">RANGE:SetBombtrackThreshold(distance)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set bomb track threshold distance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).SetBombtrackTimestep">RANGE:SetBombtrackTimestep(dt)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set time interval for tracking bombs.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).SetDisplayedMaxPlayerResults">RANGE:SetDisplayedMaxPlayerResults(nmax)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set max number of player results that are displayed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).SetMaxStrafeAlt">RANGE:SetMaxStrafeAlt(maxalt)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set maximal strafing altitude.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).SetMessageTimeDuration">RANGE:SetMessageTimeDuration(time)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set time how long (most) messages are displayed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).SetMessageToExaminer">RANGE:SetMessageToExaminer(examinergroupname, exclusively)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set messages to examiner.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).SetRangeLocation">RANGE:SetRangeLocation(coordinate)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set range location.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).SetRangeRadius">RANGE:SetRangeRadius(radius)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set range radius.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).SetSmokeTimeDelay">RANGE:SetSmokeTimeDelay(delay)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set time delay between bomb impact and starting to smoke the impact point.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).SetStrafePitSmokeColor">RANGE:SetStrafePitSmokeColor(colorid)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set smoke color for marking strafe pit approach boxes.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).SetStrafeTargetSmokeColor">RANGE:SetStrafeTargetSmokeColor(colorid)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set smoke color for marking strafe targets.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).Start">RANGE:Start()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Initializes number of targets and location of the range.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).StrafePitSmokeColor">RANGE.StrafePitSmokeColor</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Color id used to smoke strafe pit approach boxes. </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).StrafeSmokeColor">RANGE.StrafeSmokeColor</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Color id used to smoke strafe targets.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).TdelaySmoke">RANGE.TdelaySmoke</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Time delay in seconds between impact of bomb and starting the smoke. Default 3 seconds.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).Tmsg">RANGE.Tmsg</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Time [sec] messages to players are displayed. Default 30 sec.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).TrackBombsOFF">RANGE:TrackBombsOFF()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Disables tracking of all bomb types.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).TrackBombsON">RANGE:TrackBombsON()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Enables tracking of all bomb types.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).TrackMissilesOFF">RANGE:TrackMissilesOFF()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Disables tracking of all missile types.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).TrackMissilesON">RANGE:TrackMissilesON()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Enables tracking of all missile types.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).TrackRocketsOFF">RANGE:TrackRocketsOFF()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Disables tracking of all rocket types.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).TrackRocketsON">RANGE:TrackRocketsON()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Enables tracking of all rocket types.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._AddF10Commands">RANGE:_AddF10Commands(_unitName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Add menu commands for player.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._CheckInZone">RANGE:_CheckInZone(_unitName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Check if player is inside a strafing zone.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._CheckStatic">RANGE:_CheckStatic(name)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Checks if a static object with a certain name exists.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._DelayedSmoke">RANGE._DelayedSmoke(_args)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Start smoking a coordinate with a delay.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._DisplayBombTargets">RANGE:_DisplayBombTargets(_unitname)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Display bombing target locations to player.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._DisplayBombingResults">RANGE:_DisplayBombingResults(_unitName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Display best bombing results of top 10 players.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._DisplayMessageToGroup">RANGE:_DisplayMessageToGroup(_unit, _text, _time, _clear)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Display message to group.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._DisplayMyBombingResults">RANGE:_DisplayMyBombingResults(_unitName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Display top 10 bombing run results of specific player.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._DisplayMyStrafePitResults">RANGE:_DisplayMyStrafePitResults(_unitName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Display top 10 stafing results of a specific player.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._DisplayRangeInfo">RANGE:_DisplayRangeInfo(_unitname)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Report information like bearing and range from player unit to range.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._DisplayRangeWeather">RANGE:_DisplayRangeWeather(_unitname)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Report weather conditions at range.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._DisplayStrafePitResults">RANGE:_DisplayStrafePitResults(_unitName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Display top 10 strafing results of all players.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._DisplayStrafePits">RANGE:_DisplayStrafePits(_unitname)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Display pit location and heading to player.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._FlareDirectHitsOnOff">RANGE:_FlareDirectHitsOnOff(unitname)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Toggle status of flaring direct hits of range targets.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._GetAmmo">RANGE:_GetAmmo(unitname)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the number of shells a unit currently has.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._GetPlayerUnitAndName">RANGE:_GetPlayerUnitAndName(_unitName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the unit of a player and the player name.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._GetSpeed">RANGE:_GetSpeed(controllable)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get max speed of controllable.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._IlluminateBombTargets">RANGE:_IlluminateBombTargets(_unitName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Illuminate targets.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._MarkTargetsOnMap">RANGE:_MarkTargetsOnMap(_unitName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Mark targets on F10 map.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._ResetRangeStats">RANGE:_ResetRangeStats(_unitName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Reset player statistics.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._SmokeBombDelayOnOff">RANGE:_SmokeBombDelayOnOff(unitname)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Toggle status of time delay for smoking bomb impact points</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._SmokeBombImpactOnOff">RANGE:_SmokeBombImpactOnOff(unitname)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Toggle status of smoking bomb impact points.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._SmokeBombTargets">RANGE:_SmokeBombTargets(unitname)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Mark bombing targets with smoke.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._SmokeStrafeTargetBoxes">RANGE:_SmokeStrafeTargetBoxes(unitname)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Mark approach boxes of strafe targets with smoke.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._SmokeStrafeTargets">RANGE:_SmokeStrafeTargets(unitname)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Mark strafing targets with smoke.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._flarecolor2text">RANGE:_flarecolor2text(color)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets the flare color used to flare players direct target hits.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._myname">RANGE:_myname(unitname)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns a string which consits of this callsign and the player name.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._playerflarecolor">RANGE:_playerflarecolor(_unitName, color)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets the flare color used when player makes a direct hit on target.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._playersmokecolor">RANGE:_playersmokecolor(_unitName, color)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets the smoke color used to smoke players bomb impact points.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._smokecolor2text">RANGE:_smokecolor2text(color)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Converts a smoke color id to text.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._split">RANGE:_split(str, sep)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Split string.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).bombPlayerResults">RANGE.bombPlayerResults</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Table containing the bombing results of each player.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).bombingTargets">RANGE.bombingTargets</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Table of targets to bomb.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).dtBombtrack">RANGE.dtBombtrack</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Time step [sec] used for tracking released bomb/rocket positions. Default 0.005 seconds.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).eventmoose">RANGE.eventmoose</a></td>
+    <td class="summary"><style="width:60%;">
+<p>If true, events are handled by MOOSE. If false, events are handled directly by DCS eventhandler. Default true.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).examinerexclusive">RANGE.examinerexclusive</a></td>
+    <td class="summary"><style="width:60%;">
+<p>If true, only the examiner gets messages. If false, clients and examiner get messages.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).examinergroupname">RANGE.examinergroupname</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Name of the examiner group which should get all messages.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).id">RANGE.id</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Some ID to identify who we are in output of the DCS.log file.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).illuminationmaxalt">RANGE.illuminationmaxalt</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Maximum altitude AGL in meters at which illumination bombs are fired. Default is 1000 m.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).illuminationminalt">RANGE.illuminationminalt</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Minimum altitude AGL in meters at which illumination bombs are fired. Default is 500 m.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).location">RANGE.location</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Coordinate of the range location.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).nbombtargets">RANGE.nbombtargets</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Number of bombing targets.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).ndisplayresult">RANGE.ndisplayresult</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Number of (player) results that a displayed. Default is 10.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).nstrafetargets">RANGE.nstrafetargets</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Number of strafing targets.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).onEvent">RANGE:onEvent(Event)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>General event handler.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).planes">RANGE.planes</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Table for administration.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).rangename">RANGE.rangename</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Name of the range.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).rangeradius">RANGE.rangeradius</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Radius of range defining its total size for e.g. smoking bomb impact points and sending radio messages. Default 5 km.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).rangezone">RANGE.rangezone</a></td>
+    <td class="summary"><style="width:60%;">
+<p>MOOSE zone object of the range. For example, no bomb impacts are smoked if bombs fall outside of the range zone. </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).scorebombdistance">RANGE.scorebombdistance</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Distance from closest target up to which bomb hits are counted. Default 1000 m.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).strafePlayerResults">RANGE.strafePlayerResults</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Table containing the strafing results of each player.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).strafeStatus">RANGE.strafeStatus</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Table containing the current strafing target a player as assigned to.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).strafeTargets">RANGE.strafeTargets</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Table of strafing targets.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).strafemaxalt">RANGE.strafemaxalt</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Maximum altitude above ground for registering for a strafe run. Default is 914 m = 3000 ft. </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).trackbombs">RANGE.trackbombs</a></td>
+    <td class="summary"><style="width:60%;">
+<p>If true (default), all bomb types are tracked and impact point to closest bombing target is evaluated.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).trackmissiles">RANGE.trackmissiles</a></td>
+    <td class="summary"><style="width:60%;">
+<p>If true (default), all missile types are tracked and impact point to closest bombing target is evaluated.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).trackrockets">RANGE.trackrockets</a></td>
+    <td class="summary"><style="width:60%;">
+<p>If true (default), all rocket types are tracked and impact point to closest bombing target is evaluated.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).version">RANGE.version</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Range script version.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).ClassID">RANGE.ClassID</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The ID number of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).ClassName">RANGE.ClassName</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The name of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).ClassNameAndID">RANGE.ClassNameAndID</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The name of the class concatenated with the ID number of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).ClearState">RANGE:ClearState(Object, StateName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Clear the state of an object.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).CreateEventBirth">RANGE:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Birth Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).CreateEventCrash">RANGE:CreateEventCrash(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Crash Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).CreateEventDead">RANGE:CreateEventDead(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Dead Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).CreateEventRemoveUnit">RANGE:CreateEventRemoveUnit(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Remove Unit Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).CreateEventTakeoff">RANGE:CreateEventTakeoff(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Takeoff Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).E">RANGE:E(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Log an exception which will be traced always.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).EventDispatcher">RANGE:EventDispatcher()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the event dispatcher</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).EventRemoveAll">RANGE:EventRemoveAll()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Remove all subscribed events</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).F">RANGE:F(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).F2">RANGE:F2(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call level 2.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).F3">RANGE:F3(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call level 3.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).GetClassID">RANGE:GetClassID()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassID of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).GetClassName">RANGE:GetClassName()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassName of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).GetClassNameAndID">RANGE:GetClassNameAndID()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassName + ClassID of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).GetEventPriority">RANGE:GetEventPriority()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the Class <a href="Event.html">Event</a> processing Priority.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).GetParent">RANGE:GetParent(Child, FromClass)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to retrieve the Parent class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).GetState">RANGE:GetState(Object, Key)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get a Value given a Key from the Object.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).HandleEvent">RANGE:HandleEvent(Event, EventFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Subscribe to a DCS Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).I">RANGE:I(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Log an information which will be traced always.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).Inherit">RANGE:Inherit(Child, Parent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to inherit from a parent class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).IsInstanceOf">RANGE:IsInstanceOf(ClassName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to check if an object is an (sub)instance of a class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).IsTrace">RANGE:IsTrace()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Enquires if tracing is on (for the class).</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).New">RANGE:New()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>BASE constructor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEvent">RANGE:OnEvent(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an object is completely destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventBaseCaptured">RANGE:OnEventBaseCaptured(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a ground unit captures either an airbase or a farp.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventBirth">RANGE:OnEventBirth(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any object is spawned into the mission.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventCrash">RANGE:OnEventCrash(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventDead">RANGE:OnEventDead(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an object is dead.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventEjection">RANGE:OnEventEjection(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a pilot ejects from an aircraft
+initiator : The unit that has ejected </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventEngineShutdown">RANGE:OnEventEngineShutdown(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft shuts down its engines.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventEngineStartup">RANGE:OnEventEngineStartup(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft starts its engines.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventHit">RANGE:OnEventHit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs whenever an object is hit by a weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventHumanFailure">RANGE:OnEventHumanFailure(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any system fails on a human controlled aircraft.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventLand">RANGE:OnEventLand(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft lands at an airbase, farp or ship
+initiator : The unit that has landed
+place: Object that the unit landed on.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventMissionEnd">RANGE:OnEventMissionEnd(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a mission ends</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventMissionStart">RANGE:OnEventMissionStart(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a mission starts </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventPilotDead">RANGE:OnEventPilotDead(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when the pilot of an aircraft is killed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventPlayerEnterUnit">RANGE:OnEventPlayerEnterUnit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any player assumes direct control of a unit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventPlayerLeaveUnit">RANGE:OnEventPlayerLeaveUnit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any player relieves control of a unit to the AI.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventRefueling">RANGE:OnEventRefueling(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventRefuelingStop">RANGE:OnEventRefuelingStop(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft is finished taking fuel.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventShootingEnd">RANGE:OnEventShootingEnd(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any unit stops firing its weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventShootingStart">RANGE:OnEventShootingStart(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventShot">RANGE:OnEventShot(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs whenever any unit in a mission fires a weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).OnEventTakeoff">RANGE:OnEventTakeoff(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).ScheduleOnce">RANGE:ScheduleOnce(Start, SchedulerFunction, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Schedule a new time event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).ScheduleRepeat">RANGE:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Schedule a new time event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).ScheduleStop">RANGE:ScheduleStop(SchedulerFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Stops the Schedule.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).Scheduler">RANGE.Scheduler</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).SetEventPriority">RANGE:SetEventPriority(EventPriority)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set the Class <a href="Event.html">Event</a> processing Priority.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).SetState">RANGE:SetState(Object, Key, Value)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set a state or property of the Object given a Key and a Value.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).T">RANGE:T(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 1.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).T2">RANGE:T2(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 2.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).T3">RANGE:T3(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 3.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).TraceAll">RANGE:TraceAll(TraceAll)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace all methods in MOOSE</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).TraceClass">RANGE:TraceClass(Class)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set tracing for a class</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).TraceClassMethod">RANGE:TraceClassMethod(Class, Method)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set tracing for a specific method of  class</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).TraceLevel">RANGE:TraceLevel(Level)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set trace level</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).TraceOnOff">RANGE:TraceOnOff(TraceOnOff)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set trace on or off
+Note that when trace is off, no BASE.Debug statement is performed, increasing performance!
+When Moose is loaded statically, (as one file), tracing is switched off by default.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).UnHandleEvent">RANGE:UnHandleEvent(Event)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>UnSubscribe to a DCS event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._">RANGE._</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._F">RANGE:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE)._T">RANGE:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).__">RANGE.__</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(RANGE).onEvent">RANGE:onEvent(event)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+  </table>
+ </div>
+
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Functional.Range)" >Type <strong>Functional.Range</strong></a></h2></div>
   <div class="w3-container w3-white w3-padding-16" id="module_current_type">
     <div class="w3-white" id="record_type">
+<h2>
+      ==> <a href="##(Functional.Range)">Functional.Range</a>
+</h2>
 </div>
 
   </div>
   <div onclick="myFunction('#Types##RANGE')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(RANGE)">Type <strong>RANGE</strong></a></h2></div>
   <div id= "#Types##RANGE" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Core.Base.html##(BASE)">Core.Base#BASE</a> </h3>
+<h2>
+      ==> <a href="##(RANGE)">RANGE</a>
+     , inherits from <a href="Core.Base.html##(BASE)">Core.Base#BASE</a>
+</h2>
   
 <ul>
     <li>RANGE class</li>
@@ -1867,14 +2913,14 @@ The could avoid the lua garbage collection to accidentally/falsely deallocate th
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddBombingTargetGroup')">
-<h6><a id="#(RANGE).AddBombingTargetGroup" ><strong>RANGE:AddBombingTargetGroup(group, goodhitrange, randommove)</strong></a></h6>
+<h4><a id="#(RANGE).AddBombingTargetGroup" ><strong>RANGE:AddBombingTargetGroup(group, goodhitrange, randommove)</strong></a></h4>
 </div>
     
 <p>Add all units of a group as bombing targets.</p>
 
 <div id= "#Functions##AddBombingTargetGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1920,14 +2966,14 @@ The could avoid the lua garbage collection to accidentally/falsely deallocate th
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddBombingTargetUnit')">
-<h6><a id="#(RANGE).AddBombingTargetUnit" ><strong>RANGE:AddBombingTargetUnit(unit, goodhitrange, randommove)</strong></a></h6>
+<h4><a id="#(RANGE).AddBombingTargetUnit" ><strong>RANGE:AddBombingTargetUnit(unit, goodhitrange, randommove)</strong></a></h4>
 </div>
     
 <p>Add a unit or static object as bombing target.</p>
 
 <div id= "#Functions##AddBombingTargetUnit" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1973,14 +3019,14 @@ The could avoid the lua garbage collection to accidentally/falsely deallocate th
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddBombingTargets')">
-<h6><a id="#(RANGE).AddBombingTargets" ><strong>RANGE:AddBombingTargets(targetnames, goodhitrange, randommove)</strong></a></h6>
+<h4><a id="#(RANGE).AddBombingTargets" ><strong>RANGE:AddBombingTargets(targetnames, goodhitrange, randommove)</strong></a></h4>
 </div>
     
 <p>Add bombing target(s) to range.</p>
 
 <div id= "#Functions##AddBombingTargets" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2026,7 +3072,7 @@ The could avoid the lua garbage collection to accidentally/falsely deallocate th
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddStrafePit')">
-<h6><a id="#(RANGE).AddStrafePit" ><strong>RANGE:AddStrafePit(targetnames, boxlength, boxwidth, heading, inverseheading, goodpass, foulline)</strong></a></h6>
+<h4><a id="#(RANGE).AddStrafePit" ><strong>RANGE:AddStrafePit(targetnames, boxlength, boxwidth, heading, inverseheading, goodpass, foulline)</strong></a></h4>
 </div>
     
 <p>Add new strafe pit.</p>
@@ -2038,7 +3084,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##AddStrafePit" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2128,7 +3174,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddStrafePitGroup')">
-<h6><a id="#(RANGE).AddStrafePitGroup" ><strong>RANGE:AddStrafePitGroup(group, boxlength, boxwidth, heading, inverseheading, goodpass, foulline)</strong></a></h6>
+<h4><a id="#(RANGE).AddStrafePitGroup" ><strong>RANGE:AddStrafePitGroup(group, boxlength, boxwidth, heading, inverseheading, goodpass, foulline)</strong></a></h4>
 </div>
     
 <p>Add all units of a group as one new strafe target pit.</p>
@@ -2140,7 +3186,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##AddStrafePitGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2230,7 +3276,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##DebugOFF')">
-<h6><a id="#(RANGE).DebugOFF" ><strong>RANGE:DebugOFF()</strong></a></h6>
+<h4><a id="#(RANGE).DebugOFF" ><strong>RANGE:DebugOFF()</strong></a></h4>
 </div>
     
 <p>Disable debug modus.</p>
@@ -2247,7 +3293,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##DebugON')">
-<h6><a id="#(RANGE).DebugON" ><strong>RANGE:DebugON()</strong></a></h6>
+<h4><a id="#(RANGE).DebugON" ><strong>RANGE:DebugON()</strong></a></h4>
 </div>
     
 <p>Enable debug modus.</p>
@@ -2264,14 +3310,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetFoullineDistance')">
-<h6><a id="#(RANGE).GetFoullineDistance" ><strong>RANGE:GetFoullineDistance(namepit, namefoulline)</strong></a></h6>
+<h4><a id="#(RANGE).GetFoullineDistance" ><strong>RANGE:GetFoullineDistance(namepit, namefoulline)</strong></a></h4>
 </div>
     
 <p>Measures the foule line distance between two unit or static objects.</p>
 
 <div id= "#Functions##GetFoullineDistance" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2296,7 +3342,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #number:
@@ -2317,7 +3363,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(RANGE).New" ><strong>RANGE:New(rangename)</strong></a></h6>
+<h4><a id="#(RANGE).New" ><strong>RANGE:New(rangename)</strong></a></h4>
 </div>
     
 <p>RANGE contructor.</p>
@@ -2327,7 +3373,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2341,7 +3387,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(RANGE)">#RANGE</a>:
@@ -2362,14 +3408,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBirth')">
-<h6><a id="#(RANGE).OnEventBirth" ><strong>RANGE:OnEventBirth(EventData)</strong></a></h6>
+<h4><a id="#(RANGE).OnEventBirth" ><strong>RANGE:OnEventBirth(EventData)</strong></a></h4>
 </div>
     
 <p>Range event handler for event birth.</p>
 
 <div id= "#Functions##OnEventBirth" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2391,14 +3437,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventHit')">
-<h6><a id="#(RANGE).OnEventHit" ><strong>RANGE:OnEventHit(EventData)</strong></a></h6>
+<h4><a id="#(RANGE).OnEventHit" ><strong>RANGE:OnEventHit(EventData)</strong></a></h4>
 </div>
     
 <p>Range event handler for event hit.</p>
 
 <div id= "#Functions##OnEventHit" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2420,14 +3466,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShot')">
-<h6><a id="#(RANGE).OnEventShot" ><strong>RANGE:OnEventShot(EventData)</strong></a></h6>
+<h4><a id="#(RANGE).OnEventShot" ><strong>RANGE:OnEventShot(EventData)</strong></a></h4>
 </div>
     
 <p>Range event handler for event shot (when a unit releases a rocket or bomb (but not a fast firing gun). </p>
 
 <div id= "#Functions##OnEventShot" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2449,7 +3495,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetBombTargetSmokeColor')">
-<h6><a id="#(RANGE).SetBombTargetSmokeColor" ><strong>RANGE:SetBombTargetSmokeColor(colorid)</strong></a></h6>
+<h4><a id="#(RANGE).SetBombTargetSmokeColor" ><strong>RANGE:SetBombTargetSmokeColor(colorid)</strong></a></h4>
 </div>
     
 <p>Set smoke color for marking bomb targets.</p>
@@ -2459,7 +3505,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##SetBombTargetSmokeColor" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2483,7 +3529,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetBombtrackThreshold')">
-<h6><a id="#(RANGE).SetBombtrackThreshold" ><strong>RANGE:SetBombtrackThreshold(distance)</strong></a></h6>
+<h4><a id="#(RANGE).SetBombtrackThreshold" ><strong>RANGE:SetBombtrackThreshold(distance)</strong></a></h4>
 </div>
     
 <p>Set bomb track threshold distance.</p>
@@ -2493,7 +3539,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##SetBombtrackThreshold" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2517,7 +3563,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetBombtrackTimestep')">
-<h6><a id="#(RANGE).SetBombtrackTimestep" ><strong>RANGE:SetBombtrackTimestep(dt)</strong></a></h6>
+<h4><a id="#(RANGE).SetBombtrackTimestep" ><strong>RANGE:SetBombtrackTimestep(dt)</strong></a></h4>
 </div>
     
 <p>Set time interval for tracking bombs.</p>
@@ -2527,7 +3573,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##SetBombtrackTimestep" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2551,14 +3597,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetDisplayedMaxPlayerResults')">
-<h6><a id="#(RANGE).SetDisplayedMaxPlayerResults" ><strong>RANGE:SetDisplayedMaxPlayerResults(nmax)</strong></a></h6>
+<h4><a id="#(RANGE).SetDisplayedMaxPlayerResults" ><strong>RANGE:SetDisplayedMaxPlayerResults(nmax)</strong></a></h4>
 </div>
     
 <p>Set max number of player results that are displayed.</p>
 
 <div id= "#Functions##SetDisplayedMaxPlayerResults" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2582,7 +3628,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetMaxStrafeAlt')">
-<h6><a id="#(RANGE).SetMaxStrafeAlt" ><strong>RANGE:SetMaxStrafeAlt(maxalt)</strong></a></h6>
+<h4><a id="#(RANGE).SetMaxStrafeAlt" ><strong>RANGE:SetMaxStrafeAlt(maxalt)</strong></a></h4>
 </div>
     
 <p>Set maximal strafing altitude.</p>
@@ -2592,7 +3638,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##SetMaxStrafeAlt" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2616,14 +3662,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetMessageTimeDuration')">
-<h6><a id="#(RANGE).SetMessageTimeDuration" ><strong>RANGE:SetMessageTimeDuration(time)</strong></a></h6>
+<h4><a id="#(RANGE).SetMessageTimeDuration" ><strong>RANGE:SetMessageTimeDuration(time)</strong></a></h4>
 </div>
     
 <p>Set time how long (most) messages are displayed.</p>
 
 <div id= "#Functions##SetMessageTimeDuration" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2647,7 +3693,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetMessageToExaminer')">
-<h6><a id="#(RANGE).SetMessageToExaminer" ><strong>RANGE:SetMessageToExaminer(examinergroupname, exclusively)</strong></a></h6>
+<h4><a id="#(RANGE).SetMessageToExaminer" ><strong>RANGE:SetMessageToExaminer(examinergroupname, exclusively)</strong></a></h4>
 </div>
     
 <p>Set messages to examiner.</p>
@@ -2657,7 +3703,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##SetMessageToExaminer" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2692,7 +3738,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetRangeLocation')">
-<h6><a id="#(RANGE).SetRangeLocation" ><strong>RANGE:SetRangeLocation(coordinate)</strong></a></h6>
+<h4><a id="#(RANGE).SetRangeLocation" ><strong>RANGE:SetRangeLocation(coordinate)</strong></a></h4>
 </div>
     
 <p>Set range location.</p>
@@ -2702,7 +3748,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##SetRangeLocation" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2726,7 +3772,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetRangeRadius')">
-<h6><a id="#(RANGE).SetRangeRadius" ><strong>RANGE:SetRangeRadius(radius)</strong></a></h6>
+<h4><a id="#(RANGE).SetRangeRadius" ><strong>RANGE:SetRangeRadius(radius)</strong></a></h4>
 </div>
     
 <p>Set range radius.</p>
@@ -2736,7 +3782,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##SetRangeRadius" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2760,14 +3806,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetSmokeTimeDelay')">
-<h6><a id="#(RANGE).SetSmokeTimeDelay" ><strong>RANGE:SetSmokeTimeDelay(delay)</strong></a></h6>
+<h4><a id="#(RANGE).SetSmokeTimeDelay" ><strong>RANGE:SetSmokeTimeDelay(delay)</strong></a></h4>
 </div>
     
 <p>Set time delay between bomb impact and starting to smoke the impact point.</p>
 
 <div id= "#Functions##SetSmokeTimeDelay" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2791,7 +3837,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetStrafePitSmokeColor')">
-<h6><a id="#(RANGE).SetStrafePitSmokeColor" ><strong>RANGE:SetStrafePitSmokeColor(colorid)</strong></a></h6>
+<h4><a id="#(RANGE).SetStrafePitSmokeColor" ><strong>RANGE:SetStrafePitSmokeColor(colorid)</strong></a></h4>
 </div>
     
 <p>Set smoke color for marking strafe pit approach boxes.</p>
@@ -2801,7 +3847,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##SetStrafePitSmokeColor" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2825,7 +3871,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetStrafeTargetSmokeColor')">
-<h6><a id="#(RANGE).SetStrafeTargetSmokeColor" ><strong>RANGE:SetStrafeTargetSmokeColor(colorid)</strong></a></h6>
+<h4><a id="#(RANGE).SetStrafeTargetSmokeColor" ><strong>RANGE:SetStrafeTargetSmokeColor(colorid)</strong></a></h4>
 </div>
     
 <p>Set smoke color for marking strafe targets.</p>
@@ -2835,7 +3881,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##SetStrafeTargetSmokeColor" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2859,7 +3905,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Start')">
-<h6><a id="#(RANGE).Start" ><strong>RANGE:Start()</strong></a></h6>
+<h4><a id="#(RANGE).Start" ><strong>RANGE:Start()</strong></a></h4>
 </div>
     
 <p>Initializes number of targets and location of the range.</p>
@@ -2879,7 +3925,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TrackBombsOFF')">
-<h6><a id="#(RANGE).TrackBombsOFF" ><strong>RANGE:TrackBombsOFF()</strong></a></h6>
+<h4><a id="#(RANGE).TrackBombsOFF" ><strong>RANGE:TrackBombsOFF()</strong></a></h4>
 </div>
     
 <p>Disables tracking of all bomb types.</p>
@@ -2896,7 +3942,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TrackBombsON')">
-<h6><a id="#(RANGE).TrackBombsON" ><strong>RANGE:TrackBombsON()</strong></a></h6>
+<h4><a id="#(RANGE).TrackBombsON" ><strong>RANGE:TrackBombsON()</strong></a></h4>
 </div>
     
 <p>Enables tracking of all bomb types.</p>
@@ -2916,7 +3962,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TrackMissilesOFF')">
-<h6><a id="#(RANGE).TrackMissilesOFF" ><strong>RANGE:TrackMissilesOFF()</strong></a></h6>
+<h4><a id="#(RANGE).TrackMissilesOFF" ><strong>RANGE:TrackMissilesOFF()</strong></a></h4>
 </div>
     
 <p>Disables tracking of all missile types.</p>
@@ -2933,7 +3979,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TrackMissilesON')">
-<h6><a id="#(RANGE).TrackMissilesON" ><strong>RANGE:TrackMissilesON()</strong></a></h6>
+<h4><a id="#(RANGE).TrackMissilesON" ><strong>RANGE:TrackMissilesON()</strong></a></h4>
 </div>
     
 <p>Enables tracking of all missile types.</p>
@@ -2953,7 +3999,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TrackRocketsOFF')">
-<h6><a id="#(RANGE).TrackRocketsOFF" ><strong>RANGE:TrackRocketsOFF()</strong></a></h6>
+<h4><a id="#(RANGE).TrackRocketsOFF" ><strong>RANGE:TrackRocketsOFF()</strong></a></h4>
 </div>
     
 <p>Disables tracking of all rocket types.</p>
@@ -2970,7 +4016,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TrackRocketsON')">
-<h6><a id="#(RANGE).TrackRocketsON" ><strong>RANGE:TrackRocketsON()</strong></a></h6>
+<h4><a id="#(RANGE).TrackRocketsON" ><strong>RANGE:TrackRocketsON()</strong></a></h4>
 </div>
     
 <p>Enables tracking of all rocket types.</p>
@@ -2990,14 +4036,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_AddF10Commands')">
-<h6><a id="#(RANGE)._AddF10Commands" ><strong>RANGE:_AddF10Commands(_unitName)</strong></a></h6>
+<h4><a id="#(RANGE)._AddF10Commands" ><strong>RANGE:_AddF10Commands(_unitName)</strong></a></h4>
 </div>
     
 <p>Add menu commands for player.</p>
 
 <div id= "#Functions##_AddF10Commands" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3021,7 +4067,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_CheckInZone')">
-<h6><a id="#(RANGE)._CheckInZone" ><strong>RANGE:_CheckInZone(_unitName)</strong></a></h6>
+<h4><a id="#(RANGE)._CheckInZone" ><strong>RANGE:_CheckInZone(_unitName)</strong></a></h4>
 </div>
     
 <p>Check if player is inside a strafing zone.</p>
@@ -3031,7 +4077,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##_CheckInZone" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3055,7 +4101,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_CheckStatic')">
-<h6><a id="#(RANGE)._CheckStatic" ><strong>RANGE:_CheckStatic(name)</strong></a></h6>
+<h4><a id="#(RANGE)._CheckStatic" ><strong>RANGE:_CheckStatic(name)</strong></a></h4>
 </div>
     
 <p>Checks if a static object with a certain name exists.</p>
@@ -3065,7 +4111,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##_CheckStatic" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3079,7 +4125,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #boolean:
@@ -3100,14 +4146,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_DelayedSmoke')">
-<h6><a id="#(RANGE)._DelayedSmoke" ><strong>RANGE._DelayedSmoke(_args)</strong></a></h6>
+<h4><a id="#(RANGE)._DelayedSmoke" ><strong>RANGE._DelayedSmoke(_args)</strong></a></h4>
 </div>
     
 <p>Start smoking a coordinate with a delay.</p>
 
 <div id= "#Functions##_DelayedSmoke" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
         <div class="w3-half">
           #table
@@ -3129,14 +4175,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_DisplayBombTargets')">
-<h6><a id="#(RANGE)._DisplayBombTargets" ><strong>RANGE:_DisplayBombTargets(_unitname)</strong></a></h6>
+<h4><a id="#(RANGE)._DisplayBombTargets" ><strong>RANGE:_DisplayBombTargets(_unitname)</strong></a></h4>
 </div>
     
 <p>Display bombing target locations to player.</p>
 
 <div id= "#Functions##_DisplayBombTargets" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3160,14 +4206,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_DisplayBombingResults')">
-<h6><a id="#(RANGE)._DisplayBombingResults" ><strong>RANGE:_DisplayBombingResults(_unitName)</strong></a></h6>
+<h4><a id="#(RANGE)._DisplayBombingResults" ><strong>RANGE:_DisplayBombingResults(_unitName)</strong></a></h4>
 </div>
     
 <p>Display best bombing results of top 10 players.</p>
 
 <div id= "#Functions##_DisplayBombingResults" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3191,14 +4237,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_DisplayMessageToGroup')">
-<h6><a id="#(RANGE)._DisplayMessageToGroup" ><strong>RANGE:_DisplayMessageToGroup(_unit, _text, _time, _clear)</strong></a></h6>
+<h4><a id="#(RANGE)._DisplayMessageToGroup" ><strong>RANGE:_DisplayMessageToGroup(_unit, _text, _time, _clear)</strong></a></h4>
 </div>
     
 <p>Display message to group.</p>
 
 <div id= "#Functions##_DisplayMessageToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3255,14 +4301,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_DisplayMyBombingResults')">
-<h6><a id="#(RANGE)._DisplayMyBombingResults" ><strong>RANGE:_DisplayMyBombingResults(_unitName)</strong></a></h6>
+<h4><a id="#(RANGE)._DisplayMyBombingResults" ><strong>RANGE:_DisplayMyBombingResults(_unitName)</strong></a></h4>
 </div>
     
 <p>Display top 10 bombing run results of specific player.</p>
 
 <div id= "#Functions##_DisplayMyBombingResults" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3286,14 +4332,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_DisplayMyStrafePitResults')">
-<h6><a id="#(RANGE)._DisplayMyStrafePitResults" ><strong>RANGE:_DisplayMyStrafePitResults(_unitName)</strong></a></h6>
+<h4><a id="#(RANGE)._DisplayMyStrafePitResults" ><strong>RANGE:_DisplayMyStrafePitResults(_unitName)</strong></a></h4>
 </div>
     
 <p>Display top 10 stafing results of a specific player.</p>
 
 <div id= "#Functions##_DisplayMyStrafePitResults" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3317,14 +4363,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_DisplayRangeInfo')">
-<h6><a id="#(RANGE)._DisplayRangeInfo" ><strong>RANGE:_DisplayRangeInfo(_unitname)</strong></a></h6>
+<h4><a id="#(RANGE)._DisplayRangeInfo" ><strong>RANGE:_DisplayRangeInfo(_unitname)</strong></a></h4>
 </div>
     
 <p>Report information like bearing and range from player unit to range.</p>
 
 <div id= "#Functions##_DisplayRangeInfo" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3348,7 +4394,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_DisplayRangeWeather')">
-<h6><a id="#(RANGE)._DisplayRangeWeather" ><strong>RANGE:_DisplayRangeWeather(_unitname)</strong></a></h6>
+<h4><a id="#(RANGE)._DisplayRangeWeather" ><strong>RANGE:_DisplayRangeWeather(_unitname)</strong></a></h4>
 </div>
     
 <p>Report weather conditions at range.</p>
@@ -3358,7 +4404,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##_DisplayRangeWeather" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3382,14 +4428,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_DisplayStrafePitResults')">
-<h6><a id="#(RANGE)._DisplayStrafePitResults" ><strong>RANGE:_DisplayStrafePitResults(_unitName)</strong></a></h6>
+<h4><a id="#(RANGE)._DisplayStrafePitResults" ><strong>RANGE:_DisplayStrafePitResults(_unitName)</strong></a></h4>
 </div>
     
 <p>Display top 10 strafing results of all players.</p>
 
 <div id= "#Functions##_DisplayStrafePitResults" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3413,14 +4459,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_DisplayStrafePits')">
-<h6><a id="#(RANGE)._DisplayStrafePits" ><strong>RANGE:_DisplayStrafePits(_unitname)</strong></a></h6>
+<h4><a id="#(RANGE)._DisplayStrafePits" ><strong>RANGE:_DisplayStrafePits(_unitname)</strong></a></h4>
 </div>
     
 <p>Display pit location and heading to player.</p>
 
 <div id= "#Functions##_DisplayStrafePits" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3444,14 +4490,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_FlareDirectHitsOnOff')">
-<h6><a id="#(RANGE)._FlareDirectHitsOnOff" ><strong>RANGE:_FlareDirectHitsOnOff(unitname)</strong></a></h6>
+<h4><a id="#(RANGE)._FlareDirectHitsOnOff" ><strong>RANGE:_FlareDirectHitsOnOff(unitname)</strong></a></h4>
 </div>
     
 <p>Toggle status of flaring direct hits of range targets.</p>
 
 <div id= "#Functions##_FlareDirectHitsOnOff" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3475,14 +4521,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_GetAmmo')">
-<h6><a id="#(RANGE)._GetAmmo" ><strong>RANGE:_GetAmmo(unitname)</strong></a></h6>
+<h4><a id="#(RANGE)._GetAmmo" ><strong>RANGE:_GetAmmo(unitname)</strong></a></h4>
 </div>
     
 <p>Get the number of shells a unit currently has.</p>
 
 <div id= "#Functions##_GetAmmo" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3496,7 +4542,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
       </div>
@@ -3516,7 +4562,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_GetPlayerUnitAndName')">
-<h6><a id="#(RANGE)._GetPlayerUnitAndName" ><strong>RANGE:_GetPlayerUnitAndName(_unitName)</strong></a></h6>
+<h4><a id="#(RANGE)._GetPlayerUnitAndName" ><strong>RANGE:_GetPlayerUnitAndName(_unitName)</strong></a></h4>
 </div>
     
 <p>Returns the unit of a player and the player name.</p>
@@ -3526,7 +4572,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##_GetPlayerUnitAndName" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3540,7 +4586,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
         </div>
     </div>
-    <h5><strong>Return values:</strong></h5>
+    <h3><strong>Return values:</strong></h3>
     <div class="w3-row">
         <div class="w3-half">
           <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>:
@@ -3576,14 +4622,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_GetSpeed')">
-<h6><a id="#(RANGE)._GetSpeed" ><strong>RANGE:_GetSpeed(controllable)</strong></a></h6>
+<h4><a id="#(RANGE)._GetSpeed" ><strong>RANGE:_GetSpeed(controllable)</strong></a></h4>
 </div>
     
 <p>Get max speed of controllable.</p>
 
 <div id= "#Functions##_GetSpeed" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3595,7 +4641,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
       </div>
@@ -3615,7 +4661,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_IlluminateBombTargets')">
-<h6><a id="#(RANGE)._IlluminateBombTargets" ><strong>RANGE:_IlluminateBombTargets(_unitName)</strong></a></h6>
+<h4><a id="#(RANGE)._IlluminateBombTargets" ><strong>RANGE:_IlluminateBombTargets(_unitName)</strong></a></h4>
 </div>
     
 <p>Illuminate targets.</p>
@@ -3625,7 +4671,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##_IlluminateBombTargets" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3649,14 +4695,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_MarkTargetsOnMap')">
-<h6><a id="#(RANGE)._MarkTargetsOnMap" ><strong>RANGE:_MarkTargetsOnMap(_unitName)</strong></a></h6>
+<h4><a id="#(RANGE)._MarkTargetsOnMap" ><strong>RANGE:_MarkTargetsOnMap(_unitName)</strong></a></h4>
 </div>
     
 <p>Mark targets on F10 map.</p>
 
 <div id= "#Functions##_MarkTargetsOnMap" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3680,14 +4726,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_ResetRangeStats')">
-<h6><a id="#(RANGE)._ResetRangeStats" ><strong>RANGE:_ResetRangeStats(_unitName)</strong></a></h6>
+<h4><a id="#(RANGE)._ResetRangeStats" ><strong>RANGE:_ResetRangeStats(_unitName)</strong></a></h4>
 </div>
     
 <p>Reset player statistics.</p>
 
 <div id= "#Functions##_ResetRangeStats" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3711,14 +4757,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_SmokeBombDelayOnOff')">
-<h6><a id="#(RANGE)._SmokeBombDelayOnOff" ><strong>RANGE:_SmokeBombDelayOnOff(unitname)</strong></a></h6>
+<h4><a id="#(RANGE)._SmokeBombDelayOnOff" ><strong>RANGE:_SmokeBombDelayOnOff(unitname)</strong></a></h4>
 </div>
     
 <p>Toggle status of time delay for smoking bomb impact points</p>
 
 <div id= "#Functions##_SmokeBombDelayOnOff" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3742,14 +4788,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_SmokeBombImpactOnOff')">
-<h6><a id="#(RANGE)._SmokeBombImpactOnOff" ><strong>RANGE:_SmokeBombImpactOnOff(unitname)</strong></a></h6>
+<h4><a id="#(RANGE)._SmokeBombImpactOnOff" ><strong>RANGE:_SmokeBombImpactOnOff(unitname)</strong></a></h4>
 </div>
     
 <p>Toggle status of smoking bomb impact points.</p>
 
 <div id= "#Functions##_SmokeBombImpactOnOff" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3773,14 +4819,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_SmokeBombTargets')">
-<h6><a id="#(RANGE)._SmokeBombTargets" ><strong>RANGE:_SmokeBombTargets(unitname)</strong></a></h6>
+<h4><a id="#(RANGE)._SmokeBombTargets" ><strong>RANGE:_SmokeBombTargets(unitname)</strong></a></h4>
 </div>
     
 <p>Mark bombing targets with smoke.</p>
 
 <div id= "#Functions##_SmokeBombTargets" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3804,14 +4850,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_SmokeStrafeTargetBoxes')">
-<h6><a id="#(RANGE)._SmokeStrafeTargetBoxes" ><strong>RANGE:_SmokeStrafeTargetBoxes(unitname)</strong></a></h6>
+<h4><a id="#(RANGE)._SmokeStrafeTargetBoxes" ><strong>RANGE:_SmokeStrafeTargetBoxes(unitname)</strong></a></h4>
 </div>
     
 <p>Mark approach boxes of strafe targets with smoke.</p>
 
 <div id= "#Functions##_SmokeStrafeTargetBoxes" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3835,14 +4881,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_SmokeStrafeTargets')">
-<h6><a id="#(RANGE)._SmokeStrafeTargets" ><strong>RANGE:_SmokeStrafeTargets(unitname)</strong></a></h6>
+<h4><a id="#(RANGE)._SmokeStrafeTargets" ><strong>RANGE:_SmokeStrafeTargets(unitname)</strong></a></h4>
 </div>
     
 <p>Mark strafing targets with smoke.</p>
 
 <div id= "#Functions##_SmokeStrafeTargets" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3866,14 +4912,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_flarecolor2text')">
-<h6><a id="#(RANGE)._flarecolor2text" ><strong>RANGE:_flarecolor2text(color)</strong></a></h6>
+<h4><a id="#(RANGE)._flarecolor2text" ><strong>RANGE:_flarecolor2text(color)</strong></a></h4>
 </div>
     
 <p>Sets the flare color used to flare players direct target hits.</p>
 
 <div id= "#Functions##_flarecolor2text" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3887,7 +4933,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #string:
@@ -3908,7 +4954,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_myname')">
-<h6><a id="#(RANGE)._myname" ><strong>RANGE:_myname(unitname)</strong></a></h6>
+<h4><a id="#(RANGE)._myname" ><strong>RANGE:_myname(unitname)</strong></a></h4>
 </div>
     
 <p>Returns a string which consits of this callsign and the player name.</p>
@@ -3918,7 +4964,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##_myname" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3942,14 +4988,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_playerflarecolor')">
-<h6><a id="#(RANGE)._playerflarecolor" ><strong>RANGE:_playerflarecolor(_unitName, color)</strong></a></h6>
+<h4><a id="#(RANGE)._playerflarecolor" ><strong>RANGE:_playerflarecolor(_unitName, color)</strong></a></h4>
 </div>
     
 <p>Sets the flare color used when player makes a direct hit on target.</p>
 
 <div id= "#Functions##_playerflarecolor" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3984,14 +5030,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_playersmokecolor')">
-<h6><a id="#(RANGE)._playersmokecolor" ><strong>RANGE:_playersmokecolor(_unitName, color)</strong></a></h6>
+<h4><a id="#(RANGE)._playersmokecolor" ><strong>RANGE:_playersmokecolor(_unitName, color)</strong></a></h4>
 </div>
     
 <p>Sets the smoke color used to smoke players bomb impact points.</p>
 
 <div id= "#Functions##_playersmokecolor" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -4026,7 +5072,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_smokecolor2text')">
-<h6><a id="#(RANGE)._smokecolor2text" ><strong>RANGE:_smokecolor2text(color)</strong></a></h6>
+<h4><a id="#(RANGE)._smokecolor2text" ><strong>RANGE:_smokecolor2text(color)</strong></a></h4>
 </div>
     
 <p>Converts a smoke color id to text.</p>
@@ -4036,7 +5082,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##_smokecolor2text" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -4050,7 +5096,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #string:
@@ -4071,7 +5117,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_split')">
-<h6><a id="#(RANGE)._split" ><strong>RANGE:_split(str, sep)</strong></a></h6>
+<h4><a id="#(RANGE)._split" ><strong>RANGE:_split(str, sep)</strong></a></h4>
 </div>
     
 <p>Split string.</p>
@@ -4081,7 +5127,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
 <div id= "#Functions##_split" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -4106,7 +5152,7 @@ Furthermore, the player must not be too high and fly in the direction of the pit
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #table:
@@ -4127,14 +5173,14 @@ Furthermore, the player must not be too high and fly in the direction of the pit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onEvent')">
-<h6><a id="#(RANGE).onEvent" ><strong>RANGE:onEvent(Event)</strong></a></h6>
+<h4><a id="#(RANGE).onEvent" ><strong>RANGE:onEvent(Event)</strong></a></h4>
 </div>
     
 <p>General event handler.</p>
 
 <div id= "#Functions##onEvent" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -4146,6 +5192,2888 @@ Furthermore, the player must not be too high and fly in the direction of the pit
           
 <p>DCS event table.</p>
 
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Utilities.Utils.html##(SMOKECOLOR)">Utilities.Utils#SMOKECOLOR</a>
+<a id="#(RANGE).BombSmokeColor" ><strong>RANGE.BombSmokeColor</strong></a>
+    
+<p>Color id used for smoking bomb targets.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(RANGE).BombtrackThreshold" ><strong>RANGE.BombtrackThreshold</strong></a>
+    
+<p>Bombs/rockets/missiles are only tracked if player-range distance is smaller than this threashold [m]. Default 25000 m.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(RANGE).ClassName" ><strong>RANGE.ClassName</strong></a>
+    
+<p>Name of the Class.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(RANGE).Debug" ><strong>RANGE.Debug</strong></a>
+    
+<p>If true, debug info is send as messages on the screen.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(RANGE).Defaults" ><strong>RANGE.Defaults</strong></a>
+    
+<p>Default range parameters.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(RANGE).MenuAddedTo" ><strong>RANGE.MenuAddedTo</strong></a>
+    
+<p>Table for monitoring which players already got an F10 menu.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(RANGE).MenuF10" ><strong>RANGE.MenuF10</strong></a>
+    
+<p>Main radio menu.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(RANGE).Names" ><strong>RANGE.Names</strong></a>
+    
+<p>Global list of all defined range names.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(RANGE).PlayerSettings" ><strong>RANGE.PlayerSettings</strong></a>
+    
+<p>Indiviual player settings.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Utilities.Utils.html##(SMOKECOLOR)">Utilities.Utils#SMOKECOLOR</a>
+<a id="#(RANGE).StrafePitSmokeColor" ><strong>RANGE.StrafePitSmokeColor</strong></a>
+    
+<p>Color id used to smoke strafe pit approach boxes. </p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Utilities.Utils.html##(SMOKECOLOR)">Utilities.Utils#SMOKECOLOR</a>
+<a id="#(RANGE).StrafeSmokeColor" ><strong>RANGE.StrafeSmokeColor</strong></a>
+    
+<p>Color id used to smoke strafe targets.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(RANGE).TdelaySmoke" ><strong>RANGE.TdelaySmoke</strong></a>
+    
+<p>Time delay in seconds between impact of bomb and starting the smoke. Default 3 seconds.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(RANGE).Tmsg" ><strong>RANGE.Tmsg</strong></a>
+    
+<p>Time [sec] messages to players are displayed. Default 30 sec.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(RANGE).bombPlayerResults" ><strong>RANGE.bombPlayerResults</strong></a>
+    
+<p>Table containing the bombing results of each player.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(RANGE).bombingTargets" ><strong>RANGE.bombingTargets</strong></a>
+    
+<p>Table of targets to bomb.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(RANGE).dtBombtrack" ><strong>RANGE.dtBombtrack</strong></a>
+    
+<p>Time step [sec] used for tracking released bomb/rocket positions. Default 0.005 seconds.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(RANGE).eventmoose" ><strong>RANGE.eventmoose</strong></a>
+    
+<p>If true, events are handled by MOOSE. If false, events are handled directly by DCS eventhandler. Default true.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(RANGE).examinerexclusive" ><strong>RANGE.examinerexclusive</strong></a>
+    
+<p>If true, only the examiner gets messages. If false, clients and examiner get messages.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(RANGE).examinergroupname" ><strong>RANGE.examinergroupname</strong></a>
+    
+<p>Name of the examiner group which should get all messages.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(RANGE).id" ><strong>RANGE.id</strong></a>
+    
+<p>Some ID to identify who we are in output of the DCS.log file.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(RANGE).illuminationmaxalt" ><strong>RANGE.illuminationmaxalt</strong></a>
+    
+<p>Maximum altitude AGL in meters at which illumination bombs are fired. Default is 1000 m.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(RANGE).illuminationminalt" ><strong>RANGE.illuminationminalt</strong></a>
+    
+<p>Minimum altitude AGL in meters at which illumination bombs are fired. Default is 500 m.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+<a id="#(RANGE).location" ><strong>RANGE.location</strong></a>
+    
+<p>Coordinate of the range location.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(RANGE).nbombtargets" ><strong>RANGE.nbombtargets</strong></a>
+    
+<p>Number of bombing targets.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(RANGE).ndisplayresult" ><strong>RANGE.ndisplayresult</strong></a>
+    
+<p>Number of (player) results that a displayed. Default is 10.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(RANGE).nstrafetargets" ><strong>RANGE.nstrafetargets</strong></a>
+    
+<p>Number of strafing targets.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(RANGE).planes" ><strong>RANGE.planes</strong></a>
+    
+<p>Table for administration.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(RANGE).rangename" ><strong>RANGE.rangename</strong></a>
+    
+<p>Name of the range.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(RANGE).rangeradius" ><strong>RANGE.rangeradius</strong></a>
+    
+<p>Radius of range defining its total size for e.g. smoking bomb impact points and sending radio messages. Default 5 km.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Zone.html##(ZONE)">Core.Zone#ZONE</a>
+<a id="#(RANGE).rangezone" ><strong>RANGE.rangezone</strong></a>
+    
+<p>MOOSE zone object of the range. For example, no bomb impacts are smoked if bombs fall outside of the range zone. </p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(RANGE).scorebombdistance" ><strong>RANGE.scorebombdistance</strong></a>
+    
+<p>Distance from closest target up to which bomb hits are counted. Default 1000 m.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(RANGE).strafePlayerResults" ><strong>RANGE.strafePlayerResults</strong></a>
+    
+<p>Table containing the strafing results of each player.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(RANGE).strafeStatus" ><strong>RANGE.strafeStatus</strong></a>
+    
+<p>Table containing the current strafing target a player as assigned to.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(RANGE).strafeTargets" ><strong>RANGE.strafeTargets</strong></a>
+    
+<p>Table of strafing targets.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(RANGE).strafemaxalt" ><strong>RANGE.strafemaxalt</strong></a>
+    
+<p>Maximum altitude above ground for registering for a strafe run. Default is 914 m = 3000 ft. </p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(RANGE).trackbombs" ><strong>RANGE.trackbombs</strong></a>
+    
+<p>If true (default), all bomb types are tracked and impact point to closest bombing target is evaluated.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(RANGE).trackmissiles" ><strong>RANGE.trackmissiles</strong></a>
+    
+<p>If true (default), all missile types are tracked and impact point to closest bombing target is evaluated.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(RANGE).trackrockets" ><strong>RANGE.trackrockets</strong></a>
+    
+<p>If true (default), all rocket types are tracked and impact point to closest bombing target is evaluated.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(RANGE).version" ><strong>RANGE.version</strong></a>
+    
+<p>Range script version.</p>
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearState')">
+<h4><a id="#(RANGE).ClearState" ><strong>RANGE:ClearState(Object, StateName)</strong></a></h4>
+</div>
+    
+<p>Clear the state of an object.</p>
+
+<div id= "#Functions##ClearState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that holds the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>StateName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is should be cleared.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventBirth')">
+<h4><a id="#(RANGE).CreateEventBirth" ><strong>RANGE:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</strong></a></h4>
+</div>
+    
+<p>Creation of a Birth Event.</p>
+
+<div id= "#Functions##CreateEventBirth" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>IniUnitName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating unit name.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>place</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>subplace</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventCrash')">
+<h4><a id="#(RANGE).CreateEventCrash" ><strong>RANGE:CreateEventCrash(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Crash Event.</p>
+
+<div id= "#Functions##CreateEventCrash" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventDead')">
+<h4><a id="#(RANGE).CreateEventDead" ><strong>RANGE:CreateEventDead(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Dead Event.</p>
+
+<div id= "#Functions##CreateEventDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventRemoveUnit')">
+<h4><a id="#(RANGE).CreateEventRemoveUnit" ><strong>RANGE:CreateEventRemoveUnit(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Remove Unit Event.</p>
+
+<div id= "#Functions##CreateEventRemoveUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventTakeoff')">
+<h4><a id="#(RANGE).CreateEventTakeoff" ><strong>RANGE:CreateEventTakeoff(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Takeoff Event.</p>
+
+<div id= "#Functions##CreateEventTakeoff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##E')">
+<h4><a id="#(RANGE).E" ><strong>RANGE:E(Arguments)</strong></a></h4>
+</div>
+    
+<p>Log an exception which will be traced always.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##E" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##EventDispatcher')">
+<h4><a id="#(RANGE).EventDispatcher" ><strong>RANGE:EventDispatcher()</strong></a></h4>
+</div>
+    
+<p>Returns the event dispatcher</p>
+
+<div id= "#Functions##EventDispatcher" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##EventRemoveAll')">
+<h4><a id="#(RANGE).EventRemoveAll" ><strong>RANGE:EventRemoveAll()</strong></a></h4>
+</div>
+    
+<p>Remove all subscribed events</p>
+
+<div id= "#Functions##EventRemoveAll" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F')">
+<h4><a id="#(RANGE).F" ><strong>RANGE:F(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F2')">
+<h4><a id="#(RANGE).F2" ><strong>RANGE:F2(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call level 2.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F3')">
+<h4><a id="#(RANGE).F3" ><strong>RANGE:F3(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call level 3.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassID')">
+<h4><a id="#(RANGE).GetClassID" ><strong>RANGE:GetClassID()</strong></a></h4>
+</div>
+    
+<p>Get the ClassID of the class instance.</p>
+
+<div id= "#Functions##GetClassID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassID of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassName')">
+<h4><a id="#(RANGE).GetClassName" ><strong>RANGE:GetClassName()</strong></a></h4>
+</div>
+    
+<p>Get the ClassName of the class instance.</p>
+
+<div id= "#Functions##GetClassName" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassName of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassNameAndID')">
+<h4><a id="#(RANGE).GetClassNameAndID" ><strong>RANGE:GetClassNameAndID()</strong></a></h4>
+</div>
+    
+<p>Get the ClassName + ClassID of the class instance.</p>
+
+    
+<p>The ClassName + ClassID is formatted as '%s#%09d'. </p>
+
+<div id= "#Functions##GetClassNameAndID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassName + ClassID of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetEventPriority')">
+<h4><a id="#(RANGE).GetEventPriority" ><strong>RANGE:GetEventPriority()</strong></a></h4>
+</div>
+    
+<p>Get the Class <a href="Event.html">Event</a> processing Priority.</p>
+
+    
+<p>The Event processing Priority is a number from 1 to 10, 
+reflecting the order of the classes subscribed to the Event to be processed.</p>
+
+<div id= "#Functions##GetEventPriority" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The <a href="Event.html">Event</a> processing Priority.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetParent')">
+<h4><a id="#(RANGE).GetParent" ><strong>RANGE:GetParent(Child, FromClass)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to retrieve the Parent class.</p>
+
+    
+<p>Note that the Parent class must be passed to call the parent class method.</p>
+
+<pre><code>self:GetParent(self):ParentMethod()
+
+
+</code></pre>
+
+<div id= "#Functions##GetParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(BASE)">#BASE</a>
+        <strong>Child</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Child class from which the Parent class needs to be retrieved.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>FromClass</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetState')">
+<h4><a id="#(RANGE).GetState" ><strong>RANGE:GetState(Object, Key)</strong></a></h4>
+</div>
+    
+<p>Get a Value given a Key from the Object.</p>
+
+    
+<p>Note that if the Object is destroyed, nillified or garbage collected, then the Values and Keys will also be gone.</p>
+
+<div id= "#Functions##GetState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that holds the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Key</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is used to retrieve the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>The Value retrieved or nil if the Key was not found and thus the Value could not be retrieved.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##HandleEvent')">
+<h4><a id="#(RANGE).HandleEvent" ><strong>RANGE:HandleEvent(Event, EventFunction)</strong></a></h4>
+</div>
+    
+<p>Subscribe to a DCS Event.</p>
+
+<div id= "#Functions##HandleEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTS)">Core.Event#EVENTS</a>
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>EventFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The function to be called when the event occurs for the unit.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##I')">
+<h4><a id="#(RANGE).I" ><strong>RANGE:I(Arguments)</strong></a></h4>
+</div>
+    
+<p>Log an information which will be traced always.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##I" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Inherit')">
+<h4><a id="#(RANGE).Inherit" ><strong>RANGE:Inherit(Child, Parent)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to inherit from a parent class.</p>
+
+<div id= "#Functions##Inherit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Child</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Child class that inherits.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(BASE)">#BASE</a>
+        <strong>Parent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Parent class that the Child inherits from.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>Child</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsInstanceOf')">
+<h4><a id="#(RANGE).IsInstanceOf" ><strong>RANGE:IsInstanceOf(ClassName)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to check if an object is an (sub)instance of a class.</p>
+
+    
+
+<h3>Examples:</h3>
+
+<ul>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( ZONE ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'ZONE' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'zone' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'BASE' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'GROUP' ) will return false</p></li>
+</ul>
+
+
+<div id= "#Functions##IsInstanceOf" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ClassName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the name of the class or the class itself to run the check against</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsTrace')">
+<h4><a id="#(RANGE).IsTrace" ><strong>RANGE:IsTrace()</strong></a></h4>
+</div>
+    
+<p>Enquires if tracing is on (for the class).</p>
+
+<div id= "#Functions##IsTrace" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(RANGE).New" ><strong>RANGE:New()</strong></a></h4>
+</div>
+    
+<p>BASE constructor.</p>
+
+    
+
+<p>This is an example how to use the BASE:New() constructor in a new class definition when inheriting from BASE.</p>
+
+<pre><code>function EVENT:New()
+  local self = BASE:Inherit( self, BASE:New() ) -- #EVENT
+  return self
+end
+  
+</code></pre>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEvent')">
+<h4><a id="#(RANGE).OnEvent" ><strong>RANGE:OnEvent(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an object is completely destroyed.</p>
+
+    
+<p>initiator : The unit that is was destroyed. </p>
+
+<div id= "#Functions##OnEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBaseCaptured')">
+<h4><a id="#(RANGE).OnEventBaseCaptured" ><strong>RANGE:OnEventBaseCaptured(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a ground unit captures either an airbase or a farp.</p>
+
+    
+<p>initiator : The unit that captured the base
+place: The airbase that was captured, can be a FARP or Airbase. When calling place:getCoalition() the faction will already be the new owning faction. </p>
+
+<div id= "#Functions##OnEventBaseCaptured" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBirth')">
+<h4><a id="#(RANGE).OnEventBirth" ><strong>RANGE:OnEventBirth(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any object is spawned into the mission.</p>
+
+    
+<p>initiator : The unit that was spawned </p>
+
+<div id= "#Functions##OnEventBirth" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventCrash')">
+<h4><a id="#(RANGE).OnEventCrash" ><strong>RANGE:OnEventCrash(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
+
+    
+<p>initiator : The unit that has crashed </p>
+
+<div id= "#Functions##OnEventCrash" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventDead')">
+<h4><a id="#(RANGE).OnEventDead" ><strong>RANGE:OnEventDead(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an object is dead.</p>
+
+    
+<p>initiator : The unit that is dead. </p>
+
+<div id= "#Functions##OnEventDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEjection')">
+<h4><a id="#(RANGE).OnEventEjection" ><strong>RANGE:OnEventEjection(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a pilot ejects from an aircraft
+initiator : The unit that has ejected </p>
+
+<div id= "#Functions##OnEventEjection" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEngineShutdown')">
+<h4><a id="#(RANGE).OnEventEngineShutdown" ><strong>RANGE:OnEventEngineShutdown(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft shuts down its engines.</p>
+
+    
+<p>initiator : The unit that is stopping its engines. </p>
+
+<div id= "#Functions##OnEventEngineShutdown" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEngineStartup')">
+<h4><a id="#(RANGE).OnEventEngineStartup" ><strong>RANGE:OnEventEngineStartup(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft starts its engines.</p>
+
+    
+<p>initiator : The unit that is starting its engines. </p>
+
+<div id= "#Functions##OnEventEngineStartup" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventHit')">
+<h4><a id="#(RANGE).OnEventHit" ><strong>RANGE:OnEventHit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs whenever an object is hit by a weapon.</p>
+
+    
+<p>initiator : The unit object the fired the weapon
+weapon: Weapon object that hit the target
+target: The Object that was hit. </p>
+
+<div id= "#Functions##OnEventHit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventHumanFailure')">
+<h4><a id="#(RANGE).OnEventHumanFailure" ><strong>RANGE:OnEventHumanFailure(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any system fails on a human controlled aircraft.</p>
+
+    
+<p>initiator : The unit that had the failure </p>
+
+<div id= "#Functions##OnEventHumanFailure" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventLand')">
+<h4><a id="#(RANGE).OnEventLand" ><strong>RANGE:OnEventLand(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft lands at an airbase, farp or ship
+initiator : The unit that has landed
+place: Object that the unit landed on.</p>
+
+    
+<p>Can be an Airbase Object, FARP, or Ships </p>
+
+<div id= "#Functions##OnEventLand" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventMissionEnd')">
+<h4><a id="#(RANGE).OnEventMissionEnd" ><strong>RANGE:OnEventMissionEnd(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a mission ends</p>
+
+<div id= "#Functions##OnEventMissionEnd" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventMissionStart')">
+<h4><a id="#(RANGE).OnEventMissionStart" ><strong>RANGE:OnEventMissionStart(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a mission starts </p>
+
+<div id= "#Functions##OnEventMissionStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPilotDead')">
+<h4><a id="#(RANGE).OnEventPilotDead" ><strong>RANGE:OnEventPilotDead(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when the pilot of an aircraft is killed.</p>
+
+    
+<p>Can occur either if the player is alive and crashes or if a weapon kills the pilot without completely destroying the plane.
+initiator : The unit that the pilot has died in. </p>
+
+<div id= "#Functions##OnEventPilotDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPlayerEnterUnit')">
+<h4><a id="#(RANGE).OnEventPlayerEnterUnit" ><strong>RANGE:OnEventPlayerEnterUnit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any player assumes direct control of a unit.</p>
+
+    
+<p>initiator : The unit that is being taken control of. </p>
+
+<div id= "#Functions##OnEventPlayerEnterUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPlayerLeaveUnit')">
+<h4><a id="#(RANGE).OnEventPlayerLeaveUnit" ><strong>RANGE:OnEventPlayerLeaveUnit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any player relieves control of a unit to the AI.</p>
+
+    
+<p>initiator : The unit that the player left. </p>
+
+<div id= "#Functions##OnEventPlayerLeaveUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventRefueling')">
+<h4><a id="#(RANGE).OnEventRefueling" ><strong>RANGE:OnEventRefueling(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
+
+    
+<p>initiator : The unit that is receiving fuel. </p>
+
+<div id= "#Functions##OnEventRefueling" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventRefuelingStop')">
+<h4><a id="#(RANGE).OnEventRefuelingStop" ><strong>RANGE:OnEventRefuelingStop(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft is finished taking fuel.</p>
+
+    
+<p>initiator : The unit that was receiving fuel. </p>
+
+<div id= "#Functions##OnEventRefuelingStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShootingEnd')">
+<h4><a id="#(RANGE).OnEventShootingEnd" ><strong>RANGE:OnEventShootingEnd(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any unit stops firing its weapon.</p>
+
+    
+<p>Event will always correspond with a shooting start event.
+initiator : The unit that was doing the shooing. </p>
+
+<div id= "#Functions##OnEventShootingEnd" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShootingStart')">
+<h4><a id="#(RANGE).OnEventShootingStart" ><strong>RANGE:OnEventShootingStart(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
+
+    
+<p>Most common with aircraft cannons (GAU-8), autocannons, and machine guns.
+initiator : The unit that is doing the shooing.
+target: The unit that is being targeted. </p>
+
+<div id= "#Functions##OnEventShootingStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShot')">
+<h4><a id="#(RANGE).OnEventShot" ><strong>RANGE:OnEventShot(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs whenever any unit in a mission fires a weapon.</p>
+
+    
+<p>But not any machine gun or autocannon based weapon, those are handled by EVENT.ShootingStart.</p>
+
+<div id= "#Functions##OnEventShot" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventTakeoff')">
+<h4><a id="#(RANGE).OnEventTakeoff" ><strong>RANGE:OnEventTakeoff(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
+
+    
+<p>initiator : The unit that tookoff
+place: Object from where the AI took-off from. Can be an Airbase Object, FARP, or Ships </p>
+
+<div id= "#Functions##OnEventTakeoff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleOnce')">
+<h4><a id="#(RANGE).ScheduleOnce" ><strong>RANGE:ScheduleOnce(Start, SchedulerFunction, ...)</strong></a></h4>
+</div>
+    
+<p>Schedule a new time event.</p>
+
+    
+<p>Note that the schedule will only take place if the scheduler is <em>started</em>. Even for a single schedule event, the scheduler needs to be started also.</p>
+
+<div id= "#Functions##ScheduleOnce" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Start</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds that will be waited before the scheduling is started, and the event function is called.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>...</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Optional arguments that can be given as part of scheduler. The arguments need to be given as a table { param1, param 2, ... }.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The ScheduleID of the planned schedule.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleRepeat')">
+<h4><a id="#(RANGE).ScheduleRepeat" ><strong>RANGE:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</strong></a></h4>
+</div>
+    
+<p>Schedule a new time event.</p>
+
+    
+<p>Note that the schedule will only take place if the scheduler is <em>started</em>. Even for a single schedule event, the scheduler needs to be started also.</p>
+
+<div id= "#Functions##ScheduleRepeat" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Start</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds that will be waited before the scheduling is started, and the event function is called.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Repeat</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the interval in seconds when the scheduler will call the event function.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>RandomizeFactor</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies a randomization factor between 0 and 1 to randomize the Repeat.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Stop</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds when the scheduler will be stopped.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>...</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Optional arguments that can be given as part of scheduler. The arguments need to be given as a table { param1, param 2, ... }.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The ScheduleID of the planned schedule.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleStop')">
+<h4><a id="#(RANGE).ScheduleStop" ><strong>RANGE:ScheduleStop(SchedulerFunction)</strong></a></h4>
+</div>
+    
+<p>Stops the Schedule.</p>
+
+<div id= "#Functions##ScheduleStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetEventPriority')">
+<h4><a id="#(RANGE).SetEventPriority" ><strong>RANGE:SetEventPriority(EventPriority)</strong></a></h4>
+</div>
+    
+<p>Set the Class <a href="Event.html">Event</a> processing Priority.</p>
+
+    
+<p>The Event processing Priority is a number from 1 to 10, 
+reflecting the order of the classes subscribed to the Event to be processed.</p>
+
+<div id= "#Functions##SetEventPriority" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>EventPriority</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The <a href="Event.html">Event</a> processing Priority.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetState')">
+<h4><a id="#(RANGE).SetState" ><strong>RANGE:SetState(Object, Key, Value)</strong></a></h4>
+</div>
+    
+<p>Set a state or property of the Object given a Key and a Value.</p>
+
+    
+<p>Note that if the Object is destroyed, nillified or garbage collected, then the Values and Keys will also be gone.</p>
+
+<div id= "#Functions##SetState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that will hold the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Key</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is used as a reference of the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Value</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The value to is stored in the object.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>The Value set. </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T')">
+<h4><a id="#(RANGE).T" ><strong>RANGE:T(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 1.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T2')">
+<h4><a id="#(RANGE).T2" ><strong>RANGE:T2(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 2.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T3')">
+<h4><a id="#(RANGE).T3" ><strong>RANGE:T3(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 3.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceAll')">
+<h4><a id="#(RANGE).TraceAll" ><strong>RANGE:TraceAll(TraceAll)</strong></a></h4>
+</div>
+    
+<p>Trace all methods in MOOSE</p>
+
+<div id= "#Functions##TraceAll" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>TraceAll</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>true = trace all methods in MOOSE.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceClass')">
+<h4><a id="#(RANGE).TraceClass" ><strong>RANGE:TraceClass(Class)</strong></a></h4>
+</div>
+    
+<p>Set tracing for a class</p>
+
+<div id= "#Functions##TraceClass" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Class</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceClassMethod')">
+<h4><a id="#(RANGE).TraceClassMethod" ><strong>RANGE:TraceClassMethod(Class, Method)</strong></a></h4>
+</div>
+    
+<p>Set tracing for a specific method of  class</p>
+
+<div id= "#Functions##TraceClassMethod" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Class</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Method</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceLevel')">
+<h4><a id="#(RANGE).TraceLevel" ><strong>RANGE:TraceLevel(Level)</strong></a></h4>
+</div>
+    
+<p>Set trace level</p>
+
+<div id= "#Functions##TraceLevel" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Level</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceOnOff')">
+<h4><a id="#(RANGE).TraceOnOff" ><strong>RANGE:TraceOnOff(TraceOnOff)</strong></a></h4>
+</div>
+    
+<p>Set trace on or off
+Note that when trace is off, no BASE.Debug statement is performed, increasing performance!
+When Moose is loaded statically, (as one file), tracing is switched off by default.</p>
+
+    
+<p>So tracing must be switched on manually in your mission if you are using Moose statically.
+When moose is loading dynamically (for moose class development), tracing is switched on by default.</p>
+
+<div id= "#Functions##TraceOnOff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>TraceOnOff</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Switch the tracing on or off.</p>
+
+        </div>
+    </div>
+      <h3><strong>Usage:</strong></h3>
+    <pre class="example"><code>-- Switch the tracing On
+BASE:TraceOnOff( true )
+
+-- Switch the tracing Off
+BASE:TraceOnOff( false )</code></pre>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##UnHandleEvent')">
+<h4><a id="#(RANGE).UnHandleEvent" ><strong>RANGE:UnHandleEvent(Event)</strong></a></h4>
+</div>
+    
+<p>UnSubscribe to a DCS event.</p>
+
+<div id= "#Functions##UnHandleEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTS)">Core.Event#EVENTS</a>
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_F')">
+<h4><a id="#(RANGE)._F" ><strong>RANGE:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h4>
+</div>
+    
+<p>Trace a function call.</p>
+
+    
+<p>This function is private.</p>
+
+<div id= "#Functions##_F" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoCurrentParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoFromParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_T')">
+<h4><a id="#(RANGE)._T" ><strong>RANGE:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic.</p>
+
+<div id= "#Functions##_T" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoCurrentParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoFromParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onEvent')">
+<h4><a id="#(RANGE).onEvent" ><strong>RANGE:onEvent(event)</strong></a></h4>
+</div>
+    
+
+
+    
+<p> TODO: Complete DCS#Event structure. <br/>
+- The main event handling function... This function captures all events generated for the class.
+ @param #BASE self
+ @param DCS#Event event</p>
+
+<div id= "#Functions##onEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
         </div>
     </div>
 </div>

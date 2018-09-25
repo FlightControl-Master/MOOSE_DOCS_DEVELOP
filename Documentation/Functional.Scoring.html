@@ -1510,18 +1510,854 @@ Various methods exist to configure:</p>
 </div>
 
   </div>
-  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>
-  
+  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>  
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(SCORING)">Type <strong>SCORING</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).AddGoalScore">SCORING:AddGoalScore(PlayerUnit, GoalTag, Text, Score)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Add a goal score for a player.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).AddGoalScorePlayer">SCORING:AddGoalScorePlayer(PlayerName, GoalTag, Text, Score)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Add a goal score for a player.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).AddScoreGroup">SCORING:AddScoreGroup(ScoreGroup, Score)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Specify a special additional score for a <a href="Wrapper.Group.html">Wrapper.Group</a>.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).AddStaticScore">SCORING:AddStaticScore(ScoreStatic, Score)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Add a <a href="Static.html">Static</a> for additional scoring when the <a href="Static.html">Static</a> is destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).AddUnitScore">SCORING:AddUnitScore(ScoreUnit, Score)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Add a <a href="Wrapper.Unit.html">Wrapper.Unit</a> for additional scoring when the <a href="Wrapper.Unit.html">Wrapper.Unit</a> is destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).AddZoneScore">SCORING:AddZoneScore(ScoreZone, Score)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Add a <a href="Zone.html">Zone</a> to define additional scoring when any object is destroyed in that zone.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ClassID">SCORING.ClassID</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ClassName">SCORING.ClassName</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).CloseCSV">SCORING:CloseCSV()</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).CoalitionChangePenalty">SCORING.CoalitionChangePenalty</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).DisplayMessagePrefix">SCORING.DisplayMessagePrefix</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).Fratricide">SCORING.Fratricide</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).GameName">SCORING.GameName</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).IfMessagesDestroy">SCORING:IfMessagesDestroy()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>If to send messages after a target has been destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).IfMessagesHit">SCORING:IfMessagesHit()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>If to send messages after a target has been hit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).IfMessagesScore">SCORING:IfMessagesScore()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>If to send messages after a target has been destroyed and receives additional scores.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).IfMessagesToAll">SCORING:IfMessagesToAll()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>If to send messages to all players.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).IfMessagesToCoalition">SCORING:IfMessagesToCoalition()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>If to send messages to only those players within the same coalition as the player.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).IfMessagesZone">SCORING:IfMessagesZone()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>If to send messages after a target has been hit in a zone, and additional score is received.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).MessagesAudience">SCORING.MessagesAudience</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).MessagesDestroy">SCORING.MessagesDestroy</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).MessagesHit">SCORING.MessagesHit</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).MessagesScore">SCORING.MessagesScore</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).MessagesZone">SCORING.MessagesZone</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).New">SCORING:New(GameName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creates a new SCORING object to administer the scoring achieved by players.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventBirth">SCORING:OnEventBirth(Event)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Handles the OnBirth event for the scoring.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventPlayerLeaveUnit">SCORING:OnEventPlayerLeaveUnit(Event)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Handles the OnPlayerLeaveUnit event for the scoring.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OpenCSV">SCORING:OpenCSV(ScoringCSV)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Opens a score CSV file to log the scores.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).Players">SCORING.Players</a></td>
+    <td class="summary"><style="width:60%;">
+<p>A collection of the current players that have joined the game.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).RemoveStaticScore">SCORING:RemoveStaticScore(ScoreStatic)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Removes a <a href="Static.html">Static</a> for additional scoring when the <a href="Static.html">Static</a> is destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).RemoveUnitScore">SCORING:RemoveUnitScore(ScoreUnit)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Removes a <a href="Wrapper.Unit.html">Wrapper.Unit</a> for additional scoring when the <a href="Wrapper.Unit.html">Wrapper.Unit</a> is destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).RemoveZoneScore">SCORING:RemoveZoneScore(ScoreZone)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Remove a <a href="Zone.html">Zone</a> for additional scoring.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ReportDetailedPlayerCoalitionChanges">SCORING:ReportDetailedPlayerCoalitionChanges(PlayerName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Produce detailed report of player penalty scores because of changing the coalition.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ReportDetailedPlayerDestroys">SCORING:ReportDetailedPlayerDestroys(PlayerName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Produce detailed report of player destroy scores.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ReportDetailedPlayerGoals">SCORING:ReportDetailedPlayerGoals(PlayerName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Produce detailed report of player goal scores.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ReportDetailedPlayerHits">SCORING:ReportDetailedPlayerHits(PlayerName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Produce detailed report of player hit scores.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ReportDetailedPlayerMissions">SCORING:ReportDetailedPlayerMissions(PlayerName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Produce detailed report of player penalty scores because of changing the coalition.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ReportScoreAllSummary">SCORING:ReportScoreAllSummary(PlayerGroup)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Report all players score</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ReportScoreGroupDetailed">SCORING:ReportScoreGroupDetailed(PlayerGroup)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Report Group Score Detailed</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ReportScoreGroupSummary">SCORING:ReportScoreGroupSummary(PlayerGroup)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Report Group Score Summary</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).RunTime">SCORING.RunTime</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ScaleDestroyPenalty">SCORING.ScaleDestroyPenalty</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ScaleDestroyScore">SCORING.ScaleDestroyScore</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ScoreCSV">SCORING:ScoreCSV(PlayerName, TargetPlayerName, ScoreType, ScoreTimes, ScoreAmount, PlayerUnitName, PlayerUnitCoalition, PlayerUnitCategory, PlayerUnitType, TargetUnitName, TargetUnitCoalition, TargetUnitCategory, TargetUnitType)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Registers a score for a player.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ScoringCSV">SCORING.ScoringCSV</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ScoringObjects">SCORING.ScoringObjects</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ScoringPlayerScan">SCORING.ScoringPlayerScan</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ScoringZones">SCORING.ScoringZones</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).SecondsToClock">SCORING:SecondsToClock(sSeconds)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).SetCoalitionChangePenalty">SCORING:SetCoalitionChangePenalty(CoalitionChangePenalty)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>When a player changes the coalition, he can receive a penalty score.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).SetDisplayMessagePrefix">SCORING:SetDisplayMessagePrefix(DisplayMessagePrefix)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set a prefix string that will be displayed at each scoring message sent.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).SetFratricide">SCORING:SetFratricide(Fratricide)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>When a player commits too much damage to friendlies, his penalty score will reach a certain level.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).SetMessagesDestroy">SCORING:SetMessagesDestroy(OnOff)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Configure to send messages after a target has been destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).SetMessagesHit">SCORING:SetMessagesHit(OnOff)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Configure to send messages after a target has been hit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).SetMessagesScore">SCORING:SetMessagesScore(OnOff)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Configure to send messages after a target has been destroyed and receives additional scores.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).SetMessagesToAll">SCORING:SetMessagesToAll()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Configure to send messages to all players.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).SetMessagesToCoalition">SCORING:SetMessagesToCoalition()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Configure to send messages to only those players within the same coalition as the player.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).SetMessagesZone">SCORING:SetMessagesZone(OnOff)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Configure to send messages after a target has been hit in a zone, and additional score is received.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).SetScaleDestroyPenalty">SCORING:SetScaleDestroyPenalty(Scale)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set the scale for scoring penalty destroys (friendly destroys).</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).SetScaleDestroyScore">SCORING:SetScaleDestroyScore(Scale)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set the scale for scoring valid destroys (enemy destroys).</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).SetScoringMenu">SCORING:SetScoringMenu(ScoringGroup)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sets the scoring menu.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING)._AddMissionGoalScore">SCORING:_AddMissionGoalScore(Mission, PlayerName, Text, Score)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Registers Scores the players completing a Mission Task.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING)._AddMissionScore">SCORING:_AddMissionScore(Mission, PlayerUnit, Text, Score)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Registers Mission Scores for possible multiple players that contributed in the Mission.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING)._AddMissionTaskScore">SCORING:_AddMissionTaskScore(Mission, PlayerUnit, Text, Score)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Registers Scores the players completing a Mission Task.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING)._AddPlayerFromUnit">SCORING:_AddPlayerFromUnit(UnitData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Add a new player entering a Unit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING)._EventOnDeadOrCrash">SCORING:_EventOnDeadOrCrash(Event)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Track  DEAD or CRASH events for the scoring.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING)._EventOnHit">SCORING:_EventOnHit(Event)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Handles the OnHit event for the scoring.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ClassID">SCORING.ClassID</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The ID number of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ClassName">SCORING.ClassName</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The name of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ClassNameAndID">SCORING.ClassNameAndID</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The name of the class concatenated with the ID number of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ClearState">SCORING:ClearState(Object, StateName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Clear the state of an object.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).CreateEventBirth">SCORING:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Birth Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).CreateEventCrash">SCORING:CreateEventCrash(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Crash Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).CreateEventDead">SCORING:CreateEventDead(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Dead Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).CreateEventRemoveUnit">SCORING:CreateEventRemoveUnit(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Remove Unit Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).CreateEventTakeoff">SCORING:CreateEventTakeoff(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Takeoff Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).E">SCORING:E(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Log an exception which will be traced always.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).EventDispatcher">SCORING:EventDispatcher()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the event dispatcher</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).EventRemoveAll">SCORING:EventRemoveAll()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Remove all subscribed events</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).F">SCORING:F(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).F2">SCORING:F2(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call level 2.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).F3">SCORING:F3(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call level 3.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).GetClassID">SCORING:GetClassID()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassID of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).GetClassName">SCORING:GetClassName()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassName of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).GetClassNameAndID">SCORING:GetClassNameAndID()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassName + ClassID of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).GetEventPriority">SCORING:GetEventPriority()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the Class <a href="Event.html">Event</a> processing Priority.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).GetParent">SCORING:GetParent(Child, FromClass)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to retrieve the Parent class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).GetState">SCORING:GetState(Object, Key)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get a Value given a Key from the Object.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).HandleEvent">SCORING:HandleEvent(Event, EventFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Subscribe to a DCS Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).I">SCORING:I(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Log an information which will be traced always.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).Inherit">SCORING:Inherit(Child, Parent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to inherit from a parent class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).IsInstanceOf">SCORING:IsInstanceOf(ClassName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to check if an object is an (sub)instance of a class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).IsTrace">SCORING:IsTrace()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Enquires if tracing is on (for the class).</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).New">SCORING:New()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>BASE constructor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEvent">SCORING:OnEvent(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an object is completely destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventBaseCaptured">SCORING:OnEventBaseCaptured(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a ground unit captures either an airbase or a farp.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventBirth">SCORING:OnEventBirth(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any object is spawned into the mission.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventCrash">SCORING:OnEventCrash(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventDead">SCORING:OnEventDead(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an object is dead.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventEjection">SCORING:OnEventEjection(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a pilot ejects from an aircraft
+initiator : The unit that has ejected </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventEngineShutdown">SCORING:OnEventEngineShutdown(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft shuts down its engines.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventEngineStartup">SCORING:OnEventEngineStartup(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft starts its engines.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventHit">SCORING:OnEventHit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs whenever an object is hit by a weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventHumanFailure">SCORING:OnEventHumanFailure(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any system fails on a human controlled aircraft.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventLand">SCORING:OnEventLand(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft lands at an airbase, farp or ship
+initiator : The unit that has landed
+place: Object that the unit landed on.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventMissionEnd">SCORING:OnEventMissionEnd(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a mission ends</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventMissionStart">SCORING:OnEventMissionStart(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a mission starts </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventPilotDead">SCORING:OnEventPilotDead(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when the pilot of an aircraft is killed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventPlayerEnterUnit">SCORING:OnEventPlayerEnterUnit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any player assumes direct control of a unit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventPlayerLeaveUnit">SCORING:OnEventPlayerLeaveUnit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any player relieves control of a unit to the AI.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventRefueling">SCORING:OnEventRefueling(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventRefuelingStop">SCORING:OnEventRefuelingStop(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft is finished taking fuel.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventShootingEnd">SCORING:OnEventShootingEnd(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any unit stops firing its weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventShootingStart">SCORING:OnEventShootingStart(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventShot">SCORING:OnEventShot(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs whenever any unit in a mission fires a weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).OnEventTakeoff">SCORING:OnEventTakeoff(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ScheduleOnce">SCORING:ScheduleOnce(Start, SchedulerFunction, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Schedule a new time event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ScheduleRepeat">SCORING:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Schedule a new time event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).ScheduleStop">SCORING:ScheduleStop(SchedulerFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Stops the Schedule.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).Scheduler">SCORING.Scheduler</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).SetEventPriority">SCORING:SetEventPriority(EventPriority)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set the Class <a href="Event.html">Event</a> processing Priority.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).SetState">SCORING:SetState(Object, Key, Value)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set a state or property of the Object given a Key and a Value.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).T">SCORING:T(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 1.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).T2">SCORING:T2(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 2.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).T3">SCORING:T3(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 3.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).TraceAll">SCORING:TraceAll(TraceAll)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace all methods in MOOSE</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).TraceClass">SCORING:TraceClass(Class)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set tracing for a class</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).TraceClassMethod">SCORING:TraceClassMethod(Class, Method)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set tracing for a specific method of  class</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).TraceLevel">SCORING:TraceLevel(Level)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set trace level</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).TraceOnOff">SCORING:TraceOnOff(TraceOnOff)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set trace on or off
+Note that when trace is off, no BASE.Debug statement is performed, increasing performance!
+When Moose is loaded statically, (as one file), tracing is switched off by default.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).UnHandleEvent">SCORING:UnHandleEvent(Event)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>UnSubscribe to a DCS event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING)._">SCORING._</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING)._F">SCORING:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING)._T">SCORING:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).__">SCORING.__</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCORING).onEvent">SCORING:onEvent(event)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+  </table>
+ </div>
+
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Functional.Scoring)" >Type <strong>Functional.Scoring</strong></a></h2></div>
   <div class="w3-container w3-white w3-padding-16" id="module_current_type">
     <div class="w3-white" id="record_type">
+<h2>
+      ==> <a href="##(Functional.Scoring)">Functional.Scoring</a>
+</h2>
 </div>
 
   </div>
   <div onclick="myFunction('#Types##SCORING')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(SCORING)">Type <strong>SCORING</strong></a></h2></div>
   <div id= "#Types##SCORING" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Core.Base.html##(BASE)">Core.Base#BASE</a> </h3>
+<h2>
+      ==> <a href="##(SCORING)">SCORING</a>
+     , inherits from <a href="Core.Base.html##(BASE)">Core.Base#BASE</a>
+</h2>
   
 <p>The Scoring class</p>
 
@@ -1732,7 +2568,7 @@ Various methods exist to configure:</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddGoalScore')">
-<h6><a id="#(SCORING).AddGoalScore" ><strong>SCORING:AddGoalScore(PlayerUnit, GoalTag, Text, Score)</strong></a></h6>
+<h4><a id="#(SCORING).AddGoalScore" ><strong>SCORING:AddGoalScore(PlayerUnit, GoalTag, Text, Score)</strong></a></h4>
 </div>
     
 <p>Add a goal score for a player.</p>
@@ -1745,7 +2581,7 @@ The Score can be both positive and negative.</p>
 
 <div id= "#Functions##AddGoalScore" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1802,7 +2638,7 @@ The Score can be both positive and negative.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddGoalScorePlayer')">
-<h6><a id="#(SCORING).AddGoalScorePlayer" ><strong>SCORING:AddGoalScorePlayer(PlayerName, GoalTag, Text, Score)</strong></a></h6>
+<h4><a id="#(SCORING).AddGoalScorePlayer" ><strong>SCORING:AddGoalScorePlayer(PlayerName, GoalTag, Text, Score)</strong></a></h4>
 </div>
     
 <p>Add a goal score for a player.</p>
@@ -1815,7 +2651,7 @@ The Score can be both positive and negative.</p>
 
 <div id= "#Functions##AddGoalScorePlayer" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1872,14 +2708,14 @@ The Score can be both positive and negative.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddScoreGroup')">
-<h6><a id="#(SCORING).AddScoreGroup" ><strong>SCORING:AddScoreGroup(ScoreGroup, Score)</strong></a></h6>
+<h4><a id="#(SCORING).AddScoreGroup" ><strong>SCORING:AddScoreGroup(ScoreGroup, Score)</strong></a></h4>
 </div>
     
 <p>Specify a special additional score for a <a href="Wrapper.Group.html">Wrapper.Group</a>.</p>
 
 <div id= "#Functions##AddScoreGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1904,7 +2740,7 @@ The Score can be both positive and negative.</p>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -1925,7 +2761,7 @@ The Score can be both positive and negative.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddStaticScore')">
-<h6><a id="#(SCORING).AddStaticScore" ><strong>SCORING:AddStaticScore(ScoreStatic, Score)</strong></a></h6>
+<h4><a id="#(SCORING).AddStaticScore" ><strong>SCORING:AddStaticScore(ScoreStatic, Score)</strong></a></h4>
 </div>
     
 <p>Add a <a href="Static.html">Static</a> for additional scoring when the <a href="Static.html">Static</a> is destroyed.</p>
@@ -1936,7 +2772,7 @@ then the old <a href="Static.html">Static</a>  will be replaced with the new <a 
 
 <div id= "#Functions##AddStaticScore" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1961,7 +2797,7 @@ then the old <a href="Static.html">Static</a>  will be replaced with the new <a 
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -1982,7 +2818,7 @@ then the old <a href="Static.html">Static</a>  will be replaced with the new <a 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddUnitScore')">
-<h6><a id="#(SCORING).AddUnitScore" ><strong>SCORING:AddUnitScore(ScoreUnit, Score)</strong></a></h6>
+<h4><a id="#(SCORING).AddUnitScore" ><strong>SCORING:AddUnitScore(ScoreUnit, Score)</strong></a></h4>
 </div>
     
 <p>Add a <a href="Wrapper.Unit.html">Wrapper.Unit</a> for additional scoring when the <a href="Wrapper.Unit.html">Wrapper.Unit</a> is destroyed.</p>
@@ -1993,7 +2829,7 @@ then the old <a href="Wrapper.Unit.html">Wrapper.Unit</a>  will be replaced with
 
 <div id= "#Functions##AddUnitScore" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2018,7 +2854,7 @@ then the old <a href="Wrapper.Unit.html">Wrapper.Unit</a>  will be replaced with
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -2039,7 +2875,7 @@ then the old <a href="Wrapper.Unit.html">Wrapper.Unit</a>  will be replaced with
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddZoneScore')">
-<h6><a id="#(SCORING).AddZoneScore" ><strong>SCORING:AddZoneScore(ScoreZone, Score)</strong></a></h6>
+<h4><a id="#(SCORING).AddZoneScore" ><strong>SCORING:AddZoneScore(ScoreZone, Score)</strong></a></h4>
 </div>
     
 <p>Add a <a href="Zone.html">Zone</a> to define additional scoring when any object is destroyed in that zone.</p>
@@ -2050,7 +2886,7 @@ This allows for a dynamic destruction zone evolution within your mission.</p>
 
 <div id= "#Functions##AddZoneScore" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2076,7 +2912,7 @@ Note that a zone can be a polygon or a moving zone.</p>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -2097,7 +2933,7 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CloseCSV')">
-<h6><a id="#(SCORING).CloseCSV" ><strong>SCORING:CloseCSV()</strong></a></h6>
+<h4><a id="#(SCORING).CloseCSV" ><strong>SCORING:CloseCSV()</strong></a></h4>
 </div>
     
 
@@ -2114,14 +2950,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IfMessagesDestroy')">
-<h6><a id="#(SCORING).IfMessagesDestroy" ><strong>SCORING:IfMessagesDestroy()</strong></a></h6>
+<h4><a id="#(SCORING).IfMessagesDestroy" ><strong>SCORING:IfMessagesDestroy()</strong></a></h4>
 </div>
     
 <p>If to send messages after a target has been destroyed.</p>
 
 <div id= "#Functions##IfMessagesDestroy" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #boolean:
@@ -2142,14 +2978,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IfMessagesHit')">
-<h6><a id="#(SCORING).IfMessagesHit" ><strong>SCORING:IfMessagesHit()</strong></a></h6>
+<h4><a id="#(SCORING).IfMessagesHit" ><strong>SCORING:IfMessagesHit()</strong></a></h4>
 </div>
     
 <p>If to send messages after a target has been hit.</p>
 
 <div id= "#Functions##IfMessagesHit" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #boolean:
@@ -2170,14 +3006,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IfMessagesScore')">
-<h6><a id="#(SCORING).IfMessagesScore" ><strong>SCORING:IfMessagesScore()</strong></a></h6>
+<h4><a id="#(SCORING).IfMessagesScore" ><strong>SCORING:IfMessagesScore()</strong></a></h4>
 </div>
     
 <p>If to send messages after a target has been destroyed and receives additional scores.</p>
 
 <div id= "#Functions##IfMessagesScore" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #boolean:
@@ -2198,14 +3034,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IfMessagesToAll')">
-<h6><a id="#(SCORING).IfMessagesToAll" ><strong>SCORING:IfMessagesToAll()</strong></a></h6>
+<h4><a id="#(SCORING).IfMessagesToAll" ><strong>SCORING:IfMessagesToAll()</strong></a></h4>
 </div>
     
 <p>If to send messages to all players.</p>
 
 <div id= "#Functions##IfMessagesToAll" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #boolean:
@@ -2226,14 +3062,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IfMessagesToCoalition')">
-<h6><a id="#(SCORING).IfMessagesToCoalition" ><strong>SCORING:IfMessagesToCoalition()</strong></a></h6>
+<h4><a id="#(SCORING).IfMessagesToCoalition" ><strong>SCORING:IfMessagesToCoalition()</strong></a></h4>
 </div>
     
 <p>If to send messages to only those players within the same coalition as the player.</p>
 
 <div id= "#Functions##IfMessagesToCoalition" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #boolean:
@@ -2254,14 +3090,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IfMessagesZone')">
-<h6><a id="#(SCORING).IfMessagesZone" ><strong>SCORING:IfMessagesZone()</strong></a></h6>
+<h4><a id="#(SCORING).IfMessagesZone" ><strong>SCORING:IfMessagesZone()</strong></a></h4>
 </div>
     
 <p>If to send messages after a target has been hit in a zone, and additional score is received.</p>
 
 <div id= "#Functions##IfMessagesZone" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #boolean:
@@ -2282,14 +3118,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(SCORING).New" ><strong>SCORING:New(GameName)</strong></a></h6>
+<h4><a id="#(SCORING).New" ><strong>SCORING:New(GameName)</strong></a></h4>
 </div>
     
 <p>Creates a new SCORING object to administer the scoring achieved by players.</p>
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2303,7 +3139,7 @@ Note that a zone can be a polygon or a moving zone.</p>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -2314,7 +3150,7 @@ Note that a zone can be a polygon or a moving zone.</p>
 
       </div>
     </div>
-      <h5><strong>Usage:</strong></h5>
+      <h3><strong>Usage:</strong></h3>
     <pre class="example"><code>-- Define a new scoring object for the mission Gori Valley.
 ScoringObject = SCORING:New( "Gori Valley" )</code></pre>
 
@@ -2328,14 +3164,14 @@ ScoringObject = SCORING:New( "Gori Valley" )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBirth')">
-<h6><a id="#(SCORING).OnEventBirth" ><strong>SCORING:OnEventBirth(Event)</strong></a></h6>
+<h4><a id="#(SCORING).OnEventBirth" ><strong>SCORING:OnEventBirth(Event)</strong></a></h4>
 </div>
     
 <p>Handles the OnBirth event for the scoring.</p>
 
 <div id= "#Functions##OnEventBirth" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2357,14 +3193,14 @@ ScoringObject = SCORING:New( "Gori Valley" )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPlayerLeaveUnit')">
-<h6><a id="#(SCORING).OnEventPlayerLeaveUnit" ><strong>SCORING:OnEventPlayerLeaveUnit(Event)</strong></a></h6>
+<h4><a id="#(SCORING).OnEventPlayerLeaveUnit" ><strong>SCORING:OnEventPlayerLeaveUnit(Event)</strong></a></h4>
 </div>
     
 <p>Handles the OnPlayerLeaveUnit event for the scoring.</p>
 
 <div id= "#Functions##OnEventPlayerLeaveUnit" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2386,14 +3222,14 @@ ScoringObject = SCORING:New( "Gori Valley" )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OpenCSV')">
-<h6><a id="#(SCORING).OpenCSV" ><strong>SCORING:OpenCSV(ScoringCSV)</strong></a></h6>
+<h4><a id="#(SCORING).OpenCSV" ><strong>SCORING:OpenCSV(ScoringCSV)</strong></a></h4>
 </div>
     
 <p>Opens a score CSV file to log the scores.</p>
 
 <div id= "#Functions##OpenCSV" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2405,7 +3241,7 @@ ScoringObject = SCORING:New( "Gori Valley" )</code></pre>
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -2416,7 +3252,7 @@ ScoringObject = SCORING:New( "Gori Valley" )</code></pre>
 
       </div>
     </div>
-      <h5><strong>Usage:</strong></h5>
+      <h3><strong>Usage:</strong></h3>
     <pre class="example"><code>-- Open a new CSV file to log the scores of the game Gori Valley. Let the name of the CSV file begin with "Player Scores".
 ScoringObject = SCORING:New( "Gori Valley" )
 ScoringObject:OpenCSV( "Player Scores" )</code></pre>
@@ -2431,14 +3267,14 @@ ScoringObject:OpenCSV( "Player Scores" )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RemoveStaticScore')">
-<h6><a id="#(SCORING).RemoveStaticScore" ><strong>SCORING:RemoveStaticScore(ScoreStatic)</strong></a></h6>
+<h4><a id="#(SCORING).RemoveStaticScore" ><strong>SCORING:RemoveStaticScore(ScoreStatic)</strong></a></h4>
 </div>
     
 <p>Removes a <a href="Static.html">Static</a> for additional scoring when the <a href="Static.html">Static</a> is destroyed.</p>
 
 <div id= "#Functions##RemoveStaticScore" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2452,7 +3288,7 @@ ScoringObject:OpenCSV( "Player Scores" )</code></pre>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -2473,14 +3309,14 @@ ScoringObject:OpenCSV( "Player Scores" )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RemoveUnitScore')">
-<h6><a id="#(SCORING).RemoveUnitScore" ><strong>SCORING:RemoveUnitScore(ScoreUnit)</strong></a></h6>
+<h4><a id="#(SCORING).RemoveUnitScore" ><strong>SCORING:RemoveUnitScore(ScoreUnit)</strong></a></h4>
 </div>
     
 <p>Removes a <a href="Wrapper.Unit.html">Wrapper.Unit</a> for additional scoring when the <a href="Wrapper.Unit.html">Wrapper.Unit</a> is destroyed.</p>
 
 <div id= "#Functions##RemoveUnitScore" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2494,7 +3330,7 @@ ScoringObject:OpenCSV( "Player Scores" )</code></pre>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -2515,7 +3351,7 @@ ScoringObject:OpenCSV( "Player Scores" )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RemoveZoneScore')">
-<h6><a id="#(SCORING).RemoveZoneScore" ><strong>SCORING:RemoveZoneScore(ScoreZone)</strong></a></h6>
+<h4><a id="#(SCORING).RemoveZoneScore" ><strong>SCORING:RemoveZoneScore(ScoreZone)</strong></a></h4>
 </div>
     
 <p>Remove a <a href="Zone.html">Zone</a> for additional scoring.</p>
@@ -2526,7 +3362,7 @@ This allows for a dynamic destruction zone evolution within your mission.</p>
 
 <div id= "#Functions##RemoveZoneScore" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2541,7 +3377,7 @@ Note that a zone can be a polygon or a moving zone.</p>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -2562,14 +3398,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportDetailedPlayerCoalitionChanges')">
-<h6><a id="#(SCORING).ReportDetailedPlayerCoalitionChanges" ><strong>SCORING:ReportDetailedPlayerCoalitionChanges(PlayerName)</strong></a></h6>
+<h4><a id="#(SCORING).ReportDetailedPlayerCoalitionChanges" ><strong>SCORING:ReportDetailedPlayerCoalitionChanges(PlayerName)</strong></a></h4>
 </div>
     
 <p>Produce detailed report of player penalty scores because of changing the coalition.</p>
 
 <div id= "#Functions##ReportDetailedPlayerCoalitionChanges" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2583,7 +3419,7 @@ Note that a zone can be a polygon or a moving zone.</p>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #string:
@@ -2604,14 +3440,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportDetailedPlayerDestroys')">
-<h6><a id="#(SCORING).ReportDetailedPlayerDestroys" ><strong>SCORING:ReportDetailedPlayerDestroys(PlayerName)</strong></a></h6>
+<h4><a id="#(SCORING).ReportDetailedPlayerDestroys" ><strong>SCORING:ReportDetailedPlayerDestroys(PlayerName)</strong></a></h4>
 </div>
     
 <p>Produce detailed report of player destroy scores.</p>
 
 <div id= "#Functions##ReportDetailedPlayerDestroys" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2625,7 +3461,7 @@ Note that a zone can be a polygon or a moving zone.</p>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #string:
@@ -2646,14 +3482,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportDetailedPlayerGoals')">
-<h6><a id="#(SCORING).ReportDetailedPlayerGoals" ><strong>SCORING:ReportDetailedPlayerGoals(PlayerName)</strong></a></h6>
+<h4><a id="#(SCORING).ReportDetailedPlayerGoals" ><strong>SCORING:ReportDetailedPlayerGoals(PlayerName)</strong></a></h4>
 </div>
     
 <p>Produce detailed report of player goal scores.</p>
 
 <div id= "#Functions##ReportDetailedPlayerGoals" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2667,7 +3503,7 @@ Note that a zone can be a polygon or a moving zone.</p>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #string:
@@ -2688,14 +3524,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportDetailedPlayerHits')">
-<h6><a id="#(SCORING).ReportDetailedPlayerHits" ><strong>SCORING:ReportDetailedPlayerHits(PlayerName)</strong></a></h6>
+<h4><a id="#(SCORING).ReportDetailedPlayerHits" ><strong>SCORING:ReportDetailedPlayerHits(PlayerName)</strong></a></h4>
 </div>
     
 <p>Produce detailed report of player hit scores.</p>
 
 <div id= "#Functions##ReportDetailedPlayerHits" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2709,7 +3545,7 @@ Note that a zone can be a polygon or a moving zone.</p>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #string:
@@ -2730,14 +3566,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportDetailedPlayerMissions')">
-<h6><a id="#(SCORING).ReportDetailedPlayerMissions" ><strong>SCORING:ReportDetailedPlayerMissions(PlayerName)</strong></a></h6>
+<h4><a id="#(SCORING).ReportDetailedPlayerMissions" ><strong>SCORING:ReportDetailedPlayerMissions(PlayerName)</strong></a></h4>
 </div>
     
 <p>Produce detailed report of player penalty scores because of changing the coalition.</p>
 
 <div id= "#Functions##ReportDetailedPlayerMissions" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2751,7 +3587,7 @@ Note that a zone can be a polygon or a moving zone.</p>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #string:
@@ -2772,14 +3608,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportScoreAllSummary')">
-<h6><a id="#(SCORING).ReportScoreAllSummary" ><strong>SCORING:ReportScoreAllSummary(PlayerGroup)</strong></a></h6>
+<h4><a id="#(SCORING).ReportScoreAllSummary" ><strong>SCORING:ReportScoreAllSummary(PlayerGroup)</strong></a></h4>
 </div>
     
 <p>Report all players score</p>
 
 <div id= "#Functions##ReportScoreAllSummary" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2803,14 +3639,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportScoreGroupDetailed')">
-<h6><a id="#(SCORING).ReportScoreGroupDetailed" ><strong>SCORING:ReportScoreGroupDetailed(PlayerGroup)</strong></a></h6>
+<h4><a id="#(SCORING).ReportScoreGroupDetailed" ><strong>SCORING:ReportScoreGroupDetailed(PlayerGroup)</strong></a></h4>
 </div>
     
 <p>Report Group Score Detailed</p>
 
 <div id= "#Functions##ReportScoreGroupDetailed" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2834,14 +3670,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportScoreGroupSummary')">
-<h6><a id="#(SCORING).ReportScoreGroupSummary" ><strong>SCORING:ReportScoreGroupSummary(PlayerGroup)</strong></a></h6>
+<h4><a id="#(SCORING).ReportScoreGroupSummary" ><strong>SCORING:ReportScoreGroupSummary(PlayerGroup)</strong></a></h4>
 </div>
     
 <p>Report Group Score Summary</p>
 
 <div id= "#Functions##ReportScoreGroupSummary" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -2865,14 +3701,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScoreCSV')">
-<h6><a id="#(SCORING).ScoreCSV" ><strong>SCORING:ScoreCSV(PlayerName, TargetPlayerName, ScoreType, ScoreTimes, ScoreAmount, PlayerUnitName, PlayerUnitCoalition, PlayerUnitCategory, PlayerUnitType, TargetUnitName, TargetUnitCoalition, TargetUnitCategory, TargetUnitType)</strong></a></h6>
+<h4><a id="#(SCORING).ScoreCSV" ><strong>SCORING:ScoreCSV(PlayerName, TargetPlayerName, ScoreType, ScoreTimes, ScoreAmount, PlayerUnitName, PlayerUnitCoalition, PlayerUnitCategory, PlayerUnitType, TargetUnitName, TargetUnitCoalition, TargetUnitCategory, TargetUnitType)</strong></a></h4>
 </div>
     
 <p>Registers a score for a player.</p>
 
 <div id= "#Functions##ScoreCSV" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3018,7 +3854,7 @@ Note that a zone can be a polygon or a moving zone.</p>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -3039,14 +3875,14 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SecondsToClock')">
-<h6><a id="#(SCORING).SecondsToClock" ><strong>SCORING:SecondsToClock(sSeconds)</strong></a></h6>
+<h4><a id="#(SCORING).SecondsToClock" ><strong>SCORING:SecondsToClock(sSeconds)</strong></a></h4>
 </div>
     
 
 
 <div id= "#Functions##SecondsToClock" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3067,7 +3903,7 @@ Note that a zone can be a polygon or a moving zone.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetCoalitionChangePenalty')">
-<h6><a id="#(SCORING).SetCoalitionChangePenalty" ><strong>SCORING:SetCoalitionChangePenalty(CoalitionChangePenalty)</strong></a></h6>
+<h4><a id="#(SCORING).SetCoalitionChangePenalty" ><strong>SCORING:SetCoalitionChangePenalty(CoalitionChangePenalty)</strong></a></h4>
 </div>
     
 <p>When a player changes the coalition, he can receive a penalty score.</p>
@@ -3078,7 +3914,7 @@ By default, the penalty for changing coalition is the default penalty scale.  </
 
 <div id= "#Functions##SetCoalitionChangePenalty" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3092,7 +3928,7 @@ By default, the penalty for changing coalition is the default penalty scale.  </
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -3113,14 +3949,14 @@ By default, the penalty for changing coalition is the default penalty scale.  </
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetDisplayMessagePrefix')">
-<h6><a id="#(SCORING).SetDisplayMessagePrefix" ><strong>SCORING:SetDisplayMessagePrefix(DisplayMessagePrefix)</strong></a></h6>
+<h4><a id="#(SCORING).SetDisplayMessagePrefix" ><strong>SCORING:SetDisplayMessagePrefix(DisplayMessagePrefix)</strong></a></h4>
 </div>
     
 <p>Set a prefix string that will be displayed at each scoring message sent.</p>
 
 <div id= "#Functions##SetDisplayMessagePrefix" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3134,7 +3970,7 @@ By default, the penalty for changing coalition is the default penalty scale.  </
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -3155,7 +3991,7 @@ By default, the penalty for changing coalition is the default penalty scale.  </
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetFratricide')">
-<h6><a id="#(SCORING).SetFratricide" ><strong>SCORING:SetFratricide(Fratricide)</strong></a></h6>
+<h4><a id="#(SCORING).SetFratricide" ><strong>SCORING:SetFratricide(Fratricide)</strong></a></h4>
 </div>
     
 <p>When a player commits too much damage to friendlies, his penalty score will reach a certain level.</p>
@@ -3166,7 +4002,7 @@ By default, the fratricide level is the default penalty mutiplier * 2 for the pe
 
 <div id= "#Functions##SetFratricide" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3180,7 +4016,7 @@ By default, the fratricide level is the default penalty mutiplier * 2 for the pe
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -3201,14 +4037,14 @@ By default, the fratricide level is the default penalty mutiplier * 2 for the pe
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetMessagesDestroy')">
-<h6><a id="#(SCORING).SetMessagesDestroy" ><strong>SCORING:SetMessagesDestroy(OnOff)</strong></a></h6>
+<h4><a id="#(SCORING).SetMessagesDestroy" ><strong>SCORING:SetMessagesDestroy(OnOff)</strong></a></h4>
 </div>
     
 <p>Configure to send messages after a target has been destroyed.</p>
 
 <div id= "#Functions##SetMessagesDestroy" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3222,7 +4058,7 @@ By default, the fratricide level is the default penalty mutiplier * 2 for the pe
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -3243,14 +4079,14 @@ By default, the fratricide level is the default penalty mutiplier * 2 for the pe
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetMessagesHit')">
-<h6><a id="#(SCORING).SetMessagesHit" ><strong>SCORING:SetMessagesHit(OnOff)</strong></a></h6>
+<h4><a id="#(SCORING).SetMessagesHit" ><strong>SCORING:SetMessagesHit(OnOff)</strong></a></h4>
 </div>
     
 <p>Configure to send messages after a target has been hit.</p>
 
 <div id= "#Functions##SetMessagesHit" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3264,7 +4100,7 @@ By default, the fratricide level is the default penalty mutiplier * 2 for the pe
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -3285,14 +4121,14 @@ By default, the fratricide level is the default penalty mutiplier * 2 for the pe
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetMessagesScore')">
-<h6><a id="#(SCORING).SetMessagesScore" ><strong>SCORING:SetMessagesScore(OnOff)</strong></a></h6>
+<h4><a id="#(SCORING).SetMessagesScore" ><strong>SCORING:SetMessagesScore(OnOff)</strong></a></h4>
 </div>
     
 <p>Configure to send messages after a target has been destroyed and receives additional scores.</p>
 
 <div id= "#Functions##SetMessagesScore" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3306,7 +4142,7 @@ By default, the fratricide level is the default penalty mutiplier * 2 for the pe
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -3327,14 +4163,14 @@ By default, the fratricide level is the default penalty mutiplier * 2 for the pe
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetMessagesToAll')">
-<h6><a id="#(SCORING).SetMessagesToAll" ><strong>SCORING:SetMessagesToAll()</strong></a></h6>
+<h4><a id="#(SCORING).SetMessagesToAll" ><strong>SCORING:SetMessagesToAll()</strong></a></h4>
 </div>
     
 <p>Configure to send messages to all players.</p>
 
 <div id= "#Functions##SetMessagesToAll" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -3355,14 +4191,14 @@ By default, the fratricide level is the default penalty mutiplier * 2 for the pe
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetMessagesToCoalition')">
-<h6><a id="#(SCORING).SetMessagesToCoalition" ><strong>SCORING:SetMessagesToCoalition()</strong></a></h6>
+<h4><a id="#(SCORING).SetMessagesToCoalition" ><strong>SCORING:SetMessagesToCoalition()</strong></a></h4>
 </div>
     
 <p>Configure to send messages to only those players within the same coalition as the player.</p>
 
 <div id= "#Functions##SetMessagesToCoalition" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -3383,14 +4219,14 @@ By default, the fratricide level is the default penalty mutiplier * 2 for the pe
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetMessagesZone')">
-<h6><a id="#(SCORING).SetMessagesZone" ><strong>SCORING:SetMessagesZone(OnOff)</strong></a></h6>
+<h4><a id="#(SCORING).SetMessagesZone" ><strong>SCORING:SetMessagesZone(OnOff)</strong></a></h4>
 </div>
     
 <p>Configure to send messages after a target has been hit in a zone, and additional score is received.</p>
 
 <div id= "#Functions##SetMessagesZone" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3404,7 +4240,7 @@ By default, the fratricide level is the default penalty mutiplier * 2 for the pe
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -3425,7 +4261,7 @@ By default, the fratricide level is the default penalty mutiplier * 2 for the pe
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetScaleDestroyPenalty')">
-<h6><a id="#(SCORING).SetScaleDestroyPenalty" ><strong>SCORING:SetScaleDestroyPenalty(Scale)</strong></a></h6>
+<h4><a id="#(SCORING).SetScaleDestroyPenalty" ><strong>SCORING:SetScaleDestroyPenalty(Scale)</strong></a></h4>
 </div>
     
 <p>Set the scale for scoring penalty destroys (friendly destroys).</p>
@@ -3436,7 +4272,7 @@ The scale magnifies the scores given to the players.</p>
 
 <div id= "#Functions##SetScaleDestroyPenalty" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3450,7 +4286,7 @@ The scale magnifies the scores given to the players.</p>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -3471,7 +4307,7 @@ The scale magnifies the scores given to the players.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetScaleDestroyScore')">
-<h6><a id="#(SCORING).SetScaleDestroyScore" ><strong>SCORING:SetScaleDestroyScore(Scale)</strong></a></h6>
+<h4><a id="#(SCORING).SetScaleDestroyScore" ><strong>SCORING:SetScaleDestroyScore(Scale)</strong></a></h4>
 </div>
     
 <p>Set the scale for scoring valid destroys (enemy destroys).</p>
@@ -3482,7 +4318,7 @@ The scale magnifies the scores given to the players.</p>
 
 <div id= "#Functions##SetScaleDestroyScore" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3506,14 +4342,14 @@ The scale magnifies the scores given to the players.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetScoringMenu')">
-<h6><a id="#(SCORING).SetScoringMenu" ><strong>SCORING:SetScoringMenu(ScoringGroup)</strong></a></h6>
+<h4><a id="#(SCORING).SetScoringMenu" ><strong>SCORING:SetScoringMenu(ScoringGroup)</strong></a></h4>
 </div>
     
 <p>Sets the scoring menu.</p>
 
 <div id= "#Functions##SetScoringMenu" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3524,7 +4360,7 @@ The scale magnifies the scores given to the players.</p>
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(SCORING)">#SCORING</a>:
@@ -3545,14 +4381,14 @@ The scale magnifies the scores given to the players.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_AddMissionGoalScore')">
-<h6><a id="#(SCORING)._AddMissionGoalScore" ><strong>SCORING:_AddMissionGoalScore(Mission, PlayerName, Text, Score)</strong></a></h6>
+<h4><a id="#(SCORING)._AddMissionGoalScore" ><strong>SCORING:_AddMissionGoalScore(Mission, PlayerName, Text, Score)</strong></a></h4>
 </div>
     
 <p>Registers Scores the players completing a Mission Task.</p>
 
 <div id= "#Functions##_AddMissionGoalScore" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3601,14 +4437,14 @@ The scale magnifies the scores given to the players.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_AddMissionScore')">
-<h6><a id="#(SCORING)._AddMissionScore" ><strong>SCORING:_AddMissionScore(Mission, PlayerUnit, Text, Score)</strong></a></h6>
+<h4><a id="#(SCORING)._AddMissionScore" ><strong>SCORING:_AddMissionScore(Mission, PlayerUnit, Text, Score)</strong></a></h4>
 </div>
     
 <p>Registers Mission Scores for possible multiple players that contributed in the Mission.</p>
 
 <div id= "#Functions##_AddMissionScore" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3657,14 +4493,14 @@ The scale magnifies the scores given to the players.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_AddMissionTaskScore')">
-<h6><a id="#(SCORING)._AddMissionTaskScore" ><strong>SCORING:_AddMissionTaskScore(Mission, PlayerUnit, Text, Score)</strong></a></h6>
+<h4><a id="#(SCORING)._AddMissionTaskScore" ><strong>SCORING:_AddMissionTaskScore(Mission, PlayerUnit, Text, Score)</strong></a></h4>
 </div>
     
 <p>Registers Scores the players completing a Mission Task.</p>
 
 <div id= "#Functions##_AddMissionTaskScore" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3713,14 +4549,14 @@ The scale magnifies the scores given to the players.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_AddPlayerFromUnit')">
-<h6><a id="#(SCORING)._AddPlayerFromUnit" ><strong>SCORING:_AddPlayerFromUnit(UnitData)</strong></a></h6>
+<h4><a id="#(SCORING)._AddPlayerFromUnit" ><strong>SCORING:_AddPlayerFromUnit(UnitData)</strong></a></h4>
 </div>
     
 <p>Add a new player entering a Unit.</p>
 
 <div id= "#Functions##_AddPlayerFromUnit" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3742,14 +4578,14 @@ The scale magnifies the scores given to the players.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_EventOnDeadOrCrash')">
-<h6><a id="#(SCORING)._EventOnDeadOrCrash" ><strong>SCORING:_EventOnDeadOrCrash(Event)</strong></a></h6>
+<h4><a id="#(SCORING)._EventOnDeadOrCrash" ><strong>SCORING:_EventOnDeadOrCrash(Event)</strong></a></h4>
 </div>
     
 <p>Track  DEAD or CRASH events for the scoring.</p>
 
 <div id= "#Functions##_EventOnDeadOrCrash" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -3771,20 +4607,2671 @@ The scale magnifies the scores given to the players.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_EventOnHit')">
-<h6><a id="#(SCORING)._EventOnHit" ><strong>SCORING:_EventOnHit(Event)</strong></a></h6>
+<h4><a id="#(SCORING)._EventOnHit" ><strong>SCORING:_EventOnHit(Event)</strong></a></h4>
 </div>
     
 <p>Handles the OnHit event for the scoring.</p>
 
 <div id= "#Functions##_EventOnHit" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
         <div class="w3-half">
           <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
         <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SCORING).ClassID" ><strong>SCORING.ClassID</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(SCORING).ClassName" ><strong>SCORING.ClassName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SCORING).CoalitionChangePenalty" ><strong>SCORING.CoalitionChangePenalty</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SCORING).Fratricide" ><strong>SCORING.Fratricide</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SCORING).GameName" ><strong>SCORING.GameName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SCORING).MessagesAudience" ><strong>SCORING.MessagesAudience</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SCORING).MessagesDestroy" ><strong>SCORING.MessagesDestroy</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SCORING).MessagesHit" ><strong>SCORING.MessagesHit</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SCORING).MessagesScore" ><strong>SCORING.MessagesScore</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SCORING).MessagesZone" ><strong>SCORING.MessagesZone</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SCORING).RunTime" ><strong>SCORING.RunTime</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SCORING).ScaleDestroyPenalty" ><strong>SCORING.ScaleDestroyPenalty</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SCORING).ScaleDestroyScore" ><strong>SCORING.ScaleDestroyScore</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SCORING).ScoringCSV" ><strong>SCORING.ScoringCSV</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(SCORING).ScoringObjects" ><strong>SCORING.ScoringObjects</strong></a>
+    
+
+
+    
+<p> Additional Object scores</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SCORING).ScoringPlayerScan" ><strong>SCORING.ScoringPlayerScan</strong></a>
+    
+
+
+    
+<p> During mission startup, especially for single player, 
+ iterate the database for the player that has joined, and add him to the scoring, and set the menu.
+ But this can only be started one second after the mission has started, so i need to schedule this ...</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(SCORING).ScoringZones" ><strong>SCORING.ScoringZones</strong></a>
+    
+
+
+    
+<p> Additional Zone scores.</p>
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearState')">
+<h4><a id="#(SCORING).ClearState" ><strong>SCORING:ClearState(Object, StateName)</strong></a></h4>
+</div>
+    
+<p>Clear the state of an object.</p>
+
+<div id= "#Functions##ClearState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that holds the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>StateName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is should be cleared.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventBirth')">
+<h4><a id="#(SCORING).CreateEventBirth" ><strong>SCORING:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</strong></a></h4>
+</div>
+    
+<p>Creation of a Birth Event.</p>
+
+<div id= "#Functions##CreateEventBirth" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>IniUnitName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating unit name.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>place</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>subplace</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventCrash')">
+<h4><a id="#(SCORING).CreateEventCrash" ><strong>SCORING:CreateEventCrash(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Crash Event.</p>
+
+<div id= "#Functions##CreateEventCrash" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventDead')">
+<h4><a id="#(SCORING).CreateEventDead" ><strong>SCORING:CreateEventDead(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Dead Event.</p>
+
+<div id= "#Functions##CreateEventDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventRemoveUnit')">
+<h4><a id="#(SCORING).CreateEventRemoveUnit" ><strong>SCORING:CreateEventRemoveUnit(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Remove Unit Event.</p>
+
+<div id= "#Functions##CreateEventRemoveUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventTakeoff')">
+<h4><a id="#(SCORING).CreateEventTakeoff" ><strong>SCORING:CreateEventTakeoff(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Takeoff Event.</p>
+
+<div id= "#Functions##CreateEventTakeoff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##E')">
+<h4><a id="#(SCORING).E" ><strong>SCORING:E(Arguments)</strong></a></h4>
+</div>
+    
+<p>Log an exception which will be traced always.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##E" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##EventDispatcher')">
+<h4><a id="#(SCORING).EventDispatcher" ><strong>SCORING:EventDispatcher()</strong></a></h4>
+</div>
+    
+<p>Returns the event dispatcher</p>
+
+<div id= "#Functions##EventDispatcher" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##EventRemoveAll')">
+<h4><a id="#(SCORING).EventRemoveAll" ><strong>SCORING:EventRemoveAll()</strong></a></h4>
+</div>
+    
+<p>Remove all subscribed events</p>
+
+<div id= "#Functions##EventRemoveAll" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F')">
+<h4><a id="#(SCORING).F" ><strong>SCORING:F(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F2')">
+<h4><a id="#(SCORING).F2" ><strong>SCORING:F2(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call level 2.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F3')">
+<h4><a id="#(SCORING).F3" ><strong>SCORING:F3(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call level 3.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassID')">
+<h4><a id="#(SCORING).GetClassID" ><strong>SCORING:GetClassID()</strong></a></h4>
+</div>
+    
+<p>Get the ClassID of the class instance.</p>
+
+<div id= "#Functions##GetClassID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassID of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassName')">
+<h4><a id="#(SCORING).GetClassName" ><strong>SCORING:GetClassName()</strong></a></h4>
+</div>
+    
+<p>Get the ClassName of the class instance.</p>
+
+<div id= "#Functions##GetClassName" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassName of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassNameAndID')">
+<h4><a id="#(SCORING).GetClassNameAndID" ><strong>SCORING:GetClassNameAndID()</strong></a></h4>
+</div>
+    
+<p>Get the ClassName + ClassID of the class instance.</p>
+
+    
+<p>The ClassName + ClassID is formatted as '%s#%09d'. </p>
+
+<div id= "#Functions##GetClassNameAndID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassName + ClassID of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetEventPriority')">
+<h4><a id="#(SCORING).GetEventPriority" ><strong>SCORING:GetEventPriority()</strong></a></h4>
+</div>
+    
+<p>Get the Class <a href="Event.html">Event</a> processing Priority.</p>
+
+    
+<p>The Event processing Priority is a number from 1 to 10, 
+reflecting the order of the classes subscribed to the Event to be processed.</p>
+
+<div id= "#Functions##GetEventPriority" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The <a href="Event.html">Event</a> processing Priority.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetParent')">
+<h4><a id="#(SCORING).GetParent" ><strong>SCORING:GetParent(Child, FromClass)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to retrieve the Parent class.</p>
+
+    
+<p>Note that the Parent class must be passed to call the parent class method.</p>
+
+<pre><code>self:GetParent(self):ParentMethod()
+
+
+</code></pre>
+
+<div id= "#Functions##GetParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(BASE)">#BASE</a>
+        <strong>Child</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Child class from which the Parent class needs to be retrieved.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>FromClass</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetState')">
+<h4><a id="#(SCORING).GetState" ><strong>SCORING:GetState(Object, Key)</strong></a></h4>
+</div>
+    
+<p>Get a Value given a Key from the Object.</p>
+
+    
+<p>Note that if the Object is destroyed, nillified or garbage collected, then the Values and Keys will also be gone.</p>
+
+<div id= "#Functions##GetState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that holds the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Key</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is used to retrieve the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>The Value retrieved or nil if the Key was not found and thus the Value could not be retrieved.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##HandleEvent')">
+<h4><a id="#(SCORING).HandleEvent" ><strong>SCORING:HandleEvent(Event, EventFunction)</strong></a></h4>
+</div>
+    
+<p>Subscribe to a DCS Event.</p>
+
+<div id= "#Functions##HandleEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTS)">Core.Event#EVENTS</a>
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>EventFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The function to be called when the event occurs for the unit.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##I')">
+<h4><a id="#(SCORING).I" ><strong>SCORING:I(Arguments)</strong></a></h4>
+</div>
+    
+<p>Log an information which will be traced always.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##I" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Inherit')">
+<h4><a id="#(SCORING).Inherit" ><strong>SCORING:Inherit(Child, Parent)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to inherit from a parent class.</p>
+
+<div id= "#Functions##Inherit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Child</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Child class that inherits.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(BASE)">#BASE</a>
+        <strong>Parent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Parent class that the Child inherits from.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>Child</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsInstanceOf')">
+<h4><a id="#(SCORING).IsInstanceOf" ><strong>SCORING:IsInstanceOf(ClassName)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to check if an object is an (sub)instance of a class.</p>
+
+    
+
+<h3>Examples:</h3>
+
+<ul>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( ZONE ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'ZONE' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'zone' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'BASE' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'GROUP' ) will return false</p></li>
+</ul>
+
+
+<div id= "#Functions##IsInstanceOf" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ClassName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the name of the class or the class itself to run the check against</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsTrace')">
+<h4><a id="#(SCORING).IsTrace" ><strong>SCORING:IsTrace()</strong></a></h4>
+</div>
+    
+<p>Enquires if tracing is on (for the class).</p>
+
+<div id= "#Functions##IsTrace" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(SCORING).New" ><strong>SCORING:New()</strong></a></h4>
+</div>
+    
+<p>BASE constructor.</p>
+
+    
+
+<p>This is an example how to use the BASE:New() constructor in a new class definition when inheriting from BASE.</p>
+
+<pre><code>function EVENT:New()
+  local self = BASE:Inherit( self, BASE:New() ) -- #EVENT
+  return self
+end
+  
+</code></pre>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEvent')">
+<h4><a id="#(SCORING).OnEvent" ><strong>SCORING:OnEvent(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an object is completely destroyed.</p>
+
+    
+<p>initiator : The unit that is was destroyed. </p>
+
+<div id= "#Functions##OnEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBaseCaptured')">
+<h4><a id="#(SCORING).OnEventBaseCaptured" ><strong>SCORING:OnEventBaseCaptured(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a ground unit captures either an airbase or a farp.</p>
+
+    
+<p>initiator : The unit that captured the base
+place: The airbase that was captured, can be a FARP or Airbase. When calling place:getCoalition() the faction will already be the new owning faction. </p>
+
+<div id= "#Functions##OnEventBaseCaptured" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBirth')">
+<h4><a id="#(SCORING).OnEventBirth" ><strong>SCORING:OnEventBirth(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any object is spawned into the mission.</p>
+
+    
+<p>initiator : The unit that was spawned </p>
+
+<div id= "#Functions##OnEventBirth" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventCrash')">
+<h4><a id="#(SCORING).OnEventCrash" ><strong>SCORING:OnEventCrash(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
+
+    
+<p>initiator : The unit that has crashed </p>
+
+<div id= "#Functions##OnEventCrash" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventDead')">
+<h4><a id="#(SCORING).OnEventDead" ><strong>SCORING:OnEventDead(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an object is dead.</p>
+
+    
+<p>initiator : The unit that is dead. </p>
+
+<div id= "#Functions##OnEventDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEjection')">
+<h4><a id="#(SCORING).OnEventEjection" ><strong>SCORING:OnEventEjection(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a pilot ejects from an aircraft
+initiator : The unit that has ejected </p>
+
+<div id= "#Functions##OnEventEjection" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEngineShutdown')">
+<h4><a id="#(SCORING).OnEventEngineShutdown" ><strong>SCORING:OnEventEngineShutdown(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft shuts down its engines.</p>
+
+    
+<p>initiator : The unit that is stopping its engines. </p>
+
+<div id= "#Functions##OnEventEngineShutdown" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEngineStartup')">
+<h4><a id="#(SCORING).OnEventEngineStartup" ><strong>SCORING:OnEventEngineStartup(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft starts its engines.</p>
+
+    
+<p>initiator : The unit that is starting its engines. </p>
+
+<div id= "#Functions##OnEventEngineStartup" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventHit')">
+<h4><a id="#(SCORING).OnEventHit" ><strong>SCORING:OnEventHit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs whenever an object is hit by a weapon.</p>
+
+    
+<p>initiator : The unit object the fired the weapon
+weapon: Weapon object that hit the target
+target: The Object that was hit. </p>
+
+<div id= "#Functions##OnEventHit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventHumanFailure')">
+<h4><a id="#(SCORING).OnEventHumanFailure" ><strong>SCORING:OnEventHumanFailure(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any system fails on a human controlled aircraft.</p>
+
+    
+<p>initiator : The unit that had the failure </p>
+
+<div id= "#Functions##OnEventHumanFailure" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventLand')">
+<h4><a id="#(SCORING).OnEventLand" ><strong>SCORING:OnEventLand(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft lands at an airbase, farp or ship
+initiator : The unit that has landed
+place: Object that the unit landed on.</p>
+
+    
+<p>Can be an Airbase Object, FARP, or Ships </p>
+
+<div id= "#Functions##OnEventLand" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventMissionEnd')">
+<h4><a id="#(SCORING).OnEventMissionEnd" ><strong>SCORING:OnEventMissionEnd(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a mission ends</p>
+
+<div id= "#Functions##OnEventMissionEnd" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventMissionStart')">
+<h4><a id="#(SCORING).OnEventMissionStart" ><strong>SCORING:OnEventMissionStart(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a mission starts </p>
+
+<div id= "#Functions##OnEventMissionStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPilotDead')">
+<h4><a id="#(SCORING).OnEventPilotDead" ><strong>SCORING:OnEventPilotDead(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when the pilot of an aircraft is killed.</p>
+
+    
+<p>Can occur either if the player is alive and crashes or if a weapon kills the pilot without completely destroying the plane.
+initiator : The unit that the pilot has died in. </p>
+
+<div id= "#Functions##OnEventPilotDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPlayerEnterUnit')">
+<h4><a id="#(SCORING).OnEventPlayerEnterUnit" ><strong>SCORING:OnEventPlayerEnterUnit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any player assumes direct control of a unit.</p>
+
+    
+<p>initiator : The unit that is being taken control of. </p>
+
+<div id= "#Functions##OnEventPlayerEnterUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPlayerLeaveUnit')">
+<h4><a id="#(SCORING).OnEventPlayerLeaveUnit" ><strong>SCORING:OnEventPlayerLeaveUnit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any player relieves control of a unit to the AI.</p>
+
+    
+<p>initiator : The unit that the player left. </p>
+
+<div id= "#Functions##OnEventPlayerLeaveUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventRefueling')">
+<h4><a id="#(SCORING).OnEventRefueling" ><strong>SCORING:OnEventRefueling(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
+
+    
+<p>initiator : The unit that is receiving fuel. </p>
+
+<div id= "#Functions##OnEventRefueling" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventRefuelingStop')">
+<h4><a id="#(SCORING).OnEventRefuelingStop" ><strong>SCORING:OnEventRefuelingStop(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft is finished taking fuel.</p>
+
+    
+<p>initiator : The unit that was receiving fuel. </p>
+
+<div id= "#Functions##OnEventRefuelingStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShootingEnd')">
+<h4><a id="#(SCORING).OnEventShootingEnd" ><strong>SCORING:OnEventShootingEnd(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any unit stops firing its weapon.</p>
+
+    
+<p>Event will always correspond with a shooting start event.
+initiator : The unit that was doing the shooing. </p>
+
+<div id= "#Functions##OnEventShootingEnd" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShootingStart')">
+<h4><a id="#(SCORING).OnEventShootingStart" ><strong>SCORING:OnEventShootingStart(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
+
+    
+<p>Most common with aircraft cannons (GAU-8), autocannons, and machine guns.
+initiator : The unit that is doing the shooing.
+target: The unit that is being targeted. </p>
+
+<div id= "#Functions##OnEventShootingStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShot')">
+<h4><a id="#(SCORING).OnEventShot" ><strong>SCORING:OnEventShot(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs whenever any unit in a mission fires a weapon.</p>
+
+    
+<p>But not any machine gun or autocannon based weapon, those are handled by EVENT.ShootingStart.</p>
+
+<div id= "#Functions##OnEventShot" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventTakeoff')">
+<h4><a id="#(SCORING).OnEventTakeoff" ><strong>SCORING:OnEventTakeoff(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
+
+    
+<p>initiator : The unit that tookoff
+place: Object from where the AI took-off from. Can be an Airbase Object, FARP, or Ships </p>
+
+<div id= "#Functions##OnEventTakeoff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleOnce')">
+<h4><a id="#(SCORING).ScheduleOnce" ><strong>SCORING:ScheduleOnce(Start, SchedulerFunction, ...)</strong></a></h4>
+</div>
+    
+<p>Schedule a new time event.</p>
+
+    
+<p>Note that the schedule will only take place if the scheduler is <em>started</em>. Even for a single schedule event, the scheduler needs to be started also.</p>
+
+<div id= "#Functions##ScheduleOnce" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Start</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds that will be waited before the scheduling is started, and the event function is called.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>...</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Optional arguments that can be given as part of scheduler. The arguments need to be given as a table { param1, param 2, ... }.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The ScheduleID of the planned schedule.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleRepeat')">
+<h4><a id="#(SCORING).ScheduleRepeat" ><strong>SCORING:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</strong></a></h4>
+</div>
+    
+<p>Schedule a new time event.</p>
+
+    
+<p>Note that the schedule will only take place if the scheduler is <em>started</em>. Even for a single schedule event, the scheduler needs to be started also.</p>
+
+<div id= "#Functions##ScheduleRepeat" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Start</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds that will be waited before the scheduling is started, and the event function is called.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Repeat</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the interval in seconds when the scheduler will call the event function.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>RandomizeFactor</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies a randomization factor between 0 and 1 to randomize the Repeat.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Stop</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds when the scheduler will be stopped.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>...</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Optional arguments that can be given as part of scheduler. The arguments need to be given as a table { param1, param 2, ... }.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The ScheduleID of the planned schedule.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleStop')">
+<h4><a id="#(SCORING).ScheduleStop" ><strong>SCORING:ScheduleStop(SchedulerFunction)</strong></a></h4>
+</div>
+    
+<p>Stops the Schedule.</p>
+
+<div id= "#Functions##ScheduleStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetEventPriority')">
+<h4><a id="#(SCORING).SetEventPriority" ><strong>SCORING:SetEventPriority(EventPriority)</strong></a></h4>
+</div>
+    
+<p>Set the Class <a href="Event.html">Event</a> processing Priority.</p>
+
+    
+<p>The Event processing Priority is a number from 1 to 10, 
+reflecting the order of the classes subscribed to the Event to be processed.</p>
+
+<div id= "#Functions##SetEventPriority" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>EventPriority</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The <a href="Event.html">Event</a> processing Priority.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetState')">
+<h4><a id="#(SCORING).SetState" ><strong>SCORING:SetState(Object, Key, Value)</strong></a></h4>
+</div>
+    
+<p>Set a state or property of the Object given a Key and a Value.</p>
+
+    
+<p>Note that if the Object is destroyed, nillified or garbage collected, then the Values and Keys will also be gone.</p>
+
+<div id= "#Functions##SetState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that will hold the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Key</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is used as a reference of the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Value</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The value to is stored in the object.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>The Value set. </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T')">
+<h4><a id="#(SCORING).T" ><strong>SCORING:T(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 1.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T2')">
+<h4><a id="#(SCORING).T2" ><strong>SCORING:T2(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 2.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T3')">
+<h4><a id="#(SCORING).T3" ><strong>SCORING:T3(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 3.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceAll')">
+<h4><a id="#(SCORING).TraceAll" ><strong>SCORING:TraceAll(TraceAll)</strong></a></h4>
+</div>
+    
+<p>Trace all methods in MOOSE</p>
+
+<div id= "#Functions##TraceAll" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>TraceAll</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>true = trace all methods in MOOSE.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceClass')">
+<h4><a id="#(SCORING).TraceClass" ><strong>SCORING:TraceClass(Class)</strong></a></h4>
+</div>
+    
+<p>Set tracing for a class</p>
+
+<div id= "#Functions##TraceClass" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Class</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceClassMethod')">
+<h4><a id="#(SCORING).TraceClassMethod" ><strong>SCORING:TraceClassMethod(Class, Method)</strong></a></h4>
+</div>
+    
+<p>Set tracing for a specific method of  class</p>
+
+<div id= "#Functions##TraceClassMethod" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Class</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Method</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceLevel')">
+<h4><a id="#(SCORING).TraceLevel" ><strong>SCORING:TraceLevel(Level)</strong></a></h4>
+</div>
+    
+<p>Set trace level</p>
+
+<div id= "#Functions##TraceLevel" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Level</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceOnOff')">
+<h4><a id="#(SCORING).TraceOnOff" ><strong>SCORING:TraceOnOff(TraceOnOff)</strong></a></h4>
+</div>
+    
+<p>Set trace on or off
+Note that when trace is off, no BASE.Debug statement is performed, increasing performance!
+When Moose is loaded statically, (as one file), tracing is switched off by default.</p>
+
+    
+<p>So tracing must be switched on manually in your mission if you are using Moose statically.
+When moose is loading dynamically (for moose class development), tracing is switched on by default.</p>
+
+<div id= "#Functions##TraceOnOff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>TraceOnOff</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Switch the tracing on or off.</p>
+
+        </div>
+    </div>
+      <h3><strong>Usage:</strong></h3>
+    <pre class="example"><code>-- Switch the tracing On
+BASE:TraceOnOff( true )
+
+-- Switch the tracing Off
+BASE:TraceOnOff( false )</code></pre>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##UnHandleEvent')">
+<h4><a id="#(SCORING).UnHandleEvent" ><strong>SCORING:UnHandleEvent(Event)</strong></a></h4>
+</div>
+    
+<p>UnSubscribe to a DCS event.</p>
+
+<div id= "#Functions##UnHandleEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTS)">Core.Event#EVENTS</a>
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_F')">
+<h4><a id="#(SCORING)._F" ><strong>SCORING:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h4>
+</div>
+    
+<p>Trace a function call.</p>
+
+    
+<p>This function is private.</p>
+
+<div id= "#Functions##_F" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoCurrentParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoFromParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_T')">
+<h4><a id="#(SCORING)._T" ><strong>SCORING:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic.</p>
+
+<div id= "#Functions##_T" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoCurrentParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoFromParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onEvent')">
+<h4><a id="#(SCORING).onEvent" ><strong>SCORING:onEvent(event)</strong></a></h4>
+</div>
+    
+
+
+    
+<p> TODO: Complete DCS#Event structure. <br/>
+- The main event handling function... This function captures all events generated for the class.
+ @param #BASE self
+ @param DCS#Event event</p>
+
+<div id= "#Functions##onEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>event</strong>
         </div>
         <div class="w3-half">
           <p></p>

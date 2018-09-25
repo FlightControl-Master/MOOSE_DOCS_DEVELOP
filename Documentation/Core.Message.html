@@ -1266,18 +1266,578 @@ To send messages, you need to use the To functions.</p>
 </div>
 
   </div>
-  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>
-  
+  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>  
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MESSAGE)">Type <strong>MESSAGE</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).Clear">MESSAGE:Clear()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Clears all previous messages from the screen before the new message is displayed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ClearScreen">MESSAGE.ClearScreen</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).MessageCategory">MESSAGE.MessageCategory</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).MessageDuration">MESSAGE.MessageDuration</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).New">MESSAGE:New(MessageText, MessageDuration, MessageCategory, ClearScreen)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creates a new MESSAGE object.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).NewType">MESSAGE:NewType(MessageText, MessageType, ClearScreen)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creates a new MESSAGE object of a certain type.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ToAll">MESSAGE:ToAll(Settings)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sends a MESSAGE to all players. </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ToAllIf">MESSAGE:ToAllIf(Condition)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sends a MESSAGE to all players if the given Condition is true.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ToBlue">MESSAGE:ToBlue()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sends a MESSAGE to the Blue coalition.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ToClient">MESSAGE:ToClient(Client, Settings)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sends a MESSAGE to a Client Group.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ToCoalition">MESSAGE:ToCoalition(CoalitionSide, Settings)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sends a MESSAGE to a Coalition. </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ToCoalitionIf">MESSAGE:ToCoalitionIf(CoalitionSide, Condition)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sends a MESSAGE to a Coalition if the given Condition is true. </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ToGroup">MESSAGE:ToGroup(Group, Settings)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sends a MESSAGE to a Group. </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ToRed">MESSAGE:ToRed()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Sends a MESSAGE to the Red Coalition. </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).Type">MESSAGE.Type</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ClassID">MESSAGE.ClassID</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The ID number of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ClassName">MESSAGE.ClassName</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The name of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ClassNameAndID">MESSAGE.ClassNameAndID</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The name of the class concatenated with the ID number of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ClearState">MESSAGE:ClearState(Object, StateName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Clear the state of an object.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).CreateEventBirth">MESSAGE:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Birth Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).CreateEventCrash">MESSAGE:CreateEventCrash(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Crash Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).CreateEventDead">MESSAGE:CreateEventDead(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Dead Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).CreateEventRemoveUnit">MESSAGE:CreateEventRemoveUnit(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Remove Unit Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).CreateEventTakeoff">MESSAGE:CreateEventTakeoff(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Takeoff Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).E">MESSAGE:E(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Log an exception which will be traced always.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).EventDispatcher">MESSAGE:EventDispatcher()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the event dispatcher</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).EventRemoveAll">MESSAGE:EventRemoveAll()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Remove all subscribed events</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).F">MESSAGE:F(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).F2">MESSAGE:F2(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call level 2.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).F3">MESSAGE:F3(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call level 3.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).GetClassID">MESSAGE:GetClassID()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassID of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).GetClassName">MESSAGE:GetClassName()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassName of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).GetClassNameAndID">MESSAGE:GetClassNameAndID()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassName + ClassID of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).GetEventPriority">MESSAGE:GetEventPriority()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the Class <a href="Event.html">Event</a> processing Priority.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).GetParent">MESSAGE:GetParent(Child, FromClass)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to retrieve the Parent class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).GetState">MESSAGE:GetState(Object, Key)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get a Value given a Key from the Object.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).HandleEvent">MESSAGE:HandleEvent(Event, EventFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Subscribe to a DCS Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).I">MESSAGE:I(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Log an information which will be traced always.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).Inherit">MESSAGE:Inherit(Child, Parent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to inherit from a parent class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).IsInstanceOf">MESSAGE:IsInstanceOf(ClassName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to check if an object is an (sub)instance of a class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).IsTrace">MESSAGE:IsTrace()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Enquires if tracing is on (for the class).</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).New">MESSAGE:New()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>BASE constructor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEvent">MESSAGE:OnEvent(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an object is completely destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventBaseCaptured">MESSAGE:OnEventBaseCaptured(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a ground unit captures either an airbase or a farp.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventBirth">MESSAGE:OnEventBirth(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any object is spawned into the mission.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventCrash">MESSAGE:OnEventCrash(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventDead">MESSAGE:OnEventDead(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an object is dead.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventEjection">MESSAGE:OnEventEjection(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a pilot ejects from an aircraft
+initiator : The unit that has ejected </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventEngineShutdown">MESSAGE:OnEventEngineShutdown(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft shuts down its engines.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventEngineStartup">MESSAGE:OnEventEngineStartup(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft starts its engines.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventHit">MESSAGE:OnEventHit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs whenever an object is hit by a weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventHumanFailure">MESSAGE:OnEventHumanFailure(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any system fails on a human controlled aircraft.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventLand">MESSAGE:OnEventLand(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft lands at an airbase, farp or ship
+initiator : The unit that has landed
+place: Object that the unit landed on.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventMissionEnd">MESSAGE:OnEventMissionEnd(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a mission ends</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventMissionStart">MESSAGE:OnEventMissionStart(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a mission starts </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventPilotDead">MESSAGE:OnEventPilotDead(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when the pilot of an aircraft is killed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventPlayerEnterUnit">MESSAGE:OnEventPlayerEnterUnit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any player assumes direct control of a unit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventPlayerLeaveUnit">MESSAGE:OnEventPlayerLeaveUnit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any player relieves control of a unit to the AI.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventRefueling">MESSAGE:OnEventRefueling(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventRefuelingStop">MESSAGE:OnEventRefuelingStop(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft is finished taking fuel.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventShootingEnd">MESSAGE:OnEventShootingEnd(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any unit stops firing its weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventShootingStart">MESSAGE:OnEventShootingStart(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventShot">MESSAGE:OnEventShot(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs whenever any unit in a mission fires a weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).OnEventTakeoff">MESSAGE:OnEventTakeoff(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ScheduleOnce">MESSAGE:ScheduleOnce(Start, SchedulerFunction, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Schedule a new time event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ScheduleRepeat">MESSAGE:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Schedule a new time event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).ScheduleStop">MESSAGE:ScheduleStop(SchedulerFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Stops the Schedule.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).Scheduler">MESSAGE.Scheduler</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).SetEventPriority">MESSAGE:SetEventPriority(EventPriority)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set the Class <a href="Event.html">Event</a> processing Priority.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).SetState">MESSAGE:SetState(Object, Key, Value)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set a state or property of the Object given a Key and a Value.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).T">MESSAGE:T(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 1.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).T2">MESSAGE:T2(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 2.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).T3">MESSAGE:T3(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 3.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).TraceAll">MESSAGE:TraceAll(TraceAll)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace all methods in MOOSE</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).TraceClass">MESSAGE:TraceClass(Class)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set tracing for a class</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).TraceClassMethod">MESSAGE:TraceClassMethod(Class, Method)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set tracing for a specific method of  class</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).TraceLevel">MESSAGE:TraceLevel(Level)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set trace level</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).TraceOnOff">MESSAGE:TraceOnOff(TraceOnOff)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set trace on or off
+Note that when trace is off, no BASE.Debug statement is performed, increasing performance!
+When Moose is loaded statically, (as one file), tracing is switched off by default.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).UnHandleEvent">MESSAGE:UnHandleEvent(Event)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>UnSubscribe to a DCS event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE)._">MESSAGE._</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE)._F">MESSAGE:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE)._T">MESSAGE:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).__">MESSAGE.__</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE).onEvent">MESSAGE:onEvent(event)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+  </table>
+ </div>
+
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MESSAGE.Type)">Type <strong>MESSAGE.Type</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE.Type).Briefing">MESSAGE.Type.Briefing</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE.Type).Detailed">MESSAGE.Type.Detailed</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE.Type).Information">MESSAGE.Type.Information</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE.Type).Overview">MESSAGE.Type.Overview</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(MESSAGE.Type).Update">MESSAGE.Type.Update</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+  </table>
+ </div>
+
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Core.Message)" >Type <strong>Core.Message</strong></a></h2></div>
   <div class="w3-container w3-white w3-padding-16" id="module_current_type">
     <div class="w3-white" id="record_type">
+<h2>
+      ==> <a href="##(Core.Message)">Core.Message</a>
+</h2>
 </div>
 
   </div>
   <div onclick="myFunction('#Types##MESSAGE')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MESSAGE)">Type <strong>MESSAGE</strong></a></h2></div>
   <div id= "#Types##MESSAGE" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Core.Base.html##(BASE)">Core.Base#BASE</a> </h3>
+<h2>
+      ==> <a href="##(MESSAGE)">MESSAGE</a>
+     , inherits from <a href="Core.Base.html##(BASE)">Core.Base#BASE</a>
+</h2>
   
 <p>The MESSAGE class</p>
 
@@ -1337,7 +1897,7 @@ To send messages, you need to use the To functions.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Clear')">
-<h6><a id="#(MESSAGE).Clear" ><strong>MESSAGE:Clear()</strong></a></h6>
+<h4><a id="#(MESSAGE).Clear" ><strong>MESSAGE:Clear()</strong></a></h4>
 </div>
     
 <p>Clears all previous messages from the screen before the new message is displayed.</p>
@@ -1347,7 +1907,7 @@ To send messages, you need to use the To functions.</p>
 
 <div id= "#Functions##Clear" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MESSAGE)">#MESSAGE</a>:
@@ -1368,7 +1928,7 @@ To send messages, you need to use the To functions.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(MESSAGE).New" ><strong>MESSAGE:New(MessageText, MessageDuration, MessageCategory, ClearScreen)</strong></a></h6>
+<h4><a id="#(MESSAGE).New" ><strong>MESSAGE:New(MessageText, MessageDuration, MessageCategory, ClearScreen)</strong></a></h4>
 </div>
     
 <p>Creates a new MESSAGE object.</p>
@@ -1378,7 +1938,7 @@ To send messages, you need to use the To functions.</p>
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1425,7 +1985,7 @@ To send messages, you need to use the To functions.</p>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MESSAGE)">#MESSAGE</a>:
@@ -1436,7 +1996,7 @@ To send messages, you need to use the To functions.</p>
 
       </div>
     </div>
-      <h5><strong>Usage:</strong></h5>
+      <h3><strong>Usage:</strong></h3>
     <pre class="example"><code>-- Create a series of new Messages.
 -- MessageAll is meant to be sent to all players, for 25 seconds, and is classified as "Score".
 -- MessageRED is meant to be sent to the RED players only, for 10 seconds, and is classified as "End of Mission", with ID "Win".
@@ -1457,7 +2017,7 @@ MessageClient2 = MESSAGE:New( "Congratulations, you've just killed a target", 25
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##NewType')">
-<h6><a id="#(MESSAGE).NewType" ><strong>MESSAGE:NewType(MessageText, MessageType, ClearScreen)</strong></a></h6>
+<h4><a id="#(MESSAGE).NewType" ><strong>MESSAGE:NewType(MessageText, MessageType, ClearScreen)</strong></a></h4>
 </div>
     
 <p>Creates a new MESSAGE object of a certain type.</p>
@@ -1469,7 +2029,7 @@ The message display times are automatically defined based on the timing settings
 
 <div id= "#Functions##NewType" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1505,7 +2065,7 @@ The message display times are automatically defined based on the timing settings
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MESSAGE)">#MESSAGE</a>:
@@ -1516,7 +2076,7 @@ The message display times are automatically defined based on the timing settings
 
       </div>
     </div>
-      <h5><strong>Usage:</strong></h5>
+      <h3><strong>Usage:</strong></h3>
     <pre class="example"><code>  MessageAll = MESSAGE:NewType( "To all Players: BLUE has won! Each player of BLUE wins 50 points!", MESSAGE.Type.Information )
   MessageRED = MESSAGE:NewType( "To the RED Players: You receive a penalty because you've killed one of your own units", MESSAGE.Type.Information )
   MessageClient1 = MESSAGE:NewType( "Congratulations, you've just hit a target", MESSAGE.Type.Update )
@@ -1532,14 +2092,14 @@ The message display times are automatically defined based on the timing settings
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ToAll')">
-<h6><a id="#(MESSAGE).ToAll" ><strong>MESSAGE:ToAll(Settings)</strong></a></h6>
+<h4><a id="#(MESSAGE).ToAll" ><strong>MESSAGE:ToAll(Settings)</strong></a></h4>
 </div>
     
 <p>Sends a MESSAGE to all players. </p>
 
 <div id= "#Functions##ToAll" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1553,7 +2113,7 @@ The message display times are automatically defined based on the timing settings
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MESSAGE)">#MESSAGE</a>:
@@ -1564,7 +2124,7 @@ The message display times are automatically defined based on the timing settings
 
       </div>
     </div>
-      <h5><strong>Usage:</strong></h5>
+      <h3><strong>Usage:</strong></h3>
     <pre class="example"><code>-- Send a message created to all players.
 MessageAll = MESSAGE:New( "To all Players: BLUE has won! Each player of BLUE wins 50 points!", "End of Mission", 25, "Win" ):ToAll()
 or
@@ -1583,14 +2143,14 @@ MessageAll:ToAll()</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ToAllIf')">
-<h6><a id="#(MESSAGE).ToAllIf" ><strong>MESSAGE:ToAllIf(Condition)</strong></a></h6>
+<h4><a id="#(MESSAGE).ToAllIf" ><strong>MESSAGE:ToAllIf(Condition)</strong></a></h4>
 </div>
     
 <p>Sends a MESSAGE to all players if the given Condition is true.</p>
 
 <div id= "#Functions##ToAllIf" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1601,7 +2161,7 @@ MessageAll:ToAll()</code></pre>
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MESSAGE)">#MESSAGE</a>:
@@ -1622,14 +2182,14 @@ MessageAll:ToAll()</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ToBlue')">
-<h6><a id="#(MESSAGE).ToBlue" ><strong>MESSAGE:ToBlue()</strong></a></h6>
+<h4><a id="#(MESSAGE).ToBlue" ><strong>MESSAGE:ToBlue()</strong></a></h4>
 </div>
     
 <p>Sends a MESSAGE to the Blue coalition.</p>
 
 <div id= "#Functions##ToBlue" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MESSAGE)">#MESSAGE</a>:
@@ -1640,7 +2200,7 @@ MessageAll:ToAll()</code></pre>
 
       </div>
     </div>
-      <h5><strong>Usage:</strong></h5>
+      <h3><strong>Usage:</strong></h3>
     <pre class="example"><code>-- Send a message created with the @{New} method to the BLUE coalition.
 MessageBLUE = MESSAGE:New( "To the BLUE Players: You receive a penalty because you've killed one of your own units", "Penalty", 25, "Score" ):ToBlue()
 or
@@ -1659,7 +2219,7 @@ MessageBLUE:ToBlue()</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ToClient')">
-<h6><a id="#(MESSAGE).ToClient" ><strong>MESSAGE:ToClient(Client, Settings)</strong></a></h6>
+<h4><a id="#(MESSAGE).ToClient" ><strong>MESSAGE:ToClient(Client, Settings)</strong></a></h4>
 </div>
     
 <p>Sends a MESSAGE to a Client Group.</p>
@@ -1669,7 +2229,7 @@ MessageBLUE:ToBlue()</code></pre>
 
 <div id= "#Functions##ToClient" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1694,7 +2254,7 @@ MessageBLUE:ToBlue()</code></pre>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MESSAGE)">#MESSAGE</a>:
@@ -1705,7 +2265,7 @@ MessageBLUE:ToBlue()</code></pre>
 
       </div>
     </div>
-      <h5><strong>Usage:</strong></h5>
+      <h3><strong>Usage:</strong></h3>
     <pre class="example"><code>-- Send the 2 messages created with the @{New} method to the Client Group.
 -- Note that the Message of MessageClient2 is overwriting the Message of MessageClient1.
 ClientGroup = Group.getByName( "ClientGroup" )
@@ -1731,14 +2291,14 @@ MessageClient2:ToClient( ClientGroup )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ToCoalition')">
-<h6><a id="#(MESSAGE).ToCoalition" ><strong>MESSAGE:ToCoalition(CoalitionSide, Settings)</strong></a></h6>
+<h4><a id="#(MESSAGE).ToCoalition" ><strong>MESSAGE:ToCoalition(CoalitionSide, Settings)</strong></a></h4>
 </div>
     
 <p>Sends a MESSAGE to a Coalition. </p>
 
 <div id= "#Functions##ToCoalition" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1763,7 +2323,7 @@ MessageClient2:ToClient( ClientGroup )</code></pre>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MESSAGE)">#MESSAGE</a>:
@@ -1774,7 +2334,7 @@ MessageClient2:ToClient( ClientGroup )</code></pre>
 
       </div>
     </div>
-      <h5><strong>Usage:</strong></h5>
+      <h3><strong>Usage:</strong></h3>
     <pre class="example"><code>-- Send a message created with the @{New} method to the RED coalition.
 MessageRED = MESSAGE:New( "To the RED Players: You receive a penalty because you've killed one of your own units", "Penalty", 25, "Score" ):ToCoalition( coalition.side.RED )
 or
@@ -1793,14 +2353,14 @@ MessageRED:ToCoalition( coalition.side.RED )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ToCoalitionIf')">
-<h6><a id="#(MESSAGE).ToCoalitionIf" ><strong>MESSAGE:ToCoalitionIf(CoalitionSide, Condition)</strong></a></h6>
+<h4><a id="#(MESSAGE).ToCoalitionIf" ><strong>MESSAGE:ToCoalitionIf(CoalitionSide, Condition)</strong></a></h4>
 </div>
     
 <p>Sends a MESSAGE to a Coalition if the given Condition is true. </p>
 
 <div id= "#Functions##ToCoalitionIf" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1824,7 +2384,7 @@ MessageRED:ToCoalition( coalition.side.RED )</code></pre>
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MESSAGE)">#MESSAGE</a>:
@@ -1845,14 +2405,14 @@ MessageRED:ToCoalition( coalition.side.RED )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ToGroup')">
-<h6><a id="#(MESSAGE).ToGroup" ><strong>MESSAGE:ToGroup(Group, Settings)</strong></a></h6>
+<h4><a id="#(MESSAGE).ToGroup" ><strong>MESSAGE:ToGroup(Group, Settings)</strong></a></h4>
 </div>
     
 <p>Sends a MESSAGE to a Group. </p>
 
 <div id= "#Functions##ToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1874,7 +2434,7 @@ MessageRED:ToCoalition( coalition.side.RED )</code></pre>
           <p></p>
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MESSAGE)">#MESSAGE</a>:
@@ -1895,14 +2455,14 @@ MessageRED:ToCoalition( coalition.side.RED )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ToRed')">
-<h6><a id="#(MESSAGE).ToRed" ><strong>MESSAGE:ToRed()</strong></a></h6>
+<h4><a id="#(MESSAGE).ToRed" ><strong>MESSAGE:ToRed()</strong></a></h4>
 </div>
     
 <p>Sends a MESSAGE to the Red Coalition. </p>
 
 <div id= "#Functions##ToRed" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(MESSAGE)">#MESSAGE</a>:
@@ -1913,7 +2473,7 @@ MessageRED:ToCoalition( coalition.side.RED )</code></pre>
 
       </div>
     </div>
-      <h5><strong>Usage:</strong></h5>
+      <h3><strong>Usage:</strong></h3>
     <pre class="example"><code>-- Send a message created with the @{New} method to the RED coalition.
 MessageRED = MESSAGE:New( "To the RED Players: You receive a penalty because you've killed one of your own units", "Penalty", 25, "Score" ):ToRed()
 or
@@ -1929,12 +2489,2515 @@ MessageRED:ToRed()</code></pre>
 
 </div>
 </div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(MESSAGE).ClearScreen" ><strong>MESSAGE.ClearScreen</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(MESSAGE).MessageCategory" ><strong>MESSAGE.MessageCategory</strong></a>
+    
+
+
+    
+<p> self.MessageType .. ": "</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MESSAGE).MessageDuration" ><strong>MESSAGE.MessageDuration</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="##(MESSAGE.Type)">#MESSAGE.Type</a>
+<a id="#(MESSAGE).Type" ><strong>MESSAGE.Type</strong></a>
+    
+
+
+</div>
+
+</div>   
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearState')">
+<h4><a id="#(MESSAGE).ClearState" ><strong>MESSAGE:ClearState(Object, StateName)</strong></a></h4>
+</div>
+    
+<p>Clear the state of an object.</p>
+
+<div id= "#Functions##ClearState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that holds the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>StateName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is should be cleared.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventBirth')">
+<h4><a id="#(MESSAGE).CreateEventBirth" ><strong>MESSAGE:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</strong></a></h4>
+</div>
+    
+<p>Creation of a Birth Event.</p>
+
+<div id= "#Functions##CreateEventBirth" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>IniUnitName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating unit name.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>place</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>subplace</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventCrash')">
+<h4><a id="#(MESSAGE).CreateEventCrash" ><strong>MESSAGE:CreateEventCrash(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Crash Event.</p>
+
+<div id= "#Functions##CreateEventCrash" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventDead')">
+<h4><a id="#(MESSAGE).CreateEventDead" ><strong>MESSAGE:CreateEventDead(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Dead Event.</p>
+
+<div id= "#Functions##CreateEventDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventRemoveUnit')">
+<h4><a id="#(MESSAGE).CreateEventRemoveUnit" ><strong>MESSAGE:CreateEventRemoveUnit(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Remove Unit Event.</p>
+
+<div id= "#Functions##CreateEventRemoveUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventTakeoff')">
+<h4><a id="#(MESSAGE).CreateEventTakeoff" ><strong>MESSAGE:CreateEventTakeoff(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Takeoff Event.</p>
+
+<div id= "#Functions##CreateEventTakeoff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##E')">
+<h4><a id="#(MESSAGE).E" ><strong>MESSAGE:E(Arguments)</strong></a></h4>
+</div>
+    
+<p>Log an exception which will be traced always.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##E" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##EventDispatcher')">
+<h4><a id="#(MESSAGE).EventDispatcher" ><strong>MESSAGE:EventDispatcher()</strong></a></h4>
+</div>
+    
+<p>Returns the event dispatcher</p>
+
+<div id= "#Functions##EventDispatcher" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##EventRemoveAll')">
+<h4><a id="#(MESSAGE).EventRemoveAll" ><strong>MESSAGE:EventRemoveAll()</strong></a></h4>
+</div>
+    
+<p>Remove all subscribed events</p>
+
+<div id= "#Functions##EventRemoveAll" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F')">
+<h4><a id="#(MESSAGE).F" ><strong>MESSAGE:F(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F2')">
+<h4><a id="#(MESSAGE).F2" ><strong>MESSAGE:F2(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call level 2.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F3')">
+<h4><a id="#(MESSAGE).F3" ><strong>MESSAGE:F3(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call level 3.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassID')">
+<h4><a id="#(MESSAGE).GetClassID" ><strong>MESSAGE:GetClassID()</strong></a></h4>
+</div>
+    
+<p>Get the ClassID of the class instance.</p>
+
+<div id= "#Functions##GetClassID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassID of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassName')">
+<h4><a id="#(MESSAGE).GetClassName" ><strong>MESSAGE:GetClassName()</strong></a></h4>
+</div>
+    
+<p>Get the ClassName of the class instance.</p>
+
+<div id= "#Functions##GetClassName" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassName of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassNameAndID')">
+<h4><a id="#(MESSAGE).GetClassNameAndID" ><strong>MESSAGE:GetClassNameAndID()</strong></a></h4>
+</div>
+    
+<p>Get the ClassName + ClassID of the class instance.</p>
+
+    
+<p>The ClassName + ClassID is formatted as '%s#%09d'. </p>
+
+<div id= "#Functions##GetClassNameAndID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassName + ClassID of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetEventPriority')">
+<h4><a id="#(MESSAGE).GetEventPriority" ><strong>MESSAGE:GetEventPriority()</strong></a></h4>
+</div>
+    
+<p>Get the Class <a href="Event.html">Event</a> processing Priority.</p>
+
+    
+<p>The Event processing Priority is a number from 1 to 10, 
+reflecting the order of the classes subscribed to the Event to be processed.</p>
+
+<div id= "#Functions##GetEventPriority" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The <a href="Event.html">Event</a> processing Priority.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetParent')">
+<h4><a id="#(MESSAGE).GetParent" ><strong>MESSAGE:GetParent(Child, FromClass)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to retrieve the Parent class.</p>
+
+    
+<p>Note that the Parent class must be passed to call the parent class method.</p>
+
+<pre><code>self:GetParent(self):ParentMethod()
+
+
+</code></pre>
+
+<div id= "#Functions##GetParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(BASE)">#BASE</a>
+        <strong>Child</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Child class from which the Parent class needs to be retrieved.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>FromClass</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetState')">
+<h4><a id="#(MESSAGE).GetState" ><strong>MESSAGE:GetState(Object, Key)</strong></a></h4>
+</div>
+    
+<p>Get a Value given a Key from the Object.</p>
+
+    
+<p>Note that if the Object is destroyed, nillified or garbage collected, then the Values and Keys will also be gone.</p>
+
+<div id= "#Functions##GetState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that holds the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Key</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is used to retrieve the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>The Value retrieved or nil if the Key was not found and thus the Value could not be retrieved.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##HandleEvent')">
+<h4><a id="#(MESSAGE).HandleEvent" ><strong>MESSAGE:HandleEvent(Event, EventFunction)</strong></a></h4>
+</div>
+    
+<p>Subscribe to a DCS Event.</p>
+
+<div id= "#Functions##HandleEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTS)">Core.Event#EVENTS</a>
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>EventFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The function to be called when the event occurs for the unit.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##I')">
+<h4><a id="#(MESSAGE).I" ><strong>MESSAGE:I(Arguments)</strong></a></h4>
+</div>
+    
+<p>Log an information which will be traced always.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##I" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Inherit')">
+<h4><a id="#(MESSAGE).Inherit" ><strong>MESSAGE:Inherit(Child, Parent)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to inherit from a parent class.</p>
+
+<div id= "#Functions##Inherit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Child</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Child class that inherits.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(BASE)">#BASE</a>
+        <strong>Parent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Parent class that the Child inherits from.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>Child</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsInstanceOf')">
+<h4><a id="#(MESSAGE).IsInstanceOf" ><strong>MESSAGE:IsInstanceOf(ClassName)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to check if an object is an (sub)instance of a class.</p>
+
+    
+
+<h3>Examples:</h3>
+
+<ul>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( ZONE ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'ZONE' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'zone' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'BASE' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'GROUP' ) will return false</p></li>
+</ul>
+
+
+<div id= "#Functions##IsInstanceOf" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ClassName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the name of the class or the class itself to run the check against</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsTrace')">
+<h4><a id="#(MESSAGE).IsTrace" ><strong>MESSAGE:IsTrace()</strong></a></h4>
+</div>
+    
+<p>Enquires if tracing is on (for the class).</p>
+
+<div id= "#Functions##IsTrace" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(MESSAGE).New" ><strong>MESSAGE:New()</strong></a></h4>
+</div>
+    
+<p>BASE constructor.</p>
+
+    
+
+<p>This is an example how to use the BASE:New() constructor in a new class definition when inheriting from BASE.</p>
+
+<pre><code>function EVENT:New()
+  local self = BASE:Inherit( self, BASE:New() ) -- #EVENT
+  return self
+end
+  
+</code></pre>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEvent')">
+<h4><a id="#(MESSAGE).OnEvent" ><strong>MESSAGE:OnEvent(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an object is completely destroyed.</p>
+
+    
+<p>initiator : The unit that is was destroyed. </p>
+
+<div id= "#Functions##OnEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBaseCaptured')">
+<h4><a id="#(MESSAGE).OnEventBaseCaptured" ><strong>MESSAGE:OnEventBaseCaptured(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a ground unit captures either an airbase or a farp.</p>
+
+    
+<p>initiator : The unit that captured the base
+place: The airbase that was captured, can be a FARP or Airbase. When calling place:getCoalition() the faction will already be the new owning faction. </p>
+
+<div id= "#Functions##OnEventBaseCaptured" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBirth')">
+<h4><a id="#(MESSAGE).OnEventBirth" ><strong>MESSAGE:OnEventBirth(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any object is spawned into the mission.</p>
+
+    
+<p>initiator : The unit that was spawned </p>
+
+<div id= "#Functions##OnEventBirth" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventCrash')">
+<h4><a id="#(MESSAGE).OnEventCrash" ><strong>MESSAGE:OnEventCrash(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
+
+    
+<p>initiator : The unit that has crashed </p>
+
+<div id= "#Functions##OnEventCrash" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventDead')">
+<h4><a id="#(MESSAGE).OnEventDead" ><strong>MESSAGE:OnEventDead(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an object is dead.</p>
+
+    
+<p>initiator : The unit that is dead. </p>
+
+<div id= "#Functions##OnEventDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEjection')">
+<h4><a id="#(MESSAGE).OnEventEjection" ><strong>MESSAGE:OnEventEjection(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a pilot ejects from an aircraft
+initiator : The unit that has ejected </p>
+
+<div id= "#Functions##OnEventEjection" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEngineShutdown')">
+<h4><a id="#(MESSAGE).OnEventEngineShutdown" ><strong>MESSAGE:OnEventEngineShutdown(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft shuts down its engines.</p>
+
+    
+<p>initiator : The unit that is stopping its engines. </p>
+
+<div id= "#Functions##OnEventEngineShutdown" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEngineStartup')">
+<h4><a id="#(MESSAGE).OnEventEngineStartup" ><strong>MESSAGE:OnEventEngineStartup(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft starts its engines.</p>
+
+    
+<p>initiator : The unit that is starting its engines. </p>
+
+<div id= "#Functions##OnEventEngineStartup" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventHit')">
+<h4><a id="#(MESSAGE).OnEventHit" ><strong>MESSAGE:OnEventHit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs whenever an object is hit by a weapon.</p>
+
+    
+<p>initiator : The unit object the fired the weapon
+weapon: Weapon object that hit the target
+target: The Object that was hit. </p>
+
+<div id= "#Functions##OnEventHit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventHumanFailure')">
+<h4><a id="#(MESSAGE).OnEventHumanFailure" ><strong>MESSAGE:OnEventHumanFailure(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any system fails on a human controlled aircraft.</p>
+
+    
+<p>initiator : The unit that had the failure </p>
+
+<div id= "#Functions##OnEventHumanFailure" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventLand')">
+<h4><a id="#(MESSAGE).OnEventLand" ><strong>MESSAGE:OnEventLand(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft lands at an airbase, farp or ship
+initiator : The unit that has landed
+place: Object that the unit landed on.</p>
+
+    
+<p>Can be an Airbase Object, FARP, or Ships </p>
+
+<div id= "#Functions##OnEventLand" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventMissionEnd')">
+<h4><a id="#(MESSAGE).OnEventMissionEnd" ><strong>MESSAGE:OnEventMissionEnd(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a mission ends</p>
+
+<div id= "#Functions##OnEventMissionEnd" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventMissionStart')">
+<h4><a id="#(MESSAGE).OnEventMissionStart" ><strong>MESSAGE:OnEventMissionStart(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a mission starts </p>
+
+<div id= "#Functions##OnEventMissionStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPilotDead')">
+<h4><a id="#(MESSAGE).OnEventPilotDead" ><strong>MESSAGE:OnEventPilotDead(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when the pilot of an aircraft is killed.</p>
+
+    
+<p>Can occur either if the player is alive and crashes or if a weapon kills the pilot without completely destroying the plane.
+initiator : The unit that the pilot has died in. </p>
+
+<div id= "#Functions##OnEventPilotDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPlayerEnterUnit')">
+<h4><a id="#(MESSAGE).OnEventPlayerEnterUnit" ><strong>MESSAGE:OnEventPlayerEnterUnit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any player assumes direct control of a unit.</p>
+
+    
+<p>initiator : The unit that is being taken control of. </p>
+
+<div id= "#Functions##OnEventPlayerEnterUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPlayerLeaveUnit')">
+<h4><a id="#(MESSAGE).OnEventPlayerLeaveUnit" ><strong>MESSAGE:OnEventPlayerLeaveUnit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any player relieves control of a unit to the AI.</p>
+
+    
+<p>initiator : The unit that the player left. </p>
+
+<div id= "#Functions##OnEventPlayerLeaveUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventRefueling')">
+<h4><a id="#(MESSAGE).OnEventRefueling" ><strong>MESSAGE:OnEventRefueling(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
+
+    
+<p>initiator : The unit that is receiving fuel. </p>
+
+<div id= "#Functions##OnEventRefueling" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventRefuelingStop')">
+<h4><a id="#(MESSAGE).OnEventRefuelingStop" ><strong>MESSAGE:OnEventRefuelingStop(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft is finished taking fuel.</p>
+
+    
+<p>initiator : The unit that was receiving fuel. </p>
+
+<div id= "#Functions##OnEventRefuelingStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShootingEnd')">
+<h4><a id="#(MESSAGE).OnEventShootingEnd" ><strong>MESSAGE:OnEventShootingEnd(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any unit stops firing its weapon.</p>
+
+    
+<p>Event will always correspond with a shooting start event.
+initiator : The unit that was doing the shooing. </p>
+
+<div id= "#Functions##OnEventShootingEnd" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShootingStart')">
+<h4><a id="#(MESSAGE).OnEventShootingStart" ><strong>MESSAGE:OnEventShootingStart(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
+
+    
+<p>Most common with aircraft cannons (GAU-8), autocannons, and machine guns.
+initiator : The unit that is doing the shooing.
+target: The unit that is being targeted. </p>
+
+<div id= "#Functions##OnEventShootingStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShot')">
+<h4><a id="#(MESSAGE).OnEventShot" ><strong>MESSAGE:OnEventShot(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs whenever any unit in a mission fires a weapon.</p>
+
+    
+<p>But not any machine gun or autocannon based weapon, those are handled by EVENT.ShootingStart.</p>
+
+<div id= "#Functions##OnEventShot" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventTakeoff')">
+<h4><a id="#(MESSAGE).OnEventTakeoff" ><strong>MESSAGE:OnEventTakeoff(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
+
+    
+<p>initiator : The unit that tookoff
+place: Object from where the AI took-off from. Can be an Airbase Object, FARP, or Ships </p>
+
+<div id= "#Functions##OnEventTakeoff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleOnce')">
+<h4><a id="#(MESSAGE).ScheduleOnce" ><strong>MESSAGE:ScheduleOnce(Start, SchedulerFunction, ...)</strong></a></h4>
+</div>
+    
+<p>Schedule a new time event.</p>
+
+    
+<p>Note that the schedule will only take place if the scheduler is <em>started</em>. Even for a single schedule event, the scheduler needs to be started also.</p>
+
+<div id= "#Functions##ScheduleOnce" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Start</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds that will be waited before the scheduling is started, and the event function is called.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>...</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Optional arguments that can be given as part of scheduler. The arguments need to be given as a table { param1, param 2, ... }.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The ScheduleID of the planned schedule.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleRepeat')">
+<h4><a id="#(MESSAGE).ScheduleRepeat" ><strong>MESSAGE:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</strong></a></h4>
+</div>
+    
+<p>Schedule a new time event.</p>
+
+    
+<p>Note that the schedule will only take place if the scheduler is <em>started</em>. Even for a single schedule event, the scheduler needs to be started also.</p>
+
+<div id= "#Functions##ScheduleRepeat" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Start</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds that will be waited before the scheduling is started, and the event function is called.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Repeat</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the interval in seconds when the scheduler will call the event function.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>RandomizeFactor</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies a randomization factor between 0 and 1 to randomize the Repeat.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Stop</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds when the scheduler will be stopped.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>...</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Optional arguments that can be given as part of scheduler. The arguments need to be given as a table { param1, param 2, ... }.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The ScheduleID of the planned schedule.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleStop')">
+<h4><a id="#(MESSAGE).ScheduleStop" ><strong>MESSAGE:ScheduleStop(SchedulerFunction)</strong></a></h4>
+</div>
+    
+<p>Stops the Schedule.</p>
+
+<div id= "#Functions##ScheduleStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetEventPriority')">
+<h4><a id="#(MESSAGE).SetEventPriority" ><strong>MESSAGE:SetEventPriority(EventPriority)</strong></a></h4>
+</div>
+    
+<p>Set the Class <a href="Event.html">Event</a> processing Priority.</p>
+
+    
+<p>The Event processing Priority is a number from 1 to 10, 
+reflecting the order of the classes subscribed to the Event to be processed.</p>
+
+<div id= "#Functions##SetEventPriority" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>EventPriority</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The <a href="Event.html">Event</a> processing Priority.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetState')">
+<h4><a id="#(MESSAGE).SetState" ><strong>MESSAGE:SetState(Object, Key, Value)</strong></a></h4>
+</div>
+    
+<p>Set a state or property of the Object given a Key and a Value.</p>
+
+    
+<p>Note that if the Object is destroyed, nillified or garbage collected, then the Values and Keys will also be gone.</p>
+
+<div id= "#Functions##SetState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that will hold the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Key</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is used as a reference of the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Value</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The value to is stored in the object.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>The Value set. </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T')">
+<h4><a id="#(MESSAGE).T" ><strong>MESSAGE:T(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 1.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T2')">
+<h4><a id="#(MESSAGE).T2" ><strong>MESSAGE:T2(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 2.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T3')">
+<h4><a id="#(MESSAGE).T3" ><strong>MESSAGE:T3(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 3.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceAll')">
+<h4><a id="#(MESSAGE).TraceAll" ><strong>MESSAGE:TraceAll(TraceAll)</strong></a></h4>
+</div>
+    
+<p>Trace all methods in MOOSE</p>
+
+<div id= "#Functions##TraceAll" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>TraceAll</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>true = trace all methods in MOOSE.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceClass')">
+<h4><a id="#(MESSAGE).TraceClass" ><strong>MESSAGE:TraceClass(Class)</strong></a></h4>
+</div>
+    
+<p>Set tracing for a class</p>
+
+<div id= "#Functions##TraceClass" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Class</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceClassMethod')">
+<h4><a id="#(MESSAGE).TraceClassMethod" ><strong>MESSAGE:TraceClassMethod(Class, Method)</strong></a></h4>
+</div>
+    
+<p>Set tracing for a specific method of  class</p>
+
+<div id= "#Functions##TraceClassMethod" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Class</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Method</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceLevel')">
+<h4><a id="#(MESSAGE).TraceLevel" ><strong>MESSAGE:TraceLevel(Level)</strong></a></h4>
+</div>
+    
+<p>Set trace level</p>
+
+<div id= "#Functions##TraceLevel" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Level</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceOnOff')">
+<h4><a id="#(MESSAGE).TraceOnOff" ><strong>MESSAGE:TraceOnOff(TraceOnOff)</strong></a></h4>
+</div>
+    
+<p>Set trace on or off
+Note that when trace is off, no BASE.Debug statement is performed, increasing performance!
+When Moose is loaded statically, (as one file), tracing is switched off by default.</p>
+
+    
+<p>So tracing must be switched on manually in your mission if you are using Moose statically.
+When moose is loading dynamically (for moose class development), tracing is switched on by default.</p>
+
+<div id= "#Functions##TraceOnOff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>TraceOnOff</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Switch the tracing on or off.</p>
+
+        </div>
+    </div>
+      <h3><strong>Usage:</strong></h3>
+    <pre class="example"><code>-- Switch the tracing On
+BASE:TraceOnOff( true )
+
+-- Switch the tracing Off
+BASE:TraceOnOff( false )</code></pre>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##UnHandleEvent')">
+<h4><a id="#(MESSAGE).UnHandleEvent" ><strong>MESSAGE:UnHandleEvent(Event)</strong></a></h4>
+</div>
+    
+<p>UnSubscribe to a DCS event.</p>
+
+<div id= "#Functions##UnHandleEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTS)">Core.Event#EVENTS</a>
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_F')">
+<h4><a id="#(MESSAGE)._F" ><strong>MESSAGE:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h4>
+</div>
+    
+<p>Trace a function call.</p>
+
+    
+<p>This function is private.</p>
+
+<div id= "#Functions##_F" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoCurrentParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoFromParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_T')">
+<h4><a id="#(MESSAGE)._T" ><strong>MESSAGE:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic.</p>
+
+<div id= "#Functions##_T" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoCurrentParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoFromParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onEvent')">
+<h4><a id="#(MESSAGE).onEvent" ><strong>MESSAGE:onEvent(event)</strong></a></h4>
+</div>
+    
+
+
+    
+<p> TODO: Complete DCS#Event structure. <br/>
+- The main event handling function... This function captures all events generated for the class.
+ @param #BASE self
+ @param DCS#Event event</p>
+
+<div id= "#Functions##onEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
 </div>
 
   </div>
   <div onclick="myFunction('#Types##MESSAGE.Type')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(MESSAGE.Type)">Type <strong>MESSAGE.Type</strong></a></h2></div>
   <div id= "#Types##MESSAGE.Type" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
+<h2>
+      ==> <a href="##(MESSAGE.Type)">MESSAGE.Type</a>
+</h2>
   
 <p>Message Types</p>
 

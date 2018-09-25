@@ -1244,18 +1244,994 @@ which are excellent tools to be reused in an OO environment!.</p>
 </div>
 
   </div>
-  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>
-  
+  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>  
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(SCENERY)">Type <strong>SCENERY</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetDCSObject">SCENERY:GetDCSObject()</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetThreatLevel">SCENERY:GetThreatLevel()</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).Register">SCENERY:Register(SceneryName, SceneryObject)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).AddCargo">SCENERY:AddCargo(Cargo)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Add cargo.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).CargoItemCount">SCENERY:CargoItemCount()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get cargo item count.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).ClearCargo">SCENERY:ClearCargo()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Clear all cargo.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).Destroy">SCENERY:Destroy(GenerateEvent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Destroys the POSITIONABLE.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).Flare">SCENERY:Flare(FlareColor)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Signal a flare at the position of the POSITIONABLE.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).FlareGreen">SCENERY:FlareGreen()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Signal a green flare at the position of the POSITIONABLE.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).FlareRed">SCENERY:FlareRed()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Signal a red flare at the position of the POSITIONABLE.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).FlareWhite">SCENERY:FlareWhite()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Signal a white flare at the position of the POSITIONABLE.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).FlareYellow">SCENERY:FlareYellow()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Signal a yellow flare at the position of the POSITIONABLE.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetAltitude">SCENERY:GetAltitude()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the altitude of the POSITIONABLE.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetBeacon">SCENERY:GetBeacon()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Create a <a href="Core.Radio.html##(BEACON)">Core.Radio#BEACON</a>, to allow this POSITIONABLE to broadcast beacon signals</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetBoundingBox">SCENERY:GetBoundingBox()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the bounding box of the underlying POSITIONABLE DCS Object.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetBoundingRadius">SCENERY:GetBoundingRadius()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the bounding radius of the underlying POSITIONABLE DCS Object.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetCargo">SCENERY:GetCargo()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get all contained cargo.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetCargoBayFreeWeight">SCENERY:GetCargoBayFreeWeight()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get Cargo Bay Free Weight in kg.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetCoordinate">SCENERY:GetCoordinate()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns a COORDINATE object indicating the point in 3D of the POSITIONABLE within the mission.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetHeading">SCENERY:GetHeading()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the POSITIONABLE heading in degrees.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetHeight">SCENERY:GetHeight()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the POSITIONABLE height in meters.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetLaserCode">SCENERY:GetLaserCode()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the last assigned laser code</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetMessage">SCENERY:GetMessage(Message, Duration, Name)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns a message with the callsign embedded (if there is one).</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetMessageText">SCENERY:GetMessageText(Message, Name)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the message text with the callsign embedded (if there is one).</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetMessageType">SCENERY:GetMessageType(Message, MessageType, Name)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns a message of a specified type with the callsign embedded (if there is one).</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetPointVec2">SCENERY:GetPointVec2()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns a POINT_VEC2 object indicating the point in 2D of the POSITIONABLE within the mission.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetPointVec3">SCENERY:GetPointVec3()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns a POINT_VEC3 object indicating the point in 3D of the POSITIONABLE within the mission.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetPositionVec3">SCENERY:GetPositionVec3()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the <a href="DCS.html##(Position3)">DCS#Position3</a> position vectors indicating the point and direction vectors in 3D of the POSITIONABLE within the mission.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetRadio">SCENERY:GetRadio()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Create a <a href="Core.Radio.html##(RADIO)">Core.Radio#RADIO</a>, to allow radio transmission for this POSITIONABLE.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetRandomVec3">SCENERY:GetRandomVec3(Radius)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns a random <a href="DCS.html##(Vec3)">DCS#Vec3</a> vector within a range, indicating the point in 3D of the POSITIONABLE within the mission.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetSize">SCENERY:GetSize()</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetSpot">SCENERY:GetSpot()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the Spot</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetVec2">SCENERY:GetVec2()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the <a href="DCS.html##(Vec2)">DCS#Vec2</a> vector indicating the point in 2D of the POSITIONABLE within the mission.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetVec3">SCENERY:GetVec3()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the <a href="DCS.html##(Vec3)">DCS#Vec3</a> vector indicating the 3D vector of the POSITIONABLE within the mission.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetVelocity">SCENERY:GetVelocity()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the a <a href="Velocity.html">Velocity</a> object from the positionable.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetVelocityKMH">SCENERY:GetVelocityKMH()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the POSITIONABLE velocity in km/h.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetVelocityMPS">SCENERY:GetVelocityMPS()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the POSITIONABLE velocity in meters per second.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetVelocityVec3">SCENERY:GetVelocityVec3()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the POSITIONABLE velocity Vec3 vector.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).HasCargo">SCENERY:HasCargo(Cargo)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns if carrier has given cargo.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).InAir">SCENERY:InAir()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns true if the POSITIONABLE is in the air.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).IsAboveRunway">SCENERY:IsAboveRunway()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns if the Positionable is located above a runway.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).IsAir">SCENERY:IsAir()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns if the unit is of an air category.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).IsCargoEmpty">SCENERY:IsCargoEmpty()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Is cargo bay empty.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).IsGround">SCENERY:IsGround()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns if the unit is of an ground category.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).IsLasing">SCENERY:IsLasing()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Check if the POSITIONABLE is lasing a target</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).LaseOff">SCENERY:LaseOff()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Stop Lasing a POSITIONABLE</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).LaseUnit">SCENERY:LaseUnit(Target, LaserCode, Duration)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Start Lasing a POSITIONABLE</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).LaserCode">SCENERY.LaserCode</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).Message">SCENERY:Message(Message, Duration, Name)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Send a message to the players in the <a href="Wrapper.Group.html">Wrapper.Group</a>.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).MessageToAll">SCENERY:MessageToAll(Message, Duration, Name)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Send a message to all coalitions.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).MessageToBlue">SCENERY:MessageToBlue(Message, Duration, Name)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Send a message to the blue coalition.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).MessageToClient">SCENERY:MessageToClient(Message, Duration, Client, Name)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Send a message to a client.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).MessageToCoalition">SCENERY:MessageToCoalition(Message, Duration, MessageCoalition, Name)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Send a message to a coalition.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).MessageToGroup">SCENERY:MessageToGroup(Message, Duration, MessageGroup, Name)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Send a message to a <a href="Wrapper.Group.html">Wrapper.Group</a>.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).MessageToRed">SCENERY:MessageToRed(Message, Duration, Name)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Send a message to the red coalition.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).MessageToSetGroup">SCENERY:MessageToSetGroup(Message, Duration, MessageSetGroup, Name)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Send a message to a <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).MessageTypeToCoalition">SCENERY:MessageTypeToCoalition(Message, MessageType, MessageCoalition, Name)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Send a message to a coalition.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).MessageTypeToGroup">SCENERY:MessageTypeToGroup(Message, MessageType, MessageGroup, Name)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Send a message of a message type to a <a href="Wrapper.Group.html">Wrapper.Group</a>.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).New">SCENERY:New(PositionableName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Create a new POSITIONABLE from a DCSPositionable</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).RemoveCargo">SCENERY:RemoveCargo(Cargo)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Remove cargo.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).SetCargoBayWeightLimit">SCENERY:SetCargoBayWeightLimit(WeightLimit)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set Cargo Bay Weight Limit in kg.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).Smoke">SCENERY:Smoke(SmokeColor, Range, AddHeight)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Smoke the POSITIONABLE.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).SmokeBlue">SCENERY:SmokeBlue()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Smoke the POSITIONABLE Blue.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).SmokeGreen">SCENERY:SmokeGreen()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Smoke the POSITIONABLE Green.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).SmokeOrange">SCENERY:SmokeOrange()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Smoke the POSITIONABLE Orange.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).SmokeRed">SCENERY:SmokeRed()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Smoke the POSITIONABLE Red.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).SmokeWhite">SCENERY:SmokeWhite()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Smoke the POSITIONABLE White.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).Spot">SCENERY.Spot</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).__">SCENERY.__</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetCallsign">SCENERY:GetCallsign()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Gets the CallSign of the IDENTIFIABLE, which is a blank by default.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetCategory">SCENERY:GetCategory()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns category of the DCS Identifiable.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetCategoryName">SCENERY:GetCategoryName()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the DCS Identifiable category name as defined within the DCS Identifiable Descriptor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetCoalition">SCENERY:GetCoalition()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns coalition of the Identifiable.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetCoalitionName">SCENERY:GetCoalitionName()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the name of the coalition of the Identifiable.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetCountry">SCENERY:GetCountry()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns country of the Identifiable.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetCountryName">SCENERY:GetCountryName()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns country name of the Identifiable.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetDesc">SCENERY:GetDesc()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns Identifiable descriptor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetName">SCENERY:GetName()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns DCS Identifiable object name.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetThreatLevel">SCENERY:GetThreatLevel()</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetTypeName">SCENERY:GetTypeName()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the type name of the DCS Identifiable.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).HasAttribute">SCENERY:HasAttribute(AttributeName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Check if the Object has the attribute.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).IdentifiableName">SCENERY.IdentifiableName</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The name of the identifiable.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).IsAlive">SCENERY:IsAlive()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns if the Identifiable is alive.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).New">SCENERY:New(IdentifiableName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Create a new IDENTIFIABLE from a DCSIdentifiable</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).Destroy">SCENERY:Destroy()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Destroys the OBJECT.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetID">SCENERY:GetID()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the unit's unique identifier.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).New">SCENERY:New(ObjectName, Test)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Create a new OBJECT from a DCSObject</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).ObjectName">SCENERY.ObjectName</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The name of the Object.</p>
+</td>
+    </tr>
+  </table>
+ </div>
+ <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).ClassID">SCENERY.ClassID</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The ID number of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).ClassName">SCENERY.ClassName</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The name of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).ClassNameAndID">SCENERY.ClassNameAndID</a></td>
+    <td class="summary"><style="width:60%;">
+<p>The name of the class concatenated with the ID number of the class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).ClearState">SCENERY:ClearState(Object, StateName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Clear the state of an object.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).CreateEventBirth">SCENERY:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Birth Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).CreateEventCrash">SCENERY:CreateEventCrash(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Crash Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).CreateEventDead">SCENERY:CreateEventDead(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Dead Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).CreateEventRemoveUnit">SCENERY:CreateEventRemoveUnit(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Remove Unit Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).CreateEventTakeoff">SCENERY:CreateEventTakeoff(EventTime, Initiator)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Creation of a Takeoff Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).E">SCENERY:E(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Log an exception which will be traced always.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).EventDispatcher">SCENERY:EventDispatcher()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Returns the event dispatcher</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).EventRemoveAll">SCENERY:EventRemoveAll()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Remove all subscribed events</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).F">SCENERY:F(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).F2">SCENERY:F2(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call level 2.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).F3">SCENERY:F3(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call level 3.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetClassID">SCENERY:GetClassID()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassID of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetClassName">SCENERY:GetClassName()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassName of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetClassNameAndID">SCENERY:GetClassNameAndID()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the ClassName + ClassID of the class instance.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetEventPriority">SCENERY:GetEventPriority()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get the Class <a href="Event.html">Event</a> processing Priority.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetParent">SCENERY:GetParent(Child, FromClass)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to retrieve the Parent class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).GetState">SCENERY:GetState(Object, Key)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Get a Value given a Key from the Object.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).HandleEvent">SCENERY:HandleEvent(Event, EventFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Subscribe to a DCS Event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).I">SCENERY:I(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Log an information which will be traced always.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).Inherit">SCENERY:Inherit(Child, Parent)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to inherit from a parent class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).IsInstanceOf">SCENERY:IsInstanceOf(ClassName)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>This is the worker method to check if an object is an (sub)instance of a class.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).IsTrace">SCENERY:IsTrace()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Enquires if tracing is on (for the class).</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).New">SCENERY:New()</a></td>
+    <td class="summary"><style="width:60%;">
+<p>BASE constructor.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEvent">SCENERY:OnEvent(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an object is completely destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventBaseCaptured">SCENERY:OnEventBaseCaptured(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a ground unit captures either an airbase or a farp.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventBirth">SCENERY:OnEventBirth(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any object is spawned into the mission.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventCrash">SCENERY:OnEventCrash(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventDead">SCENERY:OnEventDead(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an object is dead.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventEjection">SCENERY:OnEventEjection(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a pilot ejects from an aircraft
+initiator : The unit that has ejected </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventEngineShutdown">SCENERY:OnEventEngineShutdown(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft shuts down its engines.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventEngineStartup">SCENERY:OnEventEngineStartup(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any aircraft starts its engines.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventHit">SCENERY:OnEventHit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs whenever an object is hit by a weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventHumanFailure">SCENERY:OnEventHumanFailure(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any system fails on a human controlled aircraft.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventLand">SCENERY:OnEventLand(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft lands at an airbase, farp or ship
+initiator : The unit that has landed
+place: Object that the unit landed on.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventMissionEnd">SCENERY:OnEventMissionEnd(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a mission ends</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventMissionStart">SCENERY:OnEventMissionStart(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when a mission starts </p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventPilotDead">SCENERY:OnEventPilotDead(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when the pilot of an aircraft is killed.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventPlayerEnterUnit">SCENERY:OnEventPlayerEnterUnit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any player assumes direct control of a unit.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventPlayerLeaveUnit">SCENERY:OnEventPlayerLeaveUnit(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any player relieves control of a unit to the AI.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventRefueling">SCENERY:OnEventRefueling(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventRefuelingStop">SCENERY:OnEventRefuelingStop(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft is finished taking fuel.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventShootingEnd">SCENERY:OnEventShootingEnd(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any unit stops firing its weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventShootingStart">SCENERY:OnEventShootingStart(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventShot">SCENERY:OnEventShot(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs whenever any unit in a mission fires a weapon.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).OnEventTakeoff">SCENERY:OnEventTakeoff(EventData)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).ScheduleOnce">SCENERY:ScheduleOnce(Start, SchedulerFunction, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Schedule a new time event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).ScheduleRepeat">SCENERY:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Schedule a new time event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).ScheduleStop">SCENERY:ScheduleStop(SchedulerFunction)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Stops the Schedule.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).Scheduler">SCENERY.Scheduler</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).SetEventPriority">SCENERY:SetEventPriority(EventPriority)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set the Class <a href="Event.html">Event</a> processing Priority.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).SetState">SCENERY:SetState(Object, Key, Value)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set a state or property of the Object given a Key and a Value.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).T">SCENERY:T(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 1.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).T2">SCENERY:T2(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 2.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).T3">SCENERY:T3(Arguments)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic level 3.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).TraceAll">SCENERY:TraceAll(TraceAll)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace all methods in MOOSE</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).TraceClass">SCENERY:TraceClass(Class)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set tracing for a class</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).TraceClassMethod">SCENERY:TraceClassMethod(Class, Method)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set tracing for a specific method of  class</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).TraceLevel">SCENERY:TraceLevel(Level)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set trace level</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).TraceOnOff">SCENERY:TraceOnOff(TraceOnOff)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Set trace on or off
+Note that when trace is off, no BASE.Debug statement is performed, increasing performance!
+When Moose is loaded statically, (as one file), tracing is switched off by default.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).UnHandleEvent">SCENERY:UnHandleEvent(Event)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>UnSubscribe to a DCS event.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY)._">SCENERY._</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY)._F">SCENERY:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function call.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY)._T">SCENERY:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Trace a function logic.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).__">SCENERY.__</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(SCENERY).onEvent">SCENERY:onEvent(event)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+  </table>
+ </div>
+
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Wrapper.Scenery)" >Type <strong>Wrapper.Scenery</strong></a></h2></div>
   <div class="w3-container w3-white w3-padding-16" id="module_current_type">
     <div class="w3-white" id="record_type">
+<h2>
+      ==> <a href="##(Wrapper.Scenery)">Wrapper.Scenery</a>
+</h2>
 </div>
 
   </div>
   <div onclick="myFunction('#Types##SCENERY')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(SCENERY)">Type <strong>SCENERY</strong></a></h2></div>
   <div id= "#Types##SCENERY" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Wrapper.Positionable.html##(POSITIONABLE)">Wrapper.Positionable#POSITIONABLE</a> </h3>
+<h2>
+      ==> <a href="##(SCENERY)">SCENERY</a>
+     , inherits from <a href="Wrapper.Positionable.html##(POSITIONABLE)">Wrapper.Positionable#POSITIONABLE</a>
+     , inherits from <a href="Wrapper.Identifiable.html##(IDENTIFIABLE)">Wrapper.Identifiable#IDENTIFIABLE</a>
+     , inherits from <a href="Wrapper.Object.html##(OBJECT)">Wrapper.Object#OBJECT</a>
+</h2>
 <div class="fields">
   <h3>Field(s)</h3>
 </div>
@@ -1265,7 +2241,7 @@ which are excellent tools to be reused in an OO environment!.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetDCSObject')">
-<h6><a id="#(SCENERY).GetDCSObject" ><strong>SCENERY:GetDCSObject()</strong></a></h6>
+<h4><a id="#(SCENERY).GetDCSObject" ><strong>SCENERY:GetDCSObject()</strong></a></h4>
 </div>
     
 
@@ -1282,7 +2258,7 @@ which are excellent tools to be reused in an OO environment!.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetThreatLevel')">
-<h6><a id="#(SCENERY).GetThreatLevel" ><strong>SCENERY:GetThreatLevel()</strong></a></h6>
+<h4><a id="#(SCENERY).GetThreatLevel" ><strong>SCENERY:GetThreatLevel()</strong></a></h4>
 </div>
     
 
@@ -1299,14 +2275,14 @@ which are excellent tools to be reused in an OO environment!.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Register')">
-<h6><a id="#(SCENERY).Register" ><strong>SCENERY:Register(SceneryName, SceneryObject)</strong></a></h6>
+<h4><a id="#(SCENERY).Register" ><strong>SCENERY:Register(SceneryName, SceneryObject)</strong></a></h4>
 </div>
     
 
 
 <div id= "#Functions##Register" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1320,6 +2296,5435 @@ which are excellent tools to be reused in an OO environment!.</p>
       <div class="w3-row">
         <div class="w3-half">
         <strong>SceneryObject</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddCargo')">
+<h4><a id="#(SCENERY).AddCargo" ><strong>SCENERY:AddCargo(Cargo)</strong></a></h4>
+</div>
+    
+<p>Add cargo.</p>
+
+<div id= "#Functions##AddCargo" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Cargo.html##(CARGO)">Core.Cargo#CARGO</a>
+        <strong>Cargo</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(POSITIONABLE)">#POSITIONABLE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CargoItemCount')">
+<h4><a id="#(SCENERY).CargoItemCount" ><strong>SCENERY:CargoItemCount()</strong></a></h4>
+</div>
+    
+<p>Get cargo item count.</p>
+
+<div id= "#Functions##CargoItemCount" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Cargo.html##(CARGO)">Core.Cargo#CARGO</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>Cargo</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearCargo')">
+<h4><a id="#(SCENERY).ClearCargo" ><strong>SCENERY:ClearCargo()</strong></a></h4>
+</div>
+    
+<p>Clear all cargo.</p>
+
+<div id= "#Functions##ClearCargo" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Destroy')">
+<h4><a id="#(SCENERY).Destroy" ><strong>SCENERY:Destroy(GenerateEvent)</strong></a></h4>
+</div>
+    
+<p>Destroys the POSITIONABLE.</p>
+
+<div id= "#Functions##Destroy" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>GenerateEvent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(Optional) true if you want to generate a crash or dead event for the unit.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #nil:
+      </div>
+      <div class="w3-half">
+        
+<p>The DCS Unit is not existing or alive.  </p>
+
+      </div>
+    </div>
+      <h3><strong>Usages:</strong></h3>
+    <ul>
+      <li><pre class="example"><code>-- Air unit example: destroy the Helicopter and generate a S_EVENT_CRASH for each unit in the Helicopter group.
+Helicopter = UNIT:FindByName( "Helicopter" )
+Helicopter:Destroy( true )</code></pre></li>
+      <li><pre class="example"><code>-- Ground unit example: destroy the Tanks and generate a S_EVENT_DEAD for each unit in the Tanks group.
+Tanks = UNIT:FindByName( "Tanks" )
+Tanks:Destroy( true )</code></pre></li>
+      <li><pre class="example"><code>-- Ship unit example: destroy the Ship silently.
+Ship = STATIC:FindByName( "Ship" )
+Ship:Destroy()
+</code></pre></li>
+      <li><pre class="example"><code>-- Destroy without event generation example.
+Ship = STATIC:FindByName( "Boat" )
+Ship:Destroy( false ) -- Don't generate an event upon destruction.
+</code></pre></li>
+    </ul>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Flare')">
+<h4><a id="#(SCENERY).Flare" ><strong>SCENERY:Flare(FlareColor)</strong></a></h4>
+</div>
+    
+<p>Signal a flare at the position of the POSITIONABLE.</p>
+
+<div id= "#Functions##Flare" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Utilities.Utils.html##(FLARECOLOR)">Utilities.Utils#FLARECOLOR</a>
+        <strong>FlareColor</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##FlareGreen')">
+<h4><a id="#(SCENERY).FlareGreen" ><strong>SCENERY:FlareGreen()</strong></a></h4>
+</div>
+    
+<p>Signal a green flare at the position of the POSITIONABLE.</p>
+
+<div id= "#Functions##FlareGreen" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##FlareRed')">
+<h4><a id="#(SCENERY).FlareRed" ><strong>SCENERY:FlareRed()</strong></a></h4>
+</div>
+    
+<p>Signal a red flare at the position of the POSITIONABLE.</p>
+
+<div id= "#Functions##FlareRed" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##FlareWhite')">
+<h4><a id="#(SCENERY).FlareWhite" ><strong>SCENERY:FlareWhite()</strong></a></h4>
+</div>
+    
+<p>Signal a white flare at the position of the POSITIONABLE.</p>
+
+<div id= "#Functions##FlareWhite" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##FlareYellow')">
+<h4><a id="#(SCENERY).FlareYellow" ><strong>SCENERY:FlareYellow()</strong></a></h4>
+</div>
+    
+<p>Signal a yellow flare at the position of the POSITIONABLE.</p>
+
+<div id= "#Functions##FlareYellow" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetAltitude')">
+<h4><a id="#(SCENERY).GetAltitude" ><strong>SCENERY:GetAltitude()</strong></a></h4>
+</div>
+    
+<p>Returns the altitude of the POSITIONABLE.</p>
+
+<div id= "#Functions##GetAltitude" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Distance)">DCS#Distance</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>The altitude of the POSITIONABLE.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetBeacon')">
+<h4><a id="#(SCENERY).GetBeacon" ><strong>SCENERY:GetBeacon()</strong></a></h4>
+</div>
+    
+<p>Create a <a href="Core.Radio.html##(BEACON)">Core.Radio#BEACON</a>, to allow this POSITIONABLE to broadcast beacon signals</p>
+
+<div id= "#Functions##GetBeacon" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Radio.html##(RADIO)">Core.Radio#RADIO</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>Radio</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetBoundingBox')">
+<h4><a id="#(SCENERY).GetBoundingBox" ><strong>SCENERY:GetBoundingBox()</strong></a></h4>
+</div>
+    
+<p>Get the bounding box of the underlying POSITIONABLE DCS Object.</p>
+
+<div id= "#Functions##GetBoundingBox" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Box3)">DCS#Box3</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>The bounding box of the POSITIONABLE.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetBoundingRadius')">
+<h4><a id="#(SCENERY).GetBoundingRadius" ><strong>SCENERY:GetBoundingRadius()</strong></a></h4>
+</div>
+    
+<p>Get the bounding radius of the underlying POSITIONABLE DCS Object.</p>
+
+<div id= "#Functions##GetBoundingRadius" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Distance)">DCS#Distance</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>The bounding radius of the POSITIONABLE.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetCargo')">
+<h4><a id="#(SCENERY).GetCargo" ><strong>SCENERY:GetCargo()</strong></a></h4>
+</div>
+    
+<p>Get all contained cargo.</p>
+
+<div id= "#Functions##GetCargo" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(POSITIONABLE)">#POSITIONABLE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetCargoBayFreeWeight')">
+<h4><a id="#(SCENERY).GetCargoBayFreeWeight" ><strong>SCENERY:GetCargoBayFreeWeight()</strong></a></h4>
+</div>
+    
+<p>Get Cargo Bay Free Weight in kg.</p>
+
+<div id= "#Functions##GetCargoBayFreeWeight" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>CargoBayFreeWeight</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetCoordinate')">
+<h4><a id="#(SCENERY).GetCoordinate" ><strong>SCENERY:GetCoordinate()</strong></a></h4>
+</div>
+    
+<p>Returns a COORDINATE object indicating the point in 3D of the POSITIONABLE within the mission.</p>
+
+<div id= "#Functions##GetCoordinate" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>The COORDINATE of the POSITIONABLE.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetHeading')">
+<h4><a id="#(SCENERY).GetHeading" ><strong>SCENERY:GetHeading()</strong></a></h4>
+</div>
+    
+<p>Returns the POSITIONABLE heading in degrees.</p>
+
+<div id= "#Functions##GetHeading" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          #number:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE heading</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE is not existing or alive.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetHeight')">
+<h4><a id="#(SCENERY).GetHeight" ><strong>SCENERY:GetHeight()</strong></a></h4>
+</div>
+    
+<p>Returns the POSITIONABLE height in meters.</p>
+
+<div id= "#Functions##GetHeight" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Vec3)">DCS#Vec3</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>The height of the positionable.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetLaserCode')">
+<h4><a id="#(SCENERY).GetLaserCode" ><strong>SCENERY:GetLaserCode()</strong></a></h4>
+</div>
+    
+<p>Get the last assigned laser code</p>
+
+<div id= "#Functions##GetLaserCode" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The laser code</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMessage')">
+<h4><a id="#(SCENERY).GetMessage" ><strong>SCENERY:GetMessage(Message, Duration, Name)</strong></a></h4>
+</div>
+    
+<p>Returns a message with the callsign embedded (if there is one).</p>
+
+<div id= "#Functions##GetMessage" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Message</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The message text</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Duration)">DCS#Duration</a>
+        <strong>Duration</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The duration of the message.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Name</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The Name of the sender. If not provided, the Name is the type of the Positionable.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Message.html##(MESSAGE)">Core.Message#MESSAGE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMessageText')">
+<h4><a id="#(SCENERY).GetMessageText" ><strong>SCENERY:GetMessageText(Message, Name)</strong></a></h4>
+</div>
+    
+<p>Returns the message text with the callsign embedded (if there is one).</p>
+
+<div id= "#Functions##GetMessageText" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Message</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The message text</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Name</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The Name of the sender. If not provided, the Name is the type of the Positionable.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The message text</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMessageType')">
+<h4><a id="#(SCENERY).GetMessageType" ><strong>SCENERY:GetMessageType(Message, MessageType, Name)</strong></a></h4>
+</div>
+    
+<p>Returns a message of a specified type with the callsign embedded (if there is one).</p>
+
+<div id= "#Functions##GetMessageType" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Message</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The message text</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Message.html##(MESSAGE)">Core.Message#MESSAGE</a>
+        <strong>MessageType</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>MessageType The message type.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Name</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The Name of the sender. If not provided, the Name is the type of the Positionable.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Message.html##(MESSAGE)">Core.Message#MESSAGE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetPointVec2')">
+<h4><a id="#(SCENERY).GetPointVec2" ><strong>SCENERY:GetPointVec2()</strong></a></h4>
+</div>
+    
+<p>Returns a POINT_VEC2 object indicating the point in 2D of the POSITIONABLE within the mission.</p>
+
+<div id= "#Functions##GetPointVec2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Point.html##(POINT_VEC2)">Core.Point#POINT_VEC2</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>The 2D point vector of the POSITIONABLE.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetPointVec3')">
+<h4><a id="#(SCENERY).GetPointVec3" ><strong>SCENERY:GetPointVec3()</strong></a></h4>
+</div>
+    
+<p>Returns a POINT_VEC3 object indicating the point in 3D of the POSITIONABLE within the mission.</p>
+
+<div id= "#Functions##GetPointVec3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Point.html##(POINT_VEC3)">Core.Point#POINT_VEC3</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>The 3D point vector of the POSITIONABLE.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetPositionVec3')">
+<h4><a id="#(SCENERY).GetPositionVec3" ><strong>SCENERY:GetPositionVec3()</strong></a></h4>
+</div>
+    
+<p>Returns the <a href="DCS.html##(Position3)">DCS#Position3</a> position vectors indicating the point and direction vectors in 3D of the POSITIONABLE within the mission.</p>
+
+<div id= "#Functions##GetPositionVec3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Position)">DCS#Position</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>The 3D position vectors of the POSITIONABLE.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetRadio')">
+<h4><a id="#(SCENERY).GetRadio" ><strong>SCENERY:GetRadio()</strong></a></h4>
+</div>
+    
+<p>Create a <a href="Core.Radio.html##(RADIO)">Core.Radio#RADIO</a>, to allow radio transmission for this POSITIONABLE.</p>
+
+    
+<p>Set parameters with the methods provided, then use RADIO:Broadcast() to actually broadcast the message</p>
+
+<div id= "#Functions##GetRadio" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Radio.html##(RADIO)">Core.Radio#RADIO</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>Radio</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetRandomVec3')">
+<h4><a id="#(SCENERY).GetRandomVec3" ><strong>SCENERY:GetRandomVec3(Radius)</strong></a></h4>
+</div>
+    
+<p>Returns a random <a href="DCS.html##(Vec3)">DCS#Vec3</a> vector within a range, indicating the point in 3D of the POSITIONABLE within the mission.</p>
+
+<div id= "#Functions##GetRandomVec3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Radius</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Vec3)">DCS#Vec3</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>The 3D point vector of the POSITIONABLE.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE is not existing or alive.  </p>
+
+        </div>
+    </div>
+      <h3><strong>Usage:</strong></h3>
+    <pre class="example"><code>
+-- If Radius is ignored, returns the DCS#Vec3 of first UNIT of the GROUP</code></pre>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetSize')">
+<h4><a id="#(SCENERY).GetSize" ><strong>SCENERY:GetSize()</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##GetSize" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetSpot')">
+<h4><a id="#(SCENERY).GetSpot" ><strong>SCENERY:GetSpot()</strong></a></h4>
+</div>
+    
+<p>Get the Spot</p>
+
+<div id= "#Functions##GetSpot" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Spot.html##(SPOT)">Core.Spot#SPOT</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>The Spot</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetVec2')">
+<h4><a id="#(SCENERY).GetVec2" ><strong>SCENERY:GetVec2()</strong></a></h4>
+</div>
+    
+<p>Returns the <a href="DCS.html##(Vec2)">DCS#Vec2</a> vector indicating the point in 2D of the POSITIONABLE within the mission.</p>
+
+<div id= "#Functions##GetVec2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Vec2)">DCS#Vec2</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>The 2D point vector of the POSITIONABLE.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetVec3')">
+<h4><a id="#(SCENERY).GetVec3" ><strong>SCENERY:GetVec3()</strong></a></h4>
+</div>
+    
+<p>Returns the <a href="DCS.html##(Vec3)">DCS#Vec3</a> vector indicating the 3D vector of the POSITIONABLE within the mission.</p>
+
+<div id= "#Functions##GetVec3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Vec3)">DCS#Vec3</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>The 3D point vector of the POSITIONABLE.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetVelocity')">
+<h4><a id="#(SCENERY).GetVelocity" ><strong>SCENERY:GetVelocity()</strong></a></h4>
+</div>
+    
+<p>Returns the a <a href="Velocity.html">Velocity</a> object from the positionable.</p>
+
+<div id= "#Functions##GetVelocity" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Velocity.html##(VELOCITY)">Core.Velocity#VELOCITY</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>Velocity The Velocity object.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetVelocityKMH')">
+<h4><a id="#(SCENERY).GetVelocityKMH" ><strong>SCENERY:GetVelocityKMH()</strong></a></h4>
+</div>
+    
+<p>Returns the POSITIONABLE velocity in km/h.</p>
+
+<div id= "#Functions##GetVelocityKMH" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The velocity in km/h</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetVelocityMPS')">
+<h4><a id="#(SCENERY).GetVelocityMPS" ><strong>SCENERY:GetVelocityMPS()</strong></a></h4>
+</div>
+    
+<p>Returns the POSITIONABLE velocity in meters per second.</p>
+
+<div id= "#Functions##GetVelocityMPS" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The velocity in meters per second.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetVelocityVec3')">
+<h4><a id="#(SCENERY).GetVelocityVec3" ><strong>SCENERY:GetVelocityVec3()</strong></a></h4>
+</div>
+    
+<p>Returns the POSITIONABLE velocity Vec3 vector.</p>
+
+<div id= "#Functions##GetVelocityVec3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Vec3)">DCS#Vec3</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>The velocity Vec3 vector</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##HasCargo')">
+<h4><a id="#(SCENERY).HasCargo" ><strong>SCENERY:HasCargo(Cargo)</strong></a></h4>
+</div>
+    
+<p>Returns if carrier has given cargo.</p>
+
+<div id= "#Functions##HasCargo" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Cargo</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Cargo.html##(CARGO)">Core.Cargo#CARGO</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>Cargo</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##InAir')">
+<h4><a id="#(SCENERY).InAir" ><strong>SCENERY:InAir()</strong></a></h4>
+</div>
+    
+<p>Returns true if the POSITIONABLE is in the air.</p>
+
+    
+<p>Polymorphic, is overridden in GROUP and UNIT.</p>
+
+<div id= "#Functions##InAir" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          #boolean:
+        </div>
+        <div class="w3-half">
+          
+<p>true if in the air.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsAboveRunway')">
+<h4><a id="#(SCENERY).IsAboveRunway" ><strong>SCENERY:IsAboveRunway()</strong></a></h4>
+</div>
+    
+<p>Returns if the Positionable is located above a runway.</p>
+
+<div id= "#Functions##IsAboveRunway" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          #boolean:
+        </div>
+        <div class="w3-half">
+          
+<p>true if Positionable is above a runway.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsAir')">
+<h4><a id="#(SCENERY).IsAir" ><strong>SCENERY:IsAir()</strong></a></h4>
+</div>
+    
+<p>Returns if the unit is of an air category.</p>
+
+    
+<p>If the unit is a helicopter or a plane, then this method will return true, otherwise false.</p>
+
+<div id= "#Functions##IsAir" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+<p>Air category evaluation result.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsCargoEmpty')">
+<h4><a id="#(SCENERY).IsCargoEmpty" ><strong>SCENERY:IsCargoEmpty()</strong></a></h4>
+</div>
+    
+<p>Is cargo bay empty.</p>
+
+<div id= "#Functions##IsCargoEmpty" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsGround')">
+<h4><a id="#(SCENERY).IsGround" ><strong>SCENERY:IsGround()</strong></a></h4>
+</div>
+    
+<p>Returns if the unit is of an ground category.</p>
+
+    
+<p>If the unit is a ground vehicle or infantry, this method will return true, otherwise false.</p>
+
+<div id= "#Functions##IsGround" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+<p>Ground category evaluation result.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsLasing')">
+<h4><a id="#(SCENERY).IsLasing" ><strong>SCENERY:IsLasing()</strong></a></h4>
+</div>
+    
+<p>Check if the POSITIONABLE is lasing a target</p>
+
+<div id= "#Functions##IsLasing" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+<p>true if it is lasing a target</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##LaseOff')">
+<h4><a id="#(SCENERY).LaseOff" ><strong>SCENERY:LaseOff()</strong></a></h4>
+</div>
+    
+<p>Stop Lasing a POSITIONABLE</p>
+
+<div id= "#Functions##LaseOff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(POSITIONABLE)">#POSITIONABLE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##LaseUnit')">
+<h4><a id="#(SCENERY).LaseUnit" ><strong>SCENERY:LaseUnit(Target, LaserCode, Duration)</strong></a></h4>
+</div>
+    
+<p>Start Lasing a POSITIONABLE</p>
+
+<div id= "#Functions##LaseUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(POSITIONABLE)">#POSITIONABLE</a>
+        <strong>Target</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>LaserCode</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Duration</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Spot.html##(SPOT)">Core.Spot#SPOT</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Message')">
+<h4><a id="#(SCENERY).Message" ><strong>SCENERY:Message(Message, Duration, Name)</strong></a></h4>
+</div>
+    
+<p>Send a message to the players in the <a href="Wrapper.Group.html">Wrapper.Group</a>.</p>
+
+    
+<p>The message will appear in the message area. The message will begin with the callsign of the group and the type of the first unit sending the message.</p>
+
+<div id= "#Functions##Message" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Message</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The message text</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Duration)">DCS#Duration</a>
+        <strong>Duration</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The duration of the message.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Name</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The Name of the sender. If not provided, the Name is the type of the Positionable.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageToAll')">
+<h4><a id="#(SCENERY).MessageToAll" ><strong>SCENERY:MessageToAll(Message, Duration, Name)</strong></a></h4>
+</div>
+    
+<p>Send a message to all coalitions.</p>
+
+    
+<p>The message will appear in the message area. The message will begin with the callsign of the group and the type of the first unit sending the message.</p>
+
+<div id= "#Functions##MessageToAll" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Message</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The message text</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Duration)">DCS#Duration</a>
+        <strong>Duration</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The duration of the message.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Name</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The Name of the sender. If not provided, the Name is the type of the Positionable.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageToBlue')">
+<h4><a id="#(SCENERY).MessageToBlue" ><strong>SCENERY:MessageToBlue(Message, Duration, Name)</strong></a></h4>
+</div>
+    
+<p>Send a message to the blue coalition.</p>
+
+    
+<p>The message will appear in the message area. The message will begin with the callsign of the group and the type of the first unit sending the message.</p>
+
+<div id= "#Functions##MessageToBlue" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Message</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The message text</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Duration)">DCS#Duration</a>
+        <strong>Duration</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The duration of the message.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Name</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The Name of the sender. If not provided, the Name is the type of the Positionable.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageToClient')">
+<h4><a id="#(SCENERY).MessageToClient" ><strong>SCENERY:MessageToClient(Message, Duration, Client, Name)</strong></a></h4>
+</div>
+    
+<p>Send a message to a client.</p>
+
+    
+<p>The message will appear in the message area. The message will begin with the callsign of the group and the type of the first unit sending the message.</p>
+
+<div id= "#Functions##MessageToClient" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Message</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The message text</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Duration)">DCS#Duration</a>
+        <strong>Duration</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The duration of the message.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Client.html##(CLIENT)">Wrapper.Client#CLIENT</a>
+        <strong>Client</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The client object receiving the message.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Name</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The Name of the sender. If not provided, the Name is the type of the Positionable.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageToCoalition')">
+<h4><a id="#(SCENERY).MessageToCoalition" ><strong>SCENERY:MessageToCoalition(Message, Duration, MessageCoalition, Name)</strong></a></h4>
+</div>
+    
+<p>Send a message to a coalition.</p>
+
+    
+<p>The message will appear in the message area. The message will begin with the callsign of the group and the type of the first unit sending the message.</p>
+
+<div id= "#Functions##MessageToCoalition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Message</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The message text</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Duration)">DCS#Duration</a>
+        <strong>Duration</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The duration of the message.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(coalition)">DCS#coalition</a>
+        <strong>MessageCoalition</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The Coalition receiving the message.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Name</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The Name of the sender. If not provided, the Name is the type of the Positionable.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageToGroup')">
+<h4><a id="#(SCENERY).MessageToGroup" ><strong>SCENERY:MessageToGroup(Message, Duration, MessageGroup, Name)</strong></a></h4>
+</div>
+    
+<p>Send a message to a <a href="Wrapper.Group.html">Wrapper.Group</a>.</p>
+
+    
+<p>The message will appear in the message area. The message will begin with the callsign of the group and the type of the first unit sending the message.</p>
+
+<div id= "#Functions##MessageToGroup" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Message</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The message text</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Duration)">DCS#Duration</a>
+        <strong>Duration</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The duration of the message.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+        <strong>MessageGroup</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The GROUP object receiving the message.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Name</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The Name of the sender. If not provided, the Name is the type of the Positionable.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageToRed')">
+<h4><a id="#(SCENERY).MessageToRed" ><strong>SCENERY:MessageToRed(Message, Duration, Name)</strong></a></h4>
+</div>
+    
+<p>Send a message to the red coalition.</p>
+
+    
+<p>The message will appear in the message area. The message will begin with the callsign of the group and the type of the first unit sending the message.</p>
+
+<div id= "#Functions##MessageToRed" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Message</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The message text</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Duration)">DCS#Duration</a>
+        <strong>Duration</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The duration of the message.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Name</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The Name of the sender. If not provided, the Name is the type of the Positionable.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageToSetGroup')">
+<h4><a id="#(SCENERY).MessageToSetGroup" ><strong>SCENERY:MessageToSetGroup(Message, Duration, MessageSetGroup, Name)</strong></a></h4>
+</div>
+    
+<p>Send a message to a <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>.</p>
+
+    
+<p>The message will appear in the message area. The message will begin with the callsign of the group and the type of the first unit sending the message.</p>
+
+<div id= "#Functions##MessageToSetGroup" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Message</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The message text</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Duration)">DCS#Duration</a>
+        <strong>Duration</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The duration of the message.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+        <strong>MessageSetGroup</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The SET_GROUP collection receiving the message.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Name</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The Name of the sender. If not provided, the Name is the type of the Positionable.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageTypeToCoalition')">
+<h4><a id="#(SCENERY).MessageTypeToCoalition" ><strong>SCENERY:MessageTypeToCoalition(Message, MessageType, MessageCoalition, Name)</strong></a></h4>
+</div>
+    
+<p>Send a message to a coalition.</p>
+
+    
+<p>The message will appear in the message area. The message will begin with the callsign of the group and the type of the first unit sending the message.</p>
+
+<div id= "#Functions##MessageTypeToCoalition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Message</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The message text</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Message.html##(MESSAGE.Type)">Core.Message#MESSAGE.Type</a>
+        <strong>MessageType</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The message type that determines the duration.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(coalition)">DCS#coalition</a>
+        <strong>MessageCoalition</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The Coalition receiving the message.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Name</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The Name of the sender. If not provided, the Name is the type of the Positionable.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageTypeToGroup')">
+<h4><a id="#(SCENERY).MessageTypeToGroup" ><strong>SCENERY:MessageTypeToGroup(Message, MessageType, MessageGroup, Name)</strong></a></h4>
+</div>
+    
+<p>Send a message of a message type to a <a href="Wrapper.Group.html">Wrapper.Group</a>.</p>
+
+    
+<p>The message will appear in the message area. The message will begin with the callsign of the group and the type of the first unit sending the message.</p>
+
+<div id= "#Functions##MessageTypeToGroup" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Message</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The message text</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Message.html##(MESSAGE.Type)">Core.Message#MESSAGE.Type</a>
+        <strong>MessageType</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The message type that determines the duration.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+        <strong>MessageGroup</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The GROUP object receiving the message.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Name</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The Name of the sender. If not provided, the Name is the type of the Positionable.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(SCENERY).New" ><strong>SCENERY:New(PositionableName)</strong></a></h4>
+</div>
+    
+<p>Create a new POSITIONABLE from a DCSPositionable</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>PositionableName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The POSITIONABLE name</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(POSITIONABLE)">#POSITIONABLE</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RemoveCargo')">
+<h4><a id="#(SCENERY).RemoveCargo" ><strong>SCENERY:RemoveCargo(Cargo)</strong></a></h4>
+</div>
+    
+<p>Remove cargo.</p>
+
+<div id= "#Functions##RemoveCargo" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Cargo.html##(CARGO)">Core.Cargo#CARGO</a>
+        <strong>Cargo</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(POSITIONABLE)">#POSITIONABLE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetCargoBayWeightLimit')">
+<h4><a id="#(SCENERY).SetCargoBayWeightLimit" ><strong>SCENERY:SetCargoBayWeightLimit(WeightLimit)</strong></a></h4>
+</div>
+    
+<p>Set Cargo Bay Weight Limit in kg.</p>
+
+<div id= "#Functions##SetCargoBayWeightLimit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>WeightLimit</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Smoke')">
+<h4><a id="#(SCENERY).Smoke" ><strong>SCENERY:Smoke(SmokeColor, Range, AddHeight)</strong></a></h4>
+</div>
+    
+<p>Smoke the POSITIONABLE.</p>
+
+<div id= "#Functions##Smoke" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Utilities.Utils.html##(SMOKECOLOR)">Utilities.Utils#SMOKECOLOR</a>
+        <strong>SmokeColor</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The color to smoke to positionable.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Range</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The range in meters to randomize the smoking around the positionable.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>AddHeight</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The height in meters to add to the altitude of the positionable.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SmokeBlue')">
+<h4><a id="#(SCENERY).SmokeBlue" ><strong>SCENERY:SmokeBlue()</strong></a></h4>
+</div>
+    
+<p>Smoke the POSITIONABLE Blue.</p>
+
+<div id= "#Functions##SmokeBlue" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SmokeGreen')">
+<h4><a id="#(SCENERY).SmokeGreen" ><strong>SCENERY:SmokeGreen()</strong></a></h4>
+</div>
+    
+<p>Smoke the POSITIONABLE Green.</p>
+
+<div id= "#Functions##SmokeGreen" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SmokeOrange')">
+<h4><a id="#(SCENERY).SmokeOrange" ><strong>SCENERY:SmokeOrange()</strong></a></h4>
+</div>
+    
+<p>Smoke the POSITIONABLE Orange.</p>
+
+<div id= "#Functions##SmokeOrange" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SmokeRed')">
+<h4><a id="#(SCENERY).SmokeRed" ><strong>SCENERY:SmokeRed()</strong></a></h4>
+</div>
+    
+<p>Smoke the POSITIONABLE Red.</p>
+
+<div id= "#Functions##SmokeRed" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SmokeWhite')">
+<h4><a id="#(SCENERY).SmokeWhite" ><strong>SCENERY:SmokeWhite()</strong></a></h4>
+</div>
+    
+<p>Smoke the POSITIONABLE White.</p>
+
+<div id= "#Functions##SmokeWhite" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetCallsign')">
+<h4><a id="#(SCENERY).GetCallsign" ><strong>SCENERY:GetCallsign()</strong></a></h4>
+</div>
+    
+<p>Gets the CallSign of the IDENTIFIABLE, which is a blank by default.</p>
+
+<div id= "#Functions##GetCallsign" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The CallSign of the IDENTIFIABLE.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetCategory')">
+<h4><a id="#(SCENERY).GetCategory" ><strong>SCENERY:GetCategory()</strong></a></h4>
+</div>
+    
+<p>Returns category of the DCS Identifiable.</p>
+
+<div id= "#Functions##GetCategory" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="DCS.html##(Object.Category)">DCS#Object.Category</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>The category ID</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetCategoryName')">
+<h4><a id="#(SCENERY).GetCategoryName" ><strong>SCENERY:GetCategoryName()</strong></a></h4>
+</div>
+    
+<p>Returns the DCS Identifiable category name as defined within the DCS Identifiable Descriptor.</p>
+
+<div id= "#Functions##GetCategoryName" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The DCS Identifiable Category Name</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetCoalition')">
+<h4><a id="#(SCENERY).GetCoalition" ><strong>SCENERY:GetCoalition()</strong></a></h4>
+</div>
+    
+<p>Returns coalition of the Identifiable.</p>
+
+<div id= "#Functions##GetCoalition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(coalition.side)">DCS#coalition.side</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>The side of the coalition.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The DCS Identifiable is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetCoalitionName')">
+<h4><a id="#(SCENERY).GetCoalitionName" ><strong>SCENERY:GetCoalitionName()</strong></a></h4>
+</div>
+    
+<p>Returns the name of the coalition of the Identifiable.</p>
+
+<div id= "#Functions##GetCoalitionName" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          #string:
+        </div>
+        <div class="w3-half">
+          
+<p>The name of the coalition.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The DCS Identifiable is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetCountry')">
+<h4><a id="#(SCENERY).GetCountry" ><strong>SCENERY:GetCountry()</strong></a></h4>
+</div>
+    
+<p>Returns country of the Identifiable.</p>
+
+<div id= "#Functions##GetCountry" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(country.id)">DCS#country.id</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>The country identifier.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The DCS Identifiable is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetCountryName')">
+<h4><a id="#(SCENERY).GetCountryName" ><strong>SCENERY:GetCountryName()</strong></a></h4>
+</div>
+    
+<p>Returns country name of the Identifiable.</p>
+
+<div id= "#Functions##GetCountryName" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>Name of the country.  </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetDesc')">
+<h4><a id="#(SCENERY).GetDesc" ><strong>SCENERY:GetDesc()</strong></a></h4>
+</div>
+    
+<p>Returns Identifiable descriptor.</p>
+
+    
+<p>Descriptor type depends on Identifiable category.</p>
+
+<div id= "#Functions##GetDesc" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object.Desc)">DCS#Object.Desc</a>:
+        </div>
+        <div class="w3-half">
+          
+<p>The Identifiable descriptor.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The DCS Identifiable is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetName')">
+<h4><a id="#(SCENERY).GetName" ><strong>SCENERY:GetName()</strong></a></h4>
+</div>
+    
+<p>Returns DCS Identifiable object name.</p>
+
+    
+<p>The function provides access to non-activated objects too.</p>
+
+<div id= "#Functions##GetName" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          #string:
+        </div>
+        <div class="w3-half">
+          
+<p>The name of the DCS Identifiable.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The DCS Identifiable is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetThreatLevel')">
+<h4><a id="#(SCENERY).GetThreatLevel" ><strong>SCENERY:GetThreatLevel()</strong></a></h4>
+</div>
+    
+
+
+<div id= "#Functions##GetThreatLevel" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetTypeName')">
+<h4><a id="#(SCENERY).GetTypeName" ><strong>SCENERY:GetTypeName()</strong></a></h4>
+</div>
+    
+<p>Returns the type name of the DCS Identifiable.</p>
+
+<div id= "#Functions##GetTypeName" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          #string:
+        </div>
+        <div class="w3-half">
+          
+<p>The type name of the DCS Identifiable.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The DCS Identifiable is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##HasAttribute')">
+<h4><a id="#(SCENERY).HasAttribute" ><strong>SCENERY:HasAttribute(AttributeName)</strong></a></h4>
+</div>
+    
+<p>Check if the Object has the attribute.</p>
+
+<div id= "#Functions##HasAttribute" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>AttributeName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The attribute name.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          #boolean:
+        </div>
+        <div class="w3-half">
+          
+<p>true if the attribute exists.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The DCS Identifiable is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsAlive')">
+<h4><a id="#(SCENERY).IsAlive" ><strong>SCENERY:IsAlive()</strong></a></h4>
+</div>
+    
+<p>Returns if the Identifiable is alive.</p>
+
+    
+<p>If the Identifiable is not alive, nil is returned. <br/>
+If the Identifiable is alive, true is returned.  </p>
+
+<div id= "#Functions##IsAlive" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          #boolean:
+        </div>
+        <div class="w3-half">
+          
+<p>true if Identifiable is alive.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>if the Identifiable is not existing or is not alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(SCENERY).New" ><strong>SCENERY:New(IdentifiableName)</strong></a></h4>
+</div>
+    
+<p>Create a new IDENTIFIABLE from a DCSIdentifiable</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>IdentifiableName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The DCS Identifiable name</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(IDENTIFIABLE)">#IDENTIFIABLE</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Destroy')">
+<h4><a id="#(SCENERY).Destroy" ><strong>SCENERY:Destroy()</strong></a></h4>
+</div>
+    
+<p>Destroys the OBJECT.</p>
+
+<div id= "#Functions##Destroy" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return values:</strong></h3>
+    <div class="w3-row">
+        <div class="w3-half">
+          #boolean:
+        </div>
+        <div class="w3-half">
+          
+<p>true if the object is destroyed.</p>
+
+        </div>
+        <div class="w3-half">
+          #nil:
+        </div>
+        <div class="w3-half">
+          
+<p>The DCS Unit is not existing or alive.  </p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetID')">
+<h4><a id="#(SCENERY).GetID" ><strong>SCENERY:GetID()</strong></a></h4>
+</div>
+    
+<p>Returns the unit's unique identifier.</p>
+
+<div id= "#Functions##GetID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="DCS.html##(Object.ID)">DCS#Object.ID</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>ObjectID or #nil if the DCS Object is not existing or alive. Note that the ID is passed as a string and not a number. </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(SCENERY).New" ><strong>SCENERY:New(ObjectName, Test)</strong></a></h4>
+</div>
+    
+<p>Create a new OBJECT from a DCSObject</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>ObjectName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The Object name</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Test</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(OBJECT)">#OBJECT</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>  
+<div class="fields">
+  <h3>Field(s)</h3>
+</div>
+<div class="functions">
+  <h3>Function(s)</h3>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearState')">
+<h4><a id="#(SCENERY).ClearState" ><strong>SCENERY:ClearState(Object, StateName)</strong></a></h4>
+</div>
+    
+<p>Clear the state of an object.</p>
+
+<div id= "#Functions##ClearState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that holds the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>StateName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is should be cleared.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventBirth')">
+<h4><a id="#(SCENERY).CreateEventBirth" ><strong>SCENERY:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</strong></a></h4>
+</div>
+    
+<p>Creation of a Birth Event.</p>
+
+<div id= "#Functions##CreateEventBirth" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>IniUnitName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating unit name.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>place</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>subplace</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventCrash')">
+<h4><a id="#(SCENERY).CreateEventCrash" ><strong>SCENERY:CreateEventCrash(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Crash Event.</p>
+
+<div id= "#Functions##CreateEventCrash" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventDead')">
+<h4><a id="#(SCENERY).CreateEventDead" ><strong>SCENERY:CreateEventDead(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Dead Event.</p>
+
+<div id= "#Functions##CreateEventDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventRemoveUnit')">
+<h4><a id="#(SCENERY).CreateEventRemoveUnit" ><strong>SCENERY:CreateEventRemoveUnit(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Remove Unit Event.</p>
+
+<div id= "#Functions##CreateEventRemoveUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventTakeoff')">
+<h4><a id="#(SCENERY).CreateEventTakeoff" ><strong>SCENERY:CreateEventTakeoff(EventTime, Initiator)</strong></a></h4>
+</div>
+    
+<p>Creation of a Takeoff Event.</p>
+
+<div id= "#Functions##CreateEventTakeoff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Time)">DCS#Time</a>
+        <strong>EventTime</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The time stamp of the event.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="DCS.html##(Object)">DCS#Object</a>
+        <strong>Initiator</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The initiating object of the event.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##E')">
+<h4><a id="#(SCENERY).E" ><strong>SCENERY:E(Arguments)</strong></a></h4>
+</div>
+    
+<p>Log an exception which will be traced always.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##E" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##EventDispatcher')">
+<h4><a id="#(SCENERY).EventDispatcher" ><strong>SCENERY:EventDispatcher()</strong></a></h4>
+</div>
+    
+<p>Returns the event dispatcher</p>
+
+<div id= "#Functions##EventDispatcher" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##EventRemoveAll')">
+<h4><a id="#(SCENERY).EventRemoveAll" ><strong>SCENERY:EventRemoveAll()</strong></a></h4>
+</div>
+    
+<p>Remove all subscribed events</p>
+
+<div id= "#Functions##EventRemoveAll" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F')">
+<h4><a id="#(SCENERY).F" ><strong>SCENERY:F(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F2')">
+<h4><a id="#(SCENERY).F2" ><strong>SCENERY:F2(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call level 2.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F3')">
+<h4><a id="#(SCENERY).F3" ><strong>SCENERY:F3(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function call level 3.</p>
+
+    
+<p>Must be at the beginning of the function logic.</p>
+
+<div id= "#Functions##F3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassID')">
+<h4><a id="#(SCENERY).GetClassID" ><strong>SCENERY:GetClassID()</strong></a></h4>
+</div>
+    
+<p>Get the ClassID of the class instance.</p>
+
+<div id= "#Functions##GetClassID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassID of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassName')">
+<h4><a id="#(SCENERY).GetClassName" ><strong>SCENERY:GetClassName()</strong></a></h4>
+</div>
+    
+<p>Get the ClassName of the class instance.</p>
+
+<div id= "#Functions##GetClassName" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassName of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassNameAndID')">
+<h4><a id="#(SCENERY).GetClassNameAndID" ><strong>SCENERY:GetClassNameAndID()</strong></a></h4>
+</div>
+    
+<p>Get the ClassName + ClassID of the class instance.</p>
+
+    
+<p>The ClassName + ClassID is formatted as '%s#%09d'. </p>
+
+<div id= "#Functions##GetClassNameAndID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #string:
+      </div>
+      <div class="w3-half">
+        
+<p>The ClassName + ClassID of the class instance.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetEventPriority')">
+<h4><a id="#(SCENERY).GetEventPriority" ><strong>SCENERY:GetEventPriority()</strong></a></h4>
+</div>
+    
+<p>Get the Class <a href="Event.html">Event</a> processing Priority.</p>
+
+    
+<p>The Event processing Priority is a number from 1 to 10, 
+reflecting the order of the classes subscribed to the Event to be processed.</p>
+
+<div id= "#Functions##GetEventPriority" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The <a href="Event.html">Event</a> processing Priority.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetParent')">
+<h4><a id="#(SCENERY).GetParent" ><strong>SCENERY:GetParent(Child, FromClass)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to retrieve the Parent class.</p>
+
+    
+<p>Note that the Parent class must be passed to call the parent class method.</p>
+
+<pre><code>self:GetParent(self):ParentMethod()
+
+
+</code></pre>
+
+<div id= "#Functions##GetParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(BASE)">#BASE</a>
+        <strong>Child</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Child class from which the Parent class needs to be retrieved.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>FromClass</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetState')">
+<h4><a id="#(SCENERY).GetState" ><strong>SCENERY:GetState(Object, Key)</strong></a></h4>
+</div>
+    
+<p>Get a Value given a Key from the Object.</p>
+
+    
+<p>Note that if the Object is destroyed, nillified or garbage collected, then the Values and Keys will also be gone.</p>
+
+<div id= "#Functions##GetState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that holds the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Key</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is used to retrieve the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>The Value retrieved or nil if the Key was not found and thus the Value could not be retrieved.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##HandleEvent')">
+<h4><a id="#(SCENERY).HandleEvent" ><strong>SCENERY:HandleEvent(Event, EventFunction)</strong></a></h4>
+</div>
+    
+<p>Subscribe to a DCS Event.</p>
+
+<div id= "#Functions##HandleEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTS)">Core.Event#EVENTS</a>
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>EventFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>(optional) The function to be called when the event occurs for the unit.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##I')">
+<h4><a id="#(SCENERY).I" ><strong>SCENERY:I(Arguments)</strong></a></h4>
+</div>
+    
+<p>Log an information which will be traced always.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##I" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Inherit')">
+<h4><a id="#(SCENERY).Inherit" ><strong>SCENERY:Inherit(Child, Parent)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to inherit from a parent class.</p>
+
+<div id= "#Functions##Inherit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Child</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Child class that inherits.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="##(BASE)">#BASE</a>
+        <strong>Parent</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the Parent class that the Child inherits from.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+<p>Child</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsInstanceOf')">
+<h4><a id="#(SCENERY).IsInstanceOf" ><strong>SCENERY:IsInstanceOf(ClassName)</strong></a></h4>
+</div>
+    
+<p>This is the worker method to check if an object is an (sub)instance of a class.</p>
+
+    
+
+<h3>Examples:</h3>
+
+<ul>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( ZONE ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'ZONE' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'zone' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'BASE' ) will return true</p></li>
+    <li><p>ZONE:New( 'some zone' ):IsInstanceOf( 'GROUP' ) will return false</p></li>
+</ul>
+
+
+<div id= "#Functions##IsInstanceOf" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>ClassName</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>is the name of the class or the class itself to run the check against</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsTrace')">
+<h4><a id="#(SCENERY).IsTrace" ><strong>SCENERY:IsTrace()</strong></a></h4>
+</div>
+    
+<p>Enquires if tracing is on (for the class).</p>
+
+<div id= "#Functions##IsTrace" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #boolean:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<h4><a id="#(SCENERY).New" ><strong>SCENERY:New()</strong></a></h4>
+</div>
+    
+<p>BASE constructor.</p>
+
+    
+
+<p>This is an example how to use the BASE:New() constructor in a new class definition when inheriting from BASE.</p>
+
+<pre><code>function EVENT:New()
+  local self = BASE:Inherit( self, BASE:New() ) -- #EVENT
+  return self
+end
+  
+</code></pre>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEvent')">
+<h4><a id="#(SCENERY).OnEvent" ><strong>SCENERY:OnEvent(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an object is completely destroyed.</p>
+
+    
+<p>initiator : The unit that is was destroyed. </p>
+
+<div id= "#Functions##OnEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBaseCaptured')">
+<h4><a id="#(SCENERY).OnEventBaseCaptured" ><strong>SCENERY:OnEventBaseCaptured(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a ground unit captures either an airbase or a farp.</p>
+
+    
+<p>initiator : The unit that captured the base
+place: The airbase that was captured, can be a FARP or Airbase. When calling place:getCoalition() the faction will already be the new owning faction. </p>
+
+<div id= "#Functions##OnEventBaseCaptured" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBirth')">
+<h4><a id="#(SCENERY).OnEventBirth" ><strong>SCENERY:OnEventBirth(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any object is spawned into the mission.</p>
+
+    
+<p>initiator : The unit that was spawned </p>
+
+<div id= "#Functions##OnEventBirth" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventCrash')">
+<h4><a id="#(SCENERY).OnEventCrash" ><strong>SCENERY:OnEventCrash(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
+
+    
+<p>initiator : The unit that has crashed </p>
+
+<div id= "#Functions##OnEventCrash" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventDead')">
+<h4><a id="#(SCENERY).OnEventDead" ><strong>SCENERY:OnEventDead(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an object is dead.</p>
+
+    
+<p>initiator : The unit that is dead. </p>
+
+<div id= "#Functions##OnEventDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEjection')">
+<h4><a id="#(SCENERY).OnEventEjection" ><strong>SCENERY:OnEventEjection(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a pilot ejects from an aircraft
+initiator : The unit that has ejected </p>
+
+<div id= "#Functions##OnEventEjection" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEngineShutdown')">
+<h4><a id="#(SCENERY).OnEventEngineShutdown" ><strong>SCENERY:OnEventEngineShutdown(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft shuts down its engines.</p>
+
+    
+<p>initiator : The unit that is stopping its engines. </p>
+
+<div id= "#Functions##OnEventEngineShutdown" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEngineStartup')">
+<h4><a id="#(SCENERY).OnEventEngineStartup" ><strong>SCENERY:OnEventEngineStartup(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any aircraft starts its engines.</p>
+
+    
+<p>initiator : The unit that is starting its engines. </p>
+
+<div id= "#Functions##OnEventEngineStartup" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventHit')">
+<h4><a id="#(SCENERY).OnEventHit" ><strong>SCENERY:OnEventHit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs whenever an object is hit by a weapon.</p>
+
+    
+<p>initiator : The unit object the fired the weapon
+weapon: Weapon object that hit the target
+target: The Object that was hit. </p>
+
+<div id= "#Functions##OnEventHit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventHumanFailure')">
+<h4><a id="#(SCENERY).OnEventHumanFailure" ><strong>SCENERY:OnEventHumanFailure(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any system fails on a human controlled aircraft.</p>
+
+    
+<p>initiator : The unit that had the failure </p>
+
+<div id= "#Functions##OnEventHumanFailure" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventLand')">
+<h4><a id="#(SCENERY).OnEventLand" ><strong>SCENERY:OnEventLand(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft lands at an airbase, farp or ship
+initiator : The unit that has landed
+place: Object that the unit landed on.</p>
+
+    
+<p>Can be an Airbase Object, FARP, or Ships </p>
+
+<div id= "#Functions##OnEventLand" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventMissionEnd')">
+<h4><a id="#(SCENERY).OnEventMissionEnd" ><strong>SCENERY:OnEventMissionEnd(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a mission ends</p>
+
+<div id= "#Functions##OnEventMissionEnd" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventMissionStart')">
+<h4><a id="#(SCENERY).OnEventMissionStart" ><strong>SCENERY:OnEventMissionStart(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when a mission starts </p>
+
+<div id= "#Functions##OnEventMissionStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPilotDead')">
+<h4><a id="#(SCENERY).OnEventPilotDead" ><strong>SCENERY:OnEventPilotDead(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when the pilot of an aircraft is killed.</p>
+
+    
+<p>Can occur either if the player is alive and crashes or if a weapon kills the pilot without completely destroying the plane.
+initiator : The unit that the pilot has died in. </p>
+
+<div id= "#Functions##OnEventPilotDead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPlayerEnterUnit')">
+<h4><a id="#(SCENERY).OnEventPlayerEnterUnit" ><strong>SCENERY:OnEventPlayerEnterUnit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any player assumes direct control of a unit.</p>
+
+    
+<p>initiator : The unit that is being taken control of. </p>
+
+<div id= "#Functions##OnEventPlayerEnterUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPlayerLeaveUnit')">
+<h4><a id="#(SCENERY).OnEventPlayerLeaveUnit" ><strong>SCENERY:OnEventPlayerLeaveUnit(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any player relieves control of a unit to the AI.</p>
+
+    
+<p>initiator : The unit that the player left. </p>
+
+<div id= "#Functions##OnEventPlayerLeaveUnit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventRefueling')">
+<h4><a id="#(SCENERY).OnEventRefueling" ><strong>SCENERY:OnEventRefueling(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
+
+    
+<p>initiator : The unit that is receiving fuel. </p>
+
+<div id= "#Functions##OnEventRefueling" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventRefuelingStop')">
+<h4><a id="#(SCENERY).OnEventRefuelingStop" ><strong>SCENERY:OnEventRefuelingStop(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft is finished taking fuel.</p>
+
+    
+<p>initiator : The unit that was receiving fuel. </p>
+
+<div id= "#Functions##OnEventRefuelingStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShootingEnd')">
+<h4><a id="#(SCENERY).OnEventShootingEnd" ><strong>SCENERY:OnEventShootingEnd(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any unit stops firing its weapon.</p>
+
+    
+<p>Event will always correspond with a shooting start event.
+initiator : The unit that was doing the shooing. </p>
+
+<div id= "#Functions##OnEventShootingEnd" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShootingStart')">
+<h4><a id="#(SCENERY).OnEventShootingStart" ><strong>SCENERY:OnEventShootingStart(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
+
+    
+<p>Most common with aircraft cannons (GAU-8), autocannons, and machine guns.
+initiator : The unit that is doing the shooing.
+target: The unit that is being targeted. </p>
+
+<div id= "#Functions##OnEventShootingStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShot')">
+<h4><a id="#(SCENERY).OnEventShot" ><strong>SCENERY:OnEventShot(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs whenever any unit in a mission fires a weapon.</p>
+
+    
+<p>But not any machine gun or autocannon based weapon, those are handled by EVENT.ShootingStart.</p>
+
+<div id= "#Functions##OnEventShot" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventTakeoff')">
+<h4><a id="#(SCENERY).OnEventTakeoff" ><strong>SCENERY:OnEventTakeoff(EventData)</strong></a></h4>
+</div>
+    
+<p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
+
+    
+<p>initiator : The unit that tookoff
+place: Object from where the AI took-off from. Can be an Airbase Object, FARP, or Ships </p>
+
+<div id= "#Functions##OnEventTakeoff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+        <strong>EventData</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The EventData structure.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleOnce')">
+<h4><a id="#(SCENERY).ScheduleOnce" ><strong>SCENERY:ScheduleOnce(Start, SchedulerFunction, ...)</strong></a></h4>
+</div>
+    
+<p>Schedule a new time event.</p>
+
+    
+<p>Note that the schedule will only take place if the scheduler is <em>started</em>. Even for a single schedule event, the scheduler needs to be started also.</p>
+
+<div id= "#Functions##ScheduleOnce" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Start</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds that will be waited before the scheduling is started, and the event function is called.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>...</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Optional arguments that can be given as part of scheduler. The arguments need to be given as a table { param1, param 2, ... }.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The ScheduleID of the planned schedule.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleRepeat')">
+<h4><a id="#(SCENERY).ScheduleRepeat" ><strong>SCENERY:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</strong></a></h4>
+</div>
+    
+<p>Schedule a new time event.</p>
+
+    
+<p>Note that the schedule will only take place if the scheduler is <em>started</em>. Even for a single schedule event, the scheduler needs to be started also.</p>
+
+<div id= "#Functions##ScheduleRepeat" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Start</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds that will be waited before the scheduling is started, and the event function is called.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Repeat</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the interval in seconds when the scheduler will call the event function.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>RandomizeFactor</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies a randomization factor between 0 and 1 to randomize the Repeat.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Stop</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Specifies the amount of seconds when the scheduler will be stopped.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #table
+        <strong>...</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Optional arguments that can be given as part of scheduler. The arguments need to be given as a table { param1, param 2, ... }.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        #number:
+      </div>
+      <div class="w3-half">
+        
+<p>The ScheduleID of the planned schedule.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleStop')">
+<h4><a id="#(SCENERY).ScheduleStop" ><strong>SCENERY:ScheduleStop(SchedulerFunction)</strong></a></h4>
+</div>
+    
+<p>Stops the Schedule.</p>
+
+<div id= "#Functions##ScheduleStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #function
+        <strong>SchedulerFunction</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The event function to be called when a timer event occurs. The event function needs to accept the parameters specified in SchedulerArguments.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetEventPriority')">
+<h4><a id="#(SCENERY).SetEventPriority" ><strong>SCENERY:SetEventPriority(EventPriority)</strong></a></h4>
+</div>
+    
+<p>Set the Class <a href="Event.html">Event</a> processing Priority.</p>
+
+    
+<p>The Event processing Priority is a number from 1 to 10, 
+reflecting the order of the classes subscribed to the Event to be processed.</p>
+
+<div id= "#Functions##SetEventPriority" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>EventPriority</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The <a href="Event.html">Event</a> processing Priority.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetState')">
+<h4><a id="#(SCENERY).SetState" ><strong>SCENERY:SetState(Object, Key, Value)</strong></a></h4>
+</div>
+    
+<p>Set a state or property of the Object given a Key and a Value.</p>
+
+    
+<p>Note that if the Object is destroyed, nillified or garbage collected, then the Values and Keys will also be gone.</p>
+
+<div id= "#Functions##SetState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Object</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The object that will hold the Value set by the Key.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Key</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The key that is used as a reference of the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Value</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>The value to is stored in the object.</p>
+
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>The Value set. </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T')">
+<h4><a id="#(SCENERY).T" ><strong>SCENERY:T(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 1.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T2')">
+<h4><a id="#(SCENERY).T2" ><strong>SCENERY:T2(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 2.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T3')">
+<h4><a id="#(SCENERY).T3" ><strong>SCENERY:T3(Arguments)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic level 3.</p>
+
+    
+<p>Can be anywhere within the function logic.</p>
+
+<div id= "#Functions##T3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceAll')">
+<h4><a id="#(SCENERY).TraceAll" ><strong>SCENERY:TraceAll(TraceAll)</strong></a></h4>
+</div>
+    
+<p>Trace all methods in MOOSE</p>
+
+<div id= "#Functions##TraceAll" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>TraceAll</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>true = trace all methods in MOOSE.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceClass')">
+<h4><a id="#(SCENERY).TraceClass" ><strong>SCENERY:TraceClass(Class)</strong></a></h4>
+</div>
+    
+<p>Set tracing for a class</p>
+
+<div id= "#Functions##TraceClass" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Class</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceClassMethod')">
+<h4><a id="#(SCENERY).TraceClassMethod" ><strong>SCENERY:TraceClassMethod(Class, Method)</strong></a></h4>
+</div>
+    
+<p>Set tracing for a specific method of  class</p>
+
+<div id= "#Functions##TraceClassMethod" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Class</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #string
+        <strong>Method</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceLevel')">
+<h4><a id="#(SCENERY).TraceLevel" ><strong>SCENERY:TraceLevel(Level)</strong></a></h4>
+</div>
+    
+<p>Set trace level</p>
+
+<div id= "#Functions##TraceLevel" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #number
+        <strong>Level</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceOnOff')">
+<h4><a id="#(SCENERY).TraceOnOff" ><strong>SCENERY:TraceOnOff(TraceOnOff)</strong></a></h4>
+</div>
+    
+<p>Set trace on or off
+Note that when trace is off, no BASE.Debug statement is performed, increasing performance!
+When Moose is loaded statically, (as one file), tracing is switched off by default.</p>
+
+    
+<p>So tracing must be switched on manually in your mission if you are using Moose statically.
+When moose is loading dynamically (for moose class development), tracing is switched on by default.</p>
+
+<div id= "#Functions##TraceOnOff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          #boolean
+        <strong>TraceOnOff</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>Switch the tracing on or off.</p>
+
+        </div>
+    </div>
+      <h3><strong>Usage:</strong></h3>
+    <pre class="example"><code>-- Switch the tracing On
+BASE:TraceOnOff( true )
+
+-- Switch the tracing Off
+BASE:TraceOnOff( false )</code></pre>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##UnHandleEvent')">
+<h4><a id="#(SCENERY).UnHandleEvent" ><strong>SCENERY:UnHandleEvent(Event)</strong></a></h4>
+</div>
+    
+<p>UnSubscribe to a DCS event.</p>
+
+<div id= "#Functions##UnHandleEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+          <a href="Core.Event.html##(EVENTS)">Core.Event#EVENTS</a>
+        <strong>Event</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+    <h3><strong>Return value:</strong></h3>
+    <div class="w3-row">
+      <div class="w3-half">
+        <a href="##(BASE)">#BASE</a>:
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_F')">
+<h4><a id="#(SCENERY)._F" ><strong>SCENERY:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h4>
+</div>
+    
+<p>Trace a function call.</p>
+
+    
+<p>This function is private.</p>
+
+<div id= "#Functions##_F" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoCurrentParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoFromParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_T')">
+<h4><a id="#(SCENERY)._T" ><strong>SCENERY:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h4>
+</div>
+    
+<p>Trace a function logic.</p>
+
+<div id= "#Functions##_T" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameters:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>Arguments</strong>
+        </div>
+        <div class="w3-half">
+          
+<p>A #table or any field.</p>
+
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoCurrentParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>DebugInfoFromParam</strong>
+        </div>
+        <div class="w3-half">
+          <p></p>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onEvent')">
+<h4><a id="#(SCENERY).onEvent" ><strong>SCENERY:onEvent(event)</strong></a></h4>
+</div>
+    
+
+
+    
+<p> TODO: Complete DCS#Event structure. <br/>
+- The main event handling function... This function captures all events generated for the class.
+ @param #BASE self
+ @param DCS#Event event</p>
+
+<div id= "#Functions##onEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+    <h3><strong>Parameter:</strong></h3>
+      <div class="w3-row">
+    </div>
+      <div class="w3-row">
+        <div class="w3-half">
+        <strong>event</strong>
         </div>
         <div class="w3-half">
           <p></p>

@@ -1496,18 +1496,53 @@ You can use this event handler to post messages to players, or provide status up
 </div>
 
   </div>
-  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>
-  
+  <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>  
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(TASK_CARGO_TRANSPORT)">Type <strong>TASK_CARGO_TRANSPORT</strong></a></h2></div>
+       <div class="">
+  <table class="w3-border">
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(TASK_CARGO_TRANSPORT).IsAllCargoTransported">TASK_CARGO_TRANSPORT:IsAllCargoTransported()</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(TASK_CARGO_TRANSPORT).New">TASK_CARGO_TRANSPORT:New(Mission, SetGroup, TaskName, SetCargo, TaskBriefing)</a></td>
+    <td class="summary"><style="width:60%;">
+<p>Instantiates a new TASK_CARGO_TRANSPORT.</p>
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(TASK_CARGO_TRANSPORT).ReportOrder">TASK_CARGO_TRANSPORT:ReportOrder(ReportGroup)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+    <tr class="w3-border">
+    <td class="name"><style="width=40%;"><a href="##(TASK_CARGO_TRANSPORT).onafterGoal">TASK_CARGO_TRANSPORT:onafterGoal(TaskUnit, From, Event, To)</a></td>
+    <td class="summary"><style="width:60%;">
+
+</td>
+    </tr>
+  </table>
+ </div>
+
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Tasking.Task_Cargo_Transport)" >Type <strong>Tasking.Task_Cargo_Transport</strong></a></h2></div>
   <div class="w3-container w3-white w3-padding-16" id="module_current_type">
     <div class="w3-white" id="record_type">
+<h2>
+      ==> <a href="##(Tasking.Task_Cargo_Transport)">Tasking.Task_Cargo_Transport</a>
+</h2>
 </div>
 
   </div>
   <div onclick="myFunction('#Types##TASK_CARGO_TRANSPORT')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(TASK_CARGO_TRANSPORT)">Type <strong>TASK_CARGO_TRANSPORT</strong></a></h2></div>
   <div id= "#Types##TASK_CARGO_TRANSPORT" class="w3-container w3-white w3-padding-16" id="module_other_types">
     <div class="w3-white" id="record_type">
-     <h3> Extends <a href="Tasking.Task_CARGO.html##(TASK_CARGO)">Tasking.Task_CARGO#TASK_CARGO</a> </h3>
+<h2>
+      ==> <a href="##(TASK_CARGO_TRANSPORT)">TASK_CARGO_TRANSPORT</a>
+     , inherits from <a href="Tasking.Task_CARGO.html##(TASK_CARGO)">Tasking.Task_CARGO#TASK_CARGO</a>
+</h2>
 <div class="fields">
   <h3>Field(s)</h3>
 </div>
@@ -1517,14 +1552,14 @@ You can use this event handler to post messages to players, or provide status up
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsAllCargoTransported')">
-<h6><a id="#(TASK_CARGO_TRANSPORT).IsAllCargoTransported" ><strong>TASK_CARGO_TRANSPORT:IsAllCargoTransported()</strong></a></h6>
+<h4><a id="#(TASK_CARGO_TRANSPORT).IsAllCargoTransported" ><strong>TASK_CARGO_TRANSPORT:IsAllCargoTransported()</strong></a></h4>
 </div>
     
 
 
 <div id= "#Functions##IsAllCargoTransported" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         #boolean:
@@ -1545,14 +1580,14 @@ You can use this event handler to post messages to players, or provide status up
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
-<h6><a id="#(TASK_CARGO_TRANSPORT).New" ><strong>TASK_CARGO_TRANSPORT:New(Mission, SetGroup, TaskName, SetCargo, TaskBriefing)</strong></a></h6>
+<h4><a id="#(TASK_CARGO_TRANSPORT).New" ><strong>TASK_CARGO_TRANSPORT:New(Mission, SetGroup, TaskName, SetCargo, TaskBriefing)</strong></a></h4>
 </div>
     
 <p>Instantiates a new TASK_CARGO_TRANSPORT.</p>
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1608,7 +1643,7 @@ You can use this event handler to post messages to players, or provide status up
 
         </div>
     </div>
-    <h5><strong>Return value:</strong></h5>
+    <h3><strong>Return value:</strong></h3>
     <div class="w3-row">
       <div class="w3-half">
         <a href="##(TASK_CARGO_TRANSPORT)">#TASK_CARGO_TRANSPORT</a>:
@@ -1629,14 +1664,14 @@ You can use this event handler to post messages to players, or provide status up
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportOrder')">
-<h6><a id="#(TASK_CARGO_TRANSPORT).ReportOrder" ><strong>TASK_CARGO_TRANSPORT:ReportOrder(ReportGroup)</strong></a></h6>
+<h4><a id="#(TASK_CARGO_TRANSPORT).ReportOrder" ><strong>TASK_CARGO_TRANSPORT:ReportOrder(ReportGroup)</strong></a></h4>
 </div>
     
 
 
 <div id= "#Functions##ReportOrder" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameter:</strong></h5>
+    <h3><strong>Parameter:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
@@ -1657,14 +1692,14 @@ You can use this event handler to post messages to players, or provide status up
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onafterGoal')">
-<h6><a id="#(TASK_CARGO_TRANSPORT).onafterGoal" ><strong>TASK_CARGO_TRANSPORT:onafterGoal(TaskUnit, From, Event, To)</strong></a></h6>
+<h4><a id="#(TASK_CARGO_TRANSPORT).onafterGoal" ><strong>TASK_CARGO_TRANSPORT:onafterGoal(TaskUnit, From, Event, To)</strong></a></h4>
 </div>
     
 
 
 <div id= "#Functions##onafterGoal" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
-    <h5><strong>Parameters:</strong></h5>
+    <h3><strong>Parameters:</strong></h3>
       <div class="w3-row">
     </div>
       <div class="w3-row">
