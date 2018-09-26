@@ -1491,9 +1491,9 @@ For the moment, only one Reference Zone class can be specified, but in the futur
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).HasGroup">COMMANDCENTER:HasGroup(Wrapper, MissionGroup)</a></p></td>
+            <td class="name w3-half" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).HasGroup">COMMANDCENTER:HasGroup(MissionGroup)</a></p></td>
             <td class="summary w3-half" style="word-wrap: break-word">
-<p>Checks of the COMMANDCENTER has a GROUP.</p>
+<p>Checks of the command center has the given MissionGroup.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -1511,31 +1511,31 @@ For the moment, only one Reference Zone class can be specified, but in the futur
           <tr class="w3-border">
             <td class="name w3-half" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageToAll">COMMANDCENTER:MessageToAll(Message)</a></p></td>
             <td class="summary w3-half" style="word-wrap: break-word">
-<p>Send a CC message to the coalition of the CC.</p>
+<p>Let the command center send a Message to all players.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageToCoalition">COMMANDCENTER:MessageToCoalition(Message)</a></p></td>
             <td class="summary w3-half" style="word-wrap: break-word">
-<p>Send a CC message to the coalition of the CC.</p>
+<p>Let the command center send a message to the coalition of the command center.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageToGroup">COMMANDCENTER:MessageToGroup(Message, TaskGroup)</a></p></td>
+            <td class="name w3-half" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageToGroup">COMMANDCENTER:MessageToGroup(Message, MessageGroup)</a></p></td>
             <td class="summary w3-half" style="word-wrap: break-word">
-<p>Send a CC message to a GROUP.</p>
+<p>Let the command center send a message to the MessageGroup.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageTypeToCoalition">COMMANDCENTER:MessageTypeToCoalition(Message, MessageType)</a></p></td>
             <td class="summary w3-half" style="word-wrap: break-word">
-<p>Send a CC message of a specified type to the coalition of the CC.</p>
+<p>Let the command center send a message of a specified type to the coalition of the command center.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageTypeToGroup">COMMANDCENTER:MessageTypeToGroup(Message, TaskGroup, MessageType)</a></p></td>
+            <td class="name w3-half" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageTypeToGroup">COMMANDCENTER:MessageTypeToGroup(Message, MessageGroup, MessageType)</a></p></td>
             <td class="summary w3-half" style="word-wrap: break-word">
-<p>Send a CC message of a specified type to a GROUP.</p>
+<p>Let the command center send a message to the MessageGroup.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -1559,25 +1559,31 @@ For the moment, only one Reference Zone class can be specified, but in the futur
           <tr class="w3-border">
             <td class="name w3-half" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ReportDetails">COMMANDCENTER:ReportDetails(ReportGroup, Task)</a></p></td>
             <td class="summary w3-half" style="word-wrap: break-word">
-<p>Report the status of a Task to a Group.</p>
+<p>Let the command center send a report of the status of a task to a group.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ReportMissionsPlayers">COMMANDCENTER:ReportMissionsPlayers(ReportGroup)</a></p></td>
             <td class="summary w3-half" style="word-wrap: break-word">
-<p>Report the players of all MISSIONs to a GROUP.</p>
+<p>Let the command center send a report of the players of all missions to a group.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ReportSummary">COMMANDCENTER:ReportSummary(ReportGroup)</a></p></td>
             <td class="summary w3-half" style="word-wrap: break-word">
-<p>Report the status of all MISSIONs to a GROUP.</p>
+<p>Let the command center send a report of the status of all missions to a group.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetAutoAssignTasks">COMMANDCENTER:SetAutoAssignTasks(AutoAssign)</a></p></td>
             <td class="summary w3-half" style="word-wrap: break-word">
 <p>Automatically assigns tasks to all TaskGroups.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetCommandMenu">COMMANDCENTER:SetCommandMenu()</a></p></td>
+            <td class="summary w3-half" style="word-wrap: break-word">
+<p>Sets the menu of the command center.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2053,17 +2059,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
-<a id="#(COMMANDCENTER).AutoAssignTasks" ><strong>COMMANDCENTER.AutoAssignTasks</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     <a href="DCS.html##(coalition)">DCS#coalition</a>
 <a id="#(COMMANDCENTER).CommandCenterCoalition" ><strong>COMMANDCENTER.CommandCenterCoalition</strong></a>
     
@@ -2141,7 +2136,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       </div>
       <div class="w3-half">
         
-
+<p>The set of groups active within the command center.</p>
 
       </div>
     </div>
@@ -2504,10 +2499,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##HasGroup')">
-<h2><a id="#(COMMANDCENTER).HasGroup" ><strong>COMMANDCENTER:HasGroup(Wrapper, MissionGroup)</strong></a></h2>
+<h2><a id="#(COMMANDCENTER).HasGroup" ><strong>COMMANDCENTER:HasGroup(MissionGroup)</strong></a></h2>
 </div>
     
-<p>Checks of the COMMANDCENTER has a GROUP.</p>
+<p>Checks of the command center has the given MissionGroup.</p>
 
 <div id= "#Functions##HasGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -2515,28 +2510,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>COMMANDCENTER</p>
 </div>
-    <h2><strong>Parameters:</strong></h2>
+    <h2><strong>Parameter:</strong></h2>
     </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
           <p>
-          <strong><strong>Wrapper</strong></strong>
-          </p>
-        </div>
-        <div class="w3-half">
-          
-<p>Group#GROUP</p>
-
-        </div>
-    </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-          <p>
+              <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
           <strong><strong>MissionGroup</strong></strong>
           </p>
         </div>
         <div class="w3-half">
-          <p></p>
+          
+<p>The group active within one of the missions governed by the command center.</p>
+
         </div>
     </div>
     <h2><strong>Return value:</strong></h2>
@@ -2590,7 +2576,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       </div>
       <div class="w3-half">
         
-
+<p>When true, the TaskGroup has a Task, otherwise the returned value will be false.</p>
 
       </div>
     </div>
@@ -2639,7 +2625,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(COMMANDCENTER).MessageToAll" ><strong>COMMANDCENTER:MessageToAll(Message)</strong></a></h2>
 </div>
     
-<p>Send a CC message to the coalition of the CC.</p>
+<p>Let the command center send a Message to all players.</p>
 
 <div id= "#Functions##MessageToAll" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -2652,11 +2638,14 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
           <p>
+              #string
           <strong><strong>Message</strong></strong>
           </p>
         </div>
         <div class="w3-half">
-          <p></p>
+          
+<p>The message text.</p>
+
         </div>
     </div>
 </div>
@@ -2672,7 +2661,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(COMMANDCENTER).MessageToCoalition" ><strong>COMMANDCENTER:MessageToCoalition(Message)</strong></a></h2>
 </div>
     
-<p>Send a CC message to the coalition of the CC.</p>
+<p>Let the command center send a message to the coalition of the command center.</p>
 
 <div id= "#Functions##MessageToCoalition" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -2685,11 +2674,14 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
           <p>
+              #string
           <strong><strong>Message</strong></strong>
           </p>
         </div>
         <div class="w3-half">
-          <p></p>
+          
+<p>The message text.</p>
+
         </div>
     </div>
 </div>
@@ -2702,10 +2694,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageToGroup')">
-<h2><a id="#(COMMANDCENTER).MessageToGroup" ><strong>COMMANDCENTER:MessageToGroup(Message, TaskGroup)</strong></a></h2>
+<h2><a id="#(COMMANDCENTER).MessageToGroup" ><strong>COMMANDCENTER:MessageToGroup(Message, MessageGroup)</strong></a></h2>
 </div>
     
-<p>Send a CC message to a GROUP.</p>
+<p>Let the command center send a message to the MessageGroup.</p>
 
 <div id= "#Functions##MessageToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -2723,18 +2715,22 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </p>
         </div>
         <div class="w3-half">
-          <p></p>
+          
+<p>The message text.</p>
+
         </div>
     </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
           <p>
               <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-          <strong><strong>TaskGroup</strong></strong>
+          <strong><strong>MessageGroup</strong></strong>
           </p>
         </div>
         <div class="w3-half">
-          <p></p>
+          
+<p>The group to receive the message.</p>
+
         </div>
     </div>
 </div>
@@ -2750,7 +2746,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(COMMANDCENTER).MessageTypeToCoalition" ><strong>COMMANDCENTER:MessageTypeToCoalition(Message, MessageType)</strong></a></h2>
 </div>
     
-<p>Send a CC message of a specified type to the coalition of the CC.</p>
+<p>Let the command center send a message of a specified type to the coalition of the command center.</p>
 
 <div id= "#Functions##MessageTypeToCoalition" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -2769,7 +2765,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         </div>
         <div class="w3-half">
           
-<p>The message.</p>
+<p>The message text.</p>
 
         </div>
     </div>
@@ -2796,10 +2792,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageTypeToGroup')">
-<h2><a id="#(COMMANDCENTER).MessageTypeToGroup" ><strong>COMMANDCENTER:MessageTypeToGroup(Message, TaskGroup, MessageType)</strong></a></h2>
+<h2><a id="#(COMMANDCENTER).MessageTypeToGroup" ><strong>COMMANDCENTER:MessageTypeToGroup(Message, MessageGroup, MessageType)</strong></a></h2>
 </div>
     
-<p>Send a CC message of a specified type to a GROUP.</p>
+<p>Let the command center send a message to the MessageGroup.</p>
 
 <div id= "#Functions##MessageTypeToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -2817,18 +2813,22 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </p>
         </div>
         <div class="w3-half">
-          <p></p>
+          
+<p>The message text.</p>
+
         </div>
     </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
           <p>
               <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-          <strong><strong>TaskGroup</strong></strong>
+          <strong><strong>MessageGroup</strong></strong>
           </p>
         </div>
         <div class="w3-half">
-          <p></p>
+          
+<p>The group to receive the message.</p>
+
         </div>
     </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -2961,7 +2961,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(COMMANDCENTER).ReportDetails" ><strong>COMMANDCENTER:ReportDetails(ReportGroup, Task)</strong></a></h2>
 </div>
     
-<p>Report the status of a Task to a Group.</p>
+<p>Let the command center send a report of the status of a task to a group.</p>
 
     
 <p>Report the details of a Mission, listing the Mission, and all the Task details.</p>
@@ -2977,21 +2977,27 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
           <p>
+              <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
           <strong><strong>ReportGroup</strong></strong>
           </p>
         </div>
         <div class="w3-half">
-          <p></p>
+          
+<p>The group to receive the report.</p>
+
         </div>
     </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
           <p>
+              <a href="Tasking.Task.html##(TASK)">Tasking.Task#TASK</a>
           <strong><strong>Task</strong></strong>
           </p>
         </div>
         <div class="w3-half">
-          <p></p>
+          
+<p>The task to be reported.</p>
+
         </div>
     </div>
 </div>
@@ -3007,7 +3013,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(COMMANDCENTER).ReportMissionsPlayers" ><strong>COMMANDCENTER:ReportMissionsPlayers(ReportGroup)</strong></a></h2>
 </div>
     
-<p>Report the players of all MISSIONs to a GROUP.</p>
+<p>Let the command center send a report of the players of all missions to a group.</p>
 
     
 <p>Each Mission is listed, with an indication how many Tasks are still to be completed.</p>
@@ -3023,11 +3029,14 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
           <p>
+              <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
           <strong><strong>ReportGroup</strong></strong>
           </p>
         </div>
         <div class="w3-half">
-          <p></p>
+          
+<p>The group to receive the report.</p>
+
         </div>
     </div>
 </div>
@@ -3043,7 +3052,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(COMMANDCENTER).ReportSummary" ><strong>COMMANDCENTER:ReportSummary(ReportGroup)</strong></a></h2>
 </div>
     
-<p>Report the status of all MISSIONs to a GROUP.</p>
+<p>Let the command center send a report of the status of all missions to a group.</p>
 
     
 <p>Each Mission is listed, with an indication how many Tasks are still to be completed.</p>
@@ -3059,11 +3068,14 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
           <p>
+              <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
           <strong><strong>ReportGroup</strong></strong>
           </p>
         </div>
         <div class="w3-half">
-          <p></p>
+          
+<p>The group to receive the report.</p>
+
         </div>
     </div>
 </div>
@@ -3102,17 +3114,30 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         </div>
     </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(COMMANDCENTER)">#COMMANDCENTER</a>:</p>
-      </div>
-      <div class="w3-half">
-        
+</div>
 
+</div>
+</div>
 
-      </div>
-    </div>
+</div>
+<div>
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetCommandMenu')">
+<h2><a id="#(COMMANDCENTER).SetCommandMenu" ><strong>COMMANDCENTER:SetCommandMenu()</strong></a></h2>
+</div>
+    
+<p>Sets the menu of the command center.</p>
+
+    
+<p>This command is called within the :New() method.</p>
+
+<div id= "#Functions##SetCommandMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>COMMANDCENTER</p>
+</div>
 </div>
 
 </div>
@@ -3252,17 +3277,6 @@ CC:SetReferenceZones( "Station" )
 </div>  
 <div class="fields">
   <h2>Field(s)</h2>
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(COMMANDCENTER).AutoAssignTasks" ><strong>COMMANDCENTER.AutoAssignTasks</strong></a>
-    
-
-
-</div>
-
-</div>   
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
