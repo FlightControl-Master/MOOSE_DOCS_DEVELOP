@@ -381,11 +381,12 @@ img {
     padding: 0px;
   }
   .picturebox {
-    height:80px
+    height:40px
     }
   .sticky {
     --headerwidth: 1;
     --headerheight: 104px;
+    --headersize:1280px;
   }
   h1{font-size:20px} h2{font-size:18px} h3{font-size:16px} h4{font-size:14px} h5{font-size:13px} h6{font-size:12px}
 }
@@ -403,11 +404,12 @@ img {
     padding: 0px;
   }
   .picturebox {
-    height:80px
+    height:40px
   }
   .sticky {
     --headerwidth: 0;
-    --headerheight: 8vw;
+    --headerheight: 104px;
+    --headersize:1280px;
   }
   h1{font-size:20px} h2{font-size:18px} h3{font-size:16px} h4{font-size:14px} h5{font-size:13px} h6{font-size:12px}
 }
@@ -425,12 +427,13 @@ img {
     padding: 0px;
   }
   .picturebox {
-    height:80px
+    height:40px
     }
-  h1{font-size:16px} h2{font-size:15px} h3{font-size:14px} h4{font-size:12px} h5{font-size:12px} h6{font-size:12px}
+  h1{font-size:16px} h2{font-size:15px} h3{font-size:14px} h4{font-size:13px} h5{font-size:12px} h6{font-size:12px}
   .sticky {
     --headerwidth: 0;
-    --headerheight: 8vw;
+    --headerheight: 52px;
+    --headersize:640px;
   }
 }
 
@@ -452,4 +455,7 @@ img {
   top: 0;
   width: calc( 100% - ( 100% - var(--headerwidth,0)*1280px )*var(--headerwidth,0) );
   height: calc( var(--headerheight,0) );
+  background-size: calc( var(--headersize,10) );
+  background-position:center top;
+  background-clip: padding-box;
 }

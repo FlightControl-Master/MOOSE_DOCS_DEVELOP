@@ -14,19 +14,22 @@
 :target::before {
   content: "";
   display: block;
-  height: 104px;
-  margin: -104px 0 0;
+  height: calc( var( --headerheight, 0 ) );
+  margin: calc( var( --headerheight, 0) ) 0 0;
 }
 
 .picturebox {
-  height:160px
+  height:100px;
+}
+a {
+  display:inline-block;
 }
 </style>
 </head>
 <body onload="myLoadFunction()" >
-<div class="w3-container sticky w3-border-white w3-bottombar" style="background-image:url('../Images/Moose.JPG');background-size: 100%;" id="myHeader">
+<div id="myHeader" class="w3-container sticky w3-border-white w3-bottombar" style="background-image:url('../Images/Moose.JPG');">
   <h1>
-  <i class="w3-opennav fa fa-bars w3-text-white " onclick="w3_open()"></i>
+  <i class="fa fa-bars w3-text-white fa-2x" onclick="w3_open()"></i>
   </h1>
 </div>
 <div id="main">
@@ -41,7 +44,7 @@
            <img src= "../Images/AI_Air_To_Air_Dispatching.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2A.html">AI.AI_A2A</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.2) - Models the process of air operations for airplanes.</p>
 </p></div>
        </div>         
@@ -52,7 +55,7 @@
            <img src= "../Images/AI_Combat_Air_Patrol.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2A_Cap.html">AI.AI_A2A_Cap</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.2) - Models the process of Combat Air Patrol (CAP) for airplanes.</p>
 </p></div>
        </div>         
@@ -63,7 +66,7 @@
            <img src= "../Images/AI_Air_To_Air_Dispatching.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2A_Dispatcher.html">AI.AI_A2A_Dispatcher</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> - (R2.2) - Manages the process of an automatic A2A defense system based on an EWR network targets and coordinating CAP and GCI.</p>
 </p></div>
        </div>         
@@ -74,7 +77,7 @@
            <img src= "../Images/AI_Ground_Control_Intercept.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2A_GCI.html">AI.AI_A2A_GCI</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.2) - Models the process of Ground Controlled Interception (GCI) for airplanes.</p>
 </p></div>
        </div>         
@@ -85,7 +88,7 @@
            <img src= "../Images/AI_Air_Patrolling.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2A_Patrol.html">AI.AI_A2A_Patrol</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.2) - Models the process of air patrol of airplanes.</p>
 </p></div>
        </div>         
@@ -96,7 +99,7 @@
            <img src= "../Images/AI_Battlefield_Air_Interdiction.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Bai.html">AI.AI_Bai</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- Peform Battlefield Area Interdiction (BAI) within an engagement zone.</p>
 </p></div>
        </div>         
@@ -107,7 +110,7 @@
            <img src= "../Images/AI_Balancing.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Balancer.html">AI.AI_Balancer</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- Balance player slots with AI to create an engaging simulation environment, independent of the amount of players.</p>
 </p></div>
        </div>         
@@ -118,7 +121,7 @@
            <img src= "../Images/AI_Combat_Air_Patrol.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cap.html">AI.AI_Cap</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- Perform Combat Air Patrolling (CAP) for airplanes.</p>
 </p></div>
        </div>         
@@ -129,7 +132,7 @@
            <img src= "../Images/Cargo.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo.html">AI.AI_Cargo</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.4) - Models the intelligent transportation of infantry and other cargo.</p>
 </p></div>
        </div>         
@@ -140,7 +143,7 @@
            <img src= "../Images/AI_Cargo_Dispatching_For_APC.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo_APC.html">AI.AI_Cargo_APC</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.4) - Models the intelligent transportation of infantry and other cargo.</p>
 </p></div>
        </div>         
@@ -151,7 +154,7 @@
            <img src= "../Images/AI_Cargo_Dispatching_For_Airplanes.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo_Airplane.html">AI.AI_Cargo_Airplane</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.4) - Models the intelligent transportation of infantry (cargo).</p>
 </p></div>
        </div>         
@@ -162,7 +165,7 @@
            <img src= "../Images/AI_Cargo_Dispatcher.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo_Dispatcher.html">AI.AI_Cargo_Dispatcher</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.4) - Models the intelligent transportation of infantry and other cargo.</p>
 </p></div>
        </div>         
@@ -173,7 +176,7 @@
            <img src= "../Images/AI_Cargo_Dispatching_For_APC.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo_Dispatcher_APC.html">AI.AI_Cargo_Dispatcher_APC</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (2.4) - Models the intelligent transportation of infantry and other cargo using APCs.</p>
 </p></div>
        </div>         
@@ -184,7 +187,7 @@
            <img src= "../Images/AI_Cargo_Dispatching_For_Airplanes.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo_Dispatcher_Airplane.html">AI.AI_Cargo_Dispatcher_Airplane</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.4) - Models the intelligent transportation of infantry and other cargo using Planes.</p>
 </p></div>
        </div>         
@@ -195,7 +198,7 @@
            <img src= "../Images/AI_Cargo_Dispatching_For_Helicopters.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo_Dispatcher_Helicopter.html">AI.AI_Cargo_Dispatcher_Helicopter</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (2.4) - Models the intelligent transportation of infantry and other cargo using Helicopters.</p>
 </p></div>
        </div>         
@@ -206,7 +209,7 @@
            <img src= "../Images/AI_Cargo_Dispatching_For_Helicopters.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo_Helicopter.html">AI.AI_Cargo_Helicopter</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.4) - Models the intelligent transportation of infantry (cargo).</p>
 </p></div>
        </div>         
@@ -217,7 +220,7 @@
            <img src= "../Images/AI_Close_Air_Support.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cas.html">AI.AI_Cas</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- Perform Close Air Support (CAS) near friendlies.</p>
 </p></div>
        </div>         
@@ -228,7 +231,7 @@
            <img src= "../Images/AI_Large_Formations.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Formation.html">AI.AI_Formation</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- Build large airborne formations of aircraft.</p>
 </p></div>
        </div>         
@@ -239,7 +242,7 @@
            <img src= "../Images/AI_Air_Patrolling.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Patrol.html">AI.AI_Patrol</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- Perform Air Patrolling for airplanes.</p>
 </p></div>
        </div>         
@@ -250,7 +253,7 @@
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Actions.Account.html">Actions.Account</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Actions</strong> - ACT_ACCOUNT_ classes <strong>account for</strong> (detect, count &amp; report) various DCS events occuring on <a href="Wrapper.Unit.html">Wrapper.Unit</a>s.</p>
 </p></div>
        </div>         
@@ -261,7 +264,7 @@
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Actions.Assign.html">Actions.Assign</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p>(SP) (MP) (FSM) Accept or reject process for player (task) assignments.</p>
 </p></div>
        </div>         
@@ -272,7 +275,7 @@
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Actions.Assist.html">Actions.Assist</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p>(SP) (MP) (FSM) Route AI or players through waypoints or to zones.</p>
 </p></div>
        </div>         
@@ -283,7 +286,7 @@
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Actions.Route.html">Actions.Route</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p>(SP) (MP) (FSM) Route AI or players through waypoints or to zones.</p>
 </p></div>
        </div>         
@@ -294,7 +297,7 @@
            <img src= "../Images/Cargo.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Cargo.Cargo.html">Cargo.Cargo</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- Management of CARGO logistics, that can be transported from and to transportation carriers.</p>
 </p></div>
        </div>         
@@ -305,7 +308,7 @@
            <img src= "../Images/Cargo_Crates.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Cargo.CargoCrate.html">Cargo.CargoCrate</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Cargo</strong> -- Management of single cargo crates, which are based on a <a href="Static.html">Static</a> object.</p>
 </p></div>
        </div>         
@@ -316,7 +319,7 @@
            <img src= "../Images/Cargo_Groups.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Cargo.CargoGroup.html">Cargo.CargoGroup</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Cargo</strong> -- Management of grouped cargo logistics, which are based on a <a href="Wrapper.Group.html">Wrapper.Group</a> object.</p>
 </p></div>
        </div>         
@@ -327,7 +330,7 @@
            <img src= "../Images/Cargo_Slingload.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Cargo.CargoSlingload.html">Cargo.CargoSlingload</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Cargo</strong> -- Management of single cargo crates, which are based on a <a href="Static.html">Static</a> object.</p>
 </p></div>
        </div>         
@@ -338,7 +341,7 @@
            <img src= "../Images/Cargo_Units.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Cargo.CargoUnit.html">Cargo.CargoUnit</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Cargo</strong> -- Management of single cargo logistics, which are based on a <a href="Wrapper.Unit.html">Wrapper.Unit</a> object.</p>
 </p></div>
        </div>         
@@ -349,7 +352,7 @@
            <img src= "../Images/Core_Base.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Base.html">Core.Base</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- BASE forms <strong>the basis of the MOOSE framework</strong>.</p>
 </p></div>
        </div>         
@@ -360,7 +363,7 @@
            <img src= "../Images/Core_Database.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Database.html">Core.Database</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- DATABASE manages the database of mission objects.</p>
 </p></div>
        </div>         
@@ -371,7 +374,7 @@
            <img src= "../Images/Core_Event.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Event.html">Core.Event</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- EVENT models DCS <strong>event dispatching</strong> using a <strong>publish-subscribe</strong> model.</p>
 </p></div>
        </div>         
@@ -382,7 +385,7 @@
            <img src= "../Images/Core_Finite_State_Machine.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Fsm.html">Core.Fsm</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- The <strong>FSM</strong> (<strong>F</strong>inite <strong>S</strong>tate <strong>M</strong>achine) class and derived <strong>FSM_</strong> classes 
 are design patterns allowing efficient (long-lasting) processes and workflows.</p>
 </p></div>
@@ -394,7 +397,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Goal.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Goal.html">Core.Goal</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core (WIP)</strong> -- Base class to allow the modeling of processes to achieve Goals.</p>
 </p></div>
        </div>         
@@ -405,7 +408,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Menu.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Menu.html">Core.Menu</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- MENU_ classes model the definition of <strong>hierarchical menu structures</strong> and <strong>commands for players</strong> within a mission.</p>
 </p></div>
        </div>         
@@ -416,7 +419,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Message.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Message.html">Core.Message</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- MESSAGE class takes are of the <strong>real-time notifications</strong> and <strong>messages to players</strong> during a simulation.</p>
 </p></div>
        </div>         
@@ -427,7 +430,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Coordinate.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Point.html">Core.Point</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- Defines an <strong>extensive API</strong> to <strong>manage 3D points</strong> in the DCS World 3D simulation space.</p>
 </p></div>
        </div>         
@@ -438,7 +441,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Radio.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Radio.html">Core.Radio</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- The RADIO Module is responsible for everything that is related to radio transmission and you can hear in DCS, be it TACAN beacons, Radio transmissions...</p>
 </p></div>
        </div>         
@@ -449,7 +452,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Report.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Report.html">Core.Report</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- <strong>REPORT</strong> class provides a handy means to create messages and reports.</p>
 </p></div>
        </div>         
@@ -460,7 +463,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Schedule_Dispatcher.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.ScheduleDispatcher.html">Core.ScheduleDispatcher</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- SCHEDULEDISPATCHER dispatches the different schedules.</p>
 </p></div>
        </div>         
@@ -471,7 +474,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Scheduler.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Scheduler.html">Core.Scheduler</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- SCHEDULER prepares and handles the <strong>execution of functions over scheduled time (intervals)</strong>.</p>
 </p></div>
        </div>         
@@ -482,7 +485,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Sets.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Set.html">Core.Set</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- SET_ classes define <strong>collections</strong> of objects to perform <strong>bulk actions</strong> and logically <strong>group</strong> objects.</p>
 </p></div>
        </div>         
@@ -493,7 +496,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Settings.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Settings.html">Core.Settings</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- Manages various settings for MOOSE classes.</p>
 </p></div>
        </div>         
@@ -504,7 +507,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Spawn.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Spawn.html">Core.Spawn</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> --Spawn dynamically new GROUPs of UNITs in your missions.</p>
 </p></div>
        </div>         
@@ -515,7 +518,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Spawnstatic.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.SpawnStatic.html">Core.SpawnStatic</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- Spawn dynamically new STATICs in your missions.</p>
 </p></div>
        </div>         
@@ -526,7 +529,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Spot.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Spot.html">Core.Spot</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- Management of SPOT logistics, that can be transported from and to transportation carriers.</p>
 </p></div>
        </div>         
@@ -537,7 +540,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Userflag.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.UserFlag.html">Core.UserFlag</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core (WIP)</strong> -- Manage user flags.</p>
 </p></div>
        </div>         
@@ -548,7 +551,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Usersound.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.UserSound.html">Core.UserSound</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core (WIP)</strong> -- Manage user sound.</p>
 </p></div>
        </div>         
@@ -559,7 +562,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Velocity.html">Core.Velocity</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- VELOCITY models a speed, which can be expressed in various formats according the Settings.</p>
 </p></div>
        </div>         
@@ -570,7 +573,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Zones.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Zone.html">Core.Zone</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- ZONE classes define <strong>zones</strong> within your mission of <strong>various forms</strong>, with <strong>various capabilities</strong>.</p>
 </p></div>
        </div>         
@@ -581,7 +584,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="DCS.html">DCS</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p>DCS API prototypes
 See <a href="https://wiki.hoggitworld.com/view/Simulator_Scripting_Engine_Documentation">https://wiki.hoggitworld.com/view/Simulator_Scripting_Engine_Documentation</a> 
 for further explanation and examples.</p>
@@ -594,7 +597,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Air_Traffic_Control_Ground_Operations.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.ATC_Ground.html">Functional.ATC_Ground</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- The ATC_GROUND classes monitor airbase traffic and regulate speed while taxiing.</p>
 </p></div>
        </div>         
@@ -605,7 +608,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Artillery.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Arty.html">Functional.Arty</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> - (R2.4) Control artillery units.</p>
 </p></div>
        </div>         
@@ -616,7 +619,7 @@ for further explanation and examples.</p>
            <img src= "../Images/CleanUp_Airbases.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.CleanUp.html">Functional.CleanUp</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- The CLEANUP_AIRBASE class keeps an area clean of crashing or colliding airplanes.</p>
 </p></div>
        </div>         
@@ -627,7 +630,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Designation.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Designate.html">Functional.Designate</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- Management of target <strong>Designation</strong>.</p>
 </p></div>
        </div>         
@@ -638,7 +641,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Detection.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Detection.html">Functional.Detection</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- Models the detection of enemy units by FACs or RECCEs and group them according various methods.</p>
 </p></div>
        </div>         
@@ -649,7 +652,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Escorting.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Escort.html">Functional.Escort</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- Taking the lead of AI escorting your flight.</p>
 </p></div>
        </div>         
@@ -660,7 +663,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Missile_Trainer.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.MissileTrainer.html">Functional.MissileTrainer</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- MISSILETRAINER helps you to train missile avoidance.</p>
 </p></div>
        </div>         
@@ -671,7 +674,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Movement.html">Functional.Movement</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- Limit the MOVEMENT of simulaneous moving ground vehicles.</p>
 </p></div>
        </div>         
@@ -682,7 +685,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Pseudo_ATC.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.PseudoATC.html">Functional.PseudoATC</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> - (R2.4) Rudimentary ATC.</p>
 </p></div>
        </div>         
@@ -693,7 +696,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Range.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Range.html">Functional.Range</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> - (R2.3) - Range Practice.</p>
 </p></div>
        </div>         
@@ -704,7 +707,7 @@ for further explanation and examples.</p>
            <img src= "../Images/RAT.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Rat.html">Functional.Rat</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> - (R2.2) - Create random airtraffic in your missions.</p>
 </p></div>
        </div>         
@@ -715,7 +718,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Scoring.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Scoring.html">Functional.Scoring</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- (R2.0) - Administer the scoring of player achievements, and create a CSV file logging the scoring events for use at team or squadron websites.</p>
 </p></div>
        </div>         
@@ -726,7 +729,7 @@ for further explanation and examples.</p>
            <img src= "../Images/SEAD.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Sead.html">Functional.Sead</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- Provides defensive behaviour to a set of SAM sites within a running Mission.</p>
 </p></div>
        </div>         
@@ -737,7 +740,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Suppression.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Suppression.html">Functional.Suppression</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <ul>
     <li><strong>Functional</strong> - (R2.4) Suppress fire of ground units when they get hit.</li>
 </ul>
@@ -750,7 +753,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Warehouse.html">Functional.Warehouse</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> - (R2.5) - Simulation of logistic operations.</p>
 </p></div>
        </div>         
@@ -761,7 +764,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Capture_Zones.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.ZoneCaptureCoalition.html">Functional.ZoneCaptureCoalition</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- (R2.3) Models the process to zone guarding and capturing.</p>
 </p></div>
        </div>         
@@ -772,7 +775,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.ZoneGoal.html">Functional.ZoneGoal</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional (WIP)</strong> -- Base class that models processes to achieve goals involving a Zone.</p>
 </p></div>
        </div>         
@@ -783,7 +786,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.ZoneGoalCargo.html">Functional.ZoneGoalCargo</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional (WIP)</strong> -- Base class that models processes to achieve goals involving a Zone and Cargo.</p>
 </p></div>
        </div>         
@@ -794,7 +797,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.ZoneGoalCoalition.html">Functional.ZoneGoalCoalition</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional (WIP)</strong> -- Base class that models processes to achieve goals involving a Zone for a Coalition.</p>
 </p></div>
        </div>         
@@ -805,7 +808,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_Command_Center.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.CommandCenter.html">Tasking.CommandCenter</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- A command center governs multiple missions, and takes care of the reporting and communications.</p>
 </p></div>
        </div>         
@@ -816,7 +819,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_Detection_Manager.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.DetectionManager.html">Tasking.DetectionManager</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> - This module contains the DETECTION_MANAGER class and derived classes.</p>
 </p></div>
        </div>         
@@ -827,7 +830,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_Mission.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Mission.html">Tasking.Mission</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- A mission models a goal to be achieved through the execution and completion of tasks by human players.</p>
 </p></div>
        </div>         
@@ -838,7 +841,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task.html">Tasking.Task</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- A task object governs the main engine to administer human taskings.</p>
 </p></div>
        </div>         
@@ -849,7 +852,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.TaskInfo.html">Tasking.TaskInfo</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- Controls the information of a Task.</p>
 </p></div>
        </div>         
@@ -860,7 +863,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.TaskZoneCapture.html">Tasking.TaskZoneCapture</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> - The TASK_Protect models tasks for players to protect or capture specific zones.</p>
 </p></div>
        </div>         
@@ -871,7 +874,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_A2A.html">Tasking.Task_A2A</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> - The TASK_A2A models tasks for players in Air to Air engagements.</p>
 </p></div>
        </div>         
@@ -882,7 +885,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_A2A_Dispatcher.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_A2A_Dispatcher.html">Tasking.Task_A2A_Dispatcher</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> - Dynamically allocates A2A tasks to human players, based on detected airborne targets through an EWR network.</p>
 </p></div>
        </div>         
@@ -893,7 +896,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_A2G.html">Tasking.Task_A2G</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> - The TASK_A2G models tasks for players in Air to Ground engagements.</p>
 </p></div>
        </div>         
@@ -904,7 +907,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_A2G_Dispatcher.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_A2G_Dispatcher.html">Tasking.Task_A2G_Dispatcher</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- Dynamically allocates A2G tasks to human players, based on detected ground targets through reconnaissance.</p>
 </p></div>
        </div>         
@@ -915,7 +918,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_Cargo.html">Tasking.Task_Cargo</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- Base class to model tasks for players to transport cargo.</p>
 </p></div>
        </div>         
@@ -926,7 +929,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_Cargo_CSAR.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_Cargo_CSAR.html">Tasking.Task_Cargo_CSAR</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- Orchestrates the task for players to execute CSAR for downed pilots.</p>
 </p></div>
        </div>         
@@ -937,7 +940,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_Cargo_Dispatcher.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_Cargo_Dispatcher.html">Tasking.Task_Cargo_Dispatcher</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> - Creates and manages player TASK_CARGO tasks.</p>
 </p></div>
        </div>         
@@ -948,7 +951,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_Cargo_Transport.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_Cargo_Transport.html">Tasking.Task_Cargo_Transport</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- Models tasks for players to transport cargo.</p>
 </p></div>
        </div>         
@@ -959,7 +962,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_Manager.html">Tasking.Task_Manager</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p>This module contains the TASK_MANAGER class and derived classes.</p>
 </p></div>
        </div>         
@@ -970,7 +973,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Utils.html">Utils</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p>This module contains derived utilities taken from the MIST framework, 
 which are excellent tools to be reused in an OO environment!.</p>
 </p></div>
@@ -982,7 +985,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Airbase.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Airbase.html">Wrapper.Airbase</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- AIRBASE is a wrapper class to handle the DCS Airbase objects.</p>
 </p></div>
        </div>         
@@ -993,7 +996,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Client.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Client.html">Wrapper.Client</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- CLIENT wraps DCS Unit objects acting as a <strong>Client</strong> or <strong>Player</strong> within a mission.</p>
 </p></div>
        </div>         
@@ -1004,7 +1007,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Controllable.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Controllable.html">Wrapper.Controllable</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- CONTROLLABLE is an intermediate class wrapping Group and Unit classes "controllers".</p>
 </p></div>
        </div>         
@@ -1015,7 +1018,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Group.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Group.html">Wrapper.Group</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- GROUP wraps the DCS Class Group objects.</p>
 </p></div>
        </div>         
@@ -1026,7 +1029,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Identifiable.html">Wrapper.Identifiable</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- IDENTIFIABLE is an intermediate class wrapping DCS Object class derived Objects.</p>
 </p></div>
        </div>         
@@ -1037,7 +1040,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Object.html">Wrapper.Object</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- OBJECT wraps the DCS Object derived objects.</p>
 </p></div>
        </div>         
@@ -1048,7 +1051,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Positionable.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Positionable.html">Wrapper.Positionable</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- POSITIONABLE wraps DCS classes that are "positionable".</p>
 </p></div>
        </div>         
@@ -1059,7 +1062,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Scenery.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Scenery.html">Wrapper.Scenery</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- SCENERY models scenery within the DCS simulator.</p>
 </p></div>
        </div>         
@@ -1070,7 +1073,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Static.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Static.html">Wrapper.Static</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- STATIC wraps the DCS StaticObject class.</p>
 </p></div>
        </div>         
@@ -1081,7 +1084,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Unit.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Unit.html">Wrapper.Unit</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> - UNIT is a wrapper class for the DCS Class Unit.</p>
 </p></div>
        </div>         
@@ -1092,7 +1095,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="routines.html">routines</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p>Various routines</p>
 </p></div>
        </div>         
@@ -1296,231 +1299,231 @@ For the moment, only one Reference Zone class can be specified, but in the futur
    </div>
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
-          <tr class="w3-theme-l1 w3-padding-16">
-            <th class="w3-half w3-left-align w3-container" style="maxwidth:40%;width:40%; word-wrap: break-word">Fields and Methods inherited from COMMANDCENTER</th>
-            <th class="w3-half w3-left-align w3-container">Description</th>
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from COMMANDCENTER</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).AddGroups">COMMANDCENTER:AddGroups()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).AddGroups">COMMANDCENTER:AddGroups()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get all the Groups active within the command center.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).AddMission">COMMANDCENTER:AddMission(Mission)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).AddMission">COMMANDCENTER:AddMission(Mission)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add a MISSION to be governed by the HQ command center.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).AssignRandomTask">COMMANDCENTER:AssignRandomTask(TaskGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).AssignRandomTask">COMMANDCENTER:AssignRandomTask(TaskGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Assigns a random task to a TaskGroup.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).AssignTasks">COMMANDCENTER:AssignTasks()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).AssignTasks">COMMANDCENTER:AssignTasks()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Automatically assigns tasks to all TaskGroups.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).AutoAssignTasks">COMMANDCENTER.AutoAssignTasks</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).AutoAssignTasks">COMMANDCENTER.AutoAssignTasks</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).CommandCenterCoalition">COMMANDCENTER.CommandCenterCoalition</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CommandCenterCoalition">COMMANDCENTER.CommandCenterCoalition</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).CommandCenterMenus">COMMANDCENTER.CommandCenterMenus</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CommandCenterMenus">COMMANDCENTER.CommandCenterMenus</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).CommandCenterName">COMMANDCENTER.CommandCenterName</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CommandCenterName">COMMANDCENTER.CommandCenterName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).CommandCenterPositionable">COMMANDCENTER.CommandCenterPositionable</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CommandCenterPositionable">COMMANDCENTER.CommandCenterPositionable</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).CommunicationMode">COMMANDCENTER.CommunicationMode</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CommunicationMode">COMMANDCENTER.CommunicationMode</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetCoalition">COMMANDCENTER:GetCoalition()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetCoalition">COMMANDCENTER:GetCoalition()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the coalition of the command center.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetMenu">COMMANDCENTER:GetMenu(TaskGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetMenu">COMMANDCENTER:GetMenu(TaskGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the commandcenter menu structure governed by the HQ command center.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetMissions">COMMANDCENTER:GetMissions()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetMissions">COMMANDCENTER:GetMissions()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the Missions governed by the HQ command center.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetName">COMMANDCENTER:GetName()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetName">COMMANDCENTER:GetName()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the name of the HQ command center.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetPositionable">COMMANDCENTER:GetPositionable()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetPositionable">COMMANDCENTER:GetPositionable()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the POSITIONABLE of the HQ command center.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetShortText">COMMANDCENTER:GetShortText()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetShortText">COMMANDCENTER:GetShortText()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the short text string of the HQ command center.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetText">COMMANDCENTER:GetText()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetText">COMMANDCENTER:GetText()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the text string of the HQ command center.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).HQ">COMMANDCENTER.HQ</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).HQ">COMMANDCENTER.HQ</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).HasGroup">COMMANDCENTER:HasGroup(MissionGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).HasGroup">COMMANDCENTER:HasGroup(MissionGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Checks of the command center has the given MissionGroup.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).IsGroupAssigned">COMMANDCENTER:IsGroupAssigned(TaskGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).IsGroupAssigned">COMMANDCENTER:IsGroupAssigned(TaskGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Checks of the TaskGroup has a Task.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).IsModeWWII">COMMANDCENTER:IsModeWWII()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).IsModeWWII">COMMANDCENTER:IsModeWWII()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns if the commandcenter operations is in WWII mode</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageToAll">COMMANDCENTER:MessageToAll(Message)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageToAll">COMMANDCENTER:MessageToAll(Message)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Let the command center send a Message to all players.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageToCoalition">COMMANDCENTER:MessageToCoalition(Message)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageToCoalition">COMMANDCENTER:MessageToCoalition(Message)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Let the command center send a message to the coalition of the command center.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageToGroup">COMMANDCENTER:MessageToGroup(Message, MessageGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageToGroup">COMMANDCENTER:MessageToGroup(Message, MessageGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Let the command center send a message to the MessageGroup.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageTypeToCoalition">COMMANDCENTER:MessageTypeToCoalition(Message, MessageType)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageTypeToCoalition">COMMANDCENTER:MessageTypeToCoalition(Message, MessageType)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Let the command center send a message of a specified type to the coalition of the command center.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageTypeToGroup">COMMANDCENTER:MessageTypeToGroup(Message, MessageGroup, MessageType)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageTypeToGroup">COMMANDCENTER:MessageTypeToGroup(Message, MessageGroup, MessageType)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Let the command center send a message to the MessageGroup.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).Missions">COMMANDCENTER.Missions</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).Missions">COMMANDCENTER.Missions</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).New">COMMANDCENTER:New(CommandCenterPositionable, CommandCenterName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).New">COMMANDCENTER:New(CommandCenterPositionable, CommandCenterName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The constructor takes an IDENTIFIABLE as the HQ command center.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).RemoveMission">COMMANDCENTER:RemoveMission(Mission)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).RemoveMission">COMMANDCENTER:RemoveMission(Mission)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Removes a MISSION to be governed by the HQ command center.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).ReportDetails">COMMANDCENTER:ReportDetails(ReportGroup, Task)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ReportDetails">COMMANDCENTER:ReportDetails(ReportGroup, Task)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Let the command center send a report of the status of a task to a group.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).ReportMissionsPlayers">COMMANDCENTER:ReportMissionsPlayers(ReportGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ReportMissionsPlayers">COMMANDCENTER:ReportMissionsPlayers(ReportGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Let the command center send a report of the players of all missions to a group.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).ReportSummary">COMMANDCENTER:ReportSummary(ReportGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ReportSummary">COMMANDCENTER:ReportSummary(ReportGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Let the command center send a report of the status of all missions to a group.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetAutoAssignTasks">COMMANDCENTER:SetAutoAssignTasks(AutoAssign)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetAutoAssignTasks">COMMANDCENTER:SetAutoAssignTasks(AutoAssign)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Automatically assigns tasks to all TaskGroups.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetCommandMenu">COMMANDCENTER:SetCommandMenu()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetCommandMenu">COMMANDCENTER:SetCommandMenu()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets the menu of the command center.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetMenu">COMMANDCENTER:SetMenu()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetMenu">COMMANDCENTER:SetMenu()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets the menu structure of the Missions governed by the HQ command center.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetModeWWII">COMMANDCENTER:SetModeWWII()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetModeWWII">COMMANDCENTER:SetModeWWII()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set the commandcenter operations in WWII mode
 This will disable LL, MGRS, BRA, BULLS navigatin messages sent by the Command Center, 
 and will be replaced by a navigation using Reference Zones.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetReferenceZones">COMMANDCENTER:SetReferenceZones(ReferenceZonePrefix)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetReferenceZones">COMMANDCENTER:SetReferenceZones(ReferenceZonePrefix)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set special Reference Zones known by the Command Center to guide airborne pilots during WWII.</p>
 </td>
           </tr>
@@ -1528,426 +1531,426 @@ and will be replaced by a navigation using Reference Zones.</p>
         </div>
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
-          <tr class="w3-theme-l1 w3-padding-16">
-            <th class="w3-half w3-left-align w3-container" style="maxwidth:40%;width:40%; word-wrap: break-word">Fields and Methods inherited from BASE</th>
-            <th class="w3-half w3-left-align w3-container">Description</th>
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from BASE</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).ClassID">COMMANDCENTER.ClassID</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ClassID">COMMANDCENTER.ClassID</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The ID number of the class.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).ClassName">COMMANDCENTER.ClassName</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ClassName">COMMANDCENTER.ClassName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The name of the class.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).ClassNameAndID">COMMANDCENTER.ClassNameAndID</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ClassNameAndID">COMMANDCENTER.ClassNameAndID</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The name of the class concatenated with the ID number of the class.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).ClearState">COMMANDCENTER:ClearState(Object, StateName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ClearState">COMMANDCENTER:ClearState(Object, StateName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Clear the state of an object.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventBirth">COMMANDCENTER:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventBirth">COMMANDCENTER:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Birth Event.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventCrash">COMMANDCENTER:CreateEventCrash(EventTime, Initiator)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventCrash">COMMANDCENTER:CreateEventCrash(EventTime, Initiator)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Crash Event.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventDead">COMMANDCENTER:CreateEventDead(EventTime, Initiator)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventDead">COMMANDCENTER:CreateEventDead(EventTime, Initiator)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Dead Event.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventRemoveUnit">COMMANDCENTER:CreateEventRemoveUnit(EventTime, Initiator)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventRemoveUnit">COMMANDCENTER:CreateEventRemoveUnit(EventTime, Initiator)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Remove Unit Event.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventTakeoff">COMMANDCENTER:CreateEventTakeoff(EventTime, Initiator)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventTakeoff">COMMANDCENTER:CreateEventTakeoff(EventTime, Initiator)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Takeoff Event.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).E">COMMANDCENTER:E(Arguments)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).E">COMMANDCENTER:E(Arguments)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Log an exception which will be traced always.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).EventDispatcher">COMMANDCENTER:EventDispatcher()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).EventDispatcher">COMMANDCENTER:EventDispatcher()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns the event dispatcher</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).EventRemoveAll">COMMANDCENTER:EventRemoveAll()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).EventRemoveAll">COMMANDCENTER:EventRemoveAll()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Remove all subscribed events</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).F">COMMANDCENTER:F(Arguments)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).F">COMMANDCENTER:F(Arguments)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function call.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).F2">COMMANDCENTER:F2(Arguments)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).F2">COMMANDCENTER:F2(Arguments)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function call level 2.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).F3">COMMANDCENTER:F3(Arguments)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).F3">COMMANDCENTER:F3(Arguments)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function call level 3.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetClassID">COMMANDCENTER:GetClassID()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetClassID">COMMANDCENTER:GetClassID()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the ClassID of the class instance.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetClassName">COMMANDCENTER:GetClassName()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetClassName">COMMANDCENTER:GetClassName()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the ClassName of the class instance.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetClassNameAndID">COMMANDCENTER:GetClassNameAndID()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetClassNameAndID">COMMANDCENTER:GetClassNameAndID()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the ClassName + ClassID of the class instance.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetEventPriority">COMMANDCENTER:GetEventPriority()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetEventPriority">COMMANDCENTER:GetEventPriority()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the Class <a href="Event.html">Event</a> processing Priority.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetParent">COMMANDCENTER:GetParent(Child, FromClass)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetParent">COMMANDCENTER:GetParent(Child, FromClass)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>This is the worker method to retrieve the Parent class.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetState">COMMANDCENTER:GetState(Object, Key)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetState">COMMANDCENTER:GetState(Object, Key)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get a Value given a Key from the Object.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).HandleEvent">COMMANDCENTER:HandleEvent(Event, EventFunction)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).HandleEvent">COMMANDCENTER:HandleEvent(Event, EventFunction)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Subscribe to a DCS Event.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).I">COMMANDCENTER:I(Arguments)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).I">COMMANDCENTER:I(Arguments)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Log an information which will be traced always.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).Inherit">COMMANDCENTER:Inherit(Child, Parent)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).Inherit">COMMANDCENTER:Inherit(Child, Parent)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>This is the worker method to inherit from a parent class.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).IsInstanceOf">COMMANDCENTER:IsInstanceOf(ClassName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).IsInstanceOf">COMMANDCENTER:IsInstanceOf(ClassName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>This is the worker method to check if an object is an (sub)instance of a class.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).IsTrace">COMMANDCENTER:IsTrace()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).IsTrace">COMMANDCENTER:IsTrace()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Enquires if tracing is on (for the class).</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).New">COMMANDCENTER:New()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).New">COMMANDCENTER:New()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>BASE constructor.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEvent">COMMANDCENTER:OnEvent(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEvent">COMMANDCENTER:OnEvent(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an object is completely destroyed.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventBaseCaptured">COMMANDCENTER:OnEventBaseCaptured(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventBaseCaptured">COMMANDCENTER:OnEventBaseCaptured(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a ground unit captures either an airbase or a farp.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventBirth">COMMANDCENTER:OnEventBirth(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventBirth">COMMANDCENTER:OnEventBirth(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any object is spawned into the mission.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventCrash">COMMANDCENTER:OnEventCrash(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventCrash">COMMANDCENTER:OnEventCrash(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventDead">COMMANDCENTER:OnEventDead(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventDead">COMMANDCENTER:OnEventDead(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an object is dead.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventEjection">COMMANDCENTER:OnEventEjection(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventEjection">COMMANDCENTER:OnEventEjection(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a pilot ejects from an aircraft
 initiator : The unit that has ejected </p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventEngineShutdown">COMMANDCENTER:OnEventEngineShutdown(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventEngineShutdown">COMMANDCENTER:OnEventEngineShutdown(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any aircraft shuts down its engines.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventEngineStartup">COMMANDCENTER:OnEventEngineStartup(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventEngineStartup">COMMANDCENTER:OnEventEngineStartup(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any aircraft starts its engines.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventHit">COMMANDCENTER:OnEventHit(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventHit">COMMANDCENTER:OnEventHit(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs whenever an object is hit by a weapon.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventHumanFailure">COMMANDCENTER:OnEventHumanFailure(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventHumanFailure">COMMANDCENTER:OnEventHumanFailure(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any system fails on a human controlled aircraft.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventLand">COMMANDCENTER:OnEventLand(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventLand">COMMANDCENTER:OnEventLand(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an aircraft lands at an airbase, farp or ship
 initiator : The unit that has landed
 place: Object that the unit landed on.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventMissionEnd">COMMANDCENTER:OnEventMissionEnd(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventMissionEnd">COMMANDCENTER:OnEventMissionEnd(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a mission ends</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventMissionStart">COMMANDCENTER:OnEventMissionStart(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventMissionStart">COMMANDCENTER:OnEventMissionStart(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a mission starts </p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventPilotDead">COMMANDCENTER:OnEventPilotDead(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventPilotDead">COMMANDCENTER:OnEventPilotDead(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when the pilot of an aircraft is killed.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventPlayerEnterUnit">COMMANDCENTER:OnEventPlayerEnterUnit(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventPlayerEnterUnit">COMMANDCENTER:OnEventPlayerEnterUnit(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any player assumes direct control of a unit.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventPlayerLeaveUnit">COMMANDCENTER:OnEventPlayerLeaveUnit(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventPlayerLeaveUnit">COMMANDCENTER:OnEventPlayerLeaveUnit(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any player relieves control of a unit to the AI.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventRefueling">COMMANDCENTER:OnEventRefueling(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventRefueling">COMMANDCENTER:OnEventRefueling(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventRefuelingStop">COMMANDCENTER:OnEventRefuelingStop(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventRefuelingStop">COMMANDCENTER:OnEventRefuelingStop(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an aircraft is finished taking fuel.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventShootingEnd">COMMANDCENTER:OnEventShootingEnd(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventShootingEnd">COMMANDCENTER:OnEventShootingEnd(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any unit stops firing its weapon.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventShootingStart">COMMANDCENTER:OnEventShootingStart(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventShootingStart">COMMANDCENTER:OnEventShootingStart(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventShot">COMMANDCENTER:OnEventShot(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventShot">COMMANDCENTER:OnEventShot(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs whenever any unit in a mission fires a weapon.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventTakeoff">COMMANDCENTER:OnEventTakeoff(EventData)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventTakeoff">COMMANDCENTER:OnEventTakeoff(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).ScheduleOnce">COMMANDCENTER:ScheduleOnce(Start, SchedulerFunction, ...)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ScheduleOnce">COMMANDCENTER:ScheduleOnce(Start, SchedulerFunction, ...)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Schedule a new time event.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).ScheduleRepeat">COMMANDCENTER:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ScheduleRepeat">COMMANDCENTER:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Schedule a new time event.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).ScheduleStop">COMMANDCENTER:ScheduleStop(SchedulerFunction)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ScheduleStop">COMMANDCENTER:ScheduleStop(SchedulerFunction)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Stops the Schedule.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).Scheduler">COMMANDCENTER.Scheduler</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).Scheduler">COMMANDCENTER.Scheduler</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetEventPriority">COMMANDCENTER:SetEventPriority(EventPriority)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetEventPriority">COMMANDCENTER:SetEventPriority(EventPriority)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set the Class <a href="Event.html">Event</a> processing Priority.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetState">COMMANDCENTER:SetState(Object, Key, Value)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetState">COMMANDCENTER:SetState(Object, Key, Value)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set a state or property of the Object given a Key and a Value.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).T">COMMANDCENTER:T(Arguments)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).T">COMMANDCENTER:T(Arguments)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function logic level 1.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).T2">COMMANDCENTER:T2(Arguments)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).T2">COMMANDCENTER:T2(Arguments)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function logic level 2.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).T3">COMMANDCENTER:T3(Arguments)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).T3">COMMANDCENTER:T3(Arguments)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function logic level 3.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceAll">COMMANDCENTER:TraceAll(TraceAll)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceAll">COMMANDCENTER:TraceAll(TraceAll)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace all methods in MOOSE</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceClass">COMMANDCENTER:TraceClass(Class)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceClass">COMMANDCENTER:TraceClass(Class)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set tracing for a class</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceClassMethod">COMMANDCENTER:TraceClassMethod(Class, Method)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceClassMethod">COMMANDCENTER:TraceClassMethod(Class, Method)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set tracing for a specific method of  class</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceLevel">COMMANDCENTER:TraceLevel(Level)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceLevel">COMMANDCENTER:TraceLevel(Level)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set trace level</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceOnOff">COMMANDCENTER:TraceOnOff(TraceOnOff)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceOnOff">COMMANDCENTER:TraceOnOff(TraceOnOff)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set trace on or off
 Note that when trace is off, no BASE.Debug statement is performed, increasing performance!
 When Moose is loaded statically, (as one file), tracing is switched off by default.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).UnHandleEvent">COMMANDCENTER:UnHandleEvent(Event)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).UnHandleEvent">COMMANDCENTER:UnHandleEvent(Event)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>UnSubscribe to a DCS event.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER)._">COMMANDCENTER._</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER)._">COMMANDCENTER._</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER)._F">COMMANDCENTER:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER)._F">COMMANDCENTER:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function call.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER)._T">COMMANDCENTER:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER)._T">COMMANDCENTER:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function logic.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).__">COMMANDCENTER.__</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).__">COMMANDCENTER.__</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(COMMANDCENTER).onEvent">COMMANDCENTER:onEvent(event)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).onEvent">COMMANDCENTER:onEvent(event)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
@@ -2043,7 +2046,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </div>  
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddGroups')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).AddGroups" ><strong>COMMANDCENTER:AddGroups()</strong></a></h2>
 </div>
     
@@ -2073,7 +2076,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddMission')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).AddMission" ><strong>COMMANDCENTER:AddMission(Mission)</strong></a></h2>
 </div>
     
@@ -2115,7 +2118,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AssignRandomTask')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).AssignRandomTask" ><strong>COMMANDCENTER:AssignRandomTask(TaskGroup)</strong></a></h2>
 </div>
     
@@ -2156,7 +2159,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AssignTasks')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).AssignTasks" ><strong>COMMANDCENTER:AssignTasks()</strong></a></h2>
 </div>
     
@@ -2175,7 +2178,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetCoalition')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).GetCoalition" ><strong>COMMANDCENTER:GetCoalition()</strong></a></h2>
 </div>
     
@@ -2205,7 +2208,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMenu')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).GetMenu" ><strong>COMMANDCENTER:GetMenu(TaskGroup)</strong></a></h2>
 </div>
     
@@ -2249,7 +2252,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMissions')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).GetMissions" ><strong>COMMANDCENTER:GetMissions()</strong></a></h2>
 </div>
     
@@ -2279,7 +2282,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetName')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).GetName" ><strong>COMMANDCENTER:GetName()</strong></a></h2>
 </div>
     
@@ -2309,7 +2312,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetPositionable')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).GetPositionable" ><strong>COMMANDCENTER:GetPositionable()</strong></a></h2>
 </div>
     
@@ -2339,7 +2342,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetShortText')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).GetShortText" ><strong>COMMANDCENTER:GetShortText()</strong></a></h2>
 </div>
     
@@ -2369,7 +2372,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetText')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).GetText" ><strong>COMMANDCENTER:GetText()</strong></a></h2>
 </div>
     
@@ -2399,7 +2402,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##HasGroup')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).HasGroup" ><strong>COMMANDCENTER:HasGroup(MissionGroup)</strong></a></h2>
 </div>
     
@@ -2443,7 +2446,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsGroupAssigned')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).IsGroupAssigned" ><strong>COMMANDCENTER:IsGroupAssigned(TaskGroup)</strong></a></h2>
 </div>
     
@@ -2484,7 +2487,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsModeWWII')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).IsModeWWII" ><strong>COMMANDCENTER:IsModeWWII()</strong></a></h2>
 </div>
     
@@ -2514,7 +2517,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageToAll')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).MessageToAll" ><strong>COMMANDCENTER:MessageToAll(Message)</strong></a></h2>
 </div>
     
@@ -2547,7 +2550,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageToCoalition')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).MessageToCoalition" ><strong>COMMANDCENTER:MessageToCoalition(Message)</strong></a></h2>
 </div>
     
@@ -2580,7 +2583,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageToGroup')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).MessageToGroup" ><strong>COMMANDCENTER:MessageToGroup(Message, MessageGroup)</strong></a></h2>
 </div>
     
@@ -2626,7 +2629,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageTypeToCoalition')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).MessageTypeToCoalition" ><strong>COMMANDCENTER:MessageTypeToCoalition(Message, MessageType)</strong></a></h2>
 </div>
     
@@ -2672,7 +2675,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageTypeToGroup')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).MessageTypeToGroup" ><strong>COMMANDCENTER:MessageTypeToGroup(Message, MessageGroup, MessageType)</strong></a></h2>
 </div>
     
@@ -2731,7 +2734,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).New" ><strong>COMMANDCENTER:New(CommandCenterPositionable, CommandCenterName)</strong></a></h2>
 </div>
     
@@ -2784,7 +2787,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RemoveMission')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).RemoveMission" ><strong>COMMANDCENTER:RemoveMission(Mission)</strong></a></h2>
 </div>
     
@@ -2829,7 +2832,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportDetails')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).ReportDetails" ><strong>COMMANDCENTER:ReportDetails(ReportGroup, Task)</strong></a></h2>
 </div>
     
@@ -2878,7 +2881,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportMissionsPlayers')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).ReportMissionsPlayers" ><strong>COMMANDCENTER:ReportMissionsPlayers(ReportGroup)</strong></a></h2>
 </div>
     
@@ -2914,7 +2917,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportSummary')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).ReportSummary" ><strong>COMMANDCENTER:ReportSummary(ReportGroup)</strong></a></h2>
 </div>
     
@@ -2950,7 +2953,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetAutoAssignTasks')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).SetAutoAssignTasks" ><strong>COMMANDCENTER:SetAutoAssignTasks(AutoAssign)</strong></a></h2>
 </div>
     
@@ -2983,7 +2986,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetCommandMenu')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).SetCommandMenu" ><strong>COMMANDCENTER:SetCommandMenu()</strong></a></h2>
 </div>
     
@@ -3005,7 +3008,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetMenu')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).SetMenu" ><strong>COMMANDCENTER:SetMenu()</strong></a></h2>
 </div>
     
@@ -3024,7 +3027,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetModeWWII')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).SetModeWWII" ><strong>COMMANDCENTER:SetModeWWII()</strong></a></h2>
 </div>
     
@@ -3059,7 +3062,7 @@ and will be replaced by a navigation using Reference Zones.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetReferenceZones')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).SetReferenceZones" ><strong>COMMANDCENTER:SetReferenceZones(ReferenceZonePrefix)</strong></a></h2>
 </div>
     
@@ -3200,7 +3203,7 @@ CC:SetReferenceZones( "Station" )
 </div>  
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearState')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).ClearState" ><strong>COMMANDCENTER:ClearState(Object, StateName)</strong></a></h2>
 </div>
     
@@ -3244,7 +3247,7 @@ CC:SetReferenceZones( "Station" )
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventBirth')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).CreateEventBirth" ><strong>COMMANDCENTER:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</strong></a></h2>
 </div>
     
@@ -3323,7 +3326,7 @@ CC:SetReferenceZones( "Station" )
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventCrash')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).CreateEventCrash" ><strong>COMMANDCENTER:CreateEventCrash(EventTime, Initiator)</strong></a></h2>
 </div>
     
@@ -3369,7 +3372,7 @@ CC:SetReferenceZones( "Station" )
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventDead')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).CreateEventDead" ><strong>COMMANDCENTER:CreateEventDead(EventTime, Initiator)</strong></a></h2>
 </div>
     
@@ -3415,7 +3418,7 @@ CC:SetReferenceZones( "Station" )
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventRemoveUnit')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).CreateEventRemoveUnit" ><strong>COMMANDCENTER:CreateEventRemoveUnit(EventTime, Initiator)</strong></a></h2>
 </div>
     
@@ -3461,7 +3464,7 @@ CC:SetReferenceZones( "Station" )
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CreateEventTakeoff')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).CreateEventTakeoff" ><strong>COMMANDCENTER:CreateEventTakeoff(EventTime, Initiator)</strong></a></h2>
 </div>
     
@@ -3507,7 +3510,7 @@ CC:SetReferenceZones( "Station" )
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##E')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).E" ><strong>COMMANDCENTER:E(Arguments)</strong></a></h2>
 </div>
     
@@ -3542,7 +3545,7 @@ CC:SetReferenceZones( "Station" )
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##EventDispatcher')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).EventDispatcher" ><strong>COMMANDCENTER:EventDispatcher()</strong></a></h2>
 </div>
     
@@ -3572,7 +3575,7 @@ CC:SetReferenceZones( "Station" )
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##EventRemoveAll')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).EventRemoveAll" ><strong>COMMANDCENTER:EventRemoveAll()</strong></a></h2>
 </div>
     
@@ -3602,7 +3605,7 @@ CC:SetReferenceZones( "Station" )
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).F" ><strong>COMMANDCENTER:F(Arguments)</strong></a></h2>
 </div>
     
@@ -3637,7 +3640,7 @@ CC:SetReferenceZones( "Station" )
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F2')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).F2" ><strong>COMMANDCENTER:F2(Arguments)</strong></a></h2>
 </div>
     
@@ -3672,7 +3675,7 @@ CC:SetReferenceZones( "Station" )
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##F3')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).F3" ><strong>COMMANDCENTER:F3(Arguments)</strong></a></h2>
 </div>
     
@@ -3707,7 +3710,7 @@ CC:SetReferenceZones( "Station" )
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassID')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).GetClassID" ><strong>COMMANDCENTER:GetClassID()</strong></a></h2>
 </div>
     
@@ -3737,7 +3740,7 @@ CC:SetReferenceZones( "Station" )
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassName')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).GetClassName" ><strong>COMMANDCENTER:GetClassName()</strong></a></h2>
 </div>
     
@@ -3767,7 +3770,7 @@ CC:SetReferenceZones( "Station" )
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetClassNameAndID')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).GetClassNameAndID" ><strong>COMMANDCENTER:GetClassNameAndID()</strong></a></h2>
 </div>
     
@@ -3800,7 +3803,7 @@ CC:SetReferenceZones( "Station" )
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetEventPriority')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).GetEventPriority" ><strong>COMMANDCENTER:GetEventPriority()</strong></a></h2>
 </div>
     
@@ -3834,7 +3837,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetParent')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).GetParent" ><strong>COMMANDCENTER:GetParent(Child, FromClass)</strong></a></h2>
 </div>
     
@@ -3896,7 +3899,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetState')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).GetState" ><strong>COMMANDCENTER:GetState(Object, Key)</strong></a></h2>
 </div>
     
@@ -3953,7 +3956,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##HandleEvent')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).HandleEvent" ><strong>COMMANDCENTER:HandleEvent(Event, EventFunction)</strong></a></h2>
 </div>
     
@@ -4008,7 +4011,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##I')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).I" ><strong>COMMANDCENTER:I(Arguments)</strong></a></h2>
 </div>
     
@@ -4043,7 +4046,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Inherit')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).Inherit" ><strong>COMMANDCENTER:Inherit(Child, Parent)</strong></a></h2>
 </div>
     
@@ -4099,7 +4102,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsInstanceOf')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).IsInstanceOf" ><strong>COMMANDCENTER:IsInstanceOf(ClassName)</strong></a></h2>
 </div>
     
@@ -4155,7 +4158,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsTrace')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).IsTrace" ><strong>COMMANDCENTER:IsTrace()</strong></a></h2>
 </div>
     
@@ -4185,7 +4188,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).New" ><strong>COMMANDCENTER:New()</strong></a></h2>
 </div>
     
@@ -4226,7 +4229,7 @@ end
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEvent')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEvent" ><strong>COMMANDCENTER:OnEvent(EventData)</strong></a></h2>
 </div>
     
@@ -4262,7 +4265,7 @@ end
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBaseCaptured')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventBaseCaptured" ><strong>COMMANDCENTER:OnEventBaseCaptured(EventData)</strong></a></h2>
 </div>
     
@@ -4299,7 +4302,7 @@ place: The airbase that was captured, can be a FARP or Airbase. When calling pla
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventBirth')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventBirth" ><strong>COMMANDCENTER:OnEventBirth(EventData)</strong></a></h2>
 </div>
     
@@ -4335,7 +4338,7 @@ place: The airbase that was captured, can be a FARP or Airbase. When calling pla
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventCrash')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventCrash" ><strong>COMMANDCENTER:OnEventCrash(EventData)</strong></a></h2>
 </div>
     
@@ -4371,7 +4374,7 @@ place: The airbase that was captured, can be a FARP or Airbase. When calling pla
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventDead')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventDead" ><strong>COMMANDCENTER:OnEventDead(EventData)</strong></a></h2>
 </div>
     
@@ -4407,7 +4410,7 @@ place: The airbase that was captured, can be a FARP or Airbase. When calling pla
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEjection')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventEjection" ><strong>COMMANDCENTER:OnEventEjection(EventData)</strong></a></h2>
 </div>
     
@@ -4441,7 +4444,7 @@ initiator : The unit that has ejected </p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEngineShutdown')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventEngineShutdown" ><strong>COMMANDCENTER:OnEventEngineShutdown(EventData)</strong></a></h2>
 </div>
     
@@ -4477,7 +4480,7 @@ initiator : The unit that has ejected </p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventEngineStartup')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventEngineStartup" ><strong>COMMANDCENTER:OnEventEngineStartup(EventData)</strong></a></h2>
 </div>
     
@@ -4513,7 +4516,7 @@ initiator : The unit that has ejected </p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventHit')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventHit" ><strong>COMMANDCENTER:OnEventHit(EventData)</strong></a></h2>
 </div>
     
@@ -4551,7 +4554,7 @@ target: The Object that was hit. </p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventHumanFailure')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventHumanFailure" ><strong>COMMANDCENTER:OnEventHumanFailure(EventData)</strong></a></h2>
 </div>
     
@@ -4587,7 +4590,7 @@ target: The Object that was hit. </p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventLand')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventLand" ><strong>COMMANDCENTER:OnEventLand(EventData)</strong></a></h2>
 </div>
     
@@ -4625,7 +4628,7 @@ place: Object that the unit landed on.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventMissionEnd')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventMissionEnd" ><strong>COMMANDCENTER:OnEventMissionEnd(EventData)</strong></a></h2>
 </div>
     
@@ -4658,7 +4661,7 @@ place: Object that the unit landed on.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventMissionStart')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventMissionStart" ><strong>COMMANDCENTER:OnEventMissionStart(EventData)</strong></a></h2>
 </div>
     
@@ -4691,7 +4694,7 @@ place: Object that the unit landed on.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPilotDead')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventPilotDead" ><strong>COMMANDCENTER:OnEventPilotDead(EventData)</strong></a></h2>
 </div>
     
@@ -4728,7 +4731,7 @@ initiator : The unit that the pilot has died in. </p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPlayerEnterUnit')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventPlayerEnterUnit" ><strong>COMMANDCENTER:OnEventPlayerEnterUnit(EventData)</strong></a></h2>
 </div>
     
@@ -4764,7 +4767,7 @@ initiator : The unit that the pilot has died in. </p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventPlayerLeaveUnit')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventPlayerLeaveUnit" ><strong>COMMANDCENTER:OnEventPlayerLeaveUnit(EventData)</strong></a></h2>
 </div>
     
@@ -4800,7 +4803,7 @@ initiator : The unit that the pilot has died in. </p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventRefueling')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventRefueling" ><strong>COMMANDCENTER:OnEventRefueling(EventData)</strong></a></h2>
 </div>
     
@@ -4836,7 +4839,7 @@ initiator : The unit that the pilot has died in. </p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventRefuelingStop')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventRefuelingStop" ><strong>COMMANDCENTER:OnEventRefuelingStop(EventData)</strong></a></h2>
 </div>
     
@@ -4872,7 +4875,7 @@ initiator : The unit that the pilot has died in. </p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShootingEnd')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventShootingEnd" ><strong>COMMANDCENTER:OnEventShootingEnd(EventData)</strong></a></h2>
 </div>
     
@@ -4909,7 +4912,7 @@ initiator : The unit that was doing the shooing. </p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShootingStart')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventShootingStart" ><strong>COMMANDCENTER:OnEventShootingStart(EventData)</strong></a></h2>
 </div>
     
@@ -4947,7 +4950,7 @@ target: The unit that is being targeted. </p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventShot')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventShot" ><strong>COMMANDCENTER:OnEventShot(EventData)</strong></a></h2>
 </div>
     
@@ -4983,7 +4986,7 @@ target: The unit that is being targeted. </p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnEventTakeoff')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).OnEventTakeoff" ><strong>COMMANDCENTER:OnEventTakeoff(EventData)</strong></a></h2>
 </div>
     
@@ -5020,7 +5023,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleOnce')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).ScheduleOnce" ><strong>COMMANDCENTER:ScheduleOnce(Start, SchedulerFunction, ...)</strong></a></h2>
 </div>
     
@@ -5093,7 +5096,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleRepeat')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).ScheduleRepeat" ><strong>COMMANDCENTER:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</strong></a></h2>
 </div>
     
@@ -5205,7 +5208,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ScheduleStop')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).ScheduleStop" ><strong>COMMANDCENTER:ScheduleStop(SchedulerFunction)</strong></a></h2>
 </div>
     
@@ -5238,7 +5241,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetEventPriority')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).SetEventPriority" ><strong>COMMANDCENTER:SetEventPriority(EventPriority)</strong></a></h2>
 </div>
     
@@ -5285,7 +5288,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetState')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).SetState" ><strong>COMMANDCENTER:SetState(Object, Key, Value)</strong></a></h2>
 </div>
     
@@ -5354,7 +5357,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).T" ><strong>COMMANDCENTER:T(Arguments)</strong></a></h2>
 </div>
     
@@ -5389,7 +5392,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T2')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).T2" ><strong>COMMANDCENTER:T2(Arguments)</strong></a></h2>
 </div>
     
@@ -5424,7 +5427,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##T3')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).T3" ><strong>COMMANDCENTER:T3(Arguments)</strong></a></h2>
 </div>
     
@@ -5459,7 +5462,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceAll')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).TraceAll" ><strong>COMMANDCENTER:TraceAll(TraceAll)</strong></a></h2>
 </div>
     
@@ -5492,7 +5495,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceClass')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).TraceClass" ><strong>COMMANDCENTER:TraceClass(Class)</strong></a></h2>
 </div>
     
@@ -5523,7 +5526,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceClassMethod')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).TraceClassMethod" ><strong>COMMANDCENTER:TraceClassMethod(Class, Method)</strong></a></h2>
 </div>
     
@@ -5565,7 +5568,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceLevel')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).TraceLevel" ><strong>COMMANDCENTER:TraceLevel(Level)</strong></a></h2>
 </div>
     
@@ -5596,7 +5599,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##TraceOnOff')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).TraceOnOff" ><strong>COMMANDCENTER:TraceOnOff(TraceOnOff)</strong></a></h2>
 </div>
     
@@ -5642,7 +5645,7 @@ BASE:TraceOnOff( false )</code></pre>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##UnHandleEvent')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).UnHandleEvent" ><strong>COMMANDCENTER:UnHandleEvent(Event)</strong></a></h2>
 </div>
     
@@ -5684,7 +5687,7 @@ BASE:TraceOnOff( false )</code></pre>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_F')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER)._F" ><strong>COMMANDCENTER:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h2>
 </div>
     
@@ -5739,7 +5742,7 @@ BASE:TraceOnOff( false )</code></pre>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_T')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER)._T" ><strong>COMMANDCENTER:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h2>
 </div>
     
@@ -5791,7 +5794,7 @@ BASE:TraceOnOff( false )</code></pre>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onEvent')">
+<div class="w3-theme-l2">
 <h2><a id="#(COMMANDCENTER).onEvent" ><strong>COMMANDCENTER:onEvent(event)</strong></a></h2>
 </div>
     

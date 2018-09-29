@@ -14,19 +14,22 @@
 :target::before {
   content: "";
   display: block;
-  height: 104px;
-  margin: -104px 0 0;
+  height: calc( var( --headerheight, 0 ) );
+  margin: calc( var( --headerheight, 0) ) 0 0;
 }
 
 .picturebox {
-  height:160px
+  height:100px;
+}
+a {
+  display:inline-block;
 }
 </style>
 </head>
 <body onload="myLoadFunction()" >
-<div class="w3-container sticky w3-border-white w3-bottombar" style="background-image:url('../Images/Moose.JPG');background-size: 100%;" id="myHeader">
+<div id="myHeader" class="w3-container sticky w3-border-white w3-bottombar" style="background-image:url('../Images/Moose.JPG');">
   <h1>
-  <i class="w3-opennav fa fa-bars w3-text-white " onclick="w3_open()"></i>
+  <i class="fa fa-bars w3-text-white fa-2x" onclick="w3_open()"></i>
   </h1>
 </div>
 <div id="main">
@@ -41,7 +44,7 @@
            <img src= "../Images/AI_Air_To_Air_Dispatching.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2A.html">AI.AI_A2A</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.2) - Models the process of air operations for airplanes.</p>
 </p></div>
        </div>         
@@ -52,7 +55,7 @@
            <img src= "../Images/AI_Combat_Air_Patrol.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2A_Cap.html">AI.AI_A2A_Cap</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.2) - Models the process of Combat Air Patrol (CAP) for airplanes.</p>
 </p></div>
        </div>         
@@ -63,7 +66,7 @@
            <img src= "../Images/AI_Air_To_Air_Dispatching.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2A_Dispatcher.html">AI.AI_A2A_Dispatcher</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> - (R2.2) - Manages the process of an automatic A2A defense system based on an EWR network targets and coordinating CAP and GCI.</p>
 </p></div>
        </div>         
@@ -74,7 +77,7 @@
            <img src= "../Images/AI_Ground_Control_Intercept.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2A_GCI.html">AI.AI_A2A_GCI</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.2) - Models the process of Ground Controlled Interception (GCI) for airplanes.</p>
 </p></div>
        </div>         
@@ -85,7 +88,7 @@
            <img src= "../Images/AI_Air_Patrolling.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2A_Patrol.html">AI.AI_A2A_Patrol</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.2) - Models the process of air patrol of airplanes.</p>
 </p></div>
        </div>         
@@ -96,7 +99,7 @@
            <img src= "../Images/AI_Battlefield_Air_Interdiction.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Bai.html">AI.AI_Bai</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- Peform Battlefield Area Interdiction (BAI) within an engagement zone.</p>
 </p></div>
        </div>         
@@ -107,7 +110,7 @@
            <img src= "../Images/AI_Balancing.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Balancer.html">AI.AI_Balancer</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- Balance player slots with AI to create an engaging simulation environment, independent of the amount of players.</p>
 </p></div>
        </div>         
@@ -118,7 +121,7 @@
            <img src= "../Images/AI_Combat_Air_Patrol.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cap.html">AI.AI_Cap</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- Perform Combat Air Patrolling (CAP) for airplanes.</p>
 </p></div>
        </div>         
@@ -129,7 +132,7 @@
            <img src= "../Images/Cargo.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo.html">AI.AI_Cargo</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.4) - Models the intelligent transportation of infantry and other cargo.</p>
 </p></div>
        </div>         
@@ -140,7 +143,7 @@
            <img src= "../Images/AI_Cargo_Dispatching_For_APC.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo_APC.html">AI.AI_Cargo_APC</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.4) - Models the intelligent transportation of infantry and other cargo.</p>
 </p></div>
        </div>         
@@ -151,7 +154,7 @@
            <img src= "../Images/AI_Cargo_Dispatching_For_Airplanes.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo_Airplane.html">AI.AI_Cargo_Airplane</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.4) - Models the intelligent transportation of infantry (cargo).</p>
 </p></div>
        </div>         
@@ -162,7 +165,7 @@
            <img src= "../Images/AI_Cargo_Dispatcher.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo_Dispatcher.html">AI.AI_Cargo_Dispatcher</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.4) - Models the intelligent transportation of infantry and other cargo.</p>
 </p></div>
        </div>         
@@ -173,7 +176,7 @@
            <img src= "../Images/AI_Cargo_Dispatching_For_APC.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo_Dispatcher_APC.html">AI.AI_Cargo_Dispatcher_APC</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (2.4) - Models the intelligent transportation of infantry and other cargo using APCs.</p>
 </p></div>
        </div>         
@@ -184,7 +187,7 @@
            <img src= "../Images/AI_Cargo_Dispatching_For_Airplanes.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo_Dispatcher_Airplane.html">AI.AI_Cargo_Dispatcher_Airplane</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.4) - Models the intelligent transportation of infantry and other cargo using Planes.</p>
 </p></div>
        </div>         
@@ -195,7 +198,7 @@
            <img src= "../Images/AI_Cargo_Dispatching_For_Helicopters.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo_Dispatcher_Helicopter.html">AI.AI_Cargo_Dispatcher_Helicopter</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (2.4) - Models the intelligent transportation of infantry and other cargo using Helicopters.</p>
 </p></div>
        </div>         
@@ -206,7 +209,7 @@
            <img src= "../Images/AI_Cargo_Dispatching_For_Helicopters.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cargo_Helicopter.html">AI.AI_Cargo_Helicopter</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- (R2.4) - Models the intelligent transportation of infantry (cargo).</p>
 </p></div>
        </div>         
@@ -217,7 +220,7 @@
            <img src= "../Images/AI_Close_Air_Support.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Cas.html">AI.AI_Cas</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- Perform Close Air Support (CAS) near friendlies.</p>
 </p></div>
        </div>         
@@ -228,7 +231,7 @@
            <img src= "../Images/AI_Large_Formations.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Formation.html">AI.AI_Formation</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- Build large airborne formations of aircraft.</p>
 </p></div>
        </div>         
@@ -239,7 +242,7 @@
            <img src= "../Images/AI_Air_Patrolling.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Patrol.html">AI.AI_Patrol</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- Perform Air Patrolling for airplanes.</p>
 </p></div>
        </div>         
@@ -250,7 +253,7 @@
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Actions.Account.html">Actions.Account</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Actions</strong> - ACT_ACCOUNT_ classes <strong>account for</strong> (detect, count &amp; report) various DCS events occuring on <a href="Wrapper.Unit.html">Wrapper.Unit</a>s.</p>
 </p></div>
        </div>         
@@ -261,7 +264,7 @@
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Actions.Assign.html">Actions.Assign</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p>(SP) (MP) (FSM) Accept or reject process for player (task) assignments.</p>
 </p></div>
        </div>         
@@ -272,7 +275,7 @@
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Actions.Assist.html">Actions.Assist</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p>(SP) (MP) (FSM) Route AI or players through waypoints or to zones.</p>
 </p></div>
        </div>         
@@ -283,7 +286,7 @@
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Actions.Route.html">Actions.Route</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p>(SP) (MP) (FSM) Route AI or players through waypoints or to zones.</p>
 </p></div>
        </div>         
@@ -294,7 +297,7 @@
            <img src= "../Images/Cargo.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Cargo.Cargo.html">Cargo.Cargo</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- Management of CARGO logistics, that can be transported from and to transportation carriers.</p>
 </p></div>
        </div>         
@@ -305,7 +308,7 @@
            <img src= "../Images/Cargo_Crates.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Cargo.CargoCrate.html">Cargo.CargoCrate</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Cargo</strong> -- Management of single cargo crates, which are based on a <a href="Static.html">Static</a> object.</p>
 </p></div>
        </div>         
@@ -316,7 +319,7 @@
            <img src= "../Images/Cargo_Groups.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Cargo.CargoGroup.html">Cargo.CargoGroup</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Cargo</strong> -- Management of grouped cargo logistics, which are based on a <a href="Wrapper.Group.html">Wrapper.Group</a> object.</p>
 </p></div>
        </div>         
@@ -327,7 +330,7 @@
            <img src= "../Images/Cargo_Slingload.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Cargo.CargoSlingload.html">Cargo.CargoSlingload</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Cargo</strong> -- Management of single cargo crates, which are based on a <a href="Static.html">Static</a> object.</p>
 </p></div>
        </div>         
@@ -338,7 +341,7 @@
            <img src= "../Images/Cargo_Units.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Cargo.CargoUnit.html">Cargo.CargoUnit</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Cargo</strong> -- Management of single cargo logistics, which are based on a <a href="Wrapper.Unit.html">Wrapper.Unit</a> object.</p>
 </p></div>
        </div>         
@@ -349,7 +352,7 @@
            <img src= "../Images/Core_Base.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Base.html">Core.Base</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- BASE forms <strong>the basis of the MOOSE framework</strong>.</p>
 </p></div>
        </div>         
@@ -360,7 +363,7 @@
            <img src= "../Images/Core_Database.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Database.html">Core.Database</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- DATABASE manages the database of mission objects.</p>
 </p></div>
        </div>         
@@ -371,7 +374,7 @@
            <img src= "../Images/Core_Event.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Event.html">Core.Event</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- EVENT models DCS <strong>event dispatching</strong> using a <strong>publish-subscribe</strong> model.</p>
 </p></div>
        </div>         
@@ -382,7 +385,7 @@
            <img src= "../Images/Core_Finite_State_Machine.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Fsm.html">Core.Fsm</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- The <strong>FSM</strong> (<strong>F</strong>inite <strong>S</strong>tate <strong>M</strong>achine) class and derived <strong>FSM_</strong> classes 
 are design patterns allowing efficient (long-lasting) processes and workflows.</p>
 </p></div>
@@ -394,7 +397,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Goal.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Goal.html">Core.Goal</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core (WIP)</strong> -- Base class to allow the modeling of processes to achieve Goals.</p>
 </p></div>
        </div>         
@@ -405,7 +408,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Menu.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Menu.html">Core.Menu</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- MENU_ classes model the definition of <strong>hierarchical menu structures</strong> and <strong>commands for players</strong> within a mission.</p>
 </p></div>
        </div>         
@@ -416,7 +419,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Message.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Message.html">Core.Message</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- MESSAGE class takes are of the <strong>real-time notifications</strong> and <strong>messages to players</strong> during a simulation.</p>
 </p></div>
        </div>         
@@ -427,7 +430,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Coordinate.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Point.html">Core.Point</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- Defines an <strong>extensive API</strong> to <strong>manage 3D points</strong> in the DCS World 3D simulation space.</p>
 </p></div>
        </div>         
@@ -438,7 +441,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Radio.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Radio.html">Core.Radio</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- The RADIO Module is responsible for everything that is related to radio transmission and you can hear in DCS, be it TACAN beacons, Radio transmissions...</p>
 </p></div>
        </div>         
@@ -449,7 +452,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Report.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Report.html">Core.Report</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- <strong>REPORT</strong> class provides a handy means to create messages and reports.</p>
 </p></div>
        </div>         
@@ -460,7 +463,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Schedule_Dispatcher.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.ScheduleDispatcher.html">Core.ScheduleDispatcher</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- SCHEDULEDISPATCHER dispatches the different schedules.</p>
 </p></div>
        </div>         
@@ -471,7 +474,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Scheduler.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Scheduler.html">Core.Scheduler</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- SCHEDULER prepares and handles the <strong>execution of functions over scheduled time (intervals)</strong>.</p>
 </p></div>
        </div>         
@@ -482,7 +485,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Sets.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Set.html">Core.Set</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- SET_ classes define <strong>collections</strong> of objects to perform <strong>bulk actions</strong> and logically <strong>group</strong> objects.</p>
 </p></div>
        </div>         
@@ -493,7 +496,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Settings.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Settings.html">Core.Settings</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- Manages various settings for MOOSE classes.</p>
 </p></div>
        </div>         
@@ -504,7 +507,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Spawn.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Spawn.html">Core.Spawn</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> --Spawn dynamically new GROUPs of UNITs in your missions.</p>
 </p></div>
        </div>         
@@ -515,7 +518,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Spawnstatic.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.SpawnStatic.html">Core.SpawnStatic</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- Spawn dynamically new STATICs in your missions.</p>
 </p></div>
        </div>         
@@ -526,7 +529,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Spot.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Spot.html">Core.Spot</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- Management of SPOT logistics, that can be transported from and to transportation carriers.</p>
 </p></div>
        </div>         
@@ -537,7 +540,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Userflag.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.UserFlag.html">Core.UserFlag</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core (WIP)</strong> -- Manage user flags.</p>
 </p></div>
        </div>         
@@ -548,7 +551,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Usersound.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.UserSound.html">Core.UserSound</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core (WIP)</strong> -- Manage user sound.</p>
 </p></div>
        </div>         
@@ -559,7 +562,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Velocity.html">Core.Velocity</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- VELOCITY models a speed, which can be expressed in various formats according the Settings.</p>
 </p></div>
        </div>         
@@ -570,7 +573,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/Core_Zones.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.Zone.html">Core.Zone</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Core</strong> -- ZONE classes define <strong>zones</strong> within your mission of <strong>various forms</strong>, with <strong>various capabilities</strong>.</p>
 </p></div>
        </div>         
@@ -581,7 +584,7 @@ are design patterns allowing efficient (long-lasting) processes and workflows.</
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="DCS.html">DCS</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p>DCS API prototypes
 See <a href="https://wiki.hoggitworld.com/view/Simulator_Scripting_Engine_Documentation">https://wiki.hoggitworld.com/view/Simulator_Scripting_Engine_Documentation</a> 
 for further explanation and examples.</p>
@@ -594,7 +597,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Air_Traffic_Control_Ground_Operations.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.ATC_Ground.html">Functional.ATC_Ground</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- The ATC_GROUND classes monitor airbase traffic and regulate speed while taxiing.</p>
 </p></div>
        </div>         
@@ -605,7 +608,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Artillery.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Arty.html">Functional.Arty</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> - (R2.4) Control artillery units.</p>
 </p></div>
        </div>         
@@ -616,7 +619,7 @@ for further explanation and examples.</p>
            <img src= "../Images/CleanUp_Airbases.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.CleanUp.html">Functional.CleanUp</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- The CLEANUP_AIRBASE class keeps an area clean of crashing or colliding airplanes.</p>
 </p></div>
        </div>         
@@ -627,7 +630,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Designation.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Designate.html">Functional.Designate</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- Management of target <strong>Designation</strong>.</p>
 </p></div>
        </div>         
@@ -638,7 +641,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Detection.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Detection.html">Functional.Detection</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- Models the detection of enemy units by FACs or RECCEs and group them according various methods.</p>
 </p></div>
        </div>         
@@ -649,7 +652,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Escorting.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Escort.html">Functional.Escort</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- Taking the lead of AI escorting your flight.</p>
 </p></div>
        </div>         
@@ -660,7 +663,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Missile_Trainer.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.MissileTrainer.html">Functional.MissileTrainer</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- MISSILETRAINER helps you to train missile avoidance.</p>
 </p></div>
        </div>         
@@ -671,7 +674,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Movement.html">Functional.Movement</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- Limit the MOVEMENT of simulaneous moving ground vehicles.</p>
 </p></div>
        </div>         
@@ -682,7 +685,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Pseudo_ATC.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.PseudoATC.html">Functional.PseudoATC</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> - (R2.4) Rudimentary ATC.</p>
 </p></div>
        </div>         
@@ -693,7 +696,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Range.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Range.html">Functional.Range</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> - (R2.3) - Range Practice.</p>
 </p></div>
        </div>         
@@ -704,7 +707,7 @@ for further explanation and examples.</p>
            <img src= "../Images/RAT.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Rat.html">Functional.Rat</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> - (R2.2) - Create random airtraffic in your missions.</p>
 </p></div>
        </div>         
@@ -715,7 +718,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Scoring.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Scoring.html">Functional.Scoring</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- (R2.0) - Administer the scoring of player achievements, and create a CSV file logging the scoring events for use at team or squadron websites.</p>
 </p></div>
        </div>         
@@ -726,7 +729,7 @@ for further explanation and examples.</p>
            <img src= "../Images/SEAD.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Sead.html">Functional.Sead</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- Provides defensive behaviour to a set of SAM sites within a running Mission.</p>
 </p></div>
        </div>         
@@ -737,7 +740,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Suppression.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Suppression.html">Functional.Suppression</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <ul>
     <li><strong>Functional</strong> - (R2.4) Suppress fire of ground units when they get hit.</li>
 </ul>
@@ -750,7 +753,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Warehouse.html">Functional.Warehouse</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> - (R2.5) - Simulation of logistic operations.</p>
 </p></div>
        </div>         
@@ -761,7 +764,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Capture_Zones.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.ZoneCaptureCoalition.html">Functional.ZoneCaptureCoalition</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> -- (R2.3) Models the process to zone guarding and capturing.</p>
 </p></div>
        </div>         
@@ -772,7 +775,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.ZoneGoal.html">Functional.ZoneGoal</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional (WIP)</strong> -- Base class that models processes to achieve goals involving a Zone.</p>
 </p></div>
        </div>         
@@ -783,7 +786,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.ZoneGoalCargo.html">Functional.ZoneGoalCargo</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional (WIP)</strong> -- Base class that models processes to achieve goals involving a Zone and Cargo.</p>
 </p></div>
        </div>         
@@ -794,7 +797,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.ZoneGoalCoalition.html">Functional.ZoneGoalCoalition</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional (WIP)</strong> -- Base class that models processes to achieve goals involving a Zone for a Coalition.</p>
 </p></div>
        </div>         
@@ -805,7 +808,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_Command_Center.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.CommandCenter.html">Tasking.CommandCenter</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- A command center governs multiple missions, and takes care of the reporting and communications.</p>
 </p></div>
        </div>         
@@ -816,7 +819,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_Detection_Manager.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.DetectionManager.html">Tasking.DetectionManager</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> - This module contains the DETECTION_MANAGER class and derived classes.</p>
 </p></div>
        </div>         
@@ -827,7 +830,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_Mission.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Mission.html">Tasking.Mission</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- A mission models a goal to be achieved through the execution and completion of tasks by human players.</p>
 </p></div>
        </div>         
@@ -838,7 +841,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task.html">Tasking.Task</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- A task object governs the main engine to administer human taskings.</p>
 </p></div>
        </div>         
@@ -849,7 +852,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.TaskInfo.html">Tasking.TaskInfo</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- Controls the information of a Task.</p>
 </p></div>
        </div>         
@@ -860,7 +863,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.TaskZoneCapture.html">Tasking.TaskZoneCapture</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> - The TASK_Protect models tasks for players to protect or capture specific zones.</p>
 </p></div>
        </div>         
@@ -871,7 +874,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_A2A.html">Tasking.Task_A2A</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> - The TASK_A2A models tasks for players in Air to Air engagements.</p>
 </p></div>
        </div>         
@@ -882,7 +885,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_A2A_Dispatcher.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_A2A_Dispatcher.html">Tasking.Task_A2A_Dispatcher</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> - Dynamically allocates A2A tasks to human players, based on detected airborne targets through an EWR network.</p>
 </p></div>
        </div>         
@@ -893,7 +896,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_A2G.html">Tasking.Task_A2G</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> - The TASK_A2G models tasks for players in Air to Ground engagements.</p>
 </p></div>
        </div>         
@@ -904,7 +907,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_A2G_Dispatcher.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_A2G_Dispatcher.html">Tasking.Task_A2G_Dispatcher</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- Dynamically allocates A2G tasks to human players, based on detected ground targets through reconnaissance.</p>
 </p></div>
        </div>         
@@ -915,7 +918,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_Cargo.html">Tasking.Task_Cargo</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- Base class to model tasks for players to transport cargo.</p>
 </p></div>
        </div>         
@@ -926,7 +929,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_Cargo_CSAR.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_Cargo_CSAR.html">Tasking.Task_Cargo_CSAR</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- Orchestrates the task for players to execute CSAR for downed pilots.</p>
 </p></div>
        </div>         
@@ -937,7 +940,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_Cargo_Dispatcher.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_Cargo_Dispatcher.html">Tasking.Task_Cargo_Dispatcher</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> - Creates and manages player TASK_CARGO tasks.</p>
 </p></div>
        </div>         
@@ -948,7 +951,7 @@ for further explanation and examples.</p>
            <img src= "../Images/Task_Cargo_Transport.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_Cargo_Transport.html">Tasking.Task_Cargo_Transport</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Tasking</strong> -- Models tasks for players to transport cargo.</p>
 </p></div>
        </div>         
@@ -959,7 +962,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Tasking.Task_Manager.html">Tasking.Task_Manager</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p>This module contains the TASK_MANAGER class and derived classes.</p>
 </p></div>
        </div>         
@@ -970,7 +973,7 @@ for further explanation and examples.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Utils.html">Utils</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p>This module contains derived utilities taken from the MIST framework, 
 which are excellent tools to be reused in an OO environment!.</p>
 </p></div>
@@ -982,7 +985,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Airbase.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Airbase.html">Wrapper.Airbase</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- AIRBASE is a wrapper class to handle the DCS Airbase objects.</p>
 </p></div>
        </div>         
@@ -993,7 +996,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Client.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Client.html">Wrapper.Client</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- CLIENT wraps DCS Unit objects acting as a <strong>Client</strong> or <strong>Player</strong> within a mission.</p>
 </p></div>
        </div>         
@@ -1004,7 +1007,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Controllable.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Controllable.html">Wrapper.Controllable</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- CONTROLLABLE is an intermediate class wrapping Group and Unit classes "controllers".</p>
 </p></div>
        </div>         
@@ -1015,7 +1018,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Group.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Group.html">Wrapper.Group</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- GROUP wraps the DCS Class Group objects.</p>
 </p></div>
        </div>         
@@ -1026,7 +1029,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Identifiable.html">Wrapper.Identifiable</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- IDENTIFIABLE is an intermediate class wrapping DCS Object class derived Objects.</p>
 </p></div>
        </div>         
@@ -1037,7 +1040,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Object.html">Wrapper.Object</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- OBJECT wraps the DCS Object derived objects.</p>
 </p></div>
        </div>         
@@ -1048,7 +1051,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Positionable.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Positionable.html">Wrapper.Positionable</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- POSITIONABLE wraps DCS classes that are "positionable".</p>
 </p></div>
        </div>         
@@ -1059,7 +1062,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Scenery.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Scenery.html">Wrapper.Scenery</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- SCENERY models scenery within the DCS simulator.</p>
 </p></div>
        </div>         
@@ -1070,7 +1073,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Static.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Static.html">Wrapper.Static</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> -- STATIC wraps the DCS StaticObject class.</p>
 </p></div>
        </div>         
@@ -1081,7 +1084,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/Wrapper_Unit.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Wrapper.Unit.html">Wrapper.Unit</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Wrapper</strong> - UNIT is a wrapper class for the DCS Class Unit.</p>
 </p></div>
        </div>         
@@ -1092,7 +1095,7 @@ which are excellent tools to be reused in an OO environment!.</p>
            <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="routines.html">routines</a></strong></h2></div>
          </div>
-         <div class="w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p>Various routines</p>
 </p></div>
        </div>         
@@ -1473,793 +1476,793 @@ but can separately be modified later in your mission using the
    </div>
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
-          <tr class="w3-theme-l1 w3-padding-16">
-            <th class="w3-half w3-left-align w3-container" style="maxwidth:40%;width:40%; word-wrap: break-word">Fields and Methods inherited from TASK</th>
-            <th class="w3-half w3-left-align w3-container">Description</th>
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from TASK</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).Abort">TASK:Abort()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).Abort">TASK:Abort()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM Abort synchronous event function for TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).AbortGroup">TASK:AbortGroup(PlayerGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).AbortGroup">TASK:AbortGroup(PlayerGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>A group aborting the task.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).AddGroups">TASK:AddGroups(GroupSet)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).AddGroups">TASK:AddGroups(GroupSet)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the SET_GROUP assigned to the TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).AddProgress">TASK:AddProgress(PlayerName, ProgressText, ProgressTime, ProgressPoints)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).AddProgress">TASK:AddProgress(PlayerName, ProgressText, ProgressTime, ProgressPoints)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add Task Progress for a Player Name</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).AssignToGroup">TASK:AssignToGroup(TaskGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).AssignToGroup">TASK:AssignToGroup(TaskGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Assign the <a href="Task.html">Task</a> to a <a href="Wrapper.Group.html">Wrapper.Group</a>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).AssignToUnit">TASK:AssignToUnit(TaskUnit)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).AssignToUnit">TASK:AssignToUnit(TaskUnit)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Assign the <a href="Task.html">Task</a> to an alive <a href="Wrapper.Unit.html">Wrapper.Unit</a>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).Cancel">TASK:Cancel()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).Cancel">TASK:Cancel()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM Cancel synchronous event function for TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).ClearGroupAssignment">TASK:ClearGroupAssignment(TaskGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).ClearGroupAssignment">TASK:ClearGroupAssignment(TaskGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Clear the <a href="Wrapper.Group.html">Wrapper.Group</a> assignment from the <a href="Task.html">Task</a>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).CommandCenter">TASK.CommandCenter</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).CommandCenter">TASK.CommandCenter</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).CrashGroup">TASK:CrashGroup(PlayerGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).CrashGroup">TASK:CrashGroup(PlayerGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>A group crashing and thus aborting from the task.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).DetectedItem">TASK.DetectedItem</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).DetectedItem">TASK.DetectedItem</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).Detection">TASK.Detection</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).Detection">TASK.Detection</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).Dispatcher">TASK.Dispatcher</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).Dispatcher">TASK.Dispatcher</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).Fail">TASK:Fail()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).Fail">TASK:Fail()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM Fail synchronous event function for TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).FailProcesses">TASK:FailProcesses(TaskUnitName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).FailProcesses">TASK:FailProcesses(TaskUnitName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).FsmTemplate">TASK.FsmTemplate</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).FsmTemplate">TASK.FsmTemplate</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetBriefing">TASK:GetBriefing()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetBriefing">TASK:GetBriefing()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the <a href="Task.html">Task</a> briefing.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetGroups">TASK:GetGroups()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetGroups">TASK:GetGroups()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the SET_GROUP assigned to the TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetID">TASK:GetID()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetID">TASK:GetID()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the ID of the Task</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetMission">TASK:GetMission()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetMission">TASK:GetMission()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the Mission to where the TASK belongs.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetName">TASK:GetName()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetName">TASK:GetName()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the Name of the Task</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetPlayerCount">TASK:GetPlayerCount()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetPlayerCount">TASK:GetPlayerCount()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Create a count of the players in the Task.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetPlayerNames">TASK:GetPlayerNames()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetPlayerNames">TASK:GetPlayerNames()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Create a list of the players in the Task.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetPlayerProgress">TASK:GetPlayerProgress(PlayerName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetPlayerProgress">TASK:GetPlayerProgress(PlayerName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetProcessTemplate">TASK:GetProcessTemplate(ProcessName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetProcessTemplate">TASK:GetProcessTemplate(ProcessName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the default or currently assigned <a href="Process.html">Process</a> template with key ProcessName.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetScoring">TASK:GetScoring()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetScoring">TASK:GetScoring()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the Scoring of the task</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetStateMachine">TASK:GetStateMachine(TaskUnit)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetStateMachine">TASK:GetStateMachine(TaskUnit)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the FiniteStateMachine of <a href="Task.html">Task</a> with key Task<a href="Wrapper.Unit.html">Wrapper.Unit</a></p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetStateString">TASK:GetStateString()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetStateString">TASK:GetStateString()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the <a href="Task.html">Task</a> status.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetTaskBriefing">TASK:GetTaskBriefing()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetTaskBriefing">TASK:GetTaskBriefing()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns the <a href="Task.html">Task</a> briefing.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetTaskControlMenu">TASK:GetTaskControlMenu(TaskUnit, TaskName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetTaskControlMenu">TASK:GetTaskControlMenu(TaskUnit, TaskName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get Task Control Menu</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetTaskIndex">TASK:GetTaskIndex()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetTaskIndex">TASK:GetTaskIndex()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the Task Index, which is a combination of the Task type, the Task name.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetTaskName">TASK:GetTaskName()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetTaskName">TASK:GetTaskName()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns the <a href="Task.html">Task</a> name.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetType">TASK:GetType()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetType">TASK:GetType()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Gets the Type of the Task</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).GetUnitProcess">TASK:GetUnitProcess(TaskUnit)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).GetUnitProcess">TASK:GetUnitProcess(TaskUnit)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the Task FSM Process Template</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).Goal">TASK:Goal(PlayerUnit, PlayerName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).Goal">TASK:Goal(PlayerUnit, PlayerName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Goal Trigger for TASK</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).HasAliveUnits">TASK:HasAliveUnits()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).HasAliveUnits">TASK:HasAliveUnits()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns if the <a href="Task.html">Task</a> has still alive and assigned Units.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).HasGroup">TASK:HasGroup(FindGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).HasGroup">TASK:HasGroup(FindGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).HasStateMachine">TASK:HasStateMachine(TaskUnit)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).HasStateMachine">TASK:HasStateMachine(TaskUnit)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Checks if there is a FiniteStateMachine assigned to Task<a href="Wrapper.Unit.html">Wrapper.Unit</a> for <a href="Task.html">Task</a></p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).InitTaskControlMenu">TASK:InitTaskControlMenu(TaskUnit)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).InitTaskControlMenu">TASK:InitTaskControlMenu(TaskUnit)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Init Task Control Menu</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).IsGroupAssigned">TASK:IsGroupAssigned(TaskGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).IsGroupAssigned">TASK:IsGroupAssigned(TaskGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns if the <a href="Task.html">Task</a> is assigned to the Group.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).IsStateAborted">TASK:IsStateAborted()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).IsStateAborted">TASK:IsStateAborted()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Is the <a href="Task.html">Task</a> status <strong>Aborted</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).IsStateAssigned">TASK:IsStateAssigned()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).IsStateAssigned">TASK:IsStateAssigned()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Is the <a href="Task.html">Task</a> status <strong>Assigned</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).IsStateCancelled">TASK:IsStateCancelled()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).IsStateCancelled">TASK:IsStateCancelled()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Is the <a href="Task.html">Task</a> status <strong>Cancelled</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).IsStateFailed">TASK:IsStateFailed()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).IsStateFailed">TASK:IsStateFailed()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Is the <a href="Task.html">Task</a> status <strong>Failed</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).IsStateHold">TASK:IsStateHold()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).IsStateHold">TASK:IsStateHold()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Is the <a href="Task.html">Task</a> status <strong>Hold</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).IsStatePlanned">TASK:IsStatePlanned()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).IsStatePlanned">TASK:IsStatePlanned()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Is the <a href="Task.html">Task</a> status <strong>Planned</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).IsStateReplanned">TASK:IsStateReplanned()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).IsStateReplanned">TASK:IsStateReplanned()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Is the <a href="Task.html">Task</a> status <strong>Replanned</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).IsStateSuccess">TASK:IsStateSuccess()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).IsStateSuccess">TASK:IsStateSuccess()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Is the <a href="Task.html">Task</a> status <strong>Success</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).JoinUnit">TASK:JoinUnit(PlayerUnit, PlayerGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).JoinUnit">TASK:JoinUnit(PlayerUnit, PlayerGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add a PlayerUnit to join the Task.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).MenuAssignToGroup">TASK:MenuAssignToGroup(TaskGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).MenuAssignToGroup">TASK:MenuAssignToGroup(TaskGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).MenuAssigned">TASK.MenuAssigned</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).MenuAssigned">TASK.MenuAssigned</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).MenuMarkToGroup">TASK:MenuMarkToGroup(TaskGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).MenuMarkToGroup">TASK:MenuMarkToGroup(TaskGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).MenuPlanned">TASK.MenuPlanned</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).MenuPlanned">TASK.MenuPlanned</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).MenuTaskAbort">TASK:MenuTaskAbort(TaskGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).MenuTaskAbort">TASK:MenuTaskAbort(TaskGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Report the task status.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).MenuTaskStatus">TASK:MenuTaskStatus(TaskGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).MenuTaskStatus">TASK:MenuTaskStatus(TaskGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Report the task status.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).MessageToGroups">TASK:MessageToGroups(Message)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).MessageToGroups">TASK:MessageToGroups(Message)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Send a message of the <a href="Task.html">Task</a> to the assigned <a href="Wrapper.Group.html">Wrapper.Group</a>s.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).Mission">TASK.Mission</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).Mission">TASK.Mission</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).New">TASK:New(Mission, SetGroupAssign, TaskName, TaskType, TaskBriefing)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).New">TASK:New(Mission, SetGroupAssign, TaskName, TaskType, TaskBriefing)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Instantiates a new TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).OnAfterGoal">TASK:OnAfterGoal(From, Event, To, PlayerUnit, PlayerName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).OnAfterGoal">TASK:OnAfterGoal(From, Event, To, PlayerUnit, PlayerName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Goal Handler OnAfter for TASK</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).OnAfterPlayerAborted">TASK:OnAfterPlayerAborted(PlayerUnit, PlayerName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).OnAfterPlayerAborted">TASK:OnAfterPlayerAborted(PlayerUnit, PlayerName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM PlayerAborted event handler prototype for TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).OnAfterPlayerCrashed">TASK:OnAfterPlayerCrashed(PlayerUnit, PlayerName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).OnAfterPlayerCrashed">TASK:OnAfterPlayerCrashed(PlayerUnit, PlayerName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM PlayerCrashed event handler prototype for TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).OnAfterPlayerDead">TASK:OnAfterPlayerDead(PlayerUnit, PlayerName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).OnAfterPlayerDead">TASK:OnAfterPlayerDead(PlayerUnit, PlayerName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM PlayerDead event handler prototype for TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).OnBeforeGoal">TASK:OnBeforeGoal(From, Event, To, PlayerUnit, PlayerName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).OnBeforeGoal">TASK:OnBeforeGoal(From, Event, To, PlayerUnit, PlayerName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Goal Handler OnBefore for TASK</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).RefreshMenus">TASK:RefreshMenus(TaskGroup, MenuTime)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).RefreshMenus">TASK:RefreshMenus(TaskGroup, MenuTime)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Remove the menu option of the <a href="Task.html">Task</a> for a <a href="Wrapper.Group.html">Wrapper.Group</a>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).RefreshTaskControlMenu">TASK:RefreshTaskControlMenu(TaskUnit, MenuTime, MenuTag)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).RefreshTaskControlMenu">TASK:RefreshTaskControlMenu(TaskUnit, MenuTime, MenuTag)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Refresh Task Control Menu</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).RejectGroup">TASK:RejectGroup(PlayerGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).RejectGroup">TASK:RejectGroup(PlayerGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>A group rejecting a planned task.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).RemoveAssignedMenuForGroup">TASK:RemoveAssignedMenuForGroup(TaskGroup, MenuTime)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).RemoveAssignedMenuForGroup">TASK:RemoveAssignedMenuForGroup(TaskGroup, MenuTime)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Remove the assigned menu option of the <a href="Task.html">Task</a> for a <a href="Wrapper.Group.html">Wrapper.Group</a>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).RemoveMenu">TASK:RemoveMenu(MenuTime)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).RemoveMenu">TASK:RemoveMenu(MenuTime)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Remove the menu options of the <a href="Task.html">Task</a> to all the groups in the SetGroup.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).RemoveStateMachine">TASK:RemoveStateMachine(TaskUnit)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).RemoveStateMachine">TASK:RemoveStateMachine(TaskUnit)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Remove FiniteStateMachines from <a href="Task.html">Task</a> with key Task<a href="Wrapper.Unit.html">Wrapper.Unit</a></p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).RemoveTaskControlMenu">TASK:RemoveTaskControlMenu(TaskUnit)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).RemoveTaskControlMenu">TASK:RemoveTaskControlMenu(TaskUnit)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Remove Task Control Menu</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).Replan">TASK:Replan()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).Replan">TASK:Replan()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM Replan synchronous event function for TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).ReportDetails">TASK:ReportDetails(TaskGroup, ReportGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).ReportDetails">TASK:ReportDetails(TaskGroup, ReportGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Create a detailed report of the Task.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).ReportOverview">TASK:ReportOverview(ReportGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).ReportOverview">TASK:ReportOverview(ReportGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Create an overiew report of the Task.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).ReportSummary">TASK:ReportSummary(ReportGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).ReportSummary">TASK:ReportSummary(ReportGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Create a summary report of the Task.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SendBriefingToAssignedGroups">TASK:SendBriefingToAssignedGroups()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SendBriefingToAssignedGroups">TASK:SendBriefingToAssignedGroups()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Send the briefng message of the <a href="Task.html">Task</a> to the assigned <a href="Wrapper.Group.html">Wrapper.Group</a>s.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetAssignMethod">TASK:SetAssignMethod(AcceptClass)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetAssignMethod">TASK:SetAssignMethod(AcceptClass)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetAssignedMenuForGroup">TASK:SetAssignedMenuForGroup(TaskGroup, MenuTime)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetAssignedMenuForGroup">TASK:SetAssignedMenuForGroup(TaskGroup, MenuTime)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set the assigned menu options of the <a href="Task.html">Task</a>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetBriefing">TASK:SetBriefing(TaskBriefing)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetBriefing">TASK:SetBriefing(TaskBriefing)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets a <a href="Task.html">Task</a> briefing.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetDetection">TASK:SetDetection(Detection, DetectedItem)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetDetection">TASK:SetDetection(Detection, DetectedItem)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set detection of a task</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetDispatcher">TASK:SetDispatcher(Dispatcher)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetDispatcher">TASK:SetDispatcher(Dispatcher)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set dispatcher of a task</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetGroup">TASK.SetGroup</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetGroup">TASK.SetGroup</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The Set of Groups assigned to the Task</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetGroupAssigned">TASK:SetGroupAssigned(TaskGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetGroupAssigned">TASK:SetGroupAssigned(TaskGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set <a href="Wrapper.Group.html">Wrapper.Group</a> assigned to the <a href="Task.html">Task</a>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetID">TASK:SetID(TaskID)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetID">TASK:SetID(TaskID)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets the ID of the Task</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetMenu">TASK:SetMenu(MenuTime)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetMenu">TASK:SetMenu(MenuTime)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set the menu options of the <a href="Task.html">Task</a> to all the groups in the SetGroup.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetMenuForGroup">TASK:SetMenuForGroup(MenuTime, TaskGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetMenuForGroup">TASK:SetMenuForGroup(MenuTime, TaskGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set the Menu for a Group</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetName">TASK:SetName(TaskName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetName">TASK:SetName(TaskName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets the Name of the Task</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetPlannedMenuForGroup">TASK:SetPlannedMenuForGroup(TaskGroup, MenuText, MenuTime)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetPlannedMenuForGroup">TASK:SetPlannedMenuForGroup(TaskGroup, MenuText, MenuTime)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set the planned menu option of the <a href="Task.html">Task</a>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetScoreOnFail">TASK:SetScoreOnFail(PlayerName, Penalty, TaskUnit)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetScoreOnFail">TASK:SetScoreOnFail(PlayerName, Penalty, TaskUnit)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set a penalty when the A2A attack has failed.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetScoreOnProgress">TASK:SetScoreOnProgress(PlayerName, Score, TaskUnit)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetScoreOnProgress">TASK:SetScoreOnProgress(PlayerName, Score, TaskUnit)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set a score when progress has been made by the player.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetScoreOnSuccess">TASK:SetScoreOnSuccess(PlayerName, Score, TaskUnit)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetScoreOnSuccess">TASK:SetScoreOnSuccess(PlayerName, Score, TaskUnit)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set a score when all the targets in scope of the A2A attack, have been destroyed.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetStateMachine">TASK:SetStateMachine(TaskUnit, Fsm)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetStateMachine">TASK:SetStateMachine(TaskUnit, Fsm)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add a FiniteStateMachine to <a href="Task.html">Task</a> with key Task<a href="Wrapper.Unit.html">Wrapper.Unit</a></p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetTimeOut">TASK:SetTimeOut(Timer)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetTimeOut">TASK:SetTimeOut(Timer)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets the TimeOut for the <a href="Task.html">Task</a>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetType">TASK:SetType(TaskType)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetType">TASK:SetType(TaskType)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets the Type of the Task</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).SetUnitProcess">TASK:SetUnitProcess(Core, FsmTemplate)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).SetUnitProcess">TASK:SetUnitProcess(Core, FsmTemplate)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets the Task FSM Process Template</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).StateAborted">TASK:StateAborted()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).StateAborted">TASK:StateAborted()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets a <a href="Task.html">Task</a> to status <strong>Aborted</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).StateAssigned">TASK:StateAssigned()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).StateAssigned">TASK:StateAssigned()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets a <a href="Task.html">Task</a> to status <strong>Assigned</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).StateCancelled">TASK:StateCancelled()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).StateCancelled">TASK:StateCancelled()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets a <a href="Task.html">Task</a> to status <strong>Cancelled</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).StateFailed">TASK:StateFailed()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).StateFailed">TASK:StateFailed()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets a <a href="Task.html">Task</a> to status <strong>Failed</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).StateHold">TASK:StateHold()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).StateHold">TASK:StateHold()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets a <a href="Task.html">Task</a> to status <strong>Hold</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).StatePlanned">TASK:StatePlanned()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).StatePlanned">TASK:StatePlanned()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets a <a href="Task.html">Task</a> to status <strong>Planned</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).StateReplanned">TASK:StateReplanned()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).StateReplanned">TASK:StateReplanned()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets a <a href="Task.html">Task</a> to status <strong>Replanned</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).StateSuccess">TASK:StateSuccess()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).StateSuccess">TASK:StateSuccess()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets a <a href="Task.html">Task</a> to status <strong>Success</strong>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).Success">TASK:Success()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).Success">TASK:Success()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM Success synchronous event function for TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).TaskBriefing">TASK.TaskBriefing</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).TaskBriefing">TASK.TaskBriefing</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).TaskControlMenu">TASK.TaskControlMenu</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).TaskControlMenu">TASK.TaskControlMenu</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).TaskControlMenuTime">TASK.TaskControlMenuTime</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).TaskControlMenuTime">TASK.TaskControlMenuTime</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).TaskID">TASK.TaskID</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).TaskID">TASK.TaskID</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).TaskInfo">TASK.TaskInfo</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).TaskInfo">TASK.TaskInfo</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).TaskName">TASK.TaskName</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).TaskName">TASK.TaskName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).TaskProgress">TASK.TaskProgress</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).TaskProgress">TASK.TaskProgress</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).TaskScheduler">TASK.TaskScheduler</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).TaskScheduler">TASK.TaskScheduler</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).TaskType">TASK.TaskType</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).TaskType">TASK.TaskType</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).TimeOut">TASK.TimeOut</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).TimeOut">TASK.TimeOut</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).UnAssignFromGroup">TASK:UnAssignFromGroup(TaskGroup)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).UnAssignFromGroup">TASK:UnAssignFromGroup(TaskGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>UnAssign the <a href="Task.html">Task</a> from a <a href="Wrapper.Group.html">Wrapper.Group</a>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).UnAssignFromGroups">TASK:UnAssignFromGroups()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).UnAssignFromGroups">TASK:UnAssignFromGroups()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>UnAssign the <a href="Task.html">Task</a> from the <a href="Wrapper.Group.html">Wrapper.Group</a>s.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).UnAssignFromUnit">TASK:UnAssignFromUnit(TaskUnit)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).UnAssignFromUnit">TASK:UnAssignFromUnit(TaskUnit)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>UnAssign the <a href="Task.html">Task</a> from an alive <a href="Wrapper.Unit.html">Wrapper.Unit</a>.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).__Abort">TASK:__Abort()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).__Abort">TASK:__Abort()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM Abort asynchronous event function for TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).__Cancel">TASK:__Cancel()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).__Cancel">TASK:__Cancel()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM Cancel asynchronous event function for TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).__Fail">TASK:__Fail()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).__Fail">TASK:__Fail()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM Fail asynchronous event function for TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).__Goal">TASK:__Goal(Delay, PlayerUnit, PlayerName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).__Goal">TASK:__Goal(Delay, PlayerUnit, PlayerName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Goal Asynchronous Trigger for TASK</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).__Replan">TASK:__Replan()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).__Replan">TASK:__Replan()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM Replan asynchronous event function for TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).__Success">TASK:__Success()</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).__Success">TASK:__Success()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM Success asynchronous event function for TASK.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).onafterReplan">TASK:onafterReplan(From, Event, To)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).onafterReplan">TASK:onafterReplan(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM function for a TASK</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).onbeforeTimeOut">TASK:onbeforeTimeOut(Event, From, To)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).onbeforeTimeOut">TASK:onbeforeTimeOut(Event, From, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM function for a TASK</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).onenterAborted">TASK:onenterAborted(From, Event, To)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).onenterAborted">TASK:onenterAborted(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM function for a TASK</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).onenterAssigned">TASK:onenterAssigned(Event, From, To, PlayerUnit, PlayerName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).onenterAssigned">TASK:onenterAssigned(Event, From, To, PlayerUnit, PlayerName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM function for a TASK</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).onenterCancelled">TASK:onenterCancelled(From, Event, To)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).onenterCancelled">TASK:onenterCancelled(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM function for a TASK</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).onenterFailed">TASK:onenterFailed(From, Event, To)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).onenterFailed">TASK:onenterFailed(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM function for a TASK</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).onenterPlanned">TASK:onenterPlanned(Event, From, To)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).onenterPlanned">TASK:onenterPlanned(Event, From, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM function for a TASK</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).onenterSuccess">TASK:onenterSuccess(Event, From, To)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).onenterSuccess">TASK:onenterSuccess(Event, From, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM function for a TASK</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).onstatechange">TASK:onstatechange(Event, From, To)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).onstatechange">TASK:onstatechange(Event, From, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM function for a TASK</p>
 </td>
           </tr>
@@ -2267,25 +2270,25 @@ but can separately be modified later in your mission using the
         </div>
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
-          <tr class="w3-theme-l1 w3-padding-16">
-            <th class="w3-half w3-left-align w3-container" style="maxwidth:40%;width:40%; word-wrap: break-word">Fields and Methods inherited from FSM_TASK</th>
-            <th class="w3-half w3-left-align w3-container">Description</th>
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from FSM_TASK</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).New">TASK:New(TaskName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).New">TASK:New(TaskName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creates a new FSM_TASK object.</p>
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK).Task">TASK.Task</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK).Task">TASK.Task</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
-          <tr class="w3-border w3-padding-16">
-            <td class="name w3-half" style="maxwidth:40%;width:40%; word-wrap: break-word"><p><a href="##(TASK)._call_handler">TASK:_call_handler(step, trigger, params, EventName)</a></p></td>
-            <td class="summary w3-half" style="word-wrap: break-word">
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK)._call_handler">TASK:_call_handler(step, trigger, params, EventName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
@@ -2474,7 +2477,7 @@ but can separately be modified later in your mission using the
 </div>  
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Abort')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).Abort" ><strong>TASK:Abort()</strong></a></h2>
 </div>
     
@@ -2496,7 +2499,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AbortGroup')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).AbortGroup" ><strong>TASK:AbortGroup(PlayerGroup)</strong></a></h2>
 </div>
     
@@ -2540,7 +2543,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddGroups')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).AddGroups" ><strong>TASK:AddGroups(GroupSet)</strong></a></h2>
 </div>
     
@@ -2582,7 +2585,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AddProgress')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).AddProgress" ><strong>TASK:AddProgress(PlayerName, ProgressText, ProgressTime, ProgressPoints)</strong></a></h2>
 </div>
     
@@ -2662,7 +2665,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AssignToGroup')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).AssignToGroup" ><strong>TASK:AssignToGroup(TaskGroup)</strong></a></h2>
 </div>
     
@@ -2704,7 +2707,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##AssignToUnit')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).AssignToUnit" ><strong>TASK:AssignToUnit(TaskUnit)</strong></a></h2>
 </div>
     
@@ -2746,7 +2749,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Cancel')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).Cancel" ><strong>TASK:Cancel()</strong></a></h2>
 </div>
     
@@ -2768,7 +2771,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ClearGroupAssignment')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).ClearGroupAssignment" ><strong>TASK:ClearGroupAssignment(TaskGroup)</strong></a></h2>
 </div>
     
@@ -2810,7 +2813,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##CrashGroup')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).CrashGroup" ><strong>TASK:CrashGroup(PlayerGroup)</strong></a></h2>
 </div>
     
@@ -2854,7 +2857,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Fail')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).Fail" ><strong>TASK:Fail()</strong></a></h2>
 </div>
     
@@ -2876,7 +2879,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##FailProcesses')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).FailProcesses" ><strong>TASK:FailProcesses(TaskUnitName)</strong></a></h2>
 </div>
     
@@ -2913,7 +2916,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetBriefing')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetBriefing" ><strong>TASK:GetBriefing()</strong></a></h2>
 </div>
     
@@ -2943,7 +2946,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetGroups')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetGroups" ><strong>TASK:GetGroups()</strong></a></h2>
 </div>
     
@@ -2973,7 +2976,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetID')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetID" ><strong>TASK:GetID()</strong></a></h2>
 </div>
     
@@ -3003,7 +3006,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetMission')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetMission" ><strong>TASK:GetMission()</strong></a></h2>
 </div>
     
@@ -3033,7 +3036,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetName')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetName" ><strong>TASK:GetName()</strong></a></h2>
 </div>
     
@@ -3063,7 +3066,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetPlayerCount')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetPlayerCount" ><strong>TASK:GetPlayerCount()</strong></a></h2>
 </div>
     
@@ -3093,7 +3096,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetPlayerNames')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetPlayerNames" ><strong>TASK:GetPlayerNames()</strong></a></h2>
 </div>
     
@@ -3123,7 +3126,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetPlayerProgress')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetPlayerProgress" ><strong>TASK:GetPlayerProgress(PlayerName)</strong></a></h2>
 </div>
     
@@ -3153,7 +3156,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetProcessTemplate')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetProcessTemplate" ><strong>TASK:GetProcessTemplate(ProcessName)</strong></a></h2>
 </div>
     
@@ -3195,7 +3198,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetScoring')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetScoring" ><strong>TASK:GetScoring()</strong></a></h2>
 </div>
     
@@ -3225,7 +3228,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetStateMachine')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetStateMachine" ><strong>TASK:GetStateMachine(TaskUnit)</strong></a></h2>
 </div>
     
@@ -3267,7 +3270,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetStateString')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetStateString" ><strong>TASK:GetStateString()</strong></a></h2>
 </div>
     
@@ -3286,7 +3289,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetTaskBriefing')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetTaskBriefing" ><strong>TASK:GetTaskBriefing()</strong></a></h2>
 </div>
     
@@ -3316,7 +3319,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetTaskControlMenu')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetTaskControlMenu" ><strong>TASK:GetTaskControlMenu(TaskUnit, TaskName)</strong></a></h2>
 </div>
     
@@ -3370,7 +3373,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetTaskIndex')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetTaskIndex" ><strong>TASK:GetTaskIndex()</strong></a></h2>
 </div>
     
@@ -3400,7 +3403,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetTaskName')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetTaskName" ><strong>TASK:GetTaskName()</strong></a></h2>
 </div>
     
@@ -3430,7 +3433,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetType')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetType" ><strong>TASK:GetType()</strong></a></h2>
 </div>
     
@@ -3460,7 +3463,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##GetUnitProcess')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).GetUnitProcess" ><strong>TASK:GetUnitProcess(TaskUnit)</strong></a></h2>
 </div>
     
@@ -3501,7 +3504,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Goal')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).Goal" ><strong>TASK:Goal(PlayerUnit, PlayerName)</strong></a></h2>
 </div>
     
@@ -3547,7 +3550,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##HasAliveUnits')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).HasAliveUnits" ><strong>TASK:HasAliveUnits()</strong></a></h2>
 </div>
     
@@ -3577,7 +3580,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##HasGroup')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).HasGroup" ><strong>TASK:HasGroup(FindGroup)</strong></a></h2>
 </div>
     
@@ -3619,7 +3622,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##HasStateMachine')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).HasStateMachine" ><strong>TASK:HasStateMachine(TaskUnit)</strong></a></h2>
 </div>
     
@@ -3661,7 +3664,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##InitTaskControlMenu')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).InitTaskControlMenu" ><strong>TASK:InitTaskControlMenu(TaskUnit)</strong></a></h2>
 </div>
     
@@ -3704,7 +3707,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsGroupAssigned')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).IsGroupAssigned" ><strong>TASK:IsGroupAssigned(TaskGroup)</strong></a></h2>
 </div>
     
@@ -3746,7 +3749,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsStateAborted')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).IsStateAborted" ><strong>TASK:IsStateAborted()</strong></a></h2>
 </div>
     
@@ -3765,7 +3768,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsStateAssigned')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).IsStateAssigned" ><strong>TASK:IsStateAssigned()</strong></a></h2>
 </div>
     
@@ -3784,7 +3787,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsStateCancelled')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).IsStateCancelled" ><strong>TASK:IsStateCancelled()</strong></a></h2>
 </div>
     
@@ -3803,7 +3806,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsStateFailed')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).IsStateFailed" ><strong>TASK:IsStateFailed()</strong></a></h2>
 </div>
     
@@ -3822,7 +3825,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsStateHold')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).IsStateHold" ><strong>TASK:IsStateHold()</strong></a></h2>
 </div>
     
@@ -3841,7 +3844,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsStatePlanned')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).IsStatePlanned" ><strong>TASK:IsStatePlanned()</strong></a></h2>
 </div>
     
@@ -3860,7 +3863,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsStateReplanned')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).IsStateReplanned" ><strong>TASK:IsStateReplanned()</strong></a></h2>
 </div>
     
@@ -3879,7 +3882,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##IsStateSuccess')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).IsStateSuccess" ><strong>TASK:IsStateSuccess()</strong></a></h2>
 </div>
     
@@ -3898,7 +3901,7 @@ but can separately be modified later in your mission using the
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##JoinUnit')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).JoinUnit" ><strong>TASK:JoinUnit(PlayerUnit, PlayerGroup)</strong></a></h2>
 </div>
     
@@ -3960,7 +3963,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MenuAssignToGroup')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).MenuAssignToGroup" ><strong>TASK:MenuAssignToGroup(TaskGroup)</strong></a></h2>
 </div>
     
@@ -3991,7 +3994,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MenuMarkToGroup')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).MenuMarkToGroup" ><strong>TASK:MenuMarkToGroup(TaskGroup)</strong></a></h2>
 </div>
     
@@ -4022,7 +4025,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MenuTaskAbort')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).MenuTaskAbort" ><strong>TASK:MenuTaskAbort(TaskGroup)</strong></a></h2>
 </div>
     
@@ -4052,7 +4055,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MenuTaskStatus')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).MenuTaskStatus" ><strong>TASK:MenuTaskStatus(TaskGroup)</strong></a></h2>
 </div>
     
@@ -4082,7 +4085,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##MessageToGroups')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).MessageToGroups" ><strong>TASK:MessageToGroups(Message)</strong></a></h2>
 </div>
     
@@ -4112,7 +4115,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).New" ><strong>TASK:New(Mission, SetGroupAssign, TaskName, TaskType, TaskBriefing)</strong></a></h2>
 </div>
     
@@ -4208,7 +4211,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnAfterGoal')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).OnAfterGoal" ><strong>TASK:OnAfterGoal(From, Event, To, PlayerUnit, PlayerName)</strong></a></h2>
 </div>
     
@@ -4287,7 +4290,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnAfterPlayerAborted')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).OnAfterPlayerAborted" ><strong>TASK:OnAfterPlayerAborted(PlayerUnit, PlayerName)</strong></a></h2>
 </div>
     
@@ -4333,7 +4336,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnAfterPlayerCrashed')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).OnAfterPlayerCrashed" ><strong>TASK:OnAfterPlayerCrashed(PlayerUnit, PlayerName)</strong></a></h2>
 </div>
     
@@ -4379,7 +4382,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnAfterPlayerDead')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).OnAfterPlayerDead" ><strong>TASK:OnAfterPlayerDead(PlayerUnit, PlayerName)</strong></a></h2>
 </div>
     
@@ -4425,7 +4428,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##OnBeforeGoal')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).OnBeforeGoal" ><strong>TASK:OnBeforeGoal(From, Event, To, PlayerUnit, PlayerName)</strong></a></h2>
 </div>
     
@@ -4515,7 +4518,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RefreshMenus')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).RefreshMenus" ><strong>TASK:RefreshMenus(TaskGroup, MenuTime)</strong></a></h2>
 </div>
     
@@ -4568,7 +4571,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RefreshTaskControlMenu')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).RefreshTaskControlMenu" ><strong>TASK:RefreshTaskControlMenu(TaskUnit, MenuTime, MenuTag)</strong></a></h2>
 </div>
     
@@ -4625,7 +4628,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RejectGroup')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).RejectGroup" ><strong>TASK:RejectGroup(PlayerGroup)</strong></a></h2>
 </div>
     
@@ -4669,7 +4672,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RemoveAssignedMenuForGroup')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).RemoveAssignedMenuForGroup" ><strong>TASK:RemoveAssignedMenuForGroup(TaskGroup, MenuTime)</strong></a></h2>
 </div>
     
@@ -4722,7 +4725,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RemoveMenu')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).RemoveMenu" ><strong>TASK:RemoveMenu(MenuTime)</strong></a></h2>
 </div>
     
@@ -4764,7 +4767,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RemoveStateMachine')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).RemoveStateMachine" ><strong>TASK:RemoveStateMachine(TaskUnit)</strong></a></h2>
 </div>
     
@@ -4806,7 +4809,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##RemoveTaskControlMenu')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).RemoveTaskControlMenu" ><strong>TASK:RemoveTaskControlMenu(TaskUnit)</strong></a></h2>
 </div>
     
@@ -4839,7 +4842,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Replan')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).Replan" ><strong>TASK:Replan()</strong></a></h2>
 </div>
     
@@ -4861,7 +4864,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportDetails')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).ReportDetails" ><strong>TASK:ReportDetails(TaskGroup, ReportGroup)</strong></a></h2>
 </div>
     
@@ -4916,7 +4919,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportOverview')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).ReportOverview" ><strong>TASK:ReportOverview(ReportGroup)</strong></a></h2>
 </div>
     
@@ -4960,7 +4963,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##ReportSummary')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).ReportSummary" ><strong>TASK:ReportSummary(ReportGroup)</strong></a></h2>
 </div>
     
@@ -5005,7 +5008,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SendBriefingToAssignedGroups')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SendBriefingToAssignedGroups" ><strong>TASK:SendBriefingToAssignedGroups()</strong></a></h2>
 </div>
     
@@ -5024,7 +5027,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetAssignMethod')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetAssignMethod" ><strong>TASK:SetAssignMethod(AcceptClass)</strong></a></h2>
 </div>
     
@@ -5055,7 +5058,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetAssignedMenuForGroup')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetAssignedMenuForGroup" ><strong>TASK:SetAssignedMenuForGroup(TaskGroup, MenuTime)</strong></a></h2>
 </div>
     
@@ -5108,7 +5111,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetBriefing')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetBriefing" ><strong>TASK:SetBriefing(TaskBriefing)</strong></a></h2>
 </div>
     
@@ -5150,7 +5153,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetDetection')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetDetection" ><strong>TASK:SetDetection(Detection, DetectedItem)</strong></a></h2>
 </div>
     
@@ -5202,7 +5205,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetDispatcher')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetDispatcher" ><strong>TASK:SetDispatcher(Dispatcher)</strong></a></h2>
 </div>
     
@@ -5244,7 +5247,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetGroupAssigned')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetGroupAssigned" ><strong>TASK:SetGroupAssigned(TaskGroup)</strong></a></h2>
 </div>
     
@@ -5286,7 +5289,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetID')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetID" ><strong>TASK:SetID(TaskID)</strong></a></h2>
 </div>
     
@@ -5317,7 +5320,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetMenu')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetMenu" ><strong>TASK:SetMenu(MenuTime)</strong></a></h2>
 </div>
     
@@ -5359,7 +5362,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetMenuForGroup')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetMenuForGroup" ><strong>TASK:SetMenuForGroup(MenuTime, TaskGroup)</strong></a></h2>
 </div>
     
@@ -5411,7 +5414,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetName')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetName" ><strong>TASK:SetName(TaskName)</strong></a></h2>
 </div>
     
@@ -5442,7 +5445,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetPlannedMenuForGroup')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetPlannedMenuForGroup" ><strong>TASK:SetPlannedMenuForGroup(TaskGroup, MenuText, MenuTime)</strong></a></h2>
 </div>
     
@@ -5508,7 +5511,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetScoreOnFail')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetScoreOnFail" ><strong>TASK:SetScoreOnFail(PlayerName, Penalty, TaskUnit)</strong></a></h2>
 </div>
     
@@ -5576,7 +5579,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetScoreOnProgress')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetScoreOnProgress" ><strong>TASK:SetScoreOnProgress(PlayerName, Score, TaskUnit)</strong></a></h2>
 </div>
     
@@ -5644,7 +5647,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetScoreOnSuccess')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetScoreOnSuccess" ><strong>TASK:SetScoreOnSuccess(PlayerName, Score, TaskUnit)</strong></a></h2>
 </div>
     
@@ -5712,7 +5715,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetStateMachine')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetStateMachine" ><strong>TASK:SetStateMachine(TaskUnit, Fsm)</strong></a></h2>
 </div>
     
@@ -5765,7 +5768,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetTimeOut')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetTimeOut" ><strong>TASK:SetTimeOut(Timer)</strong></a></h2>
 </div>
     
@@ -5812,7 +5815,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetType')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetType" ><strong>TASK:SetType(TaskType)</strong></a></h2>
 </div>
     
@@ -5843,7 +5846,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##SetUnitProcess')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).SetUnitProcess" ><strong>TASK:SetUnitProcess(Core, FsmTemplate)</strong></a></h2>
 </div>
     
@@ -5885,7 +5888,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##StateAborted')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).StateAborted" ><strong>TASK:StateAborted()</strong></a></h2>
 </div>
     
@@ -5904,7 +5907,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##StateAssigned')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).StateAssigned" ><strong>TASK:StateAssigned()</strong></a></h2>
 </div>
     
@@ -5923,7 +5926,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##StateCancelled')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).StateCancelled" ><strong>TASK:StateCancelled()</strong></a></h2>
 </div>
     
@@ -5942,7 +5945,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##StateFailed')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).StateFailed" ><strong>TASK:StateFailed()</strong></a></h2>
 </div>
     
@@ -5961,7 +5964,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##StateHold')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).StateHold" ><strong>TASK:StateHold()</strong></a></h2>
 </div>
     
@@ -5980,7 +5983,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##StatePlanned')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).StatePlanned" ><strong>TASK:StatePlanned()</strong></a></h2>
 </div>
     
@@ -5999,7 +6002,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##StateReplanned')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).StateReplanned" ><strong>TASK:StateReplanned()</strong></a></h2>
 </div>
     
@@ -6018,7 +6021,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##StateSuccess')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).StateSuccess" ><strong>TASK:StateSuccess()</strong></a></h2>
 </div>
     
@@ -6037,7 +6040,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##Success')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).Success" ><strong>TASK:Success()</strong></a></h2>
 </div>
     
@@ -6059,7 +6062,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##UnAssignFromGroup')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).UnAssignFromGroup" ><strong>TASK:UnAssignFromGroup(TaskGroup)</strong></a></h2>
 </div>
     
@@ -6090,7 +6093,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##UnAssignFromGroups')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).UnAssignFromGroups" ><strong>TASK:UnAssignFromGroups()</strong></a></h2>
 </div>
     
@@ -6109,7 +6112,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##UnAssignFromUnit')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).UnAssignFromUnit" ><strong>TASK:UnAssignFromUnit(TaskUnit)</strong></a></h2>
 </div>
     
@@ -6151,7 +6154,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##__Abort')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).__Abort" ><strong>TASK:__Abort()</strong></a></h2>
 </div>
     
@@ -6173,7 +6176,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##__Cancel')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).__Cancel" ><strong>TASK:__Cancel()</strong></a></h2>
 </div>
     
@@ -6195,7 +6198,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##__Fail')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).__Fail" ><strong>TASK:__Fail()</strong></a></h2>
 </div>
     
@@ -6217,7 +6220,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##__Goal')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).__Goal" ><strong>TASK:__Goal(Delay, PlayerUnit, PlayerName)</strong></a></h2>
 </div>
     
@@ -6274,7 +6277,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##__Replan')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).__Replan" ><strong>TASK:__Replan()</strong></a></h2>
 </div>
     
@@ -6296,7 +6299,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##__Success')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).__Success" ><strong>TASK:__Success()</strong></a></h2>
 </div>
     
@@ -6318,7 +6321,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onafterReplan')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).onafterReplan" ><strong>TASK:onafterReplan(From, Event, To)</strong></a></h2>
 </div>
     
@@ -6371,7 +6374,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onbeforeTimeOut')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).onbeforeTimeOut" ><strong>TASK:onbeforeTimeOut(Event, From, To)</strong></a></h2>
 </div>
     
@@ -6424,7 +6427,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onenterAborted')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).onenterAborted" ><strong>TASK:onenterAborted(From, Event, To)</strong></a></h2>
 </div>
     
@@ -6477,7 +6480,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onenterAssigned')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).onenterAssigned" ><strong>TASK:onenterAssigned(Event, From, To, PlayerUnit, PlayerName)</strong></a></h2>
 </div>
     
@@ -6550,7 +6553,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onenterCancelled')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).onenterCancelled" ><strong>TASK:onenterCancelled(From, Event, To)</strong></a></h2>
 </div>
     
@@ -6603,7 +6606,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onenterFailed')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).onenterFailed" ><strong>TASK:onenterFailed(From, Event, To)</strong></a></h2>
 </div>
     
@@ -6656,7 +6659,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onenterPlanned')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).onenterPlanned" ><strong>TASK:onenterPlanned(Event, From, To)</strong></a></h2>
 </div>
     
@@ -6709,7 +6712,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onenterSuccess')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).onenterSuccess" ><strong>TASK:onenterSuccess(Event, From, To)</strong></a></h2>
 </div>
     
@@ -6762,7 +6765,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##onstatechange')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).onstatechange" ><strong>TASK:onstatechange(Event, From, To)</strong></a></h2>
 </div>
     
@@ -6986,7 +6989,7 @@ If the Unit is part of the Task, true is returned.</p>
 </div>  
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##New')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK).New" ><strong>TASK:New(TaskName)</strong></a></h2>
 </div>
     
@@ -7030,7 +7033,7 @@ If the Unit is part of the Task, true is returned.</p>
 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-<div class="w3-theme-l4 w3-show"  onclick="myFunction('#Functions##_call_handler')">
+<div class="w3-theme-l2">
 <h2><a id="#(TASK)._call_handler" ><strong>TASK:_call_handler(step, trigger, params, EventName)</strong></a></h2>
 </div>
     

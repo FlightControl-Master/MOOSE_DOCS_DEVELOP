@@ -67,7 +67,6 @@ This class models cargo to be transported between **airbases**!
   * The airplanes will fly towards the pickup airbases to pickup the cargo.
   * The airplanes will fly towards the deploy airbases to deploy the cargo.
 
-
 ===
 
 ## 2. Human cargo transportation dispatching.
