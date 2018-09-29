@@ -21,9 +21,7 @@
 .picturebox {
   height:100px;
 }
-a {
-  display:inline-block;
-}
+
 </style>
 </head>
 <body onload="myLoadFunction()" >
@@ -1623,7 +1621,7 @@ and any spaces before and after the resulting name are removed.</p>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).InitRandomizeZones">SPAWN:InitRandomizeZones(SpawnZoneTable)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>This method provides the functionality to randomize the spawning of the Groups at a given list of zones of different types.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -1994,6 +1992,12 @@ and any spaces before and after the resulting name are removed.</p>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).SpawnRandomizeUnits">SPAWN.SpawnRandomizeUnits</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).SpawnRandomizeZones">SPAWN.SpawnRandomizeZones</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -2724,6 +2728,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     
 
 
+    
+<p> Don't repeat the group from Take-Off till Landing and back Take-Off by ReSpawning.</p>
+
 </div>
 
 </div>   
@@ -2924,20 +2931,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
-<a id="#(SPAWN).SpawnInitKeepUnitNames" ><strong>SPAWN.SpawnInitKeepUnitNames</strong></a>
-    
-
-
-    
-<p> Overwrite unit names by default with group name.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
 <a id="#(SPAWN).SpawnInitLimit" ><strong>SPAWN.SpawnInitLimit</strong></a>
     
 
@@ -3084,6 +3077,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(SPAWN).SpawnRandomizeZones" ><strong>SPAWN.SpawnRandomizeZones</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
 <a id="#(SPAWN).SpawnScheduler" ><strong>SPAWN.SpawnScheduler</strong></a>
     
@@ -3148,7 +3152,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
 
     
-<p> When the first Spawn executes, all the Groups need to be made visible before start.</p>
+<p> Flag that indicates if all the Groups of the SpawnGroup need to be visible when Spawned.</p>
 
 </div>
 
@@ -3571,8 +3575,7 @@ end</code></pre>
           </div>
           <div class="w3-half">
               
-<pre><code>    The angle in degrees how the groups and each unit of the group will be positioned.
-</code></pre>
+<p>The angle in degrees how the groups and each unit of the group will be positioned.</p>
 
           </div>
         </div>
@@ -3585,8 +3588,7 @@ end</code></pre>
           </div>
           <div class="w3-half">
               
-<pre><code>     The amount of Groups that will be positioned on the X axis.
-</code></pre>
+<p>The amount of Groups that will be positioned on the X axis.</p>
 
           </div>
         </div>
@@ -3599,8 +3601,7 @@ end</code></pre>
           </div>
           <div class="w3-half">
               
-<pre><code>   The space between each Group on the X-axis.
-</code></pre>
+<p>The space between each Group on the X-axis.</p>
 
           </div>
         </div>
@@ -3613,8 +3614,7 @@ end</code></pre>
           </div>
           <div class="w3-half">
               
-<pre><code>     The space between each Group on the Y-axis.
-</code></pre>
+<p>The space between each Group on the Y-axis.</p>
 
           </div>
         </div>
@@ -3764,7 +3764,14 @@ Spawn_Helicopter:InitCleanUp( 20 )  -- CleanUp the spawning of the helicopters e
           </div>
           <div class="w3-half">
               
-<p>Coalition of the group as number of enumerator, i.e. 0=coaliton.side.NEUTRAL, 1=coaliton.side.RED, 2=coalition.side.BLUE.</p>
+<p>Coalition of the group as number of enumerator:</p>
+
+<ul>
+    <li><a href="DCS.html##(coaliton.side).NEUTRAL">DCS#coaliton.side.NEUTRAL</a></li>
+    <li><a href="DCS.html##(coaliton.side).RED">DCS#coaliton.side.RED</a></li>
+    <li><a href="DCS.html##(coalition.side).BLUE">DCS#coalition.side.BLUE</a>
+    </li>
+</ul>
 
           </div>
         </div>
@@ -3793,8 +3800,7 @@ Spawn_Helicopter:InitCleanUp( 20 )  -- CleanUp the spawning of the helicopters e
 <p>Sets the country of the spawn group.</p>
 
     
-<p>Note that the country determins the coalition of the group depending on which country is defined to be on which side for each specific mission!
-See https://wiki.hoggitworld.com/view/DCS_enum_country for country enumerators.</p>
+<p>Note that the country determins the coalition of the group depending on which country is defined to be on which side for each specific mission!</p>
 
 <div id= "#Functions##InitCountry" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -3812,7 +3818,13 @@ See https://wiki.hoggitworld.com/view/DCS_enum_country for country enumerators.<
           </div>
           <div class="w3-half">
               
-<p>Country id as number or enumerator, e.g. country.id.RUSSIA=0, county.id.USA=2 etc.</p>
+<p>Country id as number or enumerator:</p>
+
+<ul>
+    <li><a href="DCS.html##(country.id).RUSSIA">DCS#country.id.RUSSIA</a></li>
+    <li><a href="DCS.html##(county.id).USA">DCS#county.id.USA</a>
+    </li>
+</ul>
 
           </div>
         </div>
@@ -4682,17 +4694,7 @@ Spawn_BE_KA50 = SPAWN:New( 'BE KA-50@RAMP-Ground Defense' ):InitRandomizeRoute( 
 <h2><a id="#(SPAWN).InitRandomizeZones" ><strong>SPAWN:InitRandomizeZones(SpawnZoneTable)</strong></a></h2>
 </div>
     
-
-
-    
-<p>TODO: Add example.
-- This method provides the functionality to randomize the spawning of the Groups at a given list of zones of different types.
- @param #SPAWN self
- @param #table SpawnZoneTable A table with <a href="Zone.html">Zone</a> objects. If this table is given, then each spawn will be executed within the given list of <a href="Zone.html">Zone</a>s objects. 
- @return #SPAWN
- @usage
- -- NATO Tank Platoons invading Gori.
- -- Choose between 3 different zones for each new SPAWN the Group to be executed, regardless of the zone type. </p>
+<p>This method provides the functionality to randomize the spawning of the Groups at a given list of zones of different types.</p>
 
 <div id= "#Functions##InitRandomizeZones" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -4704,13 +4706,38 @@ Spawn_BE_KA50 = SPAWN:New( 'BE KA-50@RAMP-Ground Defense' ):InitRandomizeRoute( 
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
+                #table
             <strong><strong>SpawnZoneTable</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              <p></p>
+              
+<p>A table with <a href="Zone.html">Zone</a> objects. If this table is given, then each spawn will be executed within the given list of <a href="Zone.html">Zone</a>s objects. </p>
+
           </div>
         </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(SPAWN)">#SPAWN</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+      <h2><strong>Usage:</strong></h2>
+    <pre class="example"><code> -- Create a zone table of the 2 zones.
+ ZoneTable = { ZONE:New( "Zone1" ), ZONE:New( "Zone2" ) }
+ 
+ Spawn_Vehicle_1 = SPAWN:New( "Spawn Vehicle 1" )
+   :InitLimit( 10, 10 )
+   :InitRandomizeRoute( 1, 1, 200 ) 
+   :InitRandomizeZones( ZoneTable )
+   :SpawnScheduled( 5, .5 )
+   </code></pre>
+
 </div>
 
 </div>
@@ -5198,16 +5225,17 @@ The first parameter of the SpawnFunction is the <a href="Wrapper.Group.html##(GR
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>-- Declare SpawnObject and call a function when a new Group is spawned.
-local SpawnObject = SPAWN
-  :New( "SpawnObject" )
-  :InitLimit( 2, 10 )
-  :OnSpawnGroup(
-    function( SpawnGroup )
-      SpawnGroup:E( "I am spawned" )
-    end 
-    )
-  :SpawnScheduled( 300, 0.3 )</code></pre>
+    <pre class="example"><code> -- Declare SpawnObject and call a function when a new Group is spawned.
+ local SpawnObject = SPAWN
+   :New( "SpawnObject" )
+   :InitLimit( 2, 10 )
+   :OnSpawnGroup(
+     function( SpawnGroup )
+       SpawnGroup:E( "I am spawned" )
+     end 
+     )
+   :SpawnScheduled( 300, 0.3 )
+   </code></pre>
 
 </div>
 
@@ -7293,6 +7321,9 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
     
 
 
+    
+<p> Don't repeat the group from Take-Off till Landing and back Take-Off by ReSpawning.</p>
+
 </div>
 
 </div>   
@@ -7493,20 +7524,6 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
-<a id="#(SPAWN).SpawnInitKeepUnitNames" ><strong>SPAWN.SpawnInitKeepUnitNames</strong></a>
-    
-
-
-    
-<p> Overwrite unit names by default with group name.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
 <a id="#(SPAWN).SpawnInitLimit" ><strong>SPAWN.SpawnInitLimit</strong></a>
     
 
@@ -7653,6 +7670,17 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(SPAWN).SpawnRandomizeZones" ><strong>SPAWN.SpawnRandomizeZones</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
 <a id="#(SPAWN).SpawnScheduler" ><strong>SPAWN.SpawnScheduler</strong></a>
     
@@ -7717,7 +7745,7 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 
 
     
-<p> When the first Spawn executes, all the Groups need to be made visible before start.</p>
+<p> Flag that indicates if all the Groups of the SpawnGroup need to be visible when Spawned.</p>
 
 </div>
 
