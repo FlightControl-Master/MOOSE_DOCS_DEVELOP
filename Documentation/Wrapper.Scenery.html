@@ -752,7 +752,7 @@ for further explanation and examples.</p>
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Warehouse.html">Functional.Warehouse</a></strong></h2></div>
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Functional</strong> - (R2.5) - Simulation of logistic operations.</p>
+<p><strong>Functional</strong> - (R2.4) - Simulation of logistic operations.</p>
 </p></div>
        </div>         
      </div>
@@ -1269,7 +1269,7 @@ which are excellent tools to be reused in an OO environment!.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SCENERY).GetBoundingRadius">SCENERY:GetBoundingRadius()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SCENERY).GetBoundingRadius">SCENERY:GetBoundingRadius(mindist)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the bounding radius of the underlying POSITIONABLE DCS Object.</p>
 </td>
@@ -2620,7 +2620,7 @@ Ship:Destroy( false ) -- Don't generate an event upon destruction.
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SCENERY).GetBoundingRadius" ><strong>SCENERY:GetBoundingRadius()</strong></a></h2>
+<h2><a id="#(SCENERY).GetBoundingRadius" ><strong>SCENERY:GetBoundingRadius(mindist)</strong></a></h2>
 </div>
     
 <p>Get the bounding radius of the underlying POSITIONABLE DCS Object.</p>
@@ -2631,24 +2631,30 @@ Ship:Destroy( false ) -- Don't generate an event upon destruction.
    <div class="w3-margin-left">
 <p><a href="Wrapper.Positionable.html##(POSITIONABLE)">Wrapper.Positionable#POSITIONABLE</a></p>
 </div>
-    <h2><strong>Return values:</strong></h2>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>mindist</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) If bounding box is smaller than this value, mindist is returned. </p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
-        <div class="w3-half">
-          <p><a href="DCS.html##(Distance)">DCS#Distance</a>:</p>
-        </div>
-        <div class="w3-half">
-          
-<p>The bounding radius of the POSITIONABLE.</p>
+      <div class="w3-half">
+        <p><a href="DCS.html##(Distance)">DCS#Distance</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The bounding radius of the POSITIONABLE or #nil if the POSITIONABLE is not existing or alive.  </p>
 
-        </div>
-        <div class="w3-half">
-          <p>#nil:</p>
-        </div>
-        <div class="w3-half">
-          
-<p>The POSITIONABLE is not existing or alive.  </p>
-
-        </div>
+      </div>
     </div>
 </div>
 
