@@ -389,6 +389,12 @@ img {
     --headersize:1280px;
   }
   h1{font-size:20px} h2{font-size:18px} h3{font-size:16px} h4{font-size:14px} h5{font-size:13px} h6{font-size:12px}
+  :target::before {
+    content: "";
+    display: block;
+    height: 104px;
+    margin: 104px 0 0;
+  }
 }
 @media only screen and (max-width: 1280px) {
   body {
@@ -412,6 +418,12 @@ img {
     --headersize:1280px;
   }
   h1{font-size:20px} h2{font-size:18px} h3{font-size:16px} h4{font-size:14px} h5{font-size:13px} h6{font-size:12px}
+  :target::before {
+    content: "";
+    display: block;
+    height: 104px;
+    margin: 104px 0 0;
+  }
 }
 @media only screen and (max-width: 600px) {
   body {
@@ -435,6 +447,13 @@ img {
     --headerheight: 52px;
     --headersize:640px;
   }
+  :target::before {
+    content: "";
+    display: block;
+    height: 52px;
+    margin: 52px 0 0;
+  }
+
 }
 
  /* Style the header */

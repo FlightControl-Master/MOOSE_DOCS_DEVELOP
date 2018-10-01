@@ -11,13 +11,6 @@
    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
    
 <style>
-:target::before {
-  content: "";
-  display: block;
-  height: calc( var( --headerheight, 0 ) );
-  margin: calc( var( --headerheight, 0) ) 0 0;
-}
-
 .picturebox {
   height:100px;
 }
@@ -1410,6 +1403,18 @@ Note that when you declare a CSAR task manually, you'll still need to specify a 
 
 <p>Use the <a href="##(TASK_CARGO_DISPATCHER).SetCSARDeployZone">TASK_CARGO_DISPATCHER.SetCSARDeployZone</a>() to setup one deployment zone, and <a href="##(TASK_CARGO_DISPATCHER).SetCSARDeployZones">TASK_CARGO_DISPATCHER.SetCSARDeployZones</a>() to setup multiple default deployment zones in one call.</p>
 
+<h2>4.4. <strong>CSAR ejection zones</strong>.</h2>
+
+<p>Setup a set of zones where the pilots will only eject and a task is created for CSAR. When such a set of zones is given, any ejection outside those zones will not result in a pilot created for CSAR!</p>
+
+<p>Use the <a href="##(TASK_CARGO_DISPATCHER).SetCSARZones">TASK_CARGO_DISPATCHER.SetCSARZones</a>() to setup the set of zones.</p>
+
+<h2>4.5. <strong>CSAR ejection maximum</strong>.</h2>
+
+<p>Setup how many pilots will eject the maximum. This to avoid an overload of CSAR tasks being created :-) The default is endless CSAR tasks.</p>
+
+<p>Use the <a href="##(TASK_CARGO_DISPATCHER).SetMaxCSAR">TASK_CARGO_DISPATCHER.SetMaxCSAR</a>() to setup the maximum of pilots that will eject for CSAR.</p>
+
 
 <h1>5) Handle cargo task events.</h1>
 
@@ -1578,6 +1583,12 @@ You can use this event handler to post messages to players, or provide status up
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK_CARGO_DISPATCHER).CountCSAR">TASK_CARGO_DISPATCHER.CountCSAR</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK_CARGO_DISPATCHER).DefaultDeployZones">TASK_CARGO_DISPATCHER.DefaultDeployZones</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -1593,6 +1604,12 @@ You can use this event handler to post messages to players, or provide status up
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK_CARGO_DISPATCHER).ManageTasks">TASK_CARGO_DISPATCHER:ManageTasks()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Assigns tasks to the <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK_CARGO_DISPATCHER).MaxCSAR">TASK_CARGO_DISPATCHER.MaxCSAR</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -1638,6 +1655,12 @@ You can use this event handler to post messages to players, or provide status up
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK_CARGO_DISPATCHER).SetCSARZones">TASK_CARGO_DISPATCHER:SetCSARZones(SetZonesCSAR)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Sets the set of zones were pilots will only be spawned (eject) when the planes crash.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK_CARGO_DISPATCHER).SetDefaultDeployZone">TASK_CARGO_DISPATCHER:SetDefaultDeployZone(DefaultDeployZone)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Define one default deploy zone for all the cargo tasks.</p>
@@ -1650,6 +1673,12 @@ You can use this event handler to post messages to players, or provide status up
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK_CARGO_DISPATCHER).SetMaxCSAR">TASK_CARGO_DISPATCHER:SetMaxCSAR(MaxCSAR)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Sets the maximum of pilots that will be spawned (eject) when the planes crash.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK_CARGO_DISPATCHER).SetTransportDeployZone">TASK_CARGO_DISPATCHER:SetTransportDeployZone(Task, TransportDeployZone)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Define one deploy zone for the Transport tasks.</p>
@@ -1659,6 +1688,12 @@ You can use this event handler to post messages to players, or provide status up
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK_CARGO_DISPATCHER).SetTransportDeployZones">TASK_CARGO_DISPATCHER:SetTransportDeployZones(Task, TransportDeployZones)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Define the deploy zones for the Transport tasks.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK_CARGO_DISPATCHER).SetZonesCSAR">TASK_CARGO_DISPATCHER.SetZonesCSAR</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -2558,7 +2593,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(TASK_CARGO_DISPATCHER).DefaultDeployZones" ><strong>TASK_CARGO_DISPATCHER.DefaultDeployZones</strong></a>
     
 
@@ -2570,7 +2605,29 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
+<a id="#(TASK_CARGO_DISPATCHER).MaxCSAR" ><strong>TASK_CARGO_DISPATCHER.MaxCSAR</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
 <a id="#(TASK_CARGO_DISPATCHER).Mission" ><strong>TASK_CARGO_DISPATCHER.Mission</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+<a id="#(TASK_CARGO_DISPATCHER).SetZonesCSAR" ><strong>TASK_CARGO_DISPATCHER.SetZonesCSAR</strong></a>
     
 
 
@@ -3211,6 +3268,57 @@ If no TaskPrefix is given, then "Transport" will be used as the prefix. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(TASK_CARGO_DISPATCHER).SetCSARZones" ><strong>TASK_CARGO_DISPATCHER:SetCSARZones(SetZonesCSAR)</strong></a></h2>
+</div>
+    
+<p>Sets the set of zones were pilots will only be spawned (eject) when the planes crash.</p>
+
+    
+<p>Note that because this is a set of zones, the MD can create the zones dynamically within his mission!
+Just provide a set of zones, see usage, but find the tactical situation here:</p>
+
+<p><img src="../Tasking/CSAR_Zones.JPG" alt="CSAR Zones"/></p>
+
+
+<div id= "#Functions##SetCSARZones" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TASK_CARGO_DISPATCHER</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+            <strong><strong>SetZonesCSAR</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The set of zones where pilots will only be spawned for CSAR when they eject.</p>
+
+          </div>
+        </div>
+      <h2><strong>Usage:</strong></h2>
+    <pre class="example"><code>
+     TaskDispatcher = TASK_CARGO_DISPATCHER:New( Mission, AttackGroups )
+
+     -- Use this call to pass the set of zones.
+     -- Note that you can create the set of zones inline, because the FilterOnce method (and other SET_ZONE methods return self).
+     -- So here the zones can be created as normal trigger zones (MOOSE creates a collection of ZONE objects when teh mission starts of all trigger zones).
+     -- Just name them as CSAR zones here.
+     TaskDispatcher:SetCSARZones( SET_ZONE:New():FilterPrefixes("CSAR"):FilterOnce() )
+</code></pre>
+
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(TASK_CARGO_DISPATCHER).SetDefaultDeployZone" ><strong>TASK_CARGO_DISPATCHER:SetDefaultDeployZone(DefaultDeployZone)</strong></a></h2>
 </div>
     
@@ -3289,6 +3397,50 @@ If no TaskPrefix is given, then "Transport" will be used as the prefix. </p>
 
       </div>
     </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TASK_CARGO_DISPATCHER).SetMaxCSAR" ><strong>TASK_CARGO_DISPATCHER:SetMaxCSAR(MaxCSAR)</strong></a></h2>
+</div>
+    
+<p>Sets the maximum of pilots that will be spawned (eject) when the planes crash.</p>
+
+    
+<p> </p>
+
+<div id= "#Functions##SetMaxCSAR" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TASK_CARGO_DISPATCHER</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>MaxCSAR</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The maximum of pilots that will eject for CSAR.</p>
+
+          </div>
+        </div>
+      <h2><strong>Usage:</strong></h2>
+    <pre class="example"><code>
+     TaskDispatcher = TASK_CARGO_DISPATCHER:New( Mission, AttackGroups )
+
+     -- Use this call to the maximum of CSAR to 10.
+     TaskDispatcher:SetMaxCSAR( 10 )
+</code></pre>
+
 </div>
 
 </div>
@@ -3520,7 +3672,7 @@ This method can only be used once!</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(TASK_CARGO_DISPATCHER).DefaultDeployZones" ><strong>TASK_CARGO_DISPATCHER.DefaultDeployZones</strong></a>
     
 
@@ -3532,7 +3684,29 @@ This method can only be used once!</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
+<a id="#(TASK_CARGO_DISPATCHER).MaxCSAR" ><strong>TASK_CARGO_DISPATCHER.MaxCSAR</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
 <a id="#(TASK_CARGO_DISPATCHER).Mission" ><strong>TASK_CARGO_DISPATCHER.Mission</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+<a id="#(TASK_CARGO_DISPATCHER).SetZonesCSAR" ><strong>TASK_CARGO_DISPATCHER.SetZonesCSAR</strong></a>
     
 
 
@@ -4356,7 +4530,7 @@ This method can only be used once!</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(TASK_CARGO_DISPATCHER).DefaultDeployZones" ><strong>TASK_CARGO_DISPATCHER.DefaultDeployZones</strong></a>
     
 
@@ -4368,7 +4542,29 @@ This method can only be used once!</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
+<a id="#(TASK_CARGO_DISPATCHER).MaxCSAR" ><strong>TASK_CARGO_DISPATCHER.MaxCSAR</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
 <a id="#(TASK_CARGO_DISPATCHER).Mission" ><strong>TASK_CARGO_DISPATCHER.Mission</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+<a id="#(TASK_CARGO_DISPATCHER).SetZonesCSAR" ><strong>TASK_CARGO_DISPATCHER.SetZonesCSAR</strong></a>
     
 
 
@@ -5573,7 +5769,7 @@ This method can only be used once!</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(TASK_CARGO_DISPATCHER).DefaultDeployZones" ><strong>TASK_CARGO_DISPATCHER.DefaultDeployZones</strong></a>
     
 
@@ -5585,7 +5781,29 @@ This method can only be used once!</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
+<a id="#(TASK_CARGO_DISPATCHER).MaxCSAR" ><strong>TASK_CARGO_DISPATCHER.MaxCSAR</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
 <a id="#(TASK_CARGO_DISPATCHER).Mission" ><strong>TASK_CARGO_DISPATCHER.Mission</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+<a id="#(TASK_CARGO_DISPATCHER).SetZonesCSAR" ><strong>TASK_CARGO_DISPATCHER.SetZonesCSAR</strong></a>
     
 
 
