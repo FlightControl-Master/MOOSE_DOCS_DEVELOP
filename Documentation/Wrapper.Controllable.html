@@ -1802,7 +1802,7 @@ The method <a href="##(CONTROLLABLE).SetTaskWaypoint">CONTROLLABLE.SetTaskWaypoi
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONTROLLABLE).TaskEscort">CONTROLLABLE:TaskEscort(EscortControllable, Vec3, LastWaypointIndex, EngagementDistanceMax, TargetTypes, FollowControllable, EngagementDistance)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONTROLLABLE).TaskEscort">CONTROLLABLE:TaskEscort(FollowControllable, Vec3, LastWaypointIndex, EngagementDistance, TargetTypes)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(AIR) Escort another airborne controllable.</p>
 </td>
@@ -7154,7 +7154,7 @@ Warning! When you switch this option off, the airborne group will continue to fl
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CONTROLLABLE).TaskEscort" ><strong>CONTROLLABLE:TaskEscort(EscortControllable, Vec3, LastWaypointIndex, EngagementDistanceMax, TargetTypes, FollowControllable, EngagementDistance)</strong></a></h2>
+<h2><a id="#(CONTROLLABLE).TaskEscort" ><strong>CONTROLLABLE:TaskEscort(FollowControllable, Vec3, LastWaypointIndex, EngagementDistance, TargetTypes)</strong></a></h2>
 </div>
     
 <p>(AIR) Escort another airborne controllable.</p>
@@ -7174,7 +7174,7 @@ The unit / controllable will also protect that controllable from threats of spec
           <div class="w3-half">
             <p>
                 <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
-            <strong><strong>EscortControllable</strong></strong>
+            <strong><strong>FollowControllable</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -7213,7 +7213,7 @@ The unit / controllable will also protect that controllable from threats of spec
           <div class="w3-half">
             <p>
                 #number
-            <strong><strong>EngagementDistanceMax</strong></strong>
+            <strong><strong>EngagementDistance</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -7233,26 +7233,6 @@ The unit / controllable will also protect that controllable from threats of spec
               
 <p>Array of AttributeName that is contains threat categories allowed to engage. </p>
 
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>FollowControllable</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>EngagementDistance</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
