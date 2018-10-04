@@ -1826,6 +1826,36 @@ Note that the Set and Add methods return the current POINT_VEC3 object, so these
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COORDINATE).IsSurfaceTypeLand">COORDINATE:IsSurfaceTypeLand()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Checks if the surface type is on land.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COORDINATE).IsSurfaceTypeRoad">COORDINATE:IsSurfaceTypeRoad()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Checks if the surface type is road.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COORDINATE).IsSurfaceTypeRunway">COORDINATE:IsSurfaceTypeRunway()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Checks if the surface type is runway.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COORDINATE).IsSurfaceTypeShallowWater">COORDINATE:IsSurfaceTypeShallowWater()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Checks if the surface type is shallow water.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COORDINATE).IsSurfaceTypeWater">COORDINATE:IsSurfaceTypeWater()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Checks if the surface type is water.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COORDINATE).MarkToAll">COORDINATE:MarkToAll(MarkText, ReadOnly, Text)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Mark to All</p>
@@ -3061,6 +3091,36 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POINT_VEC2).IsSurfaceTypeLand">POINT_VEC2:IsSurfaceTypeLand()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Checks if the surface type is on land.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POINT_VEC2).IsSurfaceTypeRoad">POINT_VEC2:IsSurfaceTypeRoad()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Checks if the surface type is road.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POINT_VEC2).IsSurfaceTypeRunway">POINT_VEC2:IsSurfaceTypeRunway()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Checks if the surface type is runway.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POINT_VEC2).IsSurfaceTypeShallowWater">POINT_VEC2:IsSurfaceTypeShallowWater()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Checks if the surface type is shallow water.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POINT_VEC2).IsSurfaceTypeWater">POINT_VEC2:IsSurfaceTypeWater()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Checks if the surface type is water.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POINT_VEC2).MarkToAll">POINT_VEC2:MarkToAll(MarkText, ReadOnly, Text)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Mark to All</p>
@@ -4085,6 +4145,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     
 
 
+    
+<p> Coordinates.</p>
+
 </div>
 
 </div>   
@@ -4466,7 +4529,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             </p>
           </div>
           <div class="w3-half">
-              <p></p>
+              
+<p>Intensity of the explosion in kg TNT.</p>
+
           </div>
         </div>
 </div>
@@ -6753,6 +6818,156 @@ By default, the last point is the closest point on road of the ToCoord. Hence, t
       <div class="w3-half">
         
 <p>true If the ToCoordinate has LOS with the Coordinate, otherwise false.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(COORDINATE).IsSurfaceTypeLand" ><strong>COORDINATE:IsSurfaceTypeLand()</strong></a></h2>
+</div>
+    
+<p>Checks if the surface type is on land.</p>
+
+<div id= "#Functions##IsSurfaceTypeLand" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>COORDINATE</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, the surface type at the coordinate is land.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(COORDINATE).IsSurfaceTypeRoad" ><strong>COORDINATE:IsSurfaceTypeRoad()</strong></a></h2>
+</div>
+    
+<p>Checks if the surface type is road.</p>
+
+<div id= "#Functions##IsSurfaceTypeRoad" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>COORDINATE</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, the surface type at the coordinate is a road.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(COORDINATE).IsSurfaceTypeRunway" ><strong>COORDINATE:IsSurfaceTypeRunway()</strong></a></h2>
+</div>
+    
+<p>Checks if the surface type is runway.</p>
+
+<div id= "#Functions##IsSurfaceTypeRunway" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>COORDINATE</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, the surface type at the coordinate is a runway or taxi way.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(COORDINATE).IsSurfaceTypeShallowWater" ><strong>COORDINATE:IsSurfaceTypeShallowWater()</strong></a></h2>
+</div>
+    
+<p>Checks if the surface type is shallow water.</p>
+
+<div id= "#Functions##IsSurfaceTypeShallowWater" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>COORDINATE</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, the surface type at the coordinate is a shallow water.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(COORDINATE).IsSurfaceTypeWater" ><strong>COORDINATE:IsSurfaceTypeWater()</strong></a></h2>
+</div>
+    
+<p>Checks if the surface type is water.</p>
+
+<div id= "#Functions##IsSurfaceTypeWater" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>COORDINATE</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, the surface type at the coordinate is a deep water.</p>
 
       </div>
     </div>
@@ -9310,6 +9525,9 @@ By default, the last point is the closest point on road of the ToCoord. Hence, t
 <a id="#(COORDINATE).x" ><strong>COORDINATE.x</strong></a>
     
 
+
+    
+<p> Coordinates.</p>
 
 </div>
 
@@ -11997,17 +12215,6 @@ BASE:TraceOnOff( false )</code></pre>
 </div>
 
 </div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(POINT_VEC2).z" ><strong>POINT_VEC2.z</strong></a>
-    
-
-
-</div>
-
-</div>   
 <div class="functions  w3-container w3-theme-l2">
   <h2>Function(s)</h2>
 </div>  
@@ -12806,17 +13013,6 @@ BASE:TraceOnOff( false )</code></pre>
 </div>
 
 </div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(POINT_VEC2).z" ><strong>POINT_VEC2.z</strong></a>
-    
-
-
-</div>
-
-</div>   
 <div class="functions  w3-container w3-theme-l2">
   <h2>Function(s)</h2>
 </div>  
@@ -13173,7 +13369,9 @@ BASE:TraceOnOff( false )</code></pre>
             </p>
           </div>
           <div class="w3-half">
-              <p></p>
+              
+<p>Intensity of the explosion in kg TNT.</p>
+
           </div>
         </div>
 </div>
@@ -15460,6 +15658,156 @@ By default, the last point is the closest point on road of the ToCoord. Hence, t
       <div class="w3-half">
         
 <p>true If the ToCoordinate has LOS with the Coordinate, otherwise false.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POINT_VEC2).IsSurfaceTypeLand" ><strong>POINT_VEC2:IsSurfaceTypeLand()</strong></a></h2>
+</div>
+    
+<p>Checks if the surface type is on land.</p>
+
+<div id= "#Functions##IsSurfaceTypeLand" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, the surface type at the coordinate is land.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POINT_VEC2).IsSurfaceTypeRoad" ><strong>POINT_VEC2:IsSurfaceTypeRoad()</strong></a></h2>
+</div>
+    
+<p>Checks if the surface type is road.</p>
+
+<div id= "#Functions##IsSurfaceTypeRoad" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, the surface type at the coordinate is a road.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POINT_VEC2).IsSurfaceTypeRunway" ><strong>POINT_VEC2:IsSurfaceTypeRunway()</strong></a></h2>
+</div>
+    
+<p>Checks if the surface type is runway.</p>
+
+<div id= "#Functions##IsSurfaceTypeRunway" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, the surface type at the coordinate is a runway or taxi way.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POINT_VEC2).IsSurfaceTypeShallowWater" ><strong>POINT_VEC2:IsSurfaceTypeShallowWater()</strong></a></h2>
+</div>
+    
+<p>Checks if the surface type is shallow water.</p>
+
+<div id= "#Functions##IsSurfaceTypeShallowWater" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, the surface type at the coordinate is a shallow water.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POINT_VEC2).IsSurfaceTypeWater" ><strong>POINT_VEC2:IsSurfaceTypeWater()</strong></a></h2>
+</div>
+    
+<p>Checks if the surface type is water.</p>
+
+<div id= "#Functions##IsSurfaceTypeWater" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, the surface type at the coordinate is a deep water.</p>
 
       </div>
     </div>
@@ -17973,17 +18321,6 @@ By default, the last point is the closest point on road of the ToCoord. Hence, t
 <a id="#(POINT_VEC2).y" ><strong>POINT_VEC2.y</strong></a>
     
 <p>the y coordinate in meters.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(POINT_VEC2).z" ><strong>POINT_VEC2.z</strong></a>
-    
-
 
 </div>
 
