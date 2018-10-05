@@ -13,8 +13,37 @@ For this, several MOOSE classes have been created for cargo dispatchment, which 
 
 Click on each individual MOOSE class for detailed features, usage explanations as part of the detailed MOOSE documentation.
 
+## 1. [**WAREHOUSE**](Documentation/Functional.Warehouse.html)
 
-## 1. [**AI\_CARGO\_DISPATCHER**](Documentation/AI.AI_Cargo_Dispatcher.html)
+![WAREHOUSE](Images\Warehouse.JPG)
+
+The MOOSE warehouse concept simulates the organization and implementation of complex operations regarding the flow of assets between the point of origin and the point of consumption 
+in order to meet requirements of a potential conflict. In particular, this class is concerned with maintaining army supply lines while disrupting those of the enemy, since an armed 
+force without resources and transportation is defenseless.
+
+**Features:**
+
+  * Holds (virtual) assests in stock and spawns them upon request.
+  * Manages requests of assets from other warehouses.
+  * Queueing system with optional priorization of requests.
+  * Realistic transportation of assets between warehouses.
+  * Different means of automatic transportation (planes, helicopters, APCs, self propelled).
+  * Strategic components such as capturing, defending and destroying warehouses and their associated infrastructure.
+  * Intelligent spawning of aircraft on airports (only if enough parking spots are available).
+  * Possibility to hook into events and customize actions.
+  * Can be easily interfaced to other MOOSE classes.
+
+Please note that his class is work in progress and in an **alpha** stage.
+
+**Video:**
+
+[![Warehouse](https://img.youtube.com/vi/e98jzLi5fGk/0.jpg)](https://youtu.be/e98jzLi5fGk "Warehouse")
+
+**Demonstration Missions:**
+
+
+
+## 2. [**AI\_CARGO\_DISPATCHER**](Documentation/AI.AI_Cargo_Dispatcher.html)
 
 ![AI\_CARGO\_DISPATCHER](Images\AI_Cargo_Dispatcher.JPG)
 
@@ -25,7 +54,7 @@ However, this class is the **BASE class** and contains the main functionality fo
 So, please read the documentation of the AI\_CARGO\_DISPATCHER class first (by clicking on it!)
 
 
-### 1.1. [**AI\_CARGO\_DISPATCHER\_APC**](Documentation/AI.AI_Cargo_Dispatcher_APC.html)
+### 2.1. [**AI\_CARGO\_DISPATCHER\_APC**](Documentation/AI.AI_Cargo_Dispatcher_APC.html)
 
 ![AI_Cargo_Dispatcher_APC](Images\AI_Cargo_Dispatching_For_APC.JPG)
 
@@ -40,7 +69,7 @@ This class models cargo to be transported between **zones**!
   * Different ranges can be setup for enemy defenses.
 
 
-### 1.2. [**AI\_CARGO\_DISPATCHER\_HELICOPTER**](Documentation/AI.AI_Cargo_Dispatcher_Helicopter.html)
+### 2.2. [**AI\_CARGO\_DISPATCHER\_HELICOPTER**](Documentation/AI.AI_Cargo_Dispatcher_Helicopter.html)
 
 ![AI_Cargo_Dispatcher_Helicopter](Images\AI_Cargo_Dispatching_For_Helicopters.JPG)
 
@@ -55,7 +84,7 @@ This class models cargo to be transported between **zones**!
   * Helicopters will orbit the deploy zones when there is no space for landing until the deploy zone is free.
 
 
-### 1.3. [**AI\_CARGO\_DISPATCHER\_AIRPLANE**](Documentation/AI.AI_Cargo_Dispatcher_Airplane.html)
+### 2.3. [**AI\_CARGO\_DISPATCHER\_AIRPLANE**](Documentation/AI.AI_Cargo_Dispatcher_Airplane.html)
 
 ![AI_Cargo_Dispatcher_Airplane](Images\AI_Cargo_Dispatching_For_Airplanes.JPG)
 
@@ -69,11 +98,11 @@ This class models cargo to be transported between **airbases**!
 
 ===
 
-## 2. Human cargo transportation dispatching.
+## 3. Human cargo transportation dispatching.
  
 Also **humans can achieve tasks** by to **transporting cargo** as part of a task or mission **goal**.
 
-### 2.1. [**TASK\_CARGO\_DISPATCHER**](Documentation/Tasking.Task_Cargo_Dispatcher.html)
+### 3.1. [**TASK\_CARGO\_DISPATCHER**](Documentation/Tasking.Task_Cargo_Dispatcher.html)
 
 ![TASK\_CARGO\_DISPATCHER](Images\Task_Cargo_Dispatcher.JPG)
 
@@ -131,7 +160,7 @@ The cargo dispatcher will implement for you mechanisms to create cargo transport
 
 ===
 
-## 3. The cargo system explained.
+## 4. The cargo system explained.
 
 The following section provides a detailed explanation on the cargo system, how to use etc.
 
@@ -140,7 +169,7 @@ https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Cargo.Ca
 
 ===
 
-## 4. Cargo management classes.
+## 5. Cargo management classes.
 
 MOOSE has implemented **a separate system for cargo handling**.
 It combines the capabilities of DCS world to combine infantry groups, cargo static objects and static objects
@@ -156,7 +185,7 @@ It is not the purpose to use directly the CARGO class within your missions.
 However, consult the CARGO documention as it provides a comprehensive description on how to manage cargo within your missions.
 
 
-### 4.1. [**CARGO\_GROUP**](Documentation/Cargo.CargoGroup.html)
+### 5.1. [**CARGO\_GROUP**](Documentation/Cargo.CargoGroup.html)
 
 ![CARGO\_GROUP](Images\Cargo_Groups.JPG)
 
@@ -174,7 +203,7 @@ Typical cargo of this type can be infantry or (small) vehicles.
   * Automatic declaration of group objects to be treated as MOOSE cargo in the mission editor!
 
 
-### 4.2. [**CARGO_CRATE**](Documentation/Cargo.CargoCrate.html)
+### 5.2. [**CARGO_CRATE**](Documentation/Cargo.CargoCrate.html)
 
 ![CARGO\_CRATE](Images\Cargo_Crates.JPG)
 
@@ -193,7 +222,7 @@ Like flags, tires etc.
   * Automatic declaration of group objects to be treated as MOOSE cargo in the mission editor!
 
 
-### 4.3. [**CARGO_SLINGLOAD**](Documentation/Cargo.CargoSlingload.html)
+### 5.3. [**CARGO_SLINGLOAD**](Documentation/Cargo.CargoSlingload.html)
 
 ![CARGO\_SLINGLOAD](Images\Cargo_Slingload.JPG)
 
@@ -210,7 +239,7 @@ This cargo can only be slingloaded.
   * Automatic declaration of group objects to be treated as MOOSE cargo in the mission editor!
 
 
-### 4.4. [**CARGO_UNIT**](Documentation/Cargo.CargoUnit.html)
+### 5.4. [**CARGO_UNIT**](Documentation/Cargo.CargoUnit.html)
 
 Management of **moveable** units, which are based on a [**UNIT**](Documentation/Wrapper.Unit.html) object. 
 Note that this is an **Internal** class and is only mentioned here for reference!

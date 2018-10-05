@@ -16,8 +16,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 header {
-  margin-left: 50px;
   font-size: smaller;
+  text-align: center;
 }
 #sidebar {
   /*+placement: anchor-top-right;*/
@@ -1725,9 +1725,10 @@ section {
 footer {
   width: 270px;
   float: left;
-  position: fixed;
+  position: relative;
   bottom: 50px;
   -webkit-font-smoothing: subpixel-antialiased;
+  text-align: center;
 }
 @media print, screen and (max-width: 1440px) {
   div.wrapper {
@@ -1736,7 +1737,7 @@ footer {
   }
   header, section, footer {
     float: none;
-    position: static;
+    position: relative;
     width: auto;
   }
   section {

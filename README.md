@@ -13,7 +13,7 @@ You need to write lua code (scripts) to apply the MOOSE framework.
 But it is not really that hard, if you understand a couple of principles.
 
 
-## 2. **[MOOSE Developers Guide](Moose_Developers_Guide.html)**
+## 2. **[MOOSE Mission Designers Guide](Moose_Designers_Guide.html)**
 
 This section is meant for those who really want to start using MOOSE and write lua scripts for their missions.
 The section provides a comprehensive overview of the different classes that form the complete MOOSE framework.
