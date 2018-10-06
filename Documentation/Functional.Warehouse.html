@@ -1246,7 +1246,7 @@ The warehouse is now fully operational and requests are being processed.</p>
 
 <h1>Adding Assets</h1>
 
-<p>Assets can be added to the warehouse stock by using the <a href="##(WAREHOUSE).AddAsset">WAREHOUSE.AddAsset</a>(<em>group</em>, <em>ngroups</em>, <em>forceattribute</em>, <em>forcecargobay</em>, <em>forceweight</em>, <em>loadradius</em>) function.
+<p>Assets can be added to the warehouse stock by using the <a href="##(WAREHOUSE).AddAsset">WAREHOUSE.AddAsset</a>(<em>group</em>, <em>ngroups</em>, <em>forceattribute</em>, <em>forcecargobay</em>, <em>forceweight</em>, <em>loadradius</em>, <em>skill</em>, <em>liveries</em>, <em>assignment</em>) function.
 The parameter <em>group</em> has to be a MOOSE <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>. This is also the only mandatory parameters. All other parameters are optional and can be used for fine tuning if
 nessary. The parameter <em>ngroups</em> specifies how many clones of this group are added to the stock.</p>
 
@@ -1260,8 +1260,8 @@ which was defined in the mission editor. But you can also add other groups which
 <p>Also note that the coalition of the template group (red, blue or neutral) does not matter. The coalition of the assets is determined by the coalition of the warehouse owner.
 In other words, it is no problem to add red groups to blue warehouses and vice versa. The assets will automatically have the coalition of the warehouse.   </p>
 
-<p>You can add assets with a delay by using the <a href="##(WAREHOUSE).__AddAsset">WAREHOUSE.__AddAsset</a>(<em>delay</em>, <em>group</em>, <em>ngroups</em>, <em>foceattribute</em>, <em>forcecargobay</em>, <em>forceweight</em>, <em>loadradius</em>), where <em>delay</em> 
-is the delay in seconds before the asset is added.</p>
+<p>You can add assets with a delay by using the <a href="##(WAREHOUSE).__AddAsset">WAREHOUSE.__AddAsset</a>(<em>delay</em>, <em>group</em>, <em>ngroups</em>, <em>forceattribute</em>, <em>forcecargobay</em>, <em>forceweight</em>, <em>loadradius</em>,  <em>skill</em>, <em>liveries</em>, <em>assignment</em>),
+where <em>delay</em> is the delay in seconds before the asset is added.</p>
 
 <p>In game, the warehouse will get a mark which is regularly updated and showing the currently available assets in stock.</p>
 
@@ -1318,6 +1318,58 @@ I have seen cases where an aircraft of the same coalition as the tank was in its
 </code></pre>
 
 <p>Adding the asset like this will cause the units to be loaded into the carrier already at a distance of 250 meters.</p>
+
+<h3>Setting the AI Skill</h3>
+
+<p>By default, the asset has the skill of its template group. The optional parameter <em>skill</em> allows to set a different skill when the asset is added. See the 
+<a href="https://wiki.hoggitworld.com/view/DCS_enum_AI">hoggit page</a> possible values of this enumerator.
+For example you can use</p>
+
+<pre><code>warehouseBatumi:AddAsset("Leopard 2", nil, nil, nil, nil, nil, AI.Skill.EXCELLENT)
+</code></pre>
+
+<p>do set the skill of the asset to excellent.</p>
+
+<h3>Setting Liveries</h3>
+
+<p>By default ,the asset uses the livery of its template group. The optional parameter <em>liveries</em> allows to define one or multiple liveries.
+If multiple liveries are given in form of a table of livery names, each asset gets a random one.</p>
+
+<p>For example</p>
+
+<pre><code>warehouseBatumi:AddAsset("Mi-8", nil, nil, nil, nil, nil, nil, "China UN")
+</code></pre>
+
+<p>would spawn the asset with a chinese UN livery.</p>
+
+<p>Or</p>
+
+<pre><code>warehouseBatumi:AddAsset("Mi-8", nil, nil, nil, nil, nil, nil, {"China UN", "German"})
+</code></pre>
+
+<p>would spawn the asset with either a chinese UN or German livery. Mind the curly brackets <strong>{}</strong> when you want to specify multiple liveries.</p>
+
+<p>Four each unit type, the livery names can be found in the DCS root folder under Bazar\Liveries. You have to use the name of the livery subdirectory. The names of the liveries
+as displayed in the mission editor might be different and won't work in general.</p>
+
+<h3>Setting an Assignment</h3>
+
+<p>Assets can be added with a specific assignment given as a text, e.g.</p>
+
+<pre><code>warehouseBatumi:AddAsset("Mi-8", nil, nil, nil, nil, nil, nil, nil, "Go to Warehouse Kobuleti")
+</code></pre>
+
+<p>This is helpful to establish supply chains once an asset has arrived at its (first) destination and is meant to be forwarded to another warehouse.</p>
+
+<h2>Retrieving the Asset</h2>
+
+<p>Once a an asset is added to a warehouse, the <a href="##(WAREHOUSE).NewAsset">WAREHOUSE.NewAsset</a> event is triggered. You can hook into this event with the <a href="##(WAREHOUSE).OnAfterNewAsset">WAREHOUSE.OnAfterNewAsset</a>(<em>asset</em>, <em>assignment</em>) function.</p>
+
+<p>The first parameter <em>asset</em> is a table of type <a href="##(WAREHOUSE).Assetitem">WAREHOUSE.Assetitem</a> and contains a lot of information about the asset. The seconed parameter <em>assignment</em> is optional and is the specific
+assignment the asset got when it was added.</p>
+
+<p>Note that the assignment is can also be the assignment that was specified when adding a request (see next section). Once an asset that was requested from another warehouse and an assignment
+was specified in the <a href="##(WAREHOUSE).AddRequest">WAREHOUSE.AddRequest</a> function, the assignment can be checked when the asset has arrived and is added to the receiving warehouse.</p>
 
 <hr/>
 
@@ -2430,7 +2482,7 @@ warehouse.Kobuleti:AddRequest(warehouse.London, WAREHOUSE.Descriptor.ATTRIBUTE, 
 warehouse.London:AddRequest(warehouse.Kobuleti, WAREHOUSE.Descriptor.ATTRIBUTE, WAREHOUSE.Attribute.GROUND_TRUCK, WAREHOUSE.Quantity.HALF)
 </code></pre>
 
-<h2>Example 16 Resupply of Dead Assets</h2>
+<h2>Example 16: Resupply of Dead Assets</h2>
 
 <p>Warehouse at FARP Berlin is located at the front line and sends infantry groups to the battle zone.
 Whenever a group dies, a new group is send from the warehouse to the battle zone.
@@ -2496,6 +2548,66 @@ function warehouse.Berlin:OnAfterAssetDead(From, Event, To, asset, request)
 end
 </code></pre>
 
+<h2>Example 17: Supply Chains</h2>
+
+<p>Our remote warehouse "Pampa" south of Batumi needs assets but does not have any air infrastructure (FARP or airdrome).
+Leopard 2 tanks are transported from Kobuleti to Batumi using two C-17As. From there they go be themselfs to Pampa.
+Eight infantry groups and two mortar groups are also being transferred from Kobuleti to Batumi by helicopter.
+The infantry has a higher priority and will be transported first using all available Mi-8 helicopters.
+Once infantry has arrived at Batumi, it walk by itself to warehouse Pampa.
+The mortars can only be transported once the Mi-8 helos are available again, i.e. when the infantry has been delivered.
+Once the mortars arrive at Batumi, they will be transported by APCs to Pampa.</p>
+
+<pre><code>-- Start warehouses.
+warehouse.Kobuleti:Start()
+warehouse.Batumi:Start()
+warehouse.Pampa:Start()
+
+-- Add assets to Kobuleti warehouse, which is our main hub.
+warehouse.Kobuleti:AddAsset("C-130",  2)
+warehouse.Kobuleti:AddAsset("C-17A",  2, nil, 77000)
+warehouse.Kobuleti:AddAsset("Mi-8",  2, WAREHOUSE.Attribute.AIR_TRANSPORTHELO, nil, nil, nil, AI.Skill.EXCELLENT, {"Germany", "United Kingdom"})
+warehouse.Kobuleti:AddAsset("Leopard 2", 10, nil, nil, 62000, 500)
+warehouse.Kobuleti:AddAsset("Mortar Alpha", 10, nil, nil, 210)
+warehouse.Kobuleti:AddAsset("Infantry Platoon Alpha", 20)
+
+-- Transports at Batumi.
+warehouse.Batumi:AddAsset("SPz Marder", 2)
+warehouse.Batumi:AddAsset("TPz Fuchs", 2)
+
+-- Tanks transported by plane from Batumi to Kobuleti
+warehouse.Kobuleti:AddRequest(warehouse.Batumi, WAREHOUSE.Descriptor.ATTRIBUTE, WAREHOUSE.Attribute.GROUND_TANK, 2, WAREHOUSE.TransportType.AIRPLANE, 2, 10, "Assets for Pampa")
+-- Artillery transported by helicopter from Kobuleti to Batumi.
+warehouse.Kobuleti:AddRequest(warehouse.Batumi, WAREHOUSE.Descriptor.ATTRIBUTE, WAREHOUSE.Attribute.GROUND_ARTILLERY, 2, WAREHOUSE.TransportType.HELICOPTER, 2, 30, "Assets for Pampa via APC")
+-- Infantry transported by helicopter 
+warehouse.Kobuleti:AddRequest(warehouse.Batumi, WAREHOUSE.Descriptor.ATTRIBUTE, WAREHOUSE.Attribute.GROUND_INFANTRY, 8, WAREHOUSE.TransportType.HELICOPTER, 2, 20, "Assets for Pampa")
+
+--- Function handling assets delivered from Kobuleti warehouse.
+function warehouse.Kobuleti:OnAfterDelivered(From, Event, To, request)
+  local request=request --Functional.Warehouse#WAREHOUSE.Pendingitem
+
+  -- Get assignment.
+  local assignment=warehouse.Kobuleti:GetAssignment(request)
+
+  -- Check if these assets were meant for Warehouse Pampa.
+  if assignment=="Assets for Pampa via APC" then
+    -- Forward everything that arrived at Batumi to Pampa via APC.
+    warehouse.Batumi:AddRequest(warehouse.Pampa, WAREHOUSE.Descriptor.ATTRIBUTE, request.cargoattribute, request.ndelivered, WAREHOUSE.TransportType.APC, WAREHOUSE.Quantity.ALL)
+  end
+end
+
+-- Forward all mobile ground assets to Pampa once they arrived.
+function warehouse.Batumi:OnAfterNewAsset(From, Event, To, asset, assignment)
+  local asset=asset --Functional.Warehouse#WAREHOUSE.Assetitem
+--       if assignment=="Assets for Pampa" then
+    if asset.category==Group.Category.GROUND and asset.speedmax&gt;0 then
+      warehouse.Batumi:AddRequest(warehouse.Pampa, WAREHOUSE.Descriptor.GROUPNAME, asset.templatename)
+    end
+  end
+end
+</code></pre>
+
+
 
 </div>
 
@@ -2514,7 +2626,7 @@ end
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).AddAsset">WAREHOUSE:AddAsset(group, ngroups, forceattribute, forcecargobay, forceweight, loadradius)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).AddAsset">WAREHOUSE:AddAsset(group, ngroups, forceattribute, forcecargobay, forceweight, loadradius, skill, liveries, assignment)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trigger the FSM event "AddAsset".</p>
 </td>
@@ -2772,7 +2884,7 @@ end
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).NewAsset">WAREHOUSE:NewAsset(asset)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).NewAsset">WAREHOUSE:NewAsset(asset, assignment)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM delayed event "NewAsset" when a new asset has been added to the warehouse stock.</p>
 </td>
@@ -2832,7 +2944,7 @@ end
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).OnAfterNewAsset">WAREHOUSE:OnAfterNewAsset(From, Event, To, asset)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).OnAfterNewAsset">WAREHOUSE:OnAfterNewAsset(From, Event, To, asset, assignment)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "NewAsset" event user function.</p>
 </td>
@@ -3246,7 +3358,7 @@ end
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE)._RegisterAsset">WAREHOUSE:_RegisterAsset(group, ngroups, forceattribute, forcecargobay, forceweight, loadradius)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE)._RegisterAsset">WAREHOUSE:_RegisterAsset(group, ngroups, forceattribute, forcecargobay, forceweight, loadradius, liveries, skill)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Register new asset in globase warehouse data base.</p>
 </td>
@@ -3324,7 +3436,7 @@ end
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).__AddAsset">WAREHOUSE:__AddAsset(delay, group, ngroups, forceattribute, forcecargobay, forceweight, loadradius)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).__AddAsset">WAREHOUSE:__AddAsset(delay, group, ngroups, forceattribute, forcecargobay, forceweight, loadradius, skill, liveries, assignment)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trigger the FSM event "AddAsset" with a delay.</p>
 </td>
@@ -3381,6 +3493,12 @@ end
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).__Delivered">WAREHOUSE:__Delivered(delay, request)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "Delivered" after a delay.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).__NewAsset">WAREHOUSE:__NewAsset(delay, asset, assignment)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM delayed event "NewAsset" when a new asset has been added to the warehouse stock.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3492,7 +3610,7 @@ end
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).onafterAddAsset">WAREHOUSE:onafterAddAsset(From, Event, To, group, ngroups, forceattribute, forcecargobay, forceweight, loadradius)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).onafterAddAsset">WAREHOUSE:onafterAddAsset(From, Event, To, group, ngroups, forceattribute, forcecargobay, forceweight, loadradius, skill, liveries, assignment)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "AddAsset" event.</p>
 </td>
@@ -3558,7 +3676,7 @@ end
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).onafterNewAsset">WAREHOUSE:onafterNewAsset(From, Event, To, asset)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).onafterNewAsset">WAREHOUSE:onafterNewAsset(From, Event, To, asset, assignment)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "NewAsset" event.</p>
 </td>
@@ -4462,6 +4580,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE.Assetitem).livery">WAREHOUSE.Assetitem.livery</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Livery of the asset.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE.Assetitem).loadradius">WAREHOUSE.Assetitem.loadradius</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Distance when cargo is loaded into the carrier.</p>
@@ -4483,6 +4607,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE.Assetitem).size">WAREHOUSE.Assetitem.size</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Maximum size in length and with of the asset in meters.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE.Assetitem).skill">WAREHOUSE.Assetitem.skill</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Skill of AI unit.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -5415,7 +5545,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(WAREHOUSE).AddAsset" ><strong>WAREHOUSE:AddAsset(group, ngroups, forceattribute, forcecargobay, forceweight, loadradius)</strong></a></h2>
+<h2><a id="#(WAREHOUSE).AddAsset" ><strong>WAREHOUSE:AddAsset(group, ngroups, forceattribute, forcecargobay, forceweight, loadradius, skill, liveries, assignment)</strong></a></h2>
 </div>
     
 <p>Trigger the FSM event "AddAsset".</p>
@@ -5505,6 +5635,45 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>(Optional) The distance in meters when the cargo is loaded into the carrier. Default is the bounding box size of the carrier.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(AI.Skill)">DCS#AI.Skill</a>
+            <strong><strong>skill</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Skill of the asset.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>liveries</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Table of livery names. When the asset is spawned one livery is chosen randomly.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>assignment</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>A free to choose string specifying an assignment for the asset. This can be used with the <a href="##(WAREHOUSE).OnAfterNewAsset">WAREHOUSE.OnAfterNewAsset</a> function.</p>
 
           </div>
         </div>
@@ -7242,7 +7411,7 @@ Note that the group name must contain they "AID" keyword. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(WAREHOUSE).NewAsset" ><strong>WAREHOUSE:NewAsset(asset)</strong></a></h2>
+<h2><a id="#(WAREHOUSE).NewAsset" ><strong>WAREHOUSE:NewAsset(asset, assignment)</strong></a></h2>
 </div>
     
 <p>Triggers the FSM delayed event "NewAsset" when a new asset has been added to the warehouse stock.</p>
@@ -7253,7 +7422,7 @@ Note that the group name must contain they "AID" keyword. </p>
    <div class="w3-margin-left">
 <p>WAREHOUSE</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -7264,6 +7433,19 @@ Note that the group name must contain they "AID" keyword. </p>
           <div class="w3-half">
               
 <p>The new asset.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>assignment</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Assignment text for the asset.</p>
 
           </div>
         </div>
@@ -7964,7 +8146,7 @@ Note that the group name must contain they "AID" keyword. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(WAREHOUSE).OnAfterNewAsset" ><strong>WAREHOUSE:OnAfterNewAsset(From, Event, To, asset)</strong></a></h2>
+<h2><a id="#(WAREHOUSE).OnAfterNewAsset" ><strong>WAREHOUSE:OnAfterNewAsset(From, Event, To, asset, assignment)</strong></a></h2>
 </div>
     
 <p>On after "NewAsset" event user function.</p>
@@ -8027,7 +8209,20 @@ Note that the group name must contain they "AID" keyword. </p>
           </div>
           <div class="w3-half">
               
-<p>The asset that has just been added</p>
+<p>The asset that has just been added.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>assignment</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Assignment text for the asset.</p>
 
           </div>
         </div>
@@ -10885,7 +11080,7 @@ If not enough spots for all asset units could be found, the routine returns nil!
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(WAREHOUSE)._RegisterAsset" ><strong>WAREHOUSE:_RegisterAsset(group, ngroups, forceattribute, forcecargobay, forceweight, loadradius)</strong></a></h2>
+<h2><a id="#(WAREHOUSE)._RegisterAsset" ><strong>WAREHOUSE:_RegisterAsset(group, ngroups, forceattribute, forcecargobay, forceweight, loadradius, liveries, skill)</strong></a></h2>
 </div>
     
 <p>Register new asset in globase warehouse data base.</p>
@@ -10972,6 +11167,32 @@ If not enough spots for all asset units could be found, the routine returns nil!
           <div class="w3-half">
               
 <p>Radius in meters when cargo is loaded into the carrier.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>liveries</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Table of liveries.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(AI.Skill)">DCS#AI.Skill</a>
+            <strong><strong>skill</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Skill of AI.</p>
 
           </div>
         </div>
@@ -11661,7 +11882,7 @@ This is important in order to determine if a job is done and can be removed from
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(WAREHOUSE).__AddAsset" ><strong>WAREHOUSE:__AddAsset(delay, group, ngroups, forceattribute, forcecargobay, forceweight, loadradius)</strong></a></h2>
+<h2><a id="#(WAREHOUSE).__AddAsset" ><strong>WAREHOUSE:__AddAsset(delay, group, ngroups, forceattribute, forcecargobay, forceweight, loadradius, skill, liveries, assignment)</strong></a></h2>
 </div>
     
 <p>Trigger the FSM event "AddAsset" with a delay.</p>
@@ -11764,6 +11985,45 @@ This is important in order to determine if a job is done and can be removed from
           <div class="w3-half">
               
 <p>(Optional) The distance in meters when the cargo is loaded into the carrier. Default is the bounding box size of the carrier.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(AI.Skill)">DCS#AI.Skill</a>
+            <strong><strong>skill</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Skill of the asset.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>liveries</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Table of livery names. When the asset is spawned one livery is chosen randomly.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>assignment</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>A free to choose string specifying an assignment for the asset. This can be used with the <a href="##(WAREHOUSE).OnAfterNewAsset">WAREHOUSE.OnAfterNewAsset</a> function.</p>
 
           </div>
         </div>
@@ -12316,6 +12576,65 @@ is added to the sending warehouse since carriers are supposed to return to their
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).__NewAsset" ><strong>WAREHOUSE:__NewAsset(delay, asset, assignment)</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM delayed event "NewAsset" when a new asset has been added to the warehouse stock.</p>
+
+<div id= "#Functions##__NewAsset" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Delay in seconds.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(WAREHOUSE.Assetitem)">#WAREHOUSE.Assetitem</a>
+            <strong><strong>asset</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The new asset.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>assignment</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Assignment text for the asset.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(WAREHOUSE).__Pause" ><strong>WAREHOUSE:__Pause(delay)</strong></a></h2>
 </div>
     
@@ -12695,7 +13014,7 @@ this request is used to put the groups back into the warehouse stock.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(WAREHOUSE).onafterAddAsset" ><strong>WAREHOUSE:onafterAddAsset(From, Event, To, group, ngroups, forceattribute, forcecargobay, forceweight, loadradius)</strong></a></h2>
+<h2><a id="#(WAREHOUSE).onafterAddAsset" ><strong>WAREHOUSE:onafterAddAsset(From, Event, To, group, ngroups, forceattribute, forcecargobay, forceweight, loadradius, skill, liveries, assignment)</strong></a></h2>
 </div>
     
 <p>On after "AddAsset" event.</p>
@@ -12824,6 +13143,45 @@ this request is used to put the groups back into the warehouse stock.</p>
           <div class="w3-half">
               
 <p>(Optional) Radius in meters when the cargo is loaded into the carrier.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(AI.Skill)">DCS#AI.Skill</a>
+            <strong><strong>skill</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Skill of the asset.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>liveries</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Table of livery names. When the asset is spawned one livery is chosen randomly.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>assignment</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>A free to choose string specifying an assignment for the asset. This can be used with the <a href="##(WAREHOUSE).OnAfterNewAsset">WAREHOUSE.OnAfterNewAsset</a> function.</p>
 
           </div>
         </div>
@@ -13688,7 +14046,7 @@ If it is a transporter it is put back into the sending warehouse since transport
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(WAREHOUSE).onafterNewAsset" ><strong>WAREHOUSE:onafterNewAsset(From, Event, To, asset)</strong></a></h2>
+<h2><a id="#(WAREHOUSE).onafterNewAsset" ><strong>WAREHOUSE:onafterNewAsset(From, Event, To, asset, assignment)</strong></a></h2>
 </div>
     
 <p>On after "NewAsset" event.</p>
@@ -13751,8 +14109,18 @@ If it is a transporter it is put back into the sending warehouse since transport
           </div>
           <div class="w3-half">
               
-<p>The asset that has just been added</p>
+<p>The asset that has just been added.</p>
 
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>assignment</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
 </div>
@@ -19185,6 +19553,17 @@ BASE:TraceOnOff( false )</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #string
+<a id="#(WAREHOUSE.Assetitem).livery" ><strong>WAREHOUSE.Assetitem.livery</strong></a>
+    
+<p>Livery of the asset.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #number
 <a id="#(WAREHOUSE.Assetitem).loadradius" ><strong>WAREHOUSE.Assetitem.loadradius</strong></a>
     
@@ -19222,6 +19601,17 @@ BASE:TraceOnOff( false )</code></pre>
 <a id="#(WAREHOUSE.Assetitem).size" ><strong>WAREHOUSE.Assetitem.size</strong></a>
     
 <p>Maximum size in length and with of the asset in meters.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="DCS.html##(AI.Skill)">DCS#AI.Skill</a>
+<a id="#(WAREHOUSE.Assetitem).skill" ><strong>WAREHOUSE.Assetitem.skill</strong></a>
+    
+<p>Skill of AI unit.</p>
 
 </div>
 
