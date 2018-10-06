@@ -1,5 +1,10 @@
 # MOOSE AI Guide
 
+![MOOSE AI](Images\MOOSE_AI.JPG)
+
+This set of MOOSE classes take control of your AI.
+
+
 ## 1. [**AI A2A Dispatching**](Documentation/AI.AI_A2A_Dispatcher.html)
 
 ![AI A2A Dispatcher](Images\AI_Air_To_Air_Dispatching.JPG)

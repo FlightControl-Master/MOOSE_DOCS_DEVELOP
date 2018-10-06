@@ -1,5 +1,7 @@
 # MOOSE Tasking Guide
 
+![MOOSE TASKING](Images\MOOSE_Tasking.JPG)
+
 This chapter explains the major principles behind the tasking concepts in MOOSE.
 Tasking is achieved through the utilization of various classes that fall in the category Tasking.
 

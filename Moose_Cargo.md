@@ -1,5 +1,7 @@
 # MOOSE CARGO Guide
 
+![MOOSE CARGO](Images\MOOSE_Cargo.JPG)
+
 MOOSE implements a whole new enhanced mechanism to **create virtual cargo** within your missions.
 Within this new system, virtual cargo can be represented by:
 

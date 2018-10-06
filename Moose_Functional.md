@@ -1,6 +1,9 @@
 # MOOSE Functional Guide
 
-This chapter explains functional classes within MOOSE that allows you to enrich the functionality within your missions.
+![MOOSE FUNCTIONAL](Images\MOOSE_Functional.JPG)
+
+This chapter explains functional classes within MOOSE that allows you to enrich or enhance the functionality of your mission scenarios.
+
 
 ## 1. [**ATC_GROUND**](Documentation/Functional.ATC_Ground.html)
 

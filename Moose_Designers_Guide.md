@@ -10,7 +10,7 @@ For more detailed information on the class, you will be guided to more detailed 
 
 Click on one of the next section links below to open the guides for each of the major areas that are covered by MOOSE.
 
-## 1. [MOOSE AI Classes](Moose_AI.html)
+## 1. [**MOOSE AI Classes**](Moose_AI.html)
 
 AI classes take control over the AI and makes the AI perform various processes.  
 Some very complicated and enhanced classes are implemented to take control of AI.
@@ -19,7 +19,7 @@ It uses the AI to create for you an enhanced simulation experience for your play
 **Apply the AI classes to create a truly dynamic defense and attack system driven by AI.**
 
 
-## 2. [MOOSE Tasking Classes](Moose_Tasking.html)
+## 2. [**MOOSE Tasking Classes**](Moose_Tasking.html)
 
 Tasking classes provide a comprehensive Mission Orchestration System for human players.
 Command Centers govern multiple missions to achieve a mission goal.
@@ -29,7 +29,7 @@ Upon completion of each task, a mission goal can be achieved, which will result 
 **Join the forces and apply the tasking classes to create a truly dynamic co-operative combat scenario.**
 
 
-## 3. [MOOSE Cargo Classes](Moose_Cargo.html)
+## 3. [**MOOSE Cargo Classes**](Moose_Cargo.html)
 
 Cargo classes provide enhanced means to handle cargo transportation.
 Cargo requires a bit more explanation. MOOSE has implemented **a separate system for cargo handling**.
@@ -45,7 +45,7 @@ Once you've learned this, a new world will open :-)
 **Add the cargo capabilities, so that your mission scenarios are dynamically managing the combat resources.**
 
 
-## 4. [MOOSE Functional Classes](Moose_Functional.html)
+## 4. [**MOOSE Functional Classes**](Moose_Functional.html)
 
 MOOSE functional classes provide various functions that are useful in mission design.
 These classes vary and enhance the functionality of your simulation scenario.
@@ -53,7 +53,7 @@ These classes vary and enhance the functionality of your simulation scenario.
 **Apply various functional classes, to enhance the functionality in your mission scenarios.**
 
 
-## 5. [MOOSE Wrapper Classes](Moose_Wrappers.html)
+## 5. [**MOOSE Wrapper Classes**](Moose_Wrappers.html)
 
 MOOSE wrapper classes provide an object oriented hierarchical mechanism to manage the DCS objects within the simulator.
 Wrapper classes provide a greatly enhanced functionality to control groups, units, statics, scenery, airbases etc.
@@ -61,7 +61,7 @@ Wrapper classes provide a greatly enhanced functionality to control groups, unit
 **Make life easy and use the wrapper classes to take control of individual DCS world objects.**
 
 
-## 6. [MOOSE Core Classes](Moose_Core.html)
+## 6. [**MOOSE Core Classes**](Moose_Core.html)
 
 MOOSE core classes define the base building blocks of the MOOSE framework. 
 The core classes utilize the DCS world core capability and greatly enhance its functionality.
