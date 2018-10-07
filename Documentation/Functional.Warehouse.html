@@ -2554,7 +2554,7 @@ end
 Leopard 2 tanks are transported from Kobuleti to Batumi using two C-17As. From there they go be themselfs to Pampa.
 Eight infantry groups and two mortar groups are also being transferred from Kobuleti to Batumi by helicopter.
 The infantry has a higher priority and will be transported first using all available Mi-8 helicopters.
-Once infantry has arrived at Batumi, it walk by itself to warehouse Pampa.
+Once infantry has arrived at Batumi, it will walk by itself to warehouse Pampa.
 The mortars can only be transported once the Mi-8 helos are available again, i.e. when the infantry has been delivered.
 Once the mortars arrive at Batumi, they will be transported by APCs to Pampa.</p>
 
@@ -2575,11 +2575,11 @@ warehouse.Kobuleti:AddAsset("Infantry Platoon Alpha", 20)
 warehouse.Batumi:AddAsset("SPz Marder", 2)
 warehouse.Batumi:AddAsset("TPz Fuchs", 2)
 
--- Tanks transported by plane from Batumi to Kobuleti
+-- Tanks transported by plane from from Kobuleti to Batumi.
 warehouse.Kobuleti:AddRequest(warehouse.Batumi, WAREHOUSE.Descriptor.ATTRIBUTE, WAREHOUSE.Attribute.GROUND_TANK, 2, WAREHOUSE.TransportType.AIRPLANE, 2, 10, "Assets for Pampa")
 -- Artillery transported by helicopter from Kobuleti to Batumi.
 warehouse.Kobuleti:AddRequest(warehouse.Batumi, WAREHOUSE.Descriptor.ATTRIBUTE, WAREHOUSE.Attribute.GROUND_ARTILLERY, 2, WAREHOUSE.TransportType.HELICOPTER, 2, 30, "Assets for Pampa via APC")
--- Infantry transported by helicopter 
+-- Infantry transported by helicopter from Kobuleti to Batumi.
 warehouse.Kobuleti:AddRequest(warehouse.Batumi, WAREHOUSE.Descriptor.ATTRIBUTE, WAREHOUSE.Attribute.GROUND_INFANTRY, 8, WAREHOUSE.TransportType.HELICOPTER, 2, 20, "Assets for Pampa")
 
 --- Function handling assets delivered from Kobuleti warehouse.
@@ -2599,7 +2599,7 @@ end
 -- Forward all mobile ground assets to Pampa once they arrived.
 function warehouse.Batumi:OnAfterNewAsset(From, Event, To, asset, assignment)
   local asset=asset --Functional.Warehouse#WAREHOUSE.Assetitem
---       if assignment=="Assets for Pampa" then
+  if assignment=="Assets for Pampa" then
     if asset.category==Group.Category.GROUND and asset.speedmax&gt;0 then
       warehouse.Batumi:AddRequest(warehouse.Pampa, WAREHOUSE.Descriptor.GROUPNAME, asset.templatename)
     end
@@ -2734,6 +2734,12 @@ end
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).FindNearestWarehouse">WAREHOUSE:FindNearestWarehouse(MinAssets, Descriptor, DescriptorValue, Coalition)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Find nearest warehouse in service, i.e.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).FindWarehouseInDB">WAREHOUSE:FindWarehouseInDB(uid)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Find a warehouse in the global warehouse data base.</p>
@@ -2794,7 +2800,7 @@ end
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).GetNumberOfAssets">WAREHOUSE:GetNumberOfAssets(Descriptor, DescriptorValue)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).GetNumberOfAssets">WAREHOUSE:GetNumberOfAssets(Descriptor, DescriptorValue, OnlyMobile)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get number of assets in warehouse stock.</p>
 </td>
@@ -6342,6 +6348,99 @@ Note that the group name must contain they "AID" keyword. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).FindNearestWarehouse" ><strong>WAREHOUSE:FindNearestWarehouse(MinAssets, Descriptor, DescriptorValue, Coalition)</strong></a></h2>
+</div>
+    
+<p>Find nearest warehouse in service, i.e.</p>
+
+    
+<p>warehouses which are not started, stopped or destroyed are not considered.
+Optionally, only warehouses with (specific) assets can be included in the search or warehouses of a certain coalition.</p>
+
+<div id= "#Functions##FindNearestWarehouse" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>MinAssets</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Minimum number of assets the warehouse should have. Default 0.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Descriptor</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Descriptor describing the selected assets which should be in stock. See <a href="##(WAREHOUSE).Descriptor">WAREHOUSE.Descriptor</a> for possible values.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>DescriptorValue</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Descriptor value selecting the type of assets which should be in stock.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(Coalition.side)">DCS#Coalition.side</a>
+            <strong><strong>Coalition</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Coalition side of the warehouse. Default is the same coaliton as the present warehouse. Set to false for any coalition.  </p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p><a href="##(WAREHOUSE)">#WAREHOUSE</a>:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>The the nearest warehouse object. Or nil if no warehouse is found.</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#number:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>The distance to the nearest warehouse in meters. Or nil if no warehouse is found.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(WAREHOUSE).FindWarehouseInDB" ><strong>WAREHOUSE:FindWarehouseInDB(uid)</strong></a></h2>
 </div>
     
@@ -6670,10 +6769,13 @@ Note that the group name must contain they "AID" keyword. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(WAREHOUSE).GetNumberOfAssets" ><strong>WAREHOUSE:GetNumberOfAssets(Descriptor, DescriptorValue)</strong></a></h2>
+<h2><a id="#(WAREHOUSE).GetNumberOfAssets" ><strong>WAREHOUSE:GetNumberOfAssets(Descriptor, DescriptorValue, OnlyMobile)</strong></a></h2>
 </div>
     
 <p>Get number of assets in warehouse stock.</p>
+
+    
+<p>Optionally, only specific assets can be counted.</p>
 
 <div id= "#Functions##GetNumberOfAssets" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -6704,6 +6806,19 @@ Note that the group name must contain they "AID" keyword. </p>
           <div class="w3-half">
               
 <p>(Optional) Descriptor value selecting the type of assets.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>OnlyMobile</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) If true only mobile units are considered.</p>
 
           </div>
         </div>
