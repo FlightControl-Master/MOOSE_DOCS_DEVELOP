@@ -2734,7 +2734,7 @@ end
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).FindNearestWarehouse">WAREHOUSE:FindNearestWarehouse(MinAssets, Descriptor, DescriptorValue, Coalition)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).FindNearestWarehouse">WAREHOUSE:FindNearestWarehouse(MinAssets, Descriptor, DescriptorValue, Coalition, RefCoordinate)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Find nearest warehouse in service, i.e.</p>
 </td>
@@ -3052,7 +3052,7 @@ end
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).SetSpawnZone">WAREHOUSE:SetSpawnZone(zone)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).SetSpawnZone">WAREHOUSE:SetSpawnZone(zone, maxdist)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set a zone where the (ground) assets of the warehouse are spawned once requested.</p>
 </td>
@@ -3793,6 +3793,12 @@ end
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).spawnzone">WAREHOUSE.spawnzone</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Zone in which assets are spawned.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).spawnzonemaxdist">WAREHOUSE.spawnzonemaxdist</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Max distance between warehouse and spawn zone. Default 5000 meters.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -5471,6 +5477,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(WAREHOUSE).spawnzonemaxdist" ><strong>WAREHOUSE.spawnzonemaxdist</strong></a>
+    
+<p>Max distance between warehouse and spawn zone. Default 5000 meters.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(WAREHOUSE).stock" ><strong>WAREHOUSE.stock</strong></a>
     
@@ -6348,7 +6365,7 @@ Note that the group name must contain they "AID" keyword. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(WAREHOUSE).FindNearestWarehouse" ><strong>WAREHOUSE:FindNearestWarehouse(MinAssets, Descriptor, DescriptorValue, Coalition)</strong></a></h2>
+<h2><a id="#(WAREHOUSE).FindNearestWarehouse" ><strong>WAREHOUSE:FindNearestWarehouse(MinAssets, Descriptor, DescriptorValue, Coalition, RefCoordinate)</strong></a></h2>
 </div>
     
 <p>Find nearest warehouse in service, i.e.</p>
@@ -6410,7 +6427,20 @@ Optionally, only warehouses with (specific) assets can be included in the search
           </div>
           <div class="w3-half">
               
-<p>(Optional) Coalition side of the warehouse. Default is the same coaliton as the present warehouse. Set to false for any coalition.  </p>
+<p>(Optional) Coalition side of the warehouse. Default is the same coaliton as the present warehouse. Set to false for any coalition.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>RefCoordinate</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Coordinate to which the closest warehouse is searched. Default is the warehouse calling this function.  </p>
 
           </div>
         </div>
@@ -8956,7 +8986,7 @@ Also note, that if the parameter "coordinate" is passed as nil, any road connect
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(WAREHOUSE).SetSpawnZone" ><strong>WAREHOUSE:SetSpawnZone(zone)</strong></a></h2>
+<h2><a id="#(WAREHOUSE).SetSpawnZone" ><strong>WAREHOUSE:SetSpawnZone(zone, maxdist)</strong></a></h2>
 </div>
     
 <p>Set a zone where the (ground) assets of the warehouse are spawned once requested.</p>
@@ -8967,7 +8997,7 @@ Also note, that if the parameter "coordinate" is passed as nil, any road connect
    <div class="w3-margin-left">
 <p>WAREHOUSE</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -8978,6 +9008,19 @@ Also note, that if the parameter "coordinate" is passed as nil, any road connect
           <div class="w3-half">
               
 <p>The spawn zone.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>maxdist</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Maximum distance in meters between spawn zone and warehouse. Units are not spawned if distance is larger. Default is 5000 m.</p>
 
           </div>
         </div>
@@ -15336,6 +15379,17 @@ this request is used to put the groups back into the warehouse stock.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(WAREHOUSE).spawnzonemaxdist" ><strong>WAREHOUSE.spawnzonemaxdist</strong></a>
+    
+<p>Max distance between warehouse and spawn zone. Default 5000 meters.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(WAREHOUSE).stock" ><strong>WAREHOUSE.stock</strong></a>
     
@@ -16876,6 +16930,17 @@ this request is used to put the groups back into the warehouse stock.</p>
 <a id="#(WAREHOUSE).spawnzone" ><strong>WAREHOUSE.spawnzone</strong></a>
     
 <p>Zone in which assets are spawned.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(WAREHOUSE).spawnzonemaxdist" ><strong>WAREHOUSE.spawnzonemaxdist</strong></a>
+    
+<p>Max distance between warehouse and spawn zone. Default 5000 meters.</p>
 
 </div>
 
