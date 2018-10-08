@@ -589,7 +589,7 @@ for further explanation and examples.</p>
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.ATC_Ground.html">Functional.ATC_Ground</a></strong></h2></div>
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Functional</strong> -- The ATC_GROUND classes monitor airbase traffic and regulate speed while taxiing.</p>
+<p><strong>Functional</strong> -- Monitor airbase traffic and regulate speed while taxiing.</p>
 </p></div>
        </div>         
      </div>
@@ -611,7 +611,7 @@ for further explanation and examples.</p>
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.CleanUp.html">Functional.CleanUp</a></strong></h2></div>
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Functional</strong> -- The CLEANUP_AIRBASE class keeps an area clean of crashing or colliding airplanes.</p>
+<p><strong>Functional</strong> -- Keep airbases clean of crashing or colliding airplanes, and kill missiles when being fired at airbases.</p>
 </p></div>
        </div>         
      </div>
@@ -1108,60 +1108,20 @@ which are excellent tools to be reused in an OO environment!.</p>
 
 <hr/>
 
-<p>Orchestrate the designation of potential targets executed by a Recce group, 
-and communicates these to a dedicated attacking group of players, 
-so that following a dynamically generated menu system, 
-each detected set of potential targets can be lased or smoked...</p>
-
-<p>Targets can be:</p>
+<h3>Features:</h3>
 
 <ul>
-    <li><strong>Lased</strong> for a period of time.</li>
-    <li><strong>Smoked</strong>. Artillery or airplanes with Illuminatino ordonance need to be present. (WIP, but early demo ready.)</li>
-    <li><strong>Illuminated</strong> through an illumination bomb. Artillery or airplanes with Illuminatino ordonance need to be present. (WIP, but early demo ready.</li>
+    <li>Faciliate the communication of detected targets to players.</li>
+    <li>Designate targets using lasers, through a menu system.</li>
+    <li>Designate targets using smoking, through a menu system.</li>
+    <li>Designate targets using illumination, through a menu system.</li>
+    <li>Auto lase targets.</li>
+    <li>Refresh detection upon specified time intervals.</li>
+    <li>Prioritization on threat levels.</li>
+    <li>Reporting system of threats.</li>
 </ul>
 
 <hr/>
-
-<h1><strong>AUTHORS and CONTRIBUTIONS</strong></h1>
-
-<h3>Contributions:</h3>
-
-<ul>
-    <li><a href="https://forums.eagle.ru/member.php?u=112175"><strong>Ciribob</strong></a>: Showing the way how to lase targets + how laser codes work!!! Explained the autolase script.</li>
-    <li><a href="https://forums.eagle.ru/member.php?u=112055"><strong>EasyEB</strong></a>: Ideas and Beta Testing</li>
-    <li><a href="https://forums.eagle.ru/member.php?u=123698"><strong>Wingthor</strong></a>: Beta Testing</li>
-</ul>
-
-
-<h3>Authors:</h3>
-
-<ul>
-    <li><strong>FlightControl</strong>: Design &amp; Programming</li>
-</ul>
-
-
-  </div>
-  <div class="w3-container w3-theme-d2"><h2><strong>Global(s)</strong></h2></div>
-  <div class="w3-theme-d2 w3-margin-top ">
-    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##DESIGNATE')">
-      <tr>
-        <td class="style="width:40%;"><p><h2>Global <strong>DESIGNATE</strong></h2></p></td>
-        <td class="style="width:60%;">
-<p>Manage the designation of detected targets.</p>
-</td>
-      </tr>
-    </table>
-  </div>
-  <div id= "#Globals##DESIGNATE" class="w3-container w3-white w3-padding-small">
-    <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    <a href="##(DESIGNATE)">#DESIGNATE</a>
-<a id="DESIGNATE" ><strong>DESIGNATE</strong></a>
-    
-<p>Manage the designation of detected targets.</p>
-
-    
 
 <p>Targets detected by recce will be communicated to a group of attacking players. <br/>
 A menu system is made available that allows to: </p>
@@ -1190,7 +1150,7 @@ A menu system is made available that allows to: </p>
     <li>A <strong>Designate Menu</strong> is the menu that is dynamically created during the designation process for each <em>AttackGroup</em>.</li>
 </ul>
 
-<h2>0. Player Manual</h2>
+<h1>Player Manual</h1>
 
 <p><img src="..\Presentations\DESIGNATE\Dia3.JPG" alt="Banner Image"/></p>
 
@@ -1217,7 +1177,7 @@ to the Target Area.</p>
 This will ensure that the detection process won't be interrupted and that targets can be designated.
 However, you don't have to, so to simulate a more real-word situation or simulation, <strong>Recce can also be destroyed</strong>!</p>
 
-<h3>0.1. Player View (Observer)</h3>
+<h2>1. Player View (Observer)</h2>
 
 <p><img src="..\Presentations\DESIGNATE\Dia4.JPG" alt="Banner Image"/></p>
 
@@ -1230,7 +1190,7 @@ there is a maximum amount of TargetGroups
 that can be put in <strong>scope</strong> of the DesignateObject.
 We call this the <strong>MaximumDesignations</strong> term.</p>
 
-<h3>0.2. Designate Menu</h3>
+<h2>2. Designate Menu</h2>
 
 <p><img src="..\Presentations\DESIGNATE\Dia5.JPG" alt="Banner Image"/></p>
 
@@ -1270,7 +1230,7 @@ This is for all designation methods.</p>
     <li>Illuminate areas.</li>
 </ul>
 
-<h3>0.3. Lasing Targets</h3>
+<h2>3. Lasing Targets</h2>
 
 <p><img src="..\Presentations\DESIGNATE\Dia7.JPG" alt="Banner Image"/></p>
 
@@ -1296,7 +1256,7 @@ The status report shows which targets are being designated.</p>
 
 <p>In this way, DESIGNATE assists players to designate ground targets for a coordinated attack!</p>
 
-<h3>0.4. Illuminating Targets</h3>
+<h2>4. Illuminating Targets</h2>
 
 <p><img src="..\Presentations\DESIGNATE\Dia9.JPG" alt="Banner Image"/></p>
 
@@ -1305,7 +1265,7 @@ Each available recce within range will fire an illumination bomb.
 Illumination bombs can be fired in while lasing targets.
 When illumination bombs are fired, it will take about 2 minutes until a sequent bomb run can be requested using the menus.</p>
 
-<h3>0.5. Smoking Targets</h3>
+<h2>5. Smoking Targets</h2>
 
 <p><img src="..\Presentations\DESIGNATE\Dia10.JPG" alt="Banner Image"/></p>
 
@@ -1317,23 +1277,71 @@ Smoke will appear "around" the targets, because of accuracy limitations.</p>
 
 <p>Have FUN!</p>
 
-<h2>1. DESIGNATE constructor</h2>
+<hr/>
+
+<h3>Missions:</h3>
+
+<p><a href="https://github.com/FlightControl-Master/MOOSE_MISSIONS/tree/master/DES%20-%20Designation"></a></p>
+
+<hr/>
+
+<h3>Contributions:</h3>
+
+<ul>
+    <li><a href="https://forums.eagle.ru/member.php?u=112175"><strong>Ciribob</strong></a>: Showing the way how to lase targets + how laser codes work!!! Explained the autolase script.</li>
+    <li><a href="https://forums.eagle.ru/member.php?u=112055"><strong>EasyEB</strong></a>: Ideas and Beta Testing</li>
+    <li><a href="https://forums.eagle.ru/member.php?u=123698"><strong>Wingthor</strong></a>: Beta Testing</li>
+</ul>
+
+<h3>Authors:</h3>
+
+<ul>
+    <li><strong>FlightControl</strong>: Design &amp; Programming</li>
+</ul>
+
+<hr/>
+
+
+  </div>
+  <div class="w3-container w3-theme-d2"><h2><strong>Global(s)</strong></h2></div>
+  <div class="w3-theme-d2 w3-margin-top ">
+    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##DESIGNATE')">
+      <tr>
+        <td class="style="width:40%;"><p><h2>Global <strong>DESIGNATE</strong></h2></p></td>
+        <td class="style="width:60%;">
+<p>Manage the designation of detected targets.</p>
+</td>
+      </tr>
+    </table>
+  </div>
+  <div id= "#Globals##DESIGNATE" class="w3-container w3-white w3-padding-small">
+    <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="##(DESIGNATE)">#DESIGNATE</a>
+<a id="DESIGNATE" ><strong>DESIGNATE</strong></a>
+    
+<p>Manage the designation of detected targets.</p>
+
+    
+
+
+<h1>1. DESIGNATE constructor</h1>
 
 <ul>
     <li><a href="##(DESIGNATE).New">DESIGNATE.New</a>(): Creates a new DESIGNATE object.</li>
 </ul>
 
-<h2>2. DESIGNATE is a FSM</h2>
+<h1>2. DESIGNATE is a FSM</h1>
 
 <p>Designate is a finite state machine, which allows for controlled transitions of states.</p>
 
-<h3>2.1 DESIGNATE States</h3>
+<h2>2.1 DESIGNATE States</h2>
 
 <ul>
     <li><strong>Designating</strong> ( Group ): The designation process.</li>
 </ul>
 
-<h3>2.2 DESIGNATE Events</h3>
+<h2>2.2 DESIGNATE Events</h2>
 
 <ul>
     <li>**<a href="##(DESIGNATE).Detect">DESIGNATE.Detect</a>**: Detect targets.</li>
@@ -1343,7 +1351,7 @@ Smoke will appear "around" the targets, because of accuracy limitations.</p>
     <li>**<a href="##(DESIGNATE).Status">DESIGNATE.Status</a>**: Report designation status.</li>
 </ul>
 
-<h2>3. Maximum Designations</h2>
+<h1>3. Maximum Designations</h1>
 
 <p>In order to prevent an overflow of designations due to many Detected Targets, there is a 
 Maximum Designations scope that is set in the DesignationObject.</p>
@@ -1351,9 +1359,9 @@ Maximum Designations scope that is set in the DesignationObject.</p>
 <p>The method <a href="##(DESIGNATE).SetMaximumDesignations">DESIGNATE.SetMaximumDesignations</a>() will put a limit on the amount of designations put in scope of the DesignationObject.
 Using the menu system, the player can "forget" a designation, so that gradually a new designation can be put in scope when detected.</p>
 
-<h2>4. Laser codes</h2>
+<h1>4. Laser codes</h1>
 
-<h3>4.1. Set possible laser codes</h3>
+<h2>4.1. Set possible laser codes</h2>
 
 <p>An array of laser codes can be provided, that will be used by the DESIGNATE when lasing.
 The laser code is communicated by the Recce when it is lasing a larget.
@@ -1373,11 +1381,11 @@ One laser code can be given or an sequence of laser codes through an table...</p
 
 <p>The above sets a collection of possible laser codes that can be assigned. <strong>Note the { } notation!</strong></p>
 
-<h3>4.2. Auto generate laser codes</h3>
+<h2>4.2. Auto generate laser codes</h2>
 
 <p>Use the method <a href="##(DESIGNATE).GenerateLaserCodes">DESIGNATE.GenerateLaserCodes</a>() to generate all possible laser codes. Logic implemented and advised by Ciribob!</p>
 
-<h3>4.3. Add specific lase codes to the lase menu</h3>
+<h2>4.3. Add specific lase codes to the lase menu</h2>
 
 <p>Certain plane types can only drop laser guided ordonnance when targets are lased with specific laser codes.
 The SU-25T needs targets to be lased using laser code 1113.
@@ -1386,7 +1394,7 @@ The A-10A needs targets to be lased using laser code 1680.</p>
 <p>The method <a href="##(DESIGNATE).AddMenuLaserCode">DESIGNATE.AddMenuLaserCode</a>() to allow a player to lase a target using a specific laser code.
 Remove such a lase menu option using <a href="##(DESIGNATE).RemoveMenuLaserCode">DESIGNATE.RemoveMenuLaserCode</a>().</p>
 
-<h2>5. Autolase to automatically lase detected targets.</h2>
+<h1>5. Autolase to automatically lase detected targets.</h1>
 
 <p>DetectionItems can be auto lased once detected by Recces. As such, there is almost no action required from the Players using the Designate Menu.
 The <strong>auto lase</strong> function can be activated through the Designation Menu.
@@ -1398,7 +1406,7 @@ Note that autolase will automatically activate lasing for ALL DetectedItems. Ind
 
 <p>Activate the auto lasing.</p>
 
-<h2>6. Target prioritization on threat level</h2>
+<h1>6. Target prioritization on threat level</h1>
 
 <p>Targets can be detected of different types in one DetectionItem. Depending on the type of the Target, a different threat level applies in an Air to Ground combat context.
 SAMs are of a higher threat than normal tanks. So, if the Target type was recognized, the Recces will select those targets that form the biggest threat first,
@@ -1412,12 +1420,12 @@ If not activated, Targets will be selected in a random order, but most like thos
 
 <p>The example will activate the threat level prioritization for this the Designate object. Threats will be marked based on the threat level of the Target.</p>
 
-<h2>6. Designate Menu Location for a Mission</h2>
+<h1>7. Designate Menu Location for a Mission</h1>
 
 <p>You can make DESIGNATE work for a <a href="Tasking.Mission.html##(MISSION)">Tasking.Mission#MISSION</a> object. In this way, the designate menu will not appear in the root of the radio menu, but in the menu of the Mission.
 Use the method <a href="##(DESIGNATE).SetMission">DESIGNATE.SetMission</a>() to set the <a href="Mission.html">Mission</a> object for the designate function.</p>
 
-<h2>7. Status Report</h2>
+<h1>8. Status Report</h1>
 
 <p>A status report is available that displays the current Targets detected, grouped per DetectionItem, and a list of which Targets are currently being marked.</p>
 
@@ -2917,7 +2925,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(DESIGNATE).LaseDuration" ><strong>DESIGNATE.LaseDuration</strong></a>
     
 
@@ -6041,7 +6049,7 @@ Designate:SetFlashStatusMenu( false )</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(DESIGNATE).LaseDuration" ><strong>DESIGNATE.LaseDuration</strong></a>
     
 
@@ -6851,7 +6859,7 @@ Designate:SetFlashStatusMenu( false )</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(DESIGNATE).LaseDuration" ><strong>DESIGNATE.LaseDuration</strong></a>
     
 
@@ -7631,7 +7639,7 @@ Designate:SetFlashStatusMenu( false )</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(DESIGNATE).LaseDuration" ><strong>DESIGNATE.LaseDuration</strong></a>
     
 
@@ -9049,7 +9057,7 @@ Designate:SetFlashStatusMenu( false )</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(DESIGNATE).LaseDuration" ><strong>DESIGNATE.LaseDuration</strong></a>
     
 
