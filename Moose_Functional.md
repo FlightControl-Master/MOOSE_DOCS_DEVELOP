@@ -1,4 +1,4 @@
-# MOOSE Functional Guide
+# Functional Guide
 
 ![MOOSE FUNCTIONAL](Images\MOOSE_Functional.JPG)
 
@@ -72,6 +72,8 @@ each detected set of potential targets can be lased or smoked...
   * Designate targets using illumination, through a menu system.
   * Auto lase targets.
   * Refresh detection upon specified time intervals.
+  * Prioritization on threat levels.
+  * Reporting system of threats.
   
 
 ## 5. [**DETECTION**](Documentation/Functional.Detection.html)
@@ -210,7 +212,8 @@ Provides defensive behaviour to a set of SAM sites within a running Mission.
 
 **Features:**
 
-  * When SAM sites are being fired upon, they will reposition themselves or take evasive action shutting down their radars.
+  * When SAM sites are being fired upon, the SAMs will take evasive action will reposition themselves when possible.
+  * When SAM sites are being fired upon, the SAMs will take defensive action by shutting down their radars.
 
 
 ## 12. [**SUPPRESSION**](Documentation/Functional.Suppression.html)

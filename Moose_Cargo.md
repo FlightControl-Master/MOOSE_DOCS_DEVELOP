@@ -1,4 +1,4 @@
-# MOOSE CARGO Guide
+# CARGO Guide
 
 ![MOOSE CARGO](Images\MOOSE_Cargo.JPG)
 

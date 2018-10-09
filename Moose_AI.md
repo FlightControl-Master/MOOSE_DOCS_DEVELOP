@@ -1,4 +1,4 @@
-# MOOSE AI Guide
+# AI Guide
 
 ![MOOSE AI](Images\MOOSE_AI.JPG)
 

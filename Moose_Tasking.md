@@ -1,4 +1,4 @@
-# MOOSE Tasking Guide
+# Tasking Guide
 
 ![MOOSE TASKING](Images\MOOSE_Tasking.JPG)
 

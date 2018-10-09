@@ -1,4 +1,4 @@
-# MOOSE Wrappers Guide
+# Wrappers Guide
 
 ![MOOSE WRAPPER](Images\MOOSE_Wrapper.JPG)
 
