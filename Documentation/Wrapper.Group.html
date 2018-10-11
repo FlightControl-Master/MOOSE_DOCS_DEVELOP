@@ -1104,7 +1104,9 @@ which are excellent tools to be reused in an OO environment!.</p>
 
 <hr/>
 
-<p>The <a href="##(GROUP)">#GROUP</a> class is a wrapper class to handle the DCS Group objects:</p>
+<p>The <a href="##(GROUP)">#GROUP</a> class is a wrapper class to handle the DCS Group objects.</p>
+
+<h2>Features:</h2>
 
 <ul>
     <li>Support all DCS Group APIs.</li>
@@ -1115,7 +1117,16 @@ which are excellent tools to be reused in an OO environment!.</p>
 
 <p><strong>IMPORTANT: ONE SHOULD NEVER SANATIZE these GROUP OBJECT REFERENCES! (make the GROUP object references nil).</strong></p>
 
-<p>See the detailed documentation on the GROUP class.</p>
+<hr/>
+
+<p>For each DCS Group object alive within a running mission, a GROUP wrapper object (instance) will be created within the _<a href="DATABASE.html">DATABASE</a> object.
+This is done at the beginning of the mission (when the mission starts), and dynamically when new DCS Group objects are spawned (using the <a href="SPAWN.html">SPAWN</a> class).</p>
+
+<p>The GROUP class does not contain a :New() method, rather it provides :Find() methods to retrieve the object reference
+using the DCS Group or the DCS GroupName.</p>
+
+<p>The GROUP methods will reference the DCS Group object by name when it is needed during API execution.
+If the DCS Group object does not exist or is nil, the GROUP methods will return nil and may log an exception in the DCS.log file.</p>
 
 <hr/>
 
@@ -1152,16 +1163,6 @@ which are excellent tools to be reused in an OO environment!.</p>
 
     
 
-<p>For each DCS Group object alive within a running mission, a GROUP wrapper object (instance) will be created within the _<a href="DATABASE.html">DATABASE</a> object.
-This is done at the beginning of the mission (when the mission starts), and dynamically when new DCS Group objects are spawned (using the <a href="SPAWN.html">SPAWN</a> class).</p>
-
-<p>The GROUP class does not contain a :New() method, rather it provides :Find() methods to retrieve the object reference
-using the DCS Group or the DCS GroupName.</p>
-
-<p>Another thing to know is that GROUP objects do not "contain" the DCS Group object.
-The GROUP methods will reference the DCS Group object by name when it is needed during API execution.
-If the DCS Group object does not exist or is nil, the GROUP methods will return nil and log an exception in the DCS.log file.</p>
-
 <p>The GROUP class provides the following functions to retrieve quickly the relevant GROUP instance:</p>
 
 <ul>
@@ -1169,9 +1170,77 @@ If the DCS Group object does not exist or is nil, the GROUP methods will return 
     <li><a href="##(GROUP).FindByName">GROUP.FindByName</a>(): Find a GROUP instance from the _DATABASE object using a DCS Group name.</li>
 </ul>
 
-<h2>GROUP task methods</h2>
+<h1>1. Tasking of groups</h1>
 
-<p>A GROUP is a <a href="Wrapper.Controllable.html">Wrapper.Controllable</a>. See the <a href="Wrapper.Controllable.html">Wrapper.Controllable</a> task methods section for a description of the task methods.</p>
+<p>A GROUP is derived from the wrapper class CONTROLLABLE (<a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>). 
+See the <a href="Wrapper.Controllable.html">Wrapper.Controllable</a> task methods section for a description of the task methods.</p>
+
+<p>But here is an example how a group can be assigned a task.</p>
+
+<p>This test demonstrates the use(s) of the SwitchWayPoint method of the GROUP class.</p>
+
+<p>First we look up the objects. We create a GROUP object <code>HeliGroup</code>, using the <a href="##(GROUP)">#GROUP</a>() method, looking up the <code>"Helicopter"</code> group object.
+Same for the <code>"AttackGroup"</code>.</p>
+
+<pre><code>     local HeliGroup = GROUP:FindByName( "Helicopter" )
+     local AttackGroup = GROUP:FindByName( "AttackGroup" )
+</code></pre>
+
+<p>Now we retrieve the <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a> objects of the <code>AttackGroup</code> object, using the method <code>:GetUnits()</code>.   </p>
+
+<pre><code>     local AttackUnits = AttackGroup:GetUnits()
+</code></pre>
+
+<p>Tasks are actually text strings that we build using methods of GROUP.
+So first, we declare an list of <code>Tasks</code>.  </p>
+
+<pre><code>     local Tasks = {}
+</code></pre>
+
+<p>Now we loop over the <code>AttackUnits</code> using a for loop.
+We retrieve the <code>AttackUnit</code> using the <code>AttackGroup:GetUnit()</code> method.
+Each <code>AttackUnit</code> found, will be attacked by <code>HeliGroup</code>, using the method <code>HeliGroup:TaskAttackUnit()</code>.
+This method returns a string containing a command line to execute the task to the <code>HeliGroup</code>.
+The code will assign the task string command to the next element in the <code>Task</code> list, using <code>Tasks[#Tasks+1]</code>.
+This little code will take the count of <code>Task</code> using <code>#</code> operator, and will add <code>1</code> to the count.
+This result will be the index of the <code>Task</code> element.</p>
+
+<pre><code>     for i = 1, #AttackUnits do
+       local AttackUnit = AttackGroup:GetUnit( i )
+       Tasks[#Tasks+1] = HeliGroup:TaskAttackUnit( AttackUnit )
+     end
+</code></pre>
+
+<p>Once these tasks have been executed, a function <code>_Resume</code> will be called ...</p>
+
+<pre><code>     Tasks[#Tasks+1] = HeliGroup:TaskFunction( "_Resume", { "''" } )
+
+     --- @param Wrapper.Group#GROUP HeliGroup
+     function _Resume( HeliGroup )
+       env.info( '_Resume' )
+
+       HeliGroup:MessageToAll( "Resuming",10,"Info")
+     end
+</code></pre>
+
+<p>Now here is where the task gets assigned!
+Using <code>HeliGroup:PushTask</code>, the task is pushed onto the task queue of the group <code>HeliGroup</code>.
+Since <code>Tasks</code> is an array of tasks, we use the <code>HeliGroup:TaskCombo</code> method to execute the tasks.
+The <code>HeliGroup:PushTask</code> method can receive a delay parameter in seconds.
+In the example, <code>30</code> is given as a delay.</p>
+
+
+<pre><code>     HeliGroup:PushTask( 
+       HeliGroup:TaskCombo(
+       Tasks
+       ), 30 
+     ) 
+</code></pre>
+
+<p>That's it!
+But again, please refer to the <a href="Wrapper.Controllable.html">Wrapper.Controllable</a> task methods section for a description of the different task methods that are available.</p>
+
+
 
 <h3>Obtain the mission from group templates</h3>
 
@@ -3467,7 +3536,18 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -6809,7 +6889,18 @@ So each unit of the group is respawned at exactly the same parking spot as it cu
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -12538,7 +12629,18 @@ Note that when the WayPoint parameter is used, the new start mission waypoint of
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -15173,7 +15275,18 @@ Ship:Destroy( false ) -- Don't generate an event upon destruction.
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -15756,7 +15869,18 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -15950,7 +16074,18 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
