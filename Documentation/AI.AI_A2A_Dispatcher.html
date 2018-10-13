@@ -1958,10 +1958,17 @@ The default Disengage Radius is <strong>300km</strong> (300000 meters). Note tha
 
 <p>Use the method <a href="##(AI_A2A_DISPATCHER).SetDisengageRadius">AI_A2A_DISPATCHER.SetDisengageRadius</a>() to modify the default Disengage Radius to another distance setting.</p>
 
+<h2>11. Airbase capture:</h2>
 
-<h2>11. Q &amp; A:</h2>
+<p>Different squadrons can be located at one airbase.
+If the airbase gets captured, that is, when there is an enemy unit near the airbase, and there aren't anymore friendlies at the airbase, the airbase will change coalition ownership.
+As a result, the GCI and CAP will stop!
+However, the squadron will still stay alive. Any airplane that is airborne will continue its operations until all airborne airplanes
+of the squadron will be destroyed. This to keep consistency of air operations not to confuse the players.</p>
 
-<h3>11.1. Which countries will be selected for each coalition?</h3>
+<h2>12. Q &amp; A:</h2>
+
+<h3>12.1. Which countries will be selected for each coalition?</h3>
 
 <p>Which countries are assigned to a coalition influences which units are available to the coalition. 
 For example because the mission calls for a EWR radar on the blue side the Ukraine might be chosen as a blue country 
@@ -1969,7 +1976,7 @@ so that the 55G6 EWR radar unit is available to blue. <br/>
 Some countries assign different tasking to aircraft, for example Germany assigns the CAP task to F-4E Phantoms but the USA does not. <br/>
 Therefore if F4s are wanted as a coalition's CAP or GCI aircraft Germany will need to be assigned to that coalition. </p>
 
-<h3>11.2. Country, type, load out, skill and skins for CAP and GCI aircraft?</h3>
+<h3>12.2. Country, type, load out, skill and skins for CAP and GCI aircraft?</h3>
 
 <ul>
     <li>Note these can be from any countries within the coalition but must be an aircraft with one of the main tasks being "CAP".</li>
@@ -2564,6 +2571,12 @@ The following parameters were given to the :New method of AI_A2A_GCICAP, and mea
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2A_DISPATCHER).OnBeforeGCI">AI_A2A_DISPATCHER:OnBeforeGCI(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>GCI Handler OnBefore for AI_A2A_DISPATCHER</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2A_DISPATCHER).OnEventBaseCaptured">AI_A2A_DISPATCHER:OnEventBaseCaptured(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -5504,6 +5517,37 @@ The Detection object is polymorphic, depending on the type of detection object c
 
       </div>
     </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_A2A_DISPATCHER).OnEventBaseCaptured" ><strong>AI_A2A_DISPATCHER:OnEventBaseCaptured(EventData)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##OnEventBaseCaptured" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AI_A2A_DISPATCHER</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+            <strong><strong>EventData</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
 </div>
 
 </div>
