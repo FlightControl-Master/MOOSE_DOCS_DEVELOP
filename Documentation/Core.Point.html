@@ -1781,6 +1781,12 @@ Note that the Set and Add methods return the current POINT_VEC3 object, so these
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COORDINATE).GetWindWithTurbulenceVec3">COORDINATE:GetWindWithTurbulenceVec3(height)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns the wind direction (from) and strength.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COORDINATE).Heading">COORDINATE.Heading</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -3043,6 +3049,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POINT_VEC2).GetWindText">POINT_VEC2:GetWindText(height, Settings)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns a text documenting the wind direction (from) and strength according the measurement system <a href="Settings.html">Settings</a>.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POINT_VEC2).GetWindWithTurbulenceVec3">POINT_VEC2:GetWindWithTurbulenceVec3(height)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns the wind direction (from) and strength.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -6510,6 +6522,48 @@ By default, the last point is the closest point on road of the ToCoord. Hence, t
       <div class="w3-half">
         
 <p>Wind direction and strength according the measurement system <a href="Settings.html">Settings</a>.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(COORDINATE).GetWindWithTurbulenceVec3" ><strong>COORDINATE:GetWindWithTurbulenceVec3(height)</strong></a></h2>
+</div>
+    
+<p>Returns the wind direction (from) and strength.</p>
+
+<div id= "#Functions##GetWindWithTurbulenceVec3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>COORDINATE</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>height</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) parameter specifying the height ASL. The minimum height will be always be the land height since the wind is zero below the ground.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>Direction the wind is blowing from in degrees.</p>
 
       </div>
     </div>
@@ -15390,6 +15444,48 @@ By default, the last point is the closest point on road of the ToCoord. Hence, t
       <div class="w3-half">
         
 <p>Wind direction and strength according the measurement system <a href="Settings.html">Settings</a>.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POINT_VEC2).GetWindWithTurbulenceVec3" ><strong>POINT_VEC2:GetWindWithTurbulenceVec3(height)</strong></a></h2>
+</div>
+    
+<p>Returns the wind direction (from) and strength.</p>
+
+<div id= "#Functions##GetWindWithTurbulenceVec3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>height</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) parameter specifying the height ASL. The minimum height will be always be the land height since the wind is zero below the ground.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>Direction the wind is blowing from in degrees.</p>
 
       </div>
     </div>
