@@ -1315,7 +1315,7 @@ The APCs will follow nearby roads as much as possible, to ensure fast and clean 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_CARGO_APC).onafterDeployed">AI_CARGO_APC:onafterDeployed(Carrier, From, Event, To, DeployZone, APC)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_CARGO_APC).onafterDeployed">AI_CARGO_APC:onafterDeployed(Carrier, From, Event, To, DeployZone, APC, Defend)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after Deployed event.</p>
 </td>
@@ -1473,7 +1473,7 @@ The APCs will follow nearby roads as much as possible, to ensure fast and clean 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_CARGO_APC).onafterDeployed">AI_CARGO_APC:onafterDeployed(Carrier, From, Event, To, DeployZone)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_CARGO_APC).onafterDeployed">AI_CARGO_APC:onafterDeployed(Carrier, From, Event, To, DeployZone, Defend)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after Deployed event.</p>
 </td>
@@ -1497,19 +1497,19 @@ The APCs will follow nearby roads as much as possible, to ensure fast and clean 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_CARGO_APC).onafterUnboard">AI_CARGO_APC:onafterUnboard(Carrier, From, Event, To, Cargo, DeployZone, CarrierUnit)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_CARGO_APC).onafterUnboard">AI_CARGO_APC:onafterUnboard(Carrier, From, Event, To, Cargo, DeployZone, CarrierUnit, Defend)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after Unboard event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_CARGO_APC).onafterUnload">AI_CARGO_APC:onafterUnload(Carrier, From, Event, To, DeployZone)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_CARGO_APC).onafterUnload">AI_CARGO_APC:onafterUnload(Carrier, From, Event, To, DeployZone, Defend)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after Unload event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_CARGO_APC).onafterUnloaded">AI_CARGO_APC:onafterUnloaded(Carrier, From, Event, To, Cargo, Deployed, DeployZone, CarrierUnit)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_CARGO_APC).onafterUnloaded">AI_CARGO_APC:onafterUnloaded(Carrier, From, Event, To, Cargo, Deployed, DeployZone, CarrierUnit, Defend)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after Unloaded event.</p>
 </td>
@@ -2942,7 +2942,7 @@ AICargoAPC:SetCombatRadius( false )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_CARGO_APC).onafterDeployed" ><strong>AI_CARGO_APC:onafterDeployed(Carrier, From, Event, To, DeployZone, APC)</strong></a></h2>
+<h2><a id="#(AI_CARGO_APC).onafterDeployed" ><strong>AI_CARGO_APC:onafterDeployed(Carrier, From, Event, To, DeployZone, APC, Defend)</strong></a></h2>
 </div>
     
 <p>On after Deployed event.</p>
@@ -3021,6 +3021,16 @@ AICargoAPC:SetCombatRadius( false )</code></pre>
           <div class="w3-half">
             <p>
             <strong><strong>APC</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Defend</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -4472,7 +4482,7 @@ AICargoAPC:SetCombatRadius( false )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_CARGO_APC).onafterDeployed" ><strong>AI_CARGO_APC:onafterDeployed(Carrier, From, Event, To, DeployZone)</strong></a></h2>
+<h2><a id="#(AI_CARGO_APC).onafterDeployed" ><strong>AI_CARGO_APC:onafterDeployed(Carrier, From, Event, To, DeployZone, Defend)</strong></a></h2>
 </div>
     
 <p>On after Deployed event.</p>
@@ -4545,6 +4555,16 @@ AICargoAPC:SetCombatRadius( false )</code></pre>
               
 <p>The zone wherein the cargo is deployed. This can be any zone type, like a ZONE, ZONE_GROUP, ZONE_AIRBASE.</p>
 
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Defend</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
 </div>
@@ -4855,7 +4875,7 @@ AICargoAPC:SetCombatRadius( false )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_CARGO_APC).onafterUnboard" ><strong>AI_CARGO_APC:onafterUnboard(Carrier, From, Event, To, Cargo, DeployZone, CarrierUnit)</strong></a></h2>
+<h2><a id="#(AI_CARGO_APC).onafterUnboard" ><strong>AI_CARGO_APC:onafterUnboard(Carrier, From, Event, To, Cargo, DeployZone, CarrierUnit, Defend)</strong></a></h2>
 </div>
     
 <p>On after Unboard event.</p>
@@ -4953,6 +4973,16 @@ AICargoAPC:SetCombatRadius( false )</code></pre>
               <p></p>
           </div>
         </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Defend</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
 </div>
 
 </div>
@@ -4961,7 +4991,7 @@ AICargoAPC:SetCombatRadius( false )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_CARGO_APC).onafterUnload" ><strong>AI_CARGO_APC:onafterUnload(Carrier, From, Event, To, DeployZone)</strong></a></h2>
+<h2><a id="#(AI_CARGO_APC).onafterUnload" ><strong>AI_CARGO_APC:onafterUnload(Carrier, From, Event, To, DeployZone, Defend)</strong></a></h2>
 </div>
     
 <p>On after Unload event.</p>
@@ -5036,6 +5066,16 @@ AICargoAPC:SetCombatRadius( false )</code></pre>
 
           </div>
         </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Defend</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
 </div>
 
 </div>
@@ -5044,7 +5084,7 @@ AICargoAPC:SetCombatRadius( false )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_CARGO_APC).onafterUnloaded" ><strong>AI_CARGO_APC:onafterUnloaded(Carrier, From, Event, To, Cargo, Deployed, DeployZone, CarrierUnit)</strong></a></h2>
+<h2><a id="#(AI_CARGO_APC).onafterUnloaded" ><strong>AI_CARGO_APC:onafterUnloaded(Carrier, From, Event, To, Cargo, Deployed, DeployZone, CarrierUnit, Defend)</strong></a></h2>
 </div>
     
 <p>On after Unloaded event.</p>
@@ -5149,6 +5189,16 @@ AICargoAPC:SetCombatRadius( false )</code></pre>
           <div class="w3-half">
             <p>
             <strong><strong>CarrierUnit</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Defend</strong></strong>
             </p>
           </div>
           <div class="w3-half">
