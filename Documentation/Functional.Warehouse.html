@@ -1115,6 +1115,7 @@ which are excellent tools to be reused in an OO environment!.</p>
     <li>Strategic components such as capturing, defending and destroying warehouses and their associated infrastructure.</li>
     <li>Intelligent spawning of aircraft on airports (only if enough parking spots are available).</li>
     <li>Possibility to hook into events and customize actions.</li>
+    <li>Persistance of assets. Warehouse assets can be saved and loaded from file.</li>
     <li>Can be easily interfaced to other MOOSE classes.</li>
 </ul>
 
@@ -1806,6 +1807,66 @@ Most of these events have already been mentioned but here is the list at a glanc
 Some transitions, however, are only allowed from certain "From States". For example, no requests can be processed if the warehouse is in "Paused" or "Destroyed" or "Stopped" state.</p>
 
 <p>Mission designers can capture the events with OnAfterEvent functions, e.g. <a href="##(WAREHOUSE).OnAfterDelivered">WAREHOUSE.OnAfterDelivered</a> or <a href="##(WAREHOUSE).OnAfterAirbaseCaptured">WAREHOUSE.OnAfterAirbaseCaptured</a>.</p>
+
+<hr/>
+
+<h1>Persistance of Assets</h1>
+
+<p>Assets in stock of a warehouse can be saved to a file on your hard drive and then loaded from that file at a later point. This enables to restart the mission
+and restore the warehouse stock.</p>
+
+<h2>Prerequisites</h2>
+
+<p><strong>Important</strong> By default, DCS does not allow for writing data to files. Therefore, one first has to comment out the line "sanitizeModule('io')", i.e.</p>
+
+<pre><code>do
+  sanitizeModule('os')
+  --sanitizeModule('io')
+  sanitizeModule('lfs')
+  require = nil
+  loadlib = nil
+end
+</code></pre>
+
+<p>in the file "MissionScripting.lua", which is located in the subdirectory "Scripts" of your DCS installation root directory.</p>
+
+<h3>Don'ts</h3>
+
+<p>Do not use <strong>semi-colons</strong> or <strong>equal signs</strong> in the group names of your assets as these are used as separators in the saved and loaded files texts.
+If you do, it will cause problems and give you a headache!</p>
+
+<h2>Save Assets</h2>
+
+<p>Saving asset data to file is achieved by the <a href="WAREHOUSE.Save.html">WAREHOUSE.Save</a>(<em>path</em>, <em>filename</em>) function. The parameter <em>path</em> specifies the path on the file system where the
+warehouse data is saved. If you do not specify a path, the file is saved your the DCS installation root directory.
+The parameter <em>filename</em> is optional and defines the name of the saved file. By default this is automatically created from the warehouse id and name, for example
+"Warehouse-1234_Batumi.txt".</p>
+
+<pre><code> warehouseBatumi:Save("D:\\My Warehouse Data\\")
+</code></pre>
+
+<p>This will save all asset data to in "D:\My Warehouse Data\Warehouse-1234_Batumi.txt".</p>
+
+<h2>Load Assets</h2>
+
+<p>Loading assets data from file is achieved by the <a href="WAREHOUSE.Load.html">WAREHOUSE.Load</a>(<em>path</em>, <em>filename</em>) function. The parameter <em>path</em> specifies the path on the file system where the
+warehouse data is loaded from. If you do not specify a path, the file is loaded from your the DCS installation root directory.
+The parameter <em>filename</em> is optional and defines the name of the file to load. By default this is automatically generated from the warehouse id and name, for example
+"Warehouse-1234_Batumi.txt".</p>
+
+<p>Note that the warehouse <strong>must not be started</strong> and in the <em>Running</em> state in order to load the assets. In other words, loading should happen after the
+<a href="##(WAREHOUSE).New">WAREHOUSE.New</a> command is specified in the code but before the <a href="##(WAREHOUSE).Start">WAREHOUSE.Start</a> command is given.</p>
+
+<p>Loading the assets is done by</p>
+
+<pre><code> warehouseBatumi:New(STATIC:FindByName("Warehouse Batumi"))
+ warehouseBatumi:Load("D:\\My Warehouse Data\\")
+ warehouseBatumi:Start()
+</code></pre>
+
+<p>This sequence loads all assets from file. If a warehouse was captured in the last mission, it also respawns the static warehouse structure with the right coaliton.
+However, it due to DCS limitations it is not possible to set the airbase coalition. This has to be done manually in the mission editor. Or alternatively, one could
+spawn some ground units via a self request and let them capture the airbase.</p>
 
 <hr/>
 
@@ -2695,6 +2756,12 @@ end
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).ChangeCountry">WAREHOUSE:ChangeCountry(Country)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "ChangeCountry" so the warehouse is respawned with the new country.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).ClassName">WAREHOUSE.ClassName</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Name of the class.</p>
@@ -2725,9 +2792,9 @@ end
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).Destroyed">WAREHOUSE:Destroyed(delay)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).Destroyed">WAREHOUSE:Destroyed()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Triggers the FSM event "Destroyed" with a delay when the warehouse was destroyed.</p>
+<p>Triggers the FSM event "Destroyed" when the warehouse was destroyed.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2887,6 +2954,12 @@ end
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).Load">WAREHOUSE:Load(path, filename)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "Load" when the warehouse is loaded from a file on disk.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).New">WAREHOUSE:New(warehouse, alias)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The WAREHOUSE constructor.</p>
@@ -2935,6 +3008,12 @@ end
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).OnAfterChangeCountry">WAREHOUSE:OnAfterChangeCountry(From, Event, To, Country)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "ChangeCountry" event user function.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).OnAfterDefeate">WAREHOUSE:OnAfterDefeate(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "Defeated" event user function.</p>
@@ -2953,9 +3032,21 @@ end
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).OnAfterLoad">WAREHOUSE:OnAfterLoad(From, Event, To, path, filename)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "Load" event user function.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).OnAfterNewAsset">WAREHOUSE:OnAfterNewAsset(From, Event, To, asset, assignment)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "NewAsset" event user function.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).OnAfterSave">WAREHOUSE:OnAfterSave(From, Event, To, path, filename)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "Save" event user function.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2986,6 +3077,18 @@ end
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).Request">WAREHOUSE:Request(Request)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "Request".</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).Restart">WAREHOUSE:Restart()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "Restart".</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).Save">WAREHOUSE:Save(path, filename)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "Save" when the warehouse assets are saved to file on disk.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3493,6 +3596,12 @@ end
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).__ChangeCountry">WAREHOUSE:__ChangeCountry(delay, Country)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "ChangeCountry" after a delay so the warehouse is respawned with the new country.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).__Defeated">WAREHOUSE:__Defeated(delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "Defeated" with a delay when an attack from an enemy was defeated.</p>
@@ -3502,6 +3611,18 @@ end
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).__Delivered">WAREHOUSE:__Delivered(delay, request)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "Delivered" after a delay.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).__Destroyed">WAREHOUSE:__Destroyed(delay)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "Destroyed" with a delay when the warehouse was destroyed.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).__Load">WAREHOUSE:__Load(delay, path, filename)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "Load" with a delay when the warehouse assets are loaded from disk.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3520,6 +3641,18 @@ end
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).__Request">WAREHOUSE:__Request(Delay, Request)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "Request" after a delay.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).__Restart">WAREHOUSE:__Restart(delay)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "Restart" after a delay.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).__Save">WAREHOUSE:__Save(delay, path, filename)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "Save" with a delay when the warehouse assets are saved to a file.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3667,6 +3800,12 @@ end
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).onafterChangeCountry">WAREHOUSE:onafterChangeCountry(From, Event, To, Country)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "ChangeCountry" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).onafterDefeated">WAREHOUSE:onafterDefeated(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "Defeated" event.</p>
@@ -3685,6 +3824,12 @@ end
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).onafterLoad">WAREHOUSE:onafterLoad(From, Event, To, path, filename)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "Load" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).onafterNewAsset">WAREHOUSE:onafterNewAsset(From, Event, To, asset, assignment)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "NewAsset" event.</p>
@@ -3700,6 +3845,18 @@ end
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).onafterRequest">WAREHOUSE:onafterRequest(From, Event, To, Request)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "Request" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).onafterRestart">WAREHOUSE:onafterRestart(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "Restart" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).onafterSave">WAREHOUSE:onafterSave(From, Event, To, path, filename)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "Save" event.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3742,6 +3899,18 @@ end
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).onbeforeAddRequest">WAREHOUSE:onbeforeAddRequest(From, Event, To, warehouse, AssetDescriptor, AssetDescriptorValue, nAsset, TransportType, nTransport, Prio, Assignment)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On before "AddRequest" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).onbeforeChangeCountry">WAREHOUSE:onbeforeChangeCountry(From, Event, To, Country)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On before "ChangeCountry" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).onbeforeLoad">WAREHOUSE:onbeforeLoad(From, Event, To, path, filename)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On before "Load" event.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3819,7 +3988,7 @@ end
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE).uid">WAREHOUSE.uid</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Unit identifier of the warehouse. Derived from the associated airbase.</p>
+<p>Unit identifier of the warehouse. Derived from id of warehouse static element.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4562,6 +4731,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE.Assetitem).DCSdesc">WAREHOUSE.Assetitem.DCSdesc</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>All DCS descriptors.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WAREHOUSE.Assetitem).assignment">WAREHOUSE.Assetitem.assignment</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Assignment of the asset. This could, e.g., be used in the @{#WAREHOUSE.OnAfterNewAsset) funktion.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -5516,7 +5691,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     #number
 <a id="#(WAREHOUSE).uid" ><strong>WAREHOUSE.uid</strong></a>
     
-<p>Unit identifier of the warehouse. Derived from the associated airbase.</p>
+<p>Unit identifier of the warehouse. Derived from id of warehouse static element.</p>
 
 </div>
 
@@ -6229,6 +6404,39 @@ all cargo was delivered.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).ChangeCountry" ><strong>WAREHOUSE:ChangeCountry(Country)</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "ChangeCountry" so the warehouse is respawned with the new country.</p>
+
+<div id= "#Functions##ChangeCountry" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(country.id)">DCS#country.id</a>
+            <strong><strong>Country</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>New country id of the warehouse.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(WAREHOUSE).Defeated" ><strong>WAREHOUSE:Defeated()</strong></a></h2>
 </div>
     
@@ -6284,10 +6492,10 @@ all cargo was delivered.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(WAREHOUSE).Destroyed" ><strong>WAREHOUSE:Destroyed(delay)</strong></a></h2>
+<h2><a id="#(WAREHOUSE).Destroyed" ><strong>WAREHOUSE:Destroyed()</strong></a></h2>
 </div>
     
-<p>Triggers the FSM event "Destroyed" with a delay when the warehouse was destroyed.</p>
+<p>Triggers the FSM event "Destroyed" when the warehouse was destroyed.</p>
 
     
 <p>Services are stopped.</p>
@@ -6298,20 +6506,6 @@ all cargo was delivered.  </p>
    <div class="w3-margin-left">
 <p>WAREHOUSE</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>delay</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Delay in seconds.</p>
-
-          </div>
-        </div>
 </div>
 
 </div>
@@ -7499,6 +7693,52 @@ Optionally, only warehouses with (specific) assets can be included in the search
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).Load" ><strong>WAREHOUSE:Load(path, filename)</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "Load" when the warehouse is loaded from a file on disk.</p>
+
+<div id= "#Functions##Load" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>path</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Path where the file is located. Default is the DCS installation root directory.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>filename</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) File name. Default is WAREHOUSE-<UID>_<ALIAS>.txt.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(WAREHOUSE).New" ><strong>WAREHOUSE:New(warehouse, alias)</strong></a></h2>
 </div>
     
@@ -8095,6 +8335,81 @@ Optionally, only warehouses with (specific) assets can be included in the search
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).OnAfterChangeCountry" ><strong>WAREHOUSE:OnAfterChangeCountry(From, Event, To, Country)</strong></a></h2>
+</div>
+    
+<p>On after "ChangeCountry" event user function.</p>
+
+    
+<p>Called when the warehouse has changed its country.</p>
+
+<div id= "#Functions##OnAfterChangeCountry" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(country.id)">DCS#country.id</a>
+            <strong><strong>Country</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>New country id of the warehouse, i.e. a number <a href="DCS.html##(country).id">DCS#country.id</a> enumerator.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(WAREHOUSE).OnAfterDefeate" ><strong>WAREHOUSE:OnAfterDefeate(From, Event, To)</strong></a></h2>
 </div>
     
@@ -8294,6 +8609,94 @@ Optionally, only warehouses with (specific) assets can be included in the search
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).OnAfterLoad" ><strong>WAREHOUSE:OnAfterLoad(From, Event, To, path, filename)</strong></a></h2>
+</div>
+    
+<p>On after "Load" event user function.</p>
+
+    
+<p>Called when the warehouse assets are loaded from disk.</p>
+
+<div id= "#Functions##OnAfterLoad" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>path</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Path where the file is located. Default is the DCS installation root directory.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>filename</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) File name. Default is WAREHOUSE-<UID>_<ALIAS>.txt.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(WAREHOUSE).OnAfterNewAsset" ><strong>WAREHOUSE:OnAfterNewAsset(From, Event, To, asset, assignment)</strong></a></h2>
 </div>
     
@@ -8371,6 +8774,94 @@ Optionally, only warehouses with (specific) assets can be included in the search
           <div class="w3-half">
               
 <p>(Optional) Assignment text for the asset.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).OnAfterSave" ><strong>WAREHOUSE:OnAfterSave(From, Event, To, path, filename)</strong></a></h2>
+</div>
+    
+<p>On after "Save" event user function.</p>
+
+    
+<p>Called when the warehouse assets are saved to disk.</p>
+
+<div id= "#Functions##OnAfterSave" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>path</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Path where the file is saved. Default is the DCS installation root directory.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>filename</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) File name. Default is WAREHOUSE-<UID>_<ALIAS>.txt.</p>
 
           </div>
         </div>
@@ -8538,6 +9029,74 @@ end
           <div class="w3-half">
               
 <p>Information table of the request.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).Restart" ><strong>WAREHOUSE:Restart()</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "Restart".</p>
+
+    
+<p>Restarts the warehouse from stopped state by reactivating the event handlers <em>only</em>.</p>
+
+<div id= "#Functions##Restart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).Save" ><strong>WAREHOUSE:Save(path, filename)</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "Save" when the warehouse assets are saved to file on disk.</p>
+
+<div id= "#Functions##Save" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>path</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Path where the file is saved. Default is the DCS installation root directory.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>filename</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) File name. Default is WAREHOUSE-<UID>_<ALIAS>.txt.</p>
 
           </div>
         </div>
@@ -9190,7 +9749,7 @@ Also note, that if the parameter "coordinate" is passed as nil, any road connect
 <p>Triggers the FSM event "Stop".</p>
 
     
-<p>Stops the warehouse and all its event handlers.</p>
+<p>Stops the warehouse and all its event handlers. All waiting and pending queue items are deleted as well and all assets are removed from stock.</p>
 
 <div id= "#Functions##Stop" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -12655,6 +13214,52 @@ is added to the sending warehouse since carriers are supposed to return to their
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).__ChangeCountry" ><strong>WAREHOUSE:__ChangeCountry(delay, Country)</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "ChangeCountry" after a delay so the warehouse is respawned with the new country.</p>
+
+<div id= "#Functions##__ChangeCountry" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Delay in seconds.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(country.id)">DCS#country.id</a>
+            <strong><strong>Country</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Country id which has captured the warehouse.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(WAREHOUSE).__Defeated" ><strong>WAREHOUSE:__Defeated(delay)</strong></a></h2>
 </div>
     
@@ -12726,6 +13331,101 @@ is added to the sending warehouse since carriers are supposed to return to their
           <div class="w3-half">
               
 <p>Pending request that was now delivered.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).__Destroyed" ><strong>WAREHOUSE:__Destroyed(delay)</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "Destroyed" with a delay when the warehouse was destroyed.</p>
+
+    
+<p>Services are stopped.</p>
+
+<div id= "#Functions##__Destroyed" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Delay in seconds.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).__Load" ><strong>WAREHOUSE:__Load(delay, path, filename)</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "Load" with a delay when the warehouse assets are loaded from disk.</p>
+
+<div id= "#Functions##__Load" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Delay in seconds.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>path</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Path where the file is located. Default is the DCS installation root directory.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>filename</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) File name. Default is WAREHOUSE-<UID>_<ALIAS>.txt.</p>
 
           </div>
         </div>
@@ -12881,6 +13581,101 @@ is added to the sending warehouse since carriers are supposed to return to their
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).__Restart" ><strong>WAREHOUSE:__Restart(delay)</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "Restart" after a delay.</p>
+
+    
+<p>Restarts the warehouse from stopped state by reactivating the event handlers <em>only</em>.</p>
+
+<div id= "#Functions##__Restart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Delay in seconds.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).__Save" ><strong>WAREHOUSE:__Save(delay, path, filename)</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "Save" with a delay when the warehouse assets are saved to a file.</p>
+
+<div id= "#Functions##__Save" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Delay in seconds.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>path</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Path where the file is saved. Default is the DCS installation root directory.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>filename</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) File name. Default is WAREHOUSE-<UID>_<ALIAS>.txt.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(WAREHOUSE).__SelfRequest" ><strong>WAREHOUSE:__SelfRequest(delay, groupset, request)</strong></a></h2>
 </div>
     
@@ -13023,7 +13818,7 @@ this request is used to put the groups back into the warehouse stock.</p>
 <p>Triggers the FSM event "Stop" after a delay.</p>
 
     
-<p>Stops the warehouse and all its event handlers.</p>
+<p>Stops the warehouse and all its event handlers. All waiting and pending queue items are deleted as well and all assets are removed from stock.</p>
 
 <div id= "#Functions##__Stop" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -14008,6 +14803,82 @@ If it is a transporter it is put back into the sending warehouse since transport
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).onafterChangeCountry" ><strong>WAREHOUSE:onafterChangeCountry(From, Event, To, Country)</strong></a></h2>
+</div>
+    
+<p>On after "ChangeCountry" event.</p>
+
+    
+<p>Warehouse is respawned with the specified country. All queued requests are deleted and the owned airbase is reset if the coalition is changed by changing the
+country.</p>
+
+<div id= "#Functions##onafterChangeCountry" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(country.id)">DCS#country.id</a>
+            <strong><strong>Country</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>which has captured the warehouse.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(WAREHOUSE).onafterDefeated" ><strong>WAREHOUSE:onafterDefeated(From, Event, To)</strong></a></h2>
 </div>
     
@@ -14196,6 +15067,94 @@ If it is a transporter it is put back into the sending warehouse since transport
           <div class="w3-half">
               
 <p>To state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).onafterLoad" ><strong>WAREHOUSE:onafterLoad(From, Event, To, path, filename)</strong></a></h2>
+</div>
+    
+<p>On after "Load" event.</p>
+
+    
+<p>Warehouse assets are loaded from file on disk.</p>
+
+<div id= "#Functions##onafterLoad" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>path</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Path where the file is loaded from.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>filename</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Name of the file containing the asset data.</p>
 
           </div>
         </div>
@@ -14418,6 +15377,156 @@ If it is a transporter it is put back into the sending warehouse since transport
           <div class="w3-half">
               
 <p>Information table of the request.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).onafterRestart" ><strong>WAREHOUSE:onafterRestart(From, Event, To)</strong></a></h2>
+</div>
+    
+<p>On after "Restart" event.</p>
+
+    
+<p>Restarts the warehouse when it was in stopped state by reactivating the event handlers <em>only</em>.</p>
+
+<div id= "#Functions##onafterRestart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).onafterSave" ><strong>WAREHOUSE:onafterSave(From, Event, To, path, filename)</strong></a></h2>
+</div>
+    
+<p>On after "Save" event.</p>
+
+    
+<p>Warehouse assets are saved to file on disk.</p>
+
+<div id= "#Functions##onafterSave" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>path</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Path where the file is saved. If nil, file is saved in the DCS root installtion directory.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>filename</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Name of the file containing the asset data.</p>
 
           </div>
         </div>
@@ -15018,6 +16127,169 @@ this request is used to put the groups back into the warehouse stock.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).onbeforeChangeCountry" ><strong>WAREHOUSE:onbeforeChangeCountry(From, Event, To, Country)</strong></a></h2>
+</div>
+    
+<p>On before "ChangeCountry" event.</p>
+
+    
+<p>Checks whether a change of country is necessary by comparing the actual country to the the requested one.</p>
+
+<div id= "#Functions##onbeforeChangeCountry" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(country.id)">DCS#country.id</a>
+            <strong><strong>Country</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>which has captured the warehouse.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(WAREHOUSE).onbeforeLoad" ><strong>WAREHOUSE:onbeforeLoad(From, Event, To, path, filename)</strong></a></h2>
+</div>
+    
+<p>On before "Load" event.</p>
+
+    
+<p>Checks if the file the warehouse data should be loaded from exists.</p>
+
+<div id= "#Functions##onbeforeLoad" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WAREHOUSE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>path</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Path where the file is loaded from.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>filename</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Name of the file containing the asset data.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(WAREHOUSE).onbeforeRequest" ><strong>WAREHOUSE:onbeforeRequest(From, Event, To, Request)</strong></a></h2>
 </div>
     
@@ -15418,7 +16690,7 @@ this request is used to put the groups back into the warehouse stock.</p>
     #number
 <a id="#(WAREHOUSE).uid" ><strong>WAREHOUSE.uid</strong></a>
     
-<p>Unit identifier of the warehouse. Derived from the associated airbase.</p>
+<p>Unit identifier of the warehouse. Derived from id of warehouse static element.</p>
 
 </div>
 
@@ -16976,7 +18248,7 @@ this request is used to put the groups back into the warehouse stock.</p>
     #number
 <a id="#(WAREHOUSE).uid" ><strong>WAREHOUSE.uid</strong></a>
     
-<p>Unit identifier of the warehouse. Derived from the associated airbase.</p>
+<p>Unit identifier of the warehouse. Derived from id of warehouse static element.</p>
 
 </div>
 
@@ -19674,6 +20946,17 @@ BASE:TraceOnOff( false )</code></pre>
 <a id="#(WAREHOUSE.Assetitem).DCSdesc" ><strong>WAREHOUSE.Assetitem.DCSdesc</strong></a>
     
 <p>All DCS descriptors.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(WAREHOUSE.Assetitem).assignment" ><strong>WAREHOUSE.Assetitem.assignment</strong></a>
+    
+<p>Assignment of the asset. This could, e.g., be used in the @{#WAREHOUSE.OnAfterNewAsset) funktion.</p>
 
 </div>
 
