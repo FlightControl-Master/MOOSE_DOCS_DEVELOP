@@ -36,7 +36,7 @@
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2A.html">AI.AI_A2A</a></strong></h2></div>
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>AI</strong> -- Models the process of air to air operations for airplanes.</p>
+<p><strong>AI</strong> -- (R2.2) - Models the process of air operations for airplanes.</p>
 </p></div>
        </div>         
      </div>
@@ -87,17 +87,6 @@
      <div class="w3-col s12 m6 l4">
        <div class="w3-card-4 w3-white w3-margin-16">
          <div class="w3-display-container w3-text-white w3-text-shadow">
-           <img src= "../Images/AI_Air_To_Ground_Dispatching.JPG" alt="Image">
-           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2G.html">AI.AI_A2G</a></strong></h2></div>
-         </div>
-         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>AI</strong> -- Models the process of air to ground operations for airplanes and helicopters.</p>
-</p></div>
-       </div>         
-     </div>
-     <div class="w3-col s12 m6 l4">
-       <div class="w3-card-4 w3-white w3-margin-16">
-         <div class="w3-display-container w3-text-white w3-text-shadow">
            <img src= "../Images/AI_Air_To_Air_Dispatching.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2G_Dispatcher.html">AI.AI_A2G_Dispatcher</a></strong></h2></div>
          </div>
@@ -109,22 +98,11 @@
      <div class="w3-col s12 m6 l4">
        <div class="w3-card-4 w3-white w3-margin-16">
          <div class="w3-display-container w3-text-white w3-text-shadow">
-           <img src= "../Images/AI_Ground_Control_Engage.JPG" alt="Image">
-           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2G_ENGAGE.html">AI.AI_A2G_ENGAGE</a></strong></h2></div>
+           <img src= "../Images/AI_Combat_Air_Patrol.JPG" alt="Image">
+           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2G_Patrol.html">AI.AI_A2G_Patrol</a></strong></h2></div>
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>AI</strong> -- Models the process of air to ground engagement for airplanes and helicopters.</p>
-</p></div>
-       </div>         
-     </div>
-     <div class="w3-col s12 m6 l4">
-       <div class="w3-card-4 w3-white w3-margin-16">
-         <div class="w3-display-container w3-text-white w3-text-shadow">
-           <img src= "../Images/AI_Air_Operations.JPG" alt="Image">
-           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_Air.html">AI.AI_Air</a></strong></h2></div>
-         </div>
-         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>AI</strong> -- Models the process of AI air operations.</p>
+<p><strong>AI</strong> -- Models the process of A2G patrolling and engaging ground targets for airplanes and helicopters.</p>
 </p></div>
        </div>         
      </div>
@@ -1554,7 +1532,7 @@ Damaged or out-of-fuel aircraft are returning to the nearest friendly airbase an
 
 <p>You can change or add a CAP zone by using the inherited methods from AI_A2G_DISPATCHER:</p>
 
-<p>The method <a href="##(AI_A2G_DISPATCHER).SetSquadronCap">AI_A2G_DISPATCHER.SetSquadronCap</a>() defines a CAP execution for a squadron.</p>
+<p>The method <a href="##(AI_A2G_DISPATCHER).SetSquadronPatrol">AI_A2G_DISPATCHER.SetSquadronPatrol</a>() defines a CAP execution for a squadron.</p>
 
 <p>Setting-up a CAP zone also requires specific parameters:</p>
 
@@ -1567,14 +1545,14 @@ Damaged or out-of-fuel aircraft are returning to the nearest friendly airbase an
 
 <p>These define how the squadron will perform the CAP while partrolling. Different terrain types requires different types of CAP. </p>
 
-<p>The <a href="##(AI_A2G_DISPATCHER).SetSquadronCapInterval">AI_A2G_DISPATCHER.SetSquadronCapInterval</a>() method specifies <strong>how much</strong> and <strong>when</strong> CAP flights will takeoff.</p>
+<p>The <a href="##(AI_A2G_DISPATCHER).SetSquadronPatrolInterval">AI_A2G_DISPATCHER.SetSquadronPatrolInterval</a>() method specifies <strong>how much</strong> and <strong>when</strong> CAP flights will takeoff.</p>
 
 <p>It is recommended not to overload the air defense with CAP flights, as these will decrease the performance of the overall system. </p>
 
 <p>For example, the following setup will create a CAP for squadron "Sochi":</p>
 
-<p>   A2GDispatcher:SetSquadronCap( "Sochi", CAPZoneWest, 4000, 8000, 600, 800, 800, 1200, "BARO" )
-   A2GDispatcher:SetSquadronCapInterval( "Sochi", 2, 30, 120, 1 )</p>
+<p>   A2GDispatcher:SetSquadronPatrol( "Sochi", CAPZoneWest, 4000, 8000, 600, 800, 800, 1200, "BARO" )
+   A2GDispatcher:SetSquadronPatrolInterval( "Sochi", 2, 30, 120, 1 )</p>
 
 <h3>2.4) Each airbase will perform GCI when required, with the following parameters:</h3>
 
@@ -1691,19 +1669,13 @@ The following parameters were given to the :New method of AI_A2G_GCICAP, and mea
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).CAP">AI_A2G_DISPATCHER:CAP()</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>CAP Trigger for AI_A2G_DISPATCHER</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).CanCAP">AI_A2G_DISPATCHER:CanCAP(SquadronName)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).CanDefend">AI_A2G_DISPATCHER:CanDefend(SquadronName, DefenseTaskType)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).CanDEFEND">AI_A2G_DISPATCHER:CanDEFEND(SquadronName, DefenseTaskType)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).CanPatrol">AI_A2G_DISPATCHER:CanPatrol(SquadronName, DefenseTaskType)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -1721,12 +1693,6 @@ The following parameters were given to the :New method of AI_A2G_GCICAP, and mea
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).CountCapAirborne">AI_A2G_DISPATCHER:CountCapAirborne(SquadronName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).CountDefenders">AI_A2G_DISPATCHER:CountDefenders(AttackerDetection, DefenderCount)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -1739,19 +1705,25 @@ The following parameters were given to the :New method of AI_A2G_GCICAP, and mea
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).CountDefendersToBeEngaged">AI_A2G_DISPATCHER:CountDefendersToBeEngaged(AttackerDetection, DefenderCount)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).CountPatrolAirborne">AI_A2G_DISPATCHER:CountPatrolAirborne(SquadronName, DefenseTaskType)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).DefenderCAPIndex">AI_A2G_DISPATCHER.DefenderCAPIndex</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).Defend">AI_A2G_DISPATCHER:Defend()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Defend Trigger for AI_A2G_DISPATCHER</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).DefenderDefault">AI_A2G_DISPATCHER.DefenderDefault</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).DefenderPatrolIndex">AI_A2G_DISPATCHER.DefenderPatrolIndex</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -1817,15 +1789,9 @@ The following parameters were given to the :New method of AI_A2G_GCICAP, and mea
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).ENGAGE">AI_A2G_DISPATCHER:ENGAGE()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).Engage">AI_A2G_DISPATCHER:Engage()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>ENGAGE Trigger for AI_A2G_DISPATCHER</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).EvaluateSWEEP">AI_A2G_DISPATCHER:EvaluateSWEEP(DetectedItem)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Creates an SWEEP task when there are targets for it.</p>
+<p>Engage Trigger for AI_A2G_DISPATCHER</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -1844,18 +1810,6 @@ The following parameters were given to the :New method of AI_A2G_GCICAP, and mea
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).Evaluate_SEAD">AI_A2G_DISPATCHER:Evaluate_SEAD(DetectedItem)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creates an SEAD task when the targets have radars.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).GCI">AI_A2G_DISPATCHER:GCI()</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>GCI Trigger for AI_A2G_DISPATCHER</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).GetCAPDelay">AI_A2G_DISPATCHER:GetCAPDelay(SquadronName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
 </td>
           </tr>
           <tr class="w3-border">
@@ -1913,6 +1867,12 @@ The following parameters were given to the :New method of AI_A2G_GCICAP, and mea
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).GetPatrolDelay">AI_A2G_DISPATCHER:GetPatrolDelay(SquadronName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).GetPlayerFriendliesNearBy">AI_A2G_DISPATCHER:GetPlayerFriendliesNearBy(DetectedItem)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Calculates which HUMAN friendlies are nearby the area.</p>
@@ -1967,39 +1927,39 @@ The following parameters were given to the :New method of AI_A2G_GCICAP, and mea
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).OnAfterCAP">AI_A2G_DISPATCHER:OnAfterCAP(From, Event, To)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).OnAfterDefend">AI_A2G_DISPATCHER:OnAfterDefend(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>CAP Handler OnAfter for AI_A2G_DISPATCHER</p>
+<p>Defend Handler OnAfter for AI_A2G_DISPATCHER</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).OnAfterENGAGE">AI_A2G_DISPATCHER:OnAfterENGAGE(From, Event, To)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).OnAfterEngage">AI_A2G_DISPATCHER:OnAfterEngage(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>ENGAGE Handler OnAfter for AI_A2G_DISPATCHER</p>
+<p>Engage Handler OnAfter for AI_A2G_DISPATCHER</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).OnAfterGCI">AI_A2G_DISPATCHER:OnAfterGCI(From, Event, To)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).OnAfterPatrol">AI_A2G_DISPATCHER:OnAfterPatrol(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>GCI Handler OnAfter for AI_A2G_DISPATCHER</p>
+<p>Patrol Handler OnAfter for AI_A2G_DISPATCHER</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).OnBeforeCAP">AI_A2G_DISPATCHER:OnBeforeCAP(From, Event, To)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).OnBeforeDefend">AI_A2G_DISPATCHER:OnBeforeDefend(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>CAP Handler OnBefore for AI_A2G_DISPATCHER</p>
+<p>Defend Handler OnBefore for AI_A2G_DISPATCHER</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).OnBeforeENGAGE">AI_A2G_DISPATCHER:OnBeforeENGAGE(From, Event, To)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).OnBeforeEngage">AI_A2G_DISPATCHER:OnBeforeEngage(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>ENGAGE Handler OnBefore for AI_A2G_DISPATCHER</p>
+<p>Engage Handler OnBefore for AI_A2G_DISPATCHER</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).OnBeforeGCI">AI_A2G_DISPATCHER:OnBeforeGCI(From, Event, To)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).OnBeforePatrol">AI_A2G_DISPATCHER:OnBeforePatrol(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>GCI Handler OnBefore for AI_A2G_DISPATCHER</p>
+<p>Patrol Handler OnBefore for AI_A2G_DISPATCHER</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2033,6 +1993,12 @@ The following parameters were given to the :New method of AI_A2G_GCICAP, and mea
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).Patrol">AI_A2G_DISPATCHER:Patrol()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Patrol Trigger for AI_A2G_DISPATCHER</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).ProcessDetected">AI_A2G_DISPATCHER:ProcessDetected(Detection)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Assigns A2G AI Tasks in relation to the detected items.</p>
@@ -2051,27 +2017,15 @@ The following parameters were given to the :New method of AI_A2G_GCICAP, and mea
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SchedulerCAP">AI_A2G_DISPATCHER:SchedulerCAP(SquadronName)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SchedulerPatrol">AI_A2G_DISPATCHER:SchedulerPatrol(SquadronName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Schedules a new CAP for the given SquadronName.</p>
+<p>Schedules a new Patrol for the given SquadronName.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SetBorderZone">AI_A2G_DISPATCHER:SetBorderZone(BorderZone)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Define a border area to simulate a <strong>cold war</strong> scenario.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SetDefaultCapLimit">AI_A2G_DISPATCHER:SetDefaultCapLimit(CapLimit)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set the default CAP limit for squadrons, which will be used to determine how many CAP can be airborne at the same time for the squadron.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SetDefaultCapTimeInterval">AI_A2G_DISPATCHER:SetDefaultCapTimeInterval(CapMinSeconds, CapMaxSeconds)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set the default CAP time interval for squadrons, which will be used to determine a random CAP timing.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2120,6 +2074,18 @@ The following parameters were given to the :New method of AI_A2G_GCICAP, and mea
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SetDefaultOverhead">AI_A2G_DISPATCHER:SetDefaultOverhead(Overhead)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Defines the default amount of extra planes that will take-off as part of the defense system.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SetDefaultPatrolLimit">AI_A2G_DISPATCHER:SetDefaultPatrolLimit(PatrolLimit)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set the default Patrol limit for squadrons, which will be used to determine how many Patrol can be airborne at the same time for the squadron.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SetDefaultPatrolTimeInterval">AI_A2G_DISPATCHER:SetDefaultPatrolTimeInterval(PatrolMinSeconds, PatrolMaxSeconds)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set the default Patrol time interval for squadrons, which will be used to determine a random Patrol timing.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2231,21 +2197,21 @@ The following parameters were given to the :New method of AI_A2G_GCICAP, and mea
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SetSquadronCap">AI_A2G_DISPATCHER:SetSquadronCap(SquadronName, Zone, FloorAltitude, CeilingAltitude, PatrolMinSpeed, PatrolMaxSpeed, EngageMinSpeed, EngageMaxSpeed, AltType)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SetSquadronBaiPatrol">AI_A2G_DISPATCHER:SetSquadronBaiPatrol(SquadronName, Zone, FloorAltitude, CeilingAltitude, PatrolMinSpeed, PatrolMaxSpeed, EngageMinSpeed, EngageMaxSpeed, AltType)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set a CAP for a Squadron.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SetSquadronCapInterval">AI_A2G_DISPATCHER:SetSquadronCapInterval(SquadronName, CapLimit, LowInterval, HighInterval, Probability)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set the squadron CAP parameters.</p>
+<p>Set a Bai patrol for a Squadron.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SetSquadronCas">AI_A2G_DISPATCHER:SetSquadronCas(SquadronName, EngageMinSpeed, EngageMaxSpeed)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SetSquadronCasPatrol">AI_A2G_DISPATCHER:SetSquadronCasPatrol(SquadronName, Zone, FloorAltitude, CeilingAltitude, PatrolMinSpeed, PatrolMaxSpeed, EngageMinSpeed, EngageMaxSpeed, AltType)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set a Cas patrol for a Squadron.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2291,9 +2257,21 @@ The following parameters were given to the :New method of AI_A2G_GCICAP, and mea
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SetSquadronPatrolInterval">AI_A2G_DISPATCHER:SetSquadronPatrolInterval(SquadronName, PatrolLimit, LowInterval, HighInterval, Probability, DefenseTaskType)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set the squadron Patrol parameters.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SetSquadronSead">AI_A2G_DISPATCHER:SetSquadronSead(SquadronName, EngageMinSpeed, EngageMaxSpeed)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).SetSquadronSeadPatrol">AI_A2G_DISPATCHER:SetSquadronSeadPatrol(SquadronName, Zone, FloorAltitude, CeilingAltitude, PatrolMinSpeed, PatrolMaxSpeed, EngageMinSpeed, EngageMaxSpeed, AltType)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set a Sead patrol for a Squadron.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2369,37 +2347,37 @@ The following parameters were given to the :New method of AI_A2G_GCICAP, and mea
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).__CAP">AI_A2G_DISPATCHER:__CAP(Delay)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).__Defend">AI_A2G_DISPATCHER:__Defend(Delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>CAP Asynchronous Trigger for AI_A2G_DISPATCHER</p>
+<p>Defend Asynchronous Trigger for AI_A2G_DISPATCHER</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).__ENGAGE">AI_A2G_DISPATCHER:__ENGAGE(Delay)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).__Engage">AI_A2G_DISPATCHER:__Engage(Delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>ENGAGE Asynchronous Trigger for AI_A2G_DISPATCHER</p>
+<p>Engage Asynchronous Trigger for AI_A2G_DISPATCHER</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).__GCI">AI_A2G_DISPATCHER:__GCI(Delay)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).__Patrol">AI_A2G_DISPATCHER:__Patrol(Delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>GCI Asynchronous Trigger for AI_A2G_DISPATCHER</p>
+<p>Patrol Asynchronous Trigger for AI_A2G_DISPATCHER</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).onafterCAP">AI_A2G_DISPATCHER:onafterCAP(From, Event, To, SquadronName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).onafterDEFEND">AI_A2G_DISPATCHER:onafterDEFEND(From, Event, To, AttackerDetection, DefendersMissing, DefenderFriendlies, DefenseTaskType)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).onafterDefend">AI_A2G_DISPATCHER:onafterDefend(From, Event, To, AttackerDetection, DefendersMissing, DefenderFriendlies, DefenseTaskType)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).onafterENGAGE">AI_A2G_DISPATCHER:onafterENGAGE(From, Event, To, AttackerDetection, Defenders)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).onafterEngage">AI_A2G_DISPATCHER:onafterEngage(From, Event, To, AttackerDetection, Defenders)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).onafterPatrol">AI_A2G_DISPATCHER:onafterPatrol(From, Event, To, SquadronName, DefenseTaskType)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -3276,13 +3254,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_GCICAP).New">AI_A2G_GCICAP:New(EWRPrefixes, TemplatePrefixes, CapPrefixes, CapLimit, GroupingRadius, EngageRadius, GciRadius, ResourceCount)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_GCICAP).New">AI_A2G_GCICAP:New(EWRPrefixes, TemplatePrefixes, PatrolPrefixes, PatrolLimit, GroupingRadius, EngageRadius, GciRadius, ResourceCount)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>AI_A2G_GCICAP constructor.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_GCICAP).NewWithBorder">AI_A2G_GCICAP:NewWithBorder(EWRPrefixes, TemplatePrefixes, BorderPrefix, CapPrefixes, CapLimit, GroupingRadius, EngageRadius, GciRadius, ResourceCount)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_GCICAP).NewWithBorder">AI_A2G_GCICAP:NewWithBorder(EWRPrefixes, TemplatePrefixes, BorderPrefix, PatrolPrefixes, PatrolLimit, GroupingRadius, EngageRadius, GciRadius, ResourceCount)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>AI_A2G_GCICAP constructor with border.</p>
 </td>
@@ -3543,37 +3521,18 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).CAP" ><strong>AI_A2G_DISPATCHER:CAP()</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).CanDefend" ><strong>AI_A2G_DISPATCHER:CanDefend(SquadronName, DefenseTaskType)</strong></a></h2>
 </div>
     
-<p>CAP Trigger for AI_A2G_DISPATCHER</p>
 
-<div id= "#Functions##CAP" class="w3-show w3-white">
+
+<div id= "#Functions##CanDefend" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
 <p>AI_A2G_DISPATCHER</p>
 </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).CanCAP" ><strong>AI_A2G_DISPATCHER:CanCAP(SquadronName)</strong></a></h2>
-</div>
-    
-
-
-<div id= "#Functions##CanCAP" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AI_A2G_DISPATCHER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -3585,6 +3544,16 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
               
 <p>The squadron name.</p>
 
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>DefenseTaskType</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
@@ -3606,12 +3575,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).CanDEFEND" ><strong>AI_A2G_DISPATCHER:CanDEFEND(SquadronName, DefenseTaskType)</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).CanPatrol" ><strong>AI_A2G_DISPATCHER:CanPatrol(SquadronName, DefenseTaskType)</strong></a></h2>
 </div>
     
 
 
-<div id= "#Functions##CanDEFEND" class="w3-show w3-white">
+<div id= "#Functions##CanPatrol" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -3720,36 +3689,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).CountCapAirborne" ><strong>AI_A2G_DISPATCHER:CountCapAirborne(SquadronName)</strong></a></h2>
-</div>
-    
-
-
-<div id= "#Functions##CountCapAirborne" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AI_A2G_DISPATCHER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>SquadronName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
 <h2><a id="#(AI_A2G_DISPATCHER).CountDefenders" ><strong>AI_A2G_DISPATCHER:CountDefenders(AttackerDetection, DefenderCount)</strong></a></h2>
 </div>
     
@@ -3820,12 +3759,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).CountDefendersToBeEngaged" ><strong>AI_A2G_DISPATCHER:CountDefendersToBeEngaged(AttackerDetection, DefenderCount)</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).CountPatrolAirborne" ><strong>AI_A2G_DISPATCHER:CountPatrolAirborne(SquadronName, DefenseTaskType)</strong></a></h2>
 </div>
     
 
 
-<div id= "#Functions##CountDefendersToBeEngaged" class="w3-show w3-white">
+<div id= "#Functions##CountPatrolAirborne" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -3835,7 +3774,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-            <strong><strong>AttackerDetection</strong></strong>
+            <strong><strong>SquadronName</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -3845,7 +3784,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-            <strong><strong>DefenderCount</strong></strong>
+            <strong><strong>DefenseTaskType</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -3860,12 +3799,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).ENGAGE" ><strong>AI_A2G_DISPATCHER:ENGAGE()</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).Defend" ><strong>AI_A2G_DISPATCHER:Defend()</strong></a></h2>
 </div>
     
-<p>ENGAGE Trigger for AI_A2G_DISPATCHER</p>
+<p>Defend Trigger for AI_A2G_DISPATCHER</p>
 
-<div id= "#Functions##ENGAGE" class="w3-show w3-white">
+<div id= "#Functions##Defend" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -3879,48 +3818,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).EvaluateSWEEP" ><strong>AI_A2G_DISPATCHER:EvaluateSWEEP(DetectedItem)</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).Engage" ><strong>AI_A2G_DISPATCHER:Engage()</strong></a></h2>
 </div>
     
-<p>Creates an SWEEP task when there are targets for it.</p>
+<p>Engage Trigger for AI_A2G_DISPATCHER</p>
 
-<div id= "#Functions##EvaluateSWEEP" class="w3-show w3-white">
+<div id= "#Functions##Engage" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
 <p>AI_A2G_DISPATCHER</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Functional.Detection.html##(DETECTION_BASE.DetectedItem)">Functional.Detection#DETECTION_BASE.DetectedItem</a>
-            <strong><strong>DetectedItem</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-    <h2><strong>Return values:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-        <div class="w3-half">
-          <p><a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>:</p>
-        </div>
-        <div class="w3-half">
-          
-<p>TargetSetUnit: The target set of units.</p>
-
-        </div>
-        <div class="w3-half">
-          <p>#nil:</p>
-        </div>
-        <div class="w3-half">
-          
-<p>If there are no targets to be set.</p>
-
-        </div>
-    </div>
 </div>
 
 </div>
@@ -4076,69 +3984,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <p>If there are no targets to be set.</p>
 
         </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).GCI" ><strong>AI_A2G_DISPATCHER:GCI()</strong></a></h2>
-</div>
-    
-<p>GCI Trigger for AI_A2G_DISPATCHER</p>
-
-<div id= "#Functions##GCI" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AI_A2G_DISPATCHER</p>
-</div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).GetCAPDelay" ><strong>AI_A2G_DISPATCHER:GetCAPDelay(SquadronName)</strong></a></h2>
-</div>
-    
-
-
-<div id= "#Functions##GetCAPDelay" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AI_A2G_DISPATCHER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>SquadronName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The squadron name.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AI_A2G_DISPATCHER)">#AI_A2G_DISPATCHER</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
     </div>
 </div>
 
@@ -4444,6 +4289,50 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       <div class="w3-half">
         
 <p>The amount of friendlies and a text string explaining which friendlies of which type.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_A2G_DISPATCHER).GetPatrolDelay" ><strong>AI_A2G_DISPATCHER:GetPatrolDelay(SquadronName)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##GetPatrolDelay" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AI_A2G_DISPATCHER</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>SquadronName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The squadron name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AI_A2G_DISPATCHER)">#AI_A2G_DISPATCHER</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
 
       </div>
     </div>
@@ -4888,12 +4777,12 @@ The Detection object is polymorphic, depending on the type of detection object c
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).OnAfterCAP" ><strong>AI_A2G_DISPATCHER:OnAfterCAP(From, Event, To)</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).OnAfterDefend" ><strong>AI_A2G_DISPATCHER:OnAfterDefend(From, Event, To)</strong></a></h2>
 </div>
     
-<p>CAP Handler OnAfter for AI_A2G_DISPATCHER</p>
+<p>Defend Handler OnAfter for AI_A2G_DISPATCHER</p>
 
-<div id= "#Functions##OnAfterCAP" class="w3-show w3-white">
+<div id= "#Functions##OnAfterDefend" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -4941,12 +4830,12 @@ The Detection object is polymorphic, depending on the type of detection object c
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).OnAfterENGAGE" ><strong>AI_A2G_DISPATCHER:OnAfterENGAGE(From, Event, To)</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).OnAfterEngage" ><strong>AI_A2G_DISPATCHER:OnAfterEngage(From, Event, To)</strong></a></h2>
 </div>
     
-<p>ENGAGE Handler OnAfter for AI_A2G_DISPATCHER</p>
+<p>Engage Handler OnAfter for AI_A2G_DISPATCHER</p>
 
-<div id= "#Functions##OnAfterENGAGE" class="w3-show w3-white">
+<div id= "#Functions##OnAfterEngage" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -4994,12 +4883,12 @@ The Detection object is polymorphic, depending on the type of detection object c
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).OnAfterGCI" ><strong>AI_A2G_DISPATCHER:OnAfterGCI(From, Event, To)</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).OnAfterPatrol" ><strong>AI_A2G_DISPATCHER:OnAfterPatrol(From, Event, To)</strong></a></h2>
 </div>
     
-<p>GCI Handler OnAfter for AI_A2G_DISPATCHER</p>
+<p>Patrol Handler OnAfter for AI_A2G_DISPATCHER</p>
 
-<div id= "#Functions##OnAfterGCI" class="w3-show w3-white">
+<div id= "#Functions##OnAfterPatrol" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -5047,76 +4936,12 @@ The Detection object is polymorphic, depending on the type of detection object c
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).OnBeforeCAP" ><strong>AI_A2G_DISPATCHER:OnBeforeCAP(From, Event, To)</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).OnBeforeDefend" ><strong>AI_A2G_DISPATCHER:OnBeforeDefend(From, Event, To)</strong></a></h2>
 </div>
     
-<p>CAP Handler OnBefore for AI_A2G_DISPATCHER</p>
+<p>Defend Handler OnBefore for AI_A2G_DISPATCHER</p>
 
-<div id= "#Functions##OnBeforeCAP" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AI_A2G_DISPATCHER</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>From</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Event</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>To</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#boolean:</p>
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).OnBeforeENGAGE" ><strong>AI_A2G_DISPATCHER:OnBeforeENGAGE(From, Event, To)</strong></a></h2>
-</div>
-    
-<p>ENGAGE Handler OnBefore for AI_A2G_DISPATCHER</p>
-
-<div id= "#Functions##OnBeforeENGAGE" class="w3-show w3-white">
+<div id= "#Functions##OnBeforeDefend" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -5175,12 +5000,76 @@ The Detection object is polymorphic, depending on the type of detection object c
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).OnBeforeGCI" ><strong>AI_A2G_DISPATCHER:OnBeforeGCI(From, Event, To)</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).OnBeforeEngage" ><strong>AI_A2G_DISPATCHER:OnBeforeEngage(From, Event, To)</strong></a></h2>
 </div>
     
-<p>GCI Handler OnBefore for AI_A2G_DISPATCHER</p>
+<p>Engage Handler OnBefore for AI_A2G_DISPATCHER</p>
 
-<div id= "#Functions##OnBeforeGCI" class="w3-show w3-white">
+<div id= "#Functions##OnBeforeEngage" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AI_A2G_DISPATCHER</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_A2G_DISPATCHER).OnBeforePatrol" ><strong>AI_A2G_DISPATCHER:OnBeforePatrol(From, Event, To)</strong></a></h2>
+</div>
+    
+<p>Patrol Handler OnBefore for AI_A2G_DISPATCHER</p>
+
+<div id= "#Functions##OnBeforePatrol" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -5393,6 +5282,25 @@ The Detection object is polymorphic, depending on the type of detection object c
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AI_A2G_DISPATCHER).Patrol" ><strong>AI_A2G_DISPATCHER:Patrol()</strong></a></h2>
+</div>
+    
+<p>Patrol Trigger for AI_A2G_DISPATCHER</p>
+
+<div id= "#Functions##Patrol" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AI_A2G_DISPATCHER</p>
+</div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AI_A2G_DISPATCHER).ProcessDetected" ><strong>AI_A2G_DISPATCHER:ProcessDetected(Detection)</strong></a></h2>
 </div>
     
@@ -5517,12 +5425,12 @@ The Detection object is polymorphic, depending on the type of detection object c
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).SchedulerCAP" ><strong>AI_A2G_DISPATCHER:SchedulerCAP(SquadronName)</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).SchedulerPatrol" ><strong>AI_A2G_DISPATCHER:SchedulerPatrol(SquadronName)</strong></a></h2>
 </div>
     
-<p>Schedules a new CAP for the given SquadronName.</p>
+<p>Schedules a new Patrol for the given SquadronName.</p>
 
-<div id= "#Functions##SchedulerCAP" class="w3-show w3-white">
+<div id= "#Functions##SchedulerPatrol" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -5556,8 +5464,8 @@ The Detection object is polymorphic, depending on the type of detection object c
 <p>Define a border area to simulate a <strong>cold war</strong> scenario.</p>
 
     
-<p>A <strong>cold war</strong> is one where CAP aircraft patrol their territory but will not attack enemy aircraft or launch GCI aircraft unless enemy aircraft enter their territory. In other words the EWR may detect an enemy aircraft but will only send aircraft to attack it if it crosses the border.
-A <strong>hot war</strong> is one where CAP aircraft will intercept any detected enemy aircraft and GCI aircraft will launch against detected enemy aircraft without regard for territory. In other words if the ground radar can detect the enemy aircraft then it will send CAP and GCI aircraft to attack it.
+<p>A <strong>cold war</strong> is one where Patrol aircraft patrol their territory but will not attack enemy aircraft or launch GCI aircraft unless enemy aircraft enter their territory. In other words the EWR may detect an enemy aircraft but will only send aircraft to attack it if it crosses the border.
+A <strong>hot war</strong> is one where Patrol aircraft will intercept any detected enemy aircraft and GCI aircraft will launch against detected enemy aircraft without regard for territory. In other words if the ground radar can detect the enemy aircraft then it will send Patrol and GCI aircraft to attack it.
 If it's a cold war then the <strong>borders of red and blue territory</strong> need to be defined using a <a href="zone.html">zone</a> object derived from <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>. This method needs to be used for this.
 If a hot war is chosen then <strong>no borders</strong> actually need to be defined using the helicopter units other than it makes it easier sometimes for the mission maker to envisage where the red and blue territories roughly are. In a hot war the borders are effectively defined by the ground based radar coverage of a coalition. Set the noborders parameter to 1</p>
 
@@ -5608,131 +5516,6 @@ or
   local BorderZone2 = ZONE_POLYGON( "CCCP Border2", GROUP:FindByName( "CCCP Border2" ) ) -- The GROUP object is a late activate helicopter unit.
   A2GDispatcher:SetBorderZone( { BorderZone1, BorderZone2 } )
   
-  </code></pre>
-
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).SetDefaultCapLimit" ><strong>AI_A2G_DISPATCHER:SetDefaultCapLimit(CapLimit)</strong></a></h2>
-</div>
-    
-<p>Set the default CAP limit for squadrons, which will be used to determine how many CAP can be airborne at the same time for the squadron.</p>
-
-    
-<p>The default CAP limit is 1 CAP, which means one CAP group being spawned.</p>
-
-<div id= "#Functions##SetDefaultCapLimit" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AI_A2G_DISPATCHER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>CapLimit</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The maximum amount of CAP that can be airborne at the same time for the squadron.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AI_A2G_DISPATCHER)">#AI_A2G_DISPATCHER</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
-    </div>
-      <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>
-  -- Now Setup the A2G dispatcher, and initialize it using the Detection object.
-  A2GDispatcher = AI_A2G_DISPATCHER:New( Detection )  
-  
-  -- Now Setup the default CAP limit.
-  A2GDispatcher:SetDefaultCapLimit( 2 ) -- Maximum 2 CAP per squadron.
-  </code></pre>
-
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).SetDefaultCapTimeInterval" ><strong>AI_A2G_DISPATCHER:SetDefaultCapTimeInterval(CapMinSeconds, CapMaxSeconds)</strong></a></h2>
-</div>
-    
-<p>Set the default CAP time interval for squadrons, which will be used to determine a random CAP timing.</p>
-
-    
-<p>The default CAP time interval is between 180 and 600 seconds.</p>
-
-<div id= "#Functions##SetDefaultCapTimeInterval" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AI_A2G_DISPATCHER</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>CapMinSeconds</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The minimum amount of seconds for the random time interval.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>CapMaxSeconds</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The maximum amount of seconds for the random time interval.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AI_A2G_DISPATCHER)">#AI_A2G_DISPATCHER</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
-    </div>
-      <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>
-  -- Now Setup the A2G dispatcher, and initialize it using the Detection object.
-  A2GDispatcher = AI_A2G_DISPATCHER:New( Detection )  
-  
-  -- Now Setup the default CAP time interval.
-  A2GDispatcher:SetDefaultCapTimeInterval( 300, 1200 ) -- Between 300 and 1200 seconds.
   </code></pre>
 
 </div>
@@ -5879,7 +5662,7 @@ or
           </div>
           <div class="w3-half">
               
-<p>The level of grouping that will be applied of the CAP or GCI defenders. </p>
+<p>The level of grouping that will be applied of the Patrol or GCI defenders. </p>
 
           </div>
         </div>
@@ -6153,6 +5936,131 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
   
   A2GDispatcher:SetDefaultOverhead( 1.5 )
 </code></pre>
+
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_A2G_DISPATCHER).SetDefaultPatrolLimit" ><strong>AI_A2G_DISPATCHER:SetDefaultPatrolLimit(PatrolLimit)</strong></a></h2>
+</div>
+    
+<p>Set the default Patrol limit for squadrons, which will be used to determine how many Patrol can be airborne at the same time for the squadron.</p>
+
+    
+<p>The default Patrol limit is 1 Patrol, which means one Patrol group being spawned.</p>
+
+<div id= "#Functions##SetDefaultPatrolLimit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AI_A2G_DISPATCHER</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>PatrolLimit</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The maximum amount of Patrol that can be airborne at the same time for the squadron.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AI_A2G_DISPATCHER)">#AI_A2G_DISPATCHER</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+      <h2><strong>Usage:</strong></h2>
+    <pre class="example"><code>
+  -- Now Setup the A2G dispatcher, and initialize it using the Detection object.
+  A2GDispatcher = AI_A2G_DISPATCHER:New( Detection )  
+  
+  -- Now Setup the default Patrol limit.
+  A2GDispatcher:SetDefaultPatrolLimit( 2 ) -- Maximum 2 Patrol per squadron.
+  </code></pre>
+
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_A2G_DISPATCHER).SetDefaultPatrolTimeInterval" ><strong>AI_A2G_DISPATCHER:SetDefaultPatrolTimeInterval(PatrolMinSeconds, PatrolMaxSeconds)</strong></a></h2>
+</div>
+    
+<p>Set the default Patrol time interval for squadrons, which will be used to determine a random Patrol timing.</p>
+
+    
+<p>The default Patrol time interval is between 180 and 600 seconds.</p>
+
+<div id= "#Functions##SetDefaultPatrolTimeInterval" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AI_A2G_DISPATCHER</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>PatrolMinSeconds</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The minimum amount of seconds for the random time interval.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>PatrolMaxSeconds</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The maximum amount of seconds for the random time interval.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AI_A2G_DISPATCHER)">#AI_A2G_DISPATCHER</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+      <h2><strong>Usage:</strong></h2>
+    <pre class="example"><code>
+  -- Now Setup the A2G dispatcher, and initialize it using the Detection object.
+  A2GDispatcher = AI_A2G_DISPATCHER:New( Detection )  
+  
+  -- Now Setup the default Patrol time interval.
+  A2GDispatcher:SetDefaultPatrolTimeInterval( 300, 1200 ) -- Between 300 and 1200 seconds.
+  </code></pre>
 
 </div>
 
@@ -7122,12 +7030,15 @@ If you have only one prefix name for a squadron, you don't need to use the <code
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).SetSquadronCap" ><strong>AI_A2G_DISPATCHER:SetSquadronCap(SquadronName, Zone, FloorAltitude, CeilingAltitude, PatrolMinSpeed, PatrolMaxSpeed, EngageMinSpeed, EngageMaxSpeed, AltType)</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).SetSquadronBaiPatrol" ><strong>AI_A2G_DISPATCHER:SetSquadronBaiPatrol(SquadronName, Zone, FloorAltitude, CeilingAltitude, PatrolMinSpeed, PatrolMaxSpeed, EngageMinSpeed, EngageMaxSpeed, AltType)</strong></a></h2>
 </div>
     
-<p>Set a CAP for a Squadron.</p>
+<p>Set a Bai patrol for a Squadron.</p>
 
-<div id= "#Functions##SetSquadronCap" class="w3-show w3-white">
+    
+<p>The Bai patrol will start a patrol of the aircraft at a specified zone, and will engage when commanded.</p>
+
+<div id= "#Functions##SetSquadronBaiPatrol" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -7156,7 +7067,7 @@ If you have only one prefix name for a squadron, you don't need to use the <code
           </div>
           <div class="w3-half">
               
-<p>The <a href="Zone.html">Zone</a> object derived from <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a> that defines the zone wherein the CAP will be executed.</p>
+<p>The <a href="Zone.html">Zone</a> object derived from <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a> that defines the zone wherein the Patrol will be executed.</p>
 
           </div>
         </div>
@@ -7264,134 +7175,10 @@ If you have only one prefix name for a squadron, you don't need to use the <code
     </div>
       <h2><strong>Usage:</strong></h2>
     <pre class="example"><code>
-       -- CAP Squadron execution.
-       CAPZoneEast = ZONE_POLYGON:New( "CAP Zone East", GROUP:FindByName( "CAP Zone East" ) )
-       A2GDispatcher:SetSquadronCap( "Mineralnye", CAPZoneEast, 4000, 10000, 500, 600, 800, 900 )
-       A2GDispatcher:SetSquadronCapInterval( "Mineralnye", 2, 30, 60, 1 )
-       
-       CAPZoneWest = ZONE_POLYGON:New( "CAP Zone West", GROUP:FindByName( "CAP Zone West" ) )
-       A2GDispatcher:SetSquadronCap( "Sochi", CAPZoneWest, 4000, 8000, 600, 800, 800, 1200, "BARO" )
-       A2GDispatcher:SetSquadronCapInterval( "Sochi", 2, 30, 120, 1 )
-       
-       CAPZoneMiddle = ZONE:New( "CAP Zone Middle")
-       A2GDispatcher:SetSquadronCap( "Maykop", CAPZoneMiddle, 4000, 8000, 600, 800, 800, 1200, "RADIO" )
-       A2GDispatcher:SetSquadronCapInterval( "Sochi", 2, 30, 120, 1 )
-</code></pre>
-
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).SetSquadronCapInterval" ><strong>AI_A2G_DISPATCHER:SetSquadronCapInterval(SquadronName, CapLimit, LowInterval, HighInterval, Probability)</strong></a></h2>
-</div>
-    
-<p>Set the squadron CAP parameters.</p>
-
-    
-<p> </p>
-
-<div id= "#Functions##SetSquadronCapInterval" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AI_A2G_DISPATCHER</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>SquadronName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The squadron name.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>CapLimit</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(optional) The maximum amount of CAP groups to be spawned. Note that a CAP is a group, so can consist out of 1 to 4 airplanes. The default is 1 CAP group.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>LowInterval</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(optional) The minimum time boundary in seconds when a new CAP will be spawned. The default is 180 seconds.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>HighInterval</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(optional) The maximum time boundary in seconds when a new CAP will be spawned. The default is 600 seconds.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Probability</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Is not in use, you can skip this parameter.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AI_A2G_DISPATCHER)">#AI_A2G_DISPATCHER</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
-    </div>
-      <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>
-       -- CAP Squadron execution.
-       CAPZoneEast = ZONE_POLYGON:New( "CAP Zone East", GROUP:FindByName( "CAP Zone East" ) )
-       A2GDispatcher:SetSquadronCap( "Mineralnye", CAPZoneEast, 4000, 10000, 500, 600, 800, 900 )
-       A2GDispatcher:SetSquadronCapInterval( "Mineralnye", 2, 30, 60, 1 )
-       
-       CAPZoneWest = ZONE_POLYGON:New( "CAP Zone West", GROUP:FindByName( "CAP Zone West" ) )
-       A2GDispatcher:SetSquadronCap( "Sochi", CAPZoneWest, 4000, 8000, 600, 800, 800, 1200, "BARO" )
-       A2GDispatcher:SetSquadronCapInterval( "Sochi", 2, 30, 120, 1 )
-       
-       CAPZoneMiddle = ZONE:New( "CAP Zone Middle")
-       A2GDispatcher:SetSquadronCap( "Maykop", CAPZoneMiddle, 4000, 8000, 600, 800, 800, 1200, "RADIO" )
-       A2GDispatcher:SetSquadronCapInterval( "Sochi", 2, 30, 120, 1 )
-</code></pre>
+       -- Bai Patrol Squadron execution.
+       PatrolZoneEast = ZONE_POLYGON:New( "Patrol Zone East", GROUP:FindByName( "Patrol Zone East" ) )
+       A2GDispatcher:SetSquadronBaiPatrol( "Mineralnye", PatrolZoneEast, 4000, 10000, 500, 600, 800, 900 )
+       </code></pre>
 
 </div>
 
@@ -7471,6 +7258,164 @@ If you have only one prefix name for a squadron, you don't need to use the <code
        A2GDispatcher:SetSquadronCas( "Novo", 900, 2100 )
        A2GDispatcher:SetSquadronCas( "Maykop", 900, 1200 )
 </code></pre>
+
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_A2G_DISPATCHER).SetSquadronCasPatrol" ><strong>AI_A2G_DISPATCHER:SetSquadronCasPatrol(SquadronName, Zone, FloorAltitude, CeilingAltitude, PatrolMinSpeed, PatrolMaxSpeed, EngageMinSpeed, EngageMaxSpeed, AltType)</strong></a></h2>
+</div>
+    
+<p>Set a Cas patrol for a Squadron.</p>
+
+    
+<p>The Cas patrol will start a patrol of the aircraft at a specified zone, and will engage when commanded.</p>
+
+<div id= "#Functions##SetSquadronCasPatrol" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AI_A2G_DISPATCHER</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>SquadronName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The squadron name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
+            <strong><strong>Zone</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The <a href="Zone.html">Zone</a> object derived from <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a> that defines the zone wherein the Patrol will be executed.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>FloorAltitude</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The minimum altitude at which the cap can be executed.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>CeilingAltitude</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>the maximum altitude at which the cap can be executed.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>PatrolMinSpeed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The minimum speed at which the cap can be executed.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>PatrolMaxSpeed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The maximum speed at which the cap can be executed.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>EngageMinSpeed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The minimum speed at which the engage can be executed.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>EngageMaxSpeed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The maximum speed at which the engage can be executed.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>AltType</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The altitude type, which is a string "BARO" defining Barometric or "RADIO" defining radio controlled altitude.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AI_A2G_DISPATCHER)">#AI_A2G_DISPATCHER</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+      <h2><strong>Usage:</strong></h2>
+    <pre class="example"><code>
+       -- Cas Patrol Squadron execution.
+       PatrolZoneEast = ZONE_POLYGON:New( "Patrol Zone East", GROUP:FindByName( "Patrol Zone East" ) )
+       A2GDispatcher:SetSquadronCasPatrol( "Mineralnye", PatrolZoneEast, 4000, 10000, 500, 600, 800, 900 )
+       </code></pre>
 
 </div>
 
@@ -7586,7 +7531,7 @@ If you have only one prefix name for a squadron, you don't need to use the <code
           </div>
           <div class="w3-half">
               
-<p>The level of grouping that will be applied of the CAP or GCI defenders. </p>
+<p>The level of grouping that will be applied of the Patrol or GCI defenders. </p>
 
           </div>
         </div>
@@ -7937,6 +7882,123 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AI_A2G_DISPATCHER).SetSquadronPatrolInterval" ><strong>AI_A2G_DISPATCHER:SetSquadronPatrolInterval(SquadronName, PatrolLimit, LowInterval, HighInterval, Probability, DefenseTaskType)</strong></a></h2>
+</div>
+    
+<p>Set the squadron Patrol parameters.</p>
+
+    
+<p> </p>
+
+<div id= "#Functions##SetSquadronPatrolInterval" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AI_A2G_DISPATCHER</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>SquadronName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The squadron name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>PatrolLimit</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) The maximum amount of Patrol groups to be spawned. Note that a Patrol is a group, so can consist out of 1 to 4 airplanes. The default is 1 Patrol group.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>LowInterval</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) The minimum time boundary in seconds when a new Patrol will be spawned. The default is 180 seconds.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>HighInterval</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) The maximum time boundary in seconds when a new Patrol will be spawned. The default is 600 seconds.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Probability</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Is not in use, you can skip this parameter.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>DefenseTaskType</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AI_A2G_DISPATCHER)">#AI_A2G_DISPATCHER</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+      <h2><strong>Usage:</strong></h2>
+    <pre class="example"><code>
+       -- Patrol Squadron execution.
+       PatrolZoneEast = ZONE_POLYGON:New( "Patrol Zone East", GROUP:FindByName( "Patrol Zone East" ) )
+       A2GDispatcher:SetSquadronSeadPatrol( "Mineralnye", PatrolZoneEast, 4000, 10000, 500, 600, 800, 900 )
+       A2GDispatcher:SetSquadronPatrolInterval( "Mineralnye", 2, 30, 60, 1 )
+</code></pre>
+
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AI_A2G_DISPATCHER).SetSquadronSead" ><strong>AI_A2G_DISPATCHER:SetSquadronSead(SquadronName, EngageMinSpeed, EngageMaxSpeed)</strong></a></h2>
 </div>
     
@@ -8007,6 +8069,164 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
        A2GDispatcher:SetSquadronSead( "Novo", 900, 2100 )
        A2GDispatcher:SetSquadronSead( "Maykop", 900, 1200 )
 </code></pre>
+
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_A2G_DISPATCHER).SetSquadronSeadPatrol" ><strong>AI_A2G_DISPATCHER:SetSquadronSeadPatrol(SquadronName, Zone, FloorAltitude, CeilingAltitude, PatrolMinSpeed, PatrolMaxSpeed, EngageMinSpeed, EngageMaxSpeed, AltType)</strong></a></h2>
+</div>
+    
+<p>Set a Sead patrol for a Squadron.</p>
+
+    
+<p>The Sead patrol will start a patrol of the aircraft at a specified zone, and will engage when commanded.</p>
+
+<div id= "#Functions##SetSquadronSeadPatrol" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AI_A2G_DISPATCHER</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>SquadronName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The squadron name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
+            <strong><strong>Zone</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The <a href="Zone.html">Zone</a> object derived from <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a> that defines the zone wherein the Patrol will be executed.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>FloorAltitude</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The minimum altitude at which the cap can be executed.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>CeilingAltitude</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>the maximum altitude at which the cap can be executed.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>PatrolMinSpeed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The minimum speed at which the cap can be executed.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>PatrolMaxSpeed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The maximum speed at which the cap can be executed.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>EngageMinSpeed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The minimum speed at which the engage can be executed.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>EngageMaxSpeed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The maximum speed at which the engage can be executed.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>AltType</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The altitude type, which is a string "BARO" defining Barometric or "RADIO" defining radio controlled altitude.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AI_A2G_DISPATCHER)">#AI_A2G_DISPATCHER</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+      <h2><strong>Usage:</strong></h2>
+    <pre class="example"><code>
+       -- Sead Patrol Squadron execution.
+       PatrolZoneEast = ZONE_POLYGON:New( "Patrol Zone East", GROUP:FindByName( "Patrol Zone East" ) )
+       A2GDispatcher:SetSquadronSeadPatrol( "Mineralnye", PatrolZoneEast, 4000, 10000, 500, 600, 800, 900 )
+       </code></pre>
 
 </div>
 
@@ -8564,12 +8784,12 @@ They will lock the parking spot.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).__CAP" ><strong>AI_A2G_DISPATCHER:__CAP(Delay)</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).__Defend" ><strong>AI_A2G_DISPATCHER:__Defend(Delay)</strong></a></h2>
 </div>
     
-<p>CAP Asynchronous Trigger for AI_A2G_DISPATCHER</p>
+<p>Defend Asynchronous Trigger for AI_A2G_DISPATCHER</p>
 
-<div id= "#Functions##__CAP" class="w3-show w3-white">
+<div id= "#Functions##__Defend" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -8595,12 +8815,12 @@ They will lock the parking spot.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).__ENGAGE" ><strong>AI_A2G_DISPATCHER:__ENGAGE(Delay)</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).__Engage" ><strong>AI_A2G_DISPATCHER:__Engage(Delay)</strong></a></h2>
 </div>
     
-<p>ENGAGE Asynchronous Trigger for AI_A2G_DISPATCHER</p>
+<p>Engage Asynchronous Trigger for AI_A2G_DISPATCHER</p>
 
-<div id= "#Functions##__ENGAGE" class="w3-show w3-white">
+<div id= "#Functions##__Engage" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -8626,12 +8846,12 @@ They will lock the parking spot.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).__GCI" ><strong>AI_A2G_DISPATCHER:__GCI(Delay)</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).__Patrol" ><strong>AI_A2G_DISPATCHER:__Patrol(Delay)</strong></a></h2>
 </div>
     
-<p>GCI Asynchronous Trigger for AI_A2G_DISPATCHER</p>
+<p>Patrol Asynchronous Trigger for AI_A2G_DISPATCHER</p>
 
-<div id= "#Functions##__GCI" class="w3-show w3-white">
+<div id= "#Functions##__Patrol" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -8657,72 +8877,12 @@ They will lock the parking spot.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).onafterCAP" ><strong>AI_A2G_DISPATCHER:onafterCAP(From, Event, To, SquadronName)</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).onafterDefend" ><strong>AI_A2G_DISPATCHER:onafterDefend(From, Event, To, AttackerDetection, DefendersMissing, DefenderFriendlies, DefenseTaskType)</strong></a></h2>
 </div>
     
 
 
-<div id= "#Functions##onafterCAP" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AI_A2G_DISPATCHER</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>From</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>Event</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>To</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>SquadronName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).onafterDEFEND" ><strong>AI_A2G_DISPATCHER:onafterDEFEND(From, Event, To, AttackerDetection, DefendersMissing, DefenderFriendlies, DefenseTaskType)</strong></a></h2>
-</div>
-    
-
-
-<div id= "#Functions##onafterDEFEND" class="w3-show w3-white">
+<div id= "#Functions##onafterDefend" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -8807,12 +8967,12 @@ They will lock the parking spot.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_DISPATCHER).onafterENGAGE" ><strong>AI_A2G_DISPATCHER:onafterENGAGE(From, Event, To, AttackerDetection, Defenders)</strong></a></h2>
+<h2><a id="#(AI_A2G_DISPATCHER).onafterEngage" ><strong>AI_A2G_DISPATCHER:onafterEngage(From, Event, To, AttackerDetection, Defenders)</strong></a></h2>
 </div>
     
 
 
-<div id= "#Functions##onafterENGAGE" class="w3-show w3-white">
+<div id= "#Functions##onafterEngage" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -8863,6 +9023,76 @@ They will lock the parking spot.</p>
           <div class="w3-half">
             <p>
             <strong><strong>Defenders</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_A2G_DISPATCHER).onafterPatrol" ><strong>AI_A2G_DISPATCHER:onafterPatrol(From, Event, To, SquadronName, DefenseTaskType)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##onafterPatrol" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AI_A2G_DISPATCHER</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>SquadronName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>DefenseTaskType</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -14088,7 +14318,7 @@ BASE:TraceOnOff( false )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_GCICAP).New" ><strong>AI_A2G_GCICAP:New(EWRPrefixes, TemplatePrefixes, CapPrefixes, CapLimit, GroupingRadius, EngageRadius, GciRadius, ResourceCount)</strong></a></h2>
+<h2><a id="#(AI_A2G_GCICAP).New" ><strong>AI_A2G_GCICAP:New(EWRPrefixes, TemplatePrefixes, PatrolPrefixes, PatrolLimit, GroupingRadius, EngageRadius, GciRadius, ResourceCount)</strong></a></h2>
 </div>
     
 <p>AI_A2G_GCICAP constructor.</p>
@@ -14130,7 +14360,7 @@ BASE:TraceOnOff( false )</code></pre>
           <div class="w3-half">
             <p>
                 #string
-            <strong><strong>CapPrefixes</strong></strong>
+            <strong><strong>PatrolPrefixes</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -14143,7 +14373,7 @@ BASE:TraceOnOff( false )</code></pre>
           <div class="w3-half">
             <p>
                 #number
-            <strong><strong>CapLimit</strong></strong>
+            <strong><strong>PatrolLimit</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -14295,7 +14525,7 @@ For airplanes, 6000 (6km) is recommended, and is also the default value of this 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_GCICAP).NewWithBorder" ><strong>AI_A2G_GCICAP:NewWithBorder(EWRPrefixes, TemplatePrefixes, BorderPrefix, CapPrefixes, CapLimit, GroupingRadius, EngageRadius, GciRadius, ResourceCount)</strong></a></h2>
+<h2><a id="#(AI_A2G_GCICAP).NewWithBorder" ><strong>AI_A2G_GCICAP:NewWithBorder(EWRPrefixes, TemplatePrefixes, BorderPrefix, PatrolPrefixes, PatrolLimit, GroupingRadius, EngageRadius, GciRadius, ResourceCount)</strong></a></h2>
 </div>
     
 <p>AI_A2G_GCICAP constructor with border.</p>
@@ -14350,7 +14580,7 @@ For airplanes, 6000 (6km) is recommended, and is also the default value of this 
           <div class="w3-half">
             <p>
                 #string
-            <strong><strong>CapPrefixes</strong></strong>
+            <strong><strong>PatrolPrefixes</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -14363,7 +14593,7 @@ For airplanes, 6000 (6km) is recommended, and is also the default value of this 
           <div class="w3-half">
             <p>
                 #number
-            <strong><strong>CapLimit</strong></strong>
+            <strong><strong>PatrolLimit</strong></strong>
             </p>
           </div>
           <div class="w3-half">
