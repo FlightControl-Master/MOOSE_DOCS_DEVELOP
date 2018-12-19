@@ -98,6 +98,28 @@
      <div class="w3-col s12 m6 l4">
        <div class="w3-card-4 w3-white w3-margin-16">
          <div class="w3-display-container w3-text-white w3-text-shadow">
+           <img src= "../Images/AI_Air_To_Ground_Engage.JPG" alt="Image">
+           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2G_BAI.html">AI.AI_A2G_BAI</a></strong></h2></div>
+         </div>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+<p><strong>AI</strong> -- Models the process of air to ground BAI engagement for airplanes and helicopters.</p>
+</p></div>
+       </div>         
+     </div>
+     <div class="w3-col s12 m6 l4">
+       <div class="w3-card-4 w3-white w3-margin-16">
+         <div class="w3-display-container w3-text-white w3-text-shadow">
+           <img src= "../Images/AI_Air_To_Ground_Engage.JPG" alt="Image">
+           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2G_CAS.html">AI.AI_A2G_CAS</a></strong></h2></div>
+         </div>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+<p><strong>AI</strong> -- Models the process of air to ground engagement for airplanes and helicopters.</p>
+</p></div>
+       </div>         
+     </div>
+     <div class="w3-col s12 m6 l4">
+       <div class="w3-card-4 w3-white w3-margin-16">
+         <div class="w3-display-container w3-text-white w3-text-shadow">
            <img src= "../Images/AI_Air_To_Ground_Dispatching.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2G_Dispatcher.html">AI.AI_A2G_Dispatcher</a></strong></h2></div>
          </div>
@@ -125,6 +147,17 @@
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- Models the process of A2G patrolling and engaging ground targets for airplanes and helicopters.</p>
+</p></div>
+       </div>         
+     </div>
+     <div class="w3-col s12 m6 l4">
+       <div class="w3-card-4 w3-white w3-margin-16">
+         <div class="w3-display-container w3-text-white w3-text-shadow">
+           <img src= "../Images/AI_Air_To_Ground_Engage.JPG" alt="Image">
+           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2G_SEAD.html">AI.AI_A2G_SEAD</a></strong></h2></div>
+         </div>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+<p><strong>AI</strong> -- Models the process of air to ground SEAD engagement for airplanes and helicopters.</p>
 </p></div>
        </div>         
      </div>
@@ -1466,6 +1499,18 @@ and the resulting state will be the <strong>To</strong> state.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G).RTBMaxSpeed">AI_A2G.RTBMaxSpeed</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G).RTBMinSpeed">AI_A2G.RTBMinSpeed</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G).RTBRoute">AI_A2G.RTBRoute(AIGroup, Fsm)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -1517,6 +1562,12 @@ and the resulting state will be the <strong>To</strong> state.</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G).SetHomeAirbase">AI_A2G:SetHomeAirbase(HomeAirbase)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets the home airbase.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G).SetRTBSpeed">AI_A2G:SetRTBSpeed(RTBMinSpeed, RTBMaxSpeed)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Sets (modifies) the minimum and maximum RTB speed of the patrol.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4125,6 +4176,63 @@ Once the time is finished, the old AI will return to the base.</p>
           </div>
           <div class="w3-half">
               <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AI_AIR)">#AI_AIR</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_A2G).SetRTBSpeed" ><strong>AI_A2G:SetRTBSpeed(RTBMinSpeed, RTBMaxSpeed)</strong></a></h2>
+</div>
+    
+<p>Sets (modifies) the minimum and maximum RTB speed of the patrol.</p>
+
+<div id= "#Functions##SetRTBSpeed" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(Speed)">DCS#Speed</a>
+            <strong><strong>RTBMinSpeed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The minimum speed of the <a href="Wrapper.Controllable.html">Wrapper.Controllable</a> in km/h.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(Speed)">DCS#Speed</a>
+            <strong><strong>RTBMaxSpeed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The maximum speed of the <a href="Wrapper.Controllable.html">Wrapper.Controllable</a> in km/h.</p>
+
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>

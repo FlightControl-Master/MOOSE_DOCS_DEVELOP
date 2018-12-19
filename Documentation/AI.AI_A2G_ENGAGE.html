@@ -98,6 +98,28 @@
      <div class="w3-col s12 m6 l4">
        <div class="w3-card-4 w3-white w3-margin-16">
          <div class="w3-display-container w3-text-white w3-text-shadow">
+           <img src= "../Images/AI_Air_To_Ground_Engage.JPG" alt="Image">
+           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2G_BAI.html">AI.AI_A2G_BAI</a></strong></h2></div>
+         </div>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+<p><strong>AI</strong> -- Models the process of air to ground BAI engagement for airplanes and helicopters.</p>
+</p></div>
+       </div>         
+     </div>
+     <div class="w3-col s12 m6 l4">
+       <div class="w3-card-4 w3-white w3-margin-16">
+         <div class="w3-display-container w3-text-white w3-text-shadow">
+           <img src= "../Images/AI_Air_To_Ground_Engage.JPG" alt="Image">
+           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2G_CAS.html">AI.AI_A2G_CAS</a></strong></h2></div>
+         </div>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+<p><strong>AI</strong> -- Models the process of air to ground engagement for airplanes and helicopters.</p>
+</p></div>
+       </div>         
+     </div>
+     <div class="w3-col s12 m6 l4">
+       <div class="w3-card-4 w3-white w3-margin-16">
+         <div class="w3-display-container w3-text-white w3-text-shadow">
            <img src= "../Images/AI_Air_To_Ground_Dispatching.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2G_Dispatcher.html">AI.AI_A2G_Dispatcher</a></strong></h2></div>
          </div>
@@ -125,6 +147,17 @@
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>AI</strong> -- Models the process of A2G patrolling and engaging ground targets for airplanes and helicopters.</p>
+</p></div>
+       </div>         
+     </div>
+     <div class="w3-col s12 m6 l4">
+       <div class="w3-card-4 w3-white w3-margin-16">
+         <div class="w3-display-container w3-text-white w3-text-shadow">
+           <img src= "../Images/AI_Air_To_Ground_Engage.JPG" alt="Image">
+           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="AI.AI_A2G_SEAD.html">AI.AI_A2G_SEAD</a></strong></h2></div>
+         </div>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+<p><strong>AI</strong> -- Models the process of air to ground SEAD engagement for airplanes and helicopters.</p>
 </p></div>
        </div>         
      </div>
@@ -1251,7 +1284,8 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
       <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AI_A2G_ENGAGE)">Type <strong>AI_A2G_ENGAGE</strong></a></h2></div>
          <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
      <strong><a href="##(AI_A2G_ENGAGE)">AI_A2G_ENGAGE</a></strong>
-, extends <strong><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></strong>
+, extends <strong><a href="AI.AI_A2G.html##(AI_A2G)">AI.AI_A2G#AI_A2G</a></strong>
+, extends <strong><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></strong>
 , extends <strong><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></strong>
 , extends <strong><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></strong>
 , extends <strong><a href="Core.Base.html##(BASE)">Core.Base#BASE</a></strong>
@@ -1281,12 +1315,6 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).AttackSetUnit">AI_A2G_ENGAGE.AttackSetUnit</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).Destroy">AI_A2G_ENGAGE:Destroy()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Synchronous Event Trigger for Event Destroy.</p>
@@ -1296,6 +1324,18 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).Engage">AI_A2G_ENGAGE:Engage()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Synchronous Event Trigger for Event Engage.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).EngageCeilingAltitude">AI_A2G_ENGAGE.EngageCeilingAltitude</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).EngageFloorAltitude">AI_A2G_ENGAGE.EngageFloorAltitude</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -1329,7 +1369,7 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).New">AI_A2G_ENGAGE:New(AIGroup, EngageMinSpeed, EngageMaxSpeed)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).New">AI_A2G_ENGAGE:New(AIGroup, EngageMinSpeed, EngageMaxSpeed, EngageFloorAltitude, EngageCeilingAltitude)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creates a new AI_A2G_ENGAGE object</p>
 </td>
@@ -1413,24 +1453,6 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).PatrolAltType">AI_A2G_ENGAGE.PatrolAltType</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).PatrolMaxSpeed">AI_A2G_ENGAGE.PatrolMaxSpeed</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).PatrolMinSpeed">AI_A2G_ENGAGE.PatrolMinSpeed</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).__Abort">AI_A2G_ENGAGE:__Abort(Delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Asynchronous Event Trigger for Event Abort.</p>
@@ -1501,7 +1523,21 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
           <tr class="w3-theme-l1">
-            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from AI_A2A</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from AI_A2G</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).New">AI_A2G_ENGAGE:New(AIGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Creates a new AI_A2G process.</p>
+</td>
+          </tr>
+        </table>
+        </div>
+        <div class="w3-card w3-margin">
+        <table class="w3-table w3-border-bottom w3-border-theme-l2">
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from AI_AIR</th>
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
@@ -1518,6 +1554,12 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).DisengageRadius">AI_A2G_ENGAGE.DisengageRadius</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).FuelThresholdPercentage">AI_A2G_ENGAGE.FuelThresholdPercentage</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -1543,7 +1585,7 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).New">AI_A2G_ENGAGE:New(AIGroup)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Creates a new AI_A2A object</p>
+<p>Creates a new AI_AIR process.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -1555,13 +1597,13 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).OnAfterRefuel">AI_A2G_ENGAGE:OnAfterRefuel(Controllable, From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Refuel Handler OnAfter for AI_A2A</p>
+<p>Refuel Handler OnAfter for AI_AIR</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).OnAfterStart">AI_A2G_ENGAGE:OnAfterStart(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Start Handler OnAfter for AI_A2A</p>
+<p>Start Handler OnAfter for AI_AIR</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -1585,13 +1627,13 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).OnBeforeRefuel">AI_A2G_ENGAGE:OnBeforeRefuel(Controllable, From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Refuel Handler OnBefore for AI_A2A</p>
+<p>Refuel Handler OnBefore for AI_AIR</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).OnBeforeStart">AI_A2G_ENGAGE:OnBeforeStart(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Start Handler OnBefore for AI_A2A</p>
+<p>Start Handler OnBefore for AI_AIR</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -1649,6 +1691,12 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).OutOfFuelOrbitTime">AI_A2G_ENGAGE.OutOfFuelOrbitTime</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).PatrolCeilingAltitude">AI_A2G_ENGAGE.PatrolCeilingAltitude</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -1662,12 +1710,6 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).PatrolFloorAltitude">AI_A2G_ENGAGE.PatrolFloorAltitude</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).PatrolFuelThresholdPercentage">AI_A2G_ENGAGE.PatrolFuelThresholdPercentage</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -1691,12 +1733,6 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).PatrolOutOfFuelOrbitTime">AI_A2G_ENGAGE.PatrolOutOfFuelOrbitTime</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).RTB">AI_A2G_ENGAGE:RTB()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Synchronous Event Trigger for Event RTB.</p>
@@ -1704,6 +1740,18 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).RTBHold">AI_A2G_ENGAGE.RTBHold(AIGroup, Fsm)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).RTBMaxSpeed">AI_A2G_ENGAGE.RTBMaxSpeed</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).RTBMinSpeed">AI_A2G_ENGAGE.RTBMinSpeed</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -1717,7 +1765,7 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).Refuel">AI_A2G_ENGAGE:Refuel()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Refuel Trigger for AI_A2A</p>
+<p>Refuel Trigger for AI_AIR</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -1751,7 +1799,7 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).SetFuelThreshold">AI_A2G_ENGAGE:SetFuelThreshold(PatrolFuelThresholdPercentage, PatrolOutOfFuelOrbitTime)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).SetFuelThreshold">AI_A2G_ENGAGE:SetFuelThreshold(FuelThresholdPercentage, OutOfFuelOrbitTime)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>When the AI is out of fuel, it is required that a new AI is started, before the old AI can return to the home base.</p>
 </td>
@@ -1760,6 +1808,12 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).SetHomeAirbase">AI_A2G_ENGAGE:SetHomeAirbase(HomeAirbase)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets the home airbase.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).SetRTBSpeed">AI_A2G_ENGAGE:SetRTBSpeed(RTBMinSpeed, RTBMaxSpeed)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Sets (modifies) the minimum and maximum RTB speed of the patrol.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -1789,7 +1843,7 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).Start">AI_A2G_ENGAGE:Start()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Start Trigger for AI_A2A</p>
+<p>Start Trigger for AI_AIR</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -1819,13 +1873,13 @@ Use the method <a href="AI.AI_Cap.html##(AI_A2G_ENGAGE).SetEngageZone">AI.AI_Cap
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).__Refuel">AI_A2G_ENGAGE:__Refuel(Delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Refuel Asynchronous Trigger for AI_A2A</p>
+<p>Refuel Asynchronous Trigger for AI_AIR</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_ENGAGE).__Start">AI_A2G_ENGAGE:__Start(Delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Start Asynchronous Trigger for AI_A2A</p>
+<p>Start Asynchronous Trigger for AI_AIR</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2690,74 +2744,8 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
-<a id="#(AI_A2G_ENGAGE).AttackSetUnit" ><strong>AI_A2G_ENGAGE.AttackSetUnit</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).EngageMaxSpeed" ><strong>AI_A2G_ENGAGE.EngageMaxSpeed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).EngageMinSpeed" ><strong>AI_A2G_ENGAGE.EngageMinSpeed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(AI_A2G_ENGAGE).Engaging" ><strong>AI_A2G_ENGAGE.Engaging</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(AI_A2G_ENGAGE).PatrolAltType" ><strong>AI_A2G_ENGAGE.PatrolAltType</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).PatrolMaxSpeed" ><strong>AI_A2G_ENGAGE.PatrolMaxSpeed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).PatrolMinSpeed" ><strong>AI_A2G_ENGAGE.PatrolMinSpeed</strong></a>
     
 
 
@@ -2916,7 +2904,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_ENGAGE).New" ><strong>AI_A2G_ENGAGE:New(AIGroup, EngageMinSpeed, EngageMaxSpeed)</strong></a></h2>
+<h2><a id="#(AI_A2G_ENGAGE).New" ><strong>AI_A2G_ENGAGE:New(AIGroup, EngageMinSpeed, EngageMaxSpeed, EngageFloorAltitude, EngageCeilingAltitude)</strong></a></h2>
 </div>
     
 <p>Creates a new AI_A2G_ENGAGE object</p>
@@ -2942,21 +2930,53 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
+                <a href="DCS.html##(Speed)">DCS#Speed</a>
             <strong><strong>EngageMinSpeed</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              <p></p>
+              
+<p>(optional, default = 50% of max speed) The minimum speed of the <a href="Wrapper.Group.html">Wrapper.Group</a> in km/h when engaging a target.</p>
+
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
+                <a href="DCS.html##(Speed)">DCS#Speed</a>
             <strong><strong>EngageMaxSpeed</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              <p></p>
+              
+<p>(optional, default = 75% of max speed) The maximum speed of the <a href="Wrapper.Group.html">Wrapper.Group</a> in km/h when engaging a target.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(Altitude)">DCS#Altitude</a>
+            <strong><strong>EngageFloorAltitude</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional, default = 1000m ) The lowest altitude in meters where to execute the engagement.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(Altitude)">DCS#Altitude</a>
+            <strong><strong>EngageCeilingAltitude</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional, default = 1500m ) The highest altitude in meters where to execute the engagement.</p>
+
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
@@ -4561,30 +4581,69 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
-<a id="#(AI_A2G_ENGAGE).AttackSetUnit" ><strong>AI_A2G_ENGAGE.AttackSetUnit</strong></a>
+    #boolean
+<a id="#(AI_A2G_ENGAGE).Engaging" ><strong>AI_A2G_ENGAGE.Engaging</strong></a>
     
 
 
 </div>
 
 </div>   
-<div>   
+<div class="functions  w3-container w3-theme-l2">
+  <h2>Function(s)</h2>
+</div>  
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+<div class="w3-theme-l2">
+<h2><a id="#(AI_A2G_ENGAGE).New" ><strong>AI_A2G_ENGAGE:New(AIGroup)</strong></a></h2>
+</div>
     
-<a id="#(AI_A2G_ENGAGE).EngageMaxSpeed" ><strong>AI_A2G_ENGAGE.EngageMaxSpeed</strong></a>
-    
+<p>Creates a new AI_A2G process.</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="AI.AI_A2G.html##(AI_A2G)">AI.AI_A2G#AI_A2G</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>AIGroup</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The group object to receive the A2G Process.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AI_A2G)">#AI_A2G</a>:</p>
+      </div>
+      <div class="w3-half">
+        
 
 
+      </div>
+    </div>
 </div>
 
-</div>   
+</div>
+</div>
+
+<div class="fields w3-container w3-theme-l2">
+  <h2>Field(s)</h2>
+</div>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(AI_A2G_ENGAGE).EngageMinSpeed" ><strong>AI_A2G_ENGAGE.EngageMinSpeed</strong></a>
+    #boolean
+<a id="#(AI_A2G_ENGAGE).Accomplished" ><strong>AI_A2G_ENGAGE.Accomplished</strong></a>
     
 
 
@@ -4596,39 +4655,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #boolean
 <a id="#(AI_A2G_ENGAGE).Engaging" ><strong>AI_A2G_ENGAGE.Engaging</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(AI_A2G_ENGAGE).PatrolAltType" ><strong>AI_A2G_ENGAGE.PatrolAltType</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).PatrolMaxSpeed" ><strong>AI_A2G_ENGAGE.PatrolMaxSpeed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).PatrolMinSpeed" ><strong>AI_A2G_ENGAGE.PatrolMinSpeed</strong></a>
     
 
 
@@ -4650,7 +4676,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
 </div>
 
@@ -4669,7 +4695,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
 </div>
 
@@ -4682,13 +4708,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(AI_A2G_ENGAGE).New" ><strong>AI_A2G_ENGAGE:New(AIGroup)</strong></a></h2>
 </div>
     
-<p>Creates a new AI_A2A object</p>
+<p>Creates a new AI_AIR process.</p>
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -4700,14 +4726,14 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>The GROUP object to receive the A2A Process.</p>
+<p>The group object to receive the A2G Process.</p>
 
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AI_A2A)">#AI_A2A</a>:</p>
+        <p><a href="##(AI_AIR)">#AI_AIR</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -4732,7 +4758,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -4798,13 +4824,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(AI_A2G_ENGAGE).OnAfterRefuel" ><strong>AI_A2G_ENGAGE:OnAfterRefuel(Controllable, From, Event, To)</strong></a></h2>
 </div>
     
-<p>Refuel Handler OnAfter for AI_A2A</p>
+<p>Refuel Handler OnAfter for AI_AIR</p>
 
 <div id= "#Functions##OnAfterRefuel" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -4864,13 +4890,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(AI_A2G_ENGAGE).OnAfterStart" ><strong>AI_A2G_ENGAGE:OnAfterStart(From, Event, To)</strong></a></h2>
 </div>
     
-<p>Start Handler OnAfter for AI_A2A</p>
+<p>Start Handler OnAfter for AI_AIR</p>
 
 <div id= "#Functions##OnAfterStart" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -4923,7 +4949,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -4995,7 +5021,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5067,7 +5093,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5144,13 +5170,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(AI_A2G_ENGAGE).OnBeforeRefuel" ><strong>AI_A2G_ENGAGE:OnBeforeRefuel(Controllable, From, Event, To)</strong></a></h2>
 </div>
     
-<p>Refuel Handler OnBefore for AI_A2A</p>
+<p>Refuel Handler OnBefore for AI_AIR</p>
 
 <div id= "#Functions##OnBeforeRefuel" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5221,13 +5247,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(AI_A2G_ENGAGE).OnBeforeStart" ><strong>AI_A2G_ENGAGE:OnBeforeStart(From, Event, To)</strong></a></h2>
 </div>
     
-<p>Start Handler OnBefore for AI_A2A</p>
+<p>Start Handler OnBefore for AI_AIR</p>
 
 <div id= "#Functions##OnBeforeStart" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5291,7 +5317,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5374,7 +5400,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5457,7 +5483,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5488,7 +5514,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5519,7 +5545,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5591,7 +5617,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5663,7 +5689,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5746,7 +5772,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5829,7 +5855,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5860,7 +5886,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
 </div>
 
@@ -5879,7 +5905,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5920,7 +5946,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5955,13 +5981,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(AI_A2G_ENGAGE).Refuel" ><strong>AI_A2G_ENGAGE:Refuel()</strong></a></h2>
 </div>
     
-<p>Refuel Trigger for AI_A2A</p>
+<p>Refuel Trigger for AI_AIR</p>
 
 <div id= "#Functions##Refuel" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
 </div>
 
@@ -5980,7 +6006,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6021,7 +6047,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6053,7 +6079,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AI_A2A)">#AI_A2A</a>:</p>
+        <p><a href="##(AI_AIR)">#AI_AIR</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -6085,7 +6111,7 @@ So, in a group of 4 airplanes, 2 lost and 2 with damage 0.2, the damage treshold
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6104,7 +6130,7 @@ So, in a group of 4 airplanes, 2 lost and 2 with damage 0.2, the damage treshold
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AI_A2A)">#AI_A2A</a>:</p>
+        <p><a href="##(AI_AIR)">#AI_AIR</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -6129,7 +6155,7 @@ So, in a group of 4 airplanes, 2 lost and 2 with damage 0.2, the damage treshold
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6148,7 +6174,7 @@ So, in a group of 4 airplanes, 2 lost and 2 with damage 0.2, the damage treshold
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AI_A2A)">#AI_A2A</a>:</p>
+        <p><a href="##(AI_AIR)">#AI_AIR</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -6173,7 +6199,7 @@ So, in a group of 4 airplanes, 2 lost and 2 with damage 0.2, the damage treshold
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6194,28 +6220,28 @@ So, in a group of 4 airplanes, 2 lost and 2 with damage 0.2, the damage treshold
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2G_ENGAGE).SetFuelThreshold" ><strong>AI_A2G_ENGAGE:SetFuelThreshold(PatrolFuelThresholdPercentage, PatrolOutOfFuelOrbitTime)</strong></a></h2>
+<h2><a id="#(AI_A2G_ENGAGE).SetFuelThreshold" ><strong>AI_A2G_ENGAGE:SetFuelThreshold(FuelThresholdPercentage, OutOfFuelOrbitTime)</strong></a></h2>
 </div>
     
 <p>When the AI is out of fuel, it is required that a new AI is started, before the old AI can return to the home base.</p>
 
     
 <p>Therefore, with a parameter and a calculation of the distance to the home base, the fuel treshold is calculated.
-When the fuel treshold is reached, the AI will continue for a given time its patrol task in orbit, while a new AIControllable is targetted to the AI_A2A.
+When the fuel treshold is reached, the AI will continue for a given time its patrol task in orbit, while a new AIControllable is targetted to the AI_AIR.
 Once the time is finished, the old AI will return to the base.</p>
 
 <div id= "#Functions##SetFuelThreshold" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
                 #number
-            <strong><strong>PatrolFuelThresholdPercentage</strong></strong>
+            <strong><strong>FuelThresholdPercentage</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -6228,7 +6254,7 @@ Once the time is finished, the old AI will return to the base.</p>
           <div class="w3-half">
             <p>
                 #number
-            <strong><strong>PatrolOutOfFuelOrbitTime</strong></strong>
+            <strong><strong>OutOfFuelOrbitTime</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -6240,7 +6266,7 @@ Once the time is finished, the old AI will return to the base.</p>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AI_A2A)">#AI_A2A</a>:</p>
+        <p><a href="##(AI_AIR)">#AI_AIR</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -6265,7 +6291,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6282,7 +6308,64 @@ Once the time is finished, the old AI will return to the base.</p>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AI_A2A)">#AI_A2A</a>:</p>
+        <p><a href="##(AI_AIR)">#AI_AIR</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_A2G_ENGAGE).SetRTBSpeed" ><strong>AI_A2G_ENGAGE:SetRTBSpeed(RTBMinSpeed, RTBMaxSpeed)</strong></a></h2>
+</div>
+    
+<p>Sets (modifies) the minimum and maximum RTB speed of the patrol.</p>
+
+<div id= "#Functions##SetRTBSpeed" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(Speed)">DCS#Speed</a>
+            <strong><strong>RTBMinSpeed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The minimum speed of the <a href="Wrapper.Controllable.html">Wrapper.Controllable</a> in km/h.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(Speed)">DCS#Speed</a>
+            <strong><strong>RTBMaxSpeed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The maximum speed of the <a href="Wrapper.Controllable.html">Wrapper.Controllable</a> in km/h.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AI_AIR)">#AI_AIR</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -6307,7 +6390,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6339,7 +6422,7 @@ Once the time is finished, the old AI will return to the base.</p>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AI_A2A)">#AI_A2A</a>:</p>
+        <p><a href="##(AI_AIR)">#AI_AIR</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -6364,12 +6447,12 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AI_A2A)">#AI_A2A</a>:</p>
+        <p><a href="##(AI_AIR)">#AI_AIR</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -6394,7 +6477,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6413,7 +6496,7 @@ Once the time is finished, the old AI will return to the base.</p>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AI_A2A)">#AI_A2A</a>:</p>
+        <p><a href="##(AI_AIR)">#AI_AIR</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -6438,7 +6521,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6462,13 +6545,13 @@ Once the time is finished, the old AI will return to the base.</p>
 <h2><a id="#(AI_A2G_ENGAGE).Start" ><strong>AI_A2G_ENGAGE:Start()</strong></a></h2>
 </div>
     
-<p>Start Trigger for AI_A2A</p>
+<p>Start Trigger for AI_AIR</p>
 
 <div id= "#Functions##Start" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
 </div>
 
@@ -6487,7 +6570,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
 </div>
 
@@ -6506,7 +6589,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
 </div>
 
@@ -6525,7 +6608,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6552,13 +6635,13 @@ Once the time is finished, the old AI will return to the base.</p>
 <h2><a id="#(AI_A2G_ENGAGE).__Refuel" ><strong>AI_A2G_ENGAGE:__Refuel(Delay)</strong></a></h2>
 </div>
     
-<p>Refuel Asynchronous Trigger for AI_A2A</p>
+<p>Refuel Asynchronous Trigger for AI_AIR</p>
 
 <div id= "#Functions##__Refuel" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6583,13 +6666,13 @@ Once the time is finished, the old AI will return to the base.</p>
 <h2><a id="#(AI_A2G_ENGAGE).__Start" ><strong>AI_A2G_ENGAGE:__Start(Delay)</strong></a></h2>
 </div>
     
-<p>Start Asynchronous Trigger for AI_A2A</p>
+<p>Start Asynchronous Trigger for AI_AIR</p>
 
 <div id= "#Functions##__Start" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6620,7 +6703,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6653,7 +6736,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6686,7 +6769,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
 </div>
 
@@ -6705,7 +6788,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6776,7 +6859,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6837,7 +6920,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6898,7 +6981,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -6959,7 +7042,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -7017,7 +7100,7 @@ Once the time is finished, the old AI will return to the base.</p>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AI_A2A)">#AI_A2A</a>:</p>
+        <p><a href="##(AI_AIR)">#AI_AIR</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -7042,7 +7125,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
 </div>
 
@@ -7061,7 +7144,7 @@ Once the time is finished, the old AI will return to the base.</p>
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="AI.AI_A2A.html##(AI_A2A)">AI.AI_A2A#AI_A2A</a></p>
+<p><a href="AI.AI_Air.html##(AI_AIR)">AI.AI_Air#AI_AIR</a></p>
 </div>
 </div>
 
@@ -7085,74 +7168,8 @@ Once the time is finished, the old AI will return to the base.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
-<a id="#(AI_A2G_ENGAGE).AttackSetUnit" ><strong>AI_A2G_ENGAGE.AttackSetUnit</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).EngageMaxSpeed" ><strong>AI_A2G_ENGAGE.EngageMaxSpeed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).EngageMinSpeed" ><strong>AI_A2G_ENGAGE.EngageMinSpeed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(AI_A2G_ENGAGE).Engaging" ><strong>AI_A2G_ENGAGE.Engaging</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(AI_A2G_ENGAGE).PatrolAltType" ><strong>AI_A2G_ENGAGE.PatrolAltType</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).PatrolMaxSpeed" ><strong>AI_A2G_ENGAGE.PatrolMaxSpeed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).PatrolMinSpeed" ><strong>AI_A2G_ENGAGE.PatrolMinSpeed</strong></a>
     
 
 
@@ -7730,74 +7747,8 @@ Once the time is finished, the old AI will return to the base.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
-<a id="#(AI_A2G_ENGAGE).AttackSetUnit" ><strong>AI_A2G_ENGAGE.AttackSetUnit</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).EngageMaxSpeed" ><strong>AI_A2G_ENGAGE.EngageMaxSpeed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).EngageMinSpeed" ><strong>AI_A2G_ENGAGE.EngageMinSpeed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(AI_A2G_ENGAGE).Engaging" ><strong>AI_A2G_ENGAGE.Engaging</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(AI_A2G_ENGAGE).PatrolAltType" ><strong>AI_A2G_ENGAGE.PatrolAltType</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).PatrolMaxSpeed" ><strong>AI_A2G_ENGAGE.PatrolMaxSpeed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).PatrolMinSpeed" ><strong>AI_A2G_ENGAGE.PatrolMinSpeed</strong></a>
     
 
 
@@ -9013,74 +8964,8 @@ Once the time is finished, the old AI will return to the base.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
-<a id="#(AI_A2G_ENGAGE).AttackSetUnit" ><strong>AI_A2G_ENGAGE.AttackSetUnit</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).EngageMaxSpeed" ><strong>AI_A2G_ENGAGE.EngageMaxSpeed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).EngageMinSpeed" ><strong>AI_A2G_ENGAGE.EngageMinSpeed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(AI_A2G_ENGAGE).Engaging" ><strong>AI_A2G_ENGAGE.Engaging</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(AI_A2G_ENGAGE).PatrolAltType" ><strong>AI_A2G_ENGAGE.PatrolAltType</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).PatrolMaxSpeed" ><strong>AI_A2G_ENGAGE.PatrolMaxSpeed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AI_A2G_ENGAGE).PatrolMinSpeed" ><strong>AI_A2G_ENGAGE.PatrolMinSpeed</strong></a>
     
 
 
