@@ -1233,6 +1233,7 @@ which are excellent tools to be reused in an OO environment!.</p>
     <li>Automatic LSO grading including (optional) live grading while in the groove.</li>
     <li>Different skill levels from on-the-fly tips for flight students to <em>ziplip</em> for pros. Can be set for each player individually.</li>
     <li>Define recovery time windows with individual recovery cases in the same mission.</li>
+    <li>Option to let the carrier steam into the wind automatically.</li>
     <li>Automatic TACAN and ICLS channel setting of carrier.</li>
     <li>Separate radio channels for LSO and Marshal transmissions.</li>
     <li>Voice over support for LSO and Marshal radio transmissions.</li>
@@ -1272,6 +1273,15 @@ But each aircraft or carrier needs a different set of optimized individual param
 
 <p><strong>PLEASE NOTE</strong> that his class is work in progress and in an early <strong>alpha</strong> stage. Many/most things work already very nicely but there a lot of cases I did not run into yet.
  Therefore, your <em>constructive</em> feedback is both necessary and appreciated!</p>
+
+<h2>IMPORTANT</h2>
+
+<p>Due to technical restrictions of DCS make sure you have:</p>
+
+<ul>
+    <li>Each player slot in a separate group. DCS does only allow to send messages to groups and not to individual units.</li>
+    <li>Players are identified by their player name. Ensure that no two player have the same name, e.g. "New Callsign", as this will lead to unexpected results.</li>
+</ul>
 
 <h3>Open Questions?</h3>
 
@@ -1408,6 +1418,10 @@ are 0 (no offset), +-15 or +-30 degrees. The AIRBOSS class supports all these sc
 
 <p>The F10 radio menu can be used to post requests to Marshal but also provides information about the player and carrier status. Additionally, helper functions
 can be called.</p>
+
+<p>By default, the script creates a submenu "Airboss" in the "F10 Other ..." menu and each <a href="##(AIRBOSS)">#AIRBOSS</a> carrier gets its own submenu.
+If you intend to have only one carrier, you can simplify the menu structure using the <a href="##(AIRBOSS).SetMenuSingleCarrier">AIRBOSS.SetMenuSingleCarrier</a> function, which will create all carrier specific menu entries directly
+in the "Airboss" submenu. (Needless to say, that if you enable this and define mulitiple carriers, the menu structure will get completely screwed up.)</p>
 
 <h2>Root Menu</h2>
 
@@ -1771,6 +1785,21 @@ next window opens or adjust the recovery planning accordingly.</p>
 end
 </code></pre>
 
+<h3>Turning into the Wind</h3>
+
+<p>For each recovery window, you can define if the carrier should automatically turn into the wind. This is done by passing one or two additional arguments to the <a href="##(AIRBOSS).AddRecoveryWindow">AIRBOSS.AddRecoveryWindow</a> function:</p>
+
+<pre><code>airbossStennis:AddRecoveryWindow("8:30", "9:30", 1, nil, true, 20)
+</code></pre>
+
+<p>Setting the fifth parameter to <em>true</em> enables the automatic turning into the wind. The sixth parameter (here 20) specifies the speed in knots the carrier will go.
+The carrier will steam into the wind for as long as the recovery window is open. The distance up to which possible collisions are detected can be set by the <a href="##(AIRBOSS).SetCollisionDistance">AIRBOSS.SetCollisionDistance</a> function.</p>
+
+<p>However, the airboss scans the type of the surface up to 5 NM in the direction of movement of the carrier. If he detects anything but deep water, he will stop the current course and head back to
+the point where he initially turned into the wind.</p>
+
+<p>The same holds true after the recovery window closes. The carrier will head back to the place where he left its assigned route and resume the path to the next waypoint defined in the mission editor.</p>
+
 <hr/>
 
 <h1>Persistence of Player Results</h1>
@@ -1979,7 +2008,7 @@ If enabled, status and debug text messages will be displayed on the screen. Also
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).AddRecoveryWindow">AIRBOSS:AddRecoveryWindow(starttime, stoptime, case, holdingoffset)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).AddRecoveryWindow">AIRBOSS:AddRecoveryWindow(starttime, stoptime, case, holdingoffset, turnintowind, speed)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add aircraft recovery time window and recovery case.</p>
 </td>
@@ -2027,6 +2056,24 @@ If enabled, status and debug text messages will be displayed on the screen. Also
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).CarrierDetour">AIRBOSS:CarrierDetour(coord, speed, uturn)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Let the carrier make a detour to a given point.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).CarrierResumeRoute">AIRBOSS:CarrierResumeRoute(gotocoord)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p> Carrier resumes the route at its next waypoint.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).CarrierTurnIntoWind">AIRBOSS:CarrierTurnIntoWind(distance, speed)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Let the carrier turn into the wind.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).CarrierType">AIRBOSS.CarrierType</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -2060,6 +2107,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).Cposition">AIRBOSS.Cposition</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Carrier position.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).Creturnto">AIRBOSS.Creturnto</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Position to return to after turn into the wind leg is over.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2105,6 +2158,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).GetBRCintoWind">AIRBOSS:GetBRCintoWind()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get base recovery course (BRC) when the carrier would head into the wind.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).GetCoalition">AIRBOSS:GetCoalition()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get carrier coalition.</p>
@@ -2126,6 +2185,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).GetHeading">AIRBOSS:GetHeading(magnetic)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get true (or magnetic) heading of carrier.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).GetHeadingIntoWind">AIRBOSS:GetHeadingIntoWind(magnetic)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get true (or magnetic) heading of carrier into the wind.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2477,6 +2542,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).SetCollisionDistance">AIRBOSS:SetCollisionDistance(dist, distance)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set distance up to which water ahead is scanned for collisions.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).SetDebugModeOFF">AIRBOSS:SetDebugModeOFF()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Deactivate debug mode.</p>
@@ -2585,6 +2656,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).SetMenuSingleCarrier">AIRBOSS:SetMenuSingleCarrier(switch)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Optimized F10 radio menu for a single carrier.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).SetMenuSmokeZones">AIRBOSS:SetMenuSmokeZones(switch)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Enable or disable F10 radio menu for marking zones via smoke.</p>
@@ -2618,6 +2695,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).SetRecoveryTanker">AIRBOSS:SetRecoveryTanker(recoverytanker)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Define recovery tanker associated with the carrier.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).SetSquadronAI">AIRBOSS:SetSquadronAI(setgroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Define a set of AI groups that are handled by the airboss.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2831,6 +2914,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS)._CheckCollisionCoord">AIRBOSS:_CheckCollisionCoord(coordto, coordfrom)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check for possible collisions between two coordinates.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS)._CheckCorridor">AIRBOSS:_CheckCorridor(playerData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Check if player is in CASE II/III approach corridor.</p>
@@ -2846,6 +2935,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS)._CheckFoulDeck">AIRBOSS:_CheckFoulDeck(playerData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Check if other aircraft are currently on the landing runway.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS)._CheckFreePathToNextWP">AIRBOSS:_CheckFreePathToNextWP(fromcoord)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check Collision.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3432,9 +3527,15 @@ If enabled, status and debug text messages will be displayed on the screen. Also
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS)._Pathfinder">AIRBOSS:_Pathfinder()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Find free path to the next waypoint.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS)._PatrolRoute">AIRBOSS:_PatrolRoute()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Patrol carrier</p>
+<p>Patrol carrier.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3537,6 +3638,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS)._ResetPlayerStatus">AIRBOSS:_ResetPlayerStatus(_unitName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Reset player status.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS)._ResumeRoute">AIRBOSS._ResumeRoute(group, airboss, gotocoord)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p> Carrier Strike Group resumes the route of the waypoints defined in the mission editor.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3756,6 +3863,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).collisiondist">AIRBOSS.collisiondist</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Distance up to which collision checks are done.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).currentwp">AIRBOSS.currentwp</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Current waypoint, i.e. the one that has been passed last.</p>
@@ -3789,6 +3902,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).defaultskill">AIRBOSS.defaultskill</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Default player skill <a href="##(AIRBOSS).Difficulty">AIRBOSS.Difficulty</a>.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).detour">AIRBOSS.detour</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>If true, carrier is currently making a detour from its path along the ME waypoints.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3837,6 +3956,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).menumarkzones">AIRBOSS.menumarkzones</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>If false, disables the option to mark zones via smoke or flares.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).menusingle">AIRBOSS.menusingle</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>If true, menu is optimized for a single carrier.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3966,6 +4091,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).squadsetAI">AIRBOSS.squadsetAI</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>AI groups in this set will be handled by the airboss.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).staticweather">AIRBOSS.staticweather</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Mission uses static rather than dynamic weather.</p>
@@ -3975,6 +4106,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).tanker">AIRBOSS.tanker</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Recovery tanker flying overhead of carrier.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).turnintowind">AIRBOSS.turnintowind</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>If true, carrier is currently turning into the wind.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -6270,6 +6407,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS.Recovery).SPEED">AIRBOSS.Recovery.SPEED</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>The speed in knots the carrier has during the recovery.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS.Recovery).START">AIRBOSS.Recovery.START</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Start of recovery in seconds of abs mission time.</p>
@@ -6279,6 +6422,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS.Recovery).STOP">AIRBOSS.Recovery.STOP</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>End of recovery in seconds of abs mission time.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS.Recovery).WIND">AIRBOSS.Recovery.WIND</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Carrier will turn into the wind.</p>
 </td>
           </tr>
         </table>
@@ -6427,6 +6576,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(AIRBOSS).Cposition" ><strong>AIRBOSS.Cposition</strong></a>
     
 <p>Carrier position.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+<a id="#(AIRBOSS).Creturnto" ><strong>AIRBOSS.Creturnto</strong></a>
+    
+<p>Position to return to after turn into the wind leg is over.</p>
 
 </div>
 
@@ -7032,6 +7192,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(AIRBOSS).collisiondist" ><strong>AIRBOSS.collisiondist</strong></a>
+    
+<p>Distance up to which collision checks are done.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
 <a id="#(AIRBOSS).currentwp" ><strong>AIRBOSS.currentwp</strong></a>
     
 <p>Current waypoint, i.e. the one that has been passed last.</p>
@@ -7090,6 +7261,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(AIRBOSS).defaultskill" ><strong>AIRBOSS.defaultskill</strong></a>
     
 <p>Default player skill <a href="##(AIRBOSS).Difficulty">AIRBOSS.Difficulty</a>.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AIRBOSS).detour" ><strong>AIRBOSS.detour</strong></a>
+    
+<p>If true, carrier is currently making a detour from its path along the ME waypoints.</p>
 
 </div>
 
@@ -7186,6 +7368,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
+<a id="#(AIRBOSS).menusingle" ><strong>AIRBOSS.menusingle</strong></a>
+    
+<p>If true, menu is optimized for a single carrier.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
 <a id="#(AIRBOSS).menusmokezones" ><strong>AIRBOSS.menusmokezones</strong></a>
     
 <p>If false, disables the option to mark zones via smoke.</p>
@@ -7262,6 +7455,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(AIRBOSS).squadsetAI" ><strong>AIRBOSS.squadsetAI</strong></a>
+    
+<p>AI groups in this set will be handled by the airboss.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(AIRBOSS).staticweather" ><strong>AIRBOSS.staticweather</strong></a>
     
@@ -7277,6 +7481,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(AIRBOSS).tanker" ><strong>AIRBOSS.tanker</strong></a>
     
 <p>Recovery tanker flying overhead of carrier.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AIRBOSS).turnintowind" ><strong>AIRBOSS.turnintowind</strong></a>
+    
+<p>If true, carrier is currently turning into the wind.</p>
 
 </div>
 
@@ -7364,7 +7579,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AIRBOSS).AddRecoveryWindow" ><strong>AIRBOSS:AddRecoveryWindow(starttime, stoptime, case, holdingoffset)</strong></a></h2>
+<h2><a id="#(AIRBOSS).AddRecoveryWindow" ><strong>AIRBOSS:AddRecoveryWindow(starttime, stoptime, case, holdingoffset, turnintowind, speed)</strong></a></h2>
 </div>
     
 <p>Add aircraft recovery time window and recovery case.</p>
@@ -7425,6 +7640,32 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>Only for CASE II/III: Angle in degrees the holding pattern is offset.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>turnintowind</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true, carrier will turn into the wind 5 minutes before the recovery window opens.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Speed in knots during turn into wind leg.</p>
 
           </div>
         </div>
@@ -7498,6 +7739,180 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
           </div>
         </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AIRBOSS).CarrierDetour" ><strong>AIRBOSS:CarrierDetour(coord, speed, uturn)</strong></a></h2>
+</div>
+    
+<p>Let the carrier make a detour to a given point.</p>
+
+    
+<p>When it reaches the point, it will resume its normal route.</p>
+
+<div id= "#Functions##CarrierDetour" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRBOSS</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>coord</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Coordinate of the detour.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Speed in knots. Default is current carrier velocity.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>uturn</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) If true, carrier will go back to where it came from before it resumes its route to the next waypoint.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AIRBOSS)">#AIRBOSS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AIRBOSS).CarrierResumeRoute" ><strong>AIRBOSS:CarrierResumeRoute(gotocoord)</strong></a></h2>
+</div>
+    
+<p> Carrier resumes the route at its next waypoint.</p>
+
+<div id= "#Functions##CarrierResumeRoute" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRBOSS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>gotocoord</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) First goto this coordinate before resuming route.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AIRBOSS)">#AIRBOSS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AIRBOSS).CarrierTurnIntoWind" ><strong>AIRBOSS:CarrierTurnIntoWind(distance, speed)</strong></a></h2>
+</div>
+    
+<p>Let the carrier turn into the wind.</p>
+
+<div id= "#Functions##CarrierTurnIntoWind" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRBOSS</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>distance</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Distance in NM from current position.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Speed in knots. Default 15 knots.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AIRBOSS)">#AIRBOSS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
@@ -7668,6 +8083,39 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AIRBOSS).GetBRCintoWind" ><strong>AIRBOSS:GetBRCintoWind()</strong></a></h2>
+</div>
+    
+<p>Get base recovery course (BRC) when the carrier would head into the wind.</p>
+
+    
+<p>This includes the current wind direction and accounts for the angled runway.</p>
+
+<div id= "#Functions##GetBRCintoWind" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRBOSS</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#number:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>BRC into the wind in degrees.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AIRBOSS).GetCoalition" ><strong>AIRBOSS:GetCoalition()</strong></a></h2>
 </div>
     
@@ -7782,6 +8230,53 @@ The true bearing can be obtained by setting the <em>TrueNorth</em> parameter to 
 <p>Get true (or magnetic) heading of carrier.</p>
 
 <div id= "#Functions##GetHeading" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRBOSS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>magnetic</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true, calculate magnetic heading. By default true heading is returned.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#number:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Carrier heading in degrees.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AIRBOSS).GetHeadingIntoWind" ><strong>AIRBOSS:GetHeadingIntoWind(magnetic)</strong></a></h2>
+</div>
+    
+<p>Get true (or magnetic) heading of carrier into the wind.</p>
+
+    
+<p>This accounts for the angled runway.</p>
+
+<div id= "#Functions##GetHeadingIntoWind" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -9374,6 +9869,60 @@ The true bearing can be obtained by setting the <em>TrueNorth</em> parameter to 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AIRBOSS).SetCollisionDistance" ><strong>AIRBOSS:SetCollisionDistance(dist, distance)</strong></a></h2>
+</div>
+    
+<p>Set distance up to which water ahead is scanned for collisions.</p>
+
+<div id= "#Functions##SetCollisionDistance" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRBOSS</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>dist</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Distance in NM. Default 5 NM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>distance</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AIRBOSS)">#AIRBOSS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AIRBOSS).SetDebugModeOFF" ><strong>AIRBOSS:SetDebugModeOFF()</strong></a></h2>
 </div>
     
@@ -10200,6 +10749,54 @@ Marshal stacks for Case II/III are unlimited.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AIRBOSS).SetMenuSingleCarrier" ><strong>AIRBOSS:SetMenuSingleCarrier(switch)</strong></a></h2>
+</div>
+    
+<p>Optimized F10 radio menu for a single carrier.</p>
+
+    
+<p>The menu entries will be stored directly under F10 Other/Airboss/ and not F10 Other/Airboss/"Carrier Alias"/.
+<strong>WARNING</strong>: If you use this with two airboss objects/carriers, the radio menu will be screwed up!</p>
+
+<div id= "#Functions##SetMenuSingleCarrier" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRBOSS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>switch</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true or nil single menu is enabled. If false, menu is for multiple carriers in the mission.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AIRBOSS)">#AIRBOSS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AIRBOSS).SetMenuSmokeZones" ><strong>AIRBOSS:SetMenuSmokeZones(switch)</strong></a></h2>
 </div>
     
@@ -10445,6 +11042,50 @@ Marshal stacks for Case II/III are unlimited.</p>
           <div class="w3-half">
               
 <p>Recovery tanker object.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AIRBOSS)">#AIRBOSS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AIRBOSS).SetSquadronAI" ><strong>AIRBOSS:SetSquadronAI(setgroup)</strong></a></h2>
+</div>
+    
+<p>Define a set of AI groups that are handled by the airboss.</p>
+
+<div id= "#Functions##SetSquadronAI" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRBOSS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+            <strong><strong>setgroup</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The set of AI groups which are handled by the airboss. </p>
 
           </div>
         </div>
@@ -11714,6 +12355,71 @@ Marshal stacks for Case II/III are unlimited.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AIRBOSS)._CheckCollisionCoord" ><strong>AIRBOSS:_CheckCollisionCoord(coordto, coordfrom)</strong></a></h2>
+</div>
+    
+<p>Check for possible collisions between two coordinates.</p>
+
+<div id= "#Functions##_CheckCollisionCoord" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRBOSS</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>coordto</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Coordinate to which the collision is check.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>coordfrom</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Coordinate from which the collision is check.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#boolean:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>If true, surface type ahead is not deep water.</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#number:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Max free distance in meters.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AIRBOSS)._CheckCorridor" ><strong>AIRBOSS:_CheckCorridor(playerData)</strong></a></h2>
 </div>
     
@@ -11812,6 +12518,50 @@ Marshal stacks for Case II/III are unlimited.</p>
       <div class="w3-half">
         
 <p>boolean If true, we have a foul deck.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AIRBOSS)._CheckFreePathToNextWP" ><strong>AIRBOSS:_CheckFreePathToNextWP(fromcoord)</strong></a></h2>
+</div>
+    
+<p>Check Collision.</p>
+
+<div id= "#Functions##_CheckFreePathToNextWP" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRBOSS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>fromcoord</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Coordinate from which the path to the next WP is calculated. Default current carrier position.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, surface type ahead is not deep water.</p>
 
       </div>
     </div>
@@ -16491,10 +17241,29 @@ If the flight is not already holding in the Marshal stack, it is guided there fi
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AIRBOSS)._Pathfinder" ><strong>AIRBOSS:_Pathfinder()</strong></a></h2>
+</div>
+    
+<p>Find free path to the next waypoint.</p>
+
+<div id= "#Functions##_Pathfinder" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRBOSS</p>
+</div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AIRBOSS)._PatrolRoute" ><strong>AIRBOSS:_PatrolRoute()</strong></a></h2>
 </div>
     
-<p>Patrol carrier</p>
+<p>Patrol carrier.</p>
 
 <div id= "#Functions##_PatrolRoute" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -17307,6 +18076,65 @@ Also set player step to undefined if applicable or remove human flight if option
           <div class="w3-half">
               
 <p>Name fo the player unit.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AIRBOSS)._ResumeRoute" ><strong>AIRBOSS._ResumeRoute(group, airboss, gotocoord)</strong></a></h2>
+</div>
+    
+<p> Carrier Strike Group resumes the route of the waypoints defined in the mission editor.</p>
+
+<div id= "#Functions##_ResumeRoute" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRBOSS</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>group</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Carrier Strike Group that passed the waypoint.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(AIRBOSS)">#AIRBOSS</a>
+            <strong><strong>airboss</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Airboss object.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>gotocoord</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Go to coordinate before route is resumed.</p>
 
           </div>
         </div>
@@ -19512,6 +20340,17 @@ Also set player step to undefined if applicable or remove human flight if option
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+<a id="#(AIRBOSS).Creturnto" ><strong>AIRBOSS.Creturnto</strong></a>
+    
+<p>Position to return to after turn into the wind leg is over.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(AIRBOSS).Debug" ><strong>AIRBOSS.Debug</strong></a>
     
@@ -20110,6 +20949,17 @@ Also set player step to undefined if applicable or remove human flight if option
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(AIRBOSS).collisiondist" ><strong>AIRBOSS.collisiondist</strong></a>
+    
+<p>Distance up to which collision checks are done.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
 <a id="#(AIRBOSS).currentwp" ><strong>AIRBOSS.currentwp</strong></a>
     
 <p>Current waypoint, i.e. the one that has been passed last.</p>
@@ -20168,6 +21018,17 @@ Also set player step to undefined if applicable or remove human flight if option
 <a id="#(AIRBOSS).defaultskill" ><strong>AIRBOSS.defaultskill</strong></a>
     
 <p>Default player skill <a href="##(AIRBOSS).Difficulty">AIRBOSS.Difficulty</a>.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AIRBOSS).detour" ><strong>AIRBOSS.detour</strong></a>
+    
+<p>If true, carrier is currently making a detour from its path along the ME waypoints.</p>
 
 </div>
 
@@ -20264,6 +21125,17 @@ Also set player step to undefined if applicable or remove human flight if option
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
+<a id="#(AIRBOSS).menusingle" ><strong>AIRBOSS.menusingle</strong></a>
+    
+<p>If true, menu is optimized for a single carrier.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
 <a id="#(AIRBOSS).menusmokezones" ><strong>AIRBOSS.menusmokezones</strong></a>
     
 <p>If false, disables the option to mark zones via smoke.</p>
@@ -20340,6 +21212,17 @@ Also set player step to undefined if applicable or remove human flight if option
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(AIRBOSS).squadsetAI" ><strong>AIRBOSS.squadsetAI</strong></a>
+    
+<p>AI groups in this set will be handled by the airboss.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(AIRBOSS).staticweather" ><strong>AIRBOSS.staticweather</strong></a>
     
@@ -20355,6 +21238,17 @@ Also set player step to undefined if applicable or remove human flight if option
 <a id="#(AIRBOSS).tanker" ><strong>AIRBOSS.tanker</strong></a>
     
 <p>Recovery tanker flying overhead of carrier.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AIRBOSS).turnintowind" ><strong>AIRBOSS.turnintowind</strong></a>
+    
+<p>If true, carrier is currently turning into the wind.</p>
 
 </div>
 
@@ -21766,6 +22660,17 @@ Also set player step to undefined if applicable or remove human flight if option
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+<a id="#(AIRBOSS).Creturnto" ><strong>AIRBOSS.Creturnto</strong></a>
+    
+<p>Position to return to after turn into the wind leg is over.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(AIRBOSS).Debug" ><strong>AIRBOSS.Debug</strong></a>
     
@@ -22364,6 +23269,17 @@ Also set player step to undefined if applicable or remove human flight if option
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(AIRBOSS).collisiondist" ><strong>AIRBOSS.collisiondist</strong></a>
+    
+<p>Distance up to which collision checks are done.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
 <a id="#(AIRBOSS).currentwp" ><strong>AIRBOSS.currentwp</strong></a>
     
 <p>Current waypoint, i.e. the one that has been passed last.</p>
@@ -22422,6 +23338,17 @@ Also set player step to undefined if applicable or remove human flight if option
 <a id="#(AIRBOSS).defaultskill" ><strong>AIRBOSS.defaultskill</strong></a>
     
 <p>Default player skill <a href="##(AIRBOSS).Difficulty">AIRBOSS.Difficulty</a>.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AIRBOSS).detour" ><strong>AIRBOSS.detour</strong></a>
+    
+<p>If true, carrier is currently making a detour from its path along the ME waypoints.</p>
 
 </div>
 
@@ -22518,6 +23445,17 @@ Also set player step to undefined if applicable or remove human flight if option
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
+<a id="#(AIRBOSS).menusingle" ><strong>AIRBOSS.menusingle</strong></a>
+    
+<p>If true, menu is optimized for a single carrier.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
 <a id="#(AIRBOSS).menusmokezones" ><strong>AIRBOSS.menusmokezones</strong></a>
     
 <p>If false, disables the option to mark zones via smoke.</p>
@@ -22594,6 +23532,17 @@ Also set player step to undefined if applicable or remove human flight if option
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(AIRBOSS).squadsetAI" ><strong>AIRBOSS.squadsetAI</strong></a>
+    
+<p>AI groups in this set will be handled by the airboss.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(AIRBOSS).staticweather" ><strong>AIRBOSS.staticweather</strong></a>
     
@@ -22609,6 +23558,17 @@ Also set player step to undefined if applicable or remove human flight if option
 <a id="#(AIRBOSS).tanker" ><strong>AIRBOSS.tanker</strong></a>
     
 <p>Recovery tanker flying overhead of carrier.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AIRBOSS).turnintowind" ><strong>AIRBOSS.turnintowind</strong></a>
+    
+<p>If true, carrier is currently turning into the wind.</p>
 
 </div>
 
@@ -27481,6 +28441,17 @@ BASE:TraceOnOff( false )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
+<a id="#(AIRBOSS.PlayerData).holding" ><strong>AIRBOSS.PlayerData.holding</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
 <a id="#(AIRBOSS.PlayerData).landed" ><strong>AIRBOSS.PlayerData.landed</strong></a>
     
 <p>If true, player landed or attempted to land.</p>
@@ -27987,6 +28958,17 @@ BASE:TraceOnOff( false )</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(AIRBOSS.Recovery).SPEED" ><strong>AIRBOSS.Recovery.SPEED</strong></a>
+    
+<p>The speed in knots the carrier has during the recovery.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
 <a id="#(AIRBOSS.Recovery).START" ><strong>AIRBOSS.Recovery.START</strong></a>
     
 <p>Start of recovery in seconds of abs mission time.</p>
@@ -28001,6 +28983,17 @@ BASE:TraceOnOff( false )</code></pre>
 <a id="#(AIRBOSS.Recovery).STOP" ><strong>AIRBOSS.Recovery.STOP</strong></a>
     
 <p>End of recovery in seconds of abs mission time.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AIRBOSS.Recovery).WIND" ><strong>AIRBOSS.Recovery.WIND</strong></a>
+    
+<p>Carrier will turn into the wind.</p>
 
 </div>
 
