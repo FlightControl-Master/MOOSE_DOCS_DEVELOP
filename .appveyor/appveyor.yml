@@ -56,7 +56,7 @@ build_script:
       Remove-Item c:\Projects\Moose-Docs\.appveyor -Force -Recurse
       Remove-Item c:\Projects\Moose-Docs\.git -Force -Recurse
       cd c:\Projects\Moose-Docs-Develop
-      Copy-Item -Path "c:\Projects\Moose-Docs\*" -Destination "." -Recurse -Force -Verbose
+      Copy-Item -Path "c:\Projects\Moose-Docs\*" -Destination "." -Recurse -Force
       dir .
       echo "Commit to GITHUB"
       git config --global credential.helper store  
