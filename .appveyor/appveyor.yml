@@ -42,7 +42,8 @@ cache:
   - C:\ProgramData\chocolatey\bin
 
 build_script:
-  - ps: | 
+  - ps: |
+      git config --global core.autocrlf input 
       git checkout master 2>&1
       git clone -q --depth=1 -b "develop" https://github.com/FlightControl-Master/MOOSE_DOCS.git c:\Projects\Moose-Docs 
       dir c:\Projects
