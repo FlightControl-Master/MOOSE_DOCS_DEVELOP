@@ -28,7 +28,7 @@ Here you find a high-level explanation and features, how to:
 Each class will link you further down into the MOOSE Classes guide, for more detailed information on each MOOSE class. 
 
 
-## 3. **[MOOSE Classes Guide](Documentation/index.html)**
+## 3. **[MOOSE Classes Guide (Develop)](https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/index.html)**
 
 Here you can find detailed documentation for each MOOSE class.
 Click on the hamburger menu on the left upper corner of each page to navigate to other MOOSE classes.
