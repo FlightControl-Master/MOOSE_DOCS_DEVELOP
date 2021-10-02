@@ -2,7 +2,7 @@
 
 MOOSE is a **M**ission **O**bject **O**riented **S**cripting **E**nvironment, and is meant for mission designers and mission hosters.
 It allows to quickly setup complex missions using pre-scripted scenarios using the available classes within the MOOSE Framework.
-MOOSE works with the current version of DCS world and earlier versions.
+MOOSE works with the current DCS world and earlier versions.
 
 ![MOOSE Banner](Images\MOOSE.JPG)
 
@@ -101,7 +101,6 @@ Within the community, key users will support, document, explain and even create 
 It is the ambition to grow this framework as a de-facto standard for mission designers to use within the DCS World community.
 
 
-
 ## 7. [MOOSE community on Discord](https://discord.gg/yBPfxC6) 
 
 Join our MOOSE community on Discord. 
@@ -110,6 +109,5 @@ There are a lot of people supporting Mission Designers on Discord.
 
 
 Thank you!
-
 The Moose Team
  
