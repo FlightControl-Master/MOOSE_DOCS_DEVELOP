@@ -50,7 +50,8 @@ build_script:
       dir
       echo "Removing old Documentation"
       $Exclude=@("LICENSE","README.md","\.*")
-      Get-ChildItem . -directory -exclude "$Exclude" | git rm -r $_.FullName
+      #Get-ChildItem . -directory -exclude "$Exclude" | git rm -r $_.FullName
+      Get-ChildItem . -directory -exclude "$Exclude" | ForEach-Object { git rm -r $_.FullName }
       # Clean the Moose_Docs files from the .appveyor folder
       # There is no .git folder.
       dir c:\Projects\Moose-Docs
