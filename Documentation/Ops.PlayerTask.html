@@ -3711,6 +3711,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).SeadAttributes">PLAYERTASKCONTROLLER.SeadAttributes</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).SetClusterRadius">PLAYERTASKCONTROLLER:SetClusterRadius(Radius)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Set the cluster radius if you want to use target clusters rather than single group detection.</p>
@@ -3726,6 +3732,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).SetMenuName">PLAYERTASKCONTROLLER:SetMenuName(Name)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Set the top menu name to a custom string.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).SetSEADAttributes">PLAYERTASKCONTROLLER:SetSEADAttributes(Attributes)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[User] Change the list of attributes, which are considered on GROUP or SET_GROUP level of a target to create SEAD player tasks.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3954,6 +3966,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER)._InitLocalization">PLAYERTASKCONTROLLER:_InitLocalization()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Internal] Init localization</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER)._IsAttributeSead">PLAYERTASKCONTROLLER:_IsAttributeSead(Attribute)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[Internal] Function the check against SeadAttributes</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4894,6 +4912,37 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).onEvent">PLAYERTASKCONTROLLER:onEvent(event)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The main event handling function...</p>
+</td>
+          </tr>
+        </table>
+        </div>
+
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(SeadAttributes)">Type <strong>SeadAttributes</strong></a></h2></div>
+         <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
+     <strong><a href="##(SeadAttributes)">SeadAttributes</a></strong>
+   </div>
+        <div class="w3-card w3-margin">
+        <table class="w3-table w3-border-bottom w3-border-theme-l2">
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from SeadAttributes</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SeadAttributes).AAA">SeadAttributes.AAA</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>GROUP.Attribute.GROUND_AAA</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SeadAttributes).EWR">SeadAttributes.EWR</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>GROUP.Attribute.GROUND_EWR </p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SeadAttributes).SAM">SeadAttributes.SAM</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>GROUP.Attribute.GROUND_SAM </p>
 </td>
           </tr>
         </table>
@@ -12658,6 +12707,17 @@ BASE:TraceOnOff( false )</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(PLAYERTASKCONTROLLER).SeadAttributes" ><strong>PLAYERTASKCONTROLLER.SeadAttributes</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="Utilities.FiFo.html##(FIFO)">Utilities.FiFo#FIFO</a>
 <a id="#(PLAYERTASKCONTROLLER).TargetQueue" ><strong>PLAYERTASKCONTROLLER.TargetQueue</strong></a>
     
@@ -12825,17 +12885,6 @@ BASE:TraceOnOff( false )</code></pre>
 
     #boolean
 <a id="#(PLAYERTASKCONTROLLER).repeatonfailed" ><strong>PLAYERTASKCONTROLLER.repeatonfailed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(PLAYERTASKCONTROLLER).repeattimes" ><strong>PLAYERTASKCONTROLLER.repeattimes</strong></a>
     
 
 
@@ -14007,6 +14056,57 @@ Can optionally be handed as Ops.ArmyGroup#ARMYGROUP - <strong>Note</strong> migh
 
       </div>
     </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(PLAYERTASKCONTROLLER).SetSEADAttributes" ><strong>PLAYERTASKCONTROLLER:SetSEADAttributes(Attributes)</strong></a></h2>
+</div>
+    
+<p>[User] Change the list of attributes, which are considered on GROUP or SET_GROUP level of a target to create SEAD player tasks.</p>
+
+<div id= "#Functions##SetSEADAttributes" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>PLAYERTASKCONTROLLER</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Attributes</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Table of attribute types considered to lead to a SEAD type player task.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(PLAYERTASKCONTROLLER)">#PLAYERTASKCONTROLLER</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+      <h2><strong>Usage:</strong></h2>
+    <pre class="example"><code>Default attribute types are: GROUP.Attribute.GROUND_SAM, GROUP.Attribute.GROUND_AAA, and GROUP.Attribute.GROUND_EWR.
+If you want to e.g. exclude AAA, so target groups with this attribute are assigned CAS or BAI tasks, and not SEAD, use this function as follows:
+
+						`mycontroller:SetSEADAttributes({GROUP.Attribute.GROUND_SAM, GROUP.Attribute.GROUND_EWR})`
+</code></pre>
+
 </div>
 
 </div>
@@ -15251,6 +15351,48 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(PLAYERTASKCONTROLLER)._IsAttributeSead" ><strong>PLAYERTASKCONTROLLER:_IsAttributeSead(Attribute)</strong></a></h2>
+</div>
+    
+<p>[Internal] Function the check against SeadAttributes</p>
+
+<div id= "#Functions##_IsAttributeSead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>PLAYERTASKCONTROLLER</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Attribute</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>IsSead</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(PLAYERTASKCONTROLLER)._JoinTask" ><strong>PLAYERTASKCONTROLLER:_JoinTask(Group, Client, Task)</strong></a></h2>
 </div>
     
@@ -16247,6 +16389,17 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(PLAYERTASKCONTROLLER).SeadAttributes" ><strong>PLAYERTASKCONTROLLER.SeadAttributes</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="Utilities.FiFo.html##(FIFO)">Utilities.FiFo#FIFO</a>
 <a id="#(PLAYERTASKCONTROLLER).TargetQueue" ><strong>PLAYERTASKCONTROLLER.TargetQueue</strong></a>
     
@@ -16414,17 +16567,6 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 
     #boolean
 <a id="#(PLAYERTASKCONTROLLER).repeatonfailed" ><strong>PLAYERTASKCONTROLLER.repeatonfailed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(PLAYERTASKCONTROLLER).repeattimes" ><strong>PLAYERTASKCONTROLLER.repeattimes</strong></a>
     
 
 
@@ -18157,6 +18299,17 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(PLAYERTASKCONTROLLER).SeadAttributes" ><strong>PLAYERTASKCONTROLLER.SeadAttributes</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="Utilities.FiFo.html##(FIFO)">Utilities.FiFo#FIFO</a>
 <a id="#(PLAYERTASKCONTROLLER).TargetQueue" ><strong>PLAYERTASKCONTROLLER.TargetQueue</strong></a>
     
@@ -18324,17 +18477,6 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 
     #boolean
 <a id="#(PLAYERTASKCONTROLLER).repeatonfailed" ><strong>PLAYERTASKCONTROLLER.repeatonfailed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(PLAYERTASKCONTROLLER).repeattimes" ><strong>PLAYERTASKCONTROLLER.repeattimes</strong></a>
     
 
 
@@ -21712,6 +21854,51 @@ BASE:TraceOnOff( false )</code></pre>
 </div>
 </div>
 
+</div>
+
+        </div>
+      <div onclick="myFunction('#Types##SeadAttributes')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(SeadAttributes)">Type <strong>SeadAttributes</strong></a></h2></div>
+        <div id= "#Types##SeadAttributes" class="w3-container w3-white w3-padding-16" id="module_other_types">
+          <div class="w3-white" id="record_type">
+<div class="fields w3-container w3-theme-l2">
+  <h2>Field(s)</h2>
+</div>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SeadAttributes).AAA" ><strong>SeadAttributes.AAA</strong></a>
+    
+<p>GROUP.Attribute.GROUND_AAA</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SeadAttributes).EWR" ><strong>SeadAttributes.EWR</strong></a>
+    
+<p>GROUP.Attribute.GROUND_EWR </p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SeadAttributes).SAM" ><strong>SeadAttributes.SAM</strong></a>
+    
+<p>GROUP.Attribute.GROUND_SAM </p>
+
+</div>
+
+</div>   
+<div class="functions  w3-container w3-theme-l2">
+  <h2>Function(s)</h2>
+</div>  
 </div>
 
         </div>
