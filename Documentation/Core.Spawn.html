@@ -3161,6 +3161,12 @@ and any spaces before and after the resulting name are removed.</p>
 
 </td>
           </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).uncontrolled">SPAWN.uncontrolled</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
         </table>
         </div>
         <div class="w3-card w3-margin">
@@ -3292,7 +3298,7 @@ and any spaces before and after the resulting name are removed.</p>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).GetEventPriority">SPAWN:GetEventPriority()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Get the Class <a href="Event.html">Event</a> processing Priority.</p>
+<p>Get the Class <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3590,7 +3596,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).SetEventPriority">SPAWN:SetEventPriority(EventPriority)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set the Class <a href="Event.html">Event</a> processing Priority.</p>
+<p>Set the Class <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3718,10 +3724,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #boolean
 <a id="#(SPAWN).AIOnOff" ><strong>SPAWN.AIOnOff</strong></a>
     
 
+
+    
+<p> The AI is on by default when spawning a group.</p>
 
 </div>
 
@@ -3856,20 +3865,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(SPAWN).SpawnCount" ><strong>SPAWN.SpawnCount</strong></a>
-    
-
-
-    
-<p> The internal counter of the amount of spawning the has happened since SpawnStart.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #table
 <a id="#(SPAWN).SpawnFunctionArguments" ><strong>SPAWN.SpawnFunctionArguments</strong></a>
     
@@ -3973,6 +3968,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
+<a id="#(SPAWN).SpawnInitFreq" ><strong>SPAWN.SpawnInitFreq</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
 <a id="#(SPAWN).SpawnInitGroupHeadingMax" ><strong>SPAWN.SpawnInitGroupHeadingMax</strong></a>
     
 
@@ -4032,8 +4038,16 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     
 
 
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
-<p> By default, no InitLimit</p>
+<a id="#(SPAWN).SpawnInitLivery" ><strong>SPAWN.SpawnInitLivery</strong></a>
+    
+
 
 </div>
 
@@ -4043,6 +4057,28 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <a id="#(SPAWN).SpawnInitModex" ><strong>SPAWN.SpawnInitModex</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).SpawnInitModu" ><strong>SPAWN.SpawnInitModu</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(SPAWN).SpawnInitSkill" ><strong>SPAWN.SpawnInitSkill</strong></a>
     
 
 
@@ -4077,7 +4113,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(SPAWN).SpawnMaxGroups" ><strong>SPAWN.SpawnMaxGroups</strong></a>
     
 
@@ -4091,7 +4127,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(SPAWN).SpawnMaxUnitsAlive" ><strong>SPAWN.SpawnMaxUnitsAlive</strong></a>
     
 
@@ -4244,17 +4280,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
-<a id="#(SPAWN).SpawnUnControlled" ><strong>SPAWN.SpawnUnControlled</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
 <a id="#(SPAWN).SpawnVisible" ><strong>SPAWN.SpawnVisible</strong></a>
     
 
@@ -4311,6 +4336,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <p> When working in UnControlled mode, all planes are Spawned in UnControlled mode before the scheduler starts.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).uncontrolled" ><strong>SPAWN.uncontrolled</strong></a>
+    
+
 
 </div>
 
@@ -9050,10 +9086,13 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #boolean
 <a id="#(SPAWN).AIOnOff" ><strong>SPAWN.AIOnOff</strong></a>
     
 
+
+    
+<p> The AI is on by default when spawning a group.</p>
 
 </div>
 
@@ -9188,20 +9227,6 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(SPAWN).SpawnCount" ><strong>SPAWN.SpawnCount</strong></a>
-    
-
-
-    
-<p> The internal counter of the amount of spawning the has happened since SpawnStart.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #table
 <a id="#(SPAWN).SpawnFunctionArguments" ><strong>SPAWN.SpawnFunctionArguments</strong></a>
     
@@ -9305,6 +9330,17 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
+<a id="#(SPAWN).SpawnInitFreq" ><strong>SPAWN.SpawnInitFreq</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
 <a id="#(SPAWN).SpawnInitGroupHeadingMax" ><strong>SPAWN.SpawnInitGroupHeadingMax</strong></a>
     
 
@@ -9364,8 +9400,16 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
     
 
 
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
-<p> By default, no InitLimit</p>
+<a id="#(SPAWN).SpawnInitLivery" ><strong>SPAWN.SpawnInitLivery</strong></a>
+    
+
 
 </div>
 
@@ -9375,6 +9419,28 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 
     
 <a id="#(SPAWN).SpawnInitModex" ><strong>SPAWN.SpawnInitModex</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).SpawnInitModu" ><strong>SPAWN.SpawnInitModu</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(SPAWN).SpawnInitSkill" ><strong>SPAWN.SpawnInitSkill</strong></a>
     
 
 
@@ -9409,7 +9475,7 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(SPAWN).SpawnMaxGroups" ><strong>SPAWN.SpawnMaxGroups</strong></a>
     
 
@@ -9423,7 +9489,7 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(SPAWN).SpawnMaxUnitsAlive" ><strong>SPAWN.SpawnMaxUnitsAlive</strong></a>
     
 
@@ -9576,17 +9642,6 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
-<a id="#(SPAWN).SpawnUnControlled" ><strong>SPAWN.SpawnUnControlled</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
 <a id="#(SPAWN).SpawnVisible" ><strong>SPAWN.SpawnVisible</strong></a>
     
 
@@ -9643,6 +9698,17 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 
     
 <p> When working in UnControlled mode, all planes are Spawned in UnControlled mode before the scheduler starts.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).uncontrolled" ><strong>SPAWN.uncontrolled</strong></a>
+    
+
 
 </div>
 
@@ -10355,7 +10421,7 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 <h2><a id="#(SPAWN).GetEventPriority" ><strong>SPAWN:GetEventPriority()</strong></a></h2>
 </div>
     
-<p>Get the Class <a href="Event.html">Event</a> processing Priority.</p>
+<p>Get the Class <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
 
     
 <p>The Event processing Priority is a number from 1 to 10,
@@ -10374,7 +10440,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
       </div>
       <div class="w3-half">
         
-<p>The <a href="Event.html">Event</a> processing Priority.</p>
+<p>The <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
 
       </div>
     </div>
@@ -12359,7 +12425,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
 <h2><a id="#(SPAWN).SetEventPriority" ><strong>SPAWN:SetEventPriority(EventPriority)</strong></a></h2>
 </div>
     
-<p>Set the Class <a href="Event.html">Event</a> processing Priority.</p>
+<p>Set the Class <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
 
     
 <p>The Event processing Priority is a number from 1 to 10,
@@ -12381,7 +12447,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
           </div>
           <div class="w3-half">
               
-<p>The <a href="Event.html">Event</a> processing Priority.</p>
+<p>The <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
 
           </div>
         </div>
