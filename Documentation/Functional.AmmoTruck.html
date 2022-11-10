@@ -1919,754 +1919,479 @@ Controls a network of short range air/missile defense groups.</p>
    </div>
   </nav>
   
-<img src="..\Images\Designation.JPG" alt="Banner Image"/>   
+<img src="..\Images\Functional.AmmoTruck.jpg" alt="Banner Image"/>   
 <div  id="content">
   <div class="w3-container w3-theme-d5" id="module_title">
-    <h1>Module <strong>Functional.Autolase</strong></h1>
+    <h1>Module <strong>Functional.AmmoTruck</strong></h1>
   </div>
   <div class="w3-container w3-white" id="module_description">
     
-<p><strong>Functional</strong> - Autolase targets in the field.</p>
+<p><strong>Functional</strong> -- Send a truck to supply artillery groups.</p>
 
     
 
 <hr/>
 
-<p><strong>AUOTLASE</strong> - Autolase targets in the field.</p>
+<p><strong>AMMOTRUCK</strong> - Send a truck to supply artillery groups.</p>
 
 <hr/>
 
 <h2>Missions:</h2>
 
-<h3><a href="https://github.com/FlightControl-Master/MOOSE_MISSIONS/tree/develop/">Autolase</a></h3>
+<h3><a href="https://github.com/FlightControl-Master/MOOSE_MISSIONS/tree/master/tbd">tbd</a></h3>
 
 <hr/>
 
-<p><strong>Main Features:</strong></p>
+<h3>Author : <em>*applevangelist *</em></h3>
 
-<ul>
-    <li>Detect and lase contacts automatically</li>
-    <li>Targets are lased by threat priority order</li>
-    <li>Use FSM events to link functionality into your scripts</li>
-    <li>Easy setup</li>
-</ul>
-
-<hr/>
-
-<ul>
-    <li>Spot on!</li>
-</ul>
-
-<hr/>
-
-<h1>1 Autolase concept</h1>
-
-<ul>
-    <li>Detect and lase contacts automatically</li>
-    <li>Targets are lased by threat priority order</li>
-    <li>Use FSM events to link functionality into your scripts</li>
-    <li>Set laser codes and smoke colors per Recce unit</li>
-    <li>Easy set-up</li>
-</ul>
-
-<h1>2 Basic usage</h1>
-
-<h2>2.2 Set up a group of Recce Units:</h2>
-
-<pre><code>       local FoxSet = SET_GROUP:New():FilterPrefixes("Recce"):FilterCoalitions("blue"):FilterStart()
-</code></pre>
-
-<h2>2.3 (Optional) Set up a group of pilots, this will drive who sees the F10 menu entry:</h2>
-
-<pre><code>       local Pilotset = SET_CLIENT:New():FilterCoalitions("blue"):FilterActive(true):FilterStart()
-</code></pre>
-
-<h2>2.4 Set up and start Autolase:</h2>
-
-<pre><code>       local autolaser = AUTOLASE:New(FoxSet,coalition.side.BLUE,"Wolfpack",Pilotset)
-</code></pre>
-
-<h2>2.5 Example - Using a fixed laser code and color for a specific Recce unit:</h2>
-
-<pre><code>       local recce = SPAWN:New("Reaper")
-         :InitDelayOff()
-         :OnSpawnGroup(
-           function (group)
-             local unit = group:GetUnit(1)
-             local name = unit:GetName()
-             autolaser:SetRecceLaserCode(name,1688)
-             autolaser:SetRecceSmokeColor(name,SMOKECOLOR.Red)
-           end
-         )
-         :InitCleanUp(60)
-         :InitLimit(1,0)
-         :SpawnScheduled(30,0.5)
-</code></pre>
-
-<h2>2.6 Example - Inform pilots about events:</h2>
-
-<pre><code>       autolaser:SetNotifyPilots(true) -- defaults to true, also shown if debug == true
-       -- Note - message are shown to pilots in the #SET_CLIENT only if using the pilotset option, else to the coalition.
-</code></pre>
-
-
-<h3>Author: <strong>applevangelist</strong></h3>
 
   </div>
   <div class="w3-container w3-theme-d2"><h2><strong>Global(s)</strong></h2></div>
   <div class="w3-theme-d2 w3-margin-top ">
-    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##AUTOLASE')">
+    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##AMMOTRUCK')">
       <tr>
-        <td class="style="width:40%;"><p><h2>Global <strong>AUTOLASE</strong></h2></p></td>
+        <td class="style="width:40%;"><p><h2>Global <strong>AMMOTRUCK</strong></h2></p></td>
         <td class="style="width:60%;">
-
+<p><em>Amateurs talk about tactics, but professionals study logistics.</em> - Gen.</p>
 </td>
       </tr>
     </table>
   </div>
-  <div id= "#Globals##AUTOLASE" class="w3-container w3-white w3-padding-small">
+  <div id= "#Globals##AMMOTRUCK" class="w3-container w3-white w3-padding-small">
     <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(AUTOLASE)">#AUTOLASE</a>
-<a id="AUTOLASE" ><strong>AUTOLASE</strong></a>
+    <a href="##(AMMOTRUCK)">#AMMOTRUCK</a>
+<a id="AMMOTRUCK" ><strong>AMMOTRUCK</strong></a>
     
+<p><em>Amateurs talk about tactics, but professionals study logistics.</em> - Gen.</p>
 
+    
+<p>Robert H. Barrow, USMC</p>
+
+<p>Simple Class to re-arm your artillery with trucks.</p>
+
+<h1>AMMOTRUCK</h1>
+
+<ul>
+    <li>Controls a SET_GROUP of trucks which will re-arm a SET_GROUP of artillery groups when they run out of ammunition. </li>
+</ul>
+
+<h2>1 The AMMOTRUCK concept</h2>
+
+<p>A SET_GROUP of trucks which will re-arm a SET_GROUP of artillery groups when they run out of ammunition. They will be based on a
+homebase and drive from there to the artillery groups and then back home.
+Trucks are the <strong>only known in-game mechanic</strong> to re-arm artillery and other units in DCS. Working units are e.g.: M-939 (blue), Ural-375 and ZIL-135 (both red).</p>
+
+<h2>2 Set-up</h2>
+
+<p>Define a set of trucks and a set of artillery:  </p>
+
+<pre><code>       local truckset = SET_GROUP:New():FilterCoalitions("blue"):FilterActive(true):FilterCategoryGround():FilterPrefixes("Ammo Truck"):FilterStart()
+       local ariset = SET_GROUP:New():FilterCoalitions("blue"):FilterActive(true):FilterCategoryGround():FilterPrefixes("Artillery"):FilterStart()
+</code></pre>
+
+<p>Create an AMMOTRUCK object to take care of the artillery using the trucks, with a homezone:  </p>
+
+<pre><code>       local ammotruck = AMMOTRUCK:New(truckset,ariset,coalition.side.BLUE,"Logistics",ZONE:FindByName("HomeZone") 
+</code></pre>
+
+<h2>2 Options and their default values</h2>
+
+<pre><code>       ammotruck.ammothreshold = 5 -- send a truck when down to this many rounds
+       ammotruck.remunidist = 20000 -- 20km - send trucks max this far from home
+       ammotruck.unloadtime = 600 -- 10 minutes - min time to unload ammunition
+       ammotruck.waitingtime = 1800 -- 30 mintes - wait max this long until remunition is done
+       ammotruck.monitor = -60 - 1 minute - AMMOTRUCK checks on things every 1 minute
+       ammotruck.routeonroad = true - Trucks will **try** to drive on roads
+       ammotruck.usearmygroup = false - if true, will make use of ARMYGROUP in the background (if used in DEV branch)
+</code></pre>
+
+<h2>3 FSM Events to shape mission</h2>
+
+<p>Truck has been sent off:</p>
+
+<pre><code>       function ammotruck:OnAfterRouteTruck(From, Event, To, Truckdata, Aridata)
+         ...
+       end
+</code></pre>
+
+<p>Truck has arrived:</p>
+
+<pre><code>       function ammotruck:OnAfterTruckArrived(From, Event, To, Truckdata)
+         ...
+       end 
+</code></pre>
+
+<p>Truck is unloading:</p>
+
+<pre><code>       function ammotruck:OnAfterTruckUnloading(From, Event, To, Truckdata)
+         ...
+       end 
+</code></pre>
+
+<p>Truck is returning home:</p>
+
+<pre><code>       function ammotruck:OnAfterTruckReturning(From, Event, To, Truckdata)
+         ...
+       end  
+</code></pre>
+
+<p>Truck is arrived at home:</p>
+
+<pre><code>       function ammotruck:OnAfterTruckHome(From, Event, To, Truckdata)
+         ...
+       end 
+                   
+</code></pre>
 
 </div>
 
   </div>
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>  
-      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AUTOLASE)">Type <strong>AUTOLASE</strong></a></h2></div>
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AMMOTRUCK)">Type <strong>AMMOTRUCK</strong></a></h2></div>
          <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
-     <strong><a href="##(AUTOLASE)">AUTOLASE</a></strong>
+     <strong><a href="##(AMMOTRUCK)">AMMOTRUCK</a></strong>
+, extends <strong><a href="Core.FSM.html##(FSM)">Core.FSM#FSM</a></strong>
    </div>
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
           <tr class="w3-theme-l1">
-            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from AUTOLASE</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from AMMOTRUCK</th>
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).AddBlackListAttributes">AUTOLASE:AddBlackListAttributes(Attributes)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(User) Set list of #UNIT level attributes that won't be lased.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).CanLase">AUTOLASE:CanLase(Recce, Unit)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) Function to check if a unit can be lased.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).Cancel">AUTOLASE:Cancel()</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Triggers the FSM event "Cancel".</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).CheckIsLased">AUTOLASE:CheckIsLased(unitname)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) Function to check if a unit is already lased.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).CleanCurrentLasing">AUTOLASE:CleanCurrentLasing()</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) Function to check on lased targets.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).Culture">AUTOLASE.Culture</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).CheckArrivedTrucks">AMMOTRUCK:CheckArrivedTrucks(dataset)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).CurrentLasing">AUTOLASE.CurrentLasing</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).CheckDrivingTrucks">AMMOTRUCK:CheckDrivingTrucks(dataset)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).DetectDLINK">AUTOLASE.DetectDLINK</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).CheckReturningTrucks">AMMOTRUCK:CheckReturningTrucks(dataset)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).DetectIRST">AUTOLASE.DetectIRST</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).CheckTargetsAlive">AMMOTRUCK:CheckTargetsAlive()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).DetectOptical">AUTOLASE.DetectOptical</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).CheckTrucksAlive">AMMOTRUCK:CheckTrucksAlive()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).DetectRWR">AUTOLASE.DetectRWR</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).CheckUnloadingTrucks">AMMOTRUCK:CheckUnloadingTrucks(dataset)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).DetectRadar">AUTOLASE.DetectRadar</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).CheckWaitingTargets">AMMOTRUCK:CheckWaitingTargets(dataset)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).DetectVisual">AUTOLASE.DetectVisual</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).ClassName">AMMOTRUCK.ClassName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Class Name</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).FindTarget">AMMOTRUCK:FindTarget(name)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).Gender">AUTOLASE.Gender</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).FindTruck">AMMOTRUCK:FindTruck(name)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).GetLaserCode">AUTOLASE:GetLaserCode(RecceName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) Function to get a laser code by recce name</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).GetLosFromUnit">AUTOLASE:GetLosFromUnit(Unit)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) Function to calculate line of sight.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).GetSmokeColor">AUTOLASE:GetSmokeColor(RecceName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) Function to get a smoke color by recce name</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).GroupsByThreat">AUTOLASE.GroupsByThreat</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).GetAmmoStatus">AMMOTRUCK:GetAmmoStatus(Group)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).Label">AUTOLASE.Label</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).New">AMMOTRUCK:New(Truckset, Targetset, Coalition, Alias, Homezone)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).LaseDistance">AUTOLASE.LaseDistance</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).OnAfterRouteTruck">AMMOTRUCK:OnAfterRouteTruck(From, Event, To, Truck)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "RouteTruck" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).OnAfterTruckHome">AMMOTRUCK:OnAfterTruckHome(From, Event, To, Truck)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "TruckHome" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).OnAfterTruckReturning">AMMOTRUCK:OnAfterTruckReturning(From, Event, To, Truck)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "TruckReturning" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).OnAfterTruckUnloading">AMMOTRUCK:OnAfterTruckUnloading(From, Event, To, Truck)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "TruckUnloading" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).State">AMMOTRUCK.State</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).LaseDuration">AUTOLASE.LaseDuration</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).Stop">AMMOTRUCK:Stop()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "Stop".</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).__Stop">AMMOTRUCK:__Stop(delay)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "Stop" after a delay.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).alias">AMMOTRUCK.alias</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Alias name</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).ammothreshold">AMMOTRUCK.ammothreshold</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Threshold (min) ammo before sending a truck</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).coalition">AMMOTRUCK.coalition</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Coalition this is for</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).debug">AMMOTRUCK.debug</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Debug flag</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).hasarmygroup">AMMOTRUCK.hasarmygroup</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).LaserCodes">AUTOLASE.LaserCodes</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).homezone">AMMOTRUCK.homezone</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).Menu">AUTOLASE.Menu</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).lid">AMMOTRUCK.lid</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Lid for log entries</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).monitor">AMMOTRUCK.monitor</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Monitor interval in seconds</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).onafterMonitor">AMMOTRUCK:onafterMonitor(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).New">AUTOLASE:New(RecceSet, Coalition, Alias, PilotSet)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Constructor for a new Autolase instance.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).NoMenus">AUTOLASE.NoMenus</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).onafterRouteTruck">AMMOTRUCK:onafterRouteTruck(From, Event, To, Truckdata, Aridata)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).NotifyPilots">AUTOLASE:NotifyPilots(Message, Duration)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) Function to show messages.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).NotifyPilotsWithSRS">AUTOLASE:NotifyPilotsWithSRS(Message)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(User) Send messages via SRS.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).OnAfterLaserTimeout">AUTOLASE:OnAfterLaserTimeout(From, Event, To, UnitName, RecceName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>On After "LaserTimeout" event.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).OnAfterLasing">AUTOLASE:OnAfterLasing(From, Event, To, LaserSpot)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>On After "Lasing" event.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).OnAfterRecceKIA">AUTOLASE:OnAfterRecceKIA(From, Event, To, RecceName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>On After "RecceKIA" event.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).OnAfterTargetDestroyed">AUTOLASE:OnAfterTargetDestroyed(From, Event, To, UnitName, RecceName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>On After "TargetDestroyed" event.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).OnAfterTargetLost">AUTOLASE:OnAfterTargetLost(From, Event, To, UnitName, RecceName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>On After "TargetLost" event.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).OnEventPlayerEnterAircraft">AUTOLASE:OnEventPlayerEnterAircraft(EventData)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) Event function for new pilots.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).PathToGoogleKey">AUTOLASE.PathToGoogleKey</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).onafterStart">AMMOTRUCK:onafterStart(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).Port">AUTOLASE.Port</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).onafterStop">AMMOTRUCK:onafterStop(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).RecceLaserCode">AUTOLASE.RecceLaserCode</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).onafterTruckReturning">AMMOTRUCK:onafterTruckReturning(From, Event, To, Truck)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).RecceNames">AUTOLASE.RecceNames</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).onafterTruckUnloading">AMMOTRUCK:onafterTruckUnloading(From, Event, To, Truckdata)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).RecceSet">AUTOLASE.RecceSet</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).remunidist">AMMOTRUCK.remunidist</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Max distance trucks will go</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).remunitionqueue">AMMOTRUCK.remunitionqueue</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>List of (alive) #AMMOTRUCK.data artillery to be reloaded</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).routeonroad">AMMOTRUCK.routeonroad</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Route truck on road if true (default)</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).targetlist">AMMOTRUCK.targetlist</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p> List of (alive) #AMMOTRUCK.data artillery</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).targetset">AMMOTRUCK.targetset</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>SET of artillery</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).trucklist">AMMOTRUCK.trucklist</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>List of (alive) #AMMOTRUCK.data trucks</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).truckset">AMMOTRUCK.truckset</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>SET of trucks</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).unloadtime">AMMOTRUCK.unloadtime</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Unload time in seconds</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).usearmygroup">AMMOTRUCK.usearmygroup</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).RecceSmokeColor">AUTOLASE.RecceSmokeColor</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).version">AMMOTRUCK.version</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Version string</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).RecceUnitNames">AUTOLASE.RecceUnitNames</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).waitingtargets">AMMOTRUCK.waitingtargets</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p> List of (alive) #AMMOTRUCK.data artillery waiting</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).RecceUnits">AUTOLASE.RecceUnits</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).waitingtime">AMMOTRUCK.waitingtime</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SRS">AUTOLASE.SRS</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SRSFreq">AUTOLASE.SRSFreq</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SRSMod">AUTOLASE.SRSMod</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SRSPath">AUTOLASE.SRSPath</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SRSQueue">AUTOLASE.SRSQueue</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetLaserCoolDown">AUTOLASE:SetLaserCoolDown(OnOff, Seconds)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(User) Function to force laser cooldown and cool down time</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetLasingParameters">AUTOLASE:SetLasingParameters(Distance, Duration)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(User) Function to set lasing distance in meters and duration in seconds</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetMaxLasingTargets">AUTOLASE:SetMaxLasingTargets(Number)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(User) Function set max lasing targets</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetMinThreatLevel">AUTOLASE:SetMinThreatLevel(Level)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(User) Set minimum threat level for target selection, can be 0 (lowest) to 10 (highest).</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetNotifyPilots">AUTOLASE:SetNotifyPilots(OnOff)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) Function set notify pilots on events</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetPilotMenu">AUTOLASE:SetPilotMenu()</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) Function to set pilot menu.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetRecceLaserCode">AUTOLASE:SetRecceLaserCode(RecceName, Code)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(User) Function to set a specific code to a Recce.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetRecceSmokeColor">AUTOLASE:SetRecceSmokeColor(RecceName, Color)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(User) Function to set a specific smoke color for a Recce.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetReportingTimes">AUTOLASE:SetReportingTimes(long, short)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(User) Function to set message show times.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetSmokeTargets">AUTOLASE:SetSmokeTargets(OnOff, Color)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(User) Function to set smoking of targets.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetUsingSRS">AUTOLASE:SetUsingSRS(OnOff, Path, Frequency, Modulation, Label, Gender, Culture, Port, Voice, Volume, PathToGoogleKey)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(User) Function enable sending messages via SRS.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).ShowStatus">AUTOLASE:ShowStatus(Group, Unit)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) Function to show status.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).Status">AUTOLASE:Status()</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Triggers the FSM event "Monitor".</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).UnitsByThreat">AUTOLASE.UnitsByThreat</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).Voice">AUTOLASE.Voice</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).Volume">AUTOLASE.Volume</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).__Cancel">AUTOLASE:__Cancel(delay)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Triggers the FSM event "Cancel" after a delay.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).__Status">AUTOLASE:__Status(delay)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Triggers the FSM event "Monitor" after a delay.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).alias">AUTOLASE.alias</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).blacklistattributes">AUTOLASE.blacklistattributes</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).coalition">AUTOLASE.coalition</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).cooldowntime">AUTOLASE.cooldowntime</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).deadunitnotes">AUTOLASE.deadunitnotes</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).forcecooldown">AUTOLASE.forcecooldown</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).lasingindex">AUTOLASE.lasingindex</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).lid">AUTOLASE.lid</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).maxlasing">AUTOLASE.maxlasing</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).minthreatlevel">AUTOLASE.minthreatlevel</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).notifypilots">AUTOLASE.notifypilots</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).onafterMonitor">AUTOLASE:onafterMonitor(From, Event, To)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) FSM Function for monitoring</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).onbeforeCancel">AUTOLASE:onbeforeCancel(From, Event, To)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) FSM Function onbeforeCancel</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).onbeforeLaserTimeout">AUTOLASE:onbeforeLaserTimeout(From, Event, To, UnitName, RecceName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) FSM Function onbeforeLaserTimeout</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).onbeforeLasing">AUTOLASE:onbeforeLasing(From, Event, To, LaserSpot)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) FSM Function onbeforeLasing</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).onbeforeMonitor">AUTOLASE:onbeforeMonitor(From, Event, To)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) FSM Function for monitoring</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).onbeforeRecceKIA">AUTOLASE:onbeforeRecceKIA(From, Event, To, RecceName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) FSM Function onbeforeRecceKIA</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).onbeforeTargetDestroyed">AUTOLASE:onbeforeTargetDestroyed(From, Event, To, UnitName, RecceName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) FSM Function onbeforeTargetDestroyed</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).onbeforeTargetLost">AUTOLASE:onbeforeTargetLost(From, Event, To, UnitName, RecceName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) FSM Function onbeforeTargetLost</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).pilotset">AUTOLASE.pilotset</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).reporttimelong">AUTOLASE.reporttimelong</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).reporttimeshort">AUTOLASE.reporttimeshort</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).smokecolor">AUTOLASE.smokecolor</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).smoketargets">AUTOLASE.smoketargets</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).targetsperrecce">AUTOLASE.targetsperrecce</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).useSRS">AUTOLASE.useSRS</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).usepilotset">AUTOLASE.usepilotset</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).version">AUTOLASE.version</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>AUTOLASE class version.</p>
+<p>Max waiting time in seconds</p>
 </td>
           </tr>
         </table>
         </div>
 
-      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AUTOLASE.LaserSpot)">Type <strong>AUTOLASE.LaserSpot</strong></a></h2></div>
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AMMOTRUCK.State)">Type <strong>AMMOTRUCK.State</strong></a></h2></div>
          <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
-     <strong><a href="##(AUTOLASE.LaserSpot)">AUTOLASE.LaserSpot</a></strong>
+     <strong><a href="##(AMMOTRUCK.State)">AMMOTRUCK.State</a></strong>
    </div>
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
           <tr class="w3-theme-l1">
-            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from AUTOLASE.LaserSpot</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from AMMOTRUCK.State</th>
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE.LaserSpot).coordinate">AUTOLASE.LaserSpot.coordinate</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.State).ARRIVED">AMMOTRUCK.State.ARRIVED</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE.LaserSpot).lasedunit">AUTOLASE.LaserSpot.lasedunit</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.State).DRIVING">AMMOTRUCK.State.DRIVING</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE.LaserSpot).lasercode">AUTOLASE.LaserSpot.lasercode</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.State).IDLE">AMMOTRUCK.State.IDLE</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE.LaserSpot).laserspot">AUTOLASE.LaserSpot.laserspot</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.State).OUTOFAMMO">AMMOTRUCK.State.OUTOFAMMO</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE.LaserSpot).lasingunit">AUTOLASE.LaserSpot.lasingunit</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.State).RELOADING">AMMOTRUCK.State.RELOADING</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE.LaserSpot).location">AUTOLASE.LaserSpot.location</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.State).REQUESTED">AMMOTRUCK.State.REQUESTED</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE.LaserSpot).reccename">AUTOLASE.LaserSpot.reccename</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.State).RETURNING">AMMOTRUCK.State.RETURNING</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE.LaserSpot).timestamp">AUTOLASE.LaserSpot.timestamp</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.State).UNLOADING">AMMOTRUCK.State.UNLOADING</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE.LaserSpot).unitname">AUTOLASE.LaserSpot.unitname</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE.LaserSpot).unittype">AUTOLASE.LaserSpot.unittype</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.State).WAITING">AMMOTRUCK.State.WAITING</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -2674,25 +2399,103 @@ Controls a network of short range air/missile defense groups.</p>
         </table>
         </div>
 
-    <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Functional.Autolase)" >Type <strong>Functional.Autolase</strong></a></h2></div>
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AMMOTRUCK.data)">Type <strong>AMMOTRUCK.data</strong></a></h2></div>
+         <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
+     <strong><a href="##(AMMOTRUCK.data)">AMMOTRUCK.data</a></strong>
+   </div>
+        <div class="w3-card w3-margin">
+        <table class="w3-table w3-border-bottom w3-border-theme-l2">
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from AMMOTRUCK.data</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.data).ammo">AMMOTRUCK.data.ammo</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.data).coordinate">AMMOTRUCK.data.coordinate</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.data).group">AMMOTRUCK.data.group</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.data).lastspeed">AMMOTRUCK.data.lastspeed</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.data).name">AMMOTRUCK.data.name</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.data).statusquo">AMMOTRUCK.data.statusquo</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.data).targetcoordinate">AMMOTRUCK.data.targetcoordinate</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.data).targetgroup">AMMOTRUCK.data.targetgroup</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.data).targetname">AMMOTRUCK.data.targetname</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.data).timestamp">AMMOTRUCK.data.timestamp</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+        </table>
+        </div>
+
+    <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Functional.AmmoTruck)" >Type <strong>Functional.AmmoTruck</strong></a></h2></div>
     <div class="w3-container w3-white w3-padding-16" id="module_current_type">
       <div class="w3-white" id="record_type">
 </div>
 
     </div>
-      <div onclick="myFunction('#Types##AUTOLASE')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AUTOLASE)">Type <strong>AUTOLASE</strong></a></h2></div>
-        <div id= "#Types##AUTOLASE" class="w3-container w3-white w3-padding-16" id="module_other_types">
+      <div onclick="myFunction('#Types##AMMOTRUCK')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AMMOTRUCK)">Type <strong>AMMOTRUCK</strong></a></h2></div>
+        <div id= "#Types##AMMOTRUCK" class="w3-container w3-white w3-padding-16" id="module_other_types">
           <div class="w3-white" id="record_type">
+  
+<ul>
+    <li><strong>AMMOTRUCK</strong> class, extends Core.FSM#FSM</li>
+</ul>
+
 <div class="fields w3-container w3-theme-l2">
   <h2>Field(s)</h2>
 </div>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #string
+<a id="#(AMMOTRUCK).ClassName" ><strong>AMMOTRUCK.ClassName</strong></a>
     
-<a id="#(AUTOLASE).CurrentLasing" ><strong>AUTOLASE.CurrentLasing</strong></a>
-    
-
+<p>Class Name</p>
 
 </div>
 
@@ -2700,366 +2503,8 @@ Controls a network of short range air/missile defense groups.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
-<a id="#(AUTOLASE).DetectDLINK" ><strong>AUTOLASE.DetectDLINK</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AUTOLASE).DetectIRST" ><strong>AUTOLASE.DetectIRST</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AUTOLASE).DetectOptical" ><strong>AUTOLASE.DetectOptical</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AUTOLASE).DetectRWR" ><strong>AUTOLASE.DetectRWR</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AUTOLASE).DetectRadar" ><strong>AUTOLASE.DetectRadar</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AUTOLASE).DetectVisual" ><strong>AUTOLASE.DetectVisual</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).GroupsByThreat" ><strong>AUTOLASE.GroupsByThreat</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).Label" ><strong>AUTOLASE.Label</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).LaserCodes" ><strong>AUTOLASE.LaserCodes</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).Menu" ><strong>AUTOLASE.Menu</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AUTOLASE).NoMenus" ><strong>AUTOLASE.NoMenus</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).PathToGoogleKey" ><strong>AUTOLASE.PathToGoogleKey</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(AUTOLASE).RecceLaserCode" ><strong>AUTOLASE.RecceLaserCode</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(AUTOLASE).RecceNames" ><strong>AUTOLASE.RecceNames</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).RecceSet" ><strong>AUTOLASE.RecceSet</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(AUTOLASE).RecceSmokeColor" ><strong>AUTOLASE.RecceSmokeColor</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(AUTOLASE).RecceUnitNames" ><strong>AUTOLASE.RecceUnitNames</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(AUTOLASE).RecceUnits" ><strong>AUTOLASE.RecceUnits</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).SRS" ><strong>AUTOLASE.SRS</strong></a>
-    
-
-
-    
-<p> set up SRS</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).SRSQueue" ><strong>AUTOLASE.SRSQueue</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).UnitsByThreat" ><strong>AUTOLASE.UnitsByThreat</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).Voice" ><strong>AUTOLASE.Voice</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).alias" ><strong>AUTOLASE.alias</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(AUTOLASE).blacklistattributes" ><strong>AUTOLASE.blacklistattributes</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).coalition" ><strong>AUTOLASE.coalition</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(AUTOLASE).deadunitnotes" ><strong>AUTOLASE.deadunitnotes</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).lid" ><strong>AUTOLASE.lid</strong></a>
-    
-
-
-    
-<p> Set some string id for output to DCS.log file.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).minthreatlevel" ><strong>AUTOLASE.minthreatlevel</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).pilotset" ><strong>AUTOLASE.pilotset</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).smoketargets" ><strong>AUTOLASE.smoketargets</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).targetsperrecce" ><strong>AUTOLASE.targetsperrecce</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AUTOLASE).useSRS" ><strong>AUTOLASE.useSRS</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AUTOLASE).usepilotset" ><strong>AUTOLASE.usepilotset</strong></a>
+    <a href="##(AMMOTRUCK.State)">#AMMOTRUCK.State</a>
+<a id="#(AMMOTRUCK).State" ><strong>AMMOTRUCK.State</strong></a>
     
 
 
@@ -3070,9 +2515,218 @@ Controls a network of short range air/missile defense groups.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #string
-<a id="#(AUTOLASE).version" ><strong>AUTOLASE.version</strong></a>
+<a id="#(AMMOTRUCK).alias" ><strong>AMMOTRUCK.alias</strong></a>
     
-<p>AUTOLASE class version.</p>
+<p>Alias name</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AMMOTRUCK).ammothreshold" ><strong>AMMOTRUCK.ammothreshold</strong></a>
+    
+<p>Threshold (min) ammo before sending a truck</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AMMOTRUCK).coalition" ><strong>AMMOTRUCK.coalition</strong></a>
+    
+<p>Coalition this is for</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AMMOTRUCK).debug" ><strong>AMMOTRUCK.debug</strong></a>
+    
+<p>Debug flag</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AMMOTRUCK).hasarmygroup" ><strong>AMMOTRUCK.hasarmygroup</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Zone.html##(ZONE)">Core.Zone#ZONE</a>
+<a id="#(AMMOTRUCK).homezone" ><strong>AMMOTRUCK.homezone</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AMMOTRUCK).lid" ><strong>AMMOTRUCK.lid</strong></a>
+    
+<p>Lid for log entries</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AMMOTRUCK).monitor" ><strong>AMMOTRUCK.monitor</strong></a>
+    
+<p>Monitor interval in seconds</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AMMOTRUCK).remunidist" ><strong>AMMOTRUCK.remunidist</strong></a>
+    
+<p>Max distance trucks will go</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(AMMOTRUCK).remunitionqueue" ><strong>AMMOTRUCK.remunitionqueue</strong></a>
+    
+<p>List of (alive) #AMMOTRUCK.data artillery to be reloaded</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AMMOTRUCK).routeonroad" ><strong>AMMOTRUCK.routeonroad</strong></a>
+    
+<p>Route truck on road if true (default)</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(AMMOTRUCK).targetlist" ><strong>AMMOTRUCK.targetlist</strong></a>
+    
+<p> List of (alive) #AMMOTRUCK.data artillery</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(AMMOTRUCK).targetset" ><strong>AMMOTRUCK.targetset</strong></a>
+    
+<p>SET of artillery</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(AMMOTRUCK).trucklist" ><strong>AMMOTRUCK.trucklist</strong></a>
+    
+<p>List of (alive) #AMMOTRUCK.data trucks</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(AMMOTRUCK).truckset" ><strong>AMMOTRUCK.truckset</strong></a>
+    
+<p>SET of trucks</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AMMOTRUCK).unloadtime" ><strong>AMMOTRUCK.unloadtime</strong></a>
+    
+<p>Unload time in seconds</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AMMOTRUCK).usearmygroup" ><strong>AMMOTRUCK.usearmygroup</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AMMOTRUCK).version" ><strong>AMMOTRUCK.version</strong></a>
+    
+<p>Version string</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(AMMOTRUCK).waitingtargets" ><strong>AMMOTRUCK.waitingtargets</strong></a>
+    
+<p> List of (alive) #AMMOTRUCK.data artillery waiting</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AMMOTRUCK).waitingtime" ><strong>AMMOTRUCK.waitingtime</strong></a>
+    
+<p>Max waiting time in seconds</p>
 
 </div>
 
@@ -3083,242 +2737,35 @@ Controls a network of short range air/missile defense groups.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).AddBlackListAttributes" ><strong>AUTOLASE:AddBlackListAttributes(Attributes)</strong></a></h2>
+<h2><a id="#(AMMOTRUCK).CheckArrivedTrucks" ><strong>AMMOTRUCK:CheckArrivedTrucks(dataset)</strong></a></h2>
 </div>
     
-<p>(User) Set list of #UNIT level attributes that won't be lased.</p>
 
-    
-<p>For list of attributes see <a href="https://wiki.hoggitworld.com/view/DCS_enum_attributes">Hoggit Wiki</a> and <a href="https://github.com/mrSkortch/DCS-miscScripts/tree/master/ObjectDB">GitHub</a> </p>
 
-<div id= "#Functions##AddBlackListAttributes" class="w3-show w3-white">
+<div id= "#Functions##CheckArrivedTrucks" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AUTOLASE</p>
+<p>AMMOTRUCK</p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
                 #table
-            <strong><strong>Attributes</strong></strong>
+            <strong><strong>dataset</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Table of #string attributes to blacklist. Can be handed over as a single #string.</p>
+<p>table of #AMMOTRUCK.data entries</p>
 
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-      <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>To exclude e.g. manpads from being lased:
-
-           `myautolase:AddBlackListAttributes("MANPADS")`
-
-To exclude trucks and artillery:
-
-           `myautolase:AddBlackListAttributes({"Trucks","Artillery"})`
-           </code></pre>
-
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).CanLase" ><strong>AUTOLASE:CanLase(Recce, Unit)</strong></a></h2>
-</div>
-    
-<p>(Internal) Function to check if a unit can be lased.</p>
-
-<div id= "#Functions##CanLase" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
-            <strong><strong>Recce</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The Recce #UNIT</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
-            <strong><strong>Unit</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The lased #UNIT</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#boolean:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>outcome True or false</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).Cancel" ><strong>AUTOLASE:Cancel()</strong></a></h2>
-</div>
-    
-<p>Triggers the FSM event "Cancel".</p>
-
-<div id= "#Functions##Cancel" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).CheckIsLased" ><strong>AUTOLASE:CheckIsLased(unitname)</strong></a></h2>
-</div>
-    
-<p>(Internal) Function to check if a unit is already lased.</p>
-
-<div id= "#Functions##CheckIsLased" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>unitname</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Name of the unit to check</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#boolean:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>outcome True or false</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).CleanCurrentLasing" ><strong>AUTOLASE:CleanCurrentLasing()</strong></a></h2>
-</div>
-    
-<p>(Internal) Function to check on lased targets.</p>
-
-<div id= "#Functions##CleanCurrentLasing" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).GetLaserCode" ><strong>AUTOLASE:GetLaserCode(RecceName)</strong></a></h2>
-</div>
-    
-<p>(Internal) Function to get a laser code by recce name</p>
-
-<div id= "#Functions##GetLaserCode" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>RecceName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Unit(!) name of the Recce</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+        <p><a href="##(AMMOTRUCK)">#AMMOTRUCK</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -3334,23 +2781,347 @@ To exclude trucks and artillery:
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).GetLosFromUnit" ><strong>AUTOLASE:GetLosFromUnit(Unit)</strong></a></h2>
+<h2><a id="#(AMMOTRUCK).CheckDrivingTrucks" ><strong>AMMOTRUCK:CheckDrivingTrucks(dataset)</strong></a></h2>
 </div>
     
-<p>(Internal) Function to calculate line of sight.</p>
 
-<div id= "#Functions##GetLosFromUnit" class="w3-show w3-white">
+
+<div id= "#Functions##CheckDrivingTrucks" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AUTOLASE</p>
+<p>AMMOTRUCK</p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
-            <strong><strong>Unit</strong></strong>
+                #table
+            <strong><strong>dataset</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>table of #AMMOTRUCK.data entries</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AMMOTRUCK)">#AMMOTRUCK</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AMMOTRUCK).CheckReturningTrucks" ><strong>AMMOTRUCK:CheckReturningTrucks(dataset)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##CheckReturningTrucks" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AMMOTRUCK</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>dataset</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>table of #AMMOTRUCK.data entries</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AMMOTRUCK)">#AMMOTRUCK</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AMMOTRUCK).CheckTargetsAlive" ><strong>AMMOTRUCK:CheckTargetsAlive()</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##CheckTargetsAlive" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AMMOTRUCK</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AMMOTRUCK)">#AMMOTRUCK</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AMMOTRUCK).CheckTrucksAlive" ><strong>AMMOTRUCK:CheckTrucksAlive()</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##CheckTrucksAlive" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AMMOTRUCK</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AMMOTRUCK)">#AMMOTRUCK</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AMMOTRUCK).CheckUnloadingTrucks" ><strong>AMMOTRUCK:CheckUnloadingTrucks(dataset)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##CheckUnloadingTrucks" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AMMOTRUCK</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>dataset</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>table of #AMMOTRUCK.data entries</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AMMOTRUCK)">#AMMOTRUCK</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AMMOTRUCK).CheckWaitingTargets" ><strong>AMMOTRUCK:CheckWaitingTargets(dataset)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##CheckWaitingTargets" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AMMOTRUCK</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>dataset</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>table of #AMMOTRUCK.data entries</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AMMOTRUCK)">#AMMOTRUCK</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AMMOTRUCK).FindTarget" ><strong>AMMOTRUCK:FindTarget(name)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##FindTarget" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AMMOTRUCK</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Artillery group name to find</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AMMOTRUCK.data)">#AMMOTRUCK.data</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Data</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AMMOTRUCK).FindTruck" ><strong>AMMOTRUCK:FindTruck(name)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##FindTruck" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AMMOTRUCK</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Truck group name to find</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AMMOTRUCK.data)">#AMMOTRUCK.data</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Data</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AMMOTRUCK).GetAmmoStatus" ><strong>AMMOTRUCK:GetAmmoStatus(Group)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##GetAmmoStatus" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AMMOTRUCK</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>Group</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -3360,51 +3131,7 @@ To exclude trucks and artillery:
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p>#number:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>LOS Line of sight in meters</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).GetSmokeColor" ><strong>AUTOLASE:GetSmokeColor(RecceName)</strong></a></h2>
-</div>
-    
-<p>(Internal) Function to get a smoke color by recce name</p>
-
-<div id= "#Functions##GetSmokeColor" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>RecceName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Unit(!) name of the Recce</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+        <p><a href="##(AMMOTRUCK)">#AMMOTRUCK</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -3420,28 +3147,41 @@ To exclude trucks and artillery:
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).New" ><strong>AUTOLASE:New(RecceSet, Coalition, Alias, PilotSet)</strong></a></h2>
+<h2><a id="#(AMMOTRUCK).New" ><strong>AMMOTRUCK:New(Truckset, Targetset, Coalition, Alias, Homezone)</strong></a></h2>
 </div>
     
-<p>Constructor for a new Autolase instance.</p>
+
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AUTOLASE</p>
+<p>AMMOTRUCK</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
                 <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
-            <strong><strong>RecceSet</strong></strong>
+            <strong><strong>Truckset</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Set of detecting and lasing units</p>
+<p>Set of truck groups</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+            <strong><strong>Targetset</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Set of artillery groups</p>
 
           </div>
         </div>
@@ -3454,7 +3194,7 @@ To exclude trucks and artillery:
           </div>
           <div class="w3-half">
               
-<p>Coalition side. Can also be passed as a string "red", "blue" or "neutral".</p>
+<p>Coalition</p>
 
           </div>
         </div>
@@ -3467,128 +3207,27 @@ To exclude trucks and artillery:
           </div>
           <div class="w3-half">
               
-<p>(Optional) An alias how this object is called in the logs etc.</p>
+<p>Alias Name</p>
 
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Core.Set.html##(SET_CLIENT)">Core.Set#SET_CLIENT</a>
-            <strong><strong>PilotSet</strong></strong>
+                <a href="Core.Zone.html##(ZONE)">Core.Zone#ZONE</a>
+            <strong><strong>Homezone</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>(Optional) Set of clients for precision bombing, steering menu creation. Leave nil for a coalition-wide F10 entry and display.</p>
+<p>Home, return zone for trucks </p>
 
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).NotifyPilots" ><strong>AUTOLASE:NotifyPilots(Message, Duration)</strong></a></h2>
-</div>
-    
-<p>(Internal) Function to show messages.</p>
-
-<div id= "#Functions##NotifyPilots" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Message</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The message to be sent</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Duration</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Duration in seconds</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).NotifyPilotsWithSRS" ><strong>AUTOLASE:NotifyPilotsWithSRS(Message)</strong></a></h2>
-</div>
-    
-<p>(User) Send messages via SRS.</p>
-
-<div id= "#Functions##NotifyPilotsWithSRS" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Message</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The (short!) message to be sent, e.g. "Lasing target!"</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+        <p><a href="##(AMMOTRUCK)">#AMMOTRUCK</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -3597,12 +3236,12 @@ To exclude trucks and artillery:
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>Step 1 - set up the radio basics **once** with
-           my_autolase:SetUsingSRS(true,"C:\\path\\SRS-Folder",251,radio.modulation.AM)
-Step 2 - send a message, e.g.
-           function my_autolase:OnAfterLasing(From, Event, To, LaserSpot)
-               my_autolase:NotifyPilotsWithSRS("Reaper lasing new target!")
-           end</code></pre>
+    <pre class="example"><code>Define a set of trucks and a set of artillery:  
+           local truckset = SET_GROUP:New():FilterCoalitions("blue"):FilterActive(true):FilterCategoryGround():FilterPrefixes("Ammo Truck"):FilterStart()
+           local ariset = SET_GROUP:New():FilterCoalitions("blue"):FilterActive(true):FilterCategoryGround():FilterPrefixes("Artillery"):FilterStart()
+
+Create an AMMOTRUCK object to take care of the artillery using the trucks, with a homezone:  
+           local ammotruck = AMMOTRUCK:New(truckset,ariset,coalition.side.BLUE,"Logistics",ZONE:FindByName("HomeZone") </code></pre>
 
 </div>
 
@@ -3612,16 +3251,16 @@ Step 2 - send a message, e.g.
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).OnAfterLaserTimeout" ><strong>AUTOLASE:OnAfterLaserTimeout(From, Event, To, UnitName, RecceName)</strong></a></h2>
+<h2><a id="#(AMMOTRUCK).OnAfterRouteTruck" ><strong>AMMOTRUCK:OnAfterRouteTruck(From, Event, To, Truck)</strong></a></h2>
 </div>
     
-<p>On After "LaserTimeout" event.</p>
+<p>On after "RouteTruck" event.</p>
 
-<div id= "#Functions##OnAfterLaserTimeout" class="w3-show w3-white">
+<div id= "#Functions##OnAfterRouteTruck" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AUTOLASE</p>
+<p>AMMOTRUCK</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -3633,7 +3272,7 @@ Step 2 - send a message, e.g.
           </div>
           <div class="w3-half">
               
-<p>The from state</p>
+<p>From state.</p>
 
           </div>
         </div>
@@ -3646,7 +3285,7 @@ Step 2 - send a message, e.g.
           </div>
           <div class="w3-half">
               
-<p>The event</p>
+<p>Event.</p>
 
           </div>
         </div>
@@ -3659,34 +3298,19 @@ Step 2 - send a message, e.g.
           </div>
           <div class="w3-half">
               
-<p>The to state</p>
+<p>To state.</p>
 
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #string
-            <strong><strong>UnitName</strong></strong>
+                <a href="##(AMMOTRUCK.data)">#AMMOTRUCK.data</a>
+            <strong><strong>Truck</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The lost unit's name</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>RecceName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The Recce name lasing</p>
-
+              <p></p>
           </div>
         </div>
 </div>
@@ -3697,16 +3321,16 @@ Step 2 - send a message, e.g.
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).OnAfterLasing" ><strong>AUTOLASE:OnAfterLasing(From, Event, To, LaserSpot)</strong></a></h2>
+<h2><a id="#(AMMOTRUCK).OnAfterTruckHome" ><strong>AMMOTRUCK:OnAfterTruckHome(From, Event, To, Truck)</strong></a></h2>
 </div>
     
-<p>On After "Lasing" event.</p>
+<p>On after "TruckHome" event.</p>
 
-<div id= "#Functions##OnAfterLasing" class="w3-show w3-white">
+<div id= "#Functions##OnAfterTruckHome" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AUTOLASE</p>
+<p>AMMOTRUCK</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -3718,7 +3342,7 @@ Step 2 - send a message, e.g.
           </div>
           <div class="w3-half">
               
-<p>The from state</p>
+<p>From state.</p>
 
           </div>
         </div>
@@ -3731,7 +3355,7 @@ Step 2 - send a message, e.g.
           </div>
           <div class="w3-half">
               
-<p>The event</p>
+<p>Event.</p>
 
           </div>
         </div>
@@ -3744,21 +3368,19 @@ Step 2 - send a message, e.g.
           </div>
           <div class="w3-half">
               
-<p>The to state</p>
+<p>To state.</p>
 
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Functional.Autolase.html##(AUTOLASE.LaserSpot)">Functional.Autolase#AUTOLASE.LaserSpot</a>
-            <strong><strong>LaserSpot</strong></strong>
+                <a href="##(AMMOTRUCK.data)">#AMMOTRUCK.data</a>
+            <strong><strong>Truck</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The LaserSpot data table</p>
-
+              <p></p>
           </div>
         </div>
 </div>
@@ -3769,16 +3391,16 @@ Step 2 - send a message, e.g.
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).OnAfterRecceKIA" ><strong>AUTOLASE:OnAfterRecceKIA(From, Event, To, RecceName)</strong></a></h2>
+<h2><a id="#(AMMOTRUCK).OnAfterTruckReturning" ><strong>AMMOTRUCK:OnAfterTruckReturning(From, Event, To, Truck)</strong></a></h2>
 </div>
     
-<p>On After "RecceKIA" event.</p>
+<p>On after "TruckReturning" event.</p>
 
-<div id= "#Functions##OnAfterRecceKIA" class="w3-show w3-white">
+<div id= "#Functions##OnAfterTruckReturning" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AUTOLASE</p>
+<p>AMMOTRUCK</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -3790,7 +3412,7 @@ Step 2 - send a message, e.g.
           </div>
           <div class="w3-half">
               
-<p>The from state</p>
+<p>From state.</p>
 
           </div>
         </div>
@@ -3803,7 +3425,7 @@ Step 2 - send a message, e.g.
           </div>
           <div class="w3-half">
               
-<p>The event</p>
+<p>Event.</p>
 
           </div>
         </div>
@@ -3816,21 +3438,19 @@ Step 2 - send a message, e.g.
           </div>
           <div class="w3-half">
               
-<p>The to state</p>
+<p>To state.</p>
 
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #string
-            <strong><strong>RecceName</strong></strong>
+                <a href="##(AMMOTRUCK.data)">#AMMOTRUCK.data</a>
+            <strong><strong>Truck</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The lost Recce</p>
-
+              <p></p>
           </div>
         </div>
 </div>
@@ -3841,16 +3461,16 @@ Step 2 - send a message, e.g.
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).OnAfterTargetDestroyed" ><strong>AUTOLASE:OnAfterTargetDestroyed(From, Event, To, UnitName, RecceName)</strong></a></h2>
+<h2><a id="#(AMMOTRUCK).OnAfterTruckUnloading" ><strong>AMMOTRUCK:OnAfterTruckUnloading(From, Event, To, Truck)</strong></a></h2>
 </div>
     
-<p>On After "TargetDestroyed" event.</p>
+<p>On after "TruckUnloading" event.</p>
 
-<div id= "#Functions##OnAfterTargetDestroyed" class="w3-show w3-white">
+<div id= "#Functions##OnAfterTruckUnloading" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AUTOLASE</p>
+<p>AMMOTRUCK</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -3862,7 +3482,7 @@ Step 2 - send a message, e.g.
           </div>
           <div class="w3-half">
               
-<p>The from state</p>
+<p>From state.</p>
 
           </div>
         </div>
@@ -3875,7 +3495,7 @@ Step 2 - send a message, e.g.
           </div>
           <div class="w3-half">
               
-<p>The event</p>
+<p>Event.</p>
 
           </div>
         </div>
@@ -3888,34 +3508,19 @@ Step 2 - send a message, e.g.
           </div>
           <div class="w3-half">
               
-<p>The to state</p>
+<p>To state.</p>
 
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #string
-            <strong><strong>UnitName</strong></strong>
+                <a href="##(AMMOTRUCK.data)">#AMMOTRUCK.data</a>
+            <strong><strong>Truck</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The destroyed unit's name</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>RecceName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The Recce name lasing</p>
-
+              <p></p>
           </div>
         </div>
 </div>
@@ -3926,83 +3531,20 @@ Step 2 - send a message, e.g.
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).OnAfterTargetLost" ><strong>AUTOLASE:OnAfterTargetLost(From, Event, To, UnitName, RecceName)</strong></a></h2>
+<h2><a id="#(AMMOTRUCK).Stop" ><strong>AMMOTRUCK:Stop()</strong></a></h2>
 </div>
     
-<p>On After "TargetLost" event.</p>
+<p>Triggers the FSM event "Stop".</p>
 
-<div id= "#Functions##OnAfterTargetLost" class="w3-show w3-white">
+    
+<p>Stops the AMMOTRUCK and all its event handlers.</p>
+
+<div id= "#Functions##Stop" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AUTOLASE</p>
+<p>AMMOTRUCK</p>
 </div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>From</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The from state</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Event</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The event</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>To</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The to state</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>UnitName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The lost unit's name</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>RecceName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The Recce name lasing</p>
-
-          </div>
-        </div>
 </div>
 
 </div>
@@ -4011,23 +3553,81 @@ Step 2 - send a message, e.g.
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).OnEventPlayerEnterAircraft" ><strong>AUTOLASE:OnEventPlayerEnterAircraft(EventData)</strong></a></h2>
+<h2><a id="#(AMMOTRUCK).__Stop" ><strong>AMMOTRUCK:__Stop(delay)</strong></a></h2>
 </div>
     
-<p>(Internal) Event function for new pilots.</p>
+<p>Triggers the FSM event "Stop" after a delay.</p>
 
-<div id= "#Functions##OnEventPlayerEnterAircraft" class="w3-show w3-white">
+    
+<p>Stops the AMMOTRUCK and all its event handlers.</p>
+
+<div id= "#Functions##__Stop" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AUTOLASE</p>
+<p>AMMOTRUCK</p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
-            <strong><strong>EventData</strong></strong>
+                #number
+            <strong><strong>delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Delay in seconds.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AMMOTRUCK).onafterMonitor" ><strong>AMMOTRUCK:onafterMonitor(From, Event, To)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##onafterMonitor" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AMMOTRUCK</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -4037,7 +3637,7 @@ Step 2 - send a message, e.g.
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+        <p><a href="##(AMMOTRUCK)">#AMMOTRUCK</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -4053,841 +3653,16 @@ Step 2 - send a message, e.g.
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).SetLaserCoolDown" ><strong>AUTOLASE:SetLaserCoolDown(OnOff, Seconds)</strong></a></h2>
+<h2><a id="#(AMMOTRUCK).onafterRouteTruck" ><strong>AMMOTRUCK:onafterRouteTruck(From, Event, To, Truckdata, Aridata)</strong></a></h2>
 </div>
     
-<p>(User) Function to force laser cooldown and cool down time</p>
 
-<div id= "#Functions##SetLaserCoolDown" class="w3-show w3-white">
+
+<div id= "#Functions##onafterRouteTruck" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #boolean
-            <strong><strong>OnOff</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Switch cool down on (true) or off (false) - defaults to true</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Seconds</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Number of seconds for cooldown - dafaults to 60 seconds</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).SetLasingParameters" ><strong>AUTOLASE:SetLasingParameters(Distance, Duration)</strong></a></h2>
-</div>
-    
-<p>(User) Function to set lasing distance in meters and duration in seconds</p>
-
-<div id= "#Functions##SetLasingParameters" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Distance</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Max) distance for lasing in meters - default 5000 meters</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Duration</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Max) duration for lasing in seconds - default 300 secs</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).SetMaxLasingTargets" ><strong>AUTOLASE:SetMaxLasingTargets(Number)</strong></a></h2>
-</div>
-    
-<p>(User) Function set max lasing targets</p>
-
-<div id= "#Functions##SetMaxLasingTargets" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Number</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Max number of targets to lase at once</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).SetMinThreatLevel" ><strong>AUTOLASE:SetMinThreatLevel(Level)</strong></a></h2>
-</div>
-    
-<p>(User) Set minimum threat level for target selection, can be 0 (lowest) to 10 (highest).</p>
-
-<div id= "#Functions##SetMinThreatLevel" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Level</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Level used for filtering, defaults to 0. SAM systems and manpads have level 7 to 10, AAA level 6, MTBs and armoured vehicles level 3 to 5, APC, Artillery, Infantry and EWR level 1 to 2.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-      <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>Filter for level 3 and above:
-           `myautolase:SetMinThreatLevel(3)`</code></pre>
-
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).SetNotifyPilots" ><strong>AUTOLASE:SetNotifyPilots(OnOff)</strong></a></h2>
-</div>
-    
-<p>(Internal) Function set notify pilots on events</p>
-
-<div id= "#Functions##SetNotifyPilots" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #boolean
-            <strong><strong>OnOff</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Switch messaging on (true) or off (false)</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).SetPilotMenu" ><strong>AUTOLASE:SetPilotMenu()</strong></a></h2>
-</div>
-    
-<p>(Internal) Function to set pilot menu.</p>
-
-<div id= "#Functions##SetPilotMenu" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).SetRecceLaserCode" ><strong>AUTOLASE:SetRecceLaserCode(RecceName, Code)</strong></a></h2>
-</div>
-    
-<p>(User) Function to set a specific code to a Recce.</p>
-
-<div id= "#Functions##SetRecceLaserCode" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>RecceName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Unit!) Name of the Recce</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Code</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The lase code</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).SetRecceSmokeColor" ><strong>AUTOLASE:SetRecceSmokeColor(RecceName, Color)</strong></a></h2>
-</div>
-    
-<p>(User) Function to set a specific smoke color for a Recce.</p>
-
-<div id= "#Functions##SetRecceSmokeColor" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>RecceName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Unit!) Name of the Recce</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Color</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The color, e.g. SMOKECOLOR.Red, SMOKECOLOR.Green etc</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).SetReportingTimes" ><strong>AUTOLASE:SetReportingTimes(long, short)</strong></a></h2>
-</div>
-    
-<p>(User) Function to set message show times.</p>
-
-<div id= "#Functions##SetReportingTimes" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>long</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Longer show time</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>short</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Shorter show time</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).SetSmokeTargets" ><strong>AUTOLASE:SetSmokeTargets(OnOff, Color)</strong></a></h2>
-</div>
-    
-<p>(User) Function to set smoking of targets.</p>
-
-<div id= "#Functions##SetSmokeTargets" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #boolean
-            <strong><strong>OnOff</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Switch smoking on or off</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Color</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Smokecolor, e.g. SMOKECOLOR.Red</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).SetUsingSRS" ><strong>AUTOLASE:SetUsingSRS(OnOff, Path, Frequency, Modulation, Label, Gender, Culture, Port, Voice, Volume, PathToGoogleKey)</strong></a></h2>
-</div>
-    
-<p>(User) Function enable sending messages via SRS.</p>
-
-<div id= "#Functions##SetUsingSRS" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #boolean
-            <strong><strong>OnOff</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Switch usage on and off</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Path</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Path to SRS directory, e.g. C:\Program Files\DCS-SimpleRadio-Standalon</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Frequency</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Frequency to send, e.g. 243</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Modulation</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Modulation i.e. radio.modulation.AM or radio.modulation.FM</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Label</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) Short label to be used on the SRS Client Overlay</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Gender</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) Defaults to "male"</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Culture</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) Defaults to "en-US"</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Port</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) Defaults to 5002</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Voice</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) Use a specifc voice with the <a href="Sound.SRS.SetVoice.html">Sound.SRS.SetVoice</a> function, e.g, <code>:SetVoice("Microsoft Hedda Desktop")</code>.
-Note that this must be installed on your windows system. Can also be Google voice types, if you are using Google TTS.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Volume</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) Volume - between 0.0 (silent) and 1.0 (loudest)</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>PathToGoogleKey</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) Path to your google key if you want to use google TTS</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).ShowStatus" ><strong>AUTOLASE:ShowStatus(Group, Unit)</strong></a></h2>
-</div>
-    
-<p>(Internal) Function to show status.</p>
-
-<div id= "#Functions##ShowStatus" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>Group</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) show to a certain group</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
-            <strong><strong>Unit</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) show to a certain unit</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).Status" ><strong>AUTOLASE:Status()</strong></a></h2>
-</div>
-    
-<p>Triggers the FSM event "Monitor".</p>
-
-<div id= "#Functions##Status" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).__Cancel" ><strong>AUTOLASE:__Cancel(delay)</strong></a></h2>
-</div>
-    
-<p>Triggers the FSM event "Cancel" after a delay.</p>
-
-<div id= "#Functions##__Cancel" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>delay</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Delay in seconds.</p>
-
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).__Status" ><strong>AUTOLASE:__Status(delay)</strong></a></h2>
-</div>
-    
-<p>Triggers the FSM event "Monitor" after a delay.</p>
-
-<div id= "#Functions##__Status" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>delay</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Delay in seconds.</p>
-
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).onafterMonitor" ><strong>AUTOLASE:onafterMonitor(From, Event, To)</strong></a></h2>
-</div>
-    
-<p>(Internal) FSM Function for monitoring</p>
-
-<div id= "#Functions##onafterMonitor" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
+<p>AMMOTRUCK</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -4898,9 +3673,7 @@ Note that this must be installed on your windows system. Can also be Google voic
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The from state</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -4911,9 +3684,7 @@ Note that this must be installed on your windows system. Can also be Google voic
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The event</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -4924,19 +3695,39 @@ Note that this must be installed on your windows system. Can also be Google voic
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The to state</p>
-
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(AMMOTRUCK.data)">#AMMOTRUCK.data</a>
+            <strong><strong>Truckdata</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(AMMOTRUCK.data)">#AMMOTRUCK.data</a>
+            <strong><strong>Aridata</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+        <p><a href="##(AMMOTRUCK)">#AMMOTRUCK</a>:</p>
       </div>
       <div class="w3-half">
         
-<p>self</p>
+<p>self </p>
 
       </div>
     </div>
@@ -4948,16 +3739,16 @@ Note that this must be installed on your windows system. Can also be Google voic
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).onbeforeCancel" ><strong>AUTOLASE:onbeforeCancel(From, Event, To)</strong></a></h2>
+<h2><a id="#(AMMOTRUCK).onafterStart" ><strong>AMMOTRUCK:onafterStart(From, Event, To)</strong></a></h2>
 </div>
     
-<p>(Internal) FSM Function onbeforeCancel</p>
 
-<div id= "#Functions##onbeforeCancel" class="w3-show w3-white">
+
+<div id= "#Functions##onafterStart" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AUTOLASE</p>
+<p>AMMOTRUCK</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -4968,9 +3759,7 @@ Note that this must be installed on your windows system. Can also be Google voic
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The from state</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -4981,9 +3770,7 @@ Note that this must be installed on your windows system. Can also be Google voic
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The event</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -4994,19 +3781,17 @@ Note that this must be installed on your windows system. Can also be Google voic
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The to state</p>
-
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+        <p><a href="##(AMMOTRUCK)">#AMMOTRUCK</a>:</p>
       </div>
       <div class="w3-half">
         
-<p>self</p>
+<p>self </p>
 
       </div>
     </div>
@@ -5018,16 +3803,16 @@ Note that this must be installed on your windows system. Can also be Google voic
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).onbeforeLaserTimeout" ><strong>AUTOLASE:onbeforeLaserTimeout(From, Event, To, UnitName, RecceName)</strong></a></h2>
+<h2><a id="#(AMMOTRUCK).onafterStop" ><strong>AMMOTRUCK:onafterStop(From, Event, To)</strong></a></h2>
 </div>
     
-<p>(Internal) FSM Function onbeforeLaserTimeout</p>
 
-<div id= "#Functions##onbeforeLaserTimeout" class="w3-show w3-white">
+
+<div id= "#Functions##onafterStop" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AUTOLASE</p>
+<p>AMMOTRUCK</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5038,9 +3823,7 @@ Note that this must be installed on your windows system. Can also be Google voic
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The from state</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5051,9 +3834,7 @@ Note that this must be installed on your windows system. Can also be Google voic
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The event</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5064,45 +3845,17 @@ Note that this must be installed on your windows system. Can also be Google voic
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The to state</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>UnitName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The lost unit's name</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>RecceName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The Recce name lasing</p>
-
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+        <p><a href="##(AMMOTRUCK)">#AMMOTRUCK</a>:</p>
       </div>
       <div class="w3-half">
         
-<p>self</p>
+<p>self </p>
 
       </div>
     </div>
@@ -5114,16 +3867,16 @@ Note that this must be installed on your windows system. Can also be Google voic
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).onbeforeLasing" ><strong>AUTOLASE:onbeforeLasing(From, Event, To, LaserSpot)</strong></a></h2>
+<h2><a id="#(AMMOTRUCK).onafterTruckReturning" ><strong>AMMOTRUCK:onafterTruckReturning(From, Event, To, Truck)</strong></a></h2>
 </div>
     
-<p>(Internal) FSM Function onbeforeLasing</p>
 
-<div id= "#Functions##onbeforeLasing" class="w3-show w3-white">
+
+<div id= "#Functions##onafterTruckReturning" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AUTOLASE</p>
+<p>AMMOTRUCK</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5134,9 +3887,7 @@ Note that this must be installed on your windows system. Can also be Google voic
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The from state</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5147,9 +3898,7 @@ Note that this must be installed on your windows system. Can also be Google voic
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The event</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5160,32 +3909,28 @@ Note that this must be installed on your windows system. Can also be Google voic
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The to state</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Functional.Autolase.html##(AUTOLASE.LaserSpot)">Functional.Autolase#AUTOLASE.LaserSpot</a>
-            <strong><strong>LaserSpot</strong></strong>
+                <a href="##(AMMOTRUCK.data)">#AMMOTRUCK.data</a>
+            <strong><strong>Truck</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The LaserSpot data table</p>
-
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+        <p><a href="##(AMMOTRUCK)">#AMMOTRUCK</a>:</p>
       </div>
       <div class="w3-half">
         
-<p>self</p>
+<p>self </p>
 
       </div>
     </div>
@@ -5197,16 +3942,16 @@ Note that this must be installed on your windows system. Can also be Google voic
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).onbeforeMonitor" ><strong>AUTOLASE:onbeforeMonitor(From, Event, To)</strong></a></h2>
+<h2><a id="#(AMMOTRUCK).onafterTruckUnloading" ><strong>AMMOTRUCK:onafterTruckUnloading(From, Event, To, Truckdata)</strong></a></h2>
 </div>
     
-<p>(Internal) FSM Function for monitoring</p>
 
-<div id= "#Functions##onbeforeMonitor" class="w3-show w3-white">
+
+<div id= "#Functions##onafterTruckUnloading" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AUTOLASE</p>
+<p>AMMOTRUCK</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5217,9 +3962,7 @@ Note that this must be installed on your windows system. Can also be Google voic
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The from state</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5230,9 +3973,7 @@ Note that this must be installed on your windows system. Can also be Google voic
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The event</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -5243,294 +3984,28 @@ Note that this must be installed on your windows system. Can also be Google voic
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The to state</p>
-
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(AMMOTRUCK.data)">#AMMOTRUCK.data</a>
+            <strong><strong>Truckdata</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+        <p><a href="##(AMMOTRUCK)">#AMMOTRUCK</a>:</p>
       </div>
       <div class="w3-half">
         
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).onbeforeRecceKIA" ><strong>AUTOLASE:onbeforeRecceKIA(From, Event, To, RecceName)</strong></a></h2>
-</div>
-    
-<p>(Internal) FSM Function onbeforeRecceKIA</p>
-
-<div id= "#Functions##onbeforeRecceKIA" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>From</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The from state</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Event</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The event</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>To</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The to state</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>RecceName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The lost Recce</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).onbeforeTargetDestroyed" ><strong>AUTOLASE:onbeforeTargetDestroyed(From, Event, To, UnitName, RecceName)</strong></a></h2>
-</div>
-    
-<p>(Internal) FSM Function onbeforeTargetDestroyed</p>
-
-<div id= "#Functions##onbeforeTargetDestroyed" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>From</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The from state</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Event</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The event</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>To</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The to state</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>UnitName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The destroyed unit's name</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>RecceName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The Recce name lasing</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).onbeforeTargetLost" ><strong>AUTOLASE:onbeforeTargetLost(From, Event, To, UnitName, RecceName)</strong></a></h2>
-</div>
-    
-<p>(Internal) FSM Function onbeforeTargetLost</p>
-
-<div id= "#Functions##onbeforeTargetLost" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUTOLASE</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>From</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The from state</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Event</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The event</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>To</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The to state</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>UnitName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The lost unit's name</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>RecceName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The Recce name lasing</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
+<p>self </p>
 
       </div>
     </div>
@@ -5542,20 +4017,139 @@ Note that this must be installed on your windows system. Can also be Google voic
 </div>
 
         </div>
-      <div onclick="myFunction('#Types##AUTOLASE.LaserSpot')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AUTOLASE.LaserSpot)">Type <strong>AUTOLASE.LaserSpot</strong></a></h2></div>
-        <div id= "#Types##AUTOLASE.LaserSpot" class="w3-container w3-white w3-padding-16" id="module_other_types">
+      <div onclick="myFunction('#Types##AMMOTRUCK.State')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AMMOTRUCK.State)">Type <strong>AMMOTRUCK.State</strong></a></h2></div>
+        <div id= "#Types##AMMOTRUCK.State" class="w3-container w3-white w3-padding-16" id="module_other_types">
           <div class="w3-white" id="record_type">
-  
-<p>Laser spot info</p>
-
 <div class="fields w3-container w3-theme-l2">
   <h2>Field(s)</h2>
 </div>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #string
+<a id="#(AMMOTRUCK.State).ARRIVED" ><strong>AMMOTRUCK.State.ARRIVED</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AMMOTRUCK.State).DRIVING" ><strong>AMMOTRUCK.State.DRIVING</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AMMOTRUCK.State).IDLE" ><strong>AMMOTRUCK.State.IDLE</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AMMOTRUCK.State).OUTOFAMMO" ><strong>AMMOTRUCK.State.OUTOFAMMO</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AMMOTRUCK.State).RELOADING" ><strong>AMMOTRUCK.State.RELOADING</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AMMOTRUCK.State).REQUESTED" ><strong>AMMOTRUCK.State.REQUESTED</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AMMOTRUCK.State).RETURNING" ><strong>AMMOTRUCK.State.RETURNING</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AMMOTRUCK.State).UNLOADING" ><strong>AMMOTRUCK.State.UNLOADING</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AMMOTRUCK.State).WAITING" ><strong>AMMOTRUCK.State.WAITING</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div class="functions  w3-container w3-theme-l2">
+  <h2>Function(s)</h2>
+</div>  
+</div>
+
+        </div>
+      <div onclick="myFunction('#Types##AMMOTRUCK.data')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AMMOTRUCK.data)">Type <strong>AMMOTRUCK.data</strong></a></h2></div>
+        <div id= "#Types##AMMOTRUCK.data" class="w3-container w3-white w3-padding-16" id="module_other_types">
+          <div class="w3-white" id="record_type">
+<div class="fields w3-container w3-theme-l2">
+  <h2>Field(s)</h2>
+</div>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AMMOTRUCK.data).ammo" ><strong>AMMOTRUCK.data.ammo</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
-<a id="#(AUTOLASE.LaserSpot).coordinate" ><strong>AUTOLASE.LaserSpot.coordinate</strong></a>
+<a id="#(AMMOTRUCK.data).coordinate" ><strong>AMMOTRUCK.data.coordinate</strong></a>
     
 
 
@@ -5565,8 +4159,74 @@ Note that this must be installed on your windows system. Can also be Google voic
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
-<a id="#(AUTOLASE.LaserSpot).lasedunit" ><strong>AUTOLASE.LaserSpot.lasedunit</strong></a>
+    <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+<a id="#(AMMOTRUCK.data).group" ><strong>AMMOTRUCK.data.group</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AMMOTRUCK.data).lastspeed" ><strong>AMMOTRUCK.data.lastspeed</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AMMOTRUCK.data).name" ><strong>AMMOTRUCK.data.name</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="##(AMMOTRUCK.State)">#AMMOTRUCK.State</a>
+<a id="#(AMMOTRUCK.data).statusquo" ><strong>AMMOTRUCK.data.statusquo</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+<a id="#(AMMOTRUCK.data).targetcoordinate" ><strong>AMMOTRUCK.data.targetcoordinate</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+<a id="#(AMMOTRUCK.data).targetgroup" ><strong>AMMOTRUCK.data.targetgroup</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AMMOTRUCK.data).targetname" ><strong>AMMOTRUCK.data.targetname</strong></a>
     
 
 
@@ -5577,84 +4237,7 @@ Note that this must be installed on your windows system. Can also be Google voic
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
-<a id="#(AUTOLASE.LaserSpot).lasercode" ><strong>AUTOLASE.LaserSpot.lasercode</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    <a href="Core.Spot.html##(SPOT)">Core.Spot#SPOT</a>
-<a id="#(AUTOLASE.LaserSpot).laserspot" ><strong>AUTOLASE.LaserSpot.laserspot</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
-<a id="#(AUTOLASE.LaserSpot).lasingunit" ><strong>AUTOLASE.LaserSpot.lasingunit</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(AUTOLASE.LaserSpot).location" ><strong>AUTOLASE.LaserSpot.location</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(AUTOLASE.LaserSpot).reccename" ><strong>AUTOLASE.LaserSpot.reccename</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(AUTOLASE.LaserSpot).timestamp" ><strong>AUTOLASE.LaserSpot.timestamp</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(AUTOLASE.LaserSpot).unitname" ><strong>AUTOLASE.LaserSpot.unitname</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(AUTOLASE.LaserSpot).unittype" ><strong>AUTOLASE.LaserSpot.unittype</strong></a>
+<a id="#(AMMOTRUCK.data).timestamp" ><strong>AMMOTRUCK.data.timestamp</strong></a>
     
 
 
@@ -5670,7 +4253,7 @@ Note that this must be installed on your windows system. Can also be Google voic
 </div>
 <script>
 function myLoadFunction() {
-    document.getElementById("myHeader").style.backgroundImage = "url('../Images/Designation.JPG')";
+    document.getElementById("myHeader").style.backgroundImage = "url('../Images/Functional.AmmoTruck.jpg')";
 }
 </script>
 
