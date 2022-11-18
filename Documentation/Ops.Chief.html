@@ -2422,6 +2422,12 @@ Think of it as the local population providing the intel. It's not totally realis
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CHIEF).LegionLost">CHIEF:LegionLost(Legion, Coalition, Country)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "LegionLost".</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CHIEF).MissionAssign">CHIEF:MissionAssign(Mission, Legions)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "MissionAssign".</p>
@@ -2473,6 +2479,12 @@ Think of it as the local population providing the intel. It's not totally realis
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CHIEF).OnAfterDefconChange">CHIEF:OnAfterDefconChange(From, Event, To, Defcon)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "DefconChange" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CHIEF).OnAfterLegionLost">CHIEF:OnAfterLegionLost(From, Event, To, Legion, Coalition, Country)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "LegionLost" event.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2557,6 +2569,12 @@ Think of it as the local population providing the intel. It's not totally realis
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CHIEF).RemoveConflictZone">CHIEF:RemoveConflictZone(Zone)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Remove a conflict zone.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CHIEF).RemoveLegion">CHIEF:RemoveLegion(Legion)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Remove a LEGION to the chief's commander.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2809,6 +2827,12 @@ Think of it as the local population providing the intel. It's not totally realis
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CHIEF).__DefconChange">CHIEF:__DefconChange(delay, Defcon)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "DefconChange" after a delay.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CHIEF).__LegionLost">CHIEF:__LegionLost(delay, Legion, Coalition, Country)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "LegionLost".</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -5890,6 +5914,65 @@ if a destination can be reached on land.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(CHIEF).LegionLost" ><strong>CHIEF:LegionLost(Legion, Coalition, Country)</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "LegionLost".</p>
+
+<div id= "#Functions##LegionLost" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CHIEF</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.Legion.html##(LEGION)">Ops.Legion#LEGION</a>
+            <strong><strong>Legion</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The legion that was lost.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(coalition.side)">DCS#coalition.side</a>
+            <strong><strong>Coalition</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>which captured the warehouse.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(country.id)">DCS#country.id</a>
+            <strong><strong>Country</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>which has captured the warehouse.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(CHIEF).MissionAssign" ><strong>CHIEF:MissionAssign(Mission, Legions)</strong></a></h2>
 </div>
     
@@ -6100,6 +6183,104 @@ if a destination can be reached on land.</p>
           <div class="w3-half">
               
 <p>New Defence Condition.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CHIEF).OnAfterLegionLost" ><strong>CHIEF:OnAfterLegionLost(From, Event, To, Legion, Coalition, Country)</strong></a></h2>
+</div>
+    
+<p>On after "LegionLost" event.</p>
+
+<div id= "#Functions##OnAfterLegionLost" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CHIEF</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.Legion.html##(LEGION)">Ops.Legion#LEGION</a>
+            <strong><strong>Legion</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The legion that was lost.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(coalition.side)">DCS#coalition.side</a>
+            <strong><strong>Coalition</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>which captured the warehouse.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(country.id)">DCS#country.id</a>
+            <strong><strong>Country</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>which has captured the warehouse.</p>
 
           </div>
         </div>
@@ -6998,6 +7179,50 @@ if a destination can be reached on land.</p>
           <div class="w3-half">
               
 <p>The zone to be removed.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(CHIEF)">#CHIEF</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CHIEF).RemoveLegion" ><strong>CHIEF:RemoveLegion(Legion)</strong></a></h2>
+</div>
+    
+<p>Remove a LEGION to the chief's commander.</p>
+
+<div id= "#Functions##RemoveLegion" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CHIEF</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.Legion.html##(LEGION)">Ops.Legion#LEGION</a>
+            <strong><strong>Legion</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The legion to add.</p>
 
           </div>
         </div>
@@ -8878,6 +9103,78 @@ Targets with threat level 0 are usually harmless.</p>
           <div class="w3-half">
               
 <p>New Defence Condition.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CHIEF).__LegionLost" ><strong>CHIEF:__LegionLost(delay, Legion, Coalition, Country)</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "LegionLost".</p>
+
+<div id= "#Functions##__LegionLost" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CHIEF</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Delay in seconds.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.Legion.html##(LEGION)">Ops.Legion#LEGION</a>
+            <strong><strong>Legion</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The legion that was lost.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(coalition.side)">DCS#coalition.side</a>
+            <strong><strong>Coalition</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>which captured the warehouse.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(country.id)">DCS#country.id</a>
+            <strong><strong>Country</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>which has captured the warehouse.</p>
 
           </div>
         </div>
