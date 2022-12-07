@@ -1986,6 +1986,18 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION).RemoveFunction">CONDITION:RemoveFunction(ConditionFunction)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Remove a condition function.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION).RemoveNonPersistant">CONDITION:RemoveNonPersistant()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Remove all non-persistant condition functions.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION).ReturnFalse">CONDITION.ReturnFalse()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Function that returns always <code>false</code></p>
@@ -2004,13 +2016,25 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION).SetDefaultPersistence">CONDITION:SetDefaultPersistence(IsPersistent)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set whether condition functions are persistent, <em>i.e.</em> are removed.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION).SetNegateResult">CONDITION:SetNegateResult(Negate)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Negate result.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION)._CreateCondition">CONDITION:_CreateCondition(Function, ...)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION).SetNoneResult">CONDITION:SetNoneResult(ReturnValue)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set whether <code>true</code> or <code>false</code> is returned, if no conditions at all were specified.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION)._CreateCondition">CONDITION:_CreateCondition(Ftype, Function, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Create conditon function object.</p>
 </td>
@@ -2028,10 +2052,22 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION).defaultPersist">CONDITION.defaultPersist</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Default persistence of condition functions.</p>
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION).functionCounter">CONDITION.functionCounter</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Running number to determine the unique ID of condition functions.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION).functionsAll">CONDITION.functionsAll</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>All condition functions.</p>
-
 </td>
           </tr>
           <tr class="w3-border">
@@ -2067,7 +2103,13 @@
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION).negateResult">CONDITION.negateResult</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Negeate result of evaluation.</p>
+<p>Negate result of evaluation.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION).noneResult">CONDITION.noneResult</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Boolean that is returned if no condition functions at all were specified.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2634,7 +2676,25 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION.Function).func">CONDITION.Function.func</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Callback function to check for a condition. Should return a <code>#boolean</code>.</p>
+<p>Callback function to check for a condition. Must return a <code>#boolean</code>.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION.Function).persistence">CONDITION.Function.persistence</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>If <code>true</code>, this is persistent.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION.Function).type">CONDITION.Function.type</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Type of the condition function: "gen", "any", "all".</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONDITION.Function).uid">CONDITION.Function.uid</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Unique ID of the condition function.</p>
 </td>
           </tr>
         </table>
@@ -2669,11 +2729,33 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(CONDITION).defaultPersist" ><strong>CONDITION.defaultPersist</strong></a>
+    
+<p>Default persistence of condition functions.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CONDITION).functionCounter" ><strong>CONDITION.functionCounter</strong></a>
+    
+<p>Running number to determine the unique ID of condition functions.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(CONDITION).functionsAll" ><strong>CONDITION.functionsAll</strong></a>
     
 <p>All condition functions.</p>
-
 
 </div>
 
@@ -2739,7 +2821,18 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     #boolean
 <a id="#(CONDITION).negateResult" ><strong>CONDITION.negateResult</strong></a>
     
-<p>Negeate result of evaluation.</p>
+<p>Negate result of evaluation.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(CONDITION).noneResult" ><strong>CONDITION.noneResult</strong></a>
+    
+<p>Boolean that is returned if no condition functions at all were specified.</p>
 
 </div>
 
@@ -2805,11 +2898,11 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(CONDITION)">#CONDITION</a>:</p>
+        <p><a href="##(CONDITION.Function)">#CONDITION.Function</a>:</p>
       </div>
       <div class="w3-half">
         
-<p>self</p>
+<p>Condition function table.</p>
 
       </div>
     </div>
@@ -2872,11 +2965,11 @@ myCondition:AddFunction(isAequalB, a, b)
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(CONDITION)">#CONDITION</a>:</p>
+        <p><a href="##(CONDITION.Function)">#CONDITION.Function</a>:</p>
       </div>
       <div class="w3-half">
         
-<p>self</p>
+<p>Condition function table.</p>
 
       </div>
     </div>
@@ -2931,11 +3024,11 @@ myCondition:AddFunction(isAequalB, a, b)
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(CONDITION)">#CONDITION</a>:</p>
+        <p><a href="##(CONDITION.Function)">#CONDITION.Function</a>:</p>
       </div>
       <div class="w3-half">
         
-<p>self</p>
+<p>Condition function table.</p>
 
       </div>
     </div>
@@ -3140,6 +3233,80 @@ Technically, a random number between 0 and 100 is created. If the given success 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(CONDITION).RemoveFunction" ><strong>CONDITION:RemoveFunction(ConditionFunction)</strong></a></h2>
+</div>
+    
+<p>Remove a condition function.</p>
+
+<div id= "#Functions##RemoveFunction" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CONDITION</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(CONDITION.Function)">#CONDITION.Function</a>
+            <strong><strong>ConditionFunction</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The condition function to be removed.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(CONDITION)">#CONDITION</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CONDITION).RemoveNonPersistant" ><strong>CONDITION:RemoveNonPersistant()</strong></a></h2>
+</div>
+    
+<p>Remove all non-persistant condition functions.</p>
+
+<div id= "#Functions##RemoveNonPersistant" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CONDITION</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(CONDITION)">#CONDITION</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(CONDITION).ReturnFalse" ><strong>CONDITION.ReturnFalse()</strong></a></h2>
 </div>
     
@@ -3247,6 +3414,50 @@ Technically, a random number between 0 and 100 is created. If the given success 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(CONDITION).SetDefaultPersistence" ><strong>CONDITION:SetDefaultPersistence(IsPersistent)</strong></a></h2>
+</div>
+    
+<p>Set whether condition functions are persistent, <em>i.e.</em> are removed.</p>
+
+<div id= "#Functions##SetDefaultPersistence" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CONDITION</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>IsPersistent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If <code>true</code>, condition functions are persistent.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(CONDITION)">#CONDITION</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(CONDITION).SetNegateResult" ><strong>CONDITION:SetNegateResult(Negate)</strong></a></h2>
 </div>
     
@@ -3291,7 +3502,54 @@ Technically, a random number between 0 and 100 is created. If the given success 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CONDITION)._CreateCondition" ><strong>CONDITION:_CreateCondition(Function, ...)</strong></a></h2>
+<h2><a id="#(CONDITION).SetNoneResult" ><strong>CONDITION:SetNoneResult(ReturnValue)</strong></a></h2>
+</div>
+    
+<p>Set whether <code>true</code> or <code>false</code> is returned, if no conditions at all were specified.</p>
+
+    
+<p>By default <code>false</code> is returned.</p>
+
+<div id= "#Functions##SetNoneResult" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CONDITION</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>ReturnValue</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Returns this boolean.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(CONDITION)">#CONDITION</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CONDITION)._CreateCondition" ><strong>CONDITION:_CreateCondition(Ftype, Function, ...)</strong></a></h2>
 </div>
     
 <p>Create conditon function object.</p>
@@ -3303,6 +3561,19 @@ Technically, a random number between 0 and 100 is created. If the given success 
 <p>CONDITION</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Ftype</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Function type: 0=Gen, 1=All, 2=Any.</p>
+
+          </div>
+        </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -3449,11 +3720,33 @@ Technically, a random number between 0 and 100 is created. If the given success 
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(CONDITION).defaultPersist" ><strong>CONDITION.defaultPersist</strong></a>
+    
+<p>Default persistence of condition functions.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CONDITION).functionCounter" ><strong>CONDITION.functionCounter</strong></a>
+    
+<p>Running number to determine the unique ID of condition functions.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(CONDITION).functionsAll" ><strong>CONDITION.functionsAll</strong></a>
     
 <p>All condition functions.</p>
-
 
 </div>
 
@@ -3519,7 +3812,18 @@ Technically, a random number between 0 and 100 is created. If the given success 
     #boolean
 <a id="#(CONDITION).negateResult" ><strong>CONDITION.negateResult</strong></a>
     
-<p>Negeate result of evaluation.</p>
+<p>Negate result of evaluation.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(CONDITION).noneResult" ><strong>CONDITION.noneResult</strong></a>
+    
+<p>Boolean that is returned if no condition functions at all were specified.</p>
 
 </div>
 
@@ -6914,7 +7218,40 @@ When moose is loading dynamically (for moose class development), tracing is swit
     #function
 <a id="#(CONDITION.Function).func" ><strong>CONDITION.Function.func</strong></a>
     
-<p>Callback function to check for a condition. Should return a <code>#boolean</code>.</p>
+<p>Callback function to check for a condition. Must return a <code>#boolean</code>.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(CONDITION.Function).persistence" ><strong>CONDITION.Function.persistence</strong></a>
+    
+<p>If <code>true</code>, this is persistent.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(CONDITION.Function).type" ><strong>CONDITION.Function.type</strong></a>
+    
+<p>Type of the condition function: "gen", "any", "all".</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CONDITION.Function).uid" ><strong>CONDITION.Function.uid</strong></a>
+    
+<p>Unique ID of the condition function.</p>
 
 </div>
 
