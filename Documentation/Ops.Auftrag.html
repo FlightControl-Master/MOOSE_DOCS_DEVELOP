@@ -2861,6 +2861,12 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewCAPGROUP">AUFTRAG:NewCAPGROUP(group, Altitude, Speed, Leg, RelHeading, OffsetDist, OffsetAngle, UpdateDistance, TargetTypes, EngageRange, Grp)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p><strong>[AIRPANE]</strong> Create a CAP on group mission.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewCARGOTRANSPORT">AUFTRAG:NewCARGOTRANSPORT(StaticCargo, DropZone)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[AIR ROTARY]</strong> Create a CARGO TRANSPORT mission.</p>
@@ -12278,6 +12284,175 @@ This determines the payload and the DCS mission task which are used when the air
               
 <p>Table of target types. Default {"Air"}.</p>
 
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).NewCAPGROUP" ><strong>AUFTRAG:NewCAPGROUP(group, Altitude, Speed, Leg, RelHeading, OffsetDist, OffsetAngle, UpdateDistance, TargetTypes, EngageRange, Grp)</strong></a></h2>
+</div>
+    
+<p><strong>[AIRPANE]</strong> Create a CAP on group mission.</p>
+
+<div id= "#Functions##NewCAPGROUP" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>group</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Altitude</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Orbit altitude in feet. Default is 6,000 ft.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Orbit speed in knots. Default 250 KIAS.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Leg</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Length of race-track in NM. Default 14 NM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>RelHeading</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Relative heading [0, 360) of race-track pattern in degrees wrt heading of the carrier. Default is heading of the carrier.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>OffsetDist</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Relative distance of the first race-track point wrt to the carrier. Default 6 NM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>OffsetAngle</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Relative angle of the first race-track point wrt. to the carrier. Default 180 (behind the boat).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>UpdateDistance</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Threshold distance in NM before orbit pattern is updated. Default 5 NM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>TargetTypes</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Table of target types. Default <code>{"Helicopters", "Ground Units", "Light armed ships"}</code>.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>EngageRange</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Max range in nautical miles that the escort group(s) will engage enemies. Default 32 NM (60 km).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Grp</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
