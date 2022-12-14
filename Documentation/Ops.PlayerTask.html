@@ -3634,7 +3634,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).AddPlayerTaskToQueue">PLAYERTASKCONTROLLER:AddPlayerTaskToQueue(PlayerTask, Silent)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).AddPlayerTaskToQueue">PLAYERTASKCONTROLLER:AddPlayerTaskToQueue(PlayerTask, Silent, TaskFilter)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Add a PLAYERTASK object to the list of (open) tasks</p>
 </td>
@@ -14785,7 +14785,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(PLAYERTASKCONTROLLER).AddPlayerTaskToQueue" ><strong>PLAYERTASKCONTROLLER:AddPlayerTaskToQueue(PlayerTask, Silent)</strong></a></h2>
+<h2><a id="#(PLAYERTASKCONTROLLER).AddPlayerTaskToQueue" ><strong>PLAYERTASKCONTROLLER:AddPlayerTaskToQueue(PlayerTask, Silent, TaskFilter)</strong></a></h2>
 </div>
     
 <p>[User] Add a PLAYERTASK object to the list of (open) tasks</p>
@@ -14818,6 +14818,19 @@ When moose is loading dynamically (for moose class development), tracing is swit
           <div class="w3-half">
               
 <p>If true, make no "has new task" announcement</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(boolen)">#boolen</a>
+            <strong><strong>TaskFilter</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true, apply the white/black-list task filters here, also</p>
 
           </div>
         </div>
