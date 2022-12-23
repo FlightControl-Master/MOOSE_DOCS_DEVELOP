@@ -2861,9 +2861,9 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewCAPGROUP">AUFTRAG:NewCAPGROUP(group, Altitude, Speed, Leg, RelHeading, OffsetDist, OffsetAngle, UpdateDistance, TargetTypes, EngageRange, Grp)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewCAPGROUP">AUFTRAG:NewCAPGROUP(Grp, Altitude, Speed, RelHeading, Leg, OffsetDist, OffsetAngle, UpdateDistance, TargetTypes, EngageRange)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p><strong>[AIRPANE]</strong> Create a CAP on group mission.</p>
+<p><strong>[AIR]</strong> Create a CAP mission on a group.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -12316,10 +12316,10 @@ This determines the payload and the DCS mission task which are used when the air
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUFTRAG).NewCAPGROUP" ><strong>AUFTRAG:NewCAPGROUP(group, Altitude, Speed, Leg, RelHeading, OffsetDist, OffsetAngle, UpdateDistance, TargetTypes, EngageRange, Grp)</strong></a></h2>
+<h2><a id="#(AUFTRAG).NewCAPGROUP" ><strong>AUFTRAG:NewCAPGROUP(Grp, Altitude, Speed, RelHeading, Leg, OffsetDist, OffsetAngle, UpdateDistance, TargetTypes, EngageRange)</strong></a></h2>
 </div>
     
-<p><strong>[AIRPANE]</strong> Create a CAP on group mission.</p>
+<p><strong>[AIR]</strong> Create a CAP mission on a group.</p>
 
 <div id= "#Functions##NewCAPGROUP" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -12332,7 +12332,7 @@ This determines the payload and the DCS mission task which are used when the air
           <div class="w3-half">
             <p>
                 <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>group</strong></strong>
+            <strong><strong>Grp</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -12369,12 +12369,12 @@ This determines the payload and the DCS mission task which are used when the air
           <div class="w3-half">
             <p>
                 #number
-            <strong><strong>Leg</strong></strong>
+            <strong><strong>RelHeading</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Length of race-track in NM. Default 14 NM.</p>
+<p>Relative heading [0, 360) of race-track pattern in degrees wrt heading of the carrier. Default is heading of the carrier.</p>
 
           </div>
         </div>
@@ -12382,12 +12382,12 @@ This determines the payload and the DCS mission task which are used when the air
           <div class="w3-half">
             <p>
                 #number
-            <strong><strong>RelHeading</strong></strong>
+            <strong><strong>Leg</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Relative heading [0, 360) of race-track pattern in degrees wrt heading of the carrier. Default is heading of the carrier.</p>
+<p>Length of race-track in NM. Default 14 NM.</p>
 
           </div>
         </div>
@@ -12454,16 +12454,6 @@ This determines the payload and the DCS mission task which are used when the air
               
 <p>Max range in nautical miles that the escort group(s) will engage enemies. Default 32 NM (60 km).</p>
 
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>Grp</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
