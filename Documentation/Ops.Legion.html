@@ -2216,7 +2216,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(LEGION).RecruitCohortAssets">LEGION.RecruitCohortAssets(Cohorts, MissionTypeRecruit, MissionTypeOpt, NreqMin, NreqMax, TargetVec2, Payloads, RangeMax, RefuelSystem, CargoWeight, TotalWeight, Categories, Attributes, Properties, WeaponTypes)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(LEGION).RecruitCohortAssets">LEGION.RecruitCohortAssets(Cohorts, MissionTypeRecruit, MissionTypeOpt, NreqMin, NreqMax, TargetVec2, Payloads, RangeMax, RefuelSystem, CargoWeight, TotalWeight, MaxWeight, Categories, Attributes, Properties, WeaponTypes)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Recruit assets from Cohorts for the given parameters.</p>
 </td>
@@ -2276,6 +2276,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(LEGION)._CohortCan">LEGION._CohortCan(Cohort, MissionType, Categories, Attributes, Properties, WeaponTypes, TargetVec2, RangeMax, RefuelSystem, CargoWeight, MaxWeight)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Recruit assets from Cohorts for the given parameters.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(LEGION)._CountPayloads">LEGION:_CountPayloads(MissionType, Cohorts, Payloads)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Count payloads of all cohorts for all unit types.</p>
@@ -2297,6 +2303,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(LEGION)._GetCohortOfAsset">LEGION:_GetCohortOfAsset(Asset)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get cohort of an asset.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(LEGION)._GetCohorts">LEGION._GetCohorts(Legions, Cohorts, Operation, OpsQueue)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get cohorts.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -7935,7 +7947,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(LEGION).RecruitCohortAssets" ><strong>LEGION.RecruitCohortAssets(Cohorts, MissionTypeRecruit, MissionTypeOpt, NreqMin, NreqMax, TargetVec2, Payloads, RangeMax, RefuelSystem, CargoWeight, TotalWeight, Categories, Attributes, Properties, WeaponTypes)</strong></a></h2>
+<h2><a id="#(LEGION).RecruitCohortAssets" ><strong>LEGION.RecruitCohortAssets(Cohorts, MissionTypeRecruit, MissionTypeOpt, NreqMin, NreqMax, TargetVec2, Payloads, RangeMax, RefuelSystem, CargoWeight, TotalWeight, MaxWeight, Categories, Attributes, Properties, WeaponTypes)</strong></a></h2>
 </div>
     
 <p>Recruit assets from Cohorts for the given parameters.</p>
@@ -8090,6 +8102,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>Total cargo weight in kg.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>MaxWeight</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Max weight [kg] of the asset group.</p>
 
           </div>
         </div>
@@ -8598,6 +8623,182 @@ Cohort assets will not be available until relocation is finished.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(LEGION)._CohortCan" ><strong>LEGION._CohortCan(Cohort, MissionType, Categories, Attributes, Properties, WeaponTypes, TargetVec2, RangeMax, RefuelSystem, CargoWeight, MaxWeight)</strong></a></h2>
+</div>
+    
+<p>Recruit assets from Cohorts for the given parameters.</p>
+
+    
+<p><strong>NOTE</strong> that we set the <code>asset.isReserved=true</code> flag so it cant be recruited by anyone else.</p>
+
+<div id= "#Functions##_CohortCan" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>LEGION</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.Cohort.html##(COHORT)">Ops.Cohort#COHORT</a>
+            <strong><strong>Cohort</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Cohort.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>MissionType</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Misson type(s).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Categories</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Group categories.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Attributes</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Group attributes. See <code>GROUP.Attribute.</code></p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Properties</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>DCS attributes.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>WeaponTypes</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Bit of weapon types.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(Vec2)">DCS#Vec2</a>
+            <strong><strong>TargetVec2</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Target position.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>RangeMax</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Max range in meters.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>RefuelSystem</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Refueling system (boom or probe).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>CargoWeight</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Cargo weight [kg]. This checks the cargo bay of the cohort assets and ensures that it is large enough to carry the given cargo weight.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>MaxWeight</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Max weight [kg]. This checks whether the cohort asset group is not too heavy.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Returns <code>true</code> if given cohort can meet all requirements.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(LEGION)._CountPayloads" ><strong>LEGION:_CountPayloads(MissionType, Cohorts, Payloads)</strong></a></h2>
 </div>
     
@@ -8789,6 +8990,89 @@ Cohort assets will not be available until relocation is finished.</p>
       <div class="w3-half">
         
 <p>The Cohort object.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(LEGION)._GetCohorts" ><strong>LEGION._GetCohorts(Legions, Cohorts, Operation, OpsQueue)</strong></a></h2>
+</div>
+    
+<p>Get cohorts.</p>
+
+<div id= "#Functions##_GetCohorts" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>LEGION</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Legions</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Special legions.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Cohorts</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Special cohorts.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.Operation.html##(OPERATION)">Ops.Operation#OPERATION</a>
+            <strong><strong>Operation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Operation.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>OpsQueue</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Queue of operations.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Cohorts.</p>
 
       </div>
     </div>

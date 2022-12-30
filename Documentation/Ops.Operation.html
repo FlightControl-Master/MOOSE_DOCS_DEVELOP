@@ -1874,6 +1874,7 @@
 <ul>
     <li>Define operation phases</li>
     <li>Define conditions when phases are over</li>
+    <li>Option to have branches in the phase tree</li>
     <li>Dedicate resources to operations</li>
 </ul>
 
@@ -1985,7 +1986,19 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).AddEdge">OPERATION:AddEdge(BranchTo, PhaseAfter, PhaseNext, ConditionSwitch)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).AddConditonOverAll">OPERATION:AddConditonOverAll(Function, ...)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add (all) condition function when the whole operation is over.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).AddConditonOverAny">OPERATION:AddConditonOverAny(Function, ..., Phase)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add (any) condition function when the whole operation is over.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).AddEdge">OPERATION:AddEdge(PhaseFrom, PhaseTo, ConditionSwitch)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add an edge between two branches.</p>
 </td>
@@ -2003,7 +2016,7 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).AddPhase">OPERATION:AddPhase(Name, Branch)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).AddPhase">OPERATION:AddPhase(Name, Branch, Duration)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add a new phase to the operation.</p>
 </td>
@@ -2018,6 +2031,12 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).AddPhaseConditonOverAny">OPERATION:AddPhaseConditonOverAny(Phase, Function, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add condition function when the given phase is over.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).AddPhaseConditonRepeatAll">OPERATION:AddPhaseConditonRepeatAll(Phase, Function, ...)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add condition function when the given phase is to be repeated.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2039,7 +2058,7 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).BranchSwitch">OPERATION:BranchSwitch(Branch)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).BranchSwitch">OPERATION:BranchSwitch(Branch, Phase)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "BranchSwitch".</p>
 </td>
@@ -2069,9 +2088,21 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).GetBranchMaster">OPERATION:GetBranchMaster()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get the master branch.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).GetBranchName">OPERATION:GetBranchName(Branch)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get name of the branch.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).GetName">OPERATION:GetName()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get a name of this operation.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2089,13 +2120,19 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).GetPhaseConditonOver">OPERATION:GetPhaseConditonOver(Phase, Condition)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Get codition when the given phase is over.</p>
+<p>Get condition when the given phase is over.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).GetPhaseIndex">OPERATION:GetPhaseIndex(Phase)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get index of phase.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).GetPhaseNactive">OPERATION:GetPhaseNactive(Phase)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get how many times a phase has been active.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2119,7 +2156,7 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).GetTargets">OPERATION:GetTargets(Phase)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Add Targets from operation.</p>
+<p>Get targets of operation.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2147,6 +2184,12 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).IsNotOver">OPERATION:IsNotOver()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if operation is <strong>not</strong> "Over" or "Stopped".</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).IsOver">OPERATION:IsOver()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Check if operation is in FSM state "Over".</p>
@@ -2161,7 +2204,19 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).IsPhaseActive">OPERATION:IsPhaseActive(Phase)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Check if a phase is the currently active one.</p>
+<p>Check if phase is in status "Active".</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).IsPhaseOver">OPERATION:IsPhaseOver(Phase)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if phase is in status "Over".</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).IsPhasePlanned">OPERATION:IsPhasePlanned(Phase)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if phase is in status "Planned".</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2189,7 +2244,7 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).OnAfterBranchSwitch">OPERATION:OnAfterBranchSwitch(From, Event, To, Branch)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).OnAfterBranchSwitch">OPERATION:OnAfterBranchSwitch(From, Event, To, Branch, Phase)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "BranchSwitch" event.</p>
 </td>
@@ -2216,6 +2271,12 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).OnAfterPhaseOver">OPERATION:OnAfterPhaseOver(From, Event, To, Phase)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "PhaseOver" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).OnAfterStart">OPERATION:OnAfterStart(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "Start" event.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2246,6 +2307,12 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).PhaseStatus">OPERATION.PhaseStatus</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).SetConditionFunctionPersistence">OPERATION:SetConditionFunctionPersistence(ConditionFunction, IsPersistent)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set persistence of condition function.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2293,13 +2360,13 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).Tstart">OPERATION.Tstart</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Start time in seconds of abs mission time.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).Tstop">OPERATION.Tstop</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Stop time in seconds of abs mission time.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2321,7 +2388,7 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).__BranchSwitch">OPERATION:__BranchSwitch(delay, Branch)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).__BranchSwitch">OPERATION:__BranchSwitch(delay, Branch, Phase)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "BranchSwitch" after a delay.</p>
 </td>
@@ -2393,15 +2460,15 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).conditionStart">OPERATION.conditionStart</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).conditionOver">OPERATION.conditionOver</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Start condition.</p>
+<p>Over condition.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).conditionStop">OPERATION.conditionStop</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).conditionStart">OPERATION.conditionStart</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Stop condition.</p>
+<p>Start condition.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2419,7 +2486,7 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).duration">OPERATION.duration</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Duration of the operation in seconds.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2447,13 +2514,13 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).onafterBranchSwitch">OPERATION:onafterBranchSwitch(From, Event, To, Branch)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).onafterBranchSwitch">OPERATION:onafterBranchSwitch(From, Event, To, Branch, Phase)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "BranchSwitch" event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).onafterOver">OPERATION:onafterOver(From, Event, To, Phase)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).onafterOver">OPERATION:onafterOver(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "Over" event.</p>
 </td>
@@ -2468,6 +2535,12 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).onafterPhaseNext">OPERATION:onafterPhaseNext(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "PhaseNext" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).onafterPhaseOver">OPERATION:onafterPhaseOver(From, Event, To, Phase)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "PhaseOver" event.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2503,7 +2576,7 @@ added. If this is omitted (nil), the phase is added to the default, <em>i.e.</em
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION).uid">OPERATION.uid</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Unique ID of the operation.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3432,6 +3505,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION.Phase).Tstart">OPERATION.Phase.Tstart</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Abs. mission time when the phase was started.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION.Phase).branch">OPERATION.Phase.branch</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The branch this phase belongs to.</p>
@@ -3441,6 +3520,18 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION.Phase).conditionOver">OPERATION.Phase.conditionOver</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Conditions when the phase is over.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION.Phase).duration">OPERATION.Phase.duration</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Duration in seconds how long the phase should be active after it started.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPERATION.Phase).nActive">OPERATION.Phase.nActive</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Number of times the phase was active.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3535,10 +3626,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(OPERATION).Tstart" ><strong>OPERATION.Tstart</strong></a>
     
-
+<p>Start time in seconds of abs mission time.</p>
 
 </div>
 
@@ -3546,10 +3637,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(OPERATION).Tstop" ><strong>OPERATION.Tstop</strong></a>
     
-
+<p>Stop time in seconds of abs mission time.</p>
 
 </div>
 
@@ -3602,9 +3693,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     <a href="Core.Condition.html##(CONDITION)">Core.Condition#CONDITION</a>
-<a id="#(OPERATION).conditionStart" ><strong>OPERATION.conditionStart</strong></a>
+<a id="#(OPERATION).conditionOver" ><strong>OPERATION.conditionOver</strong></a>
     
-<p>Start condition.</p>
+<p>Over condition.</p>
 
 </div>
 
@@ -3613,9 +3704,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     <a href="Core.Condition.html##(CONDITION)">Core.Condition#CONDITION</a>
-<a id="#(OPERATION).conditionStop" ><strong>OPERATION.conditionStop</strong></a>
+<a id="#(OPERATION).conditionStart" ><strong>OPERATION.conditionStart</strong></a>
     
-<p>Stop condition.</p>
+<p>Start condition.</p>
 
 </div>
 
@@ -3638,6 +3729,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(OPERATION).counterPhase" ><strong>OPERATION.counterPhase</strong></a>
     
 <p>Running number counting the phases.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPERATION).duration" ><strong>OPERATION.duration</strong></a>
+    
+<p>Duration of the operation in seconds.</p>
 
 </div>
 
@@ -3722,13 +3824,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(OPERATION).uid" ><strong>OPERATION.uid</strong></a>
     
-
-
-    
-<p> Unique ID of the operation.</p>
+<p>Unique ID of the operation.</p>
 
 </div>
 
@@ -3803,7 +3902,135 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(OPERATION).AddEdge" ><strong>OPERATION:AddEdge(BranchTo, PhaseAfter, PhaseNext, ConditionSwitch)</strong></a></h2>
+<h2><a id="#(OPERATION).AddConditonOverAll" ><strong>OPERATION:AddConditonOverAll(Function, ...)</strong></a></h2>
+</div>
+    
+<p>Add (all) condition function when the whole operation is over.</p>
+
+    
+<p>Must return a <code>#boolean</code>.</p>
+
+<div id= "#Functions##AddConditonOverAll" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPERATION</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #function
+            <strong><strong>Function</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Function that needs to be <code>true</code> before the operation is over. </p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>...</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Condition function arguments if any.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Core.Condition.html##(CONDITION.Function)">Core.Condition#CONDITION.Function</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Condition function table.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPERATION).AddConditonOverAny" ><strong>OPERATION:AddConditonOverAny(Function, ..., Phase)</strong></a></h2>
+</div>
+    
+<p>Add (any) condition function when the whole operation is over.</p>
+
+    
+<p>Must return a <code>#boolean</code>.</p>
+
+<div id= "#Functions##AddConditonOverAny" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPERATION</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #function
+            <strong><strong>Function</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Function that needs to be <code>true</code> before the operation is over. </p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>...</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Condition function arguments if any.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Phase</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Core.Condition.html##(CONDITION.Function)">Core.Condition#CONDITION.Function</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Condition function table.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPERATION).AddEdge" ><strong>OPERATION:AddEdge(PhaseFrom, PhaseTo, ConditionSwitch)</strong></a></h2>
 </div>
     
 <p>Add an edge between two branches.</p>
@@ -3818,21 +4045,8 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="##(OPERATION.Branch)">#OPERATION.Branch</a>
-            <strong><strong>BranchTo</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The branch <em>to</em> which to switch.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
                 <a href="##(OPERATION.Phase)">#OPERATION.Phase</a>
-            <strong><strong>PhaseAfter</strong></strong>
+            <strong><strong>PhaseFrom</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -3845,7 +4059,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
             <p>
                 <a href="##(OPERATION.Phase)">#OPERATION.Phase</a>
-            <strong><strong>PhaseNext</strong></strong>
+            <strong><strong>PhaseTo</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -3870,11 +4084,11 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(OPERATION.Branch)">#OPERATION.Branch</a>:</p>
+        <p><a href="##(OPERATION.Edge)">#OPERATION.Edge</a>:</p>
       </div>
       <div class="w3-half">
         
-<p>Branch table object.</p>
+<p>Edge table object.</p>
 
       </div>
     </div>
@@ -3892,7 +4106,8 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <p>Add condition function to an edge when branches are switched.</p>
 
     
-<p>The function must return a <code>#boolean</code>.</p>
+<p>The function must return a <code>#boolean</code>.
+If multiple condition functions are added, all of these must return true for the branch switch to occur.</p>
 
 <div id= "#Functions##AddEdgeConditonSwitchAll" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -3942,11 +4157,11 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(OPERATION)">#OPERATION</a>:</p>
+        <p><a href="Core.Condition.html##(CONDITION.Function)">Core.Condition#CONDITION.Function</a>:</p>
       </div>
       <div class="w3-half">
         
-<p>self</p>
+<p>Condition function table.</p>
 
       </div>
     </div>
@@ -4004,7 +4219,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(OPERATION).AddPhase" ><strong>OPERATION:AddPhase(Name, Branch)</strong></a></h2>
+<h2><a id="#(OPERATION).AddPhase" ><strong>OPERATION:AddPhase(Name, Branch, Duration)</strong></a></h2>
 </div>
     
 <p>Add a new phase to the operation.</p>
@@ -4042,6 +4257,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>The branch to which this phase is added. Default is the master branch.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Duration</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Duration in seconds how long the phase will last. Default <code>nil</code>=forever.</p>
 
           </div>
         </div>
@@ -4101,7 +4329,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Function that needs to be <code>true</code>before the phase is over. </p>
+<p>Function that needs to be <code>true</code> before the phase is over. </p>
 
           </div>
         </div>
@@ -4120,11 +4348,11 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(OPERATION)">#OPERATION</a>:</p>
+        <p><a href="Core.Condition.html##(CONDITION.Function)">Core.Condition#CONDITION.Function</a>:</p>
       </div>
       <div class="w3-half">
         
-<p>self</p>
+<p>Condition function table.</p>
 
       </div>
     </div>
@@ -4145,6 +4373,79 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <p>Must return a <code>#boolean</code>.</p>
 
 <div id= "#Functions##AddPhaseConditonOverAny" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPERATION</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPERATION.Phase)">#OPERATION.Phase</a>
+            <strong><strong>Phase</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The phase.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #function
+            <strong><strong>Function</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Function that needs to be <code>true</code> before the phase is over. </p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>...</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Condition function arguments if any.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Core.Condition.html##(CONDITION.Function)">Core.Condition#CONDITION.Function</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Condition function table.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPERATION).AddPhaseConditonRepeatAll" ><strong>OPERATION:AddPhaseConditonRepeatAll(Phase, Function, ...)</strong></a></h2>
+</div>
+    
+<p>Add condition function when the given phase is to be repeated.</p>
+
+    
+<p>The provided function must return a <code>#boolean</code>.
+If the condition evaluation returns <code>true</code>, the phase is set to state <code>Planned</code> instead of <code>Over</code> and can be repeated.</p>
+
+<div id= "#Functions##AddPhaseConditonRepeatAll" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -4345,7 +4646,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(OPERATION).BranchSwitch" ><strong>OPERATION:BranchSwitch(Branch)</strong></a></h2>
+<h2><a id="#(OPERATION).BranchSwitch" ><strong>OPERATION:BranchSwitch(Branch, Phase)</strong></a></h2>
 </div>
     
 <p>Triggers the FSM event "BranchSwitch".</p>
@@ -4356,7 +4657,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>OPERATION</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -4367,6 +4668,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>The branch that is now active.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPERATION.Phase)">#OPERATION.Phase</a>
+            <strong><strong>Phase</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The new phase.</p>
 
           </div>
         </div>
@@ -4509,6 +4823,39 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(OPERATION).GetBranchMaster" ><strong>OPERATION:GetBranchMaster()</strong></a></h2>
+</div>
+    
+<p>Get the master branch.</p>
+
+    
+<p>This is the default branch and should always exist (if it was not explicitly deleted).</p>
+
+<div id= "#Functions##GetBranchMaster" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPERATION</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(OPERATION.Branch)">#OPERATION.Branch</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The master branch.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(OPERATION).GetBranchName" ><strong>OPERATION:GetBranchName(Branch)</strong></a></h2>
 </div>
     
@@ -4542,6 +4889,36 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       <div class="w3-half">
         
 <p>Name Name or "None"</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPERATION).GetName" ><strong>OPERATION:GetName()</strong></a></h2>
+</div>
+    
+<p>Get a name of this operation.</p>
+
+<div id= "#Functions##GetName" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPERATION</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#string:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Name of this operation or "Unknown".</p>
 
       </div>
     </div>
@@ -4630,7 +5007,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(OPERATION).GetPhaseConditonOver" ><strong>OPERATION:GetPhaseConditonOver(Phase, Condition)</strong></a></h2>
 </div>
     
-<p>Get codition when the given phase is over.</p>
+<p>Get condition when the given phase is over.</p>
 
 <div id= "#Functions##GetPhaseConditonOver" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -4724,6 +5101,50 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <p>The branch.</p>
 
         </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPERATION).GetPhaseNactive" ><strong>OPERATION:GetPhaseNactive(Phase)</strong></a></h2>
+</div>
+    
+<p>Get how many times a phase has been active.</p>
+
+<div id= "#Functions##GetPhaseNactive" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPERATION</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPERATION.Phase)">#OPERATION.Phase</a>
+            <strong><strong>Phase</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The phase.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#number:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Number of times the phase has been active.</p>
+
+      </div>
     </div>
 </div>
 
@@ -4881,7 +5302,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(OPERATION).GetTargets" ><strong>OPERATION:GetTargets(Phase)</strong></a></h2>
 </div>
     
-<p>Add Targets from operation.</p>
+<p>Get targets of operation.</p>
 
 <div id= "#Functions##GetTargets" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -4898,7 +5319,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             </p>
           </div>
           <div class="w3-half">
-              <p></p>
+              
+<p>(Optional) Only return targets set for this phase. Default is targets of all phases.</p>
+
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
@@ -5112,6 +5535,36 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(OPERATION).IsNotOver" ><strong>OPERATION:IsNotOver()</strong></a></h2>
+</div>
+    
+<p>Check if operation is <strong>not</strong> "Over" or "Stopped".</p>
+
+<div id= "#Functions##IsNotOver" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPERATION</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If <code>true</code>, operation is not "Over" or "Stopped".</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(OPERATION).IsOver" ><strong>OPERATION:IsOver()</strong></a></h2>
 </div>
     
@@ -5175,7 +5628,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(OPERATION).IsPhaseActive" ><strong>OPERATION:IsPhaseActive(Phase)</strong></a></h2>
 </div>
     
-<p>Check if a phase is the currently active one.</p>
+<p>Check if phase is in status "Active".</p>
 
 <div id= "#Functions##IsPhaseActive" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -5193,7 +5646,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>The phase to check.</p>
+<p>The phase.</p>
 
           </div>
         </div>
@@ -5204,7 +5657,95 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       </div>
       <div class="w3-half">
         
-<p>If <code>true</code>, this phase is currently active.</p>
+<p>If <code>true</code>, phase is active.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPERATION).IsPhaseOver" ><strong>OPERATION:IsPhaseOver(Phase)</strong></a></h2>
+</div>
+    
+<p>Check if phase is in status "Over".</p>
+
+<div id= "#Functions##IsPhaseOver" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPERATION</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPERATION.Phase)">#OPERATION.Phase</a>
+            <strong><strong>Phase</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The phase.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If <code>true</code>, phase is over.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPERATION).IsPhasePlanned" ><strong>OPERATION:IsPhasePlanned(Phase)</strong></a></h2>
+</div>
+    
+<p>Check if phase is in status "Planned".</p>
+
+<div id= "#Functions##IsPhasePlanned" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPERATION</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPERATION.Phase)">#OPERATION.Phase</a>
+            <strong><strong>Phase</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The phase.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If <code>true</code>, phase is Planned.</p>
 
       </div>
     </div>
@@ -5350,7 +5891,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(OPERATION).OnAfterBranchSwitch" ><strong>OPERATION:OnAfterBranchSwitch(From, Event, To, Branch)</strong></a></h2>
+<h2><a id="#(OPERATION).OnAfterBranchSwitch" ><strong>OPERATION:OnAfterBranchSwitch(From, Event, To, Branch, Phase)</strong></a></h2>
 </div>
     
 <p>On after "BranchSwitch" event.</p>
@@ -5411,6 +5952,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>The branch that is now active.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPERATION.Phase)">#OPERATION.Phase</a>
+            <strong><strong>Phase</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The new phase.</p>
 
           </div>
         </div>
@@ -5684,6 +6238,65 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(OPERATION).OnAfterStart" ><strong>OPERATION:OnAfterStart(From, Event, To)</strong></a></h2>
+</div>
+    
+<p>On after "Start" event.</p>
+
+<div id= "#Functions##OnAfterStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPERATION</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(OPERATION).Over" ><strong>OPERATION:Over()</strong></a></h2>
 </div>
     
@@ -5780,6 +6393,66 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
           </div>
         </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPERATION).SetConditionFunctionPersistence" ><strong>OPERATION:SetConditionFunctionPersistence(ConditionFunction, IsPersistent)</strong></a></h2>
+</div>
+    
+<p>Set persistence of condition function.</p>
+
+    
+<p>By default, condition functions are removed after a phase is over.</p>
+
+<div id= "#Functions##SetConditionFunctionPersistence" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPERATION</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Condition.html##(CONDITION.Function)">Core.Condition#CONDITION.Function</a>
+            <strong><strong>ConditionFunction</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Condition function table.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>IsPersistent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If <code>true</code> or <code>nil</code>, condition function is persistent.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(OPERATION)">#OPERATION</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
@@ -6167,7 +6840,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(OPERATION).__BranchSwitch" ><strong>OPERATION:__BranchSwitch(delay, Branch)</strong></a></h2>
+<h2><a id="#(OPERATION).__BranchSwitch" ><strong>OPERATION:__BranchSwitch(delay, Branch, Phase)</strong></a></h2>
 </div>
     
 <p>Triggers the FSM event "BranchSwitch" after a delay.</p>
@@ -6202,6 +6875,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>The branch that is now active.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPERATION.Phase)">#OPERATION.Phase</a>
+            <strong><strong>Phase</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The new phase.</p>
 
           </div>
         </div>
@@ -6470,7 +7156,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(OPERATION).onafterBranchSwitch" ><strong>OPERATION:onafterBranchSwitch(From, Event, To, Branch)</strong></a></h2>
+<h2><a id="#(OPERATION).onafterBranchSwitch" ><strong>OPERATION:onafterBranchSwitch(From, Event, To, Branch, Phase)</strong></a></h2>
 </div>
     
 <p>On after "BranchSwitch" event.</p>
@@ -6534,6 +7220,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
           </div>
         </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPERATION.Phase)">#OPERATION.Phase</a>
+            <strong><strong>Phase</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The phase.</p>
+
+          </div>
+        </div>
 </div>
 
 </div>
@@ -6542,7 +7241,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(OPERATION).onafterOver" ><strong>OPERATION:onafterOver(From, Event, To, Phase)</strong></a></h2>
+<h2><a id="#(OPERATION).onafterOver" ><strong>OPERATION:onafterOver(From, Event, To)</strong></a></h2>
 </div>
     
 <p>On after "Over" event.</p>
@@ -6590,19 +7289,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>To state.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="##(OPERATION.Phase)">#OPERATION.Phase</a>
-            <strong><strong>Phase</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The new phase.</p>
 
           </div>
         </div>
@@ -6734,6 +7420,78 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>To state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPERATION).onafterPhaseOver" ><strong>OPERATION:onafterPhaseOver(From, Event, To, Phase)</strong></a></h2>
+</div>
+    
+<p>On after "PhaseOver" event.</p>
+
+<div id= "#Functions##onafterPhaseOver" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPERATION</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPERATION.Phase)">#OPERATION.Phase</a>
+            <strong><strong>Phase</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The phase that is over.</p>
 
           </div>
         </div>
@@ -6888,10 +7646,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(OPERATION).Tstart" ><strong>OPERATION.Tstart</strong></a>
     
-
+<p>Start time in seconds of abs mission time.</p>
 
 </div>
 
@@ -6899,10 +7657,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(OPERATION).Tstop" ><strong>OPERATION.Tstop</strong></a>
     
-
+<p>Stop time in seconds of abs mission time.</p>
 
 </div>
 
@@ -6955,9 +7713,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     <a href="Core.Condition.html##(CONDITION)">Core.Condition#CONDITION</a>
-<a id="#(OPERATION).conditionStart" ><strong>OPERATION.conditionStart</strong></a>
+<a id="#(OPERATION).conditionOver" ><strong>OPERATION.conditionOver</strong></a>
     
-<p>Start condition.</p>
+<p>Over condition.</p>
 
 </div>
 
@@ -6966,9 +7724,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     <a href="Core.Condition.html##(CONDITION)">Core.Condition#CONDITION</a>
-<a id="#(OPERATION).conditionStop" ><strong>OPERATION.conditionStop</strong></a>
+<a id="#(OPERATION).conditionStart" ><strong>OPERATION.conditionStart</strong></a>
     
-<p>Stop condition.</p>
+<p>Start condition.</p>
 
 </div>
 
@@ -6991,6 +7749,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(OPERATION).counterPhase" ><strong>OPERATION.counterPhase</strong></a>
     
 <p>Running number counting the phases.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPERATION).duration" ><strong>OPERATION.duration</strong></a>
+    
+<p>Duration of the operation in seconds.</p>
 
 </div>
 
@@ -7075,13 +7844,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(OPERATION).uid" ><strong>OPERATION.uid</strong></a>
     
-
-
-    
-<p> Unique ID of the operation.</p>
+<p>Unique ID of the operation.</p>
 
 </div>
 
@@ -8578,10 +9344,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(OPERATION).Tstart" ><strong>OPERATION.Tstart</strong></a>
     
-
+<p>Start time in seconds of abs mission time.</p>
 
 </div>
 
@@ -8589,10 +9355,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(OPERATION).Tstop" ><strong>OPERATION.Tstop</strong></a>
     
-
+<p>Stop time in seconds of abs mission time.</p>
 
 </div>
 
@@ -8645,9 +9411,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     <a href="Core.Condition.html##(CONDITION)">Core.Condition#CONDITION</a>
-<a id="#(OPERATION).conditionStart" ><strong>OPERATION.conditionStart</strong></a>
+<a id="#(OPERATION).conditionOver" ><strong>OPERATION.conditionOver</strong></a>
     
-<p>Start condition.</p>
+<p>Over condition.</p>
 
 </div>
 
@@ -8656,9 +9422,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     <a href="Core.Condition.html##(CONDITION)">Core.Condition#CONDITION</a>
-<a id="#(OPERATION).conditionStop" ><strong>OPERATION.conditionStop</strong></a>
+<a id="#(OPERATION).conditionStart" ><strong>OPERATION.conditionStart</strong></a>
     
-<p>Stop condition.</p>
+<p>Start condition.</p>
 
 </div>
 
@@ -8681,6 +9447,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(OPERATION).counterPhase" ><strong>OPERATION.counterPhase</strong></a>
     
 <p>Running number counting the phases.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPERATION).duration" ><strong>OPERATION.duration</strong></a>
+    
+<p>Duration of the operation in seconds.</p>
 
 </div>
 
@@ -8765,13 +9542,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(OPERATION).uid" ><strong>OPERATION.uid</strong></a>
     
-
-
-    
-<p> Unique ID of the operation.</p>
+<p>Unique ID of the operation.</p>
 
 </div>
 
@@ -12303,6 +13077,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(OPERATION.Phase).Tstart" ><strong>OPERATION.Phase.Tstart</strong></a>
+    
+<p>Abs. mission time when the phase was started.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="##(OPERATION.Branch)">#OPERATION.Branch</a>
 <a id="#(OPERATION.Phase).branch" ><strong>OPERATION.Phase.branch</strong></a>
     
@@ -12318,6 +13103,28 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(OPERATION.Phase).conditionOver" ><strong>OPERATION.Phase.conditionOver</strong></a>
     
 <p>Conditions when the phase is over.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPERATION.Phase).duration" ><strong>OPERATION.Phase.duration</strong></a>
+    
+<p>Duration in seconds how long the phase should be active after it started.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPERATION.Phase).nActive" ><strong>OPERATION.Phase.nActive</strong></a>
+    
+<p>Number of times the phase was active.</p>
 
 </div>
 

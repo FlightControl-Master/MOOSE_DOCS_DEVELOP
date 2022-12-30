@@ -1991,11 +1991,7 @@
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).Cruise">ARMYGROUP:Cruise(Speed, Formation)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<ul>
-    <li>Pseudo Functions ---
-    <hr/></li>
-    <li>Triggers the FSM event "Cruise".</li>
-</ul>
+<p>Triggers the FSM event "Cruise".</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2017,7 +2013,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).EngageTarget">ARMYGROUP:EngageTarget(Group, Speed, Formation)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).EngageTarget">ARMYGROUP:EngageTarget(Target, Speed, Formation)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "EngageTarget".</p>
 </td>
@@ -2137,7 +2133,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).OnAfterRetreat">ARMYGROUP:OnAfterRetreat(From, Event, To)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).OnAfterRetreat">ARMYGROUP:OnAfterRetreat(From, Event, To, Zone, Formation)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "Retreat" event.</p>
 </td>
@@ -2179,7 +2175,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).Retreat">ARMYGROUP:Retreat()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).Retreat">ARMYGROUP:Retreat(Zone, Formation)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "Retreat".</p>
 </td>
@@ -2341,7 +2337,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).__Retreat">ARMYGROUP:__Retreat(delay)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).__Retreat">ARMYGROUP:__Retreat(Zone, Formation, delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "Retreat" after a delay.</p>
 </td>
@@ -2473,7 +2469,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).onafterEngageTarget">ARMYGROUP:onafterEngageTarget(From, Event, To, Group, Speed, Formation, Target)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).onafterEngageTarget">ARMYGROUP:onafterEngageTarget(From, Event, To, Target, Speed, Formation)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "EngageTarget" event.</p>
 </td>
@@ -3119,7 +3115,7 @@
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).GetLifePoints">ARMYGROUP:GetLifePoints(Element)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns the absolute (average) life points of the group.</p>
+<p>Returns the absolute total life points of the group.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4668,7 +4664,7 @@
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP)._UpdateTask">ARMYGROUP:_UpdateTask(Task, Mission)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Push task</p>
+<p>Update (DCS) task.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -7854,11 +7850,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(ARMYGROUP).Cruise" ><strong>ARMYGROUP:Cruise(Speed, Formation)</strong></a></h2>
 </div>
     
-<ul>
-    <li>Pseudo Functions ---
-    <hr/></li>
-    <li>Triggers the FSM event "Cruise".</li>
-</ul>
+<p>Triggers the FSM event "Cruise".</p>
 
 <div id= "#Functions##Cruise" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -7958,7 +7950,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(ARMYGROUP).EngageTarget" ><strong>ARMYGROUP:EngageTarget(Group, Speed, Formation)</strong></a></h2>
+<h2><a id="#(ARMYGROUP).EngageTarget" ><strong>ARMYGROUP:EngageTarget(Target, Speed, Formation)</strong></a></h2>
 </div>
     
 <p>Triggers the FSM event "EngageTarget".</p>
@@ -7973,13 +7965,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>Group</strong></strong>
+                <a href="Ops.Target.html##(TARGET)">Ops.Target#TARGET</a>
+            <strong><strong>Target</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>the group to be engaged.</p>
+<p>The target to be engaged. Can also be a GROUP or UNIT object.</p>
 
           </div>
         </div>
@@ -8996,7 +8988,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(ARMYGROUP).OnAfterRetreat" ><strong>ARMYGROUP:OnAfterRetreat(From, Event, To)</strong></a></h2>
+<h2><a id="#(ARMYGROUP).OnAfterRetreat" ><strong>ARMYGROUP:OnAfterRetreat(From, Event, To, Zone, Formation)</strong></a></h2>
 </div>
     
 <p>On after "Retreat" event.</p>
@@ -9044,6 +9036,32 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>To state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
+            <strong><strong>Zone</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Zone where to retreat.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Formation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Formation of the group. Can be #nil.</p>
 
           </div>
         </div>
@@ -9276,7 +9294,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(ARMYGROUP).Retreat" ><strong>ARMYGROUP:Retreat()</strong></a></h2>
+<h2><a id="#(ARMYGROUP).Retreat" ><strong>ARMYGROUP:Retreat(Zone, Formation)</strong></a></h2>
 </div>
     
 <p>Triggers the FSM event "Retreat".</p>
@@ -9287,6 +9305,33 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>ARMYGROUP</p>
 </div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
+            <strong><strong>Zone</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Zone where to retreat. Default is the closest retreat zone.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Formation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Formation of the group.</p>
+
+          </div>
+        </div>
 </div>
 
 </div>
@@ -10122,7 +10167,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(ARMYGROUP).__Retreat" ><strong>ARMYGROUP:__Retreat(delay)</strong></a></h2>
+<h2><a id="#(ARMYGROUP).__Retreat" ><strong>ARMYGROUP:__Retreat(Zone, Formation, delay)</strong></a></h2>
 </div>
     
 <p>Triggers the FSM event "Retreat" after a delay.</p>
@@ -10133,7 +10178,33 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>ARMYGROUP</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
+            <strong><strong>Zone</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Zone where to retreat. Default is the closest retreat zone.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Formation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Formation of the group. </p>
+
+          </div>
+        </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -10607,7 +10678,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(ARMYGROUP).onafterEngageTarget" ><strong>ARMYGROUP:onafterEngageTarget(From, Event, To, Group, Speed, Formation, Target)</strong></a></h2>
+<h2><a id="#(ARMYGROUP).onafterEngageTarget" ><strong>ARMYGROUP:onafterEngageTarget(From, Event, To, Target, Speed, Formation)</strong></a></h2>
 </div>
     
 <p>On after "EngageTarget" event.</p>
@@ -10661,13 +10732,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>Group</strong></strong>
+                <a href="Ops.Target.html##(TARGET)">Ops.Target#TARGET</a>
+            <strong><strong>Target</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>the group to be engaged.</p>
+<p>The target to be engaged. Can also be a group or unit.</p>
 
           </div>
         </div>
@@ -10695,16 +10766,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
               
 <p>Formation used in the engagement. Default <code>ENUMS.Formation.Vehicle.Vee</code>.</p>
 
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>Target</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
           </div>
         </div>
 </div>
@@ -15548,7 +15609,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <h2><a id="#(ARMYGROUP).GetLifePoints" ><strong>ARMYGROUP:GetLifePoints(Element)</strong></a></h2>
 </div>
     
-<p>Returns the absolute (average) life points of the group.</p>
+<p>Returns the absolute total life points of the group.</p>
 
 <div id= "#Functions##GetLifePoints" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -15577,7 +15638,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
         </div>
         <div class="w3-half">
           
-<p>Life points. If group contains more than one element, the average is given.</p>
+<p>Life points, <em>i.e.</em> the sum of life points over all units in the group (unless a specific element was passed).  </p>
 
         </div>
         <div class="w3-half">
@@ -26425,7 +26486,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <h2><a id="#(ARMYGROUP)._UpdateTask" ><strong>ARMYGROUP:_UpdateTask(Task, Mission)</strong></a></h2>
 </div>
     
-<p>Push task</p>
+<p>Update (DCS) task.</p>
 
 <div id= "#Functions##_UpdateTask" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -26450,11 +26511,14 @@ Optionally, you can calculate the current max weight possible, which accounts fo
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
+                <a href="Ops.Auftrag.html##(AUFTRAG)">Ops.Auftrag#AUFTRAG</a>
             <strong><strong>Mission</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              <p></p>
+              
+<p>The mission.</p>
+
           </div>
         </div>
 </div>

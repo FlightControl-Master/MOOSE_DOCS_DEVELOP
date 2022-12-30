@@ -2007,6 +2007,12 @@ Moose refers to <strong>_DATABASE</strong> within the framework extensively, but
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(DATABASE).AddOpsZone">DATABASE:AddOpsZone(OpsZone)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Adds a <a href="Ops.OpsZone.html##(OPSZONE)">Ops.OpsZone#OPSZONE</a> based on the zone name in the DATABASE.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(DATABASE).AddPlayer">DATABASE:AddPlayer(UnitName, PlayerName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Adds a player based on the Player Name in the DATABASE.</p>
@@ -2058,6 +2064,12 @@ Moose refers to <strong>_DATABASE</strong> within the framework extensively, but
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(DATABASE).DeleteCargo">DATABASE:DeleteCargo(CargoName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Deletes a Cargo from the DATABASE based on the Cargo Name.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(DATABASE).DeleteOpsZone">DATABASE:DeleteOpsZone(ZoneName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Deletes a <a href="Ops.OpsZone.html##(OPSZONE)">Ops.OpsZone#OPSZONE</a> from the DATABASE based on the zone name.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2124,6 +2136,12 @@ Moose refers to <strong>_DATABASE</strong> within the framework extensively, but
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(DATABASE).FindOpsGroupFromUnit">DATABASE:FindOpsGroupFromUnit(unitname)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Find an OPSGROUP (FLIGHTGROUP, ARMYGROUP, NAVYGROUP) in the data base for a given unit.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(DATABASE).FindOpsZone">DATABASE:FindOpsZone(ZoneName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Finds a <a href="Ops.OpsZone.html##(OPSZONE)">Ops.OpsZone#OPSZONE</a> based on the zone name.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3390,6 +3408,39 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(DATABASE).AddOpsZone" ><strong>DATABASE:AddOpsZone(OpsZone)</strong></a></h2>
+</div>
+    
+<p>Adds a <a href="Ops.OpsZone.html##(OPSZONE)">Ops.OpsZone#OPSZONE</a> based on the zone name in the DATABASE.</p>
+
+<div id= "#Functions##AddOpsZone" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>DATABASE</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.OpsZone.html##(OPSZONE)">Ops.OpsZone#OPSZONE</a>
+            <strong><strong>OpsZone</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The zone.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(DATABASE).AddPlayer" ><strong>DATABASE:AddPlayer(UnitName, PlayerName)</strong></a></h2>
 </div>
     
@@ -3665,6 +3716,39 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>The name of the airbase</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(DATABASE).DeleteOpsZone" ><strong>DATABASE:DeleteOpsZone(ZoneName)</strong></a></h2>
+</div>
+    
+<p>Deletes a <a href="Ops.OpsZone.html##(OPSZONE)">Ops.OpsZone#OPSZONE</a> from the DATABASE based on the zone name.</p>
+
+<div id= "#Functions##DeleteOpsZone" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>DATABASE</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>ZoneName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The name of the zone.</p>
 
           </div>
         </div>
@@ -4087,6 +4171,50 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       <div class="w3-half">
         
 <p>OPS group object.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(DATABASE).FindOpsZone" ><strong>DATABASE:FindOpsZone(ZoneName)</strong></a></h2>
+</div>
+    
+<p>Finds a <a href="Ops.OpsZone.html##(OPSZONE)">Ops.OpsZone#OPSZONE</a> based on the zone name.</p>
+
+<div id= "#Functions##FindOpsZone" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>DATABASE</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>ZoneName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The name of the zone.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Ops.OpsZone.html##(OPSZONE)">Ops.OpsZone#OPSZONE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The found OPSZONE.</p>
 
       </div>
     </div>

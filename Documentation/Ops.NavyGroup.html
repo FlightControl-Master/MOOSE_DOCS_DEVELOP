@@ -3108,7 +3108,7 @@
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).GetLifePoints">NAVYGROUP:GetLifePoints(Element)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns the absolute (average) life points of the group.</p>
+<p>Returns the absolute total life points of the group.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4657,7 +4657,7 @@
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._UpdateTask">NAVYGROUP:_UpdateTask(Task, Mission)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Push task</p>
+<p>Update (DCS) task.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -15111,7 +15111,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <h2><a id="#(NAVYGROUP).GetLifePoints" ><strong>NAVYGROUP:GetLifePoints(Element)</strong></a></h2>
 </div>
     
-<p>Returns the absolute (average) life points of the group.</p>
+<p>Returns the absolute total life points of the group.</p>
 
 <div id= "#Functions##GetLifePoints" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -15140,7 +15140,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
         </div>
         <div class="w3-half">
           
-<p>Life points. If group contains more than one element, the average is given.</p>
+<p>Life points, <em>i.e.</em> the sum of life points over all units in the group (unless a specific element was passed).  </p>
 
         </div>
         <div class="w3-half">
@@ -25988,7 +25988,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <h2><a id="#(NAVYGROUP)._UpdateTask" ><strong>NAVYGROUP:_UpdateTask(Task, Mission)</strong></a></h2>
 </div>
     
-<p>Push task</p>
+<p>Update (DCS) task.</p>
 
 <div id= "#Functions##_UpdateTask" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -26013,11 +26013,14 @@ Optionally, you can calculate the current max weight possible, which accounts fo
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
+                <a href="Ops.Auftrag.html##(AUFTRAG)">Ops.Auftrag#AUFTRAG</a>
             <strong><strong>Mission</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              <p></p>
+              
+<p>The mission.</p>
+
           </div>
         </div>
 </div>

@@ -2459,7 +2459,7 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).GetObjective">AUFTRAG:GetObjective()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).GetObjective">AUFTRAG:GetObjective(RefCoordinate, Coalitions)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get mission objective object.</p>
 </td>
@@ -2483,7 +2483,7 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).GetRequiredAssets">AUFTRAG:GetRequiredAssets(Legion)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).GetRequiredAssets">AUFTRAG:GetRequiredAssets()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[LEGION, COMMANDER, CHIEF]</strong> Get number of required assets.</p>
 </td>
@@ -2864,6 +2864,12 @@ The commander will select the best assets available from all the legions under h
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewCAPGROUP">AUFTRAG:NewCAPGROUP(Grp, Altitude, Speed, RelHeading, Leg, OffsetDist, OffsetAngle, UpdateDistance, TargetTypes, EngageRange)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[AIR]</strong> Create a CAP mission on a group.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewCAPTUREZONE">AUFTRAG:NewCAPTUREZONE(OpsZone, Coalition, Speed, Altitude, Formation)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p><strong>[AIR, GROUND, NAVAL]</strong> Create a CAPTUREZONE mission.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3363,6 +3369,12 @@ The commander will select the best assets available from all the legions under h
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetRadio">AUFTRAG:SetRadio(Frequency, Modulation)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set radio frequency and modulation for this mission.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetReinforce">AUFTRAG:SetReinforce(Nreinforce)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p><strong>[LEGION, COMMANDER, CHIEF]</strong> Set that mission assets get reinforced if their number drops below Nmin.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4361,6 +4373,12 @@ The commander will select the best assets available from all the legions under h
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).refuelSystem">AUFTRAG.refuelSystem</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Refuel type (boom or probe) for TANKER missions.</p>
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).reinforce">AUFTRAG.reinforce</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
@@ -5604,6 +5622,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG.SpecialTask).CAPTUREZONE">AUFTRAG.SpecialTask.CAPTUREZONE</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Capture OPS zone.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG.SpecialTask).EWR">AUFTRAG.SpecialTask.EWR</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Early Warning Radar.</p>
@@ -5993,6 +6017,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG.Type).CAPTUREZONE">AUFTRAG.Type.CAPTUREZONE</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Capture zone mission.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG.Type).CARGOTRANSPORT">AUFTRAG.Type.CARGOTRANSPORT</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Cargo transport.</p>
@@ -6097,7 +6127,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG.Type).REARMING">AUFTRAG.Type.REARMING</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Rearming mission.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -7555,6 +7585,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(AUFTRAG).refuelSystem" ><strong>AUFTRAG.refuelSystem</strong></a>
     
 <p>Refuel type (boom or probe) for TANKER missions.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AUFTRAG).reinforce" ><strong>AUFTRAG.reinforce</strong></a>
+    
 
 
 </div>
@@ -10020,7 +10061,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUFTRAG).GetObjective" ><strong>AUFTRAG:GetObjective()</strong></a></h2>
+<h2><a id="#(AUFTRAG).GetObjective" ><strong>AUFTRAG:GetObjective(RefCoordinate, Coalitions)</strong></a></h2>
 </div>
     
 <p>Get mission objective object.</p>
@@ -10034,6 +10075,33 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>AUFTRAG</p>
 </div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>RefCoordinate</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Reference coordinate from which the closest target is determined.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Coalitions</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Only consider targets of the given coalition(s). </p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -10143,7 +10211,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUFTRAG).GetRequiredAssets" ><strong>AUFTRAG:GetRequiredAssets(Legion)</strong></a></h2>
+<h2><a id="#(AUFTRAG).GetRequiredAssets" ><strong>AUFTRAG:GetRequiredAssets()</strong></a></h2>
 </div>
     
 <p><strong>[LEGION, COMMANDER, CHIEF]</strong> Get number of required assets.</p>
@@ -10154,20 +10222,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>AUFTRAG</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Ops.Legion.html##(Legion)">Ops.Legion#Legion</a>
-            <strong><strong>Legion</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) Only get the required assets for a specific legion. If required assets for this legion are not defined, the total number is returned.</p>
-
-          </div>
-        </div>
     <h2><strong>Return values:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
         <div class="w3-half">
@@ -12453,6 +12507,105 @@ This determines the payload and the DCS mission task which are used when the air
           <div class="w3-half">
               
 <p>Max range in nautical miles that the escort group(s) will engage enemies. Default 32 NM (60 km).</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).NewCAPTUREZONE" ><strong>AUFTRAG:NewCAPTUREZONE(OpsZone, Coalition, Speed, Altitude, Formation)</strong></a></h2>
+</div>
+    
+<p><strong>[AIR, GROUND, NAVAL]</strong> Create a CAPTUREZONE mission.</p>
+
+    
+<p>Group(s) will go to the zone and patrol it randomly.</p>
+
+<div id= "#Functions##NewCAPTUREZONE" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.OpsZone.html##(OPSZONE)">Ops.OpsZone#OPSZONE</a>
+            <strong><strong>OpsZone</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The OPS zone to capture.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Coalition</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The coalition which should capture the zone for the mission to be successful.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Speed in knots.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Altitude</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Altitude in feet. Only for airborne units. Default 2000 feet ASL.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Formation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Formation used by ground units during patrol. Default "Off Road".</p>
 
           </div>
         </div>
@@ -17100,6 +17253,50 @@ themselfs. They wait for the CHIEF to tell them whom to engage.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).SetReinforce" ><strong>AUFTRAG:SetReinforce(Nreinforce)</strong></a></h2>
+</div>
+    
+<p><strong>[LEGION, COMMANDER, CHIEF]</strong> Set that mission assets get reinforced if their number drops below Nmin.</p>
+
+<div id= "#Functions##SetReinforce" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Nreinforce</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Number of max asset groups used to reinforce.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AUFTRAG).SetRepeat" ><strong>AUFTRAG:SetRepeat(Nrepeat)</strong></a></h2>
 </div>
     
@@ -21346,6 +21543,17 @@ themselfs. They wait for the CHIEF to tell them whom to engage.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(AUFTRAG).reinforce" ><strong>AUFTRAG.reinforce</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #number
 <a id="#(AUFTRAG).repeated" ><strong>AUFTRAG.repeated</strong></a>
     
@@ -24478,6 +24686,17 @@ themselfs. They wait for the CHIEF to tell them whom to engage.</p>
 <a id="#(AUFTRAG).refuelSystem" ><strong>AUFTRAG.refuelSystem</strong></a>
     
 <p>Refuel type (boom or probe) for TANKER missions.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AUFTRAG).reinforce" ><strong>AUFTRAG.reinforce</strong></a>
+    
 
 
 </div>
@@ -28559,6 +28778,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #string
+<a id="#(AUFTRAG.SpecialTask).CAPTUREZONE" ><strong>AUFTRAG.SpecialTask.CAPTUREZONE</strong></a>
+    
+<p>Capture OPS zone.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
 <a id="#(AUFTRAG.SpecialTask).EWR" ><strong>AUFTRAG.SpecialTask.EWR</strong></a>
     
 <p>Early Warning Radar.</p>
@@ -29228,6 +29458,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #string
+<a id="#(AUFTRAG.Type).CAPTUREZONE" ><strong>AUFTRAG.Type.CAPTUREZONE</strong></a>
+    
+<p>Capture zone mission.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
 <a id="#(AUFTRAG.Type).CARGOTRANSPORT" ><strong>AUFTRAG.Type.CARGOTRANSPORT</strong></a>
     
 <p>Cargo transport.</p>
@@ -29417,7 +29658,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
     #string
 <a id="#(AUFTRAG.Type).REARMING" ><strong>AUFTRAG.Type.REARMING</strong></a>
     
-
+<p>Rearming mission.</p>
 
 </div>
 

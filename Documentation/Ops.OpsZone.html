@@ -1976,6 +1976,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).Evaluated">OPSZONE:Evaluated()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "Evaluated".</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).GetAttackDuration">OPSZONE:GetAttackDuration()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get duration of the current attack.</p>
@@ -2015,6 +2021,18 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).GetRandomCoordinate">OPSZONE:GetRandomCoordinate(inner, outer, surfacetypes)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns a random coordinate in the zone.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).GetScannedGroupSet">OPSZONE:GetScannedGroupSet()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get scanned groups inside the zone.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).GetScannedUnitSet">OPSZONE:GetScannedUnitSet()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get scanned units inside the zone.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2084,9 +2102,15 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).IsStarted">OPSZONE:IsStarted()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if zone is started (not stopped).</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).IsStopped">OPSZONE:IsStopped()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Check if FMS is stopped.</p>
+<p>Check if zone is stopped.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2150,6 +2174,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).OnAfterEvaluated">OPSZONE:OnAfterEvaluated(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "Evaluated" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).OnAfterGuarded">OPSZONE:OnAfterGuarded(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "Guarded" event.</p>
@@ -2174,6 +2204,36 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).ScanGroupSet">OPSZONE.ScanGroupSet</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set of scanned groups.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).ScanUnitSet">OPSZONE.ScanUnitSet</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set of scanned units.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).SetCaptureNunits">OPSZONE:SetCaptureNunits(Nunits)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set how many units must be present in a zone to capture it.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).SetCaptureThreatlevel">OPSZONE:SetCaptureThreatlevel(Threatlevel)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set threat level threshold that the offending units must have to capture a zone.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).SetCaptureTime">OPSZONE:SetCaptureTime(Tcapture)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set time how long an attacking coalition must have troops inside a zone before it captures the zone.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).SetDrawZone">OPSZONE:SetDrawZone(Switch)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set if zone is drawn on the F10 map.</p>
@@ -2195,24 +2255,6 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).SetObjectCategories">OPSZONE:SetObjectCategories(Categories)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set categories of objects that can capture or hold the zone.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).SetThreatlevelDefinding">OPSZONE:SetThreatlevelDefinding(Threatlevel)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set threat level threshold that the defending units must have to hold a zone.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).SetThreatlevelOffending">OPSZONE:SetThreatlevelOffending(Threatlevel)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set threat level threshold that the offending units must have to capture a zone.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).SetTimeCapture">OPSZONE:SetTimeCapture(Tcapture)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set time how long an attacking coalition must have troops inside a zone before it captures the zone.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2252,6 +2294,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).Tblu">OPSZONE.Tblu</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Threat level of blue units in the zone.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).Tcaptured">OPSZONE.Tcaptured</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Time stamp (abs.) when the attacker destroyed all owning troops.</p>
@@ -2261,6 +2309,18 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).TminCaptured">OPSZONE.TminCaptured</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Time interval in seconds how long an attacker must have troops inside the zone to capture.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).Tnut">OPSZONE.Tnut</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Threat level of neutral units in the zone.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).Tred">OPSZONE.Tred</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Threat level of red units in the zone.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2296,7 +2356,7 @@
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE)._GetMarkerText">OPSZONE:_GetMarkerText()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Get marker text</p>
+<p>Get marker text.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2339,6 +2399,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).__Empty">OPSZONE:__Empty(delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "Empty" after a delay.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).__Evaluated">OPSZONE:__Evaluated(delay)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "Evaluated" after a delay.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2426,6 +2492,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).nunitsCapture">OPSZONE.nunitsCapture</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Number of units necessary to capture a zone.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).onafterAttacked">OPSZONE:onafterAttacked(From, Event, To, AttackerCoalition)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "Attacked" event.</p>
@@ -2468,7 +2540,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).onenterAttacked">OPSZONE:onenterAttacked(From, Event, To)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).onenterAttacked">OPSZONE:onenterAttacked(From, Event, To, AttackerCoalition)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On enter "Attacked" state.</p>
 </td>
@@ -2498,15 +2570,9 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).threatlevelDefending">OPSZONE.threatlevelDefending</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).threatlevelCapture">OPSZONE.threatlevelCapture</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).threatlevelOffending">OPSZONE.threatlevelOffending</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Threat level necessary to capture a zone.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3491,10 +3557,43 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(OPSZONE).ScanGroupSet" ><strong>OPSZONE.ScanGroupSet</strong></a>
+    
+<p>Set of scanned groups.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
+<a id="#(OPSZONE).ScanUnitSet" ><strong>OPSZONE.ScanUnitSet</strong></a>
+    
+<p>Set of scanned units.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #number
 <a id="#(OPSZONE).Tattacked" ><strong>OPSZONE.Tattacked</strong></a>
     
 <p>Abs. mission time stamp when an attack was started.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPSZONE).Tblu" ><strong>OPSZONE.Tblu</strong></a>
+    
+<p>Threat level of blue units in the zone.</p>
 
 </div>
 
@@ -3517,6 +3616,28 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(OPSZONE).TminCaptured" ><strong>OPSZONE.TminCaptured</strong></a>
     
 <p>Time interval in seconds how long an attacker must have troops inside the zone to capture.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPSZONE).Tnut" ><strong>OPSZONE.Tnut</strong></a>
+    
+<p>Threat level of neutral units in the zone.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPSZONE).Tred" ><strong>OPSZONE.Tred</strong></a>
+    
+<p>Threat level of red units in the zone.</p>
 
 </div>
 
@@ -3595,6 +3716,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     
 
 
+    
+<p> Contested.</p>
+
 </div>
 
 </div>   
@@ -3657,6 +3781,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(OPSZONE).nunitsCapture" ><strong>OPSZONE.nunitsCapture</strong></a>
+    
+<p>Number of units necessary to capture a zone.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
 <a id="#(OPSZONE).ownerCurrent" ><strong>OPSZONE.ownerCurrent</strong></a>
     
 <p>Coalition of the current owner of the zone.</p>
@@ -3671,6 +3806,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(OPSZONE).ownerPrevious" ><strong>OPSZONE.ownerPrevious</strong></a>
     
 <p>Coalition of the previous owner of the zone.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPSZONE).threatlevelCapture" ><strong>OPSZONE.threatlevelCapture</strong></a>
+    
+<p>Threat level necessary to capture a zone.</p>
 
 </div>
 
@@ -3887,6 +4033,25 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
       </div>
     </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPSZONE).Evaluated" ><strong>OPSZONE:Evaluated()</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "Evaluated".</p>
+
+<div id= "#Functions##Evaluated" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPSZONE</p>
+</div>
 </div>
 
 </div>
@@ -4134,6 +4299,66 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       <div class="w3-half">
         
 <p>The random coordinate.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPSZONE).GetScannedGroupSet" ><strong>OPSZONE:GetScannedGroupSet()</strong></a></h2>
+</div>
+    
+<p>Get scanned groups inside the zone.</p>
+
+<div id= "#Functions##GetScannedGroupSet" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPSZONE</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Set of groups inside the zone.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPSZONE).GetScannedUnitSet" ><strong>OPSZONE:GetScannedUnitSet()</strong></a></h2>
+</div>
+    
+<p>Get scanned units inside the zone.</p>
+
+<div id= "#Functions##GetScannedUnitSet" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPSZONE</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Set of units inside the zone.</p>
 
       </div>
     </div>
@@ -4451,10 +4676,40 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(OPSZONE).IsStarted" ><strong>OPSZONE:IsStarted()</strong></a></h2>
+</div>
+    
+<p>Check if zone is started (not stopped).</p>
+
+<div id= "#Functions##IsStarted" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPSZONE</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If <code>true</code>, zone is started.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(OPSZONE).IsStopped" ><strong>OPSZONE:IsStopped()</strong></a></h2>
 </div>
     
-<p>Check if FMS is stopped.</p>
+<p>Check if zone is stopped.</p>
 
 <div id= "#Functions##IsStopped" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -4469,7 +4724,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       </div>
       <div class="w3-half">
         
-<p>If <code>true</code>, FSM is stopped</p>
+<p>If <code>true</code>, zone is stopped.</p>
 
       </div>
     </div>
@@ -4531,10 +4786,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>           myopszone = OPSZONE:New(ZONE:FindByName("OpsZoneOne"),coalition.side.RED) -- base zone from the mission editor
-           myopszone = OPSZONE:New(ZONE_RADIUS:New("OpsZoneTwo",mycoordinate:GetVec2(),5000),coalition.side.BLUE) -- radius zone of 5km at a coordinate
-           myopszone = OPSZONE:New(ZONE_RADIUS:New("Batumi")) -- airbase zone from Batumi Airbase, ca 2500m radius
-           myopszone = OPSZONE:New(ZONE_AIRBASE:New("Batumi",6000),coalition.side.BLUE) -- airbase zone from Batumi Airbase, but with a specific radius of 6km
+    <pre class="example"><code>myopszone = OPSZONE:New(ZONE:FindByName("OpsZoneOne"), coalition.side.RED) -- base zone from the mission editor
+myopszone = OPSZONE:New(ZONE_RADIUS:New("OpsZoneTwo", mycoordinate:GetVec2(),5000),coalition.side.BLUE) -- radius zone of 5km at a coordinate
+myopszone = OPSZONE:New(ZONE_RADIUS:New("Batumi")) -- airbase zone from Batumi Airbase, ca 2500m radius
+myopszone = OPSZONE:New(ZONE_AIRBASE:New("Batumi",6000),coalition.side.BLUE) -- airbase zone from Batumi Airbase, but with a specific radius of 6km
 </code></pre>
 
 </div>
@@ -4820,6 +5075,65 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(OPSZONE).OnAfterEvaluated" ><strong>OPSZONE:OnAfterEvaluated(From, Event, To)</strong></a></h2>
+</div>
+    
+<p>On after "Evaluated" event.</p>
+
+<div id= "#Functions##OnAfterEvaluated" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPSZONE</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(OPSZONE).OnAfterGuarded" ><strong>OPSZONE:OnAfterGuarded(From, Event, To)</strong></a></h2>
 </div>
     
@@ -4956,6 +5270,144 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>OPSZONE</p>
 </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(OPSZONE)">#OPSZONE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPSZONE).SetCaptureNunits" ><strong>OPSZONE:SetCaptureNunits(Nunits)</strong></a></h2>
+</div>
+    
+<p>Set how many units must be present in a zone to capture it.</p>
+
+    
+<p>By default, one unit is enough.</p>
+
+<div id= "#Functions##SetCaptureNunits" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPSZONE</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Nunits</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Number of units. Default 1.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(OPSZONE)">#OPSZONE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPSZONE).SetCaptureThreatlevel" ><strong>OPSZONE:SetCaptureThreatlevel(Threatlevel)</strong></a></h2>
+</div>
+    
+<p>Set threat level threshold that the offending units must have to capture a zone.</p>
+
+    
+<p>The reason why you might want to set this is that unarmed units (<em>e.g.</em> fuel trucks) should not be able to capture a zone as they do not pose a threat.</p>
+
+<div id= "#Functions##SetCaptureThreatlevel" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPSZONE</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Threatlevel</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Threat level threshold. Default 0.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(OPSZONE)">#OPSZONE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPSZONE).SetCaptureTime" ><strong>OPSZONE:SetCaptureTime(Tcapture)</strong></a></h2>
+</div>
+    
+<p>Set time how long an attacking coalition must have troops inside a zone before it captures the zone.</p>
+
+<div id= "#Functions##SetCaptureTime" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPSZONE</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Tcapture</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Time in seconds. Default 0.</p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -5155,144 +5607,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>Object categories. Default is <code>{Object.Category.UNIT, Object.Category.STATIC}</code>.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(OPSZONE)">#OPSZONE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(OPSZONE).SetThreatlevelDefinding" ><strong>OPSZONE:SetThreatlevelDefinding(Threatlevel)</strong></a></h2>
-</div>
-    
-<p>Set threat level threshold that the defending units must have to hold a zone.</p>
-
-    
-<p>The reason why you might want to set this is that unarmed units (<em>e.g.</em> fuel trucks) should not be able to hold a zone as they do not pose a threat.</p>
-
-<div id= "#Functions##SetThreatlevelDefinding" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>OPSZONE</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Threatlevel</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Threat level threshod. Default 0.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(OPSZONE)">#OPSZONE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(OPSZONE).SetThreatlevelOffending" ><strong>OPSZONE:SetThreatlevelOffending(Threatlevel)</strong></a></h2>
-</div>
-    
-<p>Set threat level threshold that the offending units must have to capture a zone.</p>
-
-    
-<p>The reason why you might want to set this is that unarmed units (<em>e.g.</em> fuel trucks) should not be able to capture a zone as they do not pose a threat.</p>
-
-<div id= "#Functions##SetThreatlevelOffending" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>OPSZONE</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Threatlevel</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Threat level threshod. Default 0.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(OPSZONE)">#OPSZONE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(OPSZONE).SetTimeCapture" ><strong>OPSZONE:SetTimeCapture(Tcapture)</strong></a></h2>
-</div>
-    
-<p>Set time how long an attacking coalition must have troops inside a zone before it captures the zone.</p>
-
-<div id= "#Functions##SetTimeCapture" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>OPSZONE</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Tcapture</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Time in seconds. Default 0.</p>
 
           </div>
         </div>
@@ -5678,7 +5992,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(OPSZONE)._GetMarkerText" ><strong>OPSZONE:_GetMarkerText()</strong></a></h2>
 </div>
     
-<p>Get marker text</p>
+<p>Get marker text.</p>
 
 <div id= "#Functions##_GetMarkerText" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -5931,6 +6245,39 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <p>Triggers the FSM event "Empty" after a delay.</p>
 
 <div id= "#Functions##__Empty" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPSZONE</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Delay in seconds.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPSZONE).__Evaluated" ><strong>OPSZONE:__Evaluated(delay)</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "Evaluated" after a delay.</p>
+
+<div id= "#Functions##__Evaluated" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -6522,7 +6869,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(OPSZONE).onenterAttacked" ><strong>OPSZONE:onenterAttacked(From, Event, To)</strong></a></h2>
+<h2><a id="#(OPSZONE).onenterAttacked" ><strong>OPSZONE:onenterAttacked(From, Event, To, AttackerCoalition)</strong></a></h2>
 </div>
     
 <p>On enter "Attacked" state.</p>
@@ -6570,6 +6917,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>To state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>AttackerCoalition</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Coalition of the attacking ground troops.</p>
 
           </div>
         </div>
@@ -6782,10 +7142,43 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(OPSZONE).ScanGroupSet" ><strong>OPSZONE.ScanGroupSet</strong></a>
+    
+<p>Set of scanned groups.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
+<a id="#(OPSZONE).ScanUnitSet" ><strong>OPSZONE.ScanUnitSet</strong></a>
+    
+<p>Set of scanned units.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #number
 <a id="#(OPSZONE).Tattacked" ><strong>OPSZONE.Tattacked</strong></a>
     
 <p>Abs. mission time stamp when an attack was started.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPSZONE).Tblu" ><strong>OPSZONE.Tblu</strong></a>
+    
+<p>Threat level of blue units in the zone.</p>
 
 </div>
 
@@ -6808,6 +7201,28 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(OPSZONE).TminCaptured" ><strong>OPSZONE.TminCaptured</strong></a>
     
 <p>Time interval in seconds how long an attacker must have troops inside the zone to capture.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPSZONE).Tnut" ><strong>OPSZONE.Tnut</strong></a>
+    
+<p>Threat level of neutral units in the zone.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPSZONE).Tred" ><strong>OPSZONE.Tred</strong></a>
+    
+<p>Threat level of red units in the zone.</p>
 
 </div>
 
@@ -6886,6 +7301,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     
 
 
+    
+<p> Contested.</p>
+
 </div>
 
 </div>   
@@ -6948,6 +7366,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(OPSZONE).nunitsCapture" ><strong>OPSZONE.nunitsCapture</strong></a>
+    
+<p>Number of units necessary to capture a zone.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
 <a id="#(OPSZONE).ownerCurrent" ><strong>OPSZONE.ownerCurrent</strong></a>
     
 <p>Coalition of the current owner of the zone.</p>
@@ -6962,6 +7391,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(OPSZONE).ownerPrevious" ><strong>OPSZONE.ownerPrevious</strong></a>
     
 <p>Coalition of the previous owner of the zone.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPSZONE).threatlevelCapture" ><strong>OPSZONE.threatlevelCapture</strong></a>
+    
+<p>Threat level necessary to capture a zone.</p>
 
 </div>
 
@@ -8560,10 +9000,43 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(OPSZONE).ScanGroupSet" ><strong>OPSZONE.ScanGroupSet</strong></a>
+    
+<p>Set of scanned groups.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
+<a id="#(OPSZONE).ScanUnitSet" ><strong>OPSZONE.ScanUnitSet</strong></a>
+    
+<p>Set of scanned units.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #number
 <a id="#(OPSZONE).Tattacked" ><strong>OPSZONE.Tattacked</strong></a>
     
 <p>Abs. mission time stamp when an attack was started.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPSZONE).Tblu" ><strong>OPSZONE.Tblu</strong></a>
+    
+<p>Threat level of blue units in the zone.</p>
 
 </div>
 
@@ -8586,6 +9059,28 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(OPSZONE).TminCaptured" ><strong>OPSZONE.TminCaptured</strong></a>
     
 <p>Time interval in seconds how long an attacker must have troops inside the zone to capture.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPSZONE).Tnut" ><strong>OPSZONE.Tnut</strong></a>
+    
+<p>Threat level of neutral units in the zone.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPSZONE).Tred" ><strong>OPSZONE.Tred</strong></a>
+    
+<p>Threat level of red units in the zone.</p>
 
 </div>
 
@@ -8664,6 +9159,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     
 
 
+    
+<p> Contested.</p>
+
 </div>
 
 </div>   
@@ -8726,6 +9224,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(OPSZONE).nunitsCapture" ><strong>OPSZONE.nunitsCapture</strong></a>
+    
+<p>Number of units necessary to capture a zone.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
 <a id="#(OPSZONE).ownerCurrent" ><strong>OPSZONE.ownerCurrent</strong></a>
     
 <p>Coalition of the current owner of the zone.</p>
@@ -8740,6 +9249,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(OPSZONE).ownerPrevious" ><strong>OPSZONE.ownerPrevious</strong></a>
     
 <p>Coalition of the previous owner of the zone.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(OPSZONE).threatlevelCapture" ><strong>OPSZONE.threatlevelCapture</strong></a>
+    
+<p>Threat level necessary to capture a zone.</p>
 
 </div>
 

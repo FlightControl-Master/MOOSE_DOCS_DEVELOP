@@ -1996,13 +1996,13 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TARGET).CountObjectives">TARGET:CountObjectives(Target)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TARGET).CountObjectives">TARGET:CountObjectives(Target, Coalitions)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Count alive objects.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TARGET).CountTargets">TARGET:CountTargets()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TARGET).CountTargets">TARGET:CountTargets(Coalitions)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Count alive targets.</p>
 </td>
@@ -2068,13 +2068,13 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TARGET).GetObject">TARGET:GetObject()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TARGET).GetObject">TARGET:GetObject(RefCoordinate, Coalitions)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the first target object alive.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TARGET).GetObjective">TARGET:GetObjective()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TARGET).GetObjective">TARGET:GetObjective(RefCoordinate, Coalitions)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the first target objective alive.</p>
 </td>
@@ -2089,6 +2089,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TARGET).GetTargetCategory">TARGET:GetTargetCategory(Target)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get target category.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TARGET).GetTargetCoalition">TARGET:GetTargetCoalition(Target)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get coalition of target object.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3498,6 +3504,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TARGET.ObjectType).OPSZONE">TARGET.ObjectType.OPSZONE</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Target is an OPSZONE object.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TARGET.ObjectType).SCENERY">TARGET.ObjectType.SCENERY</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Target is a SCENERY object.</p>
@@ -4058,6 +4070,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     <li>SET_SCENERY</li>
     <li>SET_OPSGROUP</li>
     <li>SET_ZONE</li>
+    <li>SET_OPSZONE</li>
 </ul>
 
 
@@ -4185,7 +4198,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(TARGET).CountObjectives" ><strong>TARGET:CountObjectives(Target)</strong></a></h2>
+<h2><a id="#(TARGET).CountObjectives" ><strong>TARGET:CountObjectives(Target, Coalitions)</strong></a></h2>
 </div>
     
 <p>Count alive objects.</p>
@@ -4196,7 +4209,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>TARGET</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -4207,6 +4220,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>Target objective.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Coalitions</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Only count targets of the given coalition(s). </p>
 
           </div>
         </div>
@@ -4229,7 +4255,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(TARGET).CountTargets" ><strong>TARGET:CountTargets()</strong></a></h2>
+<h2><a id="#(TARGET).CountTargets" ><strong>TARGET:CountTargets(Coalitions)</strong></a></h2>
 </div>
     
 <p>Count alive targets.</p>
@@ -4240,6 +4266,20 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>TARGET</p>
 </div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Coalitions</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Only count targets of the given coalition(s). </p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -4590,7 +4630,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(TARGET).GetObject" ><strong>TARGET:GetObject()</strong></a></h2>
+<h2><a id="#(TARGET).GetObject" ><strong>TARGET:GetObject(RefCoordinate, Coalitions)</strong></a></h2>
 </div>
     
 <p>Get the first target object alive.</p>
@@ -4601,6 +4641,33 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>TARGET</p>
 </div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>RefCoordinate</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Reference coordinate to determine the closest target objective.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Coalitions</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Only consider targets of the given coalition(s). </p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -4620,7 +4687,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(TARGET).GetObjective" ><strong>TARGET:GetObjective()</strong></a></h2>
+<h2><a id="#(TARGET).GetObjective" ><strong>TARGET:GetObjective(RefCoordinate, Coalitions)</strong></a></h2>
 </div>
     
 <p>Get the first target objective alive.</p>
@@ -4631,6 +4698,33 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>TARGET</p>
 </div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>RefCoordinate</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Reference coordinate to determine the closest target objective.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Coalitions</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Only consider targets of the given coalition(s). </p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -4727,6 +4821,53 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       <div class="w3-half">
         
 <p>Target category.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TARGET).GetTargetCoalition" ><strong>TARGET:GetTargetCoalition(Target)</strong></a></h2>
+</div>
+    
+<p>Get coalition of target object.</p>
+
+    
+<p>If an object has no coalition (<em>e.g.</em> a coordinate) it is returned as neutral.</p>
+
+<div id= "#Functions##GetTargetCoalition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TARGET</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(TARGET.Object)">#TARGET.Object</a>
+            <strong><strong>Target</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Target object.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#number:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Coalition number.</p>
 
       </div>
     </div>
@@ -12392,6 +12533,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(TARGET.ObjectType).GROUP" ><strong>TARGET.ObjectType.GROUP</strong></a>
     
 <p>Target is a GROUP object.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(TARGET.ObjectType).OPSZONE" ><strong>TARGET.ObjectType.OPSZONE</strong></a>
+    
+<p>Target is an OPSZONE object.</p>
 
 </div>
 
