@@ -3576,6 +3576,18 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG)._GetRequest">AUFTRAG:_GetRequest(Legion)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get request from legion this mission requested assets from.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG)._GetRequestID">AUFTRAG:_GetRequestID(Legion)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get request ID from legion this mission requested assets from</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG)._NewRELOCATECOHORT">AUFTRAG:_NewRELOCATECOHORT(Legion, Cohort)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[PRIVATE, AIR, GROUND, NAVAL]</strong> Create a mission to relocate all cohort assets to another LEGION.</p>
@@ -3588,15 +3600,15 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG)._TargetFromObject">AUFTRAG:_TargetFromObject(Object)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG)._SetRequestID">AUFTRAG:_SetRequestID(Legion, RequestID)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Create target data from a given object.</p>
+<p>Set request ID from legion this mission requested assets from</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG)._UpdateTask">AUFTRAG:_UpdateTask()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG)._TargetFromObject">AUFTRAG:_TargetFromObject(Object)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Update DCS task.</p>
+<p>Create target data from a given object.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -18431,6 +18443,94 @@ themselfs. They wait for the CHIEF to tell them whom to engage.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG)._GetRequest" ><strong>AUFTRAG:_GetRequest(Legion)</strong></a></h2>
+</div>
+    
+<p>Get request from legion this mission requested assets from.</p>
+
+<div id= "#Functions##_GetRequest" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.Legion.html##(LEGION)">Ops.Legion#LEGION</a>
+            <strong><strong>Legion</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The legion from which to get the request ID.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Functional.Warehouse.html##(WAREHOUSE.PendingItem)">Functional.Warehouse#WAREHOUSE.PendingItem</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Request.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG)._GetRequestID" ><strong>AUFTRAG:_GetRequestID(Legion)</strong></a></h2>
+</div>
+    
+<p>Get request ID from legion this mission requested assets from</p>
+
+<div id= "#Functions##_GetRequestID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.Legion.html##(LEGION)">Ops.Legion#LEGION</a>
+            <strong><strong>Legion</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The legion from which to get the request ID.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#number:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Request ID (if any).</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AUFTRAG)._NewRELOCATECOHORT" ><strong>AUFTRAG:_NewRELOCATECOHORT(Legion, Cohort)</strong></a></h2>
 </div>
     
@@ -18518,6 +18618,63 @@ themselfs. They wait for the CHIEF to tell them whom to engage.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG)._SetRequestID" ><strong>AUFTRAG:_SetRequestID(Legion, RequestID)</strong></a></h2>
+</div>
+    
+<p>Set request ID from legion this mission requested assets from</p>
+
+<div id= "#Functions##_SetRequestID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.Legion.html##(LEGION)">Ops.Legion#LEGION</a>
+            <strong><strong>Legion</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The legion from which to get the request ID.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>RequestID</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Request ID.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AUFTRAG)._TargetFromObject" ><strong>AUFTRAG:_TargetFromObject(Object)</strong></a></h2>
 </div>
     
@@ -18543,36 +18700,6 @@ themselfs. They wait for the CHIEF to tell them whom to engage.</p>
 
           </div>
         </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AUFTRAG)._UpdateTask" ><strong>AUFTRAG:_UpdateTask()</strong></a></h2>
-</div>
-    
-<p>Update DCS task.</p>
-
-<div id= "#Functions##_UpdateTask" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AUFTRAG</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
 </div>
 
 </div>
