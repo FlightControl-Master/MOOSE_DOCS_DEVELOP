@@ -2335,7 +2335,7 @@ myFleet:AddFlotilla(FlotillaPerry)
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLEET).MissionRequest">FLEET:MissionRequest(Mission)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLEET).MissionRequest">FLEET:MissionRequest(Mission, Assets)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "MissionRequest".</p>
 </td>
@@ -2365,7 +2365,7 @@ myFleet:AddFlotilla(FlotillaPerry)
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLEET).OnAfterMissionRequest">FLEET:OnAfterMissionRequest(From, Event, To, Mission)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLEET).OnAfterMissionRequest">FLEET:OnAfterMissionRequest(From, Event, To, Mission, Assets)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "MissionRequest" event.</p>
 </td>
@@ -2545,7 +2545,7 @@ myFleet:AddFlotilla(FlotillaPerry)
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLEET).__MissionRequest">FLEET:__MissionRequest(delay, Mission)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLEET).__MissionRequest">FLEET:__MissionRequest(delay, Mission, Assets)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "MissionRequest" after a delay.</p>
 </td>
@@ -2671,7 +2671,7 @@ myFleet:AddFlotilla(FlotillaPerry)
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLEET).onafterMissionRequest">FLEET:onafterMissionRequest(From, Event, To, Mission)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLEET).onafterMissionRequest">FLEET:onafterMissionRequest(From, Event, To, Mission, Assets)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "MissionRequest" event.</p>
 </td>
@@ -8236,7 +8236,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(FLEET).MissionRequest" ><strong>FLEET:MissionRequest(Mission)</strong></a></h2>
+<h2><a id="#(FLEET).MissionRequest" ><strong>FLEET:MissionRequest(Mission, Assets)</strong></a></h2>
 </div>
     
 <p>Triggers the FSM event "MissionRequest".</p>
@@ -8247,7 +8247,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p><a href="Ops.Legion.html##(LEGION)">Ops.Legion#LEGION</a></p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -8258,6 +8258,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>The mission.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Assets</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Assets to add.</p>
 
           </div>
         </div>
@@ -8571,7 +8584,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(FLEET).OnAfterMissionRequest" ><strong>FLEET:OnAfterMissionRequest(From, Event, To, Mission)</strong></a></h2>
+<h2><a id="#(FLEET).OnAfterMissionRequest" ><strong>FLEET:OnAfterMissionRequest(From, Event, To, Mission, Assets)</strong></a></h2>
 </div>
     
 <p>On after "MissionRequest" event.</p>
@@ -8632,6 +8645,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>The mission.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Assets</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Assets to add.</p>
 
           </div>
         </div>
@@ -9932,6 +9958,17 @@ Cohort assets will not be available until relocation is finished.</p>
 
           </div>
         </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Functional.Warehouse.html##(WAREHOUSE.Queueitem)">Functional.Warehouse#WAREHOUSE.Queueitem</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The request.</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
@@ -10637,7 +10674,7 @@ Cohort assets will not be available until relocation is finished.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(FLEET).__MissionRequest" ><strong>FLEET:__MissionRequest(delay, Mission)</strong></a></h2>
+<h2><a id="#(FLEET).__MissionRequest" ><strong>FLEET:__MissionRequest(delay, Mission, Assets)</strong></a></h2>
 </div>
     
 <p>Triggers the FSM event "MissionRequest" after a delay.</p>
@@ -10672,6 +10709,19 @@ Cohort assets will not be available until relocation is finished.</p>
           <div class="w3-half">
               
 <p>The mission.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Assets</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Assets to add.</p>
 
           </div>
         </div>
@@ -11549,7 +11599,7 @@ Cohort assets will not be available until relocation is finished.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(FLEET).onafterMissionRequest" ><strong>FLEET:onafterMissionRequest(From, Event, To, Mission)</strong></a></h2>
+<h2><a id="#(FLEET).onafterMissionRequest" ><strong>FLEET:onafterMissionRequest(From, Event, To, Mission, Assets)</strong></a></h2>
 </div>
     
 <p>On after "MissionRequest" event.</p>
@@ -11613,6 +11663,19 @@ Cohort assets will not be available until relocation is finished.</p>
           <div class="w3-half">
               
 <p>The requested mission.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Assets</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Assets to add.</p>
 
           </div>
         </div>
