@@ -2356,6 +2356,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).SetAllowAfterburner">FLIGHTGROUP:SetAllowAfterburner()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set if aircraft is allowed to use afterburner.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).SetDespawnAfterHolding">FLIGHTGROUP:SetDespawnAfterHolding()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Enable that the group is despawned after holding.</p>
@@ -2416,6 +2422,18 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).SetJettisonEmptyTanks">FLIGHTGROUP:SetJettisonEmptyTanks(Switch)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set if aircraft is allowed to drop empty fuel tanks - set to true to allow, and false to forbid it.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).SetJettisonWeapons">FLIGHTGROUP:SetJettisonWeapons(Switch)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set if aircraft is allowed to drop weapons to escape danger - set to true to allow, and false to forbid it.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).SetOutOfAAMRTB">FLIGHTGROUP:SetOutOfAAMRTB(switch)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set if flight is out of Air-Air-Missiles, flight goes RTB.</p>
@@ -2425,6 +2443,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).SetOutOfAGMRTB">FLIGHTGROUP:SetOutOfAGMRTB(switch)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set if flight is out of Air-Ground-Missiles, flight goes RTB.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).SetProhibitAfterburner">FLIGHTGROUP:SetProhibitAfterburner()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set if aircraft is <strong>not</strong> allowed to use afterburner.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2815,7 +2839,6 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).isReadyTO">FLIGHTGROUP.isReadyTO</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Flight is ready for takeoff. This is for FLIGHTCONTROL.</p>
-
 </td>
           </tr>
           <tr class="w3-border">
@@ -2827,6 +2850,19 @@
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).isVTOL">FLIGHTGROUP.isVTOL</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).jettisonEmptyTanks">FLIGHTGROUP.jettisonEmptyTanks</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Allow (true) or disallow (false) AI to jettison empty fuel tanks.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).jettisonWeapons">FLIGHTGROUP.jettisonWeapons</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Allow (true) or disallow (false) AI to jettison weapons if in danger.</p>
 
 </td>
           </tr>
@@ -3092,6 +3128,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).outofAGMrtb">FLIGHTGROUP.outofAGMrtb</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).prohibitAB">FLIGHTGROUP.prohibitAB</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Disallow (true) or allow (false) AI to use the afterburner.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3364,6 +3406,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).DestroyUnit">FLIGHTGROUP:DestroyUnit(UnitName, Delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Destroy a unit of the group.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).EPLRS">FLIGHTGROUP.EPLRS</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -7605,17 +7653,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(FLIGHTGROUP).currbase" ><strong>FLIGHTGROUP.currbase</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(FLIGHTGROUP).despawnAfterHolding" ><strong>FLIGHTGROUP.despawnAfterHolding</strong></a>
     
@@ -7631,6 +7668,20 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(FLIGHTGROUP).despawnAfterLanding" ><strong>FLIGHTGROUP.despawnAfterLanding</strong></a>
     
 <p>If <code>true</code>, group is despawned after landed at an airbase.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(FLIGHTGROUP).destbase" ><strong>FLIGHTGROUP.destbase</strong></a>
+    
+
+
+    
+<p> Set the destination base.</p>
 
 </div>
 
@@ -7751,6 +7802,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).homebase" ><strong>FLIGHTGROUP.homebase</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).isDead" ><strong>FLIGHTGROUP.isDead</strong></a>
     
@@ -7790,6 +7852,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).isLandingAtAirbase" ><strong>FLIGHTGROUP.isLandingAtAirbase</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).isLateActivated" ><strong>FLIGHTGROUP.isLateActivated</strong></a>
     
@@ -7820,7 +7893,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     
 <p>Flight is ready for takeoff. This is for FLIGHTCONTROL.</p>
 
-
 </div>
 
 </div>   
@@ -7832,9 +7904,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     
 
 
-    
-<p> Spawn in uncontrolled state.</p>
-
 </div>
 
 </div>   
@@ -7844,6 +7913,29 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     #boolean
 <a id="#(FLIGHTGROUP).isVTOL" ><strong>FLIGHTGROUP.isVTOL</strong></a>
     
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(FLIGHTGROUP).jettisonEmptyTanks" ><strong>FLIGHTGROUP.jettisonEmptyTanks</strong></a>
+    
+<p>Allow (true) or disallow (false) AI to jettison empty fuel tanks.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(FLIGHTGROUP).jettisonWeapons" ><strong>FLIGHTGROUP.jettisonWeapons</strong></a>
+    
+<p>Allow (true) or disallow (false) AI to jettison weapons if in danger.</p>
 
 
 </div>
@@ -7892,6 +7984,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(FLIGHTGROUP).outofAGMrtb" ><strong>FLIGHTGROUP.outofAGMrtb</strong></a>
     
 
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(FLIGHTGROUP).prohibitAB" ><strong>FLIGHTGROUP.prohibitAB</strong></a>
+    
+<p>Disallow (true) or allow (false) AI to use the afterburner.</p>
 
 </div>
 
@@ -10143,6 +10246,36 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(FLIGHTGROUP).SetAllowAfterburner" ><strong>FLIGHTGROUP:SetAllowAfterburner()</strong></a></h2>
+</div>
+    
+<p>Set if aircraft is allowed to use afterburner.</p>
+
+<div id= "#Functions##SetAllowAfterburner" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>FLIGHTGROUP</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FLIGHTGROUP)">#FLIGHTGROUP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(FLIGHTGROUP).SetDespawnAfterHolding" ><strong>FLIGHTGROUP:SetDespawnAfterHolding()</strong></a></h2>
 </div>
     
@@ -10570,6 +10703,94 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(FLIGHTGROUP).SetJettisonEmptyTanks" ><strong>FLIGHTGROUP:SetJettisonEmptyTanks(Switch)</strong></a></h2>
+</div>
+    
+<p>Set if aircraft is allowed to drop empty fuel tanks - set to true to allow, and false to forbid it.</p>
+
+<div id= "#Functions##SetJettisonEmptyTanks" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>FLIGHTGROUP</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Switch</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>true or false</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FLIGHTGROUP)">#FLIGHTGROUP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FLIGHTGROUP).SetJettisonWeapons" ><strong>FLIGHTGROUP:SetJettisonWeapons(Switch)</strong></a></h2>
+</div>
+    
+<p>Set if aircraft is allowed to drop weapons to escape danger - set to true to allow, and false to forbid it.</p>
+
+<div id= "#Functions##SetJettisonWeapons" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>FLIGHTGROUP</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Switch</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>true or false</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FLIGHTGROUP)">#FLIGHTGROUP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(FLIGHTGROUP).SetOutOfAAMRTB" ><strong>FLIGHTGROUP:SetOutOfAAMRTB(switch)</strong></a></h2>
 </div>
     
@@ -10639,6 +10860,36 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
           </div>
         </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FLIGHTGROUP)">#FLIGHTGROUP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FLIGHTGROUP).SetProhibitAfterburner" ><strong>FLIGHTGROUP:SetProhibitAfterburner()</strong></a></h2>
+</div>
+    
+<p>Set if aircraft is <strong>not</strong> allowed to use afterburner.</p>
+
+<div id= "#Functions##SetProhibitAfterburner" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>FLIGHTGROUP</p>
+</div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -15092,17 +15343,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(FLIGHTGROUP).currbase" ><strong>FLIGHTGROUP.currbase</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(FLIGHTGROUP).despawnAfterHolding" ><strong>FLIGHTGROUP.despawnAfterHolding</strong></a>
     
@@ -15118,6 +15358,20 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(FLIGHTGROUP).despawnAfterLanding" ><strong>FLIGHTGROUP.despawnAfterLanding</strong></a>
     
 <p>If <code>true</code>, group is despawned after landed at an airbase.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(FLIGHTGROUP).destbase" ><strong>FLIGHTGROUP.destbase</strong></a>
+    
+
+
+    
+<p> Set the destination base.</p>
 
 </div>
 
@@ -15238,6 +15492,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).homebase" ><strong>FLIGHTGROUP.homebase</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).isDead" ><strong>FLIGHTGROUP.isDead</strong></a>
     
@@ -15277,6 +15542,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).isLandingAtAirbase" ><strong>FLIGHTGROUP.isLandingAtAirbase</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).isLateActivated" ><strong>FLIGHTGROUP.isLateActivated</strong></a>
     
@@ -15307,7 +15583,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     
 <p>Flight is ready for takeoff. This is for FLIGHTCONTROL.</p>
 
-
 </div>
 
 </div>   
@@ -15319,9 +15594,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     
 
 
-    
-<p> Spawn in uncontrolled state.</p>
-
 </div>
 
 </div>   
@@ -15331,6 +15603,29 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     #boolean
 <a id="#(FLIGHTGROUP).isVTOL" ><strong>FLIGHTGROUP.isVTOL</strong></a>
     
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(FLIGHTGROUP).jettisonEmptyTanks" ><strong>FLIGHTGROUP.jettisonEmptyTanks</strong></a>
+    
+<p>Allow (true) or disallow (false) AI to jettison empty fuel tanks.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(FLIGHTGROUP).jettisonWeapons" ><strong>FLIGHTGROUP.jettisonWeapons</strong></a>
+    
+<p>Allow (true) or disallow (false) AI to jettison weapons if in danger.</p>
 
 
 </div>
@@ -15379,6 +15674,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(FLIGHTGROUP).outofAGMrtb" ><strong>FLIGHTGROUP.outofAGMrtb</strong></a>
     
 
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(FLIGHTGROUP).prohibitAB" ><strong>FLIGHTGROUP.prohibitAB</strong></a>
+    
+<p>Disallow (true) or allow (false) AI to use the afterburner.</p>
 
 </div>
 
@@ -34353,17 +34659,6 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(FLIGHTGROUP).currbase" ><strong>FLIGHTGROUP.currbase</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(FLIGHTGROUP).despawnAfterHolding" ><strong>FLIGHTGROUP.despawnAfterHolding</strong></a>
     
@@ -34379,6 +34674,20 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <a id="#(FLIGHTGROUP).despawnAfterLanding" ><strong>FLIGHTGROUP.despawnAfterLanding</strong></a>
     
 <p>If <code>true</code>, group is despawned after landed at an airbase.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(FLIGHTGROUP).destbase" ><strong>FLIGHTGROUP.destbase</strong></a>
+    
+
+
+    
+<p> Set the destination base.</p>
 
 </div>
 
@@ -34499,6 +34808,17 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).homebase" ><strong>FLIGHTGROUP.homebase</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).isDead" ><strong>FLIGHTGROUP.isDead</strong></a>
     
@@ -34538,6 +34858,17 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).isLandingAtAirbase" ><strong>FLIGHTGROUP.isLandingAtAirbase</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).isLateActivated" ><strong>FLIGHTGROUP.isLateActivated</strong></a>
     
@@ -34568,7 +34899,6 @@ Optionally, you can calculate the current max weight possible, which accounts fo
     
 <p>Flight is ready for takeoff. This is for FLIGHTCONTROL.</p>
 
-
 </div>
 
 </div>   
@@ -34580,9 +34910,6 @@ Optionally, you can calculate the current max weight possible, which accounts fo
     
 
 
-    
-<p> Spawn in uncontrolled state.</p>
-
 </div>
 
 </div>   
@@ -34592,6 +34919,29 @@ Optionally, you can calculate the current max weight possible, which accounts fo
     #boolean
 <a id="#(FLIGHTGROUP).isVTOL" ><strong>FLIGHTGROUP.isVTOL</strong></a>
     
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(FLIGHTGROUP).jettisonEmptyTanks" ><strong>FLIGHTGROUP.jettisonEmptyTanks</strong></a>
+    
+<p>Allow (true) or disallow (false) AI to jettison empty fuel tanks.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(FLIGHTGROUP).jettisonWeapons" ><strong>FLIGHTGROUP.jettisonWeapons</strong></a>
+    
+<p>Allow (true) or disallow (false) AI to jettison weapons if in danger.</p>
 
 
 </div>
@@ -34640,6 +34990,17 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <a id="#(FLIGHTGROUP).outofAGMrtb" ><strong>FLIGHTGROUP.outofAGMrtb</strong></a>
     
 
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(FLIGHTGROUP).prohibitAB" ><strong>FLIGHTGROUP.prohibitAB</strong></a>
+    
+<p>Disallow (true) or allow (false) AI to use the afterburner.</p>
 
 </div>
 
@@ -36410,17 +36771,6 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(FLIGHTGROUP).currbase" ><strong>FLIGHTGROUP.currbase</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(FLIGHTGROUP).despawnAfterHolding" ><strong>FLIGHTGROUP.despawnAfterHolding</strong></a>
     
@@ -36436,6 +36786,20 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <a id="#(FLIGHTGROUP).despawnAfterLanding" ><strong>FLIGHTGROUP.despawnAfterLanding</strong></a>
     
 <p>If <code>true</code>, group is despawned after landed at an airbase.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(FLIGHTGROUP).destbase" ><strong>FLIGHTGROUP.destbase</strong></a>
+    
+
+
+    
+<p> Set the destination base.</p>
 
 </div>
 
@@ -36556,6 +36920,17 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).homebase" ><strong>FLIGHTGROUP.homebase</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).isDead" ><strong>FLIGHTGROUP.isDead</strong></a>
     
@@ -36595,6 +36970,17 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).isLandingAtAirbase" ><strong>FLIGHTGROUP.isLandingAtAirbase</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).isLateActivated" ><strong>FLIGHTGROUP.isLateActivated</strong></a>
     
@@ -36625,7 +37011,6 @@ Optionally, you can calculate the current max weight possible, which accounts fo
     
 <p>Flight is ready for takeoff. This is for FLIGHTCONTROL.</p>
 
-
 </div>
 
 </div>   
@@ -36637,9 +37022,6 @@ Optionally, you can calculate the current max weight possible, which accounts fo
     
 
 
-    
-<p> Spawn in uncontrolled state.</p>
-
 </div>
 
 </div>   
@@ -36649,6 +37031,29 @@ Optionally, you can calculate the current max weight possible, which accounts fo
     #boolean
 <a id="#(FLIGHTGROUP).isVTOL" ><strong>FLIGHTGROUP.isVTOL</strong></a>
     
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(FLIGHTGROUP).jettisonEmptyTanks" ><strong>FLIGHTGROUP.jettisonEmptyTanks</strong></a>
+    
+<p>Allow (true) or disallow (false) AI to jettison empty fuel tanks.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(FLIGHTGROUP).jettisonWeapons" ><strong>FLIGHTGROUP.jettisonWeapons</strong></a>
+    
+<p>Allow (true) or disallow (false) AI to jettison weapons if in danger.</p>
 
 
 </div>
@@ -36697,6 +37102,17 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <a id="#(FLIGHTGROUP).outofAGMrtb" ><strong>FLIGHTGROUP.outofAGMrtb</strong></a>
     
 
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(FLIGHTGROUP).prohibitAB" ><strong>FLIGHTGROUP.prohibitAB</strong></a>
+    
+<p>Disallow (true) or allow (false) AI to use the afterburner.</p>
 
 </div>
 
