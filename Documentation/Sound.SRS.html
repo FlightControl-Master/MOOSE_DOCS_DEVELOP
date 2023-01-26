@@ -2034,6 +2034,19 @@ local msrs=MSRS:New('', 305.0)
 msrs:PlaySoundText(text, 30)
 </code></pre>
 
+<p>Basic example of using another class (ATIS) with SRS and the DCS-gRPC backend (DCS-gRPC not previously started):</p>
+
+<pre><code>-- Start DCS-gRPC
+GRPC.load()
+-- Select the alternate DCS-gRPC backend for new MSRS instances
+MSRS.SetDefaultBackendGRPC()
+-- Create new ATIS as usual
+atis=ATIS:New("Nellis", 251, radio.modulation.AM)
+-- ATIS:SetSRS() expects a string for the SRS path even though it is not needed with DCS-gRPC
+atis:SetSRS('')
+-- Start ATIS
+atis:Start()
+</code></pre>
 
 
 </div>
