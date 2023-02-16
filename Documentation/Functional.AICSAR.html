@@ -2203,7 +2203,7 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).OnAfterPilotRescued">AICSAR:OnAfterPilotRescued(From, Event, To)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).OnAfterPilotRescued">AICSAR:OnAfterPilotRescued(From, Event, To, PilotName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "PilotRescued" event.</p>
 </td>
@@ -2215,9 +2215,21 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).OnEventEjection">AICSAR:OnEventEjection(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[Internal] Catch the ejection and save the pilot name</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).OnEventLandingAfterEjection">AICSAR:OnEventLandingAfterEjection(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Internal] Catch the landing after ejection and spawn a pilot in situ.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).PilotStore">AICSAR.PilotStore</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -2509,7 +2521,7 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).onafterPilotRescued">AICSAR:onafterPilotRescued(From, Event, To)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).onafterPilotRescued">AICSAR:onafterPilotRescued(From, Event, To, PilotName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Internal] onafterPilotRescued</p>
 </td>
@@ -3481,6 +3493,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="Utilities.FiFo.html##(FIFO)">Utilities.FiFo#FIFO</a>
+<a id="#(AICSAR).PilotStore" ><strong>AICSAR.PilotStore</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(AICSAR).RadioLength" ><strong>AICSAR.RadioLength</strong></a>
     
@@ -4371,7 +4394,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AICSAR).OnAfterPilotRescued" ><strong>AICSAR:OnAfterPilotRescued(From, Event, To)</strong></a></h2>
+<h2><a id="#(AICSAR).OnAfterPilotRescued" ><strong>AICSAR:OnAfterPilotRescued(From, Event, To, PilotName)</strong></a></h2>
 </div>
     
 <p>On after "PilotRescued" event.</p>
@@ -4418,8 +4441,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>To state. </p>
+<p>To state.</p>
 
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>PilotName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
 </div>
@@ -4505,6 +4539,48 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
           </div>
         </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AICSAR).OnEventEjection" ><strong>AICSAR:OnEventEjection(EventData)</strong></a></h2>
+</div>
+    
+<p>[Internal] Catch the ejection and save the pilot name</p>
+
+<div id= "#Functions##OnEventEjection" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AICSAR</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+            <strong><strong>EventData</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AICSAR)">#AICSAR</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
@@ -5723,7 +5799,7 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AICSAR).onafterPilotRescued" ><strong>AICSAR:onafterPilotRescued(From, Event, To)</strong></a></h2>
+<h2><a id="#(AICSAR).onafterPilotRescued" ><strong>AICSAR:onafterPilotRescued(From, Event, To, PilotName)</strong></a></h2>
 </div>
     
 <p>[Internal] onafterPilotRescued</p>
@@ -5762,6 +5838,17 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
             <p>
                 #string
             <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>PilotName</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -6121,6 +6208,17 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <p> TODO Messages
 - Messages enum
  @field Messages</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Utilities.FiFo.html##(FIFO)">Utilities.FiFo#FIFO</a>
+<a id="#(AICSAR).PilotStore" ><strong>AICSAR.PilotStore</strong></a>
+    
+
 
 </div>
 
@@ -7980,6 +8078,17 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <p> TODO Messages
 - Messages enum
  @field Messages</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Utilities.FiFo.html##(FIFO)">Utilities.FiFo#FIFO</a>
+<a id="#(AICSAR).PilotStore" ><strong>AICSAR.PilotStore</strong></a>
+    
+
 
 </div>
 
