@@ -1980,7 +1980,7 @@ pilots are around.</p>
 <pre><code>       -- @param #string Alias Name of this instance.
        -- @param #number Coalition Coalition as in coalition.side.BLUE, can also be passed as "blue", "red" or "neutral"
        -- @param #string Pilottemplate Pilot template name.
-       -- @param #string Helotemplate Helicopter template name.
+       -- @param #string Helotemplate Helicopter template name. Set the template to "cold start". Hueys work best.
        -- @param Wrapper.Airbase#AIRBASE FARP FARP object or Airbase from where to start.
        -- @param Core.Zone#ZONE MASHZone Zone where to drop pilots after rescue.
        local my_aicsar=AICSAR:New("Luftrettung",coalition.side.BLUE,"Downed Pilot","Rescue Helo",AIRBASE:FindByName("Test FARP"),ZONE:New("MASH"))
@@ -2111,6 +2111,12 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
           <tr class="w3-theme-l1">
             <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from AICSAR</th>
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).Altitude">AICSAR.Altitude</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Default altitude setting for the helicopter FLIGHTGROUP 1500ft.</p>
+</td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).ClassName">AICSAR.ClassName</a></p></td>
@@ -2335,6 +2341,18 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SetDefaultAltitude">AICSAR:SetDefaultAltitude(Feet)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[User] Set default helo altitudeAGL.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SetDefaultSpeed">AICSAR:SetDefaultSpeed(Knots)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[User] Set default helo speed.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SetOperatorTTSVoice">AICSAR:SetOperatorTTSVoice(Voice, Culture, Gender)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Set SRS TTS Voice of the rescue operator.</p>
@@ -2356,6 +2374,12 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SetSRSTTSRadio">AICSAR:SetSRSTTSRadio(OnOff, Path, Frequency, Modulation, Port, Voice, Culture, Gender, GoogleCredentials)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Switch sound output on and use SRS-TTS output.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).Speed">AICSAR.Speed</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Default speed setting for the helicopter FLIGHTGROUP is 100kn.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3433,6 +3457,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(AICSAR).Altitude" ><strong>AICSAR.Altitude</strong></a>
+    
+<p>Default altitude setting for the helicopter FLIGHTGROUP 1500ft.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #string
 <a id="#(AICSAR).ClassName" ><strong>AICSAR.ClassName</strong></a>
     
@@ -3617,6 +3652,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(AICSAR).SRSTTSRadio" ><strong>AICSAR.SRSTTSRadio</strong></a>
     
 
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AICSAR).Speed" ><strong>AICSAR.Speed</strong></a>
+    
+<p>Default speed setting for the helicopter FLIGHTGROUP is 100kn.</p>
 
 </div>
 
@@ -4692,6 +4738,100 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>The group to use as sending station.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AICSAR)">#AICSAR</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AICSAR).SetDefaultAltitude" ><strong>AICSAR:SetDefaultAltitude(Feet)</strong></a></h2>
+</div>
+    
+<p>[User] Set default helo altitudeAGL.</p>
+
+    
+<p>Note - AI might have other ideas. Defaults to 1500ft.</p>
+
+<div id= "#Functions##SetDefaultAltitude" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AICSAR</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Feet</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>AGL set in feet.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AICSAR)">#AICSAR</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AICSAR).SetDefaultSpeed" ><strong>AICSAR:SetDefaultSpeed(Knots)</strong></a></h2>
+</div>
+    
+<p>[User] Set default helo speed.</p>
+
+    
+<p>Note - AI might have other ideas. Defaults to 100kn.</p>
+
+<div id= "#Functions##SetDefaultSpeed" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AICSAR</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Knots</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Speed in knots.</p>
 
           </div>
         </div>
@@ -6155,6 +6295,17 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(AICSAR).Altitude" ><strong>AICSAR.Altitude</strong></a>
+    
+<p>Default altitude setting for the helicopter FLIGHTGROUP 1500ft.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #string
 <a id="#(AICSAR).ClassName" ><strong>AICSAR.ClassName</strong></a>
     
@@ -6339,6 +6490,17 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <a id="#(AICSAR).SRSTTSRadio" ><strong>AICSAR.SRSTTSRadio</strong></a>
     
 
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AICSAR).Speed" ><strong>AICSAR.Speed</strong></a>
+    
+<p>Default speed setting for the helicopter FLIGHTGROUP is 100kn.</p>
 
 </div>
 
@@ -8025,6 +8187,17 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(AICSAR).Altitude" ><strong>AICSAR.Altitude</strong></a>
+    
+<p>Default altitude setting for the helicopter FLIGHTGROUP 1500ft.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #string
 <a id="#(AICSAR).ClassName" ><strong>AICSAR.ClassName</strong></a>
     
@@ -8209,6 +8382,17 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <a id="#(AICSAR).SRSTTSRadio" ><strong>AICSAR.SRSTTSRadio</strong></a>
     
 
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AICSAR).Speed" ><strong>AICSAR.Speed</strong></a>
+    
+<p>Default speed setting for the helicopter FLIGHTGROUP is 100kn.</p>
 
 </div>
 
