@@ -2058,7 +2058,7 @@ carrier:AddOpsTransport(opstransport)
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSTRANSPORT).AddCargoGroups">OPSTRANSPORT:AddCargoGroups(GroupSet, TransportZoneCombo, DisembarkActivation)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSTRANSPORT).AddCargoGroups">OPSTRANSPORT:AddCargoGroups(GroupSet, TransportZoneCombo, DisembarkActivation, DisembarkZone, DisembarkCarriers)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add cargo groups to be transported.</p>
 </td>
@@ -2124,7 +2124,7 @@ carrier:AddOpsTransport(opstransport)
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSTRANSPORT).FindTransferCarrierForCargo">OPSTRANSPORT:FindTransferCarrierForCargo(CargoGroup, Zone, TransportZoneCombo)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSTRANSPORT).FindTransferCarrierForCargo">OPSTRANSPORT:FindTransferCarrierForCargo(CargoGroup, Zone, DisembarkCarriers, DeployAirbase)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Find transfer carrier element for cargo group.</p>
 </td>
@@ -2445,7 +2445,7 @@ carrier:AddOpsTransport(opstransport)
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSTRANSPORT).SetDisembarkCarriers">OPSTRANSPORT:SetDisembarkCarriers(Carriers, TransportZoneCombo)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set transfer carrier(s).</p>
+<p>Set/add transfer carrier(s).</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2563,13 +2563,19 @@ carrier:AddOpsTransport(opstransport)
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSTRANSPORT)._AddDisembarkCarriers">OPSTRANSPORT:_AddDisembarkCarriers(Carriers, Table)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set/add transfer carrier(s).</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSTRANSPORT)._CheckDelivered">OPSTRANSPORT:_CheckDelivered()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Check if all cargo of this transport assignment was delivered.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSTRANSPORT)._CheckRequiredCargos">OPSTRANSPORT:_CheckRequiredCargos(TransportZoneCombo)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSTRANSPORT)._CheckRequiredCargos">OPSTRANSPORT:_CheckRequiredCargos(TransportZoneCombo, CarrierGroup)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Check if all required cargos are loaded.</p>
 </td>
@@ -2581,7 +2587,7 @@ carrier:AddOpsTransport(opstransport)
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSTRANSPORT)._CreateCargoGroupData">OPSTRANSPORT:_CreateCargoGroupData(group, TransportZoneCombo, DisembarkActivation)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSTRANSPORT)._CreateCargoGroupData">OPSTRANSPORT:_CreateCargoGroupData(group, TransportZoneCombo, DisembarkActivation, DisembarkZone, DisembarkCarriers)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Create a cargo group data structure.</p>
 </td>
@@ -4011,6 +4017,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSTRANSPORT.TransportZoneCombo).disembarkToCarriers">OPSTRANSPORT.TransportZoneCombo.disembarkToCarriers</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>If <code>true</code>, cargo is supposed to embark to another carrier.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSTRANSPORT.TransportZoneCombo).uid">OPSTRANSPORT.TransportZoneCombo.uid</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Unique ID of the TZ combo.</p>
@@ -4560,7 +4572,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(OPSTRANSPORT).AddCargoGroups" ><strong>OPSTRANSPORT:AddCargoGroups(GroupSet, TransportZoneCombo, DisembarkActivation)</strong></a></h2>
+<h2><a id="#(OPSTRANSPORT).AddCargoGroups" ><strong>OPSTRANSPORT:AddCargoGroups(GroupSet, TransportZoneCombo, DisembarkActivation, DisembarkZone, DisembarkCarriers)</strong></a></h2>
 </div>
     
 <p>Add cargo groups to be transported.</p>
@@ -4607,7 +4619,33 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>If <code>true</code>, cargo group is activated when disembarked. If <code>false</code>, cargo groups are late activated when disembarked. Default <code>nil</code> (usually activated). </p>
+<p>If <code>true</code>, cargo group is activated when disembarked. If <code>false</code>, cargo groups are late activated when disembarked. Default <code>nil</code> (usually activated).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Zone.html##(ZONE)">Core.Zone#ZONE</a>
+            <strong><strong>DisembarkZone</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Zone where the groups disembark to.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Set.html##(SET_OPSGROUP)">Core.Set#SET_OPSGROUP</a>
+            <strong><strong>DisembarkCarriers</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Carrier groups where the cargo directly disembarks to.</p>
 
           </div>
         </div>
@@ -5031,7 +5069,7 @@ path. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(OPSTRANSPORT).FindTransferCarrierForCargo" ><strong>OPSTRANSPORT:FindTransferCarrierForCargo(CargoGroup, Zone, TransportZoneCombo)</strong></a></h2>
+<h2><a id="#(OPSTRANSPORT).FindTransferCarrierForCargo" ><strong>OPSTRANSPORT:FindTransferCarrierForCargo(CargoGroup, Zone, DisembarkCarriers, DeployAirbase)</strong></a></h2>
 </div>
     
 <p>Find transfer carrier element for cargo group.</p>
@@ -5072,13 +5110,26 @@ path. </p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="##(OPSTRANSPORT.TransportZoneCombo)">#OPSTRANSPORT.TransportZoneCombo</a>
-            <strong><strong>TransportZoneCombo</strong></strong>
+                #table
+            <strong><strong>DisembarkCarriers</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Transport zone combo.</p>
+<p>Disembark carriers.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Airbase.html##(AIRBASE)">Wrapper.Airbase#AIRBASE</a>
+            <strong><strong>DeployAirbase</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Airbase where to deploy.</p>
 
           </div>
         </div>
@@ -7276,7 +7327,7 @@ path. </p>
 <h2><a id="#(OPSTRANSPORT).SetDisembarkCarriers" ><strong>OPSTRANSPORT:SetDisembarkCarriers(Carriers, TransportZoneCombo)</strong></a></h2>
 </div>
     
-<p>Set transfer carrier(s).</p>
+<p>Set/add transfer carrier(s).</p>
 
     
 <p>These are carrier groups, where the cargo is directly loaded into when disembarked.</p>
@@ -8138,6 +8189,66 @@ path. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(OPSTRANSPORT)._AddDisembarkCarriers" ><strong>OPSTRANSPORT:_AddDisembarkCarriers(Carriers, Table)</strong></a></h2>
+</div>
+    
+<p>Set/add transfer carrier(s).</p>
+
+    
+<p>These are carrier groups, where the cargo is directly loaded into when disembarked.</p>
+
+<div id= "#Functions##_AddDisembarkCarriers" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPSTRANSPORT</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+            <strong><strong>Carriers</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Carrier set. Can also be passed as a #GROUP, #OPSGROUP or #SET_OPSGROUP object.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Table</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>the table to add.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(OPSTRANSPORT)">#OPSTRANSPORT</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(OPSTRANSPORT)._CheckDelivered" ><strong>OPSTRANSPORT:_CheckDelivered()</strong></a></h2>
 </div>
     
@@ -8157,7 +8268,7 @@ path. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(OPSTRANSPORT)._CheckRequiredCargos" ><strong>OPSTRANSPORT:_CheckRequiredCargos(TransportZoneCombo)</strong></a></h2>
+<h2><a id="#(OPSTRANSPORT)._CheckRequiredCargos" ><strong>OPSTRANSPORT:_CheckRequiredCargos(TransportZoneCombo, CarrierGroup)</strong></a></h2>
 </div>
     
 <p>Check if all required cargos are loaded.</p>
@@ -8168,7 +8279,7 @@ path. </p>
    <div class="w3-margin-left">
 <p>OPSTRANSPORT</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -8182,6 +8293,19 @@ path. </p>
 
           </div>
         </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a>
+            <strong><strong>CarrierGroup</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The carrier group asking.</p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -8189,7 +8313,7 @@ path. </p>
       </div>
       <div class="w3-half">
         
-<p>If true, all required cargos are loaded or there is no required cargo.</p>
+<p>If true, all required cargos are loaded or there is no required cargo or asking carrier is full.</p>
 
       </div>
     </div>
@@ -8284,7 +8408,7 @@ path. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(OPSTRANSPORT)._CreateCargoGroupData" ><strong>OPSTRANSPORT:_CreateCargoGroupData(group, TransportZoneCombo, DisembarkActivation)</strong></a></h2>
+<h2><a id="#(OPSTRANSPORT)._CreateCargoGroupData" ><strong>OPSTRANSPORT:_CreateCargoGroupData(group, TransportZoneCombo, DisembarkActivation, DisembarkZone, DisembarkCarriers)</strong></a></h2>
 </div>
     
 <p>Create a cargo group data structure.</p>
@@ -8332,6 +8456,32 @@ path. </p>
           <div class="w3-half">
               
 <p>If <code>true</code>, cargo group is activated when disembarked. </p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Zone.html##(ZONE)">Core.Zone#ZONE</a>
+            <strong><strong>DisembarkZone</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Disembark zone, where the cargo is spawned when delivered.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Set.html##(SET_OPSGROUP)">Core.Set#SET_OPSGROUP</a>
+            <strong><strong>DisembarkCarriers</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Disembark carriers cargo is directly loaded into when delivered.</p>
 
           </div>
         </div>
@@ -15889,6 +16039,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(OPSTRANSPORT.TransportZoneCombo).disembarkInUtero" ><strong>OPSTRANSPORT.TransportZoneCombo.disembarkInUtero</strong></a>
     
 <p>If true, troops are disembarked "in utero".</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(OPSTRANSPORT.TransportZoneCombo).disembarkToCarriers" ><strong>OPSTRANSPORT.TransportZoneCombo.disembarkToCarriers</strong></a>
+    
+<p>If <code>true</code>, cargo is supposed to embark to another carrier.</p>
 
 </div>
 

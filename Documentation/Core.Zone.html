@@ -2501,7 +2501,7 @@ This class is an abstract BASE class for derived classes, and is not meant to be
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ZONE_BASE).GetAllProperties">ZONE_BASE:GetAllProperties()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Returns the zone Properties table.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2585,7 +2585,7 @@ This class is an abstract BASE class for derived classes, and is not meant to be
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ZONE_BASE).GetProperty">ZONE_BASE:GetProperty(PropertyName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Returns the Value of the zone with the given PropertyName, or nil if no matching property exists.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -5203,12 +5203,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(ZONE_BASE).GetAllProperties" ><strong>ZONE_BASE:GetAllProperties()</strong></a></h2>
 </div>
     
-
-
-    
-<p> Returns the zone Properties table.
- @param #ZONE_BASE self
- @return #table The Key:Value table of TriggerZone properties of the zone.</p>
+<p>Returns the zone Properties table.</p>
 
 <div id= "#Functions##GetAllProperties" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -5216,6 +5211,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>ZONE_BASE</p>
 </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The Key:Value table of TriggerZone properties of the zone.</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
@@ -5662,19 +5668,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(ZONE_BASE).GetProperty" ><strong>ZONE_BASE:GetProperty(PropertyName)</strong></a></h2>
 </div>
     
-
-
-    
-<p> Returns the Value of the zone with the given PropertyName, or nil if no matching property exists.
- @param #ZONE_BASE self
- @param #string PropertyName The name of a the TriggerZone Property to be retrieved.
- @return #string The Value of the TriggerZone Property with the given PropertyName, or nil if absent.
- @usage</p>
-
-<p> local PropertiesZone = ZONE:FindByName("Properties Zone")
- local Property = "ExampleProperty"
- local PropertyValue = PropertiesZone:GetProperty(Property)</p>
-
+<p>Returns the Value of the zone with the given PropertyName, or nil if no matching property exists.</p>
 
 <div id= "#Functions##GetProperty" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -5686,13 +5680,34 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
+                #string
             <strong><strong>PropertyName</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              <p></p>
+              
+<p>The name of a the TriggerZone Property to be retrieved.</p>
+
           </div>
         </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#string:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The Value of the TriggerZone Property with the given PropertyName, or nil if absent.</p>
+
+      </div>
+    </div>
+      <h2><strong>Usage:</strong></h2>
+    <pre class="example"><code>
+local PropertiesZone = ZONE:FindByName("Properties Zone")
+local Property = "ExampleProperty"
+local PropertyValue = PropertiesZone:GetProperty(Property)
+</code></pre>
+
 </div>
 
 </div>

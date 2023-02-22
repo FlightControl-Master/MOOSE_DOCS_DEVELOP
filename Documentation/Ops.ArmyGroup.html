@@ -3975,6 +3975,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).SetCargoBayLimit">ARMYGROUP:SetCargoBayLimit(Weight, UnitName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set max weight that each unit of the group can handle.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).SetCarrierLoaderAllAspect">ARMYGROUP:SetCarrierLoaderAllAspect(Length, Width)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set that this carrier is an all aspect loader.</p>
@@ -4170,6 +4176,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).SetReturnOnOutOfAmmo">ARMYGROUP:SetReturnOnOutOfAmmo()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set that group is return to legion once it runs out of ammo.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).SetReturnToLegion">ARMYGROUP:SetReturnToLegion(Switch)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p><strong>[GROUND, NAVAL]</strong> Set whether this group should return to its legion once all mission etc are finished.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -5233,6 +5245,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).legion">ARMYGROUP.legion</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Legion the group belongs to.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).legionReturn">ARMYGROUP.legionReturn</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -21709,6 +21727,63 @@ Optionally, you can calculate the current max weight possible, which accounts fo
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(ARMYGROUP).SetCargoBayLimit" ><strong>ARMYGROUP:SetCargoBayLimit(Weight, UnitName)</strong></a></h2>
+</div>
+    
+<p>Set max weight that each unit of the group can handle.</p>
+
+<div id= "#Functions##SetCargoBayLimit" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Weight</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Max weight of cargo in kg the unit can carry.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>UnitName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the Unit. If not given, weight is set for all units of the group.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(OPSGROUP)">#OPSGROUP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(ARMYGROUP).SetCarrierLoaderAllAspect" ><strong>ARMYGROUP:SetCarrierLoaderAllAspect(Length, Width)</strong></a></h2>
 </div>
     
@@ -23425,6 +23500,53 @@ Optionally, you can calculate the current max weight possible, which accounts fo
    <div class="w3-margin-left">
 <p><a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a></p>
 </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(OPSGROUP)">#OPSGROUP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(ARMYGROUP).SetReturnToLegion" ><strong>ARMYGROUP:SetReturnToLegion(Switch)</strong></a></h2>
+</div>
+    
+<p><strong>[GROUND, NAVAL]</strong> Set whether this group should return to its legion once all mission etc are finished.</p>
+
+    
+<p>Only for ground and naval groups. Aircraft will </p>
+
+<div id= "#Functions##SetReturnToLegion" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Switch</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If <code>true</code> or <code>nil</code>, group will return. If <code>false</code>, group will not return and stay where it finishes its last mission.</p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
