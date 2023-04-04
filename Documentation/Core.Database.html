@@ -2226,13 +2226,13 @@ Moose refers to <strong>_DATABASE</strong> within the framework extensively, but
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(DATABASE).ForEachCargo">DATABASE:ForEachCargo(IteratorFunction, ...)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(DATABASE).ForEachCargo">DATABASE:ForEachCargo(IteratorFunction, FinalizeFunction, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Iterate the DATABASE and call an iterator function for each CARGO, providing the CARGO object to the function and optional parameters.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(DATABASE).ForEachClient">DATABASE:ForEachClient(IteratorFunction, ...)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(DATABASE).ForEachClient">DATABASE:ForEachClient(IteratorFunction, FinalizeFunction, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Iterate the DATABASE and call an iterator function for each CLIENT, providing the CLIENT to the function and optional parameters.</p>
 </td>
@@ -4646,7 +4646,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(DATABASE).ForEachCargo" ><strong>DATABASE:ForEachCargo(IteratorFunction, ...)</strong></a></h2>
+<h2><a id="#(DATABASE).ForEachCargo" ><strong>DATABASE:ForEachCargo(IteratorFunction, FinalizeFunction, ...)</strong></a></h2>
 </div>
     
 <p>Iterate the DATABASE and call an iterator function for each CARGO, providing the CARGO object to the function and optional parameters.</p>
@@ -4669,6 +4669,16 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
               
 <p>The function that will be called for each object in the database. The function needs to accept a CLIENT parameter.</p>
 
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>FinalizeFunction</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -4700,7 +4710,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(DATABASE).ForEachClient" ><strong>DATABASE:ForEachClient(IteratorFunction, ...)</strong></a></h2>
+<h2><a id="#(DATABASE).ForEachClient" ><strong>DATABASE:ForEachClient(IteratorFunction, FinalizeFunction, ...)</strong></a></h2>
 </div>
     
 <p>Iterate the DATABASE and call an iterator function for each CLIENT, providing the CLIENT to the function and optional parameters.</p>
@@ -4723,6 +4733,16 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
               
 <p>The function that will be called object in the database. The function needs to accept a CLIENT parameter.</p>
 
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>FinalizeFunction</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
