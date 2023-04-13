@@ -2375,6 +2375,7 @@ There is a risk involved in doing that; if you do not know what that means, this
          my_ctld.filename = "missionsave.csv" -- example filename
          my_ctld.filepath = "C:\\Users\\myname\\Saved Games\\DCS\Missions\\MyMission" -- example path
          my_ctld.eventoninject = true -- fire OnAfterCratesBuild and OnAfterTroopsDeployed events when loading (uses Inject functions)
+         my_ctld.useprecisecoordloads = true -- Instead if slightly varyiing the group position, try to maintain it as is
 </code></pre>
 
 <p> Then use an initial load at the beginning of your mission:</p>
@@ -2868,7 +2869,7 @@ for FARP vehicles, so -- services are goin to work (e.g. for the blue side: an u
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).InjectVehicles">CTLD:InjectVehicles(Zone, Cargo)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).InjectVehicles">CTLD:InjectVehicles(Zone, Cargo, Surfacetypes, PreciseLocation)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(User) Pre-populate vehicles in the field.</p>
 </td>
@@ -3883,6 +3884,12 @@ for FARP vehicles, so -- services are goin to work (e.g. for the blue side: an u
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).troopdropzoneradius">CTLD.troopdropzoneradius</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).useprecisecoordloads">CTLD.useprecisecoordloads</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -7752,6 +7759,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(CTLD).CargoCounter" ><strong>CTLD.CargoCounter</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="##(CTLD_CARGO.Enum)">#CTLD_CARGO.Enum</a>
 <a id="#(CTLD).CargoType" ><strong>CTLD.CargoType</strong></a>
     
@@ -8233,6 +8251,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #table
 <a id="#(CTLD).Templates" ><strong>CTLD.Templates</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CTLD).TroopCounter" ><strong>CTLD.TroopCounter</strong></a>
     
 
 
@@ -8760,8 +8789,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(CTLD).troopdropzoneradius" ><strong>CTLD.troopdropzoneradius</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(CTLD).useprecisecoordloads" ><strong>CTLD.useprecisecoordloads</strong></a>
     
 
 
@@ -10410,7 +10450,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CTLD).InjectVehicles" ><strong>CTLD:InjectVehicles(Zone, Cargo)</strong></a></h2>
+<h2><a id="#(CTLD).InjectVehicles" ><strong>CTLD:InjectVehicles(Zone, Cargo, Surfacetypes, PreciseLocation)</strong></a></h2>
 </div>
     
 <p>(User) Pre-populate vehicles in the field.</p>
@@ -10445,6 +10485,32 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>The #CTLD_CARGO object to spawn.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Surfacetypes</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Table of surface types. Can also be a single surface type. We will try max 1000 times to find the right type!</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>PreciseLocation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Don't try to get a random position in the zone but use the dead center. Caution not to stack up stuff on another!</p>
 
           </div>
         </div>
@@ -17382,6 +17448,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(CTLD).CargoCounter" ><strong>CTLD.CargoCounter</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="##(CTLD_CARGO.Enum)">#CTLD_CARGO.Enum</a>
 <a id="#(CTLD).CargoType" ><strong>CTLD.CargoType</strong></a>
     
@@ -17863,6 +17940,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     #table
 <a id="#(CTLD).Templates" ><strong>CTLD.Templates</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CTLD).TroopCounter" ><strong>CTLD.TroopCounter</strong></a>
     
 
 
@@ -18390,8 +18478,19 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(CTLD).troopdropzoneradius" ><strong>CTLD.troopdropzoneradius</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(CTLD).useprecisecoordloads" ><strong>CTLD.useprecisecoordloads</strong></a>
     
 
 
@@ -19904,6 +20003,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(CTLD).CargoCounter" ><strong>CTLD.CargoCounter</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="##(CTLD_CARGO.Enum)">#CTLD_CARGO.Enum</a>
 <a id="#(CTLD).CargoType" ><strong>CTLD.CargoType</strong></a>
     
@@ -20385,6 +20495,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     #table
 <a id="#(CTLD).Templates" ><strong>CTLD.Templates</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CTLD).TroopCounter" ><strong>CTLD.TroopCounter</strong></a>
     
 
 
@@ -20912,8 +21033,19 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(CTLD).troopdropzoneradius" ><strong>CTLD.troopdropzoneradius</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(CTLD).useprecisecoordloads" ><strong>CTLD.useprecisecoordloads</strong></a>
     
 
 
@@ -25107,17 +25239,6 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(CTLD_CARGO).Mark" ><strong>CTLD_CARGO.Mark</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #string
 <a id="#(CTLD_CARGO).Name" ><strong>CTLD_CARGO.Name</strong></a>
     
@@ -25260,17 +25381,6 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(CTLD_CARGO).LoadDirectly" ><strong>CTLD_CARGO.LoadDirectly</strong></a>
     
 <p>Flag for direct loading.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(CTLD_CARGO).Mark" ><strong>CTLD_CARGO.Mark</strong></a>
-    
-
 
 </div>
 
