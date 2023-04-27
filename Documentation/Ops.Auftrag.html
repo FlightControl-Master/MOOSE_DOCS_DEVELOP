@@ -3213,6 +3213,18 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetAllowAfterburner">AUFTRAG:SetAllowAfterburner()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set that (jet) aircraft are generally allowed to use afterburner.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetAllowAfterburnerExecutePhase">AUFTRAG:SetAllowAfterburnerExecutePhase()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set that (jet) aircraft are allowed to use afterburner in mission execution phase.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetAssetsStayAlive">AUFTRAG:SetAssetsStayAlive(Switch)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[LEGION, COMMANDER, CHIEF]</strong> Set that only alive (spawned) assets are considered.</p>
@@ -3378,6 +3390,18 @@ The commander will select the best assets available from all the legions under h
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetPriority">AUFTRAG:SetPriority(Prio, Urgent, Importance)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set mission priority and (optional) urgency.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetProhibitAfterburner">AUFTRAG:SetProhibitAfterburner()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set that (jet) aircraft are generally <strong>not</strong> allowed to use afterburner.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetProhibitAfterburnerExecutePhase">AUFTRAG:SetProhibitAfterburnerExecutePhase()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set that (jet) aircraft are <strong>not</strong> allowed to use afterburner in mission execution phase.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4422,6 +4446,18 @@ The commander will select the best assets available from all the legions under h
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).prio">AUFTRAG.prio</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Mission priority.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).prohibitAB">AUFTRAG.prohibitAB</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).prohibitABExecute">AUFTRAG.prohibitABExecute</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -7673,6 +7709,28 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(AUFTRAG).prio" ><strong>AUFTRAG.prio</strong></a>
     
 <p>Mission priority.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AUFTRAG).prohibitAB" ><strong>AUFTRAG.prohibitAB</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AUFTRAG).prohibitABExecute" ><strong>AUFTRAG.prohibitABExecute</strong></a>
+    
+
 
 </div>
 
@@ -15747,6 +15805,72 @@ themselfs. They wait for the CHIEF to tell them whom to engage.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).SetAllowAfterburner" ><strong>AUFTRAG:SetAllowAfterburner()</strong></a></h2>
+</div>
+    
+<p>Set that (jet) aircraft are generally allowed to use afterburner.</p>
+
+    
+<p>Default is use of afterburner is allowed.</p>
+
+<div id= "#Functions##SetAllowAfterburner" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).SetAllowAfterburnerExecutePhase" ><strong>AUFTRAG:SetAllowAfterburnerExecutePhase()</strong></a></h2>
+</div>
+    
+<p>Set that (jet) aircraft are allowed to use afterburner in mission execution phase.</p>
+
+    
+<p>Default is use of afterburner is allowed.</p>
+
+<div id= "#Functions##SetAllowAfterburnerExecutePhase" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AUFTRAG).SetAssetsStayAlive" ><strong>AUFTRAG:SetAssetsStayAlive(Switch)</strong></a></h2>
 </div>
     
@@ -17161,6 +17285,72 @@ themselfs. They wait for the CHIEF to tell them whom to engage.</p>
 
           </div>
         </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).SetProhibitAfterburner" ><strong>AUFTRAG:SetProhibitAfterburner()</strong></a></h2>
+</div>
+    
+<p>Set that (jet) aircraft are generally <strong>not</strong> allowed to use afterburner.</p>
+
+    
+<p>Default is use of afterburner is allowed.</p>
+
+<div id= "#Functions##SetProhibitAfterburner" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).SetProhibitAfterburnerExecutePhase" ><strong>AUFTRAG:SetProhibitAfterburnerExecutePhase()</strong></a></h2>
+</div>
+    
+<p>Set that (jet) aircraft are <strong>not</strong> allowed to use afterburner in mission execution phase.</p>
+
+    
+<p>Default is use of afterburner is allowed.</p>
+
+<div id= "#Functions##SetProhibitAfterburnerExecutePhase" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -21844,6 +22034,28 @@ will always return.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(AUFTRAG).prohibitAB" ><strong>AUFTRAG.prohibitAB</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AUFTRAG).prohibitABExecute" ><strong>AUFTRAG.prohibitABExecute</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(AUFTRAG).properties" ><strong>AUFTRAG.properties</strong></a>
     
@@ -25042,6 +25254,28 @@ will always return.</p>
 <a id="#(AUFTRAG).prio" ><strong>AUFTRAG.prio</strong></a>
     
 <p>Mission priority.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AUFTRAG).prohibitAB" ><strong>AUFTRAG.prohibitAB</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AUFTRAG).prohibitABExecute" ><strong>AUFTRAG.prohibitABExecute</strong></a>
+    
+
 
 </div>
 
