@@ -3005,13 +3005,13 @@ amount of fuel in the group.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(GROUP).EnRouteTaskFAC">GROUP:EnRouteTaskFAC(Radius, Priority)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(GROUP).EnRouteTaskFAC">GROUP:EnRouteTaskFAC(Frequency, Modulation, CallsignID, CallsignNumber, Priority)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(AIR + GROUND) The task makes the controllable/unit a FAC and lets the FAC to choose a targets (enemy ground controllable) around as well as other assigned targets.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(GROUP).EnRouteTaskFAC_EngageGroup">GROUP:EnRouteTaskFAC_EngageGroup(AttackGroup, Priority, WeaponType, Designation, Datalink)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(GROUP).EnRouteTaskFAC_EngageGroup">GROUP:EnRouteTaskFAC_EngageGroup(AttackGroup, Priority, WeaponType, Designation, Datalink, CallsignID, CallsignNumber, Frequency, Modulation)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(AIR + GROUND) The task makes the controllable/unit a FAC and lets the FAC to choose the target (enemy ground controllable) as well as other assigned targets.</p>
 </td>
@@ -5334,7 +5334,18 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -9827,7 +9838,18 @@ So each unit of the group is respawned at exactly the same parking spot as it cu
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -10931,7 +10953,8 @@ Note that this can only work on GROUP level, although individual UNITs can be co
 <p>(AIR) Aircraft will act as an AWACS for friendly units (will provide them with information about contacts).</p>
 
     
-<p>No parameters.</p>
+<p>No parameters.
+<a href="https://wiki.hoggitworld.com/view/DCS_task_awacs">hoggit</a>.</p>
 
 <div id= "#Functions##EnRouteTaskAWACS" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -11021,7 +11044,8 @@ Note that this can only work on GROUP level, although individual UNITs can be co
 <p>(GROUND) Ground unit (EW-radar) will act as an EWR for friendly units (will provide them with information about contacts).</p>
 
     
-<p>No parameters.</p>
+<p>No parameters.
+See <a href="https://wiki.hoggitworld.com/view/DCS_task_ewr">hoggit</a>.</p>
 
 <div id= "#Functions##EnRouteTaskEWR" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -11054,7 +11078,9 @@ Note that this can only work on GROUP level, although individual UNITs can be co
 <p>(AIR) Engaging a controllable.</p>
 
     
-<p>The task does not assign the target controllable to the unit/controllable to attack now; it just allows the unit/controllable to engage the target controllable as well as other assigned targets.</p>
+<p>The task does not assign the target controllable to the unit/controllable to attack now; 
+it just allows the unit/controllable to engage the target controllable as well as other assigned targets.
+See <a href="https://wiki.hoggitworld.com/view/DCS_task_engageGroup">hoggit</a>.</p>
 
 <div id= "#Functions##EnRouteTaskEngageGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -11344,6 +11370,9 @@ Note that this can only work on GROUP level, although individual UNITs can be co
     
 <p>(AIR) Search and attack the Unit.</p>
 
+    
+<p>See <a href="https://wiki.hoggitworld.com/view/DCS_task_engageUnit">hoggit</a>.</p>
+
 <div id= "#Functions##EnRouteTaskEngageUnit" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -11487,14 +11516,15 @@ Note that this can only work on GROUP level, although individual UNITs can be co
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(GROUP).EnRouteTaskFAC" ><strong>GROUP:EnRouteTaskFAC(Radius, Priority)</strong></a></h2>
+<h2><a id="#(GROUP).EnRouteTaskFAC" ><strong>GROUP:EnRouteTaskFAC(Frequency, Modulation, CallsignID, CallsignNumber, Priority)</strong></a></h2>
 </div>
     
 <p>(AIR + GROUND) The task makes the controllable/unit a FAC and lets the FAC to choose a targets (enemy ground controllable) around as well as other assigned targets.</p>
 
     
-<p>The killer is player-controlled allied CAS-aircraft that is in contact with the FAC.
-If the task is assigned to the controllable lead unit will be a FAC.</p>
+<p>Assigns the controlled group to act as a Forward Air Controller or JTAC. Any detected targets will be assigned as targets to the player via the JTAC radio menu. 
+Target designation is set to auto and is dependent on the circumstances.
+See <a href="https://wiki.hoggitworld.com/view/DCS_task_fac">hoggit</a>.</p>
 
 <div id= "#Functions##EnRouteTaskFAC" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -11506,13 +11536,52 @@ If the task is assigned to the controllable lead unit will be a FAC.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="DCS.html##(Distance)">DCS#Distance</a>
-            <strong><strong>Radius</strong></strong>
+                #number
+            <strong><strong>Frequency</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p> The maximal distance from the FAC to a target.</p>
+<p>Frequency in MHz. Default 133 MHz.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Modulation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Radio modulation. Default <code>radio.modulation.AM</code>.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>CallsignID</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>CallsignID, e.g. <code>CALLSIGN.JTAC.Anvil</code> for ground or <code>CALLSIGN.Aircraft.Ford</code> for air.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>CallsignNumber</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Callsign first number, e.g. 2 for <code>Ford-2</code>.</p>
 
           </div>
         </div>
@@ -11548,14 +11617,15 @@ If the task is assigned to the controllable lead unit will be a FAC.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(GROUP).EnRouteTaskFAC_EngageGroup" ><strong>GROUP:EnRouteTaskFAC_EngageGroup(AttackGroup, Priority, WeaponType, Designation, Datalink)</strong></a></h2>
+<h2><a id="#(GROUP).EnRouteTaskFAC_EngageGroup" ><strong>GROUP:EnRouteTaskFAC_EngageGroup(AttackGroup, Priority, WeaponType, Designation, Datalink, CallsignID, CallsignNumber, Frequency, Modulation)</strong></a></h2>
 </div>
     
 <p>(AIR + GROUND) The task makes the controllable/unit a FAC and lets the FAC to choose the target (enemy ground controllable) as well as other assigned targets.</p>
 
     
 <p>The killer is player-controlled allied CAS-aircraft that is in contact with the FAC.
-If the task is assigned to the controllable lead unit will be a FAC.</p>
+If the task is assigned to the controllable lead unit will be a FAC.
+See <a href="https://wiki.hoggitworld.com/view/DCS_task_fac_engageGroup">hoggit</a>.</p>
 
 <div id= "#Functions##EnRouteTaskFAC_EngageGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -11627,6 +11697,52 @@ If the task is assigned to the controllable lead unit will be a FAC.</p>
               
 <p>(optional) Allows to use datalink to send the target information to attack aircraft. Enabled by default.</p>
 
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>CallsignID</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>CallsignID, e.g. <code>CALLSIGN.JTAC.Anvil</code> for ground or <code>CALLSIGN.Aircraft.Ford</code> for air.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>CallsignNumber</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Callsign first number, e.g. 2 for <code>Ford-2</code>.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Frequency</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Modulation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
@@ -11711,7 +11827,8 @@ If the task is assigned to the controllable lead unit will be a FAC.</p>
 <p>(AIR) Aircraft will act as a tanker for friendly units.</p>
 
     
-<p>No parameters.</p>
+<p>No parameters.
+See <a href="https://wiki.hoggitworld.com/view/DCS_task_tanker">hoggit</a>.</p>
 
 <div id= "#Functions##EnRouteTaskTanker" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -18971,7 +19088,18 @@ Note that when WayPointInitialize is called, the Mission of the controllable is 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -22987,7 +23115,18 @@ Coordinates are dependent on the position of the maps origin.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -23612,7 +23751,18 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -23872,7 +24022,18 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
