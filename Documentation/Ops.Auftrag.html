@@ -2936,6 +2936,12 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewFAC">AUFTRAG:NewFAC(FacZone, Speed, Altitude, Frequency, Modulation)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p><strong>[AIR, GROUND]</strong> Create a FAC mission.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewFACA">AUFTRAG:NewFACA(Target, Designation, DataLink, Frequency, Modulation)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[AIR]</strong> Create a FACA mission.</p>
@@ -6154,6 +6160,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG.Type).EWR">AUFTRAG.Type.EWR</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Early Warning Radar.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG.Type).FAC">AUFTRAG.Type.FAC</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Forward AirController mission.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -13209,6 +13221,105 @@ Only ME zones have an ID that can be referenced.</p>
           <div class="w3-half">
               
 <p>Zone where the Early Warning Radar group(s) should be stationed.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).NewFAC" ><strong>AUFTRAG:NewFAC(FacZone, Speed, Altitude, Frequency, Modulation)</strong></a></h2>
+</div>
+    
+<p><strong>[AIR, GROUND]</strong> Create a FAC mission.</p>
+
+    
+<p>Group(s) will go to the zone and patrol it randomly and act as FAC for detected units.</p>
+
+<div id= "#Functions##NewFAC" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Zone.html##(ZONE)">Core.Zone#ZONE</a>
+            <strong><strong>FacZone</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The FAC zone (or name of zone) where to patrol.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Speed in knots.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Altitude</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Altitude in feet. Only for airborne units. Default 2000 feet ASL. </p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Frequency</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Frequency in MHz.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Modulation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Modulation.</p>
 
           </div>
         </div>
@@ -30140,6 +30251,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(AUFTRAG.Type).EWR" ><strong>AUFTRAG.Type.EWR</strong></a>
     
 <p>Early Warning Radar.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AUFTRAG.Type).FAC" ><strong>AUFTRAG.Type.FAC</strong></a>
+    
+<p>Forward AirController mission.</p>
 
 </div>
 
