@@ -3437,7 +3437,7 @@ The commander will select the best assets available from all the legions under h
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetReinforce">AUFTRAG:SetReinforce(Nreinforce)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p><strong>[LEGION, COMMANDER, CHIEF]</strong> Set that mission assets get reinforced if their number drops below Nmin.</p>
+<p><strong>[LEGION, COMMANDER, CHIEF]</strong> Set that mission assets get reinforced if their number drops below the minimum number of required assets of the mission (<em>c.f.</em> SetRequiredAssets() function).</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3654,6 +3654,18 @@ The commander will select the best assets available from all the legions under h
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG)._GetRequestID">AUFTRAG:_GetRequestID(Legion)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get request ID from legion this mission requested assets from</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG)._IsNotReinforcing">AUFTRAG:_IsNotReinforcing()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if reinforcement is done.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG)._IsReinforcing">AUFTRAG:_IsReinforcing()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if reinforcement is still ongoing.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -17676,7 +17688,12 @@ themselfs. They wait for the CHIEF to tell them whom to engage.</p>
 <h2><a id="#(AUFTRAG).SetReinforce" ><strong>AUFTRAG:SetReinforce(Nreinforce)</strong></a></h2>
 </div>
     
-<p><strong>[LEGION, COMMANDER, CHIEF]</strong> Set that mission assets get reinforced if their number drops below Nmin.</p>
+<p><strong>[LEGION, COMMANDER, CHIEF]</strong> Set that mission assets get reinforced if their number drops below the minimum number of required assets of the mission (<em>c.f.</em> SetRequiredAssets() function).</p>
+
+    
+
+<p><strong>Note</strong> that reinforcement groups are only recruited from the legion (airwing, brigade, fleet) the mission was assigned to. If the legion does not have any more of these assets, 
+no reinforcement can take place, even if the mission is submitted to a COMMANDER or CHIEF. </p>
 
 <div id= "#Functions##SetReinforce" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -18976,6 +18993,66 @@ will always return.</p>
       <div class="w3-half">
         
 <p>Request ID (if any).</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG)._IsNotReinforcing" ><strong>AUFTRAG:_IsNotReinforcing()</strong></a></h2>
+</div>
+    
+<p>Check if reinforcement is done.</p>
+
+<div id= "#Functions##_IsNotReinforcing" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If <code>true</code>, reinforcing is over.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG)._IsReinforcing" ><strong>AUFTRAG:_IsReinforcing()</strong></a></h2>
+</div>
+    
+<p>Check if reinforcement is still ongoing.</p>
+
+<div id= "#Functions##_IsReinforcing" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If <code>true</code>, reinforcing is ongoing.</p>
 
       </div>
     </div>
