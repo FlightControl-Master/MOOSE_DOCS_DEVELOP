@@ -3035,7 +3035,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MSRSQUEUE).NewTransmission">MSRSQUEUE:NewTransmission(text, duration, msrs, tstart, interval, subgroups, subtitle, subduration, frequency, modulation)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MSRSQUEUE).NewTransmission">MSRSQUEUE:NewTransmission(text, duration, msrs, tstart, interval, subgroups, subtitle, subduration, frequency, modulation, gender, culture, voice, volume, label)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Create a new transmission and add it to the radio queue.</p>
 </td>
@@ -3674,6 +3674,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MSRSQUEUE.Transmission).culture">MSRSQUEUE.Transmission.culture</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Voice culture</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MSRSQUEUE.Transmission).duration">MSRSQUEUE.Transmission.duration</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Duration in seconds.</p>
@@ -3686,6 +3692,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MSRSQUEUE.Transmission).gender">MSRSQUEUE.Transmission.gender</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Voice gender</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MSRSQUEUE.Transmission).interval">MSRSQUEUE.Transmission.interval</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Interval in seconds before next transmission.</p>
@@ -3695,6 +3707,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MSRSQUEUE.Transmission).isplaying">MSRSQUEUE.Transmission.isplaying</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>If true, transmission is currently playing.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MSRSQUEUE.Transmission).label">MSRSQUEUE.Transmission.label</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Label to be used</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3731,6 +3749,18 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MSRSQUEUE.Transmission).text">MSRSQUEUE.Transmission.text</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Text to be transmitted.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MSRSQUEUE.Transmission).voice">MSRSQUEUE.Transmission.voice</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Voice if any</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MSRSQUEUE.Transmission).volume">MSRSQUEUE.Transmission.volume</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Volume</p>
 </td>
           </tr>
         </table>
@@ -9644,7 +9674,7 @@ This can be used to submit multiple TTS messages and the class takes care that t
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(MSRSQUEUE).NewTransmission" ><strong>MSRSQUEUE:NewTransmission(text, duration, msrs, tstart, interval, subgroups, subtitle, subduration, frequency, modulation)</strong></a></h2>
+<h2><a id="#(MSRSQUEUE).NewTransmission" ><strong>MSRSQUEUE:NewTransmission(text, duration, msrs, tstart, interval, subgroups, subtitle, subduration, frequency, modulation, gender, culture, voice, volume, label)</strong></a></h2>
 </div>
     
 <p>Create a new transmission and add it to the radio queue.</p>
@@ -9783,6 +9813,71 @@ This can be used to submit multiple TTS messages and the class takes care that t
           <div class="w3-half">
               
 <p>Radio modulation if other then MSRS default.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>gender</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Gender of the voice</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>culture</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Culture of the voice</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>voice</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Specific voice</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>volume</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Volume setting</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>label</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Label to be used</p>
 
           </div>
         </div>
@@ -13379,6 +13474,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #string
+<a id="#(MSRSQUEUE.Transmission).culture" ><strong>MSRSQUEUE.Transmission.culture</strong></a>
+    
+<p>Voice culture</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #number
 <a id="#(MSRSQUEUE.Transmission).duration" ><strong>MSRSQUEUE.Transmission.duration</strong></a>
     
@@ -13401,6 +13507,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #string
+<a id="#(MSRSQUEUE.Transmission).gender" ><strong>MSRSQUEUE.Transmission.gender</strong></a>
+    
+<p>Voice gender</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #number
 <a id="#(MSRSQUEUE.Transmission).interval" ><strong>MSRSQUEUE.Transmission.interval</strong></a>
     
@@ -13416,6 +13533,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(MSRSQUEUE.Transmission).isplaying" ><strong>MSRSQUEUE.Transmission.isplaying</strong></a>
     
 <p>If true, transmission is currently playing.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(MSRSQUEUE.Transmission).label" ><strong>MSRSQUEUE.Transmission.label</strong></a>
+    
+<p>Label to be used</p>
 
 </div>
 
@@ -13482,6 +13610,28 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(MSRSQUEUE.Transmission).text" ><strong>MSRSQUEUE.Transmission.text</strong></a>
     
 <p>Text to be transmitted.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(MSRSQUEUE.Transmission).voice" ><strong>MSRSQUEUE.Transmission.voice</strong></a>
+    
+<p>Voice if any</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(MSRSQUEUE.Transmission).volume" ><strong>MSRSQUEUE.Transmission.volume</strong></a>
+    
+<p>Volume</p>
 
 </div>
 

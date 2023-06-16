@@ -3183,6 +3183,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).EnableSRS">AIRBOSS:EnableSRS(PathToSRS, Port, Culture, Gender, Voice, GoogleCreds, Volume, AltBackend)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set up SRS for usage without sound files</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).Final">AIRBOSS.Final</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Checkpoint when turning to final.</p>
@@ -3573,6 +3579,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).PilotRadio">AIRBOSS.PilotRadio</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Radio for Pilot calls.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).Platform">AIRBOSS.Platform</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Case II/III descent at 2000 ft/min at 5000 ft platform.</p>
@@ -3660,6 +3672,18 @@ If enabled, status and debug text messages will be displayed on the screen. Also
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).RecoveryUnpause">AIRBOSS:RecoveryUnpause()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "RecoveryUnpause" that resumes the recovery of aircraft if it was paused.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).SRS">AIRBOSS.SRS</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).SRSQ">AIRBOSS.SRSQ</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -3819,7 +3843,7 @@ If enabled, status and debug text messages will be displayed on the screen. Also
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).SetLSORadio">AIRBOSS:SetLSORadio(Frequency, Modulation)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).SetLSORadio">AIRBOSS:SetLSORadio(Frequency, Modulation, Voice, Gender, Culture)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set LSO radio frequency and modulation.</p>
 </td>
@@ -3843,7 +3867,7 @@ If enabled, status and debug text messages will be displayed on the screen. Also
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).SetMarshalRadio">AIRBOSS:SetMarshalRadio(Frequency, Modulation)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).SetMarshalRadio">AIRBOSS:SetMarshalRadio(Frequency, Modulation, Voice, Gender, Culture)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set carrier radio frequency and modulation.</p>
 </td>
@@ -3960,6 +3984,12 @@ If enabled, status and debug text messages will be displayed on the screen. Also
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).SetRespawnAI">AIRBOSS:SetRespawnAI(Switch)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Respawn AI groups once they reach the CCA.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS).SetSRSPilotVoice">AIRBOSS:SetSRSPilotVoice(Voice, Gender, Culture)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set SRS voice for the pilot calls.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -8761,6 +8791,18 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS.PlayerData).SRS">AIRBOSS.PlayerData.SRS</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS.PlayerData).SRSQ">AIRBOSS.PlayerData.SRSQ</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS.PlayerData).TIG0">AIRBOSS.PlayerData.TIG0</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Time in groove start timer.getTime().</p>
@@ -8824,6 +8866,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS.PlayerData).debriefschedulerID">AIRBOSS.PlayerData.debriefschedulerID</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Debrief scheduler ID.</p>
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -9044,15 +9087,33 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS.Radio).culture">AIRBOSS.Radio.culture</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS.Radio).frequency">AIRBOSS.Radio.frequency</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Frequency in Hz.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS.Radio).gender">AIRBOSS.Radio.gender</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS.Radio).modulation">AIRBOSS.Radio.modulation</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Band modulation.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRBOSS.Radio).voice">AIRBOSS.Radio.voice</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
         </table>
@@ -9700,6 +9761,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="##(AIRBOSS.Radio)">#AIRBOSS.Radio</a>
+<a id="#(AIRBOSS).PilotRadio" ><strong>AIRBOSS.PilotRadio</strong></a>
+    
+<p>Radio for Pilot calls.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="##(AIRBOSS.Checkpoint)">#AIRBOSS.Checkpoint</a>
 <a id="#(AIRBOSS).Platform" ><strong>AIRBOSS.Platform</strong></a>
     
@@ -9766,10 +9838,57 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(AIRBOSS).RQLid" ><strong>AIRBOSS.RQLid</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(AIRBOSS).RQMarshal" ><strong>AIRBOSS.RQMarshal</strong></a>
     
 <p>Radio queue of marshal.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AIRBOSS).RQMid" ><strong>AIRBOSS.RQMid</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AIRBOSS).SRS" ><strong>AIRBOSS.SRS</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AIRBOSS).SRSQ" ><strong>AIRBOSS.SRSQ</strong></a>
+    
+
+
+    
+<p> SRSQUEUE</p>
 
 </div>
 
@@ -11401,6 +11520,141 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
           </div>
         </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AIRBOSS).EnableSRS" ><strong>AIRBOSS:EnableSRS(PathToSRS, Port, Culture, Gender, Voice, GoogleCreds, Volume, AltBackend)</strong></a></h2>
+</div>
+    
+<p>Set up SRS for usage without sound files</p>
+
+<div id= "#Functions##EnableSRS" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRBOSS</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>PathToSRS</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Path to SRS folder, e.g. "C:\Program Files\DCS-SimpleRadio-Standalone".</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Port</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Port of the SRS server, defaults to 5002.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Culture</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional)  Culture, defaults to "en-US".</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Gender</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional)  Gender, e.g. "male" or "female". Defaults to "male".</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Voice</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Set to use a specific voice. Will <strong>override gender and culture</strong> settings.  </p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>GoogleCreds</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Path to Google credentials, e.g. "C:\Program Files\DCS-SimpleRadio-Standalone\yourgooglekey.json".</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Volume</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) E.g. 0.75. Defaults to 1.0 (loudest).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>AltBackend</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) See MSRS for details.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AIRBOSS)">#AIRBOSS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
@@ -15053,7 +15307,7 @@ So best stick to the defaults up to 30 degrees.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AIRBOSS).SetLSORadio" ><strong>AIRBOSS:SetLSORadio(Frequency, Modulation)</strong></a></h2>
+<h2><a id="#(AIRBOSS).SetLSORadio" ><strong>AIRBOSS:SetLSORadio(Frequency, Modulation, Voice, Gender, Culture)</strong></a></h2>
 </div>
     
 <p>Set LSO radio frequency and modulation.</p>
@@ -15091,6 +15345,45 @@ So best stick to the defaults up to 30 degrees.</p>
           <div class="w3-half">
               
 <p>(Optional) Modulation, "AM" or "FM". Default "AM".</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Voice</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) SRS specific voice</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Gender</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) SRS specific gender</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Culture</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) SRS specific culture</p>
 
           </div>
         </div>
@@ -15304,7 +15597,7 @@ So best stick to the defaults up to 30 degrees.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AIRBOSS).SetMarshalRadio" ><strong>AIRBOSS:SetMarshalRadio(Frequency, Modulation)</strong></a></h2>
+<h2><a id="#(AIRBOSS).SetMarshalRadio" ><strong>AIRBOSS:SetMarshalRadio(Frequency, Modulation, Voice, Gender, Culture)</strong></a></h2>
 </div>
     
 <p>Set carrier radio frequency and modulation.</p>
@@ -15342,6 +15635,45 @@ So best stick to the defaults up to 30 degrees.</p>
           <div class="w3-half">
               
 <p>(Optional) Modulation, "AM" or "FM". Default "AM".</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Voice</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) SRS specific voice</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Gender</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) SRS specific gender</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Culture</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) SRS specific culture</p>
 
           </div>
         </div>
@@ -16241,6 +16573,76 @@ Marshal stacks for Case II/III are unlimited.</p>
           <div class="w3-half">
               
 <p>If true or nil, AI groups are respawned.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AIRBOSS)">#AIRBOSS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AIRBOSS).SetSRSPilotVoice" ><strong>AIRBOSS:SetSRSPilotVoice(Voice, Gender, Culture)</strong></a></h2>
+</div>
+    
+<p>Set SRS voice for the pilot calls.</p>
+
+<div id= "#Functions##SetSRSPilotVoice" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRBOSS</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Voice</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) SRS specific voice</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Gender</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) SRS specific gender</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Culture</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) SRS specific culture</p>
 
           </div>
         </div>
@@ -29303,6 +29705,17 @@ If removed flight is the section lead, we try to find a new leader.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="##(AIRBOSS.Radio)">#AIRBOSS.Radio</a>
+<a id="#(AIRBOSS).PilotRadio" ><strong>AIRBOSS.PilotRadio</strong></a>
+    
+<p>Radio for Pilot calls.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="##(AIRBOSS.Checkpoint)">#AIRBOSS.Checkpoint</a>
 <a id="#(AIRBOSS).Platform" ><strong>AIRBOSS.Platform</strong></a>
     
@@ -29369,10 +29782,57 @@ If removed flight is the section lead, we try to find a new leader.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(AIRBOSS).RQLid" ><strong>AIRBOSS.RQLid</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(AIRBOSS).RQMarshal" ><strong>AIRBOSS.RQMarshal</strong></a>
     
 <p>Radio queue of marshal.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AIRBOSS).RQMid" ><strong>AIRBOSS.RQMid</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AIRBOSS).SRS" ><strong>AIRBOSS.SRS</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AIRBOSS).SRSQ" ><strong>AIRBOSS.SRSQ</strong></a>
+    
+
+
+    
+<p> SRSQUEUE</p>
 
 </div>
 
@@ -32313,6 +32773,17 @@ If removed flight is the section lead, we try to find a new leader.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="##(AIRBOSS.Radio)">#AIRBOSS.Radio</a>
+<a id="#(AIRBOSS).PilotRadio" ><strong>AIRBOSS.PilotRadio</strong></a>
+    
+<p>Radio for Pilot calls.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="##(AIRBOSS.Checkpoint)">#AIRBOSS.Checkpoint</a>
 <a id="#(AIRBOSS).Platform" ><strong>AIRBOSS.Platform</strong></a>
     
@@ -32379,10 +32850,57 @@ If removed flight is the section lead, we try to find a new leader.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(AIRBOSS).RQLid" ><strong>AIRBOSS.RQLid</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(AIRBOSS).RQMarshal" ><strong>AIRBOSS.RQMarshal</strong></a>
     
 <p>Radio queue of marshal.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AIRBOSS).RQMid" ><strong>AIRBOSS.RQMid</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AIRBOSS).SRS" ><strong>AIRBOSS.SRS</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AIRBOSS).SRSQ" ><strong>AIRBOSS.SRSQ</strong></a>
+    
+
+
+    
+<p> SRSQUEUE</p>
 
 </div>
 
@@ -39862,6 +40380,28 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="Sound.SRS.html##(MSRS)">Sound.SRS#MSRS</a>
+<a id="#(AIRBOSS.PlayerData).SRS" ><strong>AIRBOSS.PlayerData.SRS</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Sound.SRS.html##(MSRSQUEUE)">Sound.SRS#MSRSQUEUE</a>
+<a id="#(AIRBOSS.PlayerData).SRSQ" ><strong>AIRBOSS.PlayerData.SRSQ</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #number
 <a id="#(AIRBOSS.PlayerData).TIG0" ><strong>AIRBOSS.PlayerData.TIG0</strong></a>
     
@@ -39979,6 +40519,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(AIRBOSS.PlayerData).debriefschedulerID" ><strong>AIRBOSS.PlayerData.debriefschedulerID</strong></a>
     
 <p>Debrief scheduler ID.</p>
+
 
 </div>
 
@@ -40176,9 +40717,6 @@ When moose is loading dynamically (for moose class development), tracing is swit
     
 
 
-    
-<p> Set section lead of player flight.</p>
-
 </div>
 
 </div>   
@@ -40200,9 +40738,6 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(AIRBOSS.PlayerData).stable" ><strong>AIRBOSS.PlayerData.stable</strong></a>
     
 
-
-    
-<p> Set Stable Hover</p>
 
 </div>
 
@@ -40236,9 +40771,6 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(AIRBOSS.PlayerData).time" ><strong>AIRBOSS.PlayerData.time</strong></a>
     
 
-
-    
-<p> Set time stamp.</p>
 
 </div>
 
@@ -40397,6 +40929,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(AIRBOSS.Radio).modulation" ><strong>AIRBOSS.Radio.modulation</strong></a>
     
 <p>Band modulation.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AIRBOSS.Radio).voice" ><strong>AIRBOSS.Radio.voice</strong></a>
+    
+
 
 </div>
 
