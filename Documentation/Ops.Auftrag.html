@@ -3471,7 +3471,7 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetRequiredCarriers">AUFTRAG:SetRequiredCarriers(NcarriersMin, NcarriersMax)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetRequiredCarriers">AUFTRAG:SetRequiredCarriers(NcarriersMin, NcarriersMax, Categories, Attributes, Properties)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[LEGION, COMMANDER, CHIEF]</strong> Set number of required carrier groups if an OPSTRANSPORT assignment is required.</p>
 </td>
@@ -3489,7 +3489,7 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetRequiredTransport">AUFTRAG:SetRequiredTransport(DeployZone, NcarriersMin, NcarriersMax, DisembarkZone)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetRequiredTransport">AUFTRAG:SetRequiredTransport(DeployZone, NcarriersMin, NcarriersMax, DisembarkZone, Categories, Attributes, Properties)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[LEGION, COMMANDER, CHIEF]</strong> Attach OPS transport to the mission.</p>
 </td>
@@ -3830,6 +3830,25 @@ The commander will select the best assets available from all the legions under h
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).auftragsnummer">AUFTRAG.auftragsnummer</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Auftragsnummer.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).carrierAttributes">AUFTRAG.carrierAttributes</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Generalized attribute(s) of transport assets.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).carrierCategories">AUFTRAG.carrierCategories</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).carrierProperties">AUFTRAG.carrierProperties</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>DCS attribute(s) of transport assets.</p>
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -4606,7 +4625,6 @@ The commander will select the best assets available from all the legions under h
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).transportDisembarkZone">AUFTRAG.transportDisembarkZone</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Disembark zone of an OPSTRANSPORT.</p>
-
 </td>
           </tr>
           <tr class="w3-border">
@@ -6782,6 +6800,40 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #table
+<a id="#(AUFTRAG).carrierAttributes" ><strong>AUFTRAG.carrierAttributes</strong></a>
+    
+<p>Generalized attribute(s) of transport assets.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AUFTRAG).carrierCategories" ><strong>AUFTRAG.carrierCategories</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(AUFTRAG).carrierProperties" ><strong>AUFTRAG.carrierProperties</strong></a>
+    
+<p>DCS attribute(s) of transport assets.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
 <a id="#(AUFTRAG).categories" ><strong>AUFTRAG.categories</strong></a>
     
 <p>Mission categories.</p>
@@ -7990,7 +8042,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(AUFTRAG).transportDisembarkZone" ><strong>AUFTRAG.transportDisembarkZone</strong></a>
     
 <p>Disembark zone of an OPSTRANSPORT.</p>
-
 
 </div>
 
@@ -17979,7 +18030,7 @@ no reinforcement can take place, even if the mission is submitted to a COMMANDER
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUFTRAG).SetRequiredCarriers" ><strong>AUFTRAG:SetRequiredCarriers(NcarriersMin, NcarriersMax)</strong></a></h2>
+<h2><a id="#(AUFTRAG).SetRequiredCarriers" ><strong>AUFTRAG:SetRequiredCarriers(NcarriersMin, NcarriersMax, Categories, Attributes, Properties)</strong></a></h2>
 </div>
     
 <p><strong>[LEGION, COMMANDER, CHIEF]</strong> Set number of required carrier groups if an OPSTRANSPORT assignment is required.</p>
@@ -18014,6 +18065,45 @@ no reinforcement can take place, even if the mission is submitted to a COMMANDER
           <div class="w3-half">
               
 <p>Number of carriers <em>at most</em> used for transportation. Default is same as <code>NcarriersMin</code>.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Categories</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Group categories.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Attributes</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Group attributes. See <code>GROUP.Attribute.</code></p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Properties</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>DCS attributes.</p>
 
           </div>
         </div>
@@ -18182,7 +18272,7 @@ no reinforcement can take place, even if the mission is submitted to a COMMANDER
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUFTRAG).SetRequiredTransport" ><strong>AUFTRAG:SetRequiredTransport(DeployZone, NcarriersMin, NcarriersMax, DisembarkZone)</strong></a></h2>
+<h2><a id="#(AUFTRAG).SetRequiredTransport" ><strong>AUFTRAG:SetRequiredTransport(DeployZone, NcarriersMin, NcarriersMax, DisembarkZone, Categories, Attributes, Properties)</strong></a></h2>
 </div>
     
 <p><strong>[LEGION, COMMANDER, CHIEF]</strong> Attach OPS transport to the mission.</p>
@@ -18246,6 +18336,45 @@ no reinforcement can take place, even if the mission is submitted to a COMMANDER
           <div class="w3-half">
               
 <p>Zone where assets are disembarked to.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Categories</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Group categories.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Attributes</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Generalizes group attributes.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Properties</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>DCS attributes.</p>
 
           </div>
         </div>
@@ -21264,6 +21393,40 @@ will always return.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #table
+<a id="#(AUFTRAG).carrierAttributes" ><strong>AUFTRAG.carrierAttributes</strong></a>
+    
+<p>Generalized attribute(s) of transport assets.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AUFTRAG).carrierCategories" ><strong>AUFTRAG.carrierCategories</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(AUFTRAG).carrierProperties" ><strong>AUFTRAG.carrierProperties</strong></a>
+    
+<p>DCS attribute(s) of transport assets.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
 <a id="#(AUFTRAG).categories" ><strong>AUFTRAG.categories</strong></a>
     
 <p>Mission categories.</p>
@@ -22472,7 +22635,6 @@ will always return.</p>
 <a id="#(AUFTRAG).transportDisembarkZone" ><strong>AUFTRAG.transportDisembarkZone</strong></a>
     
 <p>Disembark zone of an OPSTRANSPORT.</p>
-
 
 </div>
 
@@ -24491,6 +24653,40 @@ will always return.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #table
+<a id="#(AUFTRAG).carrierAttributes" ><strong>AUFTRAG.carrierAttributes</strong></a>
+    
+<p>Generalized attribute(s) of transport assets.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AUFTRAG).carrierCategories" ><strong>AUFTRAG.carrierCategories</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(AUFTRAG).carrierProperties" ><strong>AUFTRAG.carrierProperties</strong></a>
+    
+<p>DCS attribute(s) of transport assets.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
 <a id="#(AUFTRAG).categories" ><strong>AUFTRAG.categories</strong></a>
     
 <p>Mission categories.</p>
@@ -25699,7 +25895,6 @@ will always return.</p>
 <a id="#(AUFTRAG).transportDisembarkZone" ><strong>AUFTRAG.transportDisembarkZone</strong></a>
     
 <p>Disembark zone of an OPSTRANSPORT.</p>
-
 
 </div>
 
