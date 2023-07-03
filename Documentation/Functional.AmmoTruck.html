@@ -1158,7 +1158,7 @@
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Ops.Auftrag.html">Ops.Auftrag</a></strong></h2></div>
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Ops</strong> - Auftrag (mission) for Ops.</p>
+
 </p></div>
        </div>         
      </div>
@@ -1974,9 +1974,10 @@ Trucks are the <strong>only known in-game mechanic</strong> to re-arm artillery 
        ammotruck.remunidist = 20000 -- 20km - send trucks max this far from home
        ammotruck.unloadtime = 600 -- 10 minutes - min time to unload ammunition
        ammotruck.waitingtime = 1800 -- 30 mintes - wait max this long until remunition is done
-       ammotruck.monitor = -60 - 1 minute - AMMOTRUCK checks on things every 1 minute
-       ammotruck.routeonroad = true - Trucks will **try** to drive on roads
-       ammotruck.usearmygroup = false - if true, will make use of ARMYGROUP in the background (if used in DEV branch)
+       ammotruck.monitor = -60 -- 1 minute - AMMOTRUCK checks run every one minute
+       ammotruck.routeonroad = true -- Trucks will **try** to drive on roads
+       ammotruck.usearmygroup = false -- If true, will make use of ARMYGROUP in the background (if used in DEV branch)
+   ammotruck.reloads = 5 -- Maxn re-arms a truck can do before he needs to go home and restock. Set to -1 for unlimited
 </code></pre>
 
 <h2>3 FSM Events to shape mission</h2>
@@ -2231,6 +2232,12 @@ Trucks are the <strong>only known in-game mechanic</strong> to re-arm artillery 
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).reloads">AMMOTRUCK.reloads</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Number of reloads a single truck can do before he must return home</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK).remunidist">AMMOTRUCK.remunidist</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Max distance trucks will go</p>
@@ -2413,6 +2420,12 @@ Trucks are the <strong>only known in-game mechanic</strong> to re-arm artillery 
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.data).reloads">AMMOTRUCK.data.reloads</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AMMOTRUCK.data).statusquo">AMMOTRUCK.data.statusquo</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -2568,6 +2581,17 @@ Trucks are the <strong>only known in-game mechanic</strong> to re-arm artillery 
 <a id="#(AMMOTRUCK).monitor" ><strong>AMMOTRUCK.monitor</strong></a>
     
 <p>Monitor interval in seconds</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AMMOTRUCK).reloads" ><strong>AMMOTRUCK.reloads</strong></a>
+    
+<p>Number of reloads a single truck can do before he must return home</p>
 
 </div>
 
@@ -4156,6 +4180,17 @@ Create an AMMOTRUCK object to take care of the artillery using the trucks, with 
 
     #string
 <a id="#(AMMOTRUCK.data).name" ><strong>AMMOTRUCK.data.name</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AMMOTRUCK.data).reloads" ><strong>AMMOTRUCK.data.reloads</strong></a>
     
 
 
