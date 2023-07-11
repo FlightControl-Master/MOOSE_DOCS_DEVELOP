@@ -1931,6 +1931,7 @@
 
 <hr/>
 
+
   </div>
   <div class="w3-container w3-theme-d2"><h2><strong>Global(s)</strong></h2></div>
   <div class="w3-theme-d2 w3-margin-top ">
@@ -1959,7 +1960,13 @@
       <tr>
         <td class="style="width:40%;"><p><h2>Global <strong>CLIENTMENUMANAGER</strong></h2></p></td>
         <td class="style="width:60%;">
+<p><em>As a child my family's menu consisted of two choices: take it, or leave it.</em></p>
 
+<hr/>
+
+<h2>CLIENTMENU and CLIENTMENUMANAGER</h2>
+
+<p>Manage menu structures for a SET_CLIENT of clients.</p>
 </td>
       </tr>
     </table>
@@ -1970,6 +1977,94 @@
     <a href="##(CLIENTMENUMANAGER)">#CLIENTMENUMANAGER</a>
 <a id="CLIENTMENUMANAGER" ><strong>CLIENTMENUMANAGER</strong></a>
     
+<p><em>As a child my family's menu consisted of two choices: take it, or leave it.</em></p>
+
+<hr/>
+
+<h2>CLIENTMENU and CLIENTMENUMANAGER</h2>
+
+<p>Manage menu structures for a SET_CLIENT of clients.</p>
+
+    
+
+<h2>Concept</h2>
+
+<p>Separate creation of a menu tree structure from pushing it to each client. Create a shadow "reference" menu structure tree for your client pilot's in a mission. 
+This can then be propagated to all clients. Manipulate the entries in the structure with removing, clearing or changing single entries, create replacement sub-structures 
+for entries etc, push to one or all clients.</p>
+
+<p>Many functions can either change the tree for one client or for all clients.</p>
+
+<h2>Create a base reference tree and send to all clients</h2>
+
+<pre><code>       local clientset = SET_CLIENT:New():FilterStart()
+
+       local menumgr = CLIENTMENUMANAGER:New(clientset,"Dayshift")
+       local mymenu = menumgr:NewEntry("Top")
+       local mymenu_lv1a = menumgr:NewEntry("Level 1 a",mymenu)
+       local mymenu_lv1b = menumgr:NewEntry("Level 1 b",mymenu)
+       -- next one is a command menu entry, which can only be used once
+       local mymenu_lv1c = menumgr:NewEntry("Action Level 1 c",mymenu, testfunction, "testtext"):SetOnce()
+
+       local mymenu_lv2a = menumgr:NewEntry("Go here",mymenu_lv1a)
+       local mymenu_lv2b = menumgr:NewEntry("Level 2 ab",mymenu_lv1a)
+       local mymenu_lv2c = menumgr:NewEntry("Level 2 ac",mymenu_lv1a)
+
+       local mymenu_lv2ba = menumgr:NewEntry("Level 2 ba",mymenu_lv1b)
+       local mymenu_lv2bb = menumgr:NewEntry("Level 2 bb",mymenu_lv1b)
+       local mymenu_lv2bc = menumgr:NewEntry("Level 2 bc",mymenu_lv1b)
+
+       local mymenu_lv3a = menumgr:NewEntry("Level 3 aaa",mymenu_lv2a)
+       local mymenu_lv3b = menumgr:NewEntry("Level 3 aab",mymenu_lv2a)
+       local mymenu_lv3c = menumgr:NewEntry("Level 3 aac",mymenu_lv2a)
+
+       menumgr:Propagate()
+</code></pre>
+
+<h2>Remove a single entry's subtree</h2>
+
+<pre><code>       menumgr:RemoveSubEntries(mymenu_lv3a)
+</code></pre>
+
+<h2>Remove a single entry and also it's subtree</h2>
+
+<pre><code>       menumgr:Clear(mymenu_lv3a)
+</code></pre>
+
+<h2>Add a single entry</h2>
+
+<pre><code>       local baimenu = menumgr:NewEntry("BAI",mymenu_lv1b)
+       menumgr:AddEntry(baimenu)           
+</code></pre>
+
+<h2>Prepare and push a partial replacement in the tree</h2>
+
+<pre><code>       menumgr:PrepareNewReplacementStructure()
+       local submenu = menumgr:NewReplacementEntry("New Level 2 ba",mymenu_lv2a)
+       menumgr:NewReplacementEntry("New Level 2 bb",mymenu_lv2a)
+       menumgr:NewReplacementEntry("Deleted",mymenu_lv2a)
+       menumgr:NewReplacementEntry("New Level 2 bd",mymenu_lv2a)
+       menumgr:NewReplacementEntry("SubLevel 3 baa",submenu)
+       menumgr:NewReplacementEntry("SubLevel 3 bab",submenu)
+       menumgr:NewReplacementEntry("SubLevel 3 bac",submenu)
+       menumgr:NewReplacementEntry("SubLevel 3 bad",submenu)
+       menumgr:ReplaceEntries(mymenu_lv2a)
+</code></pre>
+
+<h2>Change the text of an entry in the menu tree</h2>
+
+<pre><code>       menumgr:ChangeEntryTextForAll(mymenu_lv1b,"Attack")
+</code></pre>
+
+<h2>Reset a single clients menu tree</h2>
+
+<pre><code>       menumgr:ResetMenu(client)
+</code></pre>
+
+<h2>Reset all and clear the reference tree</h2>
+
+<pre><code>       menumgr:ResetMenuComplete() 
+</code></pre>
 
 
 </div>
@@ -7637,7 +7732,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div id= "#Types##CLIENTMENUMANAGER" class="w3-container w3-white w3-padding-16" id="module_other_types">
           <div class="w3-white" id="record_type">
   
-<p>CLIENTMENUMANAGER class</p>
+<p>Class CLIENTMENUMANAGER              </p>
 
 <div class="fields w3-container w3-theme-l2">
   <h2>Field(s)</h2>
@@ -12246,97 +12341,6 @@ When moose is loading dynamically (for moose class development), tracing is swit
       <div onclick="myFunction('#Types##CLIENTMENUMANAGER.Structure')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(CLIENTMENUMANAGER.Structure)">Type <strong>CLIENTMENUMANAGER.Structure</strong></a></h2></div>
         <div id= "#Types##CLIENTMENUMANAGER.Structure" class="w3-container w3-white w3-padding-16" id="module_other_types">
           <div class="w3-white" id="record_type">
-  
-<p><em>As a child my family's menu consisted of two choices: take it, or leave it.</em></p>
-
-<hr/>
-
-<h1>CLIENTMENU and CLIENTMENUMANAGER</h1>
-
-<p>Manage menu structures for a SET_CLIENT of clients.</p>
-
-  
-
-<h2>Concept</h2>
-
-<p>Separate creation of a menu tree structure from pushing it to each client. Create a shadow "reference" menu structure tree for your client pilot's in a mission. 
-This can then be propagated to all clients. Manipulate the entries in the structure with removing, clearing or changing single entries, create replacement sub-structures 
-for entries etc, push to one or all clients.</p>
-
-<p>Many functions can either change the tree for one client or for all clients.</p>
-
-<h2>Create a base reference tree and send to all clients</h2>
-
-<pre><code>       local clientset = SET_CLIENT:New():FilterStart()
-
-       local menumgr = CLIENTMENUMANAGER:New(clientset,"Dayshift")
-       local mymenu = menumgr:NewEntry("Top")
-       local mymenu_lv1a = menumgr:NewEntry("Level 1 a",mymenu)
-       local mymenu_lv1b = menumgr:NewEntry("Level 1 b",mymenu)
-       -- next one is a command menu entry, which can only be used once
-       local mymenu_lv1c = menumgr:NewEntry("Action Level 1 c",mymenu, testfunction, "testtext"):SetOnce()
-
-       local mymenu_lv2a = menumgr:NewEntry("Go here",mymenu_lv1a)
-       local mymenu_lv2b = menumgr:NewEntry("Level 2 ab",mymenu_lv1a)
-       local mymenu_lv2c = menumgr:NewEntry("Level 2 ac",mymenu_lv1a)
-
-       local mymenu_lv2ba = menumgr:NewEntry("Level 2 ba",mymenu_lv1b)
-       local mymenu_lv2bb = menumgr:NewEntry("Level 2 bb",mymenu_lv1b)
-       local mymenu_lv2bc = menumgr:NewEntry("Level 2 bc",mymenu_lv1b)
-
-       local mymenu_lv3a = menumgr:NewEntry("Level 3 aaa",mymenu_lv2a)
-       local mymenu_lv3b = menumgr:NewEntry("Level 3 aab",mymenu_lv2a)
-       local mymenu_lv3c = menumgr:NewEntry("Level 3 aac",mymenu_lv2a)
-
-       menumgr:Propagate()
-</code></pre>
-
-<h2>Remove a single entry's subtree</h2>
-
-<pre><code>       menumgr:RemoveSubEntries(mymenu_lv3a)
-</code></pre>
-
-<h2>Remove a single entry and also it's subtree</h2>
-
-<pre><code>       menumgr:Clear(mymenu_lv3a)
-</code></pre>
-
-<h2>Add a single entry</h2>
-
-<pre><code>       local baimenu = menumgr:NewEntry("BAI",mymenu_lv1b)
-       menumgr:AddEntry(baimenu)           
-</code></pre>
-
-<h2>Prepare and push a partial replacement in the tree</h2>
-
-<pre><code>       menumgr:PrepareNewReplacementStructure()
-       local submenu = menumgr:NewReplacementEntry("New Level 2 ba",mymenu_lv2a)
-       menumgr:NewReplacementEntry("New Level 2 bb",mymenu_lv2a)
-       menumgr:NewReplacementEntry("Deleted",mymenu_lv2a)
-       menumgr:NewReplacementEntry("New Level 2 bd",mymenu_lv2a)
-       menumgr:NewReplacementEntry("SubLevel 3 baa",submenu)
-       menumgr:NewReplacementEntry("SubLevel 3 bab",submenu)
-       menumgr:NewReplacementEntry("SubLevel 3 bac",submenu)
-       menumgr:NewReplacementEntry("SubLevel 3 bad",submenu)
-       menumgr:ReplaceEntries(mymenu_lv2a)
-</code></pre>
-
-<h2>Change the text of an entry in the menu tree</h2>
-
-<pre><code>       menumgr:ChangeEntryTextForAll(mymenu_lv1b,"Attack")
-</code></pre>
-
-<h2>Reset a single clients menu tree</h2>
-
-<pre><code>       menumgr:ResetMenu(client)
-</code></pre>
-
-<h2>Reset all and clear the reference tree</h2>
-
-<pre><code>       menumgr:ResetMenuComplete()          
-</code></pre>
-<p>-</p>
-
 <div class="fields w3-container w3-theme-l2">
   <h2>Field(s)</h2>
 </div>
