@@ -1917,12 +1917,14 @@
 
 <ul>
     <li>For complex, non-static menu structures</li>
-    <li>Separation of menu tree creation from pushing it to clients</li>
+    <li>Lightweigt implementation as alternative to MENU</li>
+    <li>Separation of menu tree creation from menu on the clients's side</li>
     <li>Works with a SET_CLIENT set of clients</li>
     <li>Allow manipulation of the shadow tree in various ways</li>
     <li>Push to all or only one client</li>
-    <li>Change entries' menu text, even if they have a sub-structure</li>
-    <li>Option to make an entry usable once</li>
+    <li>Change entries' menu text</li>
+    <li>Option to make an entry usable once only across all clients</li>
+    <li>Auto appends GROUP and CLIENT objects to menu calls</li>
 </ul>
 
 <hr/>
@@ -2028,30 +2030,33 @@ for entries etc, push to one or all clients.</p>
 
 <h2>Remove a single entry and also it's subtree</h2>
 
-<pre><code>       menumgr:Clear(mymenu_lv3a)
+<pre><code>       menumgr:DeleteEntry(mymenu_lv3a)
 </code></pre>
 
 <h2>Add a single entry</h2>
 
 <pre><code>       local baimenu = menumgr:NewEntry("BAI",mymenu_lv1b)
-       menumgr:AddEntry(baimenu)           
+
+       menumgr:AddEntry(baimenu)  
 </code></pre>
 
-<h2>Prepare and push a partial replacement in the tree</h2>
+<h2>Add an entry with a function</h2>
 
-<pre><code>       menumgr:PrepareNewReplacementStructure()
-       local submenu = menumgr:NewReplacementEntry("New Level 2 ba",mymenu_lv2a)
-       menumgr:NewReplacementEntry("New Level 2 bb",mymenu_lv2a)
-       menumgr:NewReplacementEntry("Deleted",mymenu_lv2a)
-       menumgr:NewReplacementEntry("New Level 2 bd",mymenu_lv2a)
-       menumgr:NewReplacementEntry("SubLevel 3 baa",submenu)
-       menumgr:NewReplacementEntry("SubLevel 3 bab",submenu)
-       menumgr:NewReplacementEntry("SubLevel 3 bac",submenu)
-       menumgr:NewReplacementEntry("SubLevel 3 bad",submenu)
-       menumgr:ReplaceEntries(mymenu_lv2a)
+<pre><code>       local baimenu = menumgr:NewEntry("Task Action", mymenu_lv1b, TestFunction, Argument1, Argument1)
 </code></pre>
 
-<h2>Change the text of an entry in the menu tree</h2>
+<p> Now, the class will <strong>automatically append the call with GROUP and CLIENT objects</strong>, as this is can only be done when pushing the entry to the clients. So, the actual function implementation needs to look like this:</p>
+
+<pre><code>       function TestFunction( Argument1, Argument2, Group, Client)
+</code></pre>
+
+<p> <strong>Caveat is</strong>, that you need to ensure your arguments are not <strong>nil</strong> or <strong>false</strong>, as LUA will optimize those away. You would end up having Group and Client in wrong places in the function call. Hence,
+ if you need/ want to send <strong>nil</strong> or <strong>false</strong>, send a place holder instead and ensure your function can handle this, e.g.</p>
+
+<pre><code>       local baimenu = menumgr:NewEntry("Task Action", mymenu_lv1b, TestFunction, "nil", Argument1)
+</code></pre>
+
+<h2>Change the text of a leaf entry in the menu tree</h2>
 
 <pre><code>       menumgr:ChangeEntryTextForAll(mymenu_lv1b,"Attack")
 </code></pre>
@@ -2140,6 +2145,12 @@ for entries etc, push to one or all clients.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENU).CreateUUID">CLIENTMENU:CreateUUID(Parent, Text)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Create a UUID</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENU).Function">CLIENTMENU.Function</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -2147,12 +2158,6 @@ for entries etc, push to one or all clients.</p>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENU).Functionargs">CLIENTMENU.Functionargs</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENU).GID">CLIENTMENU.GID</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -2170,9 +2175,21 @@ for entries etc, push to one or all clients.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENU).GetUUID">CLIENTMENU:GetUUID()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get the UUID.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENU).GroupID">CLIENTMENU.GroupID</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Group ID</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENU).ID">CLIENTMENU.ID</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Entry ID</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2221,6 +2238,12 @@ for entries etc, push to one or all clients.</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENU).SetOnce">CLIENTMENU:SetOnce()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The entry will be deleted after being used used - for menu entries with functions only.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENU).UUID">CLIENTMENU.UUID</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Unique ID based on path+name</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2830,13 +2853,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).ChangeEntryText">CLIENTMENUMANAGER:ChangeEntryText(Entry, Text, Client)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Alter the text of an entry in the generic structure and push to one specific client.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).ChangeEntryTextForAll">CLIENTMENUMANAGER:ChangeEntryTextForAll(Entry, Text)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Alter the text of an entry in the generic structure and push to all clients.</p>
+<p>Alter the text of a leaf entry in the generic structure and push to one specific client's F10 menu.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2846,21 +2863,51 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).Clear">CLIENTMENUMANAGER:Clear(Entry, Client)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).DeleteF10Entry">CLIENTMENUMANAGER:DeleteF10Entry(Entry, Client)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Remove the entry and all entries below the given entry from the client's menus and the generic structure.</p>
+<p>Remove the entry and all entries below the given entry from the client's F10 menus.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).FindEntryByText">CLIENTMENUMANAGER:FindEntryByText(Text)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).DeleteGenericEntry">CLIENTMENUMANAGER:DeleteGenericEntry(Entry)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Find <strong>first</strong> matching entry in the generic structure by the menu text.</p>
+<p>Remove the entry and all entries below the given entry from the generic tree.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).GetEntryByGID">CLIENTMENUMANAGER:GetEntryByGID(GID)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).EntryUUIDExists">CLIENTMENUMANAGER:EntryUUIDExists(UUID)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Find first matching entry in the generic structure by the GID.</p>
+<p>Check matching entry in the generic structure by UUID.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).FindEntriesByParent">CLIENTMENUMANAGER:FindEntriesByParent(Parent)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Find matching entries in the generic structure under a parent.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).FindEntriesByText">CLIENTMENUMANAGER:FindEntriesByText(Text, Parent)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Find matching entries in the generic structure by the menu text.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).FindEntryByUUID">CLIENTMENUMANAGER:FindEntryByUUID(UUID)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Find matching entry in the generic structure by UUID.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).FindUUIDsByParent">CLIENTMENUMANAGER:FindUUIDsByParent(Parent)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Find matching entries under a parent in the generic structure by UUID.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).FindUUIDsByText">CLIENTMENUMANAGER:FindUUIDsByText(Text, Parent)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Find matching entries by text in the generic structure by UUID.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2876,75 +2923,33 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).NewReplacementEntry">CLIENTMENUMANAGER:NewReplacementEntry(Text, Parent, Function, ...)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Create a new entry in the replacement structure.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).PrepareNewReplacementStructure">CLIENTMENUMANAGER:PrepareNewReplacementStructure()</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Prepare a new replacement structure.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).Propagate">CLIENTMENUMANAGER:Propagate(Client)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Push the complete menu structure to each of the clients in the set.</p>
+<p>Push the complete menu structure to each of the clients in the set - refresh the menu tree of the clients.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).RemoveSubEntries">CLIENTMENUMANAGER:RemoveSubEntries(Entry, Client)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).RemoveF10SubEntries">CLIENTMENUMANAGER:RemoveF10SubEntries(Entry, Client)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Remove all entries below the given entry from the clients' menus and the generic structure.</p>
+<p>Remove all entries below the given entry from the client's F10 menus.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).ReplaceEntries">CLIENTMENUMANAGER:ReplaceEntries(Parent, Client)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).RemoveGenericSubEntries">CLIENTMENUMANAGER:RemoveGenericSubEntries(Entry)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Replace entries under the Parent entry with the Replacement structure created prior for all clients.</p>
+<p>Remove all entries below the given entry from the generic tree.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).ResetMenu">CLIENTMENUMANAGER:ResetMenu(Client)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Blank out the menu - remove <strong>all root entries</strong> and all entries below from the client's menus, leaving the generic structure untouched.</p>
+<p>Blank out the menu - remove <strong>all root entries</strong> and all entries below from the client's F10 menus, leaving the generic structure untouched.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).ResetMenuComplete">CLIENTMENUMANAGER:ResetMenuComplete()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Blank out the menu - remove <strong>all root entries</strong> and all entries below from all clients' menus, and <strong>delete</strong> the generic structure.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER)._CheckStructures">CLIENTMENUMANAGER:_CheckStructures(Playername)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[Internal] Dump structures to log for debug</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER)._CleanUpPlayerStructure">CLIENTMENUMANAGER:_CleanUpPlayerStructure()</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[Internal] Clean up player shadow structure</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER)._GetParentEntry">CLIENTMENUMANAGER:_GetParentEntry(Structure, Name)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[Internal] Find a parent entry in a given structure by name.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER)._MergeReplacementData">CLIENTMENUMANAGER:_MergeReplacementData()</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[Internal] Merge the replacement structure into the generic structure.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER)._RemoveByID">CLIENTMENUMANAGER:_RemoveByID(ID)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Remove a specific entry by ID from the generic structure</p>
+<p>Blank out the menu - remove <strong>all root entries</strong> and all entries below from all clients' F10 menus, and <strong>delete</strong> the generic structure.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2966,9 +2971,21 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).flattree">CLIENTMENUMANAGER.flattree</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).lid">CLIENTMENUMANAGER.lid</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Lid for log entries</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).menutree">CLIENTMENUMANAGER.menutree</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -2978,19 +2995,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).replacementstructure">CLIENTMENUMANAGER.replacementstructure</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).playertree">CLIENTMENUMANAGER.playertree</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).rootentries">CLIENTMENUMANAGER.rootentries</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).structure">CLIENTMENUMANAGER.structure</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -3540,31 +3551,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         </table>
         </div>
 
-      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(CLIENTMENUMANAGER.Structure)">Type <strong>CLIENTMENUMANAGER.Structure</strong></a></h2></div>
-         <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
-     <strong><a href="##(CLIENTMENUMANAGER.Structure)">CLIENTMENUMANAGER.Structure</a></strong>
-   </div>
-        <div class="w3-card w3-margin">
-        <table class="w3-table w3-border-bottom w3-border-theme-l2">
-          <tr class="w3-theme-l1">
-            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from CLIENTMENUMANAGER.Structure</th>
-            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER.Structure).IDs">CLIENTMENUMANAGER.Structure.IDs</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER.Structure).generic">CLIENTMENUMANAGER.Structure.generic</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-        </table>
-        </div>
-
     <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Core.ClientMenu)" >Type <strong>Core.ClientMenu</strong></a></h2></div>
     <div class="w3-container w3-white w3-padding-16" id="module_current_type">
       <div class="w3-white" id="record_type">
@@ -3635,17 +3621,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(CLIENTMENU).GID" ><strong>CLIENTMENU.GID</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(CLIENTMENU).Generic" ><strong>CLIENTMENU.Generic</strong></a>
     
@@ -3658,9 +3633,20 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(CLIENTMENU).GroupID" ><strong>CLIENTMENU.GroupID</strong></a>
+    
+<p>Group ID</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
 <a id="#(CLIENTMENU).ID" ><strong>CLIENTMENU.ID</strong></a>
     
-
+<p>Entry ID</p>
 
 </div>
 
@@ -3683,6 +3669,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(CLIENTMENU).Parent" ><strong>CLIENTMENU.Parent</strong></a>
     
 
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(CLIENTMENU).UUID" ><strong>CLIENTMENU.UUID</strong></a>
+    
+<p>Unique ID based on path+name</p>
 
 </div>
 
@@ -3874,6 +3871,63 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(CLIENTMENU).CreateUUID" ><strong>CLIENTMENU:CreateUUID(Parent, Text)</strong></a></h2>
+</div>
+    
+<p>Create a UUID</p>
+
+<div id= "#Functions##CreateUUID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CLIENTMENU</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(CLIENTMENU)">#CLIENTMENU</a>
+            <strong><strong>Parent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The parent object if any</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Text</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The menu entry text</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#string:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>UUID</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(CLIENTMENU).GetPath" ><strong>CLIENTMENU:GetPath()</strong></a></h2>
 </div>
     
@@ -3893,6 +3947,36 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       <div class="w3-half">
         
 <p>Path</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CLIENTMENU).GetUUID" ><strong>CLIENTMENU:GetUUID()</strong></a></h2>
+</div>
+    
+<p>Get the UUID.</p>
+
+<div id= "#Functions##GetUUID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CLIENTMENU</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#string:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>UUID</p>
 
       </div>
     </div>
@@ -4235,17 +4319,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(CLIENTMENU).GID" ><strong>CLIENTMENU.GID</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(CLIENTMENU).Generic" ><strong>CLIENTMENU.Generic</strong></a>
     
@@ -4258,9 +4331,20 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(CLIENTMENU).GroupID" ><strong>CLIENTMENU.GroupID</strong></a>
+    
+<p>Group ID</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
 <a id="#(CLIENTMENU).ID" ><strong>CLIENTMENU.ID</strong></a>
     
-
+<p>Entry ID</p>
 
 </div>
 
@@ -4283,6 +4367,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(CLIENTMENU).Parent" ><strong>CLIENTMENU.Parent</strong></a>
     
 
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(CLIENTMENU).UUID" ><strong>CLIENTMENU.UUID</strong></a>
+    
+<p>Unique ID based on path+name</p>
 
 </div>
 
@@ -7784,10 +7879,32 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #table
+<a id="#(CLIENTMENUMANAGER).flattree" ><strong>CLIENTMENUMANAGER.flattree</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #string
 <a id="#(CLIENTMENUMANAGER).lid" ><strong>CLIENTMENUMANAGER.lid</strong></a>
     
 <p>Lid for log entries</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(CLIENTMENUMANAGER).menutree" ><strong>CLIENTMENUMANAGER.menutree</strong></a>
+    
+
 
 </div>
 
@@ -7807,29 +7924,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #table
-<a id="#(CLIENTMENUMANAGER).replacementstructure" ><strong>CLIENTMENUMANAGER.replacementstructure</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
 <a id="#(CLIENTMENUMANAGER).rootentries" ><strong>CLIENTMENUMANAGER.rootentries</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CLIENTMENUMANAGER).structure" ><strong>CLIENTMENUMANAGER.structure</strong></a>
     
 
 
@@ -7913,7 +8008,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <h2><a id="#(CLIENTMENUMANAGER).ChangeEntryText" ><strong>CLIENTMENUMANAGER:ChangeEntryText(Entry, Text, Client)</strong></a></h2>
 </div>
     
-<p>Alter the text of an entry in the generic structure and push to one specific client.</p>
+<p>Alter the text of a leaf entry in the generic structure and push to one specific client's F10 menu.</p>
 
 <div id= "#Functions##ChangeEntryText" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -7944,7 +8039,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
           </div>
           <div class="w3-half">
               
-<p>Text of the F10 menu entry.</p>
+<p>New Text of the F10 menu entry.</p>
 
           </div>
         </div>
@@ -7957,7 +8052,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
           </div>
           <div class="w3-half">
               
-<p>The client for whom to alter the entry</p>
+<p>(optional) The client for whom to alter the entry, if nil done for all clients.</p>
 
           </div>
         </div>
@@ -7980,69 +8075,12 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CLIENTMENUMANAGER).ChangeEntryTextForAll" ><strong>CLIENTMENUMANAGER:ChangeEntryTextForAll(Entry, Text)</strong></a></h2>
+<h2><a id="#(CLIENTMENUMANAGER).DeleteF10Entry" ><strong>CLIENTMENUMANAGER:DeleteF10Entry(Entry, Client)</strong></a></h2>
 </div>
     
-<p>Alter the text of an entry in the generic structure and push to all clients.</p>
+<p>Remove the entry and all entries below the given entry from the client's F10 menus.</p>
 
-<div id= "#Functions##ChangeEntryTextForAll" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>CLIENTMENUMANAGER</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="##(CLIENTMENU)">#CLIENTMENU</a>
-            <strong><strong>Entry</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The menu entry.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Text</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Text of the F10 menu entry.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(CLIENTMENUMANAGER)">#CLIENTMENUMANAGER</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(CLIENTMENUMANAGER).Clear" ><strong>CLIENTMENUMANAGER:Clear(Entry, Client)</strong></a></h2>
-</div>
-    
-<p>Remove the entry and all entries below the given entry from the client's menus and the generic structure.</p>
-
-<div id= "#Functions##Clear" class="w3-show w3-white">
+<div id= "#Functions##DeleteF10Entry" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -8094,12 +8132,56 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CLIENTMENUMANAGER).FindEntryByText" ><strong>CLIENTMENUMANAGER:FindEntryByText(Text)</strong></a></h2>
+<h2><a id="#(CLIENTMENUMANAGER).DeleteGenericEntry" ><strong>CLIENTMENUMANAGER:DeleteGenericEntry(Entry)</strong></a></h2>
 </div>
     
-<p>Find <strong>first</strong> matching entry in the generic structure by the menu text.</p>
+<p>Remove the entry and all entries below the given entry from the generic tree.</p>
 
-<div id= "#Functions##FindEntryByText" class="w3-show w3-white">
+<div id= "#Functions##DeleteGenericEntry" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CLIENTMENUMANAGER</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(CLIENTMENU)">#CLIENTMENU</a>
+            <strong><strong>Entry</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The entry to remove</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(CLIENTMENUMANAGER)">#CLIENTMENUMANAGER</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CLIENTMENUMANAGER).EntryUUIDExists" ><strong>CLIENTMENUMANAGER:EntryUUIDExists(UUID)</strong></a></h2>
+</div>
+    
+<p>Check matching entry in the generic structure by UUID.</p>
+
+<div id= "#Functions##EntryUUIDExists" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -8110,23 +8192,67 @@ When moose is loading dynamically (for moose class development), tracing is swit
           <div class="w3-half">
             <p>
                 #string
-            <strong><strong>Text</strong></strong>
+            <strong><strong>UUID</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Text of the F10 menu entry.</p>
+<p>UUID of the menu entry.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Exists</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CLIENTMENUMANAGER).FindEntriesByParent" ><strong>CLIENTMENUMANAGER:FindEntriesByParent(Parent)</strong></a></h2>
+</div>
+    
+<p>Find matching entries in the generic structure under a parent.</p>
+
+<div id= "#Functions##FindEntriesByParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CLIENTMENUMANAGER</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(CLIENTMENU)">#CLIENTMENU</a>
+            <strong><strong>Parent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Find entries under this parent entry.</p>
 
           </div>
         </div>
     <h2><strong>Return values:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
         <div class="w3-half">
-          <p><a href="##(CLIENTMENU)">#CLIENTMENU</a>:</p>
+          <p>#table:</p>
         </div>
         <div class="w3-half">
           
-<p>Entry The #CLIENTMENU object found or nil.</p>
+<p>Table of matching #CLIENTMENU objects.</p>
 
         </div>
         <div class="w3-half">
@@ -8134,7 +8260,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         </div>
         <div class="w3-half">
           
-<p>GID GID  The GID found or nil.</p>
+<p>Number of matches</p>
 
         </div>
     </div>
@@ -8146,12 +8272,77 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CLIENTMENUMANAGER).GetEntryByGID" ><strong>CLIENTMENUMANAGER:GetEntryByGID(GID)</strong></a></h2>
+<h2><a id="#(CLIENTMENUMANAGER).FindEntriesByText" ><strong>CLIENTMENUMANAGER:FindEntriesByText(Text, Parent)</strong></a></h2>
 </div>
     
-<p>Find first matching entry in the generic structure by the GID.</p>
+<p>Find matching entries in the generic structure by the menu text.</p>
 
-<div id= "#Functions##GetEntryByGID" class="w3-show w3-white">
+<div id= "#Functions##FindEntriesByText" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CLIENTMENUMANAGER</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Text</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Text or partial text of the F10 menu entry.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(CLIENTMENU)">#CLIENTMENU</a>
+            <strong><strong>Parent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Only find entries under this parent entry.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#table:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Table of matching #CLIENTMENU objects.</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#number:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Number of matches</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CLIENTMENUMANAGER).FindEntryByUUID" ><strong>CLIENTMENUMANAGER:FindEntryByUUID(UUID)</strong></a></h2>
+</div>
+    
+<p>Find matching entry in the generic structure by UUID.</p>
+
+<div id= "#Functions##FindEntryByUUID" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -8161,13 +8352,13 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #number
-            <strong><strong>GID</strong></strong>
+                #string
+            <strong><strong>UUID</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The GID of the entry to find.</p>
+<p>UUID of the menu entry.</p>
 
           </div>
         </div>
@@ -8181,6 +8372,139 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <p>Entry The #CLIENTMENU object found or nil.</p>
 
       </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CLIENTMENUMANAGER).FindUUIDsByParent" ><strong>CLIENTMENUMANAGER:FindUUIDsByParent(Parent)</strong></a></h2>
+</div>
+    
+<p>Find matching entries under a parent in the generic structure by UUID.</p>
+
+<div id= "#Functions##FindUUIDsByParent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CLIENTMENUMANAGER</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(CLIENTMENU)">#CLIENTMENU</a>
+            <strong><strong>Parent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Find entries under this parent entry.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#table:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Table of matching UUIDs of #CLIENTMENU objects</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#table:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Table of matching #CLIENTMENU objects</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#number:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Number of matches</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CLIENTMENUMANAGER).FindUUIDsByText" ><strong>CLIENTMENUMANAGER:FindUUIDsByText(Text, Parent)</strong></a></h2>
+</div>
+    
+<p>Find matching entries by text in the generic structure by UUID.</p>
+
+<div id= "#Functions##FindUUIDsByText" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CLIENTMENUMANAGER</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Text</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Text or partial text of the menu entry to find.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(CLIENTMENU)">#CLIENTMENU</a>
+            <strong><strong>Parent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Only find entries under this parent entry.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#table:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Table of matching UUIDs of #CLIENTMENU objects</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#table:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Table of matching #CLIENTMENU objects</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#number:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Number of matches</p>
+
+        </div>
     </div>
 </div>
 
@@ -8329,125 +8653,10 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CLIENTMENUMANAGER).NewReplacementEntry" ><strong>CLIENTMENUMANAGER:NewReplacementEntry(Text, Parent, Function, ...)</strong></a></h2>
-</div>
-    
-<p>Create a new entry in the replacement structure.</p>
-
-<div id= "#Functions##NewReplacementEntry" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>CLIENTMENUMANAGER</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Text</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Text of the F10 menu entry.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="##(CLIENTMENU)">#CLIENTMENU</a>
-            <strong><strong>Parent</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The parent menu entry.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Function</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(optional) Function to call when the entry is used.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>...</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(optional) Arguments for the Function, comma separated</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(CLIENTMENU)">#CLIENTMENU</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>Entry</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(CLIENTMENUMANAGER).PrepareNewReplacementStructure" ><strong>CLIENTMENUMANAGER:PrepareNewReplacementStructure()</strong></a></h2>
-</div>
-    
-<p>Prepare a new replacement structure.</p>
-
-    
-<p>Deletes the previous one.</p>
-
-<div id= "#Functions##PrepareNewReplacementStructure" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>CLIENTMENUMANAGER</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(CLIENTMENUMANAGER)">#CLIENTMENUMANAGER</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
 <h2><a id="#(CLIENTMENUMANAGER).Propagate" ><strong>CLIENTMENUMANAGER:Propagate(Client)</strong></a></h2>
 </div>
     
-<p>Push the complete menu structure to each of the clients in the set.</p>
+<p>Push the complete menu structure to each of the clients in the set - refresh the menu tree of the clients.</p>
 
 <div id= "#Functions##Propagate" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -8488,12 +8697,12 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CLIENTMENUMANAGER).RemoveSubEntries" ><strong>CLIENTMENUMANAGER:RemoveSubEntries(Entry, Client)</strong></a></h2>
+<h2><a id="#(CLIENTMENUMANAGER).RemoveF10SubEntries" ><strong>CLIENTMENUMANAGER:RemoveF10SubEntries(Entry, Client)</strong></a></h2>
 </div>
     
-<p>Remove all entries below the given entry from the clients' menus and the generic structure.</p>
+<p>Remove all entries below the given entry from the client's F10 menus.</p>
 
-<div id= "#Functions##RemoveSubEntries" class="w3-show w3-white">
+<div id= "#Functions##RemoveF10SubEntries" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -8509,7 +8718,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
           </div>
           <div class="w3-half">
               
-<p>The menu entry</p>
+<p>The entry where to start. This entry stays.</p>
 
           </div>
         </div>
@@ -8545,41 +8754,28 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CLIENTMENUMANAGER).ReplaceEntries" ><strong>CLIENTMENUMANAGER:ReplaceEntries(Parent, Client)</strong></a></h2>
+<h2><a id="#(CLIENTMENUMANAGER).RemoveGenericSubEntries" ><strong>CLIENTMENUMANAGER:RemoveGenericSubEntries(Entry)</strong></a></h2>
 </div>
     
-<p>Replace entries under the Parent entry with the Replacement structure created prior for all clients.</p>
+<p>Remove all entries below the given entry from the generic tree.</p>
 
-<div id= "#Functions##ReplaceEntries" class="w3-show w3-white">
+<div id= "#Functions##RemoveGenericSubEntries" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
 <p>CLIENTMENUMANAGER</p>
 </div>
-    <h2><strong>Parameters:</strong></h2>
+    <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
                 <a href="##(CLIENTMENU)">#CLIENTMENU</a>
-            <strong><strong>Parent</strong></strong>
+            <strong><strong>Entry</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The parent entry under which to replace with the new structure.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Client.html##(CLIENT)">Wrapper.Client#CLIENT</a>
-            <strong><strong>Client</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(optional) If given, make this change only for this client. In this case the generic structure will not be touched.</p>
+<p>The entry where to start. This entry stays.</p>
 
           </div>
         </div>
@@ -8605,7 +8801,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <h2><a id="#(CLIENTMENUMANAGER).ResetMenu" ><strong>CLIENTMENUMANAGER:ResetMenu(Client)</strong></a></h2>
 </div>
     
-<p>Blank out the menu - remove <strong>all root entries</strong> and all entries below from the client's menus, leaving the generic structure untouched.</p>
+<p>Blank out the menu - remove <strong>all root entries</strong> and all entries below from the client's F10 menus, leaving the generic structure untouched.</p>
 
 <div id= "#Functions##ResetMenu" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -8622,7 +8818,9 @@ When moose is loading dynamically (for moose class development), tracing is swit
             </p>
           </div>
           <div class="w3-half">
-              <p></p>
+              
+<p>(optional) If given, remove only for this client.</p>
+
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
@@ -8647,7 +8845,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <h2><a id="#(CLIENTMENUMANAGER).ResetMenuComplete" ><strong>CLIENTMENUMANAGER:ResetMenuComplete()</strong></a></h2>
 </div>
     
-<p>Blank out the menu - remove <strong>all root entries</strong> and all entries below from all clients' menus, and <strong>delete</strong> the generic structure.</p>
+<p>Blank out the menu - remove <strong>all root entries</strong> and all entries below from all clients' F10 menus, and <strong>delete</strong> the generic structure.</p>
 
 <div id= "#Functions##ResetMenuComplete" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -8655,207 +8853,6 @@ When moose is loading dynamically (for moose class development), tracing is swit
    <div class="w3-margin-left">
 <p>CLIENTMENUMANAGER</p>
 </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(CLIENTMENUMANAGER)">#CLIENTMENUMANAGER</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(CLIENTMENUMANAGER)._CheckStructures" ><strong>CLIENTMENUMANAGER:_CheckStructures(Playername)</strong></a></h2>
-</div>
-    
-<p>[Internal] Dump structures to log for debug</p>
-
-<div id= "#Functions##_CheckStructures" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>CLIENTMENUMANAGER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Playername</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(CLIENTMENUMANAGER)">#CLIENTMENUMANAGER</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(CLIENTMENUMANAGER)._CleanUpPlayerStructure" ><strong>CLIENTMENUMANAGER:_CleanUpPlayerStructure()</strong></a></h2>
-</div>
-    
-<p>[Internal] Clean up player shadow structure</p>
-
-<div id= "#Functions##_CleanUpPlayerStructure" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>CLIENTMENUMANAGER</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(CLIENTMENUMANAGER)">#CLIENTMENUMANAGER</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(CLIENTMENUMANAGER)._GetParentEntry" ><strong>CLIENTMENUMANAGER:_GetParentEntry(Structure, Name)</strong></a></h2>
-</div>
-    
-<p>[Internal] Find a parent entry in a given structure by name.</p>
-
-<div id= "#Functions##_GetParentEntry" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>CLIENTMENUMANAGER</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #table
-            <strong><strong>Structure</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Table of entries.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Name</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Name to find.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(CLIENTMENU)">#CLIENTMENU</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>Entry</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(CLIENTMENUMANAGER)._MergeReplacementData" ><strong>CLIENTMENUMANAGER:_MergeReplacementData()</strong></a></h2>
-</div>
-    
-<p>[Internal] Merge the replacement structure into the generic structure.</p>
-
-<div id= "#Functions##_MergeReplacementData" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>CLIENTMENUMANAGER</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(CLIENTMENUMANAGER)">#CLIENTMENUMANAGER</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(CLIENTMENUMANAGER)._RemoveByID" ><strong>CLIENTMENUMANAGER:_RemoveByID(ID)</strong></a></h2>
-</div>
-    
-<p>Remove a specific entry by ID from the generic structure</p>
-
-<div id= "#Functions##_RemoveByID" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>CLIENTMENUMANAGER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>ID</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -8922,10 +8919,32 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #table
+<a id="#(CLIENTMENUMANAGER).flattree" ><strong>CLIENTMENUMANAGER.flattree</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #string
 <a id="#(CLIENTMENUMANAGER).lid" ><strong>CLIENTMENUMANAGER.lid</strong></a>
     
 <p>Lid for log entries</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(CLIENTMENUMANAGER).menutree" ><strong>CLIENTMENUMANAGER.menutree</strong></a>
+    
+
 
 </div>
 
@@ -8945,29 +8964,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #table
-<a id="#(CLIENTMENUMANAGER).replacementstructure" ><strong>CLIENTMENUMANAGER.replacementstructure</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
 <a id="#(CLIENTMENUMANAGER).rootentries" ><strong>CLIENTMENUMANAGER.rootentries</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CLIENTMENUMANAGER).structure" ><strong>CLIENTMENUMANAGER.structure</strong></a>
     
 
 
@@ -12335,40 +12332,6 @@ When moose is loading dynamically (for moose class development), tracing is swit
 </div>
 </div>
 
-</div>
-
-        </div>
-      <div onclick="myFunction('#Types##CLIENTMENUMANAGER.Structure')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(CLIENTMENUMANAGER.Structure)">Type <strong>CLIENTMENUMANAGER.Structure</strong></a></h2></div>
-        <div id= "#Types##CLIENTMENUMANAGER.Structure" class="w3-container w3-white w3-padding-16" id="module_other_types">
-          <div class="w3-white" id="record_type">
-<div class="fields w3-container w3-theme-l2">
-  <h2>Field(s)</h2>
-</div>
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CLIENTMENUMANAGER.Structure).IDs" ><strong>CLIENTMENUMANAGER.Structure.IDs</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CLIENTMENUMANAGER.Structure).generic" ><strong>CLIENTMENUMANAGER.Structure.generic</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div class="functions  w3-container w3-theme-l2">
-  <h2>Function(s)</h2>
-</div>  
 </div>
 
         </div>
