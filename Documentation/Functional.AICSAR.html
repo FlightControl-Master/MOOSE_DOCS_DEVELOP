@@ -817,7 +817,25 @@
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.AICSAR.html">Functional.AICSAR</a></strong></h2></div>
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Functional</strong> - AI CSAR system.</p>
+<p><strong>Functional</strong> - AI CSAR system</p>
+
+<h2>Main Features:</h2>
+
+<ul>
+    <li>Send out helicopters to downed pilots</li>
+    <li>Rescues players and AI alike</li>
+    <li>Coalition specific</li>
+    <li>Starting from a FARP or Airbase</li>
+    <li>Dedicated MASH zone</li>
+    <li>Some FSM functions to include in your mission scripts</li>
+    <li>Limit number of available helos</li>
+</ul>
+
+<hr/>
+
+<h2>Example Missions:</h2>
+
+<p>Demo missions can be found on <a href="https://github.com/FlightControl-Master/MOOSE_MISSIONS/tree/develop/CSR-001%20-%20Basics">github</a>.</p>
 </p></div>
        </div>         
      </div>
@@ -1909,13 +1927,9 @@
   </div>
   <div class="w3-container w3-white" id="module_description">
     
-<p><strong>Functional</strong> - AI CSAR system.</p>
+<p><strong>Functional</strong> - AI CSAR system</p>
 
-    
-
-<hr/>
-
-<h2>Features:</h2>
+<h2>Main Features:</h2>
 
 <ul>
     <li>Send out helicopters to downed pilots</li>
@@ -1925,7 +1939,6 @@
     <li>Dedicated MASH zone</li>
     <li>Some FSM functions to include in your mission scripts</li>
     <li>Limit number of available helos</li>
-    <li>SRS voice output via TTS or soundfiles</li>
 </ul>
 
 <hr/>
@@ -1934,10 +1947,13 @@
 
 <p>Demo missions can be found on <a href="https://github.com/FlightControl-Master/MOOSE_MISSIONS/tree/develop/CSR-001%20-%20Basics">github</a>.</p>
 
+    
+<pre><code>  
+</code></pre>
 <hr/>
 
-<h3>Author: <strong>Applevangelist</strong></h3>
-<p>Last Update February 2022</p>
+<h3>Author: <strong>applevangelist</strong></h3>
+<p>Last Update April 2022</p>
 
 <hr/>
 
@@ -1991,7 +2007,7 @@ pilots are around.</p>
 <pre><code>       -- @param #string Alias Name of this instance.
        -- @param #number Coalition Coalition as in coalition.side.BLUE, can also be passed as "blue", "red" or "neutral"
        -- @param #string Pilottemplate Pilot template name.
-       -- @param #string Helotemplate Helicopter template name. Set the template to "cold start". Hueys work best.
+       -- @param #string Helotemplate Helicopter template name.
        -- @param Wrapper.Airbase#AIRBASE FARP FARP object or Airbase from where to start.
        -- @param Core.Zone#ZONE MASHZone Zone where to drop pilots after rescue.
        local my_aicsar=AICSAR:New("Luftrettung",coalition.side.BLUE,"Downed Pilot","Rescue Helo",AIRBASE:FindByName("Test FARP"),ZONE:New("MASH"))
@@ -2003,12 +2019,11 @@ pilots are around.</p>
        my_aicsar.rescuezoneradius -- landing zone around downed pilot. Defaults to 200m
        my_aicsar.autoonoff -- stop operations when human helicopter pilots are around. Defaults to true.
        my_aicsar.verbose -- text messages to own coalition about ongoing operations. Defaults to true.
-       my_aicsar.limithelos -- limit available number of helos going on mission (defaults to true)
+       my_aicsarlimithelos -- limit available number of helos going on mission (defaults to true)
        my_aicsar.helonumber -- number of helos available (default: 3)
-       my_aicsar.verbose -- boolean, set to `true`for message output on-screen
 </code></pre>
 
-<h2>Radio output options</h2>
+<h2>Radio options</h2>
 
 <p>Radio messages, soundfile names and (for SRS) lengths are defined in three enumerators, so you can customize, localize messages and soundfiles to your liking:</p>
 
@@ -2018,7 +2033,7 @@ pilots are around.</p>
          EN = {
          INITIALOK = "Roger, Pilot, we hear you. Stay where you are, a helo is on the way!",
          INITIALNOTOK = "Sorry, Pilot. You're behind maximum operational distance! Good Luck!",
-         PILOTDOWN = "Mayday, mayday, mayday! Pilot down at ", -- note that this will be appended with the position in MGRS
+         PILOTDOWN = "Pilot down at ", -- note that this will be appended with the position
          PILOTKIA = "Pilot KIA!",
          HELODOWN = "CSAR Helo Down!",
          PILOTRESCUED = "Pilot rescued!",
@@ -2057,32 +2072,8 @@ pilots are around.</p>
        }
 </code></pre>
 
-<h2>Radio output via SRS and Text-To-Speech (TTS)</h2>
-
-<p>Radio output can be done via SRS and Text-To-Speech. No extra sound files required! 
-<a href="https://github.com/FlightControl-Master/MOOSE_GUIDES/blob/master/documents/Moose%20TTS%20Setup%20Guide.pdf">Initially, Have a look at the guide on setting up SRS TTS for Moose</a>.
-The text from the <code>AICSAR.Messages</code> table above is converted on the fly to an .ogg-file, which is then played back via SRS on the selected frequency and mdulation.
-Hint - the small black window popping up shortly is visible in Single-Player only. </p>
-
-<p>To set up AICSAR for SRS TTS output, add e.g. the following to your script:</p>
-
-<pre><code>         -- setup for google TTS, radio 243 AM, SRS server port 5002 with a google standard-quality voice (google cloud account required)
-         my_aicsar:SetSRSTTSRadio(true,"C:\\Program Files\\DCS-SimpleRadio-Standalone",243,radio.modulation.AM,5002,MSRS.Voices.Google.Standard.en_US_Standard_D,"en-US","female","C:\\Program Files\\DCS-SimpleRadio-Standalone\\google.json")
-
-         -- alternatively for MS Desktop TTS (voices need to be installed locally first!)
-         my_aicsar:SetSRSTTSRadio(true,"C:\\Program Files\\DCS-SimpleRadio-Standalone",243,radio.modulation.AM,5002,MSRS.Voices.Microsoft.Hazel,"en-GB","female")
-
-         -- define a different voice for the downed pilot(s)
-         my_aicsar:SetPilotTTSVoice(MSRS.Voices.Google.Standard.en_AU_Standard_D,"en-AU","male")
-
-         -- define another voice for the operator
-         my_aicsar:SetOperatorTTSVoice(MSRS.Voices.Google.Standard.en_GB_Standard_A,"en-GB","female")
-</code></pre>
-
-<h2>Radio output via preproduced soundfiles</h2>
-
 <p>The easiest way to add a soundfile to your mission is to use the "Sound to..." trigger in the mission editor. This will effectively 
-save your sound file inside of the .miz mission file. <a href="https://github.com/FlightControl-Master/MOOSE_SOUND/tree/master/AICSAR">Example soundfiles are located on github</a></p>
+save your sound file inside of the .miz mission file.</p>
 
 <p>To customize or localize your texts and sounds, you can take e.g. the following approach to add a German language version:</p>
 
@@ -2093,7 +2084,7 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 
 <p>Switch on radio transmissions via <strong>either</strong> SRS <strong>or</strong> "normal" DCS radio e.g. like so:</p>
 
-<pre><code>     my_aicsar:SetSRSRadio(true,"C:\\Program Files\\DCS-SimpleRadio-Standalone",270,radio.modulation.AM,nil,5002)
+<pre><code>     my_aicsar:SetSRSRadio(true,"C:\\Program Files\\DCS-SimpleRadio-Standalone",270,radio.modulation.AM,5002)
 </code></pre>
 
 <p>or         </p>
@@ -2122,12 +2113,6 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
           <tr class="w3-theme-l1">
             <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from AICSAR</th>
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).Altitude">AICSAR.Altitude</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Default altitude setting for the helicopter FLIGHTGROUP 1500ft.</p>
-</td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).ClassName">AICSAR.ClassName</a></p></td>
@@ -2169,12 +2154,6 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).DCSRadioQueue">AICSAR.DCSRadioQueue</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).Delay">AICSAR.Delay</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>In case of UseEventEject wait this long until we spawn a landed pilot.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2226,21 +2205,15 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).OnAfterPilotRescued">AICSAR:OnAfterPilotRescued(From, Event, To, PilotName)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).OnAfterPilotRescued">AICSAR:OnAfterPilotRescued(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "PilotRescued" event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).OnAfterPilotUnloaded">AICSAR:OnAfterPilotUnloaded(From, Event, To, Helo, OpsGroup)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).OnEventLandingAfterEjection">AICSAR:OnEventLandingAfterEjection(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>On after "PilotUnloaded" event.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).PilotStore">AICSAR.PilotStore</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>[Internal] Catch the landing after ejection and spawn a pilot in situ.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2268,25 +2241,7 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SRSGoogle">AICSAR.SRSGoogle</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SRSModulation">AICSAR.SRSModulation</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SRSOperator">AICSAR.SRSOperator</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SRSOperatorVoice">AICSAR.SRSOperatorVoice</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -2298,25 +2253,7 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SRSPilot">AICSAR.SRSPilot</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SRSPilotVoice">AICSAR.SRSPilotVoice</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SRSPort">AICSAR.SRSPort</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SRSQ">AICSAR.SRSQ</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -2334,57 +2271,15 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SRSTTSRadio">AICSAR.SRSTTSRadio</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SetDCSRadio">AICSAR:SetDCSRadio(OnOff, Frequency, Modulation, Group)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Switch sound output on and use normale (DCS) radio</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SetDefaultAltitude">AICSAR:SetDefaultAltitude(Feet)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[User] Set default helo altitudeAGL.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SetDefaultSpeed">AICSAR:SetDefaultSpeed(Knots)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[User] Set default helo speed.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SetOperatorTTSVoice">AICSAR:SetOperatorTTSVoice(Voice, Culture, Gender)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[User] Set SRS TTS Voice of the rescue operator.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SetPilotTTSVoice">AICSAR:SetPilotTTSVoice(Voice, Culture, Gender)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[User] Set SRS TTS Voice of downed pilot.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SetSRSRadio">AICSAR:SetSRSRadio(OnOff, Path, Frequency, Modulation, SoundPath, Port)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[User] Switch sound output on and use SRS output for sound files.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SetSRSTTSRadio">AICSAR:SetSRSTTSRadio(OnOff, Path, Frequency, Modulation, Port, Voice, Culture, Gender, GoogleCredentials)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[User] Switch sound output on and use SRS-TTS output.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).Speed">AICSAR.Speed</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Default speed setting for the helicopter FLIGHTGROUP is 100kn.</p>
+<p>[User] Switch sound output on and use SRS</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2400,12 +2295,6 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).UseEventEject">AICSAR.UseEventEject</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>In case Event LandingAfterEjection isn't working, use set this to true.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR)._CheckHelos">AICSAR:_CheckHelos()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Internal] Check helo queue </p>
@@ -2418,7 +2307,7 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR)._CheckQueue">AICSAR:_CheckQueue(OpsGroup)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR)._CheckQueue">AICSAR:_CheckQueue()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Internal] Check pilot queue for next mission</p>
 </td>
@@ -2427,24 +2316,6 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR)._CountHelos">AICSAR:_CountHelos()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Internal] Count helos queue </p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR)._DelayedSpawnPilot">AICSAR:_DelayedSpawnPilot(_LandingPos, _coalition)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[Internal] Spawn a pilot</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR)._EjectEventHandler">AICSAR:_EjectEventHandler(EventData)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[Internal] Catch the ejection and save the pilot name</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR)._EventHandler">AICSAR:_EventHandler(EventData, FromEject)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[Internal] Catch the landing after ejection and spawn a pilot in situ.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2574,15 +2445,9 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).onafterPilotRescued">AICSAR:onafterPilotRescued(From, Event, To, PilotName)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).onafterPilotRescued">AICSAR:onafterPilotRescued(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Internal] onafterPilotRescued</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).onafterPilotUnloaded">AICSAR:onafterPilotUnloaded(From, Event, To, Helo, OpsGroup)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[Internal] onafterPilotUnloaded</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3486,17 +3351,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(AICSAR).Altitude" ><strong>AICSAR.Altitude</strong></a>
-    
-<p>Default altitude setting for the helicopter FLIGHTGROUP 1500ft.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #string
 <a id="#(AICSAR).ClassName" ><strong>AICSAR.ClassName</strong></a>
     
@@ -3530,17 +3384,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(AICSAR).Delay" ><strong>AICSAR.Delay</strong></a>
-    
-<p>In case of UseEventEject wait this long until we spawn a landed pilot.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     
 <a id="#(AICSAR).MGRS_Accuracy" ><strong>AICSAR.MGRS_Accuracy</strong></a>
     
@@ -3561,17 +3404,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <p> TODO Messages
 - Messages enum
  @field Messages</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    <a href="Utilities.FiFo.html##(FIFO)">Utilities.FiFo#FIFO</a>
-<a id="#(AICSAR).PilotStore" ><strong>AICSAR.PilotStore</strong></a>
-    
-
 
 </div>
 
@@ -3615,105 +3447,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(AICSAR).SRS" ><strong>AICSAR.SRS</strong></a>
     
 
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AICSAR).SRSGoogle" ><strong>AICSAR.SRSGoogle</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AICSAR).SRSOperator" ><strong>AICSAR.SRSOperator</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AICSAR).SRSOperatorVoice" ><strong>AICSAR.SRSOperatorVoice</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AICSAR).SRSPilot" ><strong>AICSAR.SRSPilot</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AICSAR).SRSPilotVoice" ><strong>AICSAR.SRSPilotVoice</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AICSAR).SRSQ" ><strong>AICSAR.SRSQ</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AICSAR).SRSTTSRadio" ><strong>AICSAR.SRSTTSRadio</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(AICSAR).Speed" ><strong>AICSAR.Speed</strong></a>
-    
-<p>Default speed setting for the helicopter FLIGHTGROUP is 100kn.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AICSAR).UseEventEject" ><strong>AICSAR.UseEventEject</strong></a>
-    
-<p>In case Event LandingAfterEjection isn't working, use set this to true.</p>
 
 </div>
 
@@ -4491,7 +4224,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AICSAR).OnAfterPilotRescued" ><strong>AICSAR:OnAfterPilotRescued(From, Event, To, PilotName)</strong></a></h2>
+<h2><a id="#(AICSAR).OnAfterPilotRescued" ><strong>AICSAR:OnAfterPilotRescued(From, Event, To)</strong></a></h2>
 </div>
     
 <p>On after "PilotRescued" event.</p>
@@ -4538,19 +4271,8 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>To state.</p>
+<p>To state. </p>
 
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>PilotName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
           </div>
         </div>
 </div>
@@ -4561,81 +4283,40 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AICSAR).OnAfterPilotUnloaded" ><strong>AICSAR:OnAfterPilotUnloaded(From, Event, To, Helo, OpsGroup)</strong></a></h2>
+<h2><a id="#(AICSAR).OnEventLandingAfterEjection" ><strong>AICSAR:OnEventLandingAfterEjection(EventData)</strong></a></h2>
 </div>
     
-<p>On after "PilotUnloaded" event.</p>
+<p>[Internal] Catch the landing after ejection and spawn a pilot in situ.</p>
 
-<div id= "#Functions##OnAfterPilotUnloaded" class="w3-show w3-white">
+<div id= "#Functions##OnEventLandingAfterEjection" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
 <p>AICSAR</p>
 </div>
-    <h2><strong>Parameters:</strong></h2>
+    <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #string
-            <strong><strong>From</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>From state.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Event</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Event.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>To</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>To state.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Ops.FlightGroup.html##(FLIGHTGROUP)">Ops.FlightGroup#FLIGHTGROUP</a>
-            <strong><strong>Helo</strong></strong>
+                <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+            <strong><strong>EventData</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               <p></p>
           </div>
         </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a>
-            <strong><strong>OpsGroup</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p> </p>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AICSAR)">#AICSAR</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
 
-          </div>
-        </div>
+      </div>
+    </div>
 </div>
 
 </div>
@@ -4727,252 +4408,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AICSAR).SetDefaultAltitude" ><strong>AICSAR:SetDefaultAltitude(Feet)</strong></a></h2>
-</div>
-    
-<p>[User] Set default helo altitudeAGL.</p>
-
-    
-<p>Note - AI might have other ideas. Defaults to 1500ft.</p>
-
-<div id= "#Functions##SetDefaultAltitude" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AICSAR</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Feet</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>AGL set in feet.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AICSAR)">#AICSAR</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AICSAR).SetDefaultSpeed" ><strong>AICSAR:SetDefaultSpeed(Knots)</strong></a></h2>
-</div>
-    
-<p>[User] Set default helo speed.</p>
-
-    
-<p>Note - AI might have other ideas. Defaults to 100kn.</p>
-
-<div id= "#Functions##SetDefaultSpeed" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AICSAR</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Knots</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Speed in knots.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AICSAR)">#AICSAR</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AICSAR).SetOperatorTTSVoice" ><strong>AICSAR:SetOperatorTTSVoice(Voice, Culture, Gender)</strong></a></h2>
-</div>
-    
-<p>[User] Set SRS TTS Voice of the rescue operator.</p>
-
-    
-<p><code>AICSAR:SetSRSTTSRadio()</code> needs to be set first!</p>
-
-<div id= "#Functions##SetOperatorTTSVoice" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AICSAR</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Voice</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The voice to be used, e.g. <code>MSRS.Voices.Google.Standard.en_US_Standard_J</code> for Google or <code>MSRS.Voices.Microsoft.David</code> for Microsoft.
-Specific voices override culture and gender!</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Culture</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) The culture to be used, defaults to "en-GB"</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Gender</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional)  The gender to be used, defaults to "female"</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AICSAR)">#AICSAR</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AICSAR).SetPilotTTSVoice" ><strong>AICSAR:SetPilotTTSVoice(Voice, Culture, Gender)</strong></a></h2>
-</div>
-    
-<p>[User] Set SRS TTS Voice of downed pilot.</p>
-
-    
-<p><code>AICSAR:SetSRSTTSRadio()</code> needs to be set first!</p>
-
-<div id= "#Functions##SetPilotTTSVoice" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AICSAR</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Voice</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The voice to be used, e.g. <code>MSRS.Voices.Google.Standard.en_US_Standard_J</code> for Google or <code>MSRS.Voices.Microsoft.David</code> for Microsoft. 
-Specific voices override culture and gender!</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Culture</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) The culture to be used, defaults to "en-US"</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Gender</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional)  The gender to be used, defaults to "male"</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AICSAR)">#AICSAR</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
 <h2><a id="#(AICSAR).SetSRSRadio" ><strong>AICSAR:SetSRSRadio(OnOff, Path, Frequency, Modulation, SoundPath, Port)</strong></a></h2>
 </div>
     
-<p>[User] Switch sound output on and use SRS output for sound files.</p>
+<p>[User] Switch sound output on and use SRS</p>
 
 <div id= "#Functions##SetSRSRadio" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -5056,158 +4495,6 @@ Specific voices override culture and gender!</p>
           <div class="w3-half">
               
 <p>Port of the SRS, defaults to 5002.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AICSAR)">#AICSAR</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AICSAR).SetSRSTTSRadio" ><strong>AICSAR:SetSRSTTSRadio(OnOff, Path, Frequency, Modulation, Port, Voice, Culture, Gender, GoogleCredentials)</strong></a></h2>
-</div>
-    
-<p>[User] Switch sound output on and use SRS-TTS output.</p>
-
-    
-<p>The voice will be used across all outputs, unless you define an extra voice for downed pilots and/or the operator.
-See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice()</code></p>
-
-<div id= "#Functions##SetSRSTTSRadio" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AICSAR</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #boolean
-            <strong><strong>OnOff</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Switch on (true) or off (false).</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Path</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Path to your SRS Server Component, e.g. "E:\\Program Files\\DCS-SimpleRadio-Standalone"</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Frequency</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) Defaults to 243 (guard)</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Modulation</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) Radio modulation. Defaults to radio.modulation.AM</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Port</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) Port of the SRS, defaults to 5002.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Voice</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) The voice to be used.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Culture</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) The culture to be used, defaults to "en-GB"</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Gender</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional)  The gender to be used, defaults to "male"</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>GoogleCredentials</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>(Optional) Path to google credentials</p>
 
           </div>
         </div>
@@ -5342,7 +4629,7 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AICSAR)._CheckQueue" ><strong>AICSAR:_CheckQueue(OpsGroup)</strong></a></h2>
+<h2><a id="#(AICSAR)._CheckQueue" ><strong>AICSAR:_CheckQueue()</strong></a></h2>
 </div>
     
 <p>[Internal] Check pilot queue for next mission</p>
@@ -5353,18 +4640,6 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
    <div class="w3-margin-left">
 <p>AICSAR</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a>
-            <strong><strong>OpsGroup</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -5403,158 +4678,6 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
       <div class="w3-half">
         
 <p>Number of helos on mission</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AICSAR)._DelayedSpawnPilot" ><strong>AICSAR:_DelayedSpawnPilot(_LandingPos, _coalition)</strong></a></h2>
-</div>
-    
-<p>[Internal] Spawn a pilot</p>
-
-<div id= "#Functions##_DelayedSpawnPilot" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AICSAR</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
-            <strong><strong>_LandingPos</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Landing Postion</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>_coalition</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Coalition side</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AICSAR)">#AICSAR</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AICSAR)._EjectEventHandler" ><strong>AICSAR:_EjectEventHandler(EventData)</strong></a></h2>
-</div>
-    
-<p>[Internal] Catch the ejection and save the pilot name</p>
-
-<div id= "#Functions##_EjectEventHandler" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AICSAR</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
-            <strong><strong>EventData</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AICSAR)">#AICSAR</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AICSAR)._EventHandler" ><strong>AICSAR:_EventHandler(EventData, FromEject)</strong></a></h2>
-</div>
-    
-<p>[Internal] Catch the landing after ejection and spawn a pilot in situ.</p>
-
-<div id= "#Functions##_EventHandler" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AICSAR</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
-            <strong><strong>EventData</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #boolean
-            <strong><strong>FromEject</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AICSAR)">#AICSAR</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
 
       </div>
     </div>
@@ -6058,7 +5181,7 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AICSAR).onafterPilotRescued" ><strong>AICSAR:onafterPilotRescued(From, Event, To, PilotName)</strong></a></h2>
+<h2><a id="#(AICSAR).onafterPilotRescued" ><strong>AICSAR:onafterPilotRescued(From, Event, To)</strong></a></h2>
 </div>
     
 <p>[Internal] onafterPilotRescued</p>
@@ -6097,103 +5220,6 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
             <p>
                 #string
             <strong><strong>To</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>PilotName</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AICSAR)">#AICSAR</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AICSAR).onafterPilotUnloaded" ><strong>AICSAR:onafterPilotUnloaded(From, Event, To, Helo, OpsGroup)</strong></a></h2>
-</div>
-    
-<p>[Internal] onafterPilotUnloaded</p>
-
-<div id= "#Functions##onafterPilotUnloaded" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AICSAR</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>From</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Event</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>To</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Ops.FlightGroup.html##(FLIGHTGROUP)">Ops.FlightGroup#FLIGHTGROUP</a>
-            <strong><strong>Helo</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a>
-            <strong><strong>OpsGroup</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -6414,17 +5440,6 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(AICSAR).Altitude" ><strong>AICSAR.Altitude</strong></a>
-    
-<p>Default altitude setting for the helicopter FLIGHTGROUP 1500ft.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #string
 <a id="#(AICSAR).ClassName" ><strong>AICSAR.ClassName</strong></a>
     
@@ -6458,17 +5473,6 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(AICSAR).Delay" ><strong>AICSAR.Delay</strong></a>
-    
-<p>In case of UseEventEject wait this long until we spawn a landed pilot.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     
 <a id="#(AICSAR).MGRS_Accuracy" ><strong>AICSAR.MGRS_Accuracy</strong></a>
     
@@ -6489,17 +5493,6 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <p> TODO Messages
 - Messages enum
  @field Messages</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    <a href="Utilities.FiFo.html##(FIFO)">Utilities.FiFo#FIFO</a>
-<a id="#(AICSAR).PilotStore" ><strong>AICSAR.PilotStore</strong></a>
-    
-
 
 </div>
 
@@ -6543,105 +5536,6 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <a id="#(AICSAR).SRS" ><strong>AICSAR.SRS</strong></a>
     
 
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AICSAR).SRSGoogle" ><strong>AICSAR.SRSGoogle</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AICSAR).SRSOperator" ><strong>AICSAR.SRSOperator</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AICSAR).SRSOperatorVoice" ><strong>AICSAR.SRSOperatorVoice</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AICSAR).SRSPilot" ><strong>AICSAR.SRSPilot</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AICSAR).SRSPilotVoice" ><strong>AICSAR.SRSPilotVoice</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AICSAR).SRSQ" ><strong>AICSAR.SRSQ</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AICSAR).SRSTTSRadio" ><strong>AICSAR.SRSTTSRadio</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(AICSAR).Speed" ><strong>AICSAR.Speed</strong></a>
-    
-<p>Default speed setting for the helicopter FLIGHTGROUP is 100kn.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AICSAR).UseEventEject" ><strong>AICSAR.UseEventEject</strong></a>
-    
-<p>In case Event LandingAfterEjection isn't working, use set this to true.</p>
 
 </div>
 
@@ -8328,17 +7222,6 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(AICSAR).Altitude" ><strong>AICSAR.Altitude</strong></a>
-    
-<p>Default altitude setting for the helicopter FLIGHTGROUP 1500ft.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #string
 <a id="#(AICSAR).ClassName" ><strong>AICSAR.ClassName</strong></a>
     
@@ -8372,17 +7255,6 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(AICSAR).Delay" ><strong>AICSAR.Delay</strong></a>
-    
-<p>In case of UseEventEject wait this long until we spawn a landed pilot.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     
 <a id="#(AICSAR).MGRS_Accuracy" ><strong>AICSAR.MGRS_Accuracy</strong></a>
     
@@ -8403,17 +7275,6 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <p> TODO Messages
 - Messages enum
  @field Messages</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    <a href="Utilities.FiFo.html##(FIFO)">Utilities.FiFo#FIFO</a>
-<a id="#(AICSAR).PilotStore" ><strong>AICSAR.PilotStore</strong></a>
-    
-
 
 </div>
 
@@ -8457,105 +7318,6 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <a id="#(AICSAR).SRS" ><strong>AICSAR.SRS</strong></a>
     
 
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AICSAR).SRSGoogle" ><strong>AICSAR.SRSGoogle</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AICSAR).SRSOperator" ><strong>AICSAR.SRSOperator</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AICSAR).SRSOperatorVoice" ><strong>AICSAR.SRSOperatorVoice</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AICSAR).SRSPilot" ><strong>AICSAR.SRSPilot</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AICSAR).SRSPilotVoice" ><strong>AICSAR.SRSPilotVoice</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AICSAR).SRSQ" ><strong>AICSAR.SRSQ</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AICSAR).SRSTTSRadio" ><strong>AICSAR.SRSTTSRadio</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(AICSAR).Speed" ><strong>AICSAR.Speed</strong></a>
-    
-<p>Default speed setting for the helicopter FLIGHTGROUP is 100kn.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AICSAR).UseEventEject" ><strong>AICSAR.UseEventEject</strong></a>
-    
-<p>In case Event LandingAfterEjection isn't working, use set this to true.</p>
 
 </div>
 
