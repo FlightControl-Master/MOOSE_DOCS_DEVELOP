@@ -1334,7 +1334,7 @@
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Ops.OpsTransport.html">Ops.OpsTransport</a></strong></h2></div>
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Ops</strong> - Troop transport assignment for OPS groups.</p>
+<p><strong>Ops</strong> - Transport assignment for OPS groups and storage.</p>
 </p></div>
        </div>         
      </div>
@@ -2783,7 +2783,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).CanCargo">NAVYGROUP:CanCargo(CargoGroup)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).CanCargo">NAVYGROUP:CanCargo(Cargo)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Check if the group can <em>in principle</em> be carrier of a cargo group.</p>
 </td>
@@ -2903,21 +2903,15 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).EPLRS">NAVYGROUP.EPLRS</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).ElementStatus">NAVYGROUP.ElementStatus</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).FindCarrierForCargo">NAVYGROUP:FindCarrierForCargo(CargoGroup)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).FindCarrierForCargo">NAVYGROUP:FindCarrierForCargo(Weight)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Add weight to the internal cargo of an element of the group.</p>
+<p>Find carrier for cargo by evaluating the free cargo bay storage.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3984,7 +3978,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).SelfDestruction">NAVYGROUP:SelfDestruction(Delay, ExplosionPower)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).SelfDestruction">NAVYGROUP:SelfDestruction(Delay, ExplosionPower, ElementName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Self destruction of group.</p>
 </td>
@@ -4398,9 +4392,21 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._AddCargobayStorage">NAVYGROUP:_AddCargobayStorage(CarrierElement, CargoUID, StorageType, StorageAmount, StorageWeight)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add warehouse storage to cargo bay of a carrier.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._AddElementByName">NAVYGROUP:_AddElementByName(unitname)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add a unit/element to the OPS group.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._AddMyCargoBay">NAVYGROUP:_AddMyCargoBay(MyCargo, CarrierElement)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add storage to cargo bay of a carrier.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4500,6 +4506,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._CreateMyCargo">NAVYGROUP:_CreateMyCargo(CargoUID, OpsGroup, StorageType, StorageAmount, StorageWeight)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add OPSGROUP to cargo bay of a carrier.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._CreateWaypoint">NAVYGROUP:_CreateWaypoint(Waypoint, waypoint)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Enhance waypoint table.</p>
@@ -4507,6 +4519,12 @@
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._DelCargobay">NAVYGROUP:_DelCargobay(CargoGroup)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Remove OPSGROUP from cargo bay of a carrier.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._DelCargobayElement">NAVYGROUP:_DelCargobayElement(Element, MyCargo)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Remove OPSGROUP from cargo bay of a carrier.</p>
 </td>
@@ -4524,6 +4542,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._GetCargobayElement">NAVYGROUP:_GetCargobayElement(Element, CargoUID)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Remove OPSGROUP from cargo bay of a carrier.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._GetDetectedTarget">NAVYGROUP:_GetDetectedTarget()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get target group.</p>
@@ -4533,6 +4557,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._GetElementZoneLoader">NAVYGROUP:_GetElementZoneLoader(Element, Zone, Loader)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get/update the (un-)loading zone of the element.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._GetMyCargoBayFromUID">NAVYGROUP:_GetMyCargoBayFromUID(uid)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get cargo bay data from a cargo data id.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4587,6 +4617,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._GetTemplate">NAVYGROUP:_GetTemplate(Copy)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the template of the group.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._GetWeightStorage">NAVYGROUP:_GetWeightStorage(Storage, Total, Reserved, Amount)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get weight of warehouse storage to transport.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4725,6 +4761,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._SimpleTaskFunction">NAVYGROUP:_SimpleTaskFunction(Function, uid)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Simple task function.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._SortCargo">NAVYGROUP:_SortCargo(Cargos)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On after "Loading" event.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -12834,7 +12876,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(NAVYGROUP).CanCargo" ><strong>NAVYGROUP:CanCargo(CargoGroup)</strong></a></h2>
+<h2><a id="#(NAVYGROUP).CanCargo" ><strong>NAVYGROUP:CanCargo(Cargo)</strong></a></h2>
 </div>
     
 <p>Check if the group can <em>in principle</em> be carrier of a cargo group.</p>
@@ -12853,13 +12895,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="##(OPSGROUP)">#OPSGROUP</a>
-            <strong><strong>CargoGroup</strong></strong>
+                <a href="Ops.OpsGroup.html##(OPSGROUP.CargoGroup)">Ops.OpsGroup#OPSGROUP.CargoGroup</a>
+            <strong><strong>Cargo</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Cargo group, which needs a carrier.</p>
+<p>Cargo data, which needs a carrier.</p>
 
           </div>
         </div>
@@ -13628,10 +13670,10 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(NAVYGROUP).FindCarrierForCargo" ><strong>NAVYGROUP:FindCarrierForCargo(CargoGroup)</strong></a></h2>
+<h2><a id="#(NAVYGROUP).FindCarrierForCargo" ><strong>NAVYGROUP:FindCarrierForCargo(Weight)</strong></a></h2>
 </div>
     
-<p>Add weight to the internal cargo of an element of the group.</p>
+<p>Find carrier for cargo by evaluating the free cargo bay storage.</p>
 
 <div id= "#Functions##FindCarrierForCargo" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -13643,13 +13685,13 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="##(OPSGROUP)">#OPSGROUP</a>
-            <strong><strong>CargoGroup</strong></strong>
+                #number
+            <strong><strong>Weight</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Cargo group, which needs a carrier.</p>
+<p>Weight of cargo in kg.</p>
 
           </div>
         </div>
@@ -21130,7 +21172,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(NAVYGROUP).SelfDestruction" ><strong>NAVYGROUP:SelfDestruction(Delay, ExplosionPower)</strong></a></h2>
+<h2><a id="#(NAVYGROUP).SelfDestruction" ><strong>NAVYGROUP:SelfDestruction(Delay, ExplosionPower, ElementName)</strong></a></h2>
 </div>
     
 <p>Self destruction of group.</p>
@@ -21168,6 +21210,19 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           <div class="w3-half">
               
 <p>(Optional) Explosion power in kg TNT. Default 100 kg.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>ElementName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the element that should be destroyed. Default is all elements.</p>
 
           </div>
         </div>
@@ -24313,6 +24368,91 @@ Optionally, you can calculate the current max weight possible, which accounts fo
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(NAVYGROUP)._AddCargobayStorage" ><strong>NAVYGROUP:_AddCargobayStorage(CarrierElement, CargoUID, StorageType, StorageAmount, StorageWeight)</strong></a></h2>
+</div>
+    
+<p>Add warehouse storage to cargo bay of a carrier.</p>
+
+<div id= "#Functions##_AddCargobayStorage" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPSGROUP.Element)">#OPSGROUP.Element</a>
+            <strong><strong>CarrierElement</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The element of the carrier.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>CargoUID</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>UID of the cargo data.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>StorageType</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Storage type.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>StorageAmount</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Storage amount.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>StorageWeight</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Weight of a single storage item in kg.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(NAVYGROUP)._AddElementByName" ><strong>NAVYGROUP:_AddElementByName(unitname)</strong></a></h2>
 </div>
     
@@ -24349,6 +24489,52 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 
       </div>
     </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(NAVYGROUP)._AddMyCargoBay" ><strong>NAVYGROUP:_AddMyCargoBay(MyCargo, CarrierElement)</strong></a></h2>
+</div>
+    
+<p>Add storage to cargo bay of a carrier.</p>
+
+<div id= "#Functions##_AddMyCargoBay" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPSGROUP.MyCargo)">#OPSGROUP.MyCargo</a>
+            <strong><strong>MyCargo</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>My cargo.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPSGROUP.Element)">#OPSGROUP.Element</a>
+            <strong><strong>CarrierElement</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The element of the carrier.</p>
+
+          </div>
+        </div>
 </div>
 
 </div>
@@ -24895,6 +25081,102 @@ Optionally, you can calculate the current max weight possible, which accounts fo
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(NAVYGROUP)._CreateMyCargo" ><strong>NAVYGROUP:_CreateMyCargo(CargoUID, OpsGroup, StorageType, StorageAmount, StorageWeight)</strong></a></h2>
+</div>
+    
+<p>Add OPSGROUP to cargo bay of a carrier.</p>
+
+<div id= "#Functions##_CreateMyCargo" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>CargoUID</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>UID of the cargo data.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPSGROUP)">#OPSGROUP</a>
+            <strong><strong>OpsGroup</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Cargo group.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>StorageType</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Storage type.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>StorageAmount</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Storage amount.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>StorageWeight</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Weight of a single storage item in kg.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(OPSGROUP.MyCargo)">#OPSGROUP.MyCargo</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>My cargo object.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(NAVYGROUP)._CreateWaypoint" ><strong>NAVYGROUP:_CreateWaypoint(Waypoint, waypoint)</strong></a></h2>
 </div>
     
@@ -24971,6 +25253,63 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           <div class="w3-half">
               
 <p>Cargo group.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If <code>true</code>, cargo could be removed.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(NAVYGROUP)._DelCargobayElement" ><strong>NAVYGROUP:_DelCargobayElement(Element, MyCargo)</strong></a></h2>
+</div>
+    
+<p>Remove OPSGROUP from cargo bay of a carrier.</p>
+
+<div id= "#Functions##_DelCargobayElement" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPSGROUP.Element)">#OPSGROUP.Element</a>
+            <strong><strong>Element</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Cargo group.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPSGROUP.MyCargo)">#OPSGROUP.MyCargo</a>
+            <strong><strong>MyCargo</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>My cargo data.</p>
 
           </div>
         </div>
@@ -25097,6 +25436,63 @@ Optionally, you can calculate the current max weight possible, which accounts fo
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(NAVYGROUP)._GetCargobayElement" ><strong>NAVYGROUP:_GetCargobayElement(Element, CargoUID)</strong></a></h2>
+</div>
+    
+<p>Remove OPSGROUP from cargo bay of a carrier.</p>
+
+<div id= "#Functions##_GetCargobayElement" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(OPSGROUP.Element)">#OPSGROUP.Element</a>
+            <strong><strong>Element</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Cargo group.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>CargoUID</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Cargo UID.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(OPSGROUP.MyCargo)">#OPSGROUP.MyCargo</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>MyCargo My cargo data.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(NAVYGROUP)._GetDetectedTarget" ><strong>NAVYGROUP:_GetDetectedTarget()</strong></a></h2>
 </div>
     
@@ -25196,6 +25592,58 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <p>Bounding box polygon zone.</p>
 
       </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(NAVYGROUP)._GetMyCargoBayFromUID" ><strong>NAVYGROUP:_GetMyCargoBayFromUID(uid)</strong></a></h2>
+</div>
+    
+<p>Get cargo bay data from a cargo data id.</p>
+
+<div id= "#Functions##_GetMyCargoBayFromUID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>uid</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Unique ID of cargo data.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p><a href="##(OPSGROUP.MyCargo)">#OPSGROUP.MyCargo</a>:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Cargo My cargo.</p>
+
+        </div>
+        <div class="w3-half">
+          <p><a href="##(OPSGROUP.Element)">#OPSGROUP.Element</a>:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Element that has loaded the cargo.</p>
+
+        </div>
     </div>
 </div>
 
@@ -25508,6 +25956,87 @@ Optionally, you can calculate the current max weight possible, which accounts fo
       <div class="w3-half">
         
 <p>Template table.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(NAVYGROUP)._GetWeightStorage" ><strong>NAVYGROUP:_GetWeightStorage(Storage, Total, Reserved, Amount)</strong></a></h2>
+</div>
+    
+<p>Get weight of warehouse storage to transport.</p>
+
+<div id= "#Functions##_GetWeightStorage" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.OpsTransport.html##(OPSTRANSPORT.Storage)">Ops.OpsTransport#OPSTRANSPORT.Storage</a>
+            <strong><strong>Storage</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Total</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Get total weight. Otherweise the amount left to deliver (total-loaded-lost-delivered).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Reserved</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Reduce weight that is reserved.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Amount</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Return amount not weight.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#number:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Weight of cargo in kg or amount in number of items, if <code>Amount=true</code>.</p>
 
       </div>
     </div>
@@ -26486,6 +27015,50 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 
           </div>
         </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(NAVYGROUP)._SortCargo" ><strong>NAVYGROUP:_SortCargo(Cargos)</strong></a></h2>
+</div>
+    
+<p>On after "Loading" event.</p>
+
+<div id= "#Functions##_SortCargo" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Cargos</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Table of cargos.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Table of sorted cargos.</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
