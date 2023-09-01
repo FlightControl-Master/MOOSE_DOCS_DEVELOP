@@ -2321,9 +2321,21 @@ in the mission editor are absolute maximum ranges; in-game this is rather 50-75%
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).FilterZones">MANTIS.FilterZones</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).GetCommandCenter">MANTIS:GetCommandCenter()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Function to get the HQ object for further use</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).Groupset">MANTIS.Groupset</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -2339,7 +2351,7 @@ in the mission editor are absolute maximum ranges; in-game this is rather 50-75%
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).New">MANTIS:New(name, samprefix, ewrprefix, hq, coalition, dynamic, awacs, EmOnOff, Padding)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).New">MANTIS:New(name, samprefix, ewrprefix, hq, coalition, dynamic, awacs, EmOnOff, Padding, Zones)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p> Function to instantiate a new object of class MANTIS</p>
 </td>
@@ -4326,6 +4338,28 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(MANTIS).FilterZones" ><strong>MANTIS.FilterZones</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MANTIS).Groupset" ><strong>MANTIS.Groupset</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
 <a id="#(MANTIS).HQ_CC" ><strong>MANTIS.HQ_CC</strong></a>
     
@@ -4381,7 +4415,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Long" ><strong>MANTIS.SAM_Table_Long</strong></a>
     
 
@@ -4392,7 +4426,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Medium" ><strong>MANTIS.SAM_Table_Medium</strong></a>
     
 
@@ -4403,7 +4437,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Short" ><strong>MANTIS.SAM_Table_Short</strong></a>
     
 
@@ -5113,7 +5147,7 @@ Accept- and RejectZones. Last, if it is inside a conflict zone, it is accepted. 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(MANTIS).New" ><strong>MANTIS:New(name, samprefix, ewrprefix, hq, coalition, dynamic, awacs, EmOnOff, Padding)</strong></a></h2>
+<h2><a id="#(MANTIS).New" ><strong>MANTIS:New(name, samprefix, ewrprefix, hq, coalition, dynamic, awacs, EmOnOff, Padding, Zones)</strong></a></h2>
 </div>
     
 <p> Function to instantiate a new object of class MANTIS</p>
@@ -5239,6 +5273,19 @@ Accept- and RejectZones. Last, if it is inside a conflict zone, it is accepted. 
           <div class="w3-half">
               
 <p>For #SEAD - Extra number of seconds to add to radar switch-back-on time (optional)</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Zones</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Table of Core.Zone#ZONE Zones Consider SAM groups in this zone(s) only for this MANTIS instance, must be handed as #table of Zone objects</p>
 
           </div>
         </div>
@@ -8875,6 +8922,28 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(MANTIS).FilterZones" ><strong>MANTIS.FilterZones</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MANTIS).Groupset" ><strong>MANTIS.Groupset</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
 <a id="#(MANTIS).HQ_CC" ><strong>MANTIS.HQ_CC</strong></a>
     
@@ -8930,7 +8999,7 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Long" ><strong>MANTIS.SAM_Table_Long</strong></a>
     
 
@@ -8941,7 +9010,7 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Medium" ><strong>MANTIS.SAM_Table_Medium</strong></a>
     
 
@@ -8952,7 +9021,7 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Short" ><strong>MANTIS.SAM_Table_Short</strong></a>
     
 
