@@ -1242,6 +1242,42 @@
      <div class="w3-col s12 m6 l4">
        <div class="w3-card-4 w3-white w3-margin-16">
          <div class="w3-display-container w3-text-white w3-text-shadow">
+           <img src= "../Images/AI_Combat_Air_Patrol.JPG" alt="Image">
+           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Ops.EasyGCICAP.html">Ops.EasyGCICAP</a></strong></h2></div>
+         </div>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+<h2> Easy CAP/GCI Class, based on OPS classes</h2>
+<p> Documentation</p>
+
+<p> https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.EasyGCICAP.html</p>
+
+<hr/>
+<h2> Date: September 2023</h2>
+<p>-@diagnostic disable: cast-local-type
+- <strong>Ops</strong> - Easy GCI &amp; CAP Manager</p>
+
+<hr/>
+
+<p> <strong>Main Features:</strong></p>
+
+<pre><code>* Automatically create and manage A2A CAP/GCI defenses using an &lt;a href="Ops.AirWing.html##(AIRWING)"&gt;Ops.AirWing#AIRWING&lt;/a&gt; and Squadrons for one coalition
+* Easy set-up
+* Add additional AirWings on other airbases
+* Each wing can have more than one Squadron - tasking to Squadrons is done on a random basis per AirWing
+* Create borders and zones of engagement
+* Detection can be ground based and/or via AWACS
+</code></pre>
+
+<hr/>
+
+<p> ### AUTHOR: <strong>applevangelist</strong></p>
+
+</p></div>
+       </div>         
+     </div>
+     <div class="w3-col s12 m6 l4">
+       <div class="w3-card-4 w3-white w3-margin-16">
+         <div class="w3-display-container w3-text-white w3-text-shadow">
            <img src= "../Images/OPS_Fleet.png" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Ops.Fleet.html">Ops.Fleet</a></strong></h2></div>
          </div>
@@ -7955,7 +7991,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).CtldUnits" ><strong>CTLD.CtldUnits</strong></a>
     
 
@@ -7977,7 +8013,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).DroppedTroops" ><strong>CTLD.DroppedTroops</strong></a>
     
 
@@ -8002,10 +8038,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).EngineersInField" ><strong>CTLD.EngineersInField</strong></a>
     
 
+
+    
+<p>holds #CTLD_ENGINEERING objects</p>
 
 </div>
 
@@ -8038,7 +8077,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeFMFrequencies" ><strong>CTLD.FreeFMFrequencies</strong></a>
     
 
@@ -8049,7 +8088,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeUHFFrequencies" ><strong>CTLD.FreeUHFFrequencies</strong></a>
     
 
@@ -8060,7 +8099,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).FreeVHFFrequencies" ><strong>CTLD.FreeVHFFrequencies</strong></a>
     
 
@@ -8135,10 +8174,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).PilotGroups" ><strong>CTLD.PilotGroups</strong></a>
     
 
+
+    
+<p> tables</p>
 
 </div>
 
@@ -8168,13 +8210,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #string
 <a id="#(CTLD).RadioPath" ><strong>CTLD.RadioPath</strong></a>
     
 
-
-    
-<p> Folderpath.</p>
 
 </div>
 
@@ -8416,6 +8455,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <p> #1570</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(CTLD).droppedBeacons" ><strong>CTLD.droppedBeacons</strong></a>
+    
+
 
 </div>
 
@@ -8761,7 +8811,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(CTLD).troopdropzoneradius" ><strong>CTLD.troopdropzoneradius</strong></a>
     
 
@@ -17531,7 +17581,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).CtldUnits" ><strong>CTLD.CtldUnits</strong></a>
     
 
@@ -17553,7 +17603,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).DroppedTroops" ><strong>CTLD.DroppedTroops</strong></a>
     
 
@@ -17578,10 +17628,13 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).EngineersInField" ><strong>CTLD.EngineersInField</strong></a>
     
 
+
+    
+<p>holds #CTLD_ENGINEERING objects</p>
 
 </div>
 
@@ -17614,7 +17667,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeFMFrequencies" ><strong>CTLD.FreeFMFrequencies</strong></a>
     
 
@@ -17625,7 +17678,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeUHFFrequencies" ><strong>CTLD.FreeUHFFrequencies</strong></a>
     
 
@@ -17636,7 +17689,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).FreeVHFFrequencies" ><strong>CTLD.FreeVHFFrequencies</strong></a>
     
 
@@ -17711,10 +17764,13 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).PilotGroups" ><strong>CTLD.PilotGroups</strong></a>
     
 
+
+    
+<p> tables</p>
 
 </div>
 
@@ -17744,13 +17800,10 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #string
 <a id="#(CTLD).RadioPath" ><strong>CTLD.RadioPath</strong></a>
     
 
-
-    
-<p> Folderpath.</p>
 
 </div>
 
@@ -17992,6 +18045,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     
 <p> #1570</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(CTLD).droppedBeacons" ><strong>CTLD.droppedBeacons</strong></a>
+    
+
 
 </div>
 
@@ -18337,7 +18401,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(CTLD).troopdropzoneradius" ><strong>CTLD.troopdropzoneradius</strong></a>
     
 
@@ -19934,7 +19998,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).CtldUnits" ><strong>CTLD.CtldUnits</strong></a>
     
 
@@ -19956,7 +20020,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).DroppedTroops" ><strong>CTLD.DroppedTroops</strong></a>
     
 
@@ -19981,10 +20045,13 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).EngineersInField" ><strong>CTLD.EngineersInField</strong></a>
     
 
+
+    
+<p>holds #CTLD_ENGINEERING objects</p>
 
 </div>
 
@@ -20017,7 +20084,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeFMFrequencies" ><strong>CTLD.FreeFMFrequencies</strong></a>
     
 
@@ -20028,7 +20095,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeUHFFrequencies" ><strong>CTLD.FreeUHFFrequencies</strong></a>
     
 
@@ -20039,7 +20106,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).FreeVHFFrequencies" ><strong>CTLD.FreeVHFFrequencies</strong></a>
     
 
@@ -20114,10 +20181,13 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).PilotGroups" ><strong>CTLD.PilotGroups</strong></a>
     
 
+
+    
+<p> tables</p>
 
 </div>
 
@@ -20147,13 +20217,10 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #string
 <a id="#(CTLD).RadioPath" ><strong>CTLD.RadioPath</strong></a>
     
 
-
-    
-<p> Folderpath.</p>
 
 </div>
 
@@ -20395,6 +20462,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     
 <p> #1570</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(CTLD).droppedBeacons" ><strong>CTLD.droppedBeacons</strong></a>
+    
+
 
 </div>
 
@@ -20740,7 +20818,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(CTLD).troopdropzoneradius" ><strong>CTLD.troopdropzoneradius</strong></a>
     
 
@@ -24957,6 +25035,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(CTLD_CARGO).Mark" ><strong>CTLD_CARGO.Mark</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #string
 <a id="#(CTLD_CARGO).Name" ><strong>CTLD_CARGO.Name</strong></a>
     
@@ -26076,6 +26165,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(CTLD_CARGO).LoadDirectly" ><strong>CTLD_CARGO.LoadDirectly</strong></a>
     
 <p>Flag for direct loading.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(CTLD_CARGO).Mark" ><strong>CTLD_CARGO.Mark</strong></a>
+    
+
 
 </div>
 
@@ -33881,6 +33981,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(CTLD_HERCULES).j" ><strong>CTLD_HERCULES.j</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #string
 <a id="#(CTLD_HERCULES).lid" ><strong>CTLD_HERCULES.lid</strong></a>
     
@@ -35200,6 +35311,17 @@ Use either this method to integrate the Hercules **or** the one from the "normal
 
     
 <p> template for a group of 10 paratroopers</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CTLD_HERCULES).j" ><strong>CTLD_HERCULES.j</strong></a>
+    
+
 
 </div>
 

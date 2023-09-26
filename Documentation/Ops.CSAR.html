@@ -1242,6 +1242,42 @@
      <div class="w3-col s12 m6 l4">
        <div class="w3-card-4 w3-white w3-margin-16">
          <div class="w3-display-container w3-text-white w3-text-shadow">
+           <img src= "../Images/AI_Combat_Air_Patrol.JPG" alt="Image">
+           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Ops.EasyGCICAP.html">Ops.EasyGCICAP</a></strong></h2></div>
+         </div>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+<h2> Easy CAP/GCI Class, based on OPS classes</h2>
+<p> Documentation</p>
+
+<p> https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.EasyGCICAP.html</p>
+
+<hr/>
+<h2> Date: September 2023</h2>
+<p>-@diagnostic disable: cast-local-type
+- <strong>Ops</strong> - Easy GCI &amp; CAP Manager</p>
+
+<hr/>
+
+<p> <strong>Main Features:</strong></p>
+
+<pre><code>* Automatically create and manage A2A CAP/GCI defenses using an &lt;a href="Ops.AirWing.html##(AIRWING)"&gt;Ops.AirWing#AIRWING&lt;/a&gt; and Squadrons for one coalition
+* Easy set-up
+* Add additional AirWings on other airbases
+* Each wing can have more than one Squadron - tasking to Squadrons is done on a random basis per AirWing
+* Create borders and zones of engagement
+* Detection can be ground based and/or via AWACS
+</code></pre>
+
+<hr/>
+
+<p> ### AUTHOR: <strong>applevangelist</strong></p>
+
+</p></div>
+       </div>         
+     </div>
+     <div class="w3-col s12 m6 l4">
+       <div class="w3-card-4 w3-white w3-margin-16">
+         <div class="w3-display-container w3-text-white w3-text-shadow">
            <img src= "../Images/OPS_Fleet.png" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Ops.Fleet.html">Ops.Fleet</a></strong></h2></div>
          </div>
@@ -2892,12 +2928,6 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR).inTransitGroups">CSAR.inTransitGroups</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR).index">CSAR.index</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -4721,6 +4751,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(CSAR).downedpilotcounter" ><strong>CSAR.downedpilotcounter</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(CSAR).enableForAI" ><strong>CSAR.enableForAI</strong></a>
     
@@ -4837,17 +4878,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <p> contain a table for each SAR with all units he has with the original names</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(CSAR).index" ><strong>CSAR.index</strong></a>
-    
-
 
 </div>
 
@@ -5062,20 +5092,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
-<a id="#(CSAR).rescuedpilots" ><strong>CSAR.rescuedpilots</strong></a>
-    
-
-
-    
-<p> counter for saved pilots</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
 <a id="#(CSAR).rescuehoverdistance" ><strong>CSAR.rescuehoverdistance</strong></a>
     
 
@@ -5093,20 +5109,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <p> added 0.1.11r1</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(CSAR).rescues" ><strong>CSAR.rescues</strong></a>
-    
-
-
-    
-<p> counter for successful rescue landings at FARP/AFB/MASH</p>
 
 </div>
 
@@ -10728,6 +10730,17 @@ callsigns from playername or group name.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(CSAR).downedpilotcounter" ><strong>CSAR.downedpilotcounter</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(CSAR).enableForAI" ><strong>CSAR.enableForAI</strong></a>
     
@@ -10844,17 +10857,6 @@ callsigns from playername or group name.</p>
 
     
 <p> contain a table for each SAR with all units he has with the original names</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(CSAR).index" ><strong>CSAR.index</strong></a>
-    
-
 
 </div>
 
@@ -11069,20 +11071,6 @@ callsigns from playername or group name.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
-<a id="#(CSAR).rescuedpilots" ><strong>CSAR.rescuedpilots</strong></a>
-    
-
-
-    
-<p> counter for saved pilots</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
 <a id="#(CSAR).rescuehoverdistance" ><strong>CSAR.rescuehoverdistance</strong></a>
     
 
@@ -11100,20 +11088,6 @@ callsigns from playername or group name.</p>
 
     
 <p> added 0.1.11r1</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(CSAR).rescues" ><strong>CSAR.rescues</strong></a>
-    
-
-
-    
-<p> counter for successful rescue landings at FARP/AFB/MASH</p>
 
 </div>
 
@@ -13220,6 +13194,17 @@ callsigns from playername or group name.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(CSAR).downedpilotcounter" ><strong>CSAR.downedpilotcounter</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(CSAR).enableForAI" ><strong>CSAR.enableForAI</strong></a>
     
@@ -13336,17 +13321,6 @@ callsigns from playername or group name.</p>
 
     
 <p> contain a table for each SAR with all units he has with the original names</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(CSAR).index" ><strong>CSAR.index</strong></a>
-    
-
 
 </div>
 
@@ -13561,20 +13535,6 @@ callsigns from playername or group name.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
-<a id="#(CSAR).rescuedpilots" ><strong>CSAR.rescuedpilots</strong></a>
-    
-
-
-    
-<p> counter for saved pilots</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
 <a id="#(CSAR).rescuehoverdistance" ><strong>CSAR.rescuehoverdistance</strong></a>
     
 
@@ -13592,20 +13552,6 @@ callsigns from playername or group name.</p>
 
     
 <p> added 0.1.11r1</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(CSAR).rescues" ><strong>CSAR.rescues</strong></a>
-    
-
-
-    
-<p> counter for successful rescue landings at FARP/AFB/MASH</p>
 
 </div>
 
