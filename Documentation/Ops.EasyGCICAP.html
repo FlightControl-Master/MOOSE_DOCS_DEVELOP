@@ -2094,6 +2094,7 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
     <li><a href="##(EASYGCICAP).SetDefaultNumberAlter5Standby">EASYGCICAP.SetDefaultNumberAlter5Standby</a>: Set how many planes will be spawned on cold standby (Alert5), default 2.</li>
     <li><a href="##(EASYGCICAP).SetDefaultEngageRange">EASYGCICAP.SetDefaultEngageRange</a>: Set max engage range for CAP flights if they detect intruders, defaults to 50.</li>
     <li><a href="##(EASYGCICAP).SetMaxAliveMissions">EASYGCICAP.SetMaxAliveMissions</a>: Set max parallel missions can be done (CAP+GCI+Alert5+Tanker), defaults to 6.</li>
+    <li><a href="##(EASYGCICAP).SetDefaultRepeatOnFailure">EASYGCICAP.SetDefaultRepeatOnFailure</a>: Set max repeats on failure for intercepting/killing intruders, defaults to 3.</li>
 </ul>
 
 
@@ -2157,18 +2158,6 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).BlueGoZoneSet">EASYGCICAP.BlueGoZoneSet</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).BlueNoGoZoneSet">EASYGCICAP.BlueNoGoZoneSet</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).ClassName">EASYGCICAP.ClassName</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -2176,6 +2165,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).EWRName">EASYGCICAP.EWRName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).GoZoneSet">EASYGCICAP.GoZoneSet</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -2217,9 +2212,21 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).Monitor">EASYGCICAP.Monitor</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).New">EASYGCICAP:New(Alias, AirbaseName, Coalition, EWRName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Create a new GCICAP Manager</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).NoGoZoneSet">EASYGCICAP.NoGoZoneSet</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -2268,6 +2275,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).SetDefaultNumberAlter5Standby">EASYGCICAP:SetDefaultNumberAlter5Standby(Airframes)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set default number of airframes standing by for intercept tasks (visible on the airfield)</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).SetDefaultRepeatOnFailure">EASYGCICAP:SetDefaultRepeatOnFailure(Retries)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add default repeat attempts if an Intruder intercepts fails.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2458,6 +2471,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).overhead">EASYGCICAP.overhead</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).repeatsonfailure">EASYGCICAP.repeatsonfailure</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -3456,30 +3475,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(EASYGCICAP).BlueGoZoneSet" ><strong>EASYGCICAP.BlueGoZoneSet</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(EASYGCICAP).BlueNoGoZoneSet" ><strong>EASYGCICAP.BlueNoGoZoneSet</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #string
 <a id="#(EASYGCICAP).ClassName" ><strong>EASYGCICAP.ClassName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+<a id="#(EASYGCICAP).GoZoneSet" ><strong>EASYGCICAP.GoZoneSet</strong></a>
     
 
 
@@ -3546,6 +3554,28 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #number
 <a id="#(EASYGCICAP).MaxAliveMissions" ><strong>EASYGCICAP.MaxAliveMissions</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYGCICAP).Monitor" ><strong>EASYGCICAP.Monitor</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+<a id="#(EASYGCICAP).NoGoZoneSet" ><strong>EASYGCICAP.NoGoZoneSet</strong></a>
     
 
 
@@ -3725,6 +3755,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #number
 <a id="#(EASYGCICAP).overhead" ><strong>EASYGCICAP.overhead</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYGCICAP).repeatsonfailure" ><strong>EASYGCICAP.repeatsonfailure</strong></a>
     
 
 
@@ -4795,6 +4836,50 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP).SetDefaultRepeatOnFailure" ><strong>EASYGCICAP:SetDefaultRepeatOnFailure(Retries)</strong></a></h2>
+</div>
+    
+<p>Add default repeat attempts if an Intruder intercepts fails.</p>
+
+<div id= "#Functions##SetDefaultRepeatOnFailure" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Retries</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Retries, defaults to 3</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYGCICAP)">#EASYGCICAP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(EASYGCICAP).SetDefaultResurrection" ><strong>EASYGCICAP:SetDefaultResurrection(Seconds)</strong></a></h2>
 </div>
     
@@ -5696,30 +5781,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(EASYGCICAP).BlueGoZoneSet" ><strong>EASYGCICAP.BlueGoZoneSet</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(EASYGCICAP).BlueNoGoZoneSet" ><strong>EASYGCICAP.BlueNoGoZoneSet</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #string
 <a id="#(EASYGCICAP).ClassName" ><strong>EASYGCICAP.ClassName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+<a id="#(EASYGCICAP).GoZoneSet" ><strong>EASYGCICAP.GoZoneSet</strong></a>
     
 
 
@@ -5786,6 +5860,28 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #number
 <a id="#(EASYGCICAP).MaxAliveMissions" ><strong>EASYGCICAP.MaxAliveMissions</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYGCICAP).Monitor" ><strong>EASYGCICAP.Monitor</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+<a id="#(EASYGCICAP).NoGoZoneSet" ><strong>EASYGCICAP.NoGoZoneSet</strong></a>
     
 
 
@@ -5965,6 +6061,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #number
 <a id="#(EASYGCICAP).overhead" ><strong>EASYGCICAP.overhead</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYGCICAP).repeatsonfailure" ><strong>EASYGCICAP.repeatsonfailure</strong></a>
     
 
 
@@ -7452,30 +7559,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(EASYGCICAP).BlueGoZoneSet" ><strong>EASYGCICAP.BlueGoZoneSet</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(EASYGCICAP).BlueNoGoZoneSet" ><strong>EASYGCICAP.BlueNoGoZoneSet</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #string
 <a id="#(EASYGCICAP).ClassName" ><strong>EASYGCICAP.ClassName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+<a id="#(EASYGCICAP).GoZoneSet" ><strong>EASYGCICAP.GoZoneSet</strong></a>
     
 
 
@@ -7542,6 +7638,28 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #number
 <a id="#(EASYGCICAP).MaxAliveMissions" ><strong>EASYGCICAP.MaxAliveMissions</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYGCICAP).Monitor" ><strong>EASYGCICAP.Monitor</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+<a id="#(EASYGCICAP).NoGoZoneSet" ><strong>EASYGCICAP.NoGoZoneSet</strong></a>
     
 
 
@@ -7721,6 +7839,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #number
 <a id="#(EASYGCICAP).overhead" ><strong>EASYGCICAP.overhead</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYGCICAP).repeatsonfailure" ><strong>EASYGCICAP.repeatsonfailure</strong></a>
     
 
 
