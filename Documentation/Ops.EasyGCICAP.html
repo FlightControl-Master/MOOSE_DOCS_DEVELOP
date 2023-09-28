@@ -2075,8 +2075,16 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
 <pre><code>   -- **Note** If you need different tanker types, i.e. Boom and Drogue, set them up at different AirWings!
    -- Add a tanker point
    mywing:AddPatrolPointTanker(AIRBASE.Caucasus.Kutaisi,ZONE:FindByName("Blue Zone Tanker"):GetCoordinate(),20000,280,270,50)
-   -- Add a tanker squad
-   mywing:AddTankerSquadron("Blue Tanker","Tanker Ops Kutaisi",AIRBASE.Caucasus.Kutaisi,20,AI.Skill.EXCELLENT,602)
+   -- Add an AWACS squad - Radio 251 AM, TACAN 51Y
+   mywing:AddTankerSquadron("Blue Tanker","Tanker Ops Kutaisi",AIRBASE.Caucasus.Kutaisi,20,AI.Skill.EXCELLENT,602,nil,251,radio.modulation.AM,51)
+</code></pre>
+
+<h3>Add an AWACS (optional)</h3>
+
+<pre><code>   -- Add an AWACS point
+   mywing:AddPatrolPointAwacs(AIRBASE.Caucasus.Kutaisi,ZONE:FindByName("Blue Zone AWACS"):GetCoordinate(),25000,300,270,50)
+   -- Add a tanker squad - Radio 251 AM, TACAN 51Y
+   mywing:AddAWACSSquadron("Blue AWACS","AWACS Ops Kutaisi",AIRBASE.Caucasus.Kutaisi,20,AI.Skill.AVERAGE,702,nil,271,radio.modulation.AM)        
 </code></pre>
 
 <h1>Fine-Tuning</h1>
@@ -2093,8 +2101,9 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
     <li><a href="##(EASYGCICAP).SetDefaultMissionRange">EASYGCICAP.SetDefaultMissionRange</a>: Set how many NM the planes can go from the home base, defaults to 100.</li>
     <li><a href="##(EASYGCICAP).SetDefaultNumberAlter5Standby">EASYGCICAP.SetDefaultNumberAlter5Standby</a>: Set how many planes will be spawned on cold standby (Alert5), default 2.</li>
     <li><a href="##(EASYGCICAP).SetDefaultEngageRange">EASYGCICAP.SetDefaultEngageRange</a>: Set max engage range for CAP flights if they detect intruders, defaults to 50.</li>
-    <li><a href="##(EASYGCICAP).SetMaxAliveMissions">EASYGCICAP.SetMaxAliveMissions</a>: Set max parallel missions can be done (CAP+GCI+Alert5+Tanker), defaults to 6.</li>
+    <li><a href="##(EASYGCICAP).SetMaxAliveMissions">EASYGCICAP.SetMaxAliveMissions</a>: Set max parallel missions can be done (CAP+GCI+Alert5+Tanker+AWACS), defaults to 8.</li>
     <li><a href="##(EASYGCICAP).SetDefaultRepeatOnFailure">EASYGCICAP.SetDefaultRepeatOnFailure</a>: Set max repeats on failure for intercepting/killing intruders, defaults to 3.</li>
+    <li><a href="##(EASYGCICAP).SetTankerAndAWACSInvisible">EASYGCICAP.SetTankerAndAWACSInvisible</a>: Set Tanker and AWACS to be invisible to enemy AI eyes. Is set to <code>true</code> by default.</li>
 </ul>
 
 
@@ -2116,6 +2125,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).AddAWACSSquadron">EASYGCICAP:AddAWACSSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery, Frequency, Modulation)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add an AWACS Squadron to an Airwing of the manager</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).AddAcceptZone">EASYGCICAP:AddAcceptZone(Zone)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add a zone to the accepted zones set.</p>
@@ -2125,6 +2140,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).AddAirwing">EASYGCICAP:AddAirwing(Airbasename, Alias)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add an AirWing to the manager</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).AddPatrolPointAwacs">EASYGCICAP:AddPatrolPointAwacs(AirbaseName, Coordinate, Altitude, Speed, Heading, LegLength)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add an AWACS patrol point to a Wing</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2152,7 +2173,7 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).AddTankerSquadron">EASYGCICAP:AddTankerSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).AddTankerSquadron">EASYGCICAP:AddTankerSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery, Frequency, Modulation, TACAN)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add a Tanker Squadron to an Airwing of the manager</p>
 </td>
@@ -2189,6 +2210,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).ManagedCP">EASYGCICAP.ManagedCP</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).ManagedEWR">EASYGCICAP.ManagedEWR</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -2296,6 +2323,24 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).SetTankerAndAWACSInvisible">EASYGCICAP:SetTankerAndAWACSInvisible(Switch)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set Tanker and AWACS to be invisible to enemy AI eyes</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).TankerInvisible">EASYGCICAP.TankerInvisible</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._AddAWACSSquadron">EASYGCICAP:_AddAWACSSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery, Frequency, Modulation)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(Internal) Add a AWACS Squadron to an Airwing of the manager</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._AddAirwing">EASYGCICAP:_AddAirwing(Airbasename, Alias)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(internal) Create and add another AirWing to the manager</p>
@@ -2308,13 +2353,13 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._AddSquadron">EASYGCICAP:_AddSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._AddSquadron">EASYGCICAP:_AddSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery, Frequency, Modulation)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(Internal) Add a Squadron to an Airwing of the manager</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._AddTankerSquadron">EASYGCICAP:_AddTankerSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._AddTankerSquadron">EASYGCICAP:_AddTankerSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery, Frequency, Modulation, TACAN)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(Internal) Add a Tanker Squadron to an Airwing of the manager</p>
 </td>
@@ -2329,6 +2374,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._CreateSquads">EASYGCICAP:_CreateSquads()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(Internal) Create actual Squadrons from the list</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._SetAwacsPatrolPoints">EASYGCICAP:_SetAwacsPatrolPoints()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(Internal) Set actual Awacs Points from the list</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3376,6 +3427,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.Squad).AWACS">EASYGCICAP.Squad.AWACS</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.Squad).AirFrames">EASYGCICAP.Squad.AirFrames</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -3383,6 +3440,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.Squad).AirbaseName">EASYGCICAP.Squad.AirbaseName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.Squad).Frequency">EASYGCICAP.Squad.Frequency</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -3400,6 +3463,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.Squad).Modulation">EASYGCICAP.Squad.Modulation</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.Squad).Skill">EASYGCICAP.Squad.Skill</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -3407,6 +3476,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.Squad).SquadName">EASYGCICAP.Squad.SquadName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.Squad).TACAN">EASYGCICAP.Squad.TACAN</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -3531,6 +3606,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #table
+<a id="#(EASYGCICAP).ManagedEWR" ><strong>EASYGCICAP.ManagedEWR</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
 <a id="#(EASYGCICAP).ManagedSQ" ><strong>EASYGCICAP.ManagedSQ</strong></a>
     
 
@@ -3576,6 +3662,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
 <a id="#(EASYGCICAP).NoGoZoneSet" ><strong>EASYGCICAP.NoGoZoneSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYGCICAP).TankerInvisible" ><strong>EASYGCICAP.TankerInvisible</strong></a>
     
 
 
@@ -3811,6 +3908,154 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP).AddAWACSSquadron" ><strong>EASYGCICAP:AddAWACSSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery, Frequency, Modulation)</strong></a></h2>
+</div>
+    
+<p>Add an AWACS Squadron to an Airwing of the manager</p>
+
+<div id= "#Functions##AddAWACSSquadron" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>TemplateName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the group template.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>SquadName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Squadron name - must be unique!</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>AirbaseName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the airbase the airwing resides on, e.g. AIRBASE.Caucasus.Kutaisi</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>AirFrames</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Number of available airframes, e.g. 20.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Skill</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>optional) Skill level, e.g. AI.Skill.AVERAGE</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Modex</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Modex to be used,e.g. 402.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Livery</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Livery name to be used.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Frequency</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Radio Frequency to be used. </p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Modulation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Radio Modulation to be used, e.g. radio.modulation.AM or radio.modulation.FM</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYGCICAP)">#EASYGCICAP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(EASYGCICAP).AddAcceptZone" ><strong>EASYGCICAP:AddAcceptZone(Zone)</strong></a></h2>
 </div>
     
@@ -3895,6 +4140,113 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       <div class="w3-half">
         
 <p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP).AddPatrolPointAwacs" ><strong>EASYGCICAP:AddPatrolPointAwacs(AirbaseName, Coordinate, Altitude, Speed, Heading, LegLength)</strong></a></h2>
+</div>
+    
+<p>Add an AWACS patrol point to a Wing</p>
+
+<div id= "#Functions##AddPatrolPointAwacs" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>AirbaseName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the Wing's airbase</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>Coordinate</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Altitude</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Defaults to 25000 feet.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p> Defaults to 300 knots.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Heading</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Defaults to 90 degrees (East).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>LegLength</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Defaults to 15 NM.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYGCICAP)">#EASYGCICAP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
 
       </div>
     </div>
@@ -4284,7 +4636,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(EASYGCICAP).AddTankerSquadron" ><strong>EASYGCICAP:AddTankerSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery)</strong></a></h2>
+<h2><a id="#(EASYGCICAP).AddTankerSquadron" ><strong>EASYGCICAP:AddTankerSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery, Frequency, Modulation, TACAN)</strong></a></h2>
 </div>
     
 <p>Add a Tanker Squadron to an Airwing of the manager</p>
@@ -4384,6 +4736,45 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>(optional) Livery name to be used.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Frequency</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Radio Frequency to be used. </p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Modulation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Radio Modulation to be used, e.g. radio.modulation.AM or radio.modulation.FM</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>TACAN</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional)  TACAN channel, e.g. 71, resulting in Channel 71Y</p>
 
           </div>
         </div>
@@ -4968,6 +5359,198 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP).SetTankerAndAWACSInvisible" ><strong>EASYGCICAP:SetTankerAndAWACSInvisible(Switch)</strong></a></h2>
+</div>
+    
+<p>Set Tanker and AWACS to be invisible to enemy AI eyes</p>
+
+<div id= "#Functions##SetTankerAndAWACSInvisible" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Switch</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Set to true or false, by default this is set to true already</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYGCICAP)">#EASYGCICAP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP)._AddAWACSSquadron" ><strong>EASYGCICAP:_AddAWACSSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery, Frequency, Modulation)</strong></a></h2>
+</div>
+    
+<p>(Internal) Add a AWACS Squadron to an Airwing of the manager</p>
+
+<div id= "#Functions##_AddAWACSSquadron" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>TemplateName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the group template.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>SquadName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Squadron name - must be unique!</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>AirbaseName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the airbase the airwing resides on, e.g. AIRBASE.Caucasus.Kutaisi</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>AirFrames</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Number of available airframes, e.g. 20.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Skill</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>optional) Skill level, e.g. AI.Skill.AVERAGE</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Modex</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Modex to be used,e.g. 402.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Livery</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Livery name to be used.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Frequency</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Radio frequency of the AWACS</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Modulation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Radio modulation of the AWACS</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYGCICAP)">#EASYGCICAP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(EASYGCICAP)._AddAirwing" ><strong>EASYGCICAP:_AddAirwing(Airbasename, Alias)</strong></a></h2>
 </div>
     
@@ -5128,7 +5711,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(EASYGCICAP)._AddSquadron" ><strong>EASYGCICAP:_AddSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery)</strong></a></h2>
+<h2><a id="#(EASYGCICAP)._AddSquadron" ><strong>EASYGCICAP:_AddSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery, Frequency, Modulation)</strong></a></h2>
 </div>
     
 <p>(Internal) Add a Squadron to an Airwing of the manager</p>
@@ -5231,6 +5814,32 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
           </div>
         </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Frequency</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Radio Frequency to be used. </p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Modulation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Radio Modulation to be used, e.g. radio.modulation.AM or radio.modulation.FM</p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -5250,7 +5859,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(EASYGCICAP)._AddTankerSquadron" ><strong>EASYGCICAP:_AddTankerSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery)</strong></a></h2>
+<h2><a id="#(EASYGCICAP)._AddTankerSquadron" ><strong>EASYGCICAP:_AddTankerSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery, Frequency, Modulation, TACAN)</strong></a></h2>
 </div>
     
 <p>(Internal) Add a Tanker Squadron to an Airwing of the manager</p>
@@ -5353,6 +5962,45 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
           </div>
         </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Frequency</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Radio frequency of the Tanker</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Modulation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Radio modulation of the Tanker</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>TACAN</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) TACAN Channel to be used, will always be an "Y" channel</p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -5408,6 +6056,36 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <p>(Internal) Create actual Squadrons from the list</p>
 
 <div id= "#Functions##_CreateSquads" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYGCICAP)">#EASYGCICAP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP)._SetAwacsPatrolPoints" ><strong>EASYGCICAP:_SetAwacsPatrolPoints()</strong></a></h2>
+</div>
+    
+<p>(Internal) Set actual Awacs Points from the list</p>
+
+<div id= "#Functions##_SetAwacsPatrolPoints" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -5837,6 +6515,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #table
+<a id="#(EASYGCICAP).ManagedEWR" ><strong>EASYGCICAP.ManagedEWR</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
 <a id="#(EASYGCICAP).ManagedSQ" ><strong>EASYGCICAP.ManagedSQ</strong></a>
     
 
@@ -5882,6 +6571,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
 <a id="#(EASYGCICAP).NoGoZoneSet" ><strong>EASYGCICAP.NoGoZoneSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYGCICAP).TankerInvisible" ><strong>EASYGCICAP.TankerInvisible</strong></a>
     
 
 
@@ -7615,6 +8315,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #table
+<a id="#(EASYGCICAP).ManagedEWR" ><strong>EASYGCICAP.ManagedEWR</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
 <a id="#(EASYGCICAP).ManagedSQ" ><strong>EASYGCICAP.ManagedSQ</strong></a>
     
 
@@ -7660,6 +8371,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
 <a id="#(EASYGCICAP).NoGoZoneSet" ><strong>EASYGCICAP.NoGoZoneSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYGCICAP).TankerInvisible" ><strong>EASYGCICAP.TankerInvisible</strong></a>
     
 
 
@@ -11335,6 +12057,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(EASYGCICAP.Squad).AWACS" ><strong>EASYGCICAP.Squad.AWACS</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #number
 <a id="#(EASYGCICAP.Squad).AirFrames" ><strong>EASYGCICAP.Squad.AirFrames</strong></a>
     
@@ -11348,6 +12081,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 
     #string
 <a id="#(EASYGCICAP.Squad).AirbaseName" ><strong>EASYGCICAP.Squad.AirbaseName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYGCICAP.Squad).Frequency" ><strong>EASYGCICAP.Squad.Frequency</strong></a>
     
 
 
@@ -11379,6 +12123,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(EASYGCICAP.Squad).Modulation" ><strong>EASYGCICAP.Squad.Modulation</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #string
 <a id="#(EASYGCICAP.Squad).Skill" ><strong>EASYGCICAP.Squad.Skill</strong></a>
     
@@ -11392,6 +12147,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 
     #string
 <a id="#(EASYGCICAP.Squad).SquadName" ><strong>EASYGCICAP.Squad.SquadName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYGCICAP.Squad).TACAN" ><strong>EASYGCICAP.Squad.TACAN</strong></a>
     
 
 
