@@ -2161,9 +2161,21 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).AddPatrolPointRecon">EASYGCICAP:AddPatrolPointRecon(AirbaseName, Coordinate, Altitude, Speed, Heading, LegLength)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add a RECON patrol point to a Wing</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).AddPatrolPointTanker">EASYGCICAP:AddPatrolPointTanker(AirbaseName, Coordinate, Altitude, Speed, Heading, LegLength)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add a TANKER patrol point to a Wing</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).AddReconSquadron">EASYGCICAP:AddReconSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add a Recon Squadron to an Airwing of the manager</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2222,6 +2234,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).ManagedEWR">EASYGCICAP.ManagedEWR</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).ManagedREC">EASYGCICAP.ManagedREC</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -2353,9 +2371,9 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._AddPatrolPointCAP">EASYGCICAP:_AddPatrolPointCAP(AirbaseName, Coordinate, Altitude, Speed, Heading, LegLength)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._AddReconSquadron">EASYGCICAP:_AddReconSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) Add a CAP patrol point to a Wing</p>
+<p>(Internal) Add a Recon Squadron to an Airwing of the manager</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2390,6 +2408,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._SetCAPPatrolPoints">EASYGCICAP:_SetCAPPatrolPoints()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(Internal) Set actual PatrolPoints from the list</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._SetReconPatrolPoints">EASYGCICAP:_SetReconPatrolPoints()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(Internal) Set actual PatrolPoints from the list</p>
 </td>
@@ -3475,6 +3499,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.Squad).RECON">EASYGCICAP.Squad.RECON</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.Squad).Skill">EASYGCICAP.Squad.Skill</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -3613,6 +3643,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #table
 <a id="#(EASYGCICAP).ManagedEWR" ><strong>EASYGCICAP.ManagedEWR</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(EASYGCICAP).ManagedREC" ><strong>EASYGCICAP.ManagedREC</strong></a>
     
 
 
@@ -4371,6 +4412,113 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP).AddPatrolPointRecon" ><strong>EASYGCICAP:AddPatrolPointRecon(AirbaseName, Coordinate, Altitude, Speed, Heading, LegLength)</strong></a></h2>
+</div>
+    
+<p>Add a RECON patrol point to a Wing</p>
+
+<div id= "#Functions##AddPatrolPointRecon" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>AirbaseName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the Wing's airbase</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>Coordinate</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Altitude</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Defaults to 25000 feet.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p> Defaults to 300 knots.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Heading</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Defaults to 90 degrees (East).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>LegLength</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Defaults to 15 NM.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYGCICAP)">#EASYGCICAP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(EASYGCICAP).AddPatrolPointTanker" ><strong>EASYGCICAP:AddPatrolPointTanker(AirbaseName, Coordinate, Altitude, Speed, Heading, LegLength)</strong></a></h2>
 </div>
     
@@ -4467,6 +4615,128 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       <div class="w3-half">
         
 <p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP).AddReconSquadron" ><strong>EASYGCICAP:AddReconSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery)</strong></a></h2>
+</div>
+    
+<p>Add a Recon Squadron to an Airwing of the manager</p>
+
+<div id= "#Functions##AddReconSquadron" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>TemplateName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the group template.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>SquadName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Squadron name - must be unique!</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>AirbaseName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the airbase the airwing resides on, e.g. AIRBASE.Caucasus.Kutaisi</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>AirFrames</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Number of available airframes, e.g. 20.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Skill</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>optional) Skill level, e.g. AI.Skill.AVERAGE</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Modex</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Modex to be used,e.g. 402.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Livery</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Livery name to be used.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYGCICAP)">#EASYGCICAP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
 
       </div>
     </div>
@@ -5610,12 +5880,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(EASYGCICAP)._AddPatrolPointCAP" ><strong>EASYGCICAP:_AddPatrolPointCAP(AirbaseName, Coordinate, Altitude, Speed, Heading, LegLength)</strong></a></h2>
+<h2><a id="#(EASYGCICAP)._AddReconSquadron" ><strong>EASYGCICAP:_AddReconSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery)</strong></a></h2>
 </div>
     
-<p>(Internal) Add a CAP patrol point to a Wing</p>
+<p>(Internal) Add a Recon Squadron to an Airwing of the manager</p>
 
-<div id= "#Functions##_AddPatrolPointCAP" class="w3-show w3-white">
+<div id= "#Functions##_AddReconSquadron" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -5626,36 +5896,38 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
             <p>
                 #string
+            <strong><strong>TemplateName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the group template.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>SquadName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Squadron name - must be unique!</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
             <strong><strong>AirbaseName</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Name of the Wing's airbase</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
-            <strong><strong>Coordinate</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Altitude</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Defaults to 25000 feet.</p>
+<p>Name of the airbase the airwing resides on, e.g. AIRBASE.Caucasus.Kutaisi</p>
 
           </div>
         </div>
@@ -5663,38 +5935,51 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
             <p>
                 #number
-            <strong><strong>Speed</strong></strong>
+            <strong><strong>AirFrames</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p> Defaults to 300 knots.</p>
+<p>Number of available airframes, e.g. 20.</p>
 
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #number
-            <strong><strong>Heading</strong></strong>
+                #string
+            <strong><strong>Skill</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Defaults to 90 degrees (East).</p>
+<p>optional) Skill level, e.g. AI.Skill.AVERAGE</p>
 
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #number
-            <strong><strong>LegLength</strong></strong>
+                #string
+            <strong><strong>Modex</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Defaults to 15 NM.</p>
+<p>(optional) Modex to be used,e.g. 402.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Livery</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Livery name to be used.</p>
 
           </div>
         </div>
@@ -5705,7 +5990,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       </div>
       <div class="w3-half">
         
-<p>self</p>
+<p>self </p>
 
       </div>
     </div>
@@ -6146,6 +6431,36 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP)._SetReconPatrolPoints" ><strong>EASYGCICAP:_SetReconPatrolPoints()</strong></a></h2>
+</div>
+    
+<p>(Internal) Set actual PatrolPoints from the list</p>
+
+<div id= "#Functions##_SetReconPatrolPoints" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYGCICAP)">#EASYGCICAP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(EASYGCICAP)._SetTankerPatrolPoints" ><strong>EASYGCICAP:_SetTankerPatrolPoints()</strong></a></h2>
 </div>
     
@@ -6522,6 +6837,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #table
 <a id="#(EASYGCICAP).ManagedEWR" ><strong>EASYGCICAP.ManagedEWR</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(EASYGCICAP).ManagedREC" ><strong>EASYGCICAP.ManagedREC</strong></a>
     
 
 
@@ -8322,6 +8648,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #table
 <a id="#(EASYGCICAP).ManagedEWR" ><strong>EASYGCICAP.ManagedEWR</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(EASYGCICAP).ManagedREC" ><strong>EASYGCICAP.ManagedREC</strong></a>
     
 
 
@@ -12131,6 +12468,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 
     #number
 <a id="#(EASYGCICAP.Squad).Modulation" ><strong>EASYGCICAP.Squad.Modulation</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYGCICAP.Squad).RECON" ><strong>EASYGCICAP.Squad.RECON</strong></a>
     
 
 
