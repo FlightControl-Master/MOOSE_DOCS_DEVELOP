@@ -2281,6 +2281,18 @@ started.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRWING).SetCAPFormation">AIRWING:SetCAPFormation(Formation)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set CAP flight formation.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRWING).SetCapCloseRaceTrack">AIRWING:SetCapCloseRaceTrack(OnOff)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set CAP close race track.We'll utilize the AUFTRAG PatrolRaceTrack instead of a standard race track orbit task.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRWING).SetDespawnAfterHolding">AIRWING:SetDespawnAfterHolding(Switch)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set despawn after holding.</p>
@@ -2426,10 +2438,22 @@ started.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRWING).capFormation">AIRWING.capFormation</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>If capOptionPatrolRaceTrack is true, set the formation, also.</p>
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRWING).capOptionPatrolRaceTrack">AIRWING.capOptionPatrolRaceTrack</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Use closer patrol race track or standard orbit auftrag.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRWING).despawnAfterHolding">AIRWING.despawnAfterHolding</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Aircraft are despawned after holding.</p>
-
 </td>
           </tr>
           <tr class="w3-border">
@@ -6149,11 +6173,33 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(AIRWING).capFormation" ><strong>AIRWING.capFormation</strong></a>
+    
+<p>If capOptionPatrolRaceTrack is true, set the formation, also.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AIRWING).capOptionPatrolRaceTrack" ><strong>AIRWING.capOptionPatrolRaceTrack</strong></a>
+    
+<p>Use closer patrol race track or standard orbit auftrag.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(AIRWING).despawnAfterHolding" ><strong>AIRWING.despawnAfterHolding</strong></a>
     
 <p>Aircraft are despawned after holding.</p>
-
 
 </div>
 
@@ -8251,6 +8297,94 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AIRWING).SetCAPFormation" ><strong>AIRWING:SetCAPFormation(Formation)</strong></a></h2>
+</div>
+    
+<p>Set CAP flight formation.</p>
+
+<div id= "#Functions##SetCAPFormation" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRWING</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Formation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Formation to take, e.g. ENUMS.Formation.FixedWing.Trail.Close, also see <a href="https://wiki.hoggitworld.com/view/DCS_option_formation">Hoggit Wiki</a>.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AIRWING)">#AIRWING</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AIRWING).SetCapCloseRaceTrack" ><strong>AIRWING:SetCapCloseRaceTrack(OnOff)</strong></a></h2>
+</div>
+    
+<p>Set CAP close race track.We'll utilize the AUFTRAG PatrolRaceTrack instead of a standard race track orbit task.</p>
+
+<div id= "#Functions##SetCapCloseRaceTrack" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AIRWING</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>OnOff</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true, switch this on, else switch off. Off by default.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AIRWING)">#AIRWING</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AIRWING).SetDespawnAfterHolding" ><strong>AIRWING:SetDespawnAfterHolding(Switch)</strong></a></h2>
 </div>
     
@@ -9431,11 +9565,33 @@ Spawning on runways is not supported.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(AIRWING).capFormation" ><strong>AIRWING.capFormation</strong></a>
+    
+<p>If capOptionPatrolRaceTrack is true, set the formation, also.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AIRWING).capOptionPatrolRaceTrack" ><strong>AIRWING.capOptionPatrolRaceTrack</strong></a>
+    
+<p>Use closer patrol race track or standard orbit auftrag.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(AIRWING).despawnAfterHolding" ><strong>AIRWING.despawnAfterHolding</strong></a>
     
 <p>Aircraft are despawned after holding.</p>
-
 
 </div>
 
@@ -12464,7 +12620,7 @@ Spawning on runways is not supported.</p>
 <p>Recruit assets from Cohorts for the given parameters.</p>
 
     
-<p><strong>NOTE</strong> that we set the <code>asset.isReserved=true</code> flag so it cant be recruited by anyone else.</p>
+<p><strong>NOTE</strong> that we set the <code>asset.isReserved=true</code> flag so it cannot be recruited by anyone else.</p>
 
 <div id= "#Functions##RecruitCohortAssets" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -15710,11 +15866,33 @@ Cohort assets will not be available until relocation is finished.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(AIRWING).capFormation" ><strong>AIRWING.capFormation</strong></a>
+    
+<p>If capOptionPatrolRaceTrack is true, set the formation, also.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AIRWING).capOptionPatrolRaceTrack" ><strong>AIRWING.capOptionPatrolRaceTrack</strong></a>
+    
+<p>Use closer patrol race track or standard orbit auftrag.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(AIRWING).despawnAfterHolding" ><strong>AIRWING.despawnAfterHolding</strong></a>
     
 <p>Aircraft are despawned after holding.</p>
-
 
 </div>
 
@@ -29147,11 +29325,33 @@ this request is used to put the groups back into the warehouse stock.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(AIRWING).capFormation" ><strong>AIRWING.capFormation</strong></a>
+    
+<p>If capOptionPatrolRaceTrack is true, set the formation, also.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AIRWING).capOptionPatrolRaceTrack" ><strong>AIRWING.capOptionPatrolRaceTrack</strong></a>
+    
+<p>Use closer patrol race track or standard orbit auftrag.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(AIRWING).despawnAfterHolding" ><strong>AIRWING.despawnAfterHolding</strong></a>
     
 <p>Aircraft are despawned after holding.</p>
-
 
 </div>
 
@@ -30958,11 +31158,33 @@ this request is used to put the groups back into the warehouse stock.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(AIRWING).capFormation" ><strong>AIRWING.capFormation</strong></a>
+    
+<p>If capOptionPatrolRaceTrack is true, set the formation, also.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AIRWING).capOptionPatrolRaceTrack" ><strong>AIRWING.capOptionPatrolRaceTrack</strong></a>
+    
+<p>Use closer patrol race track or standard orbit auftrag.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(AIRWING).despawnAfterHolding" ><strong>AIRWING.despawnAfterHolding</strong></a>
     
 <p>Aircraft are despawned after holding.</p>
-
 
 </div>
 
