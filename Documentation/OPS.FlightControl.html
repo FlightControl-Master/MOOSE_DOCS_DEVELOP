@@ -1960,7 +1960,7 @@
 <ul>
     <li>Manage aircraft departure and arrival</li>
     <li>Handles AI and human players</li>
-    <li>Limit number of AI groups taxiing, taking off and landing simultaniously</li>
+    <li>Limit number of AI groups taxiing, taking off and landing simultaneously</li>
     <li>Immersive voice overs via SRS text-to-speech</li>
     <li>Define holding patterns for airdromes</li>
 </ul>
@@ -2062,7 +2062,7 @@ tower radio frequency, its modulation and the path, where SRS is located on the 
     <li><code>Length</code> is the length of the pattern.</li>
     <li><code>FlightLevelMin</code> is the lowest altitude at which aircraft can hold.</li>
     <li><code>FlightLevelMax</code> is the highest altitude at which aircraft can hold.</li>
-    <li><code>Prio</code> is the priority of this holdig stacks. If multiple patterns are defined, patterns with higher prio will be filled first.</li>
+    <li><code>Prio</code> is the priority of this holding stacks. If multiple patterns are defined, patterns with higher prio will be filled first.</li>
 </ul>
 
 <h1>Parking Guard</h1>
@@ -2078,13 +2078,13 @@ somewhere in the mission editor.</p>
 
 <h1>Limits for Inbound and Outbound Flights</h1>
 
-<p>You can define limits on how many aircraft are simultaniously landing and taking off. This avoids (DCS) problems where taxiing aircraft cause a "traffic jam" on the taxi way(s)
+<p>You can define limits on how many aircraft are simultaneously landing and taking off. This avoids (DCS) problems where taxiing aircraft cause a "traffic jam" on the taxi way(s)
 and bring the whole airbase effectively to a stand still.</p>
 
 <h2>Landing Limits</h2>
 
 <p>The number of groups getting landing clearance can be set with the <a href="##(FLIGHTCONTROL).SetLimitLanding">FLIGHTCONTROL.SetLimitLanding</a>(<em>Nlanding, Ntakeoff</em>) function. 
-The first parameter, <code>Nlanding</code>, defines how many groups get clearance simultaniously.</p>
+The first parameter, <code>Nlanding</code>, defines how many groups get clearance simultaneously.</p>
 
 <p>The second parameter, <code>Ntakeoff</code>, sets a limit on how many flights can take off whilst inbound flights still get clearance. By default, this is set to zero because the runway can only be used for takeoff <em>or</em>
 landing. So if you have a flight taking off, inbound fights will have to wait until the runway is clear. 
@@ -2096,7 +2096,7 @@ the next flight get clearance. This only has an effect if <code>Nlanding</code> 
 <h2>Taxiing/Takeoff Limits</h2>
 
 <p>The number of AI flight groups getting clearance to taxi to the runway can be set with the <a href="##(FLIGHTCONTROL).SetLimitTaxi">FLIGHTCONTROL.SetLimitTaxi</a>(<em>Nlanding, Ntakeoff</em>) function. 
-The first parameter, <code>Ntaxi</code>, defines how many groups are allowed to taxi to the runway simultaniously. Note that once the AI starts to taxi, we loose complete control over it.
+The first parameter, <code>Ntaxi</code>, defines how many groups are allowed to taxi to the runway simultaneously. Note that once the AI starts to taxi, we loose complete control over it.
 They will follow their internal logic to get the the runway and take off. Therefore, giving clearance to taxi is equivalent to giving them clearance for takeoff.</p>
 
 <p>By default, the parameter only counts the number of flights taxiing <em>to</em> the runway. If you set the second parameter, <code>IncludeInbound</code>, to <code>true</code>, this will also count the flights
@@ -2179,9 +2179,9 @@ local atcNellis=FLIGHTCONTROL:New(AIRBASE.Nevada.Nellis_AFB, 251, nil, "D:\\My S
 atcNellis:SetParkingGuardStatic("Static Generator F Template")
 -- Set taxi speed limit to 25 knots.
 atcNellis:SetSpeedLimitTaxi(25)
--- Set that max 3 groups are allowed to taxi simultaniously.
+-- Set that max 3 groups are allowed to taxi simultaneously.
 atcNellis:SetLimitTaxi(3, false, 1)
--- Set that max 2 groups are allowd to land simultaniously and unlimited number (99) groups can land, while other groups are taking off.
+-- Set that max 2 groups are allowd to land simultaneously and unlimited number (99) groups can land, while other groups are taking off.
 atcNellis:SetLimitLanding(2, 99)
 -- Use Google for text-to-speech.
 atcNellis:SetSRSTower(nil, nil, "en-AU-Standard-A", nil, nil, "D:\\Path To Google\\GoogleCredentials.json")
@@ -2543,13 +2543,13 @@ atcNellis:Start()
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTCONTROL).SetLimitLanding">FLIGHTCONTROL:SetLimitLanding(Nlanding, Ntakeoff)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set the number of aircraft groups, that are allowed to land simultaniously.</p>
+<p>Set the number of aircraft groups, that are allowed to land simultaneously.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTCONTROL).SetLimitTaxi">FLIGHTCONTROL:SetLimitTaxi(Ntaxi, IncludeInbound, Nlanding)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set the number of <strong>AI</strong> aircraft groups, that are allowed to taxi simultaniously.</p>
+<p>Set the number of <strong>AI</strong> aircraft groups, that are allowed to taxi simultaneously.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2652,6 +2652,18 @@ atcNellis:Start()
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTCONTROL).Stop">FLIGHTCONTROL:Stop()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "Stop".</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTCONTROL).SwitchSubtitlesOff">FLIGHTCONTROL:SwitchSubtitlesOff()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set subtitles to appear on SRS TTS messages.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTCONTROL).SwitchSubtitlesOn">FLIGHTCONTROL:SwitchSubtitlesOn()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set subtitles to appear on SRS TTS messages.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3168,6 +3180,12 @@ atcNellis:Start()
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTCONTROL).msrsqueue">FLIGHTCONTROL.msrsqueue</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Queue for TTS transmissions using MSRS class.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTCONTROL).nosubs">FLIGHTCONTROL.nosubs</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>If <code>true</code>, SRS TTS is without subtitles.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4768,6 +4786,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(FLIGHTCONTROL).msrsqueue" ><strong>FLIGHTCONTROL.msrsqueue</strong></a>
     
 <p>Queue for TTS transmissions using MSRS class.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(FLIGHTCONTROL).nosubs" ><strong>FLIGHTCONTROL.nosubs</strong></a>
+    
+<p>If <code>true</code>, SRS TTS is without subtitles.</p>
 
 </div>
 
@@ -6850,7 +6879,7 @@ callsigns from playername or group name.</p>
 <h2><a id="#(FLIGHTCONTROL).SetLimitLanding" ><strong>FLIGHTCONTROL:SetLimitLanding(Nlanding, Ntakeoff)</strong></a></h2>
 </div>
     
-<p>Set the number of aircraft groups, that are allowed to land simultaniously.</p>
+<p>Set the number of aircraft groups, that are allowed to land simultaneously.</p>
 
     
 <p>Note that this restricts AI and human players.</p>
@@ -6859,7 +6888,7 @@ callsigns from playername or group name.</p>
 This</p>
 
 <p>By default, landing clearance is only given when <strong>no</strong> other flight is taking off. You can adjust this for airports with more than one runway or 
-in cases where simulatious takeoffs and landings are unproblematic. Note that only because there are multiple runways, it does not mean the AI uses them.
+in cases where simultaneous takeoffs and landings are unproblematic. Note that only because there are multiple runways, it does not mean the AI uses them.
  </p>
 
 <div id= "#Functions##SetLimitLanding" class="w3-show w3-white">
@@ -6878,7 +6907,7 @@ in cases where simulatious takeoffs and landings are unproblematic. Note that on
           </div>
           <div class="w3-half">
               
-<p>Max number of aircraft landing simultaniously. Default 2.</p>
+<p>Max number of aircraft landing simultaneously. Default 2.</p>
 
           </div>
         </div>
@@ -6917,7 +6946,7 @@ in cases where simulatious takeoffs and landings are unproblematic. Note that on
 <h2><a id="#(FLIGHTCONTROL).SetLimitTaxi" ><strong>FLIGHTCONTROL:SetLimitTaxi(Ntaxi, IncludeInbound, Nlanding)</strong></a></h2>
 </div>
     
-<p>Set the number of <strong>AI</strong> aircraft groups, that are allowed to taxi simultaniously.</p>
+<p>Set the number of <strong>AI</strong> aircraft groups, that are allowed to taxi simultaneously.</p>
 
     
 <p>If the limit is reached, other AI groups not get taxi clearance to taxi to the runway.</p>
@@ -7285,7 +7314,7 @@ You need to input the value. On the DCS forum it was stated that this is current
           </div>
           <div class="w3-half">
               
-<p>Time in seconds until the runway is repaired. Default 3600 sec (one hour).</p>
+<p>Time in seconds until the runway is repaired. Default 3600sec (one hour).</p>
 
           </div>
         </div>
@@ -7381,7 +7410,7 @@ You need to input the value. On the DCS forum it was stated that this is current
           </div>
           <div class="w3-half">
               
-<p>Name under which SRS transmitts. Default "Pilot".</p>
+<p>Name under which SRS transmits. Default "Pilot".</p>
 
           </div>
         </div>
@@ -7534,7 +7563,7 @@ You need to input the value. On the DCS forum it was stated that this is current
           </div>
           <div class="w3-half">
               
-<p>Name under which SRS transmitts. Default <code>self.alias</code>.</p>
+<p>Name under which SRS transmits. Default <code>self.alias</code>.</p>
 
           </div>
         </div>
@@ -7740,6 +7769,66 @@ You need to input the value. On the DCS forum it was stated that this is current
    <div class="w3-margin-left">
 <p>FLIGHTCONTROL</p>
 </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FLIGHTCONTROL).SwitchSubtitlesOff" ><strong>FLIGHTCONTROL:SwitchSubtitlesOff()</strong></a></h2>
+</div>
+    
+<p>Set subtitles to appear on SRS TTS messages.</p>
+
+<div id= "#Functions##SwitchSubtitlesOff" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>FLIGHTCONTROL</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FLIGHTCONTROL)">#FLIGHTCONTROL</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FLIGHTCONTROL).SwitchSubtitlesOn" ><strong>FLIGHTCONTROL:SwitchSubtitlesOn()</strong></a></h2>
+</div>
+    
+<p>Set subtitles to appear on SRS TTS messages.</p>
+
+<div id= "#Functions##SwitchSubtitlesOn" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>FLIGHTCONTROL</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FLIGHTCONTROL)">#FLIGHTCONTROL</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
@@ -9996,7 +10085,7 @@ You need to input the value. On the DCS forum it was stated that this is current
           </div>
           <div class="w3-half">
               
-<p>Name under which SRS transmitts.</p>
+<p>Name under which SRS transmits.</p>
 
           </div>
         </div>
@@ -10896,6 +10985,17 @@ You need to input the value. On the DCS forum it was stated that this is current
 <a id="#(FLIGHTCONTROL).msrsqueue" ><strong>FLIGHTCONTROL.msrsqueue</strong></a>
     
 <p>Queue for TTS transmissions using MSRS class.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(FLIGHTCONTROL).nosubs" ><strong>FLIGHTCONTROL.nosubs</strong></a>
+    
+<p>If <code>true</code>, SRS TTS is without subtitles.</p>
 
 </div>
 
@@ -12795,6 +12895,17 @@ You need to input the value. On the DCS forum it was stated that this is current
 <a id="#(FLIGHTCONTROL).msrsqueue" ><strong>FLIGHTCONTROL.msrsqueue</strong></a>
     
 <p>Queue for TTS transmissions using MSRS class.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(FLIGHTCONTROL).nosubs" ><strong>FLIGHTCONTROL.nosubs</strong></a>
+    
+<p>If <code>true</code>, SRS TTS is without subtitles.</p>
 
 </div>
 
