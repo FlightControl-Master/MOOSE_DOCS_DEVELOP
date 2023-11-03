@@ -4369,7 +4369,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).SetSRS">PLAYERTASKCONTROLLER:SetSRS(Frequency, Modulation, PathToSRS, Gender, Culture, Port, Voice, Volume, PathToGoogleKey)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).SetSRS">PLAYERTASKCONTROLLER:SetSRS(Frequency, Modulation, PathToSRS, Gender, Culture, Port, Voice, Volume, PathToGoogleKey, Coordinate)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Set SRS TTS details - see <a href="Sound.SRS.html">Sound.SRS</a> for details</p>
 </td>
@@ -15081,7 +15081,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
@@ -15149,17 +15149,6 @@ When moose is loading dynamically (for moose class development), tracing is swit
 
     #boolean
 <a id="#(PLAYERTASKCONTROLLER).repeatonfailed" ><strong>PLAYERTASKCONTROLLER.repeatonfailed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(PLAYERTASKCONTROLLER).repeattimes" ><strong>PLAYERTASKCONTROLLER.repeattimes</strong></a>
     
 
 
@@ -17910,7 +17899,7 @@ If you want to e.g. exclude AAA, so target groups with this attribute are assign
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(PLAYERTASKCONTROLLER).SetSRS" ><strong>PLAYERTASKCONTROLLER:SetSRS(Frequency, Modulation, PathToSRS, Gender, Culture, Port, Voice, Volume, PathToGoogleKey)</strong></a></h2>
+<h2><a id="#(PLAYERTASKCONTROLLER).SetSRS" ><strong>PLAYERTASKCONTROLLER:SetSRS(Frequency, Modulation, PathToSRS, Gender, Culture, Port, Voice, Volume, PathToGoogleKey, Coordinate)</strong></a></h2>
 </div>
     
 <p>[User] Set SRS TTS details - see <a href="Sound.SRS.html">Sound.SRS</a> for details</p>
@@ -18037,6 +18026,19 @@ Note that this must be installed on your windows system. Can also be Google voic
           <div class="w3-half">
               
 <p>(Optional) Path to your google key if you want to use google TTS</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>Coordinate</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Coordinate from which the controller radio is sending</p>
 
           </div>
         </div>
@@ -21305,7 +21307,7 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
@@ -21373,17 +21375,6 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 
     #boolean
 <a id="#(PLAYERTASKCONTROLLER).repeatonfailed" ><strong>PLAYERTASKCONTROLLER.repeatonfailed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(PLAYERTASKCONTROLLER).repeattimes" ><strong>PLAYERTASKCONTROLLER.repeattimes</strong></a>
     
 
 
@@ -23655,7 +23646,7 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
@@ -23723,17 +23714,6 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 
     #boolean
 <a id="#(PLAYERTASKCONTROLLER).repeatonfailed" ><strong>PLAYERTASKCONTROLLER.repeatonfailed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(PLAYERTASKCONTROLLER).repeattimes" ><strong>PLAYERTASKCONTROLLER.repeattimes</strong></a>
     
 
 
