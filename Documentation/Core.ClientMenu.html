@@ -2911,6 +2911,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).Coalition">CLIENTMENUMANAGER.Coalition</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).DeleteF10Entry">CLIENTMENUMANAGER:DeleteF10Entry(Entry, Client)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Remove the entry and all entries below the given entry from the client's F10 menus.</p>
@@ -2959,7 +2965,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).New">CLIENTMENUMANAGER:New(ClientSet, Alias)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).InitAutoPropagation">CLIENTMENUMANAGER:InitAutoPropagation()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set this Client Manager to auto-propagate menus to newly joined players.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).New">CLIENTMENUMANAGER:New(ClientSet, Alias, Coalition)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Create a new ClientManager instance.</p>
 </td>
@@ -2968,6 +2980,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).NewEntry">CLIENTMENUMANAGER:NewEntry(Text, Parent, Function, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Create a new entry in the generic structure.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).PlayerMenu">CLIENTMENUMANAGER.PlayerMenu</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -2998,6 +3016,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).ResetMenuComplete">CLIENTMENUMANAGER:ResetMenuComplete()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Blank out the menu - remove <strong>all root entries</strong> and all entries below from all clients' F10 menus, and <strong>delete</strong> the generic structure.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER)._EventHandler">CLIENTMENUMANAGER:_EventHandler(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[Internal] Event handling</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -7916,6 +7940,28 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(CLIENTMENUMANAGER).Coalition" ><strong>CLIENTMENUMANAGER.Coalition</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(CLIENTMENUMANAGER).PlayerMenu" ><strong>CLIENTMENUMANAGER.PlayerMenu</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="Core.Set.html##(SET_CLIENT)">Core.Set#SET_CLIENT</a>
 <a id="#(CLIENTMENUMANAGER).clientset" ><strong>CLIENTMENUMANAGER.clientset</strong></a>
     
@@ -8584,7 +8630,40 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CLIENTMENUMANAGER).New" ><strong>CLIENTMENUMANAGER:New(ClientSet, Alias)</strong></a></h2>
+<h2><a id="#(CLIENTMENUMANAGER).InitAutoPropagation" ><strong>CLIENTMENUMANAGER:InitAutoPropagation()</strong></a></h2>
+</div>
+    
+<p>Set this Client Manager to auto-propagate menus to newly joined players.</p>
+
+    
+<p>Useful if you have <strong>one</strong> menu structure only.</p>
+
+<div id= "#Functions##InitAutoPropagation" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CLIENTMENUMANAGER</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(CLIENTMENUMANAGER)">#CLIENTMENUMANAGER</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CLIENTMENUMANAGER).New" ><strong>CLIENTMENUMANAGER:New(ClientSet, Alias, Coalition)</strong></a></h2>
 </div>
     
 <p>Create a new ClientManager instance.</p>
@@ -8619,6 +8698,19 @@ When moose is loading dynamically (for moose class development), tracing is swit
           <div class="w3-half">
               
 <p>The name of this manager.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Coalition</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Coalition of this Manager, defaults to coalition.side.BLUE</p>
 
           </div>
         </div>
@@ -8939,6 +9031,48 @@ When moose is loading dynamically (for moose class development), tracing is swit
 </div>
 </div>
 
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CLIENTMENUMANAGER)._EventHandler" ><strong>CLIENTMENUMANAGER:_EventHandler(EventData)</strong></a></h2>
+</div>
+    
+<p>[Internal] Event handling</p>
+
+<div id= "#Functions##_EventHandler" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CLIENTMENUMANAGER</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+            <strong><strong>EventData</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(CLIENTMENUMANAGER)">#CLIENTMENUMANAGER</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
 <div class="fields w3-container w3-theme-l2">
   <h2>Field(s)</h2>
 </div>
@@ -8949,6 +9083,28 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(CLIENTMENUMANAGER).ClassName" ><strong>CLIENTMENUMANAGER.ClassName</strong></a>
     
 <p>Class Name</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CLIENTMENUMANAGER).Coalition" ><strong>CLIENTMENUMANAGER.Coalition</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(CLIENTMENUMANAGER).PlayerMenu" ><strong>CLIENTMENUMANAGER.PlayerMenu</strong></a>
+    
+
 
 </div>
 
