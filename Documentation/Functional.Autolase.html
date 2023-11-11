@@ -2264,12 +2264,6 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).OnEventPlayerEnterAircraft">AUTOLASE:OnEventPlayerEnterAircraft(EventData)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) Event function for new pilots.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).PathToGoogleKey">AUTOLASE.PathToGoogleKey</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -2348,6 +2342,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetLaserCodes">AUTOLASE:SetLaserCodes(LaserCodes)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[User] Set a table of possible laser codes.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetLaserCoolDown">AUTOLASE:SetLaserCoolDown(OnOff, Seconds)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(User) Function to force laser cooldown and cool down time</p>
@@ -2384,7 +2384,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetRecceLaserCode">AUTOLASE:SetRecceLaserCode(RecceName, Code)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetRecceLaserCode">AUTOLASE:SetRecceLaserCode(RecceName, Code, Refresh)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(User) Function to set a specific code to a Recce.</p>
 </td>
@@ -2441,6 +2441,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).Volume">AUTOLASE.Volume</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE)._EventHandler">AUTOLASE:_EventHandler(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(Internal) Event function for new pilots.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2571,6 +2577,12 @@
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).pilotset">AUTOLASE.pilotset</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).playermenus">AUTOLASE.playermenus</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -2714,7 +2726,7 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(AUTOLASE).CurrentLasing" ><strong>AUTOLASE.CurrentLasing</strong></a>
     
 
@@ -2791,7 +2803,7 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(AUTOLASE).GroupsByThreat" ><strong>AUTOLASE.GroupsByThreat</strong></a>
     
 
@@ -2804,6 +2816,28 @@
 
     
 <a id="#(AUTOLASE).Label" ><strong>AUTOLASE.Label</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AUTOLASE).LaseDistance" ><strong>AUTOLASE.LaseDistance</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AUTOLASE).LaseDuration" ><strong>AUTOLASE.LaseDuration</strong></a>
     
 
 
@@ -2937,6 +2971,39 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(AUTOLASE).SRSFreq" ><strong>AUTOLASE.SRSFreq</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AUTOLASE).SRSMod" ><strong>AUTOLASE.SRSMod</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AUTOLASE).SRSPath" ><strong>AUTOLASE.SRSPath</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
 <a id="#(AUTOLASE).SRSQueue" ><strong>AUTOLASE.SRSQueue</strong></a>
     
@@ -2948,7 +3015,7 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(AUTOLASE).UnitsByThreat" ><strong>AUTOLASE.UnitsByThreat</strong></a>
     
 
@@ -3003,8 +3070,41 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(AUTOLASE).cooldowntime" ><strong>AUTOLASE.cooldowntime</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(AUTOLASE).deadunitnotes" ><strong>AUTOLASE.deadunitnotes</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AUTOLASE).forcecooldown" ><strong>AUTOLASE.forcecooldown</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AUTOLASE).lasingindex" ><strong>AUTOLASE.lasingindex</strong></a>
     
 
 
@@ -3029,7 +3129,29 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(AUTOLASE).maxlasing" ><strong>AUTOLASE.maxlasing</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
 <a id="#(AUTOLASE).minthreatlevel" ><strong>AUTOLASE.minthreatlevel</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AUTOLASE).notifypilots" ><strong>AUTOLASE.notifypilots</strong></a>
     
 
 
@@ -3041,6 +3163,39 @@
 
     
 <a id="#(AUTOLASE).pilotset" ><strong>AUTOLASE.pilotset</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(AUTOLASE).playermenus" ><strong>AUTOLASE.playermenus</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AUTOLASE).reporttimelong" ><strong>AUTOLASE.reporttimelong</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AUTOLASE).reporttimeshort" ><strong>AUTOLASE.reporttimeshort</strong></a>
     
 
 
@@ -3072,7 +3227,7 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(AUTOLASE).targetsperrecce" ><strong>AUTOLASE.targetsperrecce</strong></a>
     
 
@@ -4047,12 +4202,15 @@ Step 2 - send a message, e.g.
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).OnEventPlayerEnterAircraft" ><strong>AUTOLASE:OnEventPlayerEnterAircraft(EventData)</strong></a></h2>
+<h2><a id="#(AUTOLASE).SetLaserCodes" ><strong>AUTOLASE:SetLaserCodes(LaserCodes)</strong></a></h2>
 </div>
     
-<p>(Internal) Event function for new pilots.</p>
+<p>[User] Set a table of possible laser codes.</p>
 
-<div id= "#Functions##OnEventPlayerEnterAircraft" class="w3-show w3-white">
+    
+<p>Each new RECCE can select a code from this table, default is { 1688, 1130, 4785, 6547, 1465, 4578 } .</p>
+
+<div id= "#Functions##SetLaserCodes" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -4062,8 +4220,8 @@ Step 2 - send a message, e.g.
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
-            <strong><strong>EventData</strong></strong>
+                #list&lt;#number&gt;
+            <strong><strong>LaserCodes</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -4077,7 +4235,7 @@ Step 2 - send a message, e.g.
       </div>
       <div class="w3-half">
         
-<p>self </p>
+
 
       </div>
     </div>
@@ -4369,7 +4527,7 @@ Step 2 - send a message, e.g.
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).SetRecceLaserCode" ><strong>AUTOLASE:SetRecceLaserCode(RecceName, Code)</strong></a></h2>
+<h2><a id="#(AUTOLASE).SetRecceLaserCode" ><strong>AUTOLASE:SetRecceLaserCode(RecceName, Code, Refresh)</strong></a></h2>
 </div>
     
 <p>(User) Function to set a specific code to a Recce.</p>
@@ -4404,6 +4562,19 @@ Step 2 - send a message, e.g.
           <div class="w3-half">
               
 <p>The lase code</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Refresh</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true, refresh menu entries</p>
 
           </div>
         </div>
@@ -4631,7 +4802,7 @@ Step 2 - send a message, e.g.
           </div>
           <div class="w3-half">
               
-<p>Path to SRS directory, e.g. C:\Program Files\DCS-SimpleRadio-Standalon</p>
+<p>Path to SRS directory, e.g. C:\Program Files\DCS-SimpleRadio-Standalone</p>
 
           </div>
         </div>
@@ -4840,6 +5011,48 @@ Note that this must be installed on your windows system. Can also be Google voic
    <div class="w3-margin-left">
 <p>AUTOLASE</p>
 </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUTOLASE)._EventHandler" ><strong>AUTOLASE:_EventHandler(EventData)</strong></a></h2>
+</div>
+    
+<p>(Internal) Event function for new pilots.</p>
+
+<div id= "#Functions##_EventHandler" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUTOLASE</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+            <strong><strong>EventData</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
 </div>
 
 </div>
