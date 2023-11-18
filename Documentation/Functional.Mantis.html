@@ -2275,7 +2275,7 @@ in the mission editor are absolute maximum ranges; in-game this is rather 50-75%
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).AddScootZones">MANTIS:AddScootZones(ZoneSet, Number)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).AddScootZones">MANTIS:AddScootZones(ZoneSet, Number, Random, Formation)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add a SET_ZONE of zones for Shoot&amp;Scoot - SHORAD units will move around</p>
 </td>
@@ -2528,6 +2528,18 @@ in the mission editor are absolute maximum ranges; in-game this is rather 50-75%
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).SamType">MANTIS.SamType</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).ScootFormation">MANTIS.ScootFormation</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).ScootRandom">MANTIS.ScootRandom</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -4296,6 +4308,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(MANTIS).AWACS_Prefix" ><strong>MANTIS.AWACS_Prefix</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
 <a id="#(MANTIS).Adv_EWR_Group" ><strong>MANTIS.Adv_EWR_Group</strong></a>
     
@@ -4450,7 +4473,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Long" ><strong>MANTIS.SAM_Table_Long</strong></a>
     
 
@@ -4461,7 +4484,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Medium" ><strong>MANTIS.SAM_Table_Medium</strong></a>
     
 
@@ -4472,7 +4495,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Short" ><strong>MANTIS.SAM_Table_Short</strong></a>
     
 
@@ -4554,6 +4577,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     <a href="##(MANTIS.SamType)">#MANTIS.SamType</a>
 <a id="#(MANTIS).SamType" ><strong>MANTIS.SamType</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MANTIS).ScootRandom" ><strong>MANTIS.ScootRandom</strong></a>
     
 
 
@@ -4926,9 +4960,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     
 
 
-    
-<p> switch alarm state RED</p>
-
 </div>
 
 </div>   
@@ -4975,7 +5006,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(MANTIS).AddScootZones" ><strong>MANTIS:AddScootZones(ZoneSet, Number)</strong></a></h2>
+<h2><a id="#(MANTIS).AddScootZones" ><strong>MANTIS:AddScootZones(ZoneSet, Number, Random, Formation)</strong></a></h2>
 </div>
     
 <p>Add a SET_ZONE of zones for Shoot&amp;Scoot - SHORAD units will move around</p>
@@ -5010,6 +5041,32 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>Number of closest zones to be considered, defaults to 3.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Random</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true, use a random coordinate inside the next zone to scoot to.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Formation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Formation to use, defaults to "Cone". See mission editor dropdown for options.</p>
 
           </div>
         </div>
@@ -8882,6 +8939,17 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(MANTIS).AWACS_Prefix" ><strong>MANTIS.AWACS_Prefix</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
 <a id="#(MANTIS).Adv_EWR_Group" ><strong>MANTIS.Adv_EWR_Group</strong></a>
     
@@ -9036,7 +9104,7 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Long" ><strong>MANTIS.SAM_Table_Long</strong></a>
     
 
@@ -9047,7 +9115,7 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Medium" ><strong>MANTIS.SAM_Table_Medium</strong></a>
     
 
@@ -9058,7 +9126,7 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Short" ><strong>MANTIS.SAM_Table_Short</strong></a>
     
 
@@ -9140,6 +9208,17 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 
     <a href="##(MANTIS.SamType)">#MANTIS.SamType</a>
 <a id="#(MANTIS).SamType" ><strong>MANTIS.SamType</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(MANTIS).ScootRandom" ><strong>MANTIS.ScootRandom</strong></a>
     
 
 
@@ -9511,9 +9590,6 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <a id="#(MANTIS).state2flag" ><strong>MANTIS.state2flag</strong></a>
     
 
-
-    
-<p> switch alarm state RED</p>
 
 </div>
 
