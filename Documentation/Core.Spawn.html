@@ -2509,6 +2509,12 @@ and any spaces before and after the resulting name are removed.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).InitRandomizeCallsign">SPAWN:InitRandomizeCallsign()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[AIR/Fighter only!] This method randomizes the callsign for a new group.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).InitRandomizePosition">SPAWN:InitRandomizePosition(RandomizePosition, OuterRadius, InnerRadius)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Randomizes the position of <a href="Wrapper.Group.html">Wrapper.Group</a>s that are spawned within a <strong>radius band</strong>, given an Outer and Inner radius, from the point that the spawn happens.</p>
@@ -2973,6 +2979,12 @@ and any spaces before and after the resulting name are removed.</p>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).SpawnOuterRadius">SPAWN.SpawnOuterRadius</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).SpawnRandomCallsign">SPAWN.SpawnRandomCallsign</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -3846,10 +3858,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #boolean
 <a id="#(SPAWN).AIOnOff" ><strong>SPAWN.AIOnOff</strong></a>
     
 
+
+    
+<p> The AI is on by default when spawning a group.</p>
 
 </div>
 
@@ -3885,7 +3900,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
 
     
-<p> No intial delay when spawning the first group.</p>
+<p> No initial delay when spawning the first group.</p>
 
 </div>
 
@@ -3984,20 +3999,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(SPAWN).SpawnCount" ><strong>SPAWN.SpawnCount</strong></a>
-    
-
-
-    
-<p> The internal counter of the amount of spawning the has happened since SpawnStart.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(SPAWN).SpawnFromNewPosition" ><strong>SPAWN.SpawnFromNewPosition</strong></a>
     
@@ -4022,6 +4023,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <a id="#(SPAWN).SpawnFunctionHook" ><strong>SPAWN.SpawnFunctionHook</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).SpawnGrouping" ><strong>SPAWN.SpawnGrouping</strong></a>
     
 
 
@@ -4178,20 +4190,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
-<a id="#(SPAWN).SpawnInitKeepUnitNames" ><strong>SPAWN.SpawnInitKeepUnitNames</strong></a>
-    
-
-
-    
-<p> Overwrite unit names by default with group name.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
 <a id="#(SPAWN).SpawnInitLimit" ><strong>SPAWN.SpawnInitLimit</strong></a>
     
 
@@ -4270,6 +4268,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <p> The maximum amount of groups that can be alive of SpawnTemplatePrefix at the same time.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(SPAWN).SpawnRandomCallsign" ><strong>SPAWN.SpawnRandomCallsign</strong></a>
+    
+
 
 </div>
 
@@ -4416,17 +4425,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
-<a id="#(SPAWN).SpawnUnControlled" ><strong>SPAWN.SpawnUnControlled</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
 <a id="#(SPAWN).SpawnUnitsWithAbsolutePositions" ><strong>SPAWN.SpawnUnitsWithAbsolutePositions</strong></a>
     
 
@@ -4454,7 +4452,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
 
     
-<p> Flag that indicates if all the Groups of the SpawnGroup need to be visible when Spawned.</p>
+<p> When the first Spawn executes, all the Groups need to be made visible before start.</p>
 
 </div>
 
@@ -6074,6 +6072,36 @@ This parameter accepts the value 0, which defines that there are no maximum grou
 
           </div>
         </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(SPAWN)">#SPAWN</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SPAWN).InitRandomizeCallsign" ><strong>SPAWN:InitRandomizeCallsign()</strong></a></h2>
+</div>
+    
+<p>[AIR/Fighter only!] This method randomizes the callsign for a new group.</p>
+
+<div id= "#Functions##InitRandomizeCallsign" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>SPAWN</p>
+</div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -9657,10 +9685,13 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #boolean
 <a id="#(SPAWN).AIOnOff" ><strong>SPAWN.AIOnOff</strong></a>
     
 
+
+    
+<p> The AI is on by default when spawning a group.</p>
 
 </div>
 
@@ -9696,7 +9727,7 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 
 
     
-<p> No intial delay when spawning the first group.</p>
+<p> No initial delay when spawning the first group.</p>
 
 </div>
 
@@ -9795,20 +9826,6 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(SPAWN).SpawnCount" ><strong>SPAWN.SpawnCount</strong></a>
-    
-
-
-    
-<p> The internal counter of the amount of spawning the has happened since SpawnStart.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(SPAWN).SpawnFromNewPosition" ><strong>SPAWN.SpawnFromNewPosition</strong></a>
     
@@ -9833,6 +9850,17 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 
     
 <a id="#(SPAWN).SpawnFunctionHook" ><strong>SPAWN.SpawnFunctionHook</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).SpawnGrouping" ><strong>SPAWN.SpawnGrouping</strong></a>
     
 
 
@@ -9989,20 +10017,6 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
-<a id="#(SPAWN).SpawnInitKeepUnitNames" ><strong>SPAWN.SpawnInitKeepUnitNames</strong></a>
-    
-
-
-    
-<p> Overwrite unit names by default with group name.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
 <a id="#(SPAWN).SpawnInitLimit" ><strong>SPAWN.SpawnInitLimit</strong></a>
     
 
@@ -10081,6 +10095,17 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 
     
 <p> The maximum amount of groups that can be alive of SpawnTemplatePrefix at the same time.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(SPAWN).SpawnRandomCallsign" ><strong>SPAWN.SpawnRandomCallsign</strong></a>
+    
+
 
 </div>
 
@@ -10227,17 +10252,6 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
-<a id="#(SPAWN).SpawnUnControlled" ><strong>SPAWN.SpawnUnControlled</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
 <a id="#(SPAWN).SpawnUnitsWithAbsolutePositions" ><strong>SPAWN.SpawnUnitsWithAbsolutePositions</strong></a>
     
 
@@ -10265,7 +10279,7 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 
 
     
-<p> Flag that indicates if all the Groups of the SpawnGroup need to be visible when Spawned.</p>
+<p> When the first Spawn executes, all the Groups need to be made visible before start.</p>
 
 </div>
 
