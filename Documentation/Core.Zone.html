@@ -2185,7 +2185,7 @@ without much scripting overhead!!!</p>
 <h2>A zone might have additional Properties created in the DCS Mission Editor, which can be accessed:</h2>
 
 <p>  *<a href="##(ZONE_BASE).GetProperty">ZONE_BASE.GetProperty</a>(): Returns the Value of the zone with the given PropertyName, or nil if no matching property exists.
-  *<a href="##(ZONE_BASE).GetAllProperties">ZONE_BASE.GetAllProperties</a>(): Returns the zone Properties table.  </p>
+  *<a href="##(ZONE_BASE).GetAllProperties">ZONE_BASE.GetAllProperties</a>(): Returns the zone Properties table.</p>
 
 
 </div>
@@ -2241,25 +2241,22 @@ This class implements the inherited functions from <a href="##(ZONE_RADIUS)">#ZO
 
   </div>
   <div class="w3-theme-d2 w3-margin-top ">
-    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##ZONE_POLYGON')">
+    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##ZONE_OVAL')">
       <tr>
-        <td class="style="width:40%;"><p><h2>Global <strong>ZONE_POLYGON</strong></h2></p></td>
+        <td class="style="width:40%;"><p><h2>Global <strong>ZONE_OVAL</strong></h2></p></td>
         <td class="style="width:60%;">
 
 </td>
       </tr>
     </table>
   </div>
-  <div id= "#Globals##ZONE_POLYGON" class="w3-container w3-white w3-padding-small">
+  <div id= "#Globals##ZONE_OVAL" class="w3-container w3-white w3-padding-small">
     <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #table
-<a id="ZONE_POLYGON" ><strong>ZONE_POLYGON</strong></a>
+<a id="ZONE_OVAL" ><strong>ZONE_OVAL</strong></a>
     
 
-
-    
-<p> @field #ZONE_POLYGON</p>
 
 </div>
 
@@ -2823,7 +2820,7 @@ This class is an abstract BASE class for derived classes, and is not meant to be
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ZONE_BASE).__TriggerStop">ZONE_BASE:__TriggerStop(delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Triggers the FSM event "TriggerStop" after a delay. </p>
+<p>Triggers the FSM event "TriggerStop" after a delay.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3815,6 +3812,49 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         </table>
         </div>
 
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(ZONE_OVAL)">Type <strong>ZONE_OVAL</strong></a></h2></div>
+         <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
+     <strong><a href="##(ZONE_OVAL)">ZONE_OVAL</a></strong>
+   </div>
+        <div class="w3-card w3-margin">
+        <table class="w3-table w3-border-bottom w3-border-theme-l2">
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from ZONE_OVAL</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ZONE_OVAL).Angle">ZONE_OVAL.Angle</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ZONE_OVAL).CenterVec2">ZONE_OVAL.CenterVec2</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ZONE_OVAL).DrawPoly">ZONE_OVAL.DrawPoly</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ZONE_OVAL).MajorAxis">ZONE_OVAL.MajorAxis</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ZONE_OVAL).MinorAxis">ZONE_OVAL.MinorAxis</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+        </table>
+        </div>
+
       <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(ZONE_POLYGON)">Type <strong>ZONE_POLYGON</strong></a></h2></div>
          <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
      <strong><a href="##(ZONE_POLYGON)">ZONE_POLYGON</a></strong>
@@ -3897,7 +3937,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ZONE_POLYGON_BASE).GetRadius">ZONE_POLYGON_BASE:GetRadius()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Get the smallest radius encompassing all points of the polygon zone. </p>
+<p>Get the smallest radius encompassing all points of the polygon zone.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3975,13 +4015,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ZONE_POLYGON_BASE).GetZoneQuad">ZONE_POLYGON_BASE:GetZoneQuad(ZoneName, DoNotRegisterZone)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Get the smallest rectangular zone encompassing all points points of the polygon zone. </p>
+<p>Get the smallest rectangular zone encompassing all points points of the polygon zone.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ZONE_POLYGON_BASE).GetZoneRadius">ZONE_POLYGON_BASE:GetZoneRadius(ZoneName, DoNotRegisterZone)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Get the smallest circular zone encompassing all points of the polygon zone. </p>
+<p>Get the smallest circular zone encompassing all points of the polygon zone.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -6752,17 +6792,17 @@ end
       <h2><strong>Usage:</strong></h2>
     <pre class="example"><code>           -- Create a new zone and start watching it every 5 secs for a defined GROUP entering or leaving
            local triggerzone = ZONE:New("ZonetoWatch"):Trigger(GROUP:FindByName("Aerial-1"))
-           
+
            -- This FSM function will be called when the group enters the zone
            function triggerzone:OnAfterEnteredZone(From,Event,To,Group)
              MESSAGE:New("Group has entered zone!",15):ToAll()
            end
-           
+
            -- This FSM function will be called when the group leaves the zone
            function triggerzone:OnAfterLeftZone(From,Event,To,Group)
              MESSAGE:New("Group has left zone!",15):ToAll()
            end
-           
+
            -- Stop watching the zone after 1 hour
           triggerzone:__TriggerStop(3600)</code></pre>
 
@@ -6887,7 +6927,7 @@ end
 <h2><a id="#(ZONE_BASE).__TriggerStop" ><strong>ZONE_BASE:__TriggerStop(delay)</strong></a></h2>
 </div>
     
-<p>Triggers the FSM event "TriggerStop" after a delay. </p>
+<p>Triggers the FSM event "TriggerStop" after a delay.</p>
 
 <div id= "#Functions##__TriggerStop" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -12785,6 +12825,73 @@ When moose is loading dynamically (for moose class development), tracing is swit
 </div>
 
         </div>
+      <div onclick="myFunction('#Types##ZONE_OVAL')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(ZONE_OVAL)">Type <strong>ZONE_OVAL</strong></a></h2></div>
+        <div id= "#Types##ZONE_OVAL" class="w3-container w3-white w3-padding-16" id="module_other_types">
+          <div class="w3-white" id="record_type">
+<div class="fields w3-container w3-theme-l2">
+  <h2>Field(s)</h2>
+</div>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(ZONE_OVAL).Angle" ><strong>ZONE_OVAL.Angle</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(ZONE_OVAL).CenterVec2" ><strong>ZONE_OVAL.CenterVec2</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(ZONE_OVAL).DrawPoly" ><strong>ZONE_OVAL.DrawPoly</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(ZONE_OVAL).MajorAxis" ><strong>ZONE_OVAL.MajorAxis</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(ZONE_OVAL).MinorAxis" ><strong>ZONE_OVAL.MinorAxis</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div class="functions  w3-container w3-theme-l2">
+  <h2>Function(s)</h2>
+</div>  
+</div>
+
+        </div>
       <div onclick="myFunction('#Types##ZONE_POLYGON')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(ZONE_POLYGON)">Type <strong>ZONE_POLYGON</strong></a></h2></div>
         <div id= "#Types##ZONE_POLYGON" class="w3-container w3-white w3-padding-16" id="module_other_types">
           <div class="w3-white" id="record_type">
@@ -13343,7 +13450,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <h2><a id="#(ZONE_POLYGON_BASE).GetRadius" ><strong>ZONE_POLYGON_BASE:GetRadius()</strong></a></h2>
 </div>
     
-<p>Get the smallest radius encompassing all points of the polygon zone. </p>
+<p>Get the smallest radius encompassing all points of the polygon zone.</p>
 
 <div id= "#Functions##GetRadius" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -13777,7 +13884,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <h2><a id="#(ZONE_POLYGON_BASE).GetZoneQuad" ><strong>ZONE_POLYGON_BASE:GetZoneQuad(ZoneName, DoNotRegisterZone)</strong></a></h2>
 </div>
     
-<p>Get the smallest rectangular zone encompassing all points points of the polygon zone. </p>
+<p>Get the smallest rectangular zone encompassing all points points of the polygon zone.</p>
 
 <div id= "#Functions##GetZoneQuad" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -13834,7 +13941,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <h2><a id="#(ZONE_POLYGON_BASE).GetZoneRadius" ><strong>ZONE_POLYGON_BASE:GetZoneRadius(ZoneName, DoNotRegisterZone)</strong></a></h2>
 </div>
     
-<p>Get the smallest circular zone encompassing all points of the polygon zone. </p>
+<p>Get the smallest circular zone encompassing all points of the polygon zone.</p>
 
 <div id= "#Functions##GetZoneRadius" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
