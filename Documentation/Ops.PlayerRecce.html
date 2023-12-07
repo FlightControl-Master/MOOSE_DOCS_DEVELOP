@@ -2400,9 +2400,21 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERRECCE).DisableSmokeAverageTargetPosition">PLAYERRECCE:DisableSmokeAverageTargetPosition()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[User] Disable smoking of average target positions, instead of all targets visible.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERRECCE).DisableSmokeOwnPosition">PLAYERRECCE:DisableSmokeOwnPosition()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Disable smoking of own position</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERRECCE).EnableSmokeAverageTargetPosition">PLAYERRECCE:EnableSmokeAverageTargetPosition()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[User] Enable smoking of average target positions, instead of all targets visible.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3033,6 +3045,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERRECCE).onafterTargetsSmoked">PLAYERRECCE:onafterTargetsSmoked(From, Event, To, Client, Playername, TargetSet)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Internal] Targets Smoked</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERRECCE).smokeaveragetargetpos">PLAYERRECCE.smokeaveragetargetpos</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -4943,6 +4961,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
+<a id="#(PLAYERRECCE).smokeaveragetargetpos" ><strong>PLAYERRECCE.smokeaveragetargetpos</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
 <a id="#(PLAYERRECCE).smokeownposition" ><strong>PLAYERRECCE.smokeownposition</strong></a>
     
 
@@ -4989,6 +5018,39 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(PLAYERRECCE).DisableSmokeAverageTargetPosition" ><strong>PLAYERRECCE:DisableSmokeAverageTargetPosition()</strong></a></h2>
+</div>
+    
+<p>[User] Disable smoking of average target positions, instead of all targets visible.</p>
+
+    
+<p>Default is - smoke all positions.</p>
+
+<div id= "#Functions##DisableSmokeAverageTargetPosition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>PLAYERRECCE</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(PLAYERRECCE)">#PLAYERRECCE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(PLAYERRECCE).DisableSmokeOwnPosition" ><strong>PLAYERRECCE:DisableSmokeOwnPosition()</strong></a></h2>
 </div>
     
@@ -5008,6 +5070,39 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       <div class="w3-half">
         
 
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(PLAYERRECCE).EnableSmokeAverageTargetPosition" ><strong>PLAYERRECCE:EnableSmokeAverageTargetPosition()</strong></a></h2>
+</div>
+    
+<p>[User] Enable smoking of average target positions, instead of all targets visible.</p>
+
+    
+<p>Loses smoke per threatlevel -- each is med threat. Default is - smoke all positions.</p>
+
+<div id= "#Functions##EnableSmokeAverageTargetPosition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>PLAYERRECCE</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(PLAYERRECCE)">#PLAYERRECCE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
 
       </div>
     </div>
@@ -10225,6 +10320,17 @@ Note that this must be installed on your windows system. Can also be Google voic
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
+<a id="#(PLAYERRECCE).smokeaveragetargetpos" ><strong>PLAYERRECCE.smokeaveragetargetpos</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
 <a id="#(PLAYERRECCE).smokeownposition" ><strong>PLAYERRECCE.smokeownposition</strong></a>
     
 
@@ -12232,6 +12338,17 @@ Note that this must be installed on your windows system. Can also be Google voic
 
     #number
 <a id="#(PLAYERRECCE).minthreatlevel" ><strong>PLAYERRECCE.minthreatlevel</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(PLAYERRECCE).smokeaveragetargetpos" ><strong>PLAYERRECCE.smokeaveragetargetpos</strong></a>
     
 
 
