@@ -2385,6 +2385,12 @@ can be used to switch off the initial delay. Because there is no delay by defaul
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).InitCallSign">SPAWN:InitCallSign(ID, Name, Minor, Major)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[BLUE AIR only!] This method sets a specific callsign for a spawned group.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).InitCategory">SPAWN:InitCategory(Category)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets category ID of the group.</p>
@@ -2823,6 +2829,36 @@ and any spaces before and after the resulting name are removed.</p>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).SpawnInitAirbase">SPAWN.SpawnInitAirbase</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).SpawnInitCallSign">SPAWN.SpawnInitCallSign</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).SpawnInitCallSignID">SPAWN.SpawnInitCallSignID</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).SpawnInitCallSignMajor">SPAWN.SpawnInitCallSignMajor</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).SpawnInitCallSignMinor">SPAWN.SpawnInitCallSignMinor</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).SpawnInitCallSignName">SPAWN.SpawnInitCallSignName</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -3302,25 +3338,7 @@ and any spaces before and after the resulting name are removed.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).communication">SPAWN.communication</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).frequency">SPAWN.frequency</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).skill">SPAWN.skill</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).uncontrolled">SPAWN.uncontrolled</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).livery_id">SPAWN.livery_id</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -4108,6 +4126,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(SPAWN).SpawnInitCallSign" ><strong>SPAWN.SpawnInitCallSign</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
 <a id="#(SPAWN).SpawnInitCategory" ><strong>SPAWN.SpawnInitCategory</strong></a>
     
@@ -4132,6 +4161,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <a id="#(SPAWN).SpawnInitCountry" ><strong>SPAWN.SpawnInitCountry</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).SpawnInitFreq" ><strong>SPAWN.SpawnInitFreq</strong></a>
     
 
 
@@ -4514,7 +4554,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
 
     
-<p> When the first Spawn executes, all the Groups need to be made visible before start.</p>
+<p> Flag that indicates if all the Groups of the SpawnGroup need to be visible when Spawned.</p>
 
 </div>
 
@@ -4598,40 +4638,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(SPAWN).communication" ><strong>SPAWN.communication</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(SPAWN).frequency" ><strong>SPAWN.frequency</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(SPAWN).skill" ><strong>SPAWN.skill</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(SPAWN).uncontrolled" ><strong>SPAWN.uncontrolled</strong></a>
+<a id="#(SPAWN).livery_id" ><strong>SPAWN.livery_id</strong></a>
     
 
 
@@ -5176,6 +5183,92 @@ CAUTION: this directive will NOT work with OnSpawnGroup function.</p>
                          :InitArray( 90, 10, 100, 50 )
 </code></pre>
 
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SPAWN).InitCallSign" ><strong>SPAWN:InitCallSign(ID, Name, Minor, Major)</strong></a></h2>
+</div>
+    
+<p>[BLUE AIR only!] This method sets a specific callsign for a spawned group.</p>
+
+    
+<p>Use for a group with one unit only!</p>
+
+<div id= "#Functions##InitCallSign" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>SPAWN</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>ID</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>ID of the callsign enumerator, e.g. CALLSIGN.Tanker.Texaco - - resulting in e.g. Texaco-2-1</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of this callsign as it cannot be determined from the ID because of the dependency on the task type of the plane, and the plane type. E.g. "Texaco"</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Minor</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Minor number, i.e. the unit number within the group, e.g 2 - resulting in e.g. Texaco-2-1</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Major</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Major number, i.e. the group number of this name, e.g. 1 - resulting in e.g. Texaco-2-1</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(SPAWN)">#SPAWN</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
@@ -10017,6 +10110,17 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(SPAWN).SpawnInitCallSign" ><strong>SPAWN.SpawnInitCallSign</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
 <a id="#(SPAWN).SpawnInitCategory" ><strong>SPAWN.SpawnInitCategory</strong></a>
     
@@ -10041,6 +10145,17 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 
     
 <a id="#(SPAWN).SpawnInitCountry" ><strong>SPAWN.SpawnInitCountry</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).SpawnInitFreq" ><strong>SPAWN.SpawnInitFreq</strong></a>
     
 
 
@@ -10423,7 +10538,7 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 
 
     
-<p> When the first Spawn executes, all the Groups need to be made visible before start.</p>
+<p> Flag that indicates if all the Groups of the SpawnGroup need to be visible when Spawned.</p>
 
 </div>
 
@@ -10507,40 +10622,7 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(SPAWN).communication" ><strong>SPAWN.communication</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(SPAWN).frequency" ><strong>SPAWN.frequency</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(SPAWN).skill" ><strong>SPAWN.skill</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(SPAWN).uncontrolled" ><strong>SPAWN.uncontrolled</strong></a>
+<a id="#(SPAWN).livery_id" ><strong>SPAWN.livery_id</strong></a>
     
 
 
