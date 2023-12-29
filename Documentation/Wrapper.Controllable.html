@@ -2755,7 +2755,7 @@ The method <a href="##(CONTROLLABLE).SetTaskWaypoint">CONTROLLABLE.SetTaskWaypoi
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONTROLLABLE).RelocateGroundRandomInRadius">CONTROLLABLE:RelocateGroundRandomInRadius(speed, radius, onroad, shortcut, formation)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CONTROLLABLE).RelocateGroundRandomInRadius">CONTROLLABLE:RelocateGroundRandomInRadius(speed, radius, onroad, shortcut, formation, onland)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(GROUND) Relocate controllable to a random point within a given radius; use e.g.for evasive actions; Note that not all ground controllables can actually drive, also the alarm state of the controllable might stop it from moving.</p>
 </td>
@@ -6798,7 +6798,7 @@ If no detection method is given, the detection will use all the available method
 <p>Return the detected targets of the controllable.</p>
 
     
-<p>The optional parametes specify the detection methods that can be applied.
+<p>The optional parameters specify the detection methods that can be applied.
 If no detection method is given, the detection will use all the available methods by default.</p>
 
 <div id= "#Functions##GetDetectedTargets" class="w3-show w3-white">
@@ -9607,7 +9607,7 @@ Warning! When you switch this option off, the airborne group will continue to fl
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CONTROLLABLE).RelocateGroundRandomInRadius" ><strong>CONTROLLABLE:RelocateGroundRandomInRadius(speed, radius, onroad, shortcut, formation)</strong></a></h2>
+<h2><a id="#(CONTROLLABLE).RelocateGroundRandomInRadius" ><strong>CONTROLLABLE:RelocateGroundRandomInRadius(speed, radius, onroad, shortcut, formation, onland)</strong></a></h2>
 </div>
     
 <p>(GROUND) Relocate controllable to a random point within a given radius; use e.g.for evasive actions; Note that not all ground controllables can actually drive, also the alarm state of the controllable might stop it from moving.</p>
@@ -9681,6 +9681,19 @@ Warning! When you switch this option off, the airborne group will continue to fl
           <div class="w3-half">
               
 <p>Formation string as in the mission editor, e.g. "Vee", "Diamond", "Line abreast", etc. Defaults to "Off Road"</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>onland</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) If true, try up to 50 times to get a coordinate on land.SurfaceType.LAND. Note - this descriptor value is not reliably implemented on all maps.</p>
 
           </div>
         </div>
