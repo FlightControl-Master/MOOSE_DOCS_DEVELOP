@@ -1980,7 +1980,7 @@
 
 <h2>Example Missions:</h2>
 
-<p>Demo missions can be found on <a href="https://github.com/FlightControl-Master/MOOSE_MISSIONS/tree/develop/OPS%20-%20FlightControl">github</a>.</p>
+<p>Demo missions: None</p>
 
 <hr/>
 
@@ -2158,9 +2158,9 @@ against the wind, which therefore determines the active runway. There are, howev
 landing is <code>21L</code>.</p>
 
 <p>By default, the runways for landing and takeoff are determined from the wind direction as described above. For cases where this gives wrong results, you can set the active runways manually. This is
-done via <a href="Wrappper.Airbase.html##(AIRBASE)">Wrappper.Airbase#AIRBASE</a> class.</p>
+done via <a href="Wrapper.Airbase.html##(AIRBASE)">Wrapper.Airbase#AIRBASE</a> class.</p>
 
-<p>More specifically, you can use the <a href="Wrappper.Airbase.html##(AIRBASE).SetActiveRunwayLanding">Wrappper.Airbase#AIRBASE.SetActiveRunwayLanding</a> function to set the landing runway and the <a href="Wrappper.Airbase.html##(AIRBASE).SetActiveRunwayTakeoff">Wrappper.Airbase#AIRBASE.SetActiveRunwayTakeoff</a> function to set
+<p>More specifically, you can use the <a href="Wrapper.Airbase.html##(AIRBASE).SetActiveRunwayLanding">Wrapper.Airbase#AIRBASE.SetActiveRunwayLanding</a> function to set the landing runway and the <a href="Wrapper.Airbase.html##(AIRBASE).SetActiveRunwayTakeoff">Wrapper.Airbase#AIRBASE.SetActiveRunwayTakeoff</a> function to set
 the runway for takeoff.</p>
 
 <h2>Example for Nellis AFB</h2>
@@ -2175,7 +2175,7 @@ Nellis:SetActiveRunwayTakeoff("03L")
 
 <h1>DCS ATC</h1>
 
-<p>You can disable the DCS ATC with the <a href="Wrappper.Airbase.html##(AIRBASE).SetRadioSilentMode">Wrappper.Airbase#AIRBASE.SetRadioSilentMode</a>(<em>true</em>). This does not remove the DCS ATC airbase from the F10 menu but makes the ATC unresponsive.</p>
+<p>You can disable the DCS ATC with the <a href="Wrapper.Airbase.html##(AIRBASE).SetRadioSilentMode">Wrapper.Airbase#AIRBASE.SetRadioSilentMode</a>(<em>true</em>). This does not remove the DCS ATC airbase from the F10 menu but makes the ATC unresponsive.</p>
 
 
 <h1>Examples</h1>
@@ -2522,7 +2522,7 @@ atcNellis:Start()
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTCONTROL).SetATIS">FLIGHTCONTROL:SetATIS(Atis)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTCONTROL).SetATIS">FLIGHTCONTROL:SetATIS(ATIS, Atis)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set ATIS.</p>
 </td>
@@ -6628,7 +6628,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(FLIGHTCONTROL).SetATIS" ><strong>FLIGHTCONTROL:SetATIS(Atis)</strong></a></h2>
+<h2><a id="#(FLIGHTCONTROL).SetATIS" ><strong>FLIGHTCONTROL:SetATIS(ATIS, Atis)</strong></a></h2>
 </div>
     
 <p>Set ATIS.</p>
@@ -6639,18 +6639,28 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>FLIGHTCONTROL</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Ops.Atis.html##(ATIS)">Ops.Atis#ATIS</a>
-            <strong><strong>Atis</strong></strong>
+                <a href="Ops.ATIS.html##(ATIS)">Ops.ATIS#ATIS</a>
+            <strong><strong>ATIS</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
 <p>ATIS.</p>
 
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Atis</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
