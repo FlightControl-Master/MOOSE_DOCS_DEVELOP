@@ -2171,7 +2171,7 @@ Play around with the distance to get an optimal map for your scenario.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).AddRoutesManually">STRATEGO:AddRoutesManually(Startpoint, Endpoint, Color, LineType, Draw, Linetype)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).AddRoutesManually">STRATEGO:AddRoutesManually(Startpoint, Endpoint, Color, Linetype, Draw)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[USER] Manually add a route, for e.g.</p>
 </td>
@@ -2261,7 +2261,7 @@ Play around with the distance to get an optimal map for your scenario.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).FindRoute">STRATEGO:FindRoute(Start, End, Hops, Draw)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).FindRoute">STRATEGO:FindRoute(Start, End, Hops, Draw, Color, LineType)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[USER] Find a route between two nodes.</p>
 </td>
@@ -3693,7 +3693,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).AddRoutesManually" ><strong>STRATEGO:AddRoutesManually(Startpoint, Endpoint, Color, LineType, Draw, Linetype)</strong></a></h2>
+<h2><a id="#(STRATEGO).AddRoutesManually" ><strong>STRATEGO:AddRoutesManually(Startpoint, Endpoint, Color, Linetype, Draw)</strong></a></h2>
 </div>
     
 <p>[USER] Manually add a route, for e.g.</p>
@@ -3716,7 +3716,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             </p>
           </div>
           <div class="w3-half">
-              <p></p>
+              
+<p>Starting Point, e.g. AIRBASE.Syria.Hatay</p>
+
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -3727,7 +3729,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             </p>
           </div>
           <div class="w3-half">
-              <p></p>
+              
+<p>End Point, e.g. AIRBASE.Syria.H4</p>
+
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -3747,7 +3751,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
             <p>
                 #number
-            <strong><strong>LineType</strong></strong>
+            <strong><strong>Linetype</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -3767,16 +3771,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
               
 <p>(Optional) If true, draw route on the F10 map. Defaukt false.</p>
 
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>Linetype</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
@@ -4326,7 +4320,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).FindRoute" ><strong>STRATEGO:FindRoute(Start, End, Hops, Draw)</strong></a></h2>
+<h2><a id="#(STRATEGO).FindRoute" ><strong>STRATEGO:FindRoute(Start, End, Hops, Draw, Color, LineType)</strong></a></h2>
 </div>
     
 <p>[USER] Find a route between two nodes.</p>
@@ -4387,6 +4381,32 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>If true, draw the route on the map.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Color</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) RGB color table {r, g, b}, e.g. {1,0,0} for red. Defaults to black.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>LineType</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Line type: 0=No line, 1=Solid, 2=Dashed, 3=Dotted, 4=Dot dash, 5=Long dash, 6=Two dash. Default 6.</p>
 
           </div>
         </div>
