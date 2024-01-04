@@ -1982,7 +1982,7 @@
 <ul>
     <li>Helper class for mission designers to support classic capture-the-base scenarios.</li>
     <li>Creates a network of possible connections between bases (airbases, FARPs, Ships), Ports (defined as zones) and POIs (defined as zones).</li>
-    <li>Assigns a strategic value to each of the resulting knots.</li>
+    <li>Assigns a strategic value to each of the resulting nodes.</li>
     <li>Can create a list of targets for your next mission move, both strategic and consolidation targets.</li>
     <li>Can be used with budgets to limit the target selection.</li>
     <li>Highly configureable.</li>
@@ -2026,16 +2026,16 @@
 <p>STRATEGO is a helper class for mission designers.</p>
 
     
-<p>The basic idea is to create a network of knots (bases) on the map, which each have a number of connections
-to other knots. The base value of each knot is the number of runways of the base (the bigger the more important), or in the case of Ports and POIs, the assigned value points.
-The strategic value of each base is determined by the number of routes going in and out of the knot, where connections between more strategic knots add a higher value to the
-strategic value than connections to less valueable knots.</p>
+<p>The basic idea is to create a network of nodes (bases) on the map, which each have a number of connections
+to other nodes. The base value of each node is the number of runways of the base (the bigger the more important), or in the case of Ports and POIs, the assigned value points.
+The strategic value of each base is determined by the number of routes going in and out of the node, where connections between more strategic nodes add a higher value to the
+strategic value than connections to less valueable nodes.</p>
 
 <h2>Setup</h2>
 
 <p>Setup is map indepent and works automatically. All airbases, FARPS, and ships on the map are considered. <strong>Note:</strong> Later spawned objects are not considered at the moment.</p>
 
-<pre><code>     -- Setup and start STRATGEO for the blue side, maximal knot distance is 100km
+<pre><code>     -- Setup and start STRATGEO for the blue side, maximal node distance is 100km
      local Bluecher = STRATEGO:New("Bluecher",coalition.side.BLUE,100)
      -- use budgets
      Bluecher:SetUsingBudget(true,500)
@@ -2047,15 +2047,15 @@ strategic value than connections to less valueable knots.</p>
 
 <h3>Helper</h3>
 
-<p><a href="##(STRATEGO).SetWeights">STRATEGO.SetWeights</a>(): Set weights for knots and routes to determine their importance.</p>
+<p><a href="##(STRATEGO).SetWeights">STRATEGO.SetWeights</a>(): Set weights for nodes and routes to determine their importance.</p>
 
 <h3>Hint</h3>
 
-<p>Each knot is its own <a href="Ops.OpsZone.html##(OPSZONE)">Ops.OpsZone#OPSZONE</a> object to manage the coalition alignment of that knot and how it can be conquered.</p>
+<p>Each node is its own <a href="Ops.OpsZone.html##(OPSZONE)">Ops.OpsZone#OPSZONE</a> object to manage the coalition alignment of that node and how it can be conquered.</p>
 
 <h3>Distance</h3>
 
-<p>The knot distance factor determines how many connections are there on the map. The smaller the lighter is the resulting net. The higher the thicker it gets, with more strategic options.
+<p>The node distance factor determines how many connections are there on the map. The smaller the lighter is the resulting net. The higher the thicker it gets, with more strategic options.
 Play around with the distance to get an optimal map for your scenario.</p>
 
 <p>One some maps, e.g. Syria, lower distance factors can create "islands" of unconnected network parts on the map. FARPs and POIs can bridge those gaps, or you can add routes manually.</p>
@@ -2068,7 +2068,7 @@ Play around with the distance to get an optimal map for your scenario.</p>
 
 <h2>Get next possible targets</h2>
 
-<p>There are two types of possible target lists, strategic and consolidation. Targets closer to the start knot are chosen as possible targets. </p>
+<p>There are two types of possible target lists, strategic and consolidation. Targets closer to the start node are chosen as possible targets. </p>
 
 
 <pre><code> * Strategic targets are of higher or equal base weight from a given start point. Can also be obtained for the whole net.
@@ -2076,15 +2076,15 @@ Play around with the distance to get an optimal map for your scenario.</p>
 </code></pre>
 
 
-<p> <a href="##(STRATEGO).UpdateKnotCoalitions">STRATEGO.UpdateKnotCoalitions</a>(): Update alls knot's coalition data before takign a decision. <br/>
+<p> <a href="##(STRATEGO).UpdateNodeCoalitions">STRATEGO.UpdateNodeCoalitions</a>(): Update alls node's coalition data before takign a decision. <br/>
  <a href="##(STRATEGO).FindStrategicTargets">STRATEGO.FindStrategicTargets</a>(): Find a list of possible strategic targets in the network of the enemy or neutral coalition. <br/>
  <a href="##(STRATEGO).FindConsolidationTargets">STRATEGO.FindConsolidationTargets</a>(): Find a list of possible strategic targets in the network of the enemy or neutral coalition. <br/>
  <a href="##(STRATEGO).FindAffordableStrategicTarget">STRATEGO.FindAffordableStrategicTarget</a>(): When using budgets, find <strong>one</strong> strategic target you can afford. <br/>
  <a href="##(STRATEGO).FindAffordableConsolidationTarget">STRATEGO.FindAffordableConsolidationTarget</a>(): When using budgets, find <strong>one</strong> consolidation target you can afford. <br/>
  <a href="##(STRATEGO).FindClosestStrategicTarget">STRATEGO.FindClosestStrategicTarget</a>(): Find closest strategic target from a given start point. <br/>
  <a href="##(STRATEGO).FindClosestConsolidationTarget">STRATEGO.FindClosestConsolidationTarget</a>(): Find closest consolidation target from a given start point. <br/>
- <a href="##(STRATEGO).GetHighestWeightKnots">STRATEGO.GetHighestWeightKnots</a>(): Get a list of the knots with the highest weight. Coalition independent. <br/>
- <a href="##(STRATEGO).GetNextHighestWeightKnots">STRATEGO.GetNextHighestWeightKnots</a>(): Get a list of the knots a weight less than the give parameter. Coalition independent.   </p>
+ <a href="##(STRATEGO).GetHighestWeightNodes">STRATEGO.GetHighestWeightNodes</a>(): Get a list of the nodes with the highest weight. Coalition independent. <br/>
+ <a href="##(STRATEGO).GetNextHighestWeightNodes">STRATEGO.GetNextHighestWeightNodes</a>(): Get a list of the nodes a weight less than the give parameter. Coalition independent.   </p>
 
 
 <p><strong>How</strong> you act on these suggestions is again totally up to your mission design.</p>
@@ -2098,37 +2098,37 @@ Play around with the distance to get an optimal map for your scenario.</p>
      Bluecher:SetUsingBudget(true,500)
 </code></pre>
 
-<h2>Helpers:</h2>
+<h3>Helpers:</h3>
 
 
 <p> <a href="##(STRATEGO).GetBudget">STRATEGO.GetBudget</a>(): Get the current budget points. <br/>
  <a href="##(STRATEGO).AddBudget">STRATEGO.AddBudget</a>(): Add a number of budget points. <br/>
  <a href="##(STRATEGO).SubtractBudget">STRATEGO.SubtractBudget</a>(): Subtract a number of budget points. <br/>
- <a href="##(STRATEGO).SetNeutralBenefit">STRATEGO.SetNeutralBenefit</a>():  Set neutral benefit, i.e. how many points it is cheaper to decide for a neutral vs an enemy knot when taking decisions.   </p>
+ <a href="##(STRATEGO).SetNeutralBenefit">STRATEGO.SetNeutralBenefit</a>(): Set neutral benefit, i.e. how many points it is cheaper to decide for a neutral vs an enemy node when taking decisions.   </p>
 
 
-<h2>Functions to query a knot's data</h2>
+<h2>Functions to query a node's data</h2>
 
 
-<p> <a href="##(STRATEGO).GetKnotBaseWeight">STRATEGO.GetKnotBaseWeight</a>(): Get the base weight of a knot by its name. <br/>
- <a href="##(STRATEGO).GetKnotCoalition">STRATEGO.GetKnotCoalition</a>(): Get the COALITION of a knot by its name. <br/>
- <a href="##(STRATEGO).GetKnotType">STRATEGO.GetKnotType</a>(): Get the TYPE of a knot by its name. <br/>
- <a href="##(STRATEGO).GetKnotZone">STRATEGO.GetKnotZone</a>(): Get the ZONE of a knot by its name. <br/>
- <a href="##(STRATEGO).GetKnotOpsZone">STRATEGO.GetKnotOpsZone</a>(): Get the OPSZONE of a knot by its name. <br/>
- <a href="##(STRATEGO).GetKnotCoordinate">STRATEGO.GetKnotCoordinate</a>(): Get the COORDINATE of a knot by its name. <br/>
- <a href="##(STRATEGO).IsAirbase">STRATEGO.IsAirbase</a>(): Check if the TYPE of a knot is AIRBASE. <br/>
- <a href="##(STRATEGO).IsPort">STRATEGO.IsPort</a>(): Check if the TYPE of a knot is PORT. <br/>
- <a href="##(STRATEGO).IsPOI">STRATEGO.IsPOI</a>(): Check if the TYPE of a knot is POI. <br/>
- <a href="##(STRATEGO).IsFARP">STRATEGO.IsFARP</a>(): Check if the TYPE of a knot is FARP. <br/>
- <a href="##(STRATEGO).IsShip">STRATEGO.IsShip</a>(): Check if the TYPE of a knot is SHIP.   </p>
+<p> <a href="##(STRATEGO).GetNodeBaseWeight">STRATEGO.GetNodeBaseWeight</a>(): Get the base weight of a node by its name. <br/>
+ <a href="##(STRATEGO).GetNodeCoalition">STRATEGO.GetNodeCoalition</a>(): Get the COALITION of a node by its name. <br/>
+ <a href="##(STRATEGO).GetNodeType">STRATEGO.GetNodeType</a>(): Get the TYPE of a node by its name. <br/>
+ <a href="##(STRATEGO).GetNodeZone">STRATEGO.GetNodeZone</a>(): Get the ZONE of a node by its name. <br/>
+ <a href="##(STRATEGO).GetNodeOpsZone">STRATEGO.GetNodeOpsZone</a>(): Get the OPSZONE of a node by its name. <br/>
+ <a href="##(STRATEGO).GetNodeCoordinate">STRATEGO.GetNodeCoordinate</a>(): Get the COORDINATE of a node by its name. <br/>
+ <a href="##(STRATEGO).IsAirbase">STRATEGO.IsAirbase</a>(): Check if the TYPE of a node is AIRBASE. <br/>
+ <a href="##(STRATEGO).IsPort">STRATEGO.IsPort</a>(): Check if the TYPE of a node is PORT. <br/>
+ <a href="##(STRATEGO).IsPOI">STRATEGO.IsPOI</a>(): Check if the TYPE of a node is POI. <br/>
+ <a href="##(STRATEGO).IsFARP">STRATEGO.IsFARP</a>(): Check if the TYPE of a node is FARP. <br/>
+ <a href="##(STRATEGO).IsShip">STRATEGO.IsShip</a>(): Check if the TYPE of a node is SHIP.   </p>
 
 
 <h2>Various</h2>
 
 
-<p> <a href="##(STRATEGO).FindNeighborKnots">STRATEGO.FindNeighborKnots</a>(): Get neighbor knots of a named knot. <br/>
- <a href="##(STRATEGO).FindRoute">STRATEGO.FindRoute</a>(): Find a route between two knots. <br/>
- <a href="##(STRATEGO).SetCaptureOptions">STRATEGO.SetCaptureOptions</a>(): Set how many units of which minimum threat level are needed to capture one knot (i.e. the underlying OpsZone). <br/>
+<p> <a href="##(STRATEGO).FindNeighborNodes">STRATEGO.FindNeighborNodes</a>(): Get neighbor nodes of a named node. <br/>
+ <a href="##(STRATEGO).FindRoute">STRATEGO.FindRoute</a>(): Find a route between two nodes. <br/>
+ <a href="##(STRATEGO).SetCaptureOptions">STRATEGO.SetCaptureOptions</a>(): Set how many units of which minimum threat level are needed to capture one node (i.e. the underlying OpsZone). <br/>
  <a href="##(STRATEGO).SetDebug">STRATEGO.SetDebug</a>(): Set debug and draw options.   </p>
 
 
@@ -2239,37 +2239,37 @@ Play around with the distance to get an optimal map for your scenario.</p>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).FindClosestConsolidationTarget">STRATEGO:FindClosestConsolidationTarget(Startpoint, BaseWeight)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Get the next best consolidation target knot with a lower BaseWeight.</p>
+<p>[USER] Get the next best consolidation target node with a lower BaseWeight.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).FindClosestStrategicTarget">STRATEGO:FindClosestStrategicTarget(Startpoint, BaseWeight)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Get the next best strategic target knot with same or higher BaseWeight.</p>
+<p>[USER] Get the next best strategic target node with same or higher BaseWeight.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).FindConsolidationTargets">STRATEGO:FindConsolidationTargets()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Get the next best consolidation target knots in the network.</p>
+<p>[USER] Get the next best consolidation target nodes in the network.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).FindNeighborKnots">STRATEGO:FindNeighborKnots(Name, Enemies, Friends)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).FindNeighborNodes">STRATEGO:FindNeighborNodes(Name, Enemies, Friends)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Get neighbor knots of a named knot.</p>
+<p>[USER] Get neighbor nodes of a named node.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).FindRoute">STRATEGO:FindRoute(Start, End, Hops, Draw)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Find a route between two knots.</p>
+<p>[USER] Find a route between two nodes.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).FindStrategicTargets">STRATEGO:FindStrategicTargets()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Get the next best strategic target knots in the network.</p>
+<p>[USER] Get the next best strategic target nodes in the network.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2279,51 +2279,9 @@ Play around with the distance to get an optimal map for your scenario.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetHighestWeightKnots">STRATEGO:GetHighestWeightKnots()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetHighestWeightNodes">STRATEGO:GetHighestWeightNodes()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Get a list of the knots with the highest weight.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetKnotBaseWeight">STRATEGO:GetKnotBaseWeight(Name)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Get the base weight of a knot by its name.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetKnotCoalition">STRATEGO:GetKnotCoalition(Name)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Get the COALITION of a knot by its name.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetKnotCoordinate">STRATEGO:GetKnotCoordinate(Name)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Get the COORDINATE of a knot by its name.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetKnotOpsZone">STRATEGO:GetKnotOpsZone(Name)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Get the OPSZONE of a knot by its name.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetKnotType">STRATEGO:GetKnotType(Name)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Get the TYPE of a knot by its name.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetKnotWeight">STRATEGO:GetKnotWeight(Name)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Get the aggregated weight of a knot by its name.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetKnotZone">STRATEGO:GetKnotZone(Name)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Get the ZONE of a knot by its name.</p>
+<p>[USER] Get a list of the nodes with the highest weight.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2333,9 +2291,51 @@ Play around with the distance to get an optimal map for your scenario.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetNextHighestWeightKnots">STRATEGO:GetNextHighestWeightKnots(Weight)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetNextHighestWeightNodes">STRATEGO:GetNextHighestWeightNodes(Weight)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Get a list of the knots a weight less than the give parameter.</p>
+<p>[USER] Get a list of the nodes a weight less than the give parameter.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetNodeBaseWeight">STRATEGO:GetNodeBaseWeight(Name)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Get the base weight of a node by its name.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetNodeCoalition">STRATEGO:GetNodeCoalition(Name)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Get the COALITION of a node by its name.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetNodeCoordinate">STRATEGO:GetNodeCoordinate(Name)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Get the COORDINATE of a node by its name.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetNodeOpsZone">STRATEGO:GetNodeOpsZone(Name)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Get the OPSZONE of a node by its name.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetNodeType">STRATEGO:GetNodeType(Name)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Get the TYPE of a node by its name.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetNodeWeight">STRATEGO:GetNodeWeight(Name)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Get the aggregated weight of a node by its name.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetNodeZone">STRATEGO:GetNodeZone(Name)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Get the ZONE of a node by its name.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2347,31 +2347,31 @@ Play around with the distance to get an optimal map for your scenario.</p>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).IsAirbase">STRATEGO:IsAirbase(Name)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Check if the TYPE of a knot is AIRBASE.</p>
+<p>[USER] Check if the TYPE of a node is AIRBASE.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).IsFARP">STRATEGO:IsFARP(Name)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Check if the TYPE of a knot is FARP.</p>
+<p>[USER] Check if the TYPE of a node is FARP.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).IsPOI">STRATEGO:IsPOI(Name)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Check if the TYPE of a knot is POI.</p>
+<p>[USER] Check if the TYPE of a node is POI.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).IsPort">STRATEGO:IsPort(Name)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Check if the TYPE of a knot is PORT.</p>
+<p>[USER] Check if the TYPE of a node is PORT.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).IsShip">STRATEGO:IsShip(Name)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Check if the TYPE of a knot is SHIP.</p>
+<p>[USER] Check if the TYPE of a node is SHIP.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2407,7 +2407,7 @@ Play around with the distance to get an optimal map for your scenario.</p>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).SetCaptureOptions">STRATEGO:SetCaptureOptions(CaptureUnits, CaptureThreatlevel)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Set how many units of which minimum threat level are needed to capture one knot (i.e.</p>
+<p>[USER] Set how many units of which minimum threat level are needed to capture one node (i.e.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2431,7 +2431,7 @@ Play around with the distance to get an optimal map for your scenario.</p>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).SetWeights">STRATEGO:SetWeights(MaxRunways, PortWeight, POIWeight, RouteFactor)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Set weights for knots and routes to determine their importance.</p>
+<p>[USER] Set weights for nodes and routes to determine their importance.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2453,9 +2453,9 @@ Play around with the distance to get an optimal map for your scenario.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).UpdateKnotCoalitions">STRATEGO:UpdateKnotCoalitions()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).UpdateNodeCoalitions">STRATEGO:UpdateNodeCoalitions()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[INTERNAL] Update knot coalitions</p>
+<p>[INTERNAL] Update node coalitions</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4067,7 +4067,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(STRATEGO).FindClosestConsolidationTarget" ><strong>STRATEGO:FindClosestConsolidationTarget(Startpoint, BaseWeight)</strong></a></h2>
 </div>
     
-<p>[USER] Get the next best consolidation target knot with a lower BaseWeight.</p>
+<p>[USER] Get the next best consolidation target node with a lower BaseWeight.</p>
 
 <div id= "#Functions##FindClosestConsolidationTarget" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -4098,7 +4098,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Base weight of the knot, i.e. the number of runways of an airbase or the weight of ports or POIs.</p>
+<p>Base weight of the node, i.e. the number of runways of an airbase or the weight of ports or POIs.</p>
 
           </div>
         </div>
@@ -4117,7 +4117,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         </div>
         <div class="w3-half">
           
-<p>Name Name of the target knot.</p>
+<p>Name Name of the target node.</p>
 
         </div>
         <div class="w3-half">
@@ -4125,7 +4125,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         </div>
         <div class="w3-half">
           
-<p>Weight Consolidated weight of the target knot, zero if none found.</p>
+<p>Weight Consolidated weight of the target node, zero if none found.</p>
 
         </div>
         <div class="w3-half">
@@ -4148,7 +4148,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(STRATEGO).FindClosestStrategicTarget" ><strong>STRATEGO:FindClosestStrategicTarget(Startpoint, BaseWeight)</strong></a></h2>
 </div>
     
-<p>[USER] Get the next best strategic target knot with same or higher BaseWeight.</p>
+<p>[USER] Get the next best strategic target node with same or higher BaseWeight.</p>
 
 <div id= "#Functions##FindClosestStrategicTarget" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -4179,7 +4179,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Base weight of the knot, e.g. the number of runways of an airbase or the weight of ports or POIs.</p>
+<p>Base weight of the node, e.g. the number of runways of an airbase or the weight of ports or POIs.</p>
 
           </div>
         </div>
@@ -4198,7 +4198,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         </div>
         <div class="w3-half">
           
-<p>Name Name of the target knot.</p>
+<p>Name Name of the target node.</p>
 
         </div>
         <div class="w3-half">
@@ -4206,7 +4206,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         </div>
         <div class="w3-half">
           
-<p>Weight Consolidated weight of the target knot, zero if none found.</p>
+<p>Weight Consolidated weight of the target node, zero if none found.</p>
 
         </div>
         <div class="w3-half">
@@ -4229,7 +4229,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(STRATEGO).FindConsolidationTargets" ><strong>STRATEGO:FindConsolidationTargets()</strong></a></h2>
 </div>
     
-<p>[USER] Get the next best consolidation target knots in the network.</p>
+<p>[USER] Get the next best consolidation target nodes in the network.</p>
 
 <div id= "#Functions##FindConsolidationTargets" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -4256,12 +4256,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).FindNeighborKnots" ><strong>STRATEGO:FindNeighborKnots(Name, Enemies, Friends)</strong></a></h2>
+<h2><a id="#(STRATEGO).FindNeighborNodes" ><strong>STRATEGO:FindNeighborNodes(Name, Enemies, Friends)</strong></a></h2>
 </div>
     
-<p>[USER] Get neighbor knots of a named knot.</p>
+<p>[USER] Get neighbor nodes of a named node.</p>
 
-<div id= "#Functions##FindNeighborKnots" class="w3-show w3-white">
+<div id= "#Functions##FindNeighborNodes" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -4314,7 +4314,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       </div>
       <div class="w3-half">
         
-<p>Neighbors Table of #STRATEGO.DistData entries indexed by neighbor knot names.</p>
+<p>Neighbors Table of #STRATEGO.DistData entries indexed by neighbor node names.</p>
 
       </div>
     </div>
@@ -4329,7 +4329,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(STRATEGO).FindRoute" ><strong>STRATEGO:FindRoute(Start, End, Hops, Draw)</strong></a></h2>
 </div>
     
-<p>[USER] Find a route between two knots.</p>
+<p>[USER] Find a route between two nodes.</p>
 
 <div id= "#Functions##FindRoute" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -4347,7 +4347,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>The name of the start knot.</p>
+<p>The name of the start node.</p>
 
           </div>
         </div>
@@ -4360,7 +4360,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>The name of the end knot.</p>
+<p>The name of the end node.</p>
 
           </div>
         </div>
@@ -4420,7 +4420,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(STRATEGO).FindStrategicTargets" ><strong>STRATEGO:FindStrategicTargets()</strong></a></h2>
 </div>
     
-<p>[USER] Get the next best strategic target knots in the network.</p>
+<p>[USER] Get the next best strategic target nodes in the network.</p>
 
 <div id= "#Functions##FindStrategicTargets" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -4477,12 +4477,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).GetHighestWeightKnots" ><strong>STRATEGO:GetHighestWeightKnots()</strong></a></h2>
+<h2><a id="#(STRATEGO).GetHighestWeightNodes" ><strong>STRATEGO:GetHighestWeightNodes()</strong></a></h2>
 </div>
     
-<p>[USER] Get a list of the knots with the highest weight.</p>
+<p>[USER] Get a list of the nodes with the highest weight.</p>
 
-<div id= "#Functions##GetHighestWeightKnots" class="w3-show w3-white">
+<div id= "#Functions##GetHighestWeightNodes" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -4495,7 +4495,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         </div>
         <div class="w3-half">
           
-<p>Table of knots.</p>
+<p>Table of nodes.</p>
 
         </div>
         <div class="w3-half">
@@ -4503,303 +4503,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         </div>
         <div class="w3-half">
           
-<p>Weight The consolidated weight associated with the knots.</p>
+<p>Weight The consolidated weight associated with the nodes.</p>
 
         </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).GetKnotBaseWeight" ><strong>STRATEGO:GetKnotBaseWeight(Name)</strong></a></h2>
-</div>
-    
-<p>[USER] Get the base weight of a knot by its name.</p>
-
-<div id= "#Functions##GetKnotBaseWeight" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>STRATEGO</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Name</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#number:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>Weight The base weight or 0 if not found.</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).GetKnotCoalition" ><strong>STRATEGO:GetKnotCoalition(Name)</strong></a></h2>
-</div>
-    
-<p>[USER] Get the COALITION of a knot by its name.</p>
-
-<div id= "#Functions##GetKnotCoalition" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>STRATEGO</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Name</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#number:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>Coalition The coalition.</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).GetKnotCoordinate" ><strong>STRATEGO:GetKnotCoordinate(Name)</strong></a></h2>
-</div>
-    
-<p>[USER] Get the COORDINATE of a knot by its name.</p>
-
-<div id= "#Functions##GetKnotCoordinate" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>STRATEGO</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Name</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>Coordinate The Coordinate of the knot or nil if not found.</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).GetKnotOpsZone" ><strong>STRATEGO:GetKnotOpsZone(Name)</strong></a></h2>
-</div>
-    
-<p>[USER] Get the OPSZONE of a knot by its name.</p>
-
-<div id= "#Functions##GetKnotOpsZone" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>STRATEGO</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Name</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="Ops.OpsZone.html##(OPSZONE)">Ops.OpsZone#OPSZONE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>OpsZone The OpsZone of the knot or nil if not found.</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).GetKnotType" ><strong>STRATEGO:GetKnotType(Name)</strong></a></h2>
-</div>
-    
-<p>[USER] Get the TYPE of a knot by its name.</p>
-
-<div id= "#Functions##GetKnotType" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>STRATEGO</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Name</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#string:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>Type Type of the knot, e.g. STRATEGO.Type.AIRBASE or nil if not found.</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).GetKnotWeight" ><strong>STRATEGO:GetKnotWeight(Name)</strong></a></h2>
-</div>
-    
-<p>[USER] Get the aggregated weight of a knot by its name.</p>
-
-<div id= "#Functions##GetKnotWeight" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>STRATEGO</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Name</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#number:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>Weight The weight or 0 if not found.</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).GetKnotZone" ><strong>STRATEGO:GetKnotZone(Name)</strong></a></h2>
-</div>
-    
-<p>[USER] Get the ZONE of a knot by its name.</p>
-
-<div id= "#Functions##GetKnotZone" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>STRATEGO</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Name</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="Core.Zone.html##(ZONE)">Core.Zone#ZONE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>Zone The Zone of the knot or nil if not found.</p>
-
-      </div>
     </div>
 </div>
 
@@ -4862,12 +4568,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).GetNextHighestWeightKnots" ><strong>STRATEGO:GetNextHighestWeightKnots(Weight)</strong></a></h2>
+<h2><a id="#(STRATEGO).GetNextHighestWeightNodes" ><strong>STRATEGO:GetNextHighestWeightNodes(Weight)</strong></a></h2>
 </div>
     
-<p>[USER] Get a list of the knots a weight less than the give parameter.</p>
+<p>[USER] Get a list of the nodes a weight less than the give parameter.</p>
 
-<div id= "#Functions##GetNextHighestWeightKnots" class="w3-show w3-white">
+<div id= "#Functions##GetNextHighestWeightNodes" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -4891,7 +4597,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         </div>
         <div class="w3-half">
           
-<p>Table of knots.</p>
+<p>Table of nodes.</p>
 
         </div>
         <div class="w3-half">
@@ -4899,9 +4605,303 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         </div>
         <div class="w3-half">
           
-<p>Weight The consolidated weight associated with the knots.</p>
+<p>Weight The consolidated weight associated with the nodes.</p>
 
         </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(STRATEGO).GetNodeBaseWeight" ><strong>STRATEGO:GetNodeBaseWeight(Name)</strong></a></h2>
+</div>
+    
+<p>[USER] Get the base weight of a node by its name.</p>
+
+<div id= "#Functions##GetNodeBaseWeight" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>STRATEGO</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#number:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Weight The base weight or 0 if not found.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(STRATEGO).GetNodeCoalition" ><strong>STRATEGO:GetNodeCoalition(Name)</strong></a></h2>
+</div>
+    
+<p>[USER] Get the COALITION of a node by its name.</p>
+
+<div id= "#Functions##GetNodeCoalition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>STRATEGO</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#number:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Coalition The coalition.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(STRATEGO).GetNodeCoordinate" ><strong>STRATEGO:GetNodeCoordinate(Name)</strong></a></h2>
+</div>
+    
+<p>[USER] Get the COORDINATE of a node by its name.</p>
+
+<div id= "#Functions##GetNodeCoordinate" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>STRATEGO</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Coordinate The Coordinate of the node or nil if not found.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(STRATEGO).GetNodeOpsZone" ><strong>STRATEGO:GetNodeOpsZone(Name)</strong></a></h2>
+</div>
+    
+<p>[USER] Get the OPSZONE of a node by its name.</p>
+
+<div id= "#Functions##GetNodeOpsZone" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>STRATEGO</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Ops.OpsZone.html##(OPSZONE)">Ops.OpsZone#OPSZONE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>OpsZone The OpsZone of the node or nil if not found.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(STRATEGO).GetNodeType" ><strong>STRATEGO:GetNodeType(Name)</strong></a></h2>
+</div>
+    
+<p>[USER] Get the TYPE of a node by its name.</p>
+
+<div id= "#Functions##GetNodeType" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>STRATEGO</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#string:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Type Type of the node, e.g. STRATEGO.Type.AIRBASE or nil if not found.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(STRATEGO).GetNodeWeight" ><strong>STRATEGO:GetNodeWeight(Name)</strong></a></h2>
+</div>
+    
+<p>[USER] Get the aggregated weight of a node by its name.</p>
+
+<div id= "#Functions##GetNodeWeight" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>STRATEGO</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#number:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Weight The weight or 0 if not found.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(STRATEGO).GetNodeZone" ><strong>STRATEGO:GetNodeZone(Name)</strong></a></h2>
+</div>
+    
+<p>[USER] Get the ZONE of a node by its name.</p>
+
+<div id= "#Functions##GetNodeZone" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>STRATEGO</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Core.Zone.html##(ZONE)">Core.Zone#ZONE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Zone The Zone of the node or nil if not found.</p>
+
+      </div>
     </div>
 </div>
 
@@ -4965,7 +4965,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(STRATEGO).IsAirbase" ><strong>STRATEGO:IsAirbase(Name)</strong></a></h2>
 </div>
     
-<p>[USER] Check if the TYPE of a knot is AIRBASE.</p>
+<p>[USER] Check if the TYPE of a node is AIRBASE.</p>
 
 <div id= "#Functions##IsAirbase" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -5007,7 +5007,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(STRATEGO).IsFARP" ><strong>STRATEGO:IsFARP(Name)</strong></a></h2>
 </div>
     
-<p>[USER] Check if the TYPE of a knot is FARP.</p>
+<p>[USER] Check if the TYPE of a node is FARP.</p>
 
 <div id= "#Functions##IsFARP" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -5049,7 +5049,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(STRATEGO).IsPOI" ><strong>STRATEGO:IsPOI(Name)</strong></a></h2>
 </div>
     
-<p>[USER] Check if the TYPE of a knot is POI.</p>
+<p>[USER] Check if the TYPE of a node is POI.</p>
 
 <div id= "#Functions##IsPOI" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -5091,7 +5091,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(STRATEGO).IsPort" ><strong>STRATEGO:IsPort(Name)</strong></a></h2>
 </div>
     
-<p>[USER] Check if the TYPE of a knot is PORT.</p>
+<p>[USER] Check if the TYPE of a node is PORT.</p>
 
 <div id= "#Functions##IsPort" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -5133,7 +5133,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(STRATEGO).IsShip" ><strong>STRATEGO:IsShip(Name)</strong></a></h2>
 </div>
     
-<p>[USER] Check if the TYPE of a knot is SHIP.</p>
+<p>[USER] Check if the TYPE of a node is SHIP.</p>
 
 <div id= "#Functions##IsShip" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -5245,7 +5245,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(STRATEGO).SetCaptureOptions" ><strong>STRATEGO:SetCaptureOptions(CaptureUnits, CaptureThreatlevel)</strong></a></h2>
 </div>
     
-<p>[USER] Set how many units of which minimum threat level are needed to capture one knot (i.e.</p>
+<p>[USER] Set how many units of which minimum threat level are needed to capture one node (i.e.</p>
 
     
 <p>the underlying OpsZone).</p>
@@ -5367,7 +5367,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <p>[USER] Set neutral benefit, i.e.</p>
 
     
-<p>how many points it is cheaper to decide for a neutral vs an enemy knot when taking decisions.</p>
+<p>how many points it is cheaper to decide for a neutral vs an enemy node when taking decisions.</p>
 
 <div id= "#Functions##SetNeutralBenefit" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -5457,7 +5457,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(STRATEGO).SetWeights" ><strong>STRATEGO:SetWeights(MaxRunways, PortWeight, POIWeight, RouteFactor)</strong></a></h2>
 </div>
     
-<p>[USER] Set weights for knots and routes to determine their importance.</p>
+<p>[USER] Set weights for nodes and routes to determine their importance.</p>
 
 <div id= "#Functions##SetWeights" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -5475,7 +5475,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Set the maximum number of runways the big (equals strategic) airbases on the map have. Defaults to 3. The weight of an airbase knot hence equals the number of runways.</p>
+<p>Set the maximum number of runways the big (equals strategic) airbases on the map have. Defaults to 3. The weight of an airbase node hence equals the number of runways.</p>
 
           </div>
         </div>
@@ -5488,7 +5488,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Set what weight a port knot has. Defaults to 3.</p>
+<p>Set what weight a port node has. Defaults to 3.</p>
 
           </div>
         </div>
@@ -5501,7 +5501,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Set what weight a POI knot has. Defaults to 1.</p>
+<p>Set what weight a POI node has. Defaults to 1.</p>
 
           </div>
         </div>
@@ -5514,7 +5514,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Defines which weight each route between two defined knots gets: Weight * RouteFactor.</p>
+<p>Defines which weight each route between two defined nodes gets: Weight * RouteFactor.</p>
 
           </div>
         </div>
@@ -5611,12 +5611,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).UpdateKnotCoalitions" ><strong>STRATEGO:UpdateKnotCoalitions()</strong></a></h2>
+<h2><a id="#(STRATEGO).UpdateNodeCoalitions" ><strong>STRATEGO:UpdateNodeCoalitions()</strong></a></h2>
 </div>
     
-<p>[INTERNAL] Update knot coalitions</p>
+<p>[INTERNAL] Update node coalitions</p>
 
-<div id= "#Functions##UpdateKnotCoalitions" class="w3-show w3-white">
+<div id= "#Functions##UpdateNodeCoalitions" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
