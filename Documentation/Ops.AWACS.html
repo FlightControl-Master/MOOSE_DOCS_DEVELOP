@@ -3280,7 +3280,7 @@ To add a localization, the following texts need to be translated and set in your
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).SetSRS">AWACS:SetSRS(PathToSRS, Gender, Culture, Port, Voice, Volume, PathToGoogleKey, AccessKey)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[User] Set AWACS SRS TTS details - see <a href="Sound.SRS.html">Sound.SRS</a> for details</p>
+<p>[User] Set AWACS SRS TTS details - see <a href="Sound.SRS.html">Sound.SRS</a> for details.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -7021,17 +7021,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(AWACS).Voice" ><strong>AWACS.Voice</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #number
 <a id="#(AWACS).WindowsTTSPadding" ><strong>AWACS.WindowsTTSPadding</strong></a>
     
@@ -9401,7 +9390,10 @@ Sets TAC/Meld/Threat call distances to 35, 25 and 15 nm.</p>
 <h2><a id="#(AWACS).SetSRS" ><strong>AWACS:SetSRS(PathToSRS, Gender, Culture, Port, Voice, Volume, PathToGoogleKey, AccessKey)</strong></a></h2>
 </div>
     
-<p>[User] Set AWACS SRS TTS details - see <a href="Sound.SRS.html">Sound.SRS</a> for details</p>
+<p>[User] Set AWACS SRS TTS details - see <a href="Sound.SRS.html">Sound.SRS</a> for details.</p>
+
+    
+<p><code>SetSRS()</code> will try to use as many attributes configured with <a href="Sound.SRS.html##(MSRS).LoadConfigFile">Sound.SRS#MSRS.LoadConfigFile</a>() as possible.</p>
 
 <div id= "#Functions##SetSRS" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -9498,7 +9490,7 @@ Note that this must be installed on your windows system. Can also be Google voic
           </div>
           <div class="w3-half">
               
-<p>Path to your google key if you want to use google TTS</p>
+<p>(Optional) Path to your google key if you want to use google TTS; if you use a config file for MSRS, hand in nil here.</p>
 
           </div>
         </div>
@@ -9511,7 +9503,7 @@ Note that this must be installed on your windows system. Can also be Google voic
           </div>
           <div class="w3-half">
               
-<p>Your Google API access key. This is necessary if DCS-gRPC is used as backend.</p>
+<p>(Optional) Your Google API access key. This is necessary if DCS-gRPC is used as backend; if you use a config file for MSRS, hand in nil here.</p>
 
           </div>
         </div>
@@ -16183,17 +16175,6 @@ Note that this must be installed on your windows system. Can also be Google voic
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(AWACS).Voice" ><strong>AWACS.Voice</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #number
 <a id="#(AWACS).WindowsTTSPadding" ><strong>AWACS.WindowsTTSPadding</strong></a>
     
@@ -19079,17 +19060,6 @@ Note that this must be installed on your windows system. Can also be Google voic
 <a id="#(AWACS).ThreatDistance" ><strong>AWACS.ThreatDistance</strong></a>
     
 <p>15nm - distance to declare untargeted (new) threats</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AWACS).Voice" ><strong>AWACS.Voice</strong></a>
-    
-
 
 </div>
 
