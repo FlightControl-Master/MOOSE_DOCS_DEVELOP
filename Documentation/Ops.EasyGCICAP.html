@@ -2312,6 +2312,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).ReadyFlightGroups">EASYGCICAP.ReadyFlightGroups</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).SetCAPFormation">EASYGCICAP:SetCAPFormation(Formation)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set CAP formation.</p>
@@ -2363,6 +2369,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).SetDefaultNumberAlter5Standby">EASYGCICAP:SetDefaultNumberAlter5Standby(Airframes)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set default number of airframes standing by for intercept tasks (visible on the airfield)</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).SetDefaultOverhead">EASYGCICAP:SetDefaultOverhead(Overhead)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set default overhead for intercept calculations</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2426,6 +2438,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._AssignIntercept">EASYGCICAP:_AssignIntercept(Cluster)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add a zone to the rejected zones set.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._CreateAirwings">EASYGCICAP:_CreateAirwings()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(Internal) Create actual AirWings from the list</p>
@@ -2465,6 +2483,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._StartIntel">EASYGCICAP:_StartIntel()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(Internal) Start detection.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._TryAssignIntercept">EASYGCICAP:_TryAssignIntercept(ReadyFlightGroups, InterceptAuftrag, Group, WingSize)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(Internal) Try to assign the intercept to a FlightGroup already in air and ready.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3757,6 +3781,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
 <a id="#(EASYGCICAP).NoGoZoneSet" ><strong>EASYGCICAP.NoGoZoneSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(EASYGCICAP).ReadyFlightGroups" ><strong>EASYGCICAP.ReadyFlightGroups</strong></a>
     
 
 
@@ -5503,7 +5538,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       </div>
       <div class="w3-half">
         
-<p>selfAirframes</p>
+<p>self</p>
 
       </div>
     </div>
@@ -5591,10 +5626,58 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       </div>
       <div class="w3-half">
         
-<p>selfAirframes</p>
+<p>self</p>
 
       </div>
     </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP).SetDefaultOverhead" ><strong>EASYGCICAP:SetDefaultOverhead(Overhead)</strong></a></h2>
+</div>
+    
+<p>Set default overhead for intercept calculations</p>
+
+<div id= "#Functions##SetDefaultOverhead" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Overhead</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The overhead to use.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYGCICAP)">#EASYGCICAP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+      <h2><strong>Usage:</strong></h2>
+    <pre class="example"><code>Either a CAP Plane or a newly spawned GCI plane will take care of intruders. Standard overhead is 0.75, i.e. a group of 3 intrudes will
+be managed by 2 planes from the assigned AirWing. There is an maximum missions limitation per AirWing, so we do not spam the skies.</code></pre>
+
 </div>
 
 </div>
@@ -6411,6 +6494,48 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP)._AssignIntercept" ><strong>EASYGCICAP:_AssignIntercept(Cluster)</strong></a></h2>
+</div>
+    
+<p>Add a zone to the rejected zones set.</p>
+
+<div id= "#Functions##_AssignIntercept" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.Intelligence.html##(INTEL.Cluster)">Ops.Intelligence#INTEL.Cluster</a>
+            <strong><strong>Cluster</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYGCICAP)">#EASYGCICAP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(EASYGCICAP)._CreateAirwings" ><strong>EASYGCICAP:_CreateAirwings()</strong></a></h2>
 </div>
     
@@ -6612,6 +6737,97 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <p>self</p>
 
       </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP)._TryAssignIntercept" ><strong>EASYGCICAP:_TryAssignIntercept(ReadyFlightGroups, InterceptAuftrag, Group, WingSize)</strong></a></h2>
+</div>
+    
+<p>(Internal) Try to assign the intercept to a FlightGroup already in air and ready.</p>
+
+<div id= "#Functions##_TryAssignIntercept" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>ReadyFlightGroups</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>ReadyFlightGroups</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.Auftrag.html##(AUFTRAG)">Ops.Auftrag#AUFTRAG</a>
+            <strong><strong>InterceptAuftrag</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Auftrag</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>Group</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Target</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>WingSize</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Calculated number of Flights</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#boolean:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>assigned</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#number:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>leftover</p>
+
+        </div>
     </div>
 </div>
 
@@ -7014,6 +7230,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
 <a id="#(EASYGCICAP).NoGoZoneSet" ><strong>EASYGCICAP.NoGoZoneSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(EASYGCICAP).ReadyFlightGroups" ><strong>EASYGCICAP.ReadyFlightGroups</strong></a>
     
 
 
@@ -8836,6 +9063,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
 <a id="#(EASYGCICAP).NoGoZoneSet" ><strong>EASYGCICAP.NoGoZoneSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(EASYGCICAP).ReadyFlightGroups" ><strong>EASYGCICAP.ReadyFlightGroups</strong></a>
     
 
 
