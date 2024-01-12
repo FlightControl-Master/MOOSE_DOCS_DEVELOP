@@ -2279,7 +2279,7 @@ Play around with the distance to get an optimal map for your scenario.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetHighestWeightNodes">STRATEGO:GetHighestWeightNodes()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetHighestWeightNodes">STRATEGO:GetHighestWeightNodes(Coalition)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[USER] Get a list of the nodes with the highest weight.</p>
 </td>
@@ -2291,9 +2291,9 @@ Play around with the distance to get an optimal map for your scenario.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetNextHighestWeightNodes">STRATEGO:GetNextHighestWeightNodes(Weight)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetNextHighestWeightNodes">STRATEGO:GetNextHighestWeightNodes(Weight, Coalition)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[USER] Get a list of the nodes a weight less than the give parameter.</p>
+<p>[USER] Get a list of the nodes a weight less than the given parameter.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3277,6 +3277,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO.Target).coalitionname">STRATEGO.Target.coalitionname</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p> </p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO.Target).coordinate">STRATEGO.Target.coordinate</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -4337,16 +4343,32 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
           </div>
         </div>
-    <h2><strong>Return value:</strong></h2>
+    <h2><strong>Return values:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#table:</p>
-      </div>
-      <div class="w3-half">
-        
+        <div class="w3-half">
+          <p>#table:</p>
+        </div>
+        <div class="w3-half">
+          
 <p>Neighbors Table of #STRATEGO.DistData entries indexed by neighbor node names.</p>
 
-      </div>
+        </div>
+        <div class="w3-half">
+          <p>#string:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Nearest Name of the nearest node.</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#number:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Distance Distance of the nearest node.</p>
+
+        </div>
     </div>
 </div>
 
@@ -4533,7 +4555,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).GetHighestWeightNodes" ><strong>STRATEGO:GetHighestWeightNodes()</strong></a></h2>
+<h2><a id="#(STRATEGO).GetHighestWeightNodes" ><strong>STRATEGO:GetHighestWeightNodes(Coalition)</strong></a></h2>
 </div>
     
 <p>[USER] Get a list of the nodes with the highest weight.</p>
@@ -4544,6 +4566,20 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>STRATEGO</p>
 </div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Coalition</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Find for this coalition only. E.g. coalition.side.BLUE.</p>
+
+          </div>
+        </div>
     <h2><strong>Return values:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
         <div class="w3-half">
@@ -4624,10 +4660,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).GetNextHighestWeightNodes" ><strong>STRATEGO:GetNextHighestWeightNodes(Weight)</strong></a></h2>
+<h2><a id="#(STRATEGO).GetNextHighestWeightNodes" ><strong>STRATEGO:GetNextHighestWeightNodes(Weight, Coalition)</strong></a></h2>
 </div>
     
-<p>[USER] Get a list of the nodes a weight less than the give parameter.</p>
+<p>[USER] Get a list of the nodes a weight less than the given parameter.</p>
 
 <div id= "#Functions##GetNextHighestWeightNodes" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -4635,15 +4671,31 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>STRATEGO</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
+                #number
             <strong><strong>Weight</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              <p></p>
+              
+<p>Weight - nodes need to have less than this weight.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Coalition</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Find for this coalition only. E.g. coalition.side.BLUE.</p>
+
           </div>
         </div>
     <h2><strong>Return values:</strong></h2>
@@ -9856,6 +9908,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(STRATEGO.Target).coalitionname" ><strong>STRATEGO.Target.coalitionname</strong></a>
     
 <p> </p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Point.html##(COORDINATRE)">Core.Point#COORDINATRE</a>
+<a id="#(STRATEGO.Target).coordinate" ><strong>STRATEGO.Target.coordinate</strong></a>
+    
+
 
 </div>
 

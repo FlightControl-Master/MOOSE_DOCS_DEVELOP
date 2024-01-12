@@ -3043,6 +3043,12 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewLANDATCOORDINATE">AUFTRAG:NewLANDATCOORDINATE(Coordinate, OuterRadius, InnerRadius, Time, Speed, MissionAlt)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p><strong>[AIR ROTARY]</strong> Create an LANDATCOORDINATE mission.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewNOTHING">AUFTRAG:NewNOTHING(RelaxZone)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[GROUND, NAVAL]</strong> Create a mission to do NOTHING.</p>
@@ -6345,6 +6351,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG.Type).INTERCEPT">AUFTRAG.Type.INTERCEPT</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Intercept mission.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG.Type).LANDATCOORDINATE">AUFTRAG.Type.LANDATCOORDINATE</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Land at coordinate.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -14136,6 +14148,115 @@ themselfs. They wait for the CHIEF to tell them whom to engage.</p>
           <div class="w3-half">
               
 <p>The target to intercept. Can also be passed as simple <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a> or <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a> object.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).NewLANDATCOORDINATE" ><strong>AUFTRAG:NewLANDATCOORDINATE(Coordinate, OuterRadius, InnerRadius, Time, Speed, MissionAlt)</strong></a></h2>
+</div>
+    
+<p><strong>[AIR ROTARY]</strong> Create an LANDATCOORDINATE mission.</p>
+
+<div id= "#Functions##NewLANDATCOORDINATE" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>Coordinate</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Where to land.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>OuterRadius</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Vary the coordinate by this many feet, e.g. get a new random coordinate between OuterRadius and (optionally) avoiding InnerRadius of the coordinate.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>InnerRadius</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Vary the coordinate by this many feet, e.g. get a new random coordinate between OuterRadius and (optionally) avoiding InnerRadius of the coordinate.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Time</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Time in seconds to stay. Default 300 seconds.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Speed in knots to fly to the target coordinate. Default 150kn.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>MissionAlt</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Altitude to fly towards the mission in feet AGL. Default 1000ft.</p>
 
           </div>
         </div>
@@ -31098,6 +31219,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(AUFTRAG.Type).INTERCEPT" ><strong>AUFTRAG.Type.INTERCEPT</strong></a>
     
 <p>Intercept mission.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AUFTRAG.Type).LANDATCOORDINATE" ><strong>AUFTRAG.Type.LANDATCOORDINATE</strong></a>
+    
+<p>Land at coordinate.</p>
 
 </div>
 
