@@ -3947,7 +3947,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).EnablePrecisionBombing">PLAYERTASKCONTROLLER:EnablePrecisionBombing(FlightGroup, LaserCode)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).EnablePrecisionBombing">PLAYERTASKCONTROLLER:EnablePrecisionBombing(FlightGroup, LaserCode, HoldingPoint)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Allow precision laser-guided bombing on statics and "high-value" ground units (MBT etc)</p>
 </td>
@@ -15109,7 +15109,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
@@ -15932,7 +15932,7 @@ Where **TASK** is the tag that tells the controller this mark is a target locati
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(PLAYERTASKCONTROLLER).EnablePrecisionBombing" ><strong>PLAYERTASKCONTROLLER:EnablePrecisionBombing(FlightGroup, LaserCode)</strong></a></h2>
+<h2><a id="#(PLAYERTASKCONTROLLER).EnablePrecisionBombing" ><strong>PLAYERTASKCONTROLLER:EnablePrecisionBombing(FlightGroup, LaserCode, HoldingPoint)</strong></a></h2>
 </div>
     
 <p>[User] Allow precision laser-guided bombing on statics and "high-value" ground units (MBT etc)</p>
@@ -15968,6 +15968,19 @@ Can optionally be handed as Ops.ArmyGroup#ARMYGROUP - <strong>Note</strong> migh
           <div class="w3-half">
               
 <p>The lasercode to be used. Defaults to 1688.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>HoldingPoint</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Point where the drone should initially circle. If not set, defaults to BullsEye of the coalition.</p>
 
           </div>
         </div>
@@ -21348,7 +21361,7 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
@@ -23687,7 +23700,7 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
