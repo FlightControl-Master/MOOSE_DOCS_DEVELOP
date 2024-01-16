@@ -2172,6 +2172,18 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).DisableSmokeMenu">AUTOLASE:DisableSmokeMenu()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(User) Do not show the "Switch smoke target..." menu entry for pilots.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).EnableSmokeMenu">AUTOLASE:EnableSmokeMenu()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(User) Show the "Switch smoke target..." menu entry for pilots.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).Gender">AUTOLASE.Gender</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -2628,6 +2640,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).smokemenu">AUTOLASE.smokemenu</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).smoketargets">AUTOLASE.smoketargets</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -2748,7 +2766,7 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(AUTOLASE).CurrentLasing" ><strong>AUTOLASE.CurrentLasing</strong></a>
     
 
@@ -3070,17 +3088,6 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(AUTOLASE).cooldowntime" ><strong>AUTOLASE.cooldowntime</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #table
 <a id="#(AUTOLASE).deadunitnotes" ><strong>AUTOLASE.deadunitnotes</strong></a>
     
@@ -3092,8 +3099,8 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
-<a id="#(AUTOLASE).forcecooldown" ><strong>AUTOLASE.forcecooldown</strong></a>
+    #number
+<a id="#(AUTOLASE).lasingindex" ><strong>AUTOLASE.lasingindex</strong></a>
     
 
 
@@ -3161,6 +3168,17 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(AUTOLASE).smokemenu" ><strong>AUTOLASE.smokemenu</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
 <a id="#(AUTOLASE).smoketargets" ><strong>AUTOLASE.smoketargets</strong></a>
     
@@ -3172,7 +3190,7 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(AUTOLASE).targetsperrecce" ><strong>AUTOLASE.targetsperrecce</strong></a>
     
 
@@ -3415,6 +3433,69 @@ To exclude trucks and artillery:
       <div class="w3-half">
         
 <p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUTOLASE).DisableSmokeMenu" ><strong>AUTOLASE:DisableSmokeMenu()</strong></a></h2>
+</div>
+    
+<p>(User) Do not show the "Switch smoke target..." menu entry for pilots.</p>
+
+<div id= "#Functions##DisableSmokeMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUTOLASE</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUTOLASE).EnableSmokeMenu" ><strong>AUTOLASE:EnableSmokeMenu()</strong></a></h2>
+</div>
+    
+<p>(User) Show the "Switch smoke target..." menu entry for pilots.</p>
+
+    
+<p>On by default.</p>
+
+<div id= "#Functions##EnableSmokeMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUTOLASE</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
 
       </div>
     </div>
