@@ -3947,7 +3947,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).EnablePrecisionBombing">PLAYERTASKCONTROLLER:EnablePrecisionBombing(FlightGroup, LaserCode, HoldingPoint)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).EnablePrecisionBombing">PLAYERTASKCONTROLLER:EnablePrecisionBombing(FlightGroup, LaserCode, HoldingPoint, Alt, Speed)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Allow precision laser-guided bombing on statics and "high-value" ground units (MBT etc)</p>
 </td>
@@ -4044,6 +4044,30 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).LasingDrone">PLAYERTASKCONTROLLER.LasingDrone</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).LasingDroneAlt">PLAYERTASKCONTROLLER.LasingDroneAlt</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).LasingDroneIsArmygroup">PLAYERTASKCONTROLLER.LasingDroneIsArmygroup</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).LasingDroneIsFlightgroup">PLAYERTASKCONTROLLER.LasingDroneIsFlightgroup</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).LasingDroneSpeed">PLAYERTASKCONTROLLER.LasingDroneSpeed</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -14633,6 +14657,28 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(PLAYERTASKCONTROLLER).LasingDroneIsArmygroup" ><strong>PLAYERTASKCONTROLLER.LasingDroneIsArmygroup</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(PLAYERTASKCONTROLLER).LasingDroneIsFlightgroup" ><strong>PLAYERTASKCONTROLLER.LasingDroneIsFlightgroup</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
 <a id="#(PLAYERTASKCONTROLLER).LasingDroneTemplate" ><strong>PLAYERTASKCONTROLLER.LasingDroneTemplate</strong></a>
     
@@ -15943,7 +15989,7 @@ Where **TASK** is the tag that tells the controller this mark is a target locati
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(PLAYERTASKCONTROLLER).EnablePrecisionBombing" ><strong>PLAYERTASKCONTROLLER:EnablePrecisionBombing(FlightGroup, LaserCode, HoldingPoint)</strong></a></h2>
+<h2><a id="#(PLAYERTASKCONTROLLER).EnablePrecisionBombing" ><strong>PLAYERTASKCONTROLLER:EnablePrecisionBombing(FlightGroup, LaserCode, HoldingPoint, Alt, Speed)</strong></a></h2>
 </div>
     
 <p>[User] Allow precision laser-guided bombing on statics and "high-value" ground units (MBT etc)</p>
@@ -15992,6 +16038,32 @@ Can optionally be handed as Ops.ArmyGroup#ARMYGROUP - <strong>Note</strong> migh
           <div class="w3-half">
               
 <p>(Optional) Point where the drone should initially circle. If not set, defaults to BullsEye of the coalition.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Alt</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Altitude in feet. Only applies if using a FLIGHTGROUP object! Defaults to 10000.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Speed in knots. Only applies if using a FLIGHTGROUP object! Defaults to 120.</p>
 
           </div>
         </div>
@@ -20896,6 +20968,28 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(PLAYERTASKCONTROLLER).LasingDroneIsArmygroup" ><strong>PLAYERTASKCONTROLLER.LasingDroneIsArmygroup</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(PLAYERTASKCONTROLLER).LasingDroneIsFlightgroup" ><strong>PLAYERTASKCONTROLLER.LasingDroneIsFlightgroup</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
 <a id="#(PLAYERTASKCONTROLLER).LasingDroneTemplate" ><strong>PLAYERTASKCONTROLLER.LasingDroneTemplate</strong></a>
     
@@ -23237,6 +23331,28 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 
     <a href="Ops.FlightGroup.html##(FLIGHTGROUP)">Ops.FlightGroup#FLIGHTGROUP</a>
 <a id="#(PLAYERTASKCONTROLLER).LasingDrone" ><strong>PLAYERTASKCONTROLLER.LasingDrone</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(PLAYERTASKCONTROLLER).LasingDroneIsArmygroup" ><strong>PLAYERTASKCONTROLLER.LasingDroneIsArmygroup</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(PLAYERTASKCONTROLLER).LasingDroneIsFlightgroup" ><strong>PLAYERTASKCONTROLLER.LasingDroneIsFlightgroup</strong></a>
     
 
 
