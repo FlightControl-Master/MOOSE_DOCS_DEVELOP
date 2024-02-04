@@ -2061,6 +2061,23 @@ for entries etc, push to one or all clients.</p>
 
 <p>Many functions can either change the tree for one client or for all clients.</p>
 
+<h2>Conceptual remarks</h2>
+
+<p>There's a couple of things to fully understand: </p>
+
+<p>1) <strong>CLIENTMENUMANAGER</strong> manages a set of entries from <strong>CLIENTMENU</strong>, it's main purpose is to administer the <em>shadow menu tree</em>, ie. a menu structure which is not 
+(yet) visible to any client <br/>
+2) The entries are <strong>CLIENTMENU</strong> objects, which are linked in a tree form. There's two ways to create them:   </p>
+<pre><code>     A) in the manager with ":NewEntry()" which initially 
+         adds it to the shadow menu **only**   
+     B) stand-alone directly as `CLIENTMENU:NewEntry()` - here it depends on whether or not you gave a CLIENT object if the entry is created as generic entry or pushed 
+         a **specific** client. **Be aware** though that the entries are not managed by the CLIENTMANAGER before the next step!   
+</code></pre>
+<p>A generic entry can be added to the manager (and the shadow tree) with <code>:AddEntry()</code> - this will also push it to all clients(!) if no client is given, or a specific client only. <br/>
+3) Pushing only works for alive clients. <br/>
+4) Live and shadow tree entries are managed via the CLIENTMENUMANAGER object. <br/>
+5) <code>Propagate()</code>refreshes the menu tree for all, or a single client.   </p>
+
 <h2>Create a base reference tree and send to all clients</h2>
 
 <pre><code>       local clientset = SET_CLIENT:New():FilterStart()
@@ -2922,7 +2939,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).AddEntry">CLIENTMENUMANAGER:AddEntry(Entry, Client)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Push a single previously created entry into the menu structure of all clients.</p>
+<p>Push a single previously created entry into the F10 menu structure of all clients.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2994,7 +3011,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).InitAutoPropagation">CLIENTMENUMANAGER:InitAutoPropagation()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set this Client Manager to auto-propagate menus to newly joined players.</p>
+<p>Set this Client Manager to auto-propagate menus <strong>once</strong> to newly joined players.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3006,7 +3023,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CLIENTMENUMANAGER).NewEntry">CLIENTMENUMANAGER:NewEntry(Text, Parent, Function, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Create a new entry in the generic structure.</p>
+<p>Create a new entry in the <strong>generic</strong> structure.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4119,7 +4136,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>The client for whom this entry is.</p>
+<p>The client for whom this entry is. Leave as nil for a generic entry.</p>
 
           </div>
         </div>
@@ -8094,7 +8111,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <h2><a id="#(CLIENTMENUMANAGER).AddEntry" ><strong>CLIENTMENUMANAGER:AddEntry(Entry, Client)</strong></a></h2>
 </div>
     
-<p>Push a single previously created entry into the menu structure of all clients.</p>
+<p>Push a single previously created entry into the F10 menu structure of all clients.</p>
 
 <div id= "#Functions##AddEntry" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -8660,10 +8677,10 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <h2><a id="#(CLIENTMENUMANAGER).InitAutoPropagation" ><strong>CLIENTMENUMANAGER:InitAutoPropagation()</strong></a></h2>
 </div>
     
-<p>Set this Client Manager to auto-propagate menus to newly joined players.</p>
+<p>Set this Client Manager to auto-propagate menus <strong>once</strong> to newly joined players.</p>
 
     
-<p>Useful if you have <strong>one</strong> menu structure only.</p>
+<p>Useful if you have <strong>one</strong> menu structure only. Does not automatically push follow-up changes to the client(s).</p>
 
 <div id= "#Functions##InitAutoPropagation" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -8763,7 +8780,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <h2><a id="#(CLIENTMENUMANAGER).NewEntry" ><strong>CLIENTMENUMANAGER:NewEntry(Text, Parent, Function, ...)</strong></a></h2>
 </div>
     
-<p>Create a new entry in the generic structure.</p>
+<p>Create a new entry in the <strong>generic</strong> structure.</p>
 
 <div id= "#Functions##NewEntry" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
