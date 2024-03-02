@@ -2618,6 +2618,12 @@ To add a localization, the following texts need to be translated and set in your
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).Backend">AWACS.Backend</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).BorderZone">AWACS.BorderZone</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -3284,7 +3290,7 @@ To add a localization, the following texts need to be translated and set in your
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).SetSRS">AWACS:SetSRS(PathToSRS, Gender, Culture, Port, Voice, Volume, PathToGoogleKey, AccessKey)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).SetSRS">AWACS:SetSRS(PathToSRS, Gender, Culture, Port, Voice, Volume, PathToGoogleKey, AccessKey, Backend)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Set AWACS SRS TTS details - see <a href="Sound.SRS.html">Sound.SRS</a> for details.</p>
 </td>
@@ -9410,7 +9416,7 @@ Sets TAC/Meld/Threat call distances to 35, 25 and 15 nm.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AWACS).SetSRS" ><strong>AWACS:SetSRS(PathToSRS, Gender, Culture, Port, Voice, Volume, PathToGoogleKey, AccessKey)</strong></a></h2>
+<h2><a id="#(AWACS).SetSRS" ><strong>AWACS:SetSRS(PathToSRS, Gender, Culture, Port, Voice, Volume, PathToGoogleKey, AccessKey, Backend)</strong></a></h2>
 </div>
     
 <p>[User] Set AWACS SRS TTS details - see <a href="Sound.SRS.html">Sound.SRS</a> for details.</p>
@@ -9527,6 +9533,19 @@ Note that this must be installed on your windows system. Can also be Google voic
           <div class="w3-half">
               
 <p>(Optional) Your Google API access key. This is necessary if DCS-gRPC is used as backend; if you use a config file for MSRS, hand in nil here.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Backend</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Your MSRS Backend if different from your config file settings, e.g. MSRS.Backend.SRSEXE or MSRS.Backend.GRPC</p>
 
           </div>
         </div>
