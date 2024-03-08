@@ -1996,7 +1996,7 @@ Make sure to use the "MarkChanged" event as "MarkAdded" comes in right after the
 <h3>Author: <strong>Applevangelist</strong></h3>
 
 <p>Date: 5 May 2021
-Last Update: Feb 2023</p>
+Last Update: Mar 2023</p>
 
 <hr/>
 <p>-</p>
@@ -2071,13 +2071,13 @@ Last Update: Feb 2023</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MARKEROPS_BASE).OnAfterMarkAdded">MARKEROPS_BASE:OnAfterMarkAdded(From, Event, To, Text, Keywords, Coord)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MARKEROPS_BASE).OnAfterMarkAdded">MARKEROPS_BASE:OnAfterMarkAdded(From, Event, To, Text, Keywords, Coord, MarkerID, CoalitionNumber)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "MarkAdded" event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MARKEROPS_BASE).OnAfterMarkChanged">MARKEROPS_BASE:OnAfterMarkChanged(From, Event, To, Text, Keywords, Coord, idx)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MARKEROPS_BASE).OnAfterMarkChanged">MARKEROPS_BASE:OnAfterMarkChanged(From, Event, To, Text, Keywords, Coord, MarkerID, CoalitionNumber)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "MarkChanged" event.</p>
 </td>
@@ -2131,13 +2131,13 @@ Last Update: Feb 2023</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MARKEROPS_BASE).onbeforeMarkAdded">MARKEROPS_BASE:onbeforeMarkAdded(From, Event, To, Text, Keywords, Coord)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MARKEROPS_BASE).onbeforeMarkAdded">MARKEROPS_BASE:onbeforeMarkAdded(From, Event, To, Text, Keywords, MarkerID, CoalitionNumber, Coord)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On before "MarkAdded" event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MARKEROPS_BASE).onbeforeMarkChanged">MARKEROPS_BASE:onbeforeMarkChanged(From, Event, To, Text, Keywords, Coord)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MARKEROPS_BASE).onbeforeMarkChanged">MARKEROPS_BASE:onbeforeMarkChanged(From, Event, To, Text, Keywords, MarkerID, CoalitionNumber, Coord)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On before "MarkChanged" event.</p>
 </td>
@@ -3154,7 +3154,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(MARKEROPS_BASE).OnAfterMarkAdded" ><strong>MARKEROPS_BASE:OnAfterMarkAdded(From, Event, To, Text, Keywords, Coord)</strong></a></h2>
+<h2><a id="#(MARKEROPS_BASE).OnAfterMarkAdded" ><strong>MARKEROPS_BASE:OnAfterMarkAdded(From, Event, To, Text, Keywords, Coord, MarkerID, CoalitionNumber)</strong></a></h2>
 </div>
     
 <p>On after "MarkAdded" event.</p>
@@ -3247,6 +3247,32 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
           </div>
         </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>MarkerID</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Id of this marker</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>CoalitionNumber</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Coalition of the marker creator</p>
+
+          </div>
+        </div>
 </div>
 
 </div>
@@ -3255,7 +3281,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(MARKEROPS_BASE).OnAfterMarkChanged" ><strong>MARKEROPS_BASE:OnAfterMarkChanged(From, Event, To, Text, Keywords, Coord, idx)</strong></a></h2>
+<h2><a id="#(MARKEROPS_BASE).OnAfterMarkChanged" ><strong>MARKEROPS_BASE:OnAfterMarkChanged(From, Event, To, Text, Keywords, Coord, MarkerID, CoalitionNumber)</strong></a></h2>
 </div>
     
 <p>On after "MarkChanged" event.</p>
@@ -3352,12 +3378,25 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
             <p>
                 #number
-            <strong><strong>idx</strong></strong>
+            <strong><strong>MarkerID</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>DCS Marker ID</p>
+<p>Id of this marker</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>CoalitionNumber</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Coalition of the marker creator</p>
 
           </div>
         </div>
@@ -3572,7 +3611,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(MARKEROPS_BASE).onbeforeMarkAdded" ><strong>MARKEROPS_BASE:onbeforeMarkAdded(From, Event, To, Text, Keywords, Coord)</strong></a></h2>
+<h2><a id="#(MARKEROPS_BASE).onbeforeMarkAdded" ><strong>MARKEROPS_BASE:onbeforeMarkAdded(From, Event, To, Text, Keywords, MarkerID, CoalitionNumber, Coord)</strong></a></h2>
 </div>
     
 <p>On before "MarkAdded" event.</p>
@@ -3655,6 +3694,32 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
+                #number
+            <strong><strong>MarkerID</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Id of this marker</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>CoalitionNumber</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Coalition of the marker creator</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
                 <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
             <strong><strong>Coord</strong></strong>
             </p>
@@ -3673,7 +3738,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(MARKEROPS_BASE).onbeforeMarkChanged" ><strong>MARKEROPS_BASE:onbeforeMarkChanged(From, Event, To, Text, Keywords, Coord)</strong></a></h2>
+<h2><a id="#(MARKEROPS_BASE).onbeforeMarkChanged" ><strong>MARKEROPS_BASE:onbeforeMarkChanged(From, Event, To, Text, Keywords, MarkerID, CoalitionNumber, Coord)</strong></a></h2>
 </div>
     
 <p>On before "MarkChanged" event.</p>
@@ -3750,6 +3815,32 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>Table of matching keywords found in the Event text</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>MarkerID</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Id of this marker</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>CoalitionNumber</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Coalition of the marker creator</p>
 
           </div>
         </div>
