@@ -3047,12 +3047,6 @@ of the squadron are destroyed. This is to keep consistency of air operations and
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).Defenders">AI_A2G_DISPATCHER.Defenders</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).DefenseApproach">AI_A2G_DISPATCHER.DefenseApproach</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -3078,12 +3072,6 @@ of the squadron are destroyed. This is to keep consistency of air operations and
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).DefenseRadius">AI_A2G_DISPATCHER.DefenseRadius</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2G_DISPATCHER).DefenseReactivity">AI_A2G_DISPATCHER.DefenseReactivity</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -5137,6 +5125,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(AI_A2G_DISPATCHER).DefenderPatrolIndex" ><strong>AI_A2G_DISPATCHER.DefenderPatrolIndex</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(AI_A2G_DISPATCHER).DefenderSpawns" ><strong>AI_A2G_DISPATCHER.DefenderSpawns</strong></a>
     
@@ -5187,10 +5186,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(AI_A2G_DISPATCHER.DefenseCoordinates)">#AI_A2G_DISPATCHER.DefenseCoordinates</a>
+    #table
 <a id="#(AI_A2G_DISPATCHER).DefenseCoordinates" ><strong>AI_A2G_DISPATCHER.DefenseCoordinates</strong></a>
     
 
+
+    
+<p> @field #AI_A2G_DISPATCHER.DefenseCoordinates DefenseCoordinates</p>
 
 </div>
 
@@ -5209,21 +5211,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(AI_A2G_DISPATCHER.DefenseQueue)">#AI_A2G_DISPATCHER.DefenseQueue</a>
+    #table
 <a id="#(AI_A2G_DISPATCHER).DefenseQueue" ><strong>AI_A2G_DISPATCHER.DefenseQueue</strong></a>
     
 
 
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(AI_A2G_DISPATCHER).DefenseReactivity" ><strong>AI_A2G_DISPATCHER.DefenseReactivity</strong></a>
     
-
+<p> @field #AI_A2G_DISPATCHER.DefenseQueue DefenseQueue</p>
 
 </div>
 
@@ -5275,10 +5269,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(AI_A2G_DISPATCHER.Takeoff)">#AI_A2G_DISPATCHER.Takeoff</a>
+    
 <a id="#(AI_A2G_DISPATCHER).Takeoff" ><strong>AI_A2G_DISPATCHER.Takeoff</strong></a>
     
 
+
+    
+<p> @field #AI_A2G_DISPATCHER.Takeoff Takeoff</p>
 
 </div>
 
@@ -5315,6 +5312,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </div>
     
 
+
+    
+<p> @param #AI_A2G_DISPATCHER self</p>
 
 <div id= "#Functions##AddDefenderToSquadron" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -5366,6 +5366,11 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     
 
 
+    
+<p> @param #AI_A2G_DISPATCHER self
+ @param #string DefenseCoordinateName The name of the coordinate to be defended by A2G defenses.
+ @param Core.Point#COORDINATE DefenseCoordinate The coordinate to be defended by A2G defenses.</p>
+
 <div id= "#Functions##AddDefenseCoordinate" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -5376,27 +5381,21 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #string
             <strong><strong>DefenseCoordinateName</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The name of the coordinate to be defended by A2G defenses.</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
             <strong><strong>DefenseCoordinate</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The coordinate to be defended by A2G defenses.</p>
-
+              <p></p>
           </div>
         </div>
 </div>
@@ -7270,6 +7269,10 @@ The Detection object is polymorphic, depending on the type of detection object c
     
 
 
+    
+<p> @param #AI_A2G_DISPATCHER self
+ @param Core.Event#EVENTDATA EventData</p>
+
 <div id= "#Functions##OnEventBaseCaptured" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -7280,7 +7283,6 @@ The Detection object is polymorphic, depending on the type of detection object c
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
             <strong><strong>EventData</strong></strong>
             </p>
           </div>
@@ -7301,6 +7303,10 @@ The Detection object is polymorphic, depending on the type of detection object c
     
 
 
+    
+<p> @param #AI_A2G_DISPATCHER self
+ @param Core.Event#EVENTDATA EventData</p>
+
 <div id= "#Functions##OnEventCrashOrDead" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -7311,7 +7317,6 @@ The Detection object is polymorphic, depending on the type of detection object c
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
             <strong><strong>EventData</strong></strong>
             </p>
           </div>
@@ -7332,6 +7337,10 @@ The Detection object is polymorphic, depending on the type of detection object c
     
 
 
+    
+<p> @param #AI_A2G_DISPATCHER self
+ @param Core.Event#EVENTDATA EventData</p>
+
 <div id= "#Functions##OnEventEngineShutdown" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -7342,7 +7351,6 @@ The Detection object is polymorphic, depending on the type of detection object c
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
             <strong><strong>EventData</strong></strong>
             </p>
           </div>
@@ -7363,6 +7371,10 @@ The Detection object is polymorphic, depending on the type of detection object c
     
 
 
+    
+<p> @param #AI_A2G_DISPATCHER self
+ @param Core.Event#EVENTDATA EventData</p>
+
 <div id= "#Functions##OnEventLand" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -7373,7 +7385,6 @@ The Detection object is polymorphic, depending on the type of detection object c
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
             <strong><strong>EventData</strong></strong>
             </p>
           </div>
@@ -7530,6 +7541,9 @@ The Detection object is polymorphic, depending on the type of detection object c
 </div>
     
 
+
+    
+<p> @param #AI_A2G_DISPATCHER self</p>
 
 <div id= "#Functions##RemoveDefenderFromSquadron" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -7736,6 +7750,9 @@ The Detection object is polymorphic, depending on the type of detection object c
 </div>
     
 
+
+    
+<p> @param #AI_A2G_DISPATCHER self</p>
 
 <div id= "#Functions##ResourcePark" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -9187,7 +9204,7 @@ You want it to wait until a certain defend radius is reached, which is calculate
   1. the <strong>distance of the closest airbase to target</strong>, being smaller than the <strong>Defend Radius</strong>.
   2. the <strong>distance to any defense reference point</strong>.</p>
 
-<p>The <strong>default</strong> defense radius is defined as <strong>400000</strong> or <strong>40km</strong>. Override the default defense radius when the era of the warfare is early, or, 
+<p>The <strong>default</strong> defense radius is defined as <strong>40000</strong> or <strong>40km</strong>. Override the default defense radius when the era of the warfare is early, or, 
 when you don't want to let the AI_A2G_DISPATCHER react immediately when a certain border or area is not being crossed.</p>
 
 <p>Use the method <a href="##(AI_A2G_DISPATCHER).SetDefendRadius">AI_A2G_DISPATCHER.SetDefendRadius</a>() to set a specific defend radius for all squadrons,
@@ -9210,7 +9227,7 @@ when you don't want to let the AI_A2G_DISPATCHER react immediately when a certai
           </div>
           <div class="w3-half">
               
-<p>(Optional, Default = 200000) The defense radius to engage detected targets from the nearest capable and available squadron airbase.</p>
+<p>(Optional, Default = 20000) The defense radius to engage detected targets from the nearest capable and available squadron airbase.</p>
 
           </div>
         </div>
@@ -9250,6 +9267,9 @@ when you don't want to let the AI_A2G_DISPATCHER react immediately when a certai
     
 
 
+    
+<p> @param #AI_A2G_DISPATCHER self</p>
+
 <div id= "#Functions##SetDefenseReactivityHigh" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -9269,6 +9289,9 @@ when you don't want to let the AI_A2G_DISPATCHER react immediately when a certai
     
 
 
+    
+<p> @param #AI_A2G_DISPATCHER self</p>
+
 <div id= "#Functions##SetDefenseReactivityLow" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -9287,6 +9310,9 @@ when you don't want to let the AI_A2G_DISPATCHER react immediately when a certai
 </div>
     
 
+
+    
+<p> @param #AI_A2G_DISPATCHER self</p>
 
 <div id= "#Functions##SetDefenseReactivityMedium" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -13012,6 +13038,17 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
     
 
 
+    
+<p> @param #AI_A2G_DISPATCHER self
+ @param #string SquadronName The squadron name.
+ @param #number TakeoffInterval  Only Takeoff new units each specified interval in seconds in 10 seconds steps.
+ @usage</p>
+
+<pre><code>    -- Set the Squadron Takeoff interval every 60 seconds for squadron "SQ50", which is good for a FARP cold start.
+    A2GDispatcher:SetSquadronTakeoffInterval( "SQ50", 60 )
+    
+</code></pre>
+
 <div id= "#Functions##SetSquadronTakeoffInterval" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -13022,35 +13059,23 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #string
             <strong><strong>SquadronName</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The squadron name.</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #number
             <strong><strong>TakeoffInterval</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p> Only Takeoff new units each specified interval in seconds in 10 seconds steps.</p>
-
+              <p></p>
           </div>
         </div>
-      <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>
-       -- Set the Squadron Takeoff interval every 60 seconds for squadron "SQ50", which is good for a FARP cold start.
-       A2GDispatcher:SetSquadronTakeoffInterval( "SQ50", 60 )
-       </code></pre>
-
 </div>
 
 </div>
@@ -13597,6 +13622,9 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
     
 
 
+    
+<p> @param #AI_A2G_DISPATCHER self</p>
+
 <div id= "#Functions##onafterStart" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -13659,6 +13687,17 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(AI_A2G_DISPATCHER).DefenderPatrolIndex" ><strong>AI_A2G_DISPATCHER.DefenderPatrolIndex</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(AI_A2G_DISPATCHER).DefenderSpawns" ><strong>AI_A2G_DISPATCHER.DefenderSpawns</strong></a>
     
@@ -13709,10 +13748,13 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(AI_A2G_DISPATCHER.DefenseCoordinates)">#AI_A2G_DISPATCHER.DefenseCoordinates</a>
+    #table
 <a id="#(AI_A2G_DISPATCHER).DefenseCoordinates" ><strong>AI_A2G_DISPATCHER.DefenseCoordinates</strong></a>
     
 
+
+    
+<p> @field #AI_A2G_DISPATCHER.DefenseCoordinates DefenseCoordinates</p>
 
 </div>
 
@@ -13731,21 +13773,13 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(AI_A2G_DISPATCHER.DefenseQueue)">#AI_A2G_DISPATCHER.DefenseQueue</a>
+    #table
 <a id="#(AI_A2G_DISPATCHER).DefenseQueue" ><strong>AI_A2G_DISPATCHER.DefenseQueue</strong></a>
     
 
 
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(AI_A2G_DISPATCHER).DefenseReactivity" ><strong>AI_A2G_DISPATCHER.DefenseReactivity</strong></a>
     
-
+<p> @field #AI_A2G_DISPATCHER.DefenseQueue DefenseQueue</p>
 
 </div>
 
@@ -13797,10 +13831,13 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(AI_A2G_DISPATCHER.Takeoff)">#AI_A2G_DISPATCHER.Takeoff</a>
+    
 <a id="#(AI_A2G_DISPATCHER).Takeoff" ><strong>AI_A2G_DISPATCHER.Takeoff</strong></a>
     
 
+
+    
+<p> @field #AI_A2G_DISPATCHER.Takeoff Takeoff</p>
 
 </div>
 
@@ -14987,6 +15024,17 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(AI_A2G_DISPATCHER).DefenderPatrolIndex" ><strong>AI_A2G_DISPATCHER.DefenderPatrolIndex</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(AI_A2G_DISPATCHER).DefenderSpawns" ><strong>AI_A2G_DISPATCHER.DefenderSpawns</strong></a>
     
@@ -15037,10 +15085,13 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(AI_A2G_DISPATCHER.DefenseCoordinates)">#AI_A2G_DISPATCHER.DefenseCoordinates</a>
+    #table
 <a id="#(AI_A2G_DISPATCHER).DefenseCoordinates" ><strong>AI_A2G_DISPATCHER.DefenseCoordinates</strong></a>
     
 
+
+    
+<p> @field #AI_A2G_DISPATCHER.DefenseCoordinates DefenseCoordinates</p>
 
 </div>
 
@@ -15059,21 +15110,13 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(AI_A2G_DISPATCHER.DefenseQueue)">#AI_A2G_DISPATCHER.DefenseQueue</a>
+    #table
 <a id="#(AI_A2G_DISPATCHER).DefenseQueue" ><strong>AI_A2G_DISPATCHER.DefenseQueue</strong></a>
     
 
 
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(AI_A2G_DISPATCHER).DefenseReactivity" ><strong>AI_A2G_DISPATCHER.DefenseReactivity</strong></a>
     
-
+<p> @field #AI_A2G_DISPATCHER.DefenseQueue DefenseQueue</p>
 
 </div>
 
@@ -15125,10 +15168,13 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(AI_A2G_DISPATCHER.Takeoff)">#AI_A2G_DISPATCHER.Takeoff</a>
+    
 <a id="#(AI_A2G_DISPATCHER).Takeoff" ><strong>AI_A2G_DISPATCHER.Takeoff</strong></a>
     
 
+
+    
+<p> @field #AI_A2G_DISPATCHER.Takeoff Takeoff</p>
 
 </div>
 
@@ -16617,6 +16663,17 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(AI_A2G_DISPATCHER).DefenderPatrolIndex" ><strong>AI_A2G_DISPATCHER.DefenderPatrolIndex</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(AI_A2G_DISPATCHER).DefenderSpawns" ><strong>AI_A2G_DISPATCHER.DefenderSpawns</strong></a>
     
@@ -16667,10 +16724,13 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(AI_A2G_DISPATCHER.DefenseCoordinates)">#AI_A2G_DISPATCHER.DefenseCoordinates</a>
+    #table
 <a id="#(AI_A2G_DISPATCHER).DefenseCoordinates" ><strong>AI_A2G_DISPATCHER.DefenseCoordinates</strong></a>
     
 
+
+    
+<p> @field #AI_A2G_DISPATCHER.DefenseCoordinates DefenseCoordinates</p>
 
 </div>
 
@@ -16689,21 +16749,13 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(AI_A2G_DISPATCHER.DefenseQueue)">#AI_A2G_DISPATCHER.DefenseQueue</a>
+    #table
 <a id="#(AI_A2G_DISPATCHER).DefenseQueue" ><strong>AI_A2G_DISPATCHER.DefenseQueue</strong></a>
     
 
 
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(AI_A2G_DISPATCHER).DefenseReactivity" ><strong>AI_A2G_DISPATCHER.DefenseReactivity</strong></a>
     
-
+<p> @field #AI_A2G_DISPATCHER.DefenseQueue DefenseQueue</p>
 
 </div>
 
@@ -16755,10 +16807,13 @@ multiplied by the Overhead and rounded up to the smallest integer. </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(AI_A2G_DISPATCHER.Takeoff)">#AI_A2G_DISPATCHER.Takeoff</a>
+    
 <a id="#(AI_A2G_DISPATCHER).Takeoff" ><strong>AI_A2G_DISPATCHER.Takeoff</strong></a>
     
 
+
+    
+<p> @field #AI_A2G_DISPATCHER.Takeoff Takeoff</p>
 
 </div>
 
