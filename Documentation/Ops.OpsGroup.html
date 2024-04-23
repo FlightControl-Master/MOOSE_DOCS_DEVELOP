@@ -3489,7 +3489,7 @@
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSGROUP).SetDefaultEmission">OPSGROUP:SetDefaultEmission(OnOffSwitch)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set the default EPLRS for the group.</p>
+<p>Set the default emission state for the group.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -5335,15 +5335,22 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSGROUP).stuckDespawn">OPSGROUP.stuckDespawn</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>If <code>true</code>, group gets despawned after beeing stuck for a certain time.</p>
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSGROUP).stuckTimestamp">OPSGROUP.stuckTimestamp</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Time stamp [sec], when the group got stuck.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSGROUP).stuckVec3">OPSGROUP.stuckVec3</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Position where the group got stuck.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -9109,9 +9116,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(OPSGROUP).stuckDespawn" ><strong>OPSGROUP.stuckDespawn</strong></a>
     
-<a id="#(OPSGROUP).stuckTimestamp" ><strong>OPSGROUP.stuckTimestamp</strong></a>
-    
+<p>If <code>true</code>, group gets despawned after beeing stuck for a certain time.</p>
 
 
 </div>
@@ -9120,10 +9128,21 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(OPSGROUP).stuckTimestamp" ><strong>OPSGROUP.stuckTimestamp</strong></a>
     
+<p>Time stamp [sec], when the group got stuck.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="DCS.html##(Vec3)">DCS#Vec3</a>
 <a id="#(OPSGROUP).stuckVec3" ><strong>OPSGROUP.stuckVec3</strong></a>
     
-
+<p>Position where the group got stuck.</p>
 
 </div>
 
@@ -13459,7 +13478,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>(Optional) Get heading of a specific unit of the group. Default is from the first existing unit in the group.</p>
+<p>(Optional) Get velocity of a specific unit of the group. Default is from the first existing unit in the group.</p>
 
           </div>
         </div>
@@ -19223,7 +19242,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <h2><a id="#(OPSGROUP).SetDefaultEmission" ><strong>OPSGROUP:SetDefaultEmission(OnOffSwitch)</strong></a></h2>
 </div>
     
-<p>Set the default EPLRS for the group.</p>
+<p>Set the default emission state for the group.</p>
 
 <div id= "#Functions##SetDefaultEmission" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -30686,9 +30705,10 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(OPSGROUP).stuckDespawn" ><strong>OPSGROUP.stuckDespawn</strong></a>
     
-<a id="#(OPSGROUP).stuckTimestamp" ><strong>OPSGROUP.stuckTimestamp</strong></a>
-    
+<p>If <code>true</code>, group gets despawned after beeing stuck for a certain time.</p>
 
 
 </div>
@@ -30697,10 +30717,21 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(OPSGROUP).stuckTimestamp" ><strong>OPSGROUP.stuckTimestamp</strong></a>
     
+<p>Time stamp [sec], when the group got stuck.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="DCS.html##(Vec3)">DCS#Vec3</a>
 <a id="#(OPSGROUP).stuckVec3" ><strong>OPSGROUP.stuckVec3</strong></a>
     
-
+<p>Position where the group got stuck.</p>
 
 </div>
 
@@ -33760,9 +33791,10 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(OPSGROUP).stuckDespawn" ><strong>OPSGROUP.stuckDespawn</strong></a>
     
-<a id="#(OPSGROUP).stuckTimestamp" ><strong>OPSGROUP.stuckTimestamp</strong></a>
-    
+<p>If <code>true</code>, group gets despawned after beeing stuck for a certain time.</p>
 
 
 </div>
@@ -33771,10 +33803,21 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(OPSGROUP).stuckTimestamp" ><strong>OPSGROUP.stuckTimestamp</strong></a>
     
+<p>Time stamp [sec], when the group got stuck.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="DCS.html##(Vec3)">DCS#Vec3</a>
 <a id="#(OPSGROUP).stuckVec3" ><strong>OPSGROUP.stuckVec3</strong></a>
     
-
+<p>Position where the group got stuck.</p>
 
 </div>
 

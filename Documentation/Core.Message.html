@@ -2222,7 +2222,7 @@ To send messages, you need to use the To functions.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MESSAGE).ToAll">MESSAGE:ToAll(Settings)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MESSAGE).ToAll">MESSAGE:ToAll(Settings, Delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sends a MESSAGE to all players. </p>
 </td>
@@ -3398,7 +3398,7 @@ The message display times are automatically defined based on the timing settings
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(MESSAGE).ToAll" ><strong>MESSAGE:ToAll(Settings)</strong></a></h2>
+<h2><a id="#(MESSAGE).ToAll" ><strong>MESSAGE:ToAll(Settings, Delay)</strong></a></h2>
 </div>
     
 <p>Sends a MESSAGE to all players. </p>
@@ -3409,7 +3409,7 @@ The message display times are automatically defined based on the timing settings
    <div class="w3-margin-left">
 <p>MESSAGE</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -3423,6 +3423,19 @@ The message display times are automatically defined based on the timing settings
 
           </div>
         </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Delay in seconds before the message is send. Default instantly (<code>nil</code>).</p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -3430,19 +3443,19 @@ The message display times are automatically defined based on the timing settings
       </div>
       <div class="w3-half">
         
-
+<p>self</p>
 
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
     <pre class="example"><code>
-  -- Send a message created to all players.
-  MessageAll = MESSAGE:New( "To all Players: BLUE has won! Each player of BLUE wins 50 points!", "End of Mission", 25 ):ToAll()
-  or
-  MESSAGE:New( "To all Players: BLUE has won! Each player of BLUE wins 50 points!", "End of Mission", 25 ):ToAll()
-  or
-  MessageAll = MESSAGE:New( "To all Players: BLUE has won! Each player of BLUE wins 50 points!", "End of Mission", 25 )
-  MessageAll:ToAll()
+-- Send a message created to all players.
+MessageAll = MESSAGE:New( "To all Players: BLUE has won! Each player of BLUE wins 50 points!", "End of Mission", 25 ):ToAll()
+or
+MESSAGE:New( "To all Players: BLUE has won! Each player of BLUE wins 50 points!", "End of Mission", 25 ):ToAll()
+or
+MessageAll = MESSAGE:New( "To all Players: BLUE has won! Each player of BLUE wins 50 points!", "End of Mission", 25 )
+MessageAll:ToAll()
 </code></pre>
 
 </div>

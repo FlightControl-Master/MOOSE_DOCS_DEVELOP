@@ -4230,7 +4230,7 @@
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).SetDefaultEmission">NAVYGROUP:SetDefaultEmission(OnOffSwitch)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set the default EPLRS for the group.</p>
+<p>Set the default emission state for the group.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -6076,15 +6076,22 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).stuckDespawn">NAVYGROUP.stuckDespawn</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>If <code>true</code>, group gets despawned after beeing stuck for a certain time.</p>
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).stuckTimestamp">NAVYGROUP.stuckTimestamp</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Time stamp [sec], when the group got stuck.</p>
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).stuckVec3">NAVYGROUP.stuckVec3</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Position where the group got stuck.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -16637,7 +16644,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>(Optional) Get heading of a specific unit of the group. Default is from the first existing unit in the group.</p>
+<p>(Optional) Get velocity of a specific unit of the group. Default is from the first existing unit in the group.</p>
 
           </div>
         </div>
@@ -22401,7 +22408,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <h2><a id="#(NAVYGROUP).SetDefaultEmission" ><strong>NAVYGROUP:SetDefaultEmission(OnOffSwitch)</strong></a></h2>
 </div>
     
-<p>Set the default EPLRS for the group.</p>
+<p>Set the default emission state for the group.</p>
 
 <div id= "#Functions##SetDefaultEmission" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
