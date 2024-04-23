@@ -2048,513 +2048,212 @@
      </div>
    </div>
   </nav>
-  
-<img src="..\Images\Task_Command_Center.JPG" alt="Banner Image"/>   
-<div  id="content">
+  <div  id="content">
   <div class="w3-container w3-theme-d5" id="module_title">
-    <h1>Module <strong>Tasking.CommandCenter</strong></h1>
+    <h1>Module <strong>Shapes.POLYGON</strong></h1>
   </div>
   <div class="w3-container w3-white" id="module_description">
     
-<p><strong>Tasking</strong> - A command center governs multiple missions, and takes care of the reporting and communications.</p>
 
-    
-
-<p><strong>Features:</strong></p>
-
-<ul>
-    <li>Govern multiple missions.</li>
-    <li>Communicate to coalitions, groups.</li>
-    <li>Assign tasks.</li>
-    <li>Manage the menus.</li>
-    <li>Manage reference zones.</li>
-</ul>
+<h3>Author: <strong>nielsvaes/coconutcockpit</strong></h3>
 
 <hr/>
-
-<h3>Author: <strong>FlightControl</strong></h3>
-
-<h3>Contributions:</h3>
-
-<hr/>
-
 
   </div>
   <div class="w3-container w3-theme-d2"><h2><strong>Global(s)</strong></h2></div>
   <div class="w3-theme-d2 w3-margin-top ">
-    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##COMMANDCENTER')">
+    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##POLYGON')">
       <tr>
-        <td class="style="width:40%;"><p><h2>Global <strong>COMMANDCENTER</strong></h2></p></td>
+        <td class="style="width:40%;"><p><h2>Global <strong>POLYGON</strong></h2></p></td>
         <td class="style="width:60%;">
-<p>Governs multiple missions, the tasking and the reporting.</p>
+
 </td>
       </tr>
     </table>
   </div>
-  <div id= "#Globals##COMMANDCENTER" class="w3-container w3-white w3-padding-small">
+  <div id= "#Globals##POLYGON" class="w3-container w3-white w3-padding-small">
     <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(COMMANDCENTER)">#COMMANDCENTER</a>
-<a id="COMMANDCENTER" ><strong>COMMANDCENTER</strong></a>
+    <a href="##(POLYGON)">#POLYGON</a>
+<a id="POLYGON" ><strong>POLYGON</strong></a>
     
-<p>Governs multiple missions, the tasking and the reporting.</p>
-
-    
-<p> 
-Command centers govern missions, communicates the task assignments between human players of the coalition, and manages the menu flow.
-It can assign a random task to a player when requested.
-The commandcenter provides the facilitites to communicate between human players online, executing a task.</p>
-
-<h2>1. Create a command center object.</h2>
-
-<ul>
-    <li><a href="##(COMMANDCENTER).New">COMMANDCENTER.New</a>(): Creates a new COMMANDCENTER object.</li>
-</ul>
-
-<h2>2. Command center mission management.</h2>
-
-<p>Command centers manage missions. These can be added, removed and provides means to retrieve missions.
-These methods are heavily used by the task dispatcher classes.</p>
-
-<ul>
-    <li><a href="##(COMMANDCENTER).AddMission">COMMANDCENTER.AddMission</a>(): Adds a mission to the commandcenter control.</li>
-    <li><a href="##(COMMANDCENTER).RemoveMission">COMMANDCENTER.RemoveMission</a>(): Removes a mission to the commandcenter control.</li>
-    <li><a href="##(COMMANDCENTER).GetMissions">COMMANDCENTER.GetMissions</a>(): Retrieves the missions table controlled by the commandcenter.</li>
-</ul>
-
-<h2>3. Communication management between players.</h2>
-
-<p>Command center provide means of communication between players. 
-Because a command center is a central object governing multiple missions, <br/>
-there are several levels at which communication needs to be done.
-Within MOOSE, communication is facilitated using the message system within the DCS simulator.</p>
-
-<p>Messages can be sent between players at various levels:</p>
-
-<ul>
-    <li>On a global level, to all players.</li>
-    <li>On a coalition level, only to the players belonging to the same coalition.</li>
-    <li>On a group level, to the players belonging to the same group.</li>
-</ul>
-
-<p>Messages can be sent to <strong>all players</strong> by the command center using the method <a href="Tasking.CommandCenter.html##(COMMANDCENTER).MessageToAll">Tasking.CommandCenter#COMMANDCENTER.MessageToAll</a>().</p>
-
-<p>To send messages to <strong>the coalition of the command center</strong>, there are two methods available:</p>
-
-<ul>
-    <li>Use the method <a href="Tasking.CommandCenter.html##(COMMANDCENTER).MessageToCoalition">Tasking.CommandCenter#COMMANDCENTER.MessageToCoalition</a>() to send a specific message to the coalition, with a given message display duration.</li>
-    <li>You can send a specific type of message using the method <a href="Tasking.CommandCenter.html##(COMMANDCENTER).MessageTypeToCoalition">Tasking.CommandCenter#COMMANDCENTER.MessageTypeToCoalition</a>().
-    This will send a message of a specific type to the coalition, and as a result its display duration will be flexible according the message display time selection by the human player.</li>
-</ul>
-
-<p>To send messages <strong>to the group</strong> of human players, there are also two methods available:</p>
-
-<ul>
-    <li>Use the method <a href="Tasking.CommandCenter.html##(COMMANDCENTER).MessageToGroup">Tasking.CommandCenter#COMMANDCENTER.MessageToGroup</a>() to send a specific message to a group, with a given message display duration.</li>
-    <li>You can send a specific type of message using the method <a href="Tasking.CommandCenter.html##(COMMANDCENTER).MessageTypeToGroup">Tasking.CommandCenter#COMMANDCENTER.MessageTypeToGroup</a>().
-    This will send a message of a specific type to the group, and as a result its display duration will be flexible according the message display time selection by the human player .</li>
-</ul>
-
-<p>Messages are considered to be sometimes disturbing for human players, therefore, the settings menu provides the means to activate or deactivate messages.
-For more information on the message types and display timings that can be selected and configured using the menu, refer to the <a href="Core.Settings.html">Core.Settings</a> menu description.</p>
-
-<h2>4. Command center detailed methods.</h2>
-
-<p>Various methods are added to manage command centers.</p>
-
-<h3>4.1. Naming and description.</h3>
-
-<p>There are 3 methods that can be used to retrieve the description of a command center:</p>
-
-<ul>
-    <li>Use the method <a href="Tasking.CommandCenter.html##(COMMANDCENTER).GetName">Tasking.CommandCenter#COMMANDCENTER.GetName</a>() to retrieve the name of the command center. 
-    This is the name given as part of the <a href="Tasking.CommandCenter.html##(COMMANDCENTER).New">Tasking.CommandCenter#COMMANDCENTER.New</a>() constructor.
-    The returned name using this method, is not to be used for message communication.</li>
-</ul>
-
-<p>A textual description can be retrieved that provides the command center name to be used within message communication:</p>
-
-<ul>
-    <li><a href="Tasking.CommandCenter.html##(COMMANDCENTER).GetShortText">Tasking.CommandCenter#COMMANDCENTER.GetShortText</a>() returns the command center name as <code>CC [CommandCenterName]</code>.</li>
-    <li><a href="Tasking.CommandCenter.html##(COMMANDCENTER).GetText">Tasking.CommandCenter#COMMANDCENTER.GetText</a>() returns the command center name as <code>Command Center [CommandCenterName]</code>.</li>
-</ul>
-
-<h3>4.2. The coalition of the command center.</h3>
-
-<p>The method <a href="Tasking.CommandCenter.html##(COMMANDCENTER).GetCoalition">Tasking.CommandCenter#COMMANDCENTER.GetCoalition</a>() returns the coalition of the command center.
-The return value is an enumeration of the type <a href="DCS.html##(coalition).side">DCS#coalition.side</a>, which contains the RED, BLUE and NEUTRAL coalition. </p>
-
-<h3>4.3. The command center is a real object.</h3>
-
-<p>The command center must be represented by a live object within the DCS simulator. As a result, the command center <br/>
-can be a <a href="Wrapper.Unit.html">Wrapper.Unit</a>, a <a href="Wrapper.Group.html">Wrapper.Group</a>, an <a href="Wrapper.Airbase.html">Wrapper.Airbase</a> or a <a href="Wrapper.Static.html">Wrapper.Static</a> object.</p>
-
-<p>Using the method <a href="Tasking.CommandCenter.html##(COMMANDCENTER).GetPositionable">Tasking.CommandCenter#COMMANDCENTER.GetPositionable</a>() you retrieve the polymorphic positionable object representing
-the command center, but just be aware that you should be able to use the representable object derivation methods.</p>
-
-<h3>5. Command center reports.</h3>
-
-<p>Because a command center giverns multiple missions, there are several reports available that are generated by command centers.
-These reports are generated using the following methods:</p>
-
-<ul>
-    <li><a href="Tasking.CommandCenter.html##(COMMANDCENTER).ReportSummary">Tasking.CommandCenter#COMMANDCENTER.ReportSummary</a>(): Creates a summary report of all missions governed by the command center.</li>
-    <li><a href="Tasking.CommandCenter.html##(COMMANDCENTER).ReportDetails">Tasking.CommandCenter#COMMANDCENTER.ReportDetails</a>(): Creates a detailed report of all missions governed by the command center.</li>
-    <li><a href="Tasking.CommandCenter.html##(COMMANDCENTER).ReportMissionPlayers">Tasking.CommandCenter#COMMANDCENTER.ReportMissionPlayers</a>(): Creates a report listing the players active at the missions governed by the command center.</li>
-</ul>
-
-<h2>6. Reference Zones.</h2>
-
-<p>Command Centers may be aware of certain Reference Zones within the battleground. These Reference Zones can refer to
-known areas, recognizable buildings or sites, or any other point of interest.
-Command Centers will use these Reference Zones to help pilots with defining coordinates in terms of navigation
-during the WWII era.
-The Reference Zones are related to the WWII mode that the Command Center will operate in.
-Use the method <a href="##(COMMANDCENTER).SetModeWWII">COMMANDCENTER.SetModeWWII</a>() to set the mode of communication to the WWII mode.</p>
-
-<p>In WWII mode, the Command Center will receive detected targets, and will select for each target the closest
-nearby Reference Zone. This allows pilots to navigate easier through the battle field readying for combat.</p>
-
-<p>The Reference Zones need to be set by the Mission Designer in the Mission Editor.
-Reference Zones are set by normal trigger zones. One can color the zones in a specific color, 
-and the radius of the zones doesn't matter, only the point is important. Place the center of these Reference Zones at
-specific scenery objects or points of interest (like cities, rivers, hills, crossing etc).
-The trigger zones indicating a Reference Zone need to follow a specific syntax.
-The name of each trigger zone expressing a Reference Zone need to start with a classification name of the object,
-followed by a #, followed by a symbolic name of the Reference Zone.
-A few examples:</p>
-
-<ul>
-    <li>A church at Tskinvali would be indicated as: <em>Church#Tskinvali</em></li>
-    <li>A train station near Kobuleti would be indicated as: <em>Station#Kobuleti</em></li>
-</ul>
-
-<p>The COMMANDCENTER class contains a method to indicate which trigger zones need to be used as Reference Zones.
-This is done by using the method <a href="##(COMMANDCENTER).SetReferenceZones">COMMANDCENTER.SetReferenceZones</a>().
-For the moment, only one Reference Zone class can be specified, but in the future, more classes will become possible.</p>
-
-<h2>7. Tasks.</h2>
-
-<h3>7.1. Automatically assign tasks.</h3>
-
-<p>One of the most important roles of the command center is the management of tasks.
-The command center can assign automatically tasks to the players using the <a href="Tasking.CommandCenter.html##(COMMANDCENTER).SetAutoAssignTasks">Tasking.CommandCenter#COMMANDCENTER.SetAutoAssignTasks</a>() method.
-When this method is used with a parameter true; the command center will scan at regular intervals which players in a slot are not having a task assigned.
-For those players; the tasking is enabled to assign automatically a task.
-An Assign Menu will be accessible for the player under the command center menu, to configure the automatic tasking to switched on or off.</p>
-
-<h3>7.2. Automatically accept assigned tasks.</h3>
-
-<p>When a task is assigned; the mission designer can decide if players are immediately assigned to the task; or they can accept/reject the assigned task.
-Use the method <a href="Tasking.CommandCenter.html##(COMMANDCENTER).SetAutoAcceptTasks">Tasking.CommandCenter#COMMANDCENTER.SetAutoAcceptTasks</a>() to configure this behaviour.
-If the tasks are not automatically accepted; the player will receive a message that he needs to access the command center menu and
-choose from 2 added menu options either to accept or reject the assigned task within 30 seconds.
-If the task is not accepted within 30 seconds; the task will be cancelled and a new task will be assigned.</p>
-
-
-<h1>Developer Note</h1>
-
-<p>Note while this class still works, it is no longer supported as the original author stopped active development of MOOSE
-Therefore, this class is considered to be deprecated</p>
 
 
 </div>
 
   </div>
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>  
-      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(COMMANDCENTER)">Type <strong>COMMANDCENTER</strong></a></h2></div>
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(POLYGON)">Type <strong>POLYGON</strong></a></h2></div>
          <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
-     <strong><a href="##(COMMANDCENTER)">COMMANDCENTER</a></strong>
+     <strong><a href="##(POLYGON)">POLYGON</a></strong>
 , extends <strong><a href="Core.Base.html##(BASE)">Core.Base#BASE</a></strong>
    </div>
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
           <tr class="w3-theme-l1">
-            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from COMMANDCENTER</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from POLYGON</th>
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).AddGroups">COMMANDCENTER:AddGroups()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).ClassName">POLYGON.ClassName</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Get all the Groups active within the command center.</p>
+<p>Name of the class.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).AddMission">COMMANDCENTER:AddMission(Mission)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).ContainsPoint">POLYGON.ContainsPoint(point, points, self, polygon_points)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Add a MISSION to be governed by the HQ command center.</p>
+<p>Checks if a point is contained within the polygon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).AssignTask">COMMANDCENTER:AssignTask(TaskGroup)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).Coords">POLYGON.Coords</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Assigns a random task to a TaskGroup.</p>
+<p>List of COORDINATE defining the path, this will be assigned automatically if you're passing in a drawing from the Mission Editor</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).AssignTasks">COMMANDCENTER:AssignTasks()</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Automatically assigns tasks to all TaskGroups.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).AutoAcceptTasks">COMMANDCENTER.AutoAcceptTasks</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).CovarianceMatrix">POLYGON:CovarianceMatrix()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).AutoAssignMethod">COMMANDCENTER.AutoAssignMethod</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).Direction">POLYGON:Direction()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).AutoAssignMethods">COMMANDCENTER.AutoAssignMethods</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).Draw">POLYGON.Draw(include_inner_triangles, self)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Draws the polygon on the map.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).AutoAssignTasks">COMMANDCENTER.AutoAssignTasks</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).Find">POLYGON.Find(shape_name, self)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Finds a polygon by its name in the database.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CommandCenterCoalition">COMMANDCENTER.CommandCenterCoalition</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).FindOnMap">POLYGON.FindOnMap(shape_name, self)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Finds a polygon on the map by its name.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CommandCenterMenus">COMMANDCENTER.CommandCenterMenus</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).FromZone">POLYGON.FromZone(zone_name, self)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Creates a polygon from a zone.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CommandCenterName">COMMANDCENTER.CommandCenterName</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetBoundingBox">POLYGON:GetBoundingBox()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Calculates the bounding box of the polygon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CommandCenterPositionable">COMMANDCENTER.CommandCenterPositionable</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetCentroid">POLYGON:GetCentroid()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Calculates the centroid of the polygon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CommunicationMode">COMMANDCENTER.CommunicationMode</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetCoordinates">POLYGON:GetCoordinates()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Returns the coordinates of the polygon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).FlashStatus">COMMANDCENTER.FlashStatus</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetEndCoordinate">POLYGON:GetEndCoordinate()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Returns the end coordinate of the polygon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetCoalition">COMMANDCENTER:GetCoalition()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetEndPoint">POLYGON:GetEndPoint()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Gets the coalition of the command center.</p>
+<p>Returns the end point of the polygon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetMenu">COMMANDCENTER:GetMenu(TaskGroup)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetPoints">POLYGON:GetPoints()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Gets the commandcenter menu structure governed by the HQ command center.</p>
+<p>Returns the points of the polygon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetMissions">COMMANDCENTER:GetMissions()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetRandomNonWeightedVec2">POLYGON:GetRandomNonWeightedVec2()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Get the Missions governed by the HQ command center.</p>
+<p>Returns a random non-weighted Vec2 within the polygon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetName">COMMANDCENTER:GetName()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetRandomVec2">POLYGON:GetRandomVec2()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Gets the name of the HQ command center.</p>
+<p>Returns a random Vec2 within the polygon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetPositionable">COMMANDCENTER:GetPositionable()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetStartCoordinate">POLYGON:GetStartCoordinate()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Gets the POSITIONABLE of the HQ command center.</p>
+<p>Returns the start coordinate of the polygon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetShortText">COMMANDCENTER:GetShortText()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetStartPoint">POLYGON:GetStartPoint()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Gets the short text string of the HQ command center.</p>
+<p>Returns the start point of the polygon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetText">COMMANDCENTER:GetText()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetSurfaceArea">POLYGON:GetSurfaceArea()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Gets the text string of the HQ command center.</p>
+<p>Calculates the surface area of the polygon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).HQ">COMMANDCENTER.HQ</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).MarkIDs">POLYGON.MarkIDs</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>List any MARKIDs this class use, this will be assigned automatically if you're passing in a drawing from the Mission Editor</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).HasGroup">COMMANDCENTER:HasGroup(MissionGroup)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).New">POLYGON.New(..., self)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Checks of the command center has the given MissionGroup.</p>
+<p>Creates a new polygon from a list of points.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).IsGroupAssigned">COMMANDCENTER:IsGroupAssigned(TaskGroup)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).Points">POLYGON.Points</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Checks of the TaskGroup has a Task.</p>
+<p>List of 3D points defining the shape, this will be assigned automatically if you're passing in a drawing from the Mission Editor</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).IsModeWWII">COMMANDCENTER:IsModeWWII()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).RemoveDraw">POLYGON:RemoveDraw()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns if the commandcenter operations is in WWII mode</p>
+<p>Removes the drawing of the polygon from the map.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageDuration">COMMANDCENTER.MessageDuration</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).Triangles">POLYGON.Triangles</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>List of TRIANGLEs that make up the shape of the POLYGON after being triangulated</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageToAll">COMMANDCENTER:MessageToAll(Message)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).Triangulate">POLYGON.Triangulate(points, self)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Let the command center send a Message to all players.</p>
+<p>Triangulates the polygon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageToCoalition">COMMANDCENTER:MessageToCoalition(Message)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).__CalculateSurfaceArea">POLYGON:__CalculateSurfaceArea()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Let the command center send a message to the coalition of the command center.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageToGroup">COMMANDCENTER:MessageToGroup(Message, MessageGroup)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Let the command center send a message to the MessageGroup.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageTypeToCoalition">COMMANDCENTER:MessageTypeToCoalition(Message, MessageType)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Let the command center send a message of a specified type to the coalition of the command center.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).MessageTypeToGroup">COMMANDCENTER:MessageTypeToGroup(Message, MessageGroup, MessageType)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Let the command center send a message to the MessageGroup.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).Missions">COMMANDCENTER.Missions</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).New">COMMANDCENTER:New(CommandCenterPositionable, CommandCenterName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>The constructor takes an IDENTIFIABLE as the HQ command center.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).RemoveMission">COMMANDCENTER:RemoveMission(Mission)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Removes a MISSION to be governed by the HQ command center.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ReportDetails">COMMANDCENTER:ReportDetails(ReportGroup, Task)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Let the command center send a report of the status of a task to a group.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ReportMissionsPlayers">COMMANDCENTER:ReportMissionsPlayers(ReportGroup)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Let the command center send a report of the players of all missions to a group.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ReportSummary">COMMANDCENTER:ReportSummary(ReportGroup)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Let the command center send a report of the status of all missions to a group.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetAutoAcceptTasks">COMMANDCENTER:SetAutoAcceptTasks(AutoAccept)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Automatically accept tasks for all TaskGroups.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetAutoAssignMethod">COMMANDCENTER:SetAutoAssignMethod(AutoAssignMethod)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Define the method to be used to assign automatically a task from the available tasks in the mission.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetAutoAssignTasks">COMMANDCENTER:SetAutoAssignTasks(AutoAssign)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Automatically assigns tasks to all TaskGroups.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetCommandMenu">COMMANDCENTER:SetCommandMenu()</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Sets the menu of the command center.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetFlashStatus">COMMANDCENTER:SetFlashStatus(Flash)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Let the command center flash a report of the status of the subscribed task to a group.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetMenu">COMMANDCENTER:SetMenu()</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Sets the menu structure of the Missions governed by the HQ command center.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetMessageDuration">COMMANDCENTER:SetMessageDuration(seconds)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Duration a command center message is shown.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetModeWWII">COMMANDCENTER:SetModeWWII()</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set the commandcenter operations in WWII mode
-This will disable LL, MGRS, BRA, BULLS navigatin messages sent by the Command Center, 
-and will be replaced by a navigation using Reference Zones.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetReferenceZones">COMMANDCENTER:SetReferenceZones(ReferenceZonePrefix)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set special Reference Zones known by the Command Center to guide airborne pilots during WWII.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).autoAssignTasksScheduleID">COMMANDCENTER.autoAssignTasksScheduleID</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
+<p>Calculates the surface area of the polygon.</p>
 </td>
           </tr>
         </table>
@@ -2566,491 +2265,491 @@ and will be replaced by a navigation using Reference Zones.</p>
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ClassID">COMMANDCENTER.ClassID</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).ClassID">POLYGON.ClassID</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The ID number of the class.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ClassName">COMMANDCENTER.ClassName</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).ClassName">POLYGON.ClassName</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The name of the class.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ClassNameAndID">COMMANDCENTER.ClassNameAndID</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).ClassNameAndID">POLYGON.ClassNameAndID</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The name of the class concatenated with the ID number of the class.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ClearState">COMMANDCENTER:ClearState(Object, StateName)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).ClearState">POLYGON:ClearState(Object, StateName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Clear the state of an object.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventBirth">COMMANDCENTER:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).CreateEventBirth">POLYGON:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Birth Event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventCrash">COMMANDCENTER:CreateEventCrash(EventTime, Initiator, IniObjectCategory)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).CreateEventCrash">POLYGON:CreateEventCrash(EventTime, Initiator, IniObjectCategory)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Crash Event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventDead">COMMANDCENTER:CreateEventDead(EventTime, Initiator, IniObjectCategory)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).CreateEventDead">POLYGON:CreateEventDead(EventTime, Initiator, IniObjectCategory)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Dead Event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventPlayerEnterAircraft">COMMANDCENTER:CreateEventPlayerEnterAircraft(PlayerUnit)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).CreateEventPlayerEnterAircraft">POLYGON:CreateEventPlayerEnterAircraft(PlayerUnit)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a <code>S_EVENT_PLAYER_ENTER_AIRCRAFT</code> event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventRemoveUnit">COMMANDCENTER:CreateEventRemoveUnit(EventTime, Initiator)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).CreateEventRemoveUnit">POLYGON:CreateEventRemoveUnit(EventTime, Initiator)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Remove Unit Event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventTakeoff">COMMANDCENTER:CreateEventTakeoff(EventTime, Initiator)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).CreateEventTakeoff">POLYGON:CreateEventTakeoff(EventTime, Initiator)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Takeoff Event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).CreateEventUnitLost">COMMANDCENTER:CreateEventUnitLost(EventTime, Initiator)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).CreateEventUnitLost">POLYGON:CreateEventUnitLost(EventTime, Initiator)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Crash Event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).E">COMMANDCENTER:E(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).E">POLYGON:E(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Log an exception which will be traced always.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).EventDispatcher">COMMANDCENTER:EventDispatcher()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).EventDispatcher">POLYGON:EventDispatcher()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns the event dispatcher</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).EventRemoveAll">COMMANDCENTER:EventRemoveAll()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).EventRemoveAll">POLYGON:EventRemoveAll()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Remove all subscribed events</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).F">COMMANDCENTER:F(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).F">POLYGON:F(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function call.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).F2">COMMANDCENTER:F2(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).F2">POLYGON:F2(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function call level 2.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).F3">COMMANDCENTER:F3(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).F3">POLYGON:F3(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function call level 3.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetClassID">COMMANDCENTER:GetClassID()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetClassID">POLYGON:GetClassID()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the ClassID of the class instance.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetClassName">COMMANDCENTER:GetClassName()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetClassName">POLYGON:GetClassName()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the ClassName of the class instance.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetClassNameAndID">COMMANDCENTER:GetClassNameAndID()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetClassNameAndID">POLYGON:GetClassNameAndID()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the ClassName + ClassID of the class instance.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetEventPriority">COMMANDCENTER:GetEventPriority()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetEventPriority">POLYGON:GetEventPriority()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the Class <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetParent">COMMANDCENTER:GetParent(Child, FromClass)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetParent">POLYGON:GetParent(Child, FromClass)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>This is the worker method to retrieve the Parent class.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).GetState">COMMANDCENTER:GetState(Object, Key)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).GetState">POLYGON:GetState(Object, Key)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get a Value given a Key from the Object.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).HandleEvent">COMMANDCENTER:HandleEvent(EventID, EventFunction)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).HandleEvent">POLYGON:HandleEvent(EventID, EventFunction)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Subscribe to a DCS Event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).I">COMMANDCENTER:I(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).I">POLYGON:I(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Log an information which will be traced always.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).Inherit">COMMANDCENTER:Inherit(Child, Parent)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).Inherit">POLYGON:Inherit(Child, Parent)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>This is the worker method to inherit from a parent class.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).IsInstanceOf">COMMANDCENTER:IsInstanceOf(ClassName)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).IsInstanceOf">POLYGON:IsInstanceOf(ClassName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>This is the worker method to check if an object is an (sub)instance of a class.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).IsTrace">COMMANDCENTER:IsTrace()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).IsTrace">POLYGON:IsTrace()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Enquires if tracing is on (for the class).</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).New">COMMANDCENTER:New()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).New">POLYGON:New()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>BASE constructor.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEvent">COMMANDCENTER:OnEvent(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEvent">POLYGON:OnEvent(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an Event for an object is triggered.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventBDA">COMMANDCENTER:OnEventBDA(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventBDA">POLYGON:OnEventBDA(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>BDA.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventBaseCaptured">COMMANDCENTER:OnEventBaseCaptured(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventBaseCaptured">POLYGON:OnEventBaseCaptured(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a ground unit captures either an airbase or a farp.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventBirth">COMMANDCENTER:OnEventBirth(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventBirth">POLYGON:OnEventBirth(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any object is spawned into the mission.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventCrash">COMMANDCENTER:OnEventCrash(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventCrash">POLYGON:OnEventCrash(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventDead">COMMANDCENTER:OnEventDead(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventDead">POLYGON:OnEventDead(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an object is dead.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventDetailedFailure">COMMANDCENTER:OnEventDetailedFailure(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventDetailedFailure">POLYGON:OnEventDetailedFailure(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Unknown precisely what creates this event, likely tied into newer damage model.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventDiscardChairAfterEjection">COMMANDCENTER:OnEventDiscardChairAfterEjection(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventDiscardChairAfterEjection">POLYGON:OnEventDiscardChairAfterEjection(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Discard chair after ejection.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventEjection">COMMANDCENTER:OnEventEjection(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventEjection">POLYGON:OnEventEjection(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a pilot ejects from an aircraft
 Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a> as these are just the prototypes.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventEngineShutdown">COMMANDCENTER:OnEventEngineShutdown(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventEngineShutdown">POLYGON:OnEventEngineShutdown(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any aircraft shuts down its engines.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventEngineStartup">COMMANDCENTER:OnEventEngineStartup(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventEngineStartup">POLYGON:OnEventEngineStartup(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any aircraft starts its engines.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventHit">COMMANDCENTER:OnEventHit(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventHit">POLYGON:OnEventHit(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs whenever an object is hit by a weapon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventHumanFailure">COMMANDCENTER:OnEventHumanFailure(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventHumanFailure">POLYGON:OnEventHumanFailure(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any system fails on a human controlled aircraft.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventKill">COMMANDCENTER:OnEventKill(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventKill">POLYGON:OnEventKill(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs on the death of a unit.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventLand">COMMANDCENTER:OnEventLand(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventLand">POLYGON:OnEventLand(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an aircraft lands at an airbase, farp or ship
 Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a> as these are just the prototypes.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventLandingAfterEjection">COMMANDCENTER:OnEventLandingAfterEjection(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventLandingAfterEjection">POLYGON:OnEventLandingAfterEjection(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs shortly after the landing animation of an ejected pilot touching the ground and standing up.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventLandingQualityMark">COMMANDCENTER:OnEventLandingQualityMark(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventLandingQualityMark">POLYGON:OnEventLandingQualityMark(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Landing quality mark.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventMarkAdded">COMMANDCENTER:OnEventMarkAdded(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventMarkAdded">POLYGON:OnEventMarkAdded(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a new mark was added.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventMarkChange">COMMANDCENTER:OnEventMarkChange(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventMarkChange">POLYGON:OnEventMarkChange(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a mark text was changed.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventMarkRemoved">COMMANDCENTER:OnEventMarkRemoved(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventMarkRemoved">POLYGON:OnEventMarkRemoved(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a mark was removed.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventMissionEnd">COMMANDCENTER:OnEventMissionEnd(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventMissionEnd">POLYGON:OnEventMissionEnd(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a mission ends
 Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a> as these are just the prototypes.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventMissionStart">COMMANDCENTER:OnEventMissionStart(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventMissionStart">POLYGON:OnEventMissionStart(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a mission starts
 Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a> as these are just the prototypes. </p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventParatrooperLanding">COMMANDCENTER:OnEventParatrooperLanding(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventParatrooperLanding">POLYGON:OnEventParatrooperLanding(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Weapon add.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventPilotDead">COMMANDCENTER:OnEventPilotDead(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventPilotDead">POLYGON:OnEventPilotDead(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when the pilot of an aircraft is killed.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventPlayerEnterAircraft">COMMANDCENTER:OnEventPlayerEnterAircraft(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventPlayerEnterAircraft">POLYGON:OnEventPlayerEnterAircraft(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a player enters a slot and takes control of an aircraft.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventPlayerEnterUnit">COMMANDCENTER:OnEventPlayerEnterUnit(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventPlayerEnterUnit">POLYGON:OnEventPlayerEnterUnit(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any player assumes direct control of a unit.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventPlayerLeaveUnit">COMMANDCENTER:OnEventPlayerLeaveUnit(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventPlayerLeaveUnit">POLYGON:OnEventPlayerLeaveUnit(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any player relieves control of a unit to the AI.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventRefueling">COMMANDCENTER:OnEventRefueling(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventRefueling">POLYGON:OnEventRefueling(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventRefuelingStop">COMMANDCENTER:OnEventRefuelingStop(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventRefuelingStop">POLYGON:OnEventRefuelingStop(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an aircraft is finished taking fuel.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventScore">COMMANDCENTER:OnEventScore(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventScore">POLYGON:OnEventScore(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any modification to the "Score" as seen on the debrief menu would occur.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventShootingEnd">COMMANDCENTER:OnEventShootingEnd(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventShootingEnd">POLYGON:OnEventShootingEnd(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any unit stops firing its weapon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventShootingStart">COMMANDCENTER:OnEventShootingStart(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventShootingStart">POLYGON:OnEventShootingStart(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventShot">COMMANDCENTER:OnEventShot(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventShot">POLYGON:OnEventShot(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs whenever any unit in a mission fires a weapon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventTakeoff">COMMANDCENTER:OnEventTakeoff(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventTakeoff">POLYGON:OnEventTakeoff(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventTriggerZone">COMMANDCENTER:OnEventTriggerZone(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventTriggerZone">POLYGON:OnEventTriggerZone(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trigger zone.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).OnEventUnitLost">COMMANDCENTER:OnEventUnitLost(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).OnEventUnitLost">POLYGON:OnEventUnitLost(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when the game thinks an object is destroyed.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ScheduleOnce">COMMANDCENTER:ScheduleOnce(Start, SchedulerFunction, ...)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).ScheduleOnce">POLYGON:ScheduleOnce(Start, SchedulerFunction, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Schedule a new time event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ScheduleRepeat">COMMANDCENTER:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).ScheduleRepeat">POLYGON:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Schedule a new time event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).ScheduleStop">COMMANDCENTER:ScheduleStop(SchedulerID)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).ScheduleStop">POLYGON:ScheduleStop(SchedulerID)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Stops the Schedule.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).Scheduler">COMMANDCENTER.Scheduler</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).Scheduler">POLYGON.Scheduler</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetEventPriority">COMMANDCENTER:SetEventPriority(EventPriority)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).SetEventPriority">POLYGON:SetEventPriority(EventPriority)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set the Class <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).SetState">COMMANDCENTER:SetState(Object, Key, Value)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).SetState">POLYGON:SetState(Object, Key, Value)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set a state or property of the Object given a Key and a Value.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).T">COMMANDCENTER:T(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).T">POLYGON:T(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function logic level 1.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).T2">COMMANDCENTER:T2(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).T2">POLYGON:T2(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function logic level 2.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).T3">COMMANDCENTER:T3(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).T3">POLYGON:T3(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function logic level 3.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceAll">COMMANDCENTER:TraceAll(TraceAll)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).TraceAll">POLYGON:TraceAll(TraceAll)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace all methods in MOOSE</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceClass">COMMANDCENTER:TraceClass(Class)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).TraceClass">POLYGON:TraceClass(Class)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set tracing for a class</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceClassMethod">COMMANDCENTER:TraceClassMethod(Class, Method)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).TraceClassMethod">POLYGON:TraceClassMethod(Class, Method)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set tracing for a specific method of  class</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceLevel">COMMANDCENTER:TraceLevel(Level)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).TraceLevel">POLYGON:TraceLevel(Level)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set trace level</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceOff">COMMANDCENTER:TraceOff()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).TraceOff">POLYGON:TraceOff()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set trace off.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceOn">COMMANDCENTER:TraceOn()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).TraceOn">POLYGON:TraceOn()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set trace on.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).TraceOnOff">COMMANDCENTER:TraceOnOff(TraceOnOff)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).TraceOnOff">POLYGON:TraceOnOff(TraceOnOff)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set trace on or off
 Note that when trace is off, no BASE.Debug statement is performed, increasing performance!
@@ -3058,43 +2757,43 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).UnHandleEvent">COMMANDCENTER:UnHandleEvent(EventID)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).UnHandleEvent">POLYGON:UnHandleEvent(EventID)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>UnSubscribe to a DCS event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER)._">COMMANDCENTER._</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON)._">POLYGON._</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER)._F">COMMANDCENTER:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON)._F">POLYGON:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function call.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER)._Serialize">COMMANDCENTER:_Serialize(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON)._Serialize">POLYGON:_Serialize(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(Internal) Serialize arguments</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER)._T">COMMANDCENTER:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON)._T">POLYGON:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function logic.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).__">COMMANDCENTER.__</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).__">POLYGON.__</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER).onEvent">COMMANDCENTER:onEvent(event)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(POLYGON).onEvent">POLYGON:onEvent(event)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The main event handling function...</p>
 </td>
@@ -3102,51 +2801,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         </table>
         </div>
 
-      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(COMMANDCENTER.AutoAssignMethods)">Type <strong>COMMANDCENTER.AutoAssignMethods</strong></a></h2></div>
-         <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
-     <strong><a href="##(COMMANDCENTER.AutoAssignMethods)">COMMANDCENTER.AutoAssignMethods</a></strong>
-   </div>
-        <div class="w3-card w3-margin">
-        <table class="w3-table w3-border-bottom w3-border-theme-l2">
-          <tr class="w3-theme-l1">
-            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from COMMANDCENTER.AutoAssignMethods</th>
-            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER.AutoAssignMethods).Distance">COMMANDCENTER.AutoAssignMethods.Distance</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER.AutoAssignMethods).Priority">COMMANDCENTER.AutoAssignMethods.Priority</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDCENTER.AutoAssignMethods).Random">COMMANDCENTER.AutoAssignMethods.Random</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-        </table>
-        </div>
-
-    <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Tasking.CommandCenter)" >Type <strong>Tasking.CommandCenter</strong></a></h2></div>
+    <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Shapes.POLYGON)" >Type <strong>Shapes.POLYGON</strong></a></h2></div>
     <div class="w3-container w3-white w3-padding-16" id="module_current_type">
       <div class="w3-white" id="record_type">
 </div>
 
     </div>
-      <div onclick="myFunction('#Types##COMMANDCENTER')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(COMMANDCENTER)">Type <strong>COMMANDCENTER</strong></a></h2></div>
-        <div id= "#Types##COMMANDCENTER" class="w3-container w3-white w3-padding-16" id="module_other_types">
+      <div onclick="myFunction('#Types##POLYGON')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(POLYGON)">Type <strong>POLYGON</strong></a></h2></div>
+        <div id= "#Types##POLYGON" class="w3-container w3-white w3-padding-16" id="module_other_types">
           <div class="w3-white" id="record_type">
   
-<p>The COMMANDCENTER class</p>
-
-     
-<p><code><em>COMMANDCENTER</em></code> is a list of <code><em><a href="Tasking.Mission.html##(MISSION)">Tasking.Mission#MISSION</a></em></code>. Missions</p>
+<p>POLYGON class.</p>
 
 <div class="fields w3-container w3-theme-l2">
   <h2>Field(s)</h2>
@@ -3154,54 +2819,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(COMMANDCENTER.AutoAssignMethods)">#COMMANDCENTER.AutoAssignMethods</a>
-<a id="#(COMMANDCENTER).AutoAssignMethods" ><strong>COMMANDCENTER.AutoAssignMethods</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    <a href="DCS.html##(coalition)">DCS#coalition</a>
-<a id="#(COMMANDCENTER).CommandCenterCoalition" ><strong>COMMANDCENTER.CommandCenterCoalition</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(COMMANDCENTER).CommandCenterPositionable" ><strong>COMMANDCENTER.CommandCenterPositionable</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #string
-<a id="#(COMMANDCENTER).CommunicationMode" ><strong>COMMANDCENTER.CommunicationMode</strong></a>
+<a id="#(POLYGON).ClassName" ><strong>POLYGON.ClassName</strong></a>
     
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-<a id="#(COMMANDCENTER).HQ" ><strong>COMMANDCENTER.HQ</strong></a>
-    
-
+<p>Name of the class.</p>
 
 </div>
 
@@ -3210,9 +2831,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #table
-<a id="#(COMMANDCENTER).Missions" ><strong>COMMANDCENTER.Missions</strong></a>
+<a id="#(POLYGON).Coords" ><strong>POLYGON.Coords</strong></a>
     
-
+<p>List of COORDINATE defining the path, this will be assigned automatically if you're passing in a drawing from the Mission Editor</p>
 
 </div>
 
@@ -3220,10 +2841,32 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #table
+<a id="#(POLYGON).MarkIDs" ><strong>POLYGON.MarkIDs</strong></a>
     
-<a id="#(COMMANDCENTER).autoAssignTasksScheduleID" ><strong>COMMANDCENTER.autoAssignTasksScheduleID</strong></a>
-    
+<p>List any MARKIDs this class use, this will be assigned automatically if you're passing in a drawing from the Mission Editor</p>
 
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(POLYGON).Points" ><strong>POLYGON.Points</strong></a>
+    
+<p>List of 3D points defining the shape, this will be assigned automatically if you're passing in a drawing from the Mission Editor</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(POLYGON).Triangles" ><strong>POLYGON.Triangles</strong></a>
+    
+<p>List of TRIANGLEs that make up the shape of the POLYGON after being triangulated</p>
 
 </div>
 
@@ -3234,53 +2877,61 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).AddGroups" ><strong>COMMANDCENTER:AddGroups()</strong></a></h2>
+<h2><a id="#(POLYGON).ContainsPoint" ><strong>POLYGON.ContainsPoint(point, points, self, polygon_points)</strong></a></h2>
 </div>
     
-<p>Get all the Groups active within the command center.</p>
+<p>Checks if a point is contained within the polygon.</p>
 
-<div id= "#Functions##AddGroups" class="w3-show w3-white">
+    
+<p>The point is a table with 'x' and 'y' fields.</p>
+
+<div id= "#Functions##ContainsPoint" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
+<p>POLYGON</p>
 </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>The set of groups active within the command center.</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).AddMission" ><strong>COMMANDCENTER:AddMission(Mission)</strong></a></h2>
-</div>
-    
-<p>Add a MISSION to be governed by the HQ command center.</p>
-
-<div id= "#Functions##AddMission" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Tasking.Mission.html##(MISSION)">Tasking.Mission#MISSION</a>
-            <strong><strong>Mission</strong></strong>
+                #table
+            <strong><strong>point</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The point to check</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>points</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Points of the polygon or other points if you're just using the POLYGON class without an object of it</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>self</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>polygon_points</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -3290,11 +2941,11 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="Tasking.Mission.html##(MISSION)">Tasking.Mission#MISSION</a>:</p>
+        <p><a href="##(bool)">#bool</a>:</p>
       </div>
       <div class="w3-half">
         
-
+<p>True if the point is contained, false otherwise</p>
 
       </div>
     </div>
@@ -3306,22 +2957,119 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).AssignTask" ><strong>COMMANDCENTER:AssignTask(TaskGroup)</strong></a></h2>
+<h2><a id="#(POLYGON).CovarianceMatrix" ><strong>POLYGON:CovarianceMatrix()</strong></a></h2>
 </div>
     
-<p>Assigns a random task to a TaskGroup.</p>
 
-<div id= "#Functions##AssignTask" class="w3-show w3-white">
+
+<div id= "#Functions##CovarianceMatrix" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
+<p>POLYGON</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POLYGON).Direction" ><strong>POLYGON:Direction()</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##Direction" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>POLYGON</p>
+</div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POLYGON).Draw" ><strong>POLYGON.Draw(include_inner_triangles, self)</strong></a></h2>
+</div>
+    
+<p>Draws the polygon on the map.</p>
+
+    
+<p>The polygon can be drawn with or without inner triangles. This is just for debugging</p>
+
+<div id= "#Functions##Draw" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>POLYGON</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-            <strong><strong>TaskGroup</strong></strong>
+                <a href="##(bool)">#bool</a>
+            <strong><strong>include_inner_triangles</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Whether to include inner triangles in the drawing</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>self</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POLYGON).Find" ><strong>POLYGON.Find(shape_name, self)</strong></a></h2>
+</div>
+    
+<p>Finds a polygon by its name in the database.</p>
+
+<div id= "#Functions##Find" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>POLYGON</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>shape_name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the polygon to find</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>self</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -3331,11 +3079,11 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(COMMANDCENTER)">#COMMANDCENTER</a>:</p>
+        <p><a href="##(POLYGON)">#POLYGON</a>:</p>
       </div>
       <div class="w3-half">
         
-
+<p>The found polygon, or nil if not found</p>
 
       </div>
     </div>
@@ -3347,17 +3095,55 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).AssignTasks" ><strong>COMMANDCENTER:AssignTasks()</strong></a></h2>
+<h2><a id="#(POLYGON).FindOnMap" ><strong>POLYGON.FindOnMap(shape_name, self)</strong></a></h2>
 </div>
     
-<p>Automatically assigns tasks to all TaskGroups.</p>
+<p>Finds a polygon on the map by its name.</p>
 
-<div id= "#Functions##AssignTasks" class="w3-show w3-white">
+    
+<p>The polygon must be added in the mission editor.</p>
+
+<div id= "#Functions##FindOnMap" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
+<p>POLYGON</p>
 </div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>shape_name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the polygon to find</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>self</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(POLYGON)">#POLYGON</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The found polygon, or nil if not found</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
@@ -3366,16 +3152,406 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).GetCoalition" ><strong>COMMANDCENTER:GetCoalition()</strong></a></h2>
+<h2><a id="#(POLYGON).FromZone" ><strong>POLYGON.FromZone(zone_name, self)</strong></a></h2>
 </div>
     
-<p>Gets the coalition of the command center.</p>
+<p>Creates a polygon from a zone.</p>
 
-<div id= "#Functions##GetCoalition" class="w3-show w3-white">
+    
+<p>The zone must be defined in the mission.</p>
+
+<div id= "#Functions##FromZone" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
+<p>POLYGON</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>zone_name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the zone</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>self</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(POLYGON)">#POLYGON</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The polygon created from the zone, or nil if the zone is not found</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POLYGON).GetBoundingBox" ><strong>POLYGON:GetBoundingBox()</strong></a></h2>
+</div>
+    
+<p>Calculates the bounding box of the polygon.</p>
+
+    
+<p>The bounding box is the smallest rectangle that contains the polygon.</p>
+
+<div id= "#Functions##GetBoundingBox" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>POLYGON</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The bounding box of the polygon</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POLYGON).GetCentroid" ><strong>POLYGON:GetCentroid()</strong></a></h2>
+</div>
+    
+<p>Calculates the centroid of the polygon.</p>
+
+    
+<p>The centroid is the average of the 'x' and 'y' coordinates of the points.</p>
+
+<div id= "#Functions##GetCentroid" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>POLYGON</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The centroid of the polygon</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POLYGON).GetCoordinates" ><strong>POLYGON:GetCoordinates()</strong></a></h2>
+</div>
+    
+<p>Returns the coordinates of the polygon.</p>
+
+    
+<p>Each coordinate is a COORDINATE object.</p>
+
+<div id= "#Functions##GetCoordinates" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>POLYGON</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The coordinates of the polygon</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POLYGON).GetEndCoordinate" ><strong>POLYGON:GetEndCoordinate()</strong></a></h2>
+</div>
+    
+<p>Returns the end coordinate of the polygon.</p>
+
+    
+<p>The end coordinate is the last point of the polygon.</p>
+
+<div id= "#Functions##GetEndCoordinate" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>POLYGON</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(COORDINATE)">#COORDINATE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The end coordinate of the polygon</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POLYGON).GetEndPoint" ><strong>POLYGON:GetEndPoint()</strong></a></h2>
+</div>
+    
+<p>Returns the end point of the polygon.</p>
+
+    
+<p>The end point is the last point of the polygon.</p>
+
+<div id= "#Functions##GetEndPoint" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>POLYGON</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The end point of the polygon</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POLYGON).GetPoints" ><strong>POLYGON:GetPoints()</strong></a></h2>
+</div>
+    
+<p>Returns the points of the polygon.</p>
+
+    
+<p>Each point is a table with 'x' and 'y' fields.</p>
+
+<div id= "#Functions##GetPoints" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>POLYGON</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The points of the polygon</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POLYGON).GetRandomNonWeightedVec2" ><strong>POLYGON:GetRandomNonWeightedVec2()</strong></a></h2>
+</div>
+    
+<p>Returns a random non-weighted Vec2 within the polygon.</p>
+
+    
+<p>The Vec2 is chosen from one of the triangles that make up the polygon.</p>
+
+<div id= "#Functions##GetRandomNonWeightedVec2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>POLYGON</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The random non-weighted Vec2</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POLYGON).GetRandomVec2" ><strong>POLYGON:GetRandomVec2()</strong></a></h2>
+</div>
+    
+<p>Returns a random Vec2 within the polygon.</p>
+
+    
+<p>The Vec2 is weighted by the areas of the triangles that make up the polygon.</p>
+
+<div id= "#Functions##GetRandomVec2" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>POLYGON</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The random Vec2</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POLYGON).GetStartCoordinate" ><strong>POLYGON:GetStartCoordinate()</strong></a></h2>
+</div>
+    
+<p>Returns the start coordinate of the polygon.</p>
+
+    
+<p>The start coordinate is the first point of the polygon.</p>
+
+<div id= "#Functions##GetStartCoordinate" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>POLYGON</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(COORDINATE)">#COORDINATE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The start coordinate of the polygon</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POLYGON).GetStartPoint" ><strong>POLYGON:GetStartPoint()</strong></a></h2>
+</div>
+    
+<p>Returns the start point of the polygon.</p>
+
+    
+<p>The start point is the first point of the polygon.</p>
+
+<div id= "#Functions##GetStartPoint" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>POLYGON</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The start point of the polygon</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(POLYGON).GetSurfaceArea" ><strong>POLYGON:GetSurfaceArea()</strong></a></h2>
+</div>
+    
+<p>Calculates the surface area of the polygon.</p>
+
+    
+<p>The surface area is the sum of the areas of the triangles that make up the polygon.</p>
+
+<div id= "#Functions##GetSurfaceArea" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>POLYGON</p>
 </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
@@ -3384,7 +3560,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       </div>
       <div class="w3-half">
         
-<p>Coalition of the command center.</p>
+<p>The surface area of the polygon</p>
 
       </div>
     </div>
@@ -3396,560 +3572,38 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).GetMenu" ><strong>COMMANDCENTER:GetMenu(TaskGroup)</strong></a></h2>
+<h2><a id="#(POLYGON).New" ><strong>POLYGON.New(..., self)</strong></a></h2>
 </div>
     
-<p>Gets the commandcenter menu structure governed by the HQ command center.</p>
+<p>Creates a new polygon from a list of points.</p>
 
-<div id= "#Functions##GetMenu" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Group.html##(Group)">Wrapper.Group#Group</a>
-            <strong><strong>TaskGroup</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Task Group.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="Core.Menu.html##(MENU_COALITION)">Core.Menu#MENU_COALITION</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).GetMissions" ><strong>COMMANDCENTER:GetMissions()</strong></a></h2>
-</div>
     
-<p>Get the Missions governed by the HQ command center.</p>
-
-<div id= "#Functions##GetMissions" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#list&lt;Tasking.Mission#MISSION&gt;:</p>
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).GetName" ><strong>COMMANDCENTER:GetName()</strong></a></h2>
-</div>
-    
-<p>Gets the name of the HQ command center.</p>
-
-<div id= "#Functions##GetName" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#string:</p>
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).GetPositionable" ><strong>COMMANDCENTER:GetPositionable()</strong></a></h2>
-</div>
-    
-<p>Gets the POSITIONABLE of the HQ command center.</p>
-
-<div id= "#Functions##GetPositionable" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="Wrapper.Positionable.html##(POSITIONABLE)">Wrapper.Positionable#POSITIONABLE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).GetShortText" ><strong>COMMANDCENTER:GetShortText()</strong></a></h2>
-</div>
-    
-<p>Gets the short text string of the HQ command center.</p>
-
-<div id= "#Functions##GetShortText" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#string:</p>
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).GetText" ><strong>COMMANDCENTER:GetText()</strong></a></h2>
-</div>
-    
-<p>Gets the text string of the HQ command center.</p>
-
-<div id= "#Functions##GetText" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#string:</p>
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).HasGroup" ><strong>COMMANDCENTER:HasGroup(MissionGroup)</strong></a></h2>
-</div>
-    
-<p>Checks of the command center has the given MissionGroup.</p>
-
-<div id= "#Functions##HasGroup" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>MissionGroup</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The group active within one of the missions governed by the command center.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#boolean:</p>
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).IsGroupAssigned" ><strong>COMMANDCENTER:IsGroupAssigned(TaskGroup)</strong></a></h2>
-</div>
-    
-<p>Checks of the TaskGroup has a Task.</p>
-
-<div id= "#Functions##IsGroupAssigned" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>TaskGroup</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#boolean:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>When true, the TaskGroup has a Task, otherwise the returned value will be false.</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).IsModeWWII" ><strong>COMMANDCENTER:IsModeWWII()</strong></a></h2>
-</div>
-    
-<p>Returns if the commandcenter operations is in WWII mode</p>
-
-<div id= "#Functions##IsModeWWII" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#boolean:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>true if in WWII mode.</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).MessageToAll" ><strong>COMMANDCENTER:MessageToAll(Message)</strong></a></h2>
-</div>
-    
-<p>Let the command center send a Message to all players.</p>
-
-<div id= "#Functions##MessageToAll" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Message</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The message text.</p>
-
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).MessageToCoalition" ><strong>COMMANDCENTER:MessageToCoalition(Message)</strong></a></h2>
-</div>
-    
-<p>Let the command center send a message to the coalition of the command center.</p>
-
-<div id= "#Functions##MessageToCoalition" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Message</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The message text.</p>
-
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).MessageToGroup" ><strong>COMMANDCENTER:MessageToGroup(Message, MessageGroup)</strong></a></h2>
-</div>
-    
-<p>Let the command center send a message to the MessageGroup.</p>
-
-<div id= "#Functions##MessageToGroup" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Message</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The message text.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>MessageGroup</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The group to receive the message.</p>
-
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).MessageTypeToCoalition" ><strong>COMMANDCENTER:MessageTypeToCoalition(Message, MessageType)</strong></a></h2>
-</div>
-    
-<p>Let the command center send a message of a specified type to the coalition of the command center.</p>
-
-<div id= "#Functions##MessageTypeToCoalition" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Message</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The message text.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Core.Message.html##(MESSAGE.MessageType)">Core.Message#MESSAGE.MessageType</a>
-            <strong><strong>MessageType</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The type of the message, resulting in automatic time duration and prefix of the message.</p>
-
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).MessageTypeToGroup" ><strong>COMMANDCENTER:MessageTypeToGroup(Message, MessageGroup, MessageType)</strong></a></h2>
-</div>
-    
-<p>Let the command center send a message to the MessageGroup.</p>
-
-<div id= "#Functions##MessageTypeToGroup" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Message</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The message text.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>MessageGroup</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The group to receive the message.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Core.Message.html##(MESSAGE.MessageType)">Core.Message#MESSAGE.MessageType</a>
-            <strong><strong>MessageType</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The type of the message, resulting in automatic time duration and prefix of the message.</p>
-
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).New" ><strong>COMMANDCENTER:New(CommandCenterPositionable, CommandCenterName)</strong></a></h2>
-</div>
-    
-<p>The constructor takes an IDENTIFIABLE as the HQ command center.</p>
+<p>Each point is a table with 'x' and 'y' fields.</p>
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
+<p>POLYGON</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Positionable.html##(POSITIONABLE)">Wrapper.Positionable#POSITIONABLE</a>
-            <strong><strong>CommandCenterPositionable</strong></strong>
+                #table
+            <strong><strong>...</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              <p></p>
+              
+<p>Points of the polygon</p>
+
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #string
-            <strong><strong>CommandCenterName</strong></strong>
+            <strong><strong>self</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -3959,11 +3613,11 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(COMMANDCENTER)">#COMMANDCENTER</a>:</p>
+        <p><a href="##(POLYGON)">#POLYGON</a>:</p>
       </div>
       <div class="w3-half">
         
-
+<p>The new polygon</p>
 
       </div>
     </div>
@@ -3975,43 +3629,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).RemoveMission" ><strong>COMMANDCENTER:RemoveMission(Mission)</strong></a></h2>
+<h2><a id="#(POLYGON).RemoveDraw" ><strong>POLYGON:RemoveDraw()</strong></a></h2>
 </div>
     
-<p>Removes a MISSION to be governed by the HQ command center.</p>
+<p>Removes the drawing of the polygon from the map.</p>
 
-    
-<p>The given Mission is not nilified.</p>
-
-<div id= "#Functions##RemoveMission" class="w3-show w3-white">
+<div id= "#Functions##RemoveDraw" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
+<p>POLYGON</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Tasking.Mission.html##(MISSION)">Tasking.Mission#MISSION</a>
-            <strong><strong>Mission</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="Tasking.Mission.html##(MISSION)">Tasking.Mission#MISSION</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-
-
-      </div>
-    </div>
 </div>
 
 </div>
@@ -4020,379 +3648,52 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).ReportDetails" ><strong>COMMANDCENTER:ReportDetails(ReportGroup, Task)</strong></a></h2>
+<h2><a id="#(POLYGON).Triangulate" ><strong>POLYGON.Triangulate(points, self)</strong></a></h2>
 </div>
     
-<p>Let the command center send a report of the status of a task to a group.</p>
+<p>Triangulates the polygon.</p>
 
     
-<p>Report the details of a Mission, listing the Mission, and all the Task details.</p>
+<p>The polygon is divided into triangles.</p>
 
-<div id= "#Functions##ReportDetails" class="w3-show w3-white">
+<div id= "#Functions##Triangulate" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
+<p>POLYGON</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>ReportGroup</strong></strong>
+                #table
+            <strong><strong>points</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The group to receive the report.</p>
+<p>(optional) Points of the polygon or other points if you're just using the POLYGON class without an object of it</p>
 
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Tasking.Task.html##(TASK)">Tasking.Task#TASK</a>
-            <strong><strong>Task</strong></strong>
+            <strong><strong>self</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The task to be reported.</p>
-
+              <p></p>
           </div>
         </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).ReportMissionsPlayers" ><strong>COMMANDCENTER:ReportMissionsPlayers(ReportGroup)</strong></a></h2>
-</div>
-    
-<p>Let the command center send a report of the players of all missions to a group.</p>
-
-    
-<p>Each Mission is listed, with an indication how many Tasks are still to be completed.</p>
-
-<div id= "#Functions##ReportMissionsPlayers" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>ReportGroup</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The group to receive the report.</p>
-
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).ReportSummary" ><strong>COMMANDCENTER:ReportSummary(ReportGroup)</strong></a></h2>
-</div>
-    
-<p>Let the command center send a report of the status of all missions to a group.</p>
-
-    
-<p>Each Mission is listed, with an indication how many Tasks are still to be completed.</p>
-
-<div id= "#Functions##ReportSummary" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>ReportGroup</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The group to receive the report.</p>
-
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).SetAutoAcceptTasks" ><strong>COMMANDCENTER:SetAutoAcceptTasks(AutoAccept)</strong></a></h2>
-</div>
-    
-<p>Automatically accept tasks for all TaskGroups.</p>
-
-    
-<p>When a task is assigned; the mission designer can decide if players are immediately assigned to the task; or they can accept/reject the assigned task.
-If the tasks are not automatically accepted; the player will receive a message that he needs to access the command center menu and
-choose from 2 added menu options either to accept or reject the assigned task within 30 seconds.
-If the task is not accepted within 30 seconds; the task will be cancelled and a new task will be assigned.</p>
-
-<div id= "#Functions##SetAutoAcceptTasks" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #boolean
-            <strong><strong>AutoAccept</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>true for ON and false or nil for OFF.</p>
-
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).SetAutoAssignMethod" ><strong>COMMANDCENTER:SetAutoAssignMethod(AutoAssignMethod)</strong></a></h2>
-</div>
-    
-<p>Define the method to be used to assign automatically a task from the available tasks in the mission.</p>
-
-    
-<p>There are 3 types of methods that can be applied for the moment:</p>
-
-<ol>
-    <li>Random - assigns a random task in the mission to the player.</li>
-    <li>Distance - assigns a task based on a distance evaluation from the player. The closest are to be assigned first.</li>
-    <li>Priority - assigns a task based on the priority as defined by the mission designer, using the SetTaskPriority parameter.</li>
-</ol>
-
-<p>The different task classes implement the logic to determine the priority of automatic task assignment to a player, depending on one of the above methods.
-The method <a href="Tasking.Task.html##(TASK).GetAutoAssignPriority">Tasking.Task#TASK.GetAutoAssignPriority</a> calculate the priority of the tasks to be assigned. </p>
-
-<div id= "#Functions##SetAutoAssignMethod" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="##(COMMANDCENTER.AutoAssignMethods)">#COMMANDCENTER.AutoAssignMethods</a>
-            <strong><strong>AutoAssignMethod</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>A selection of an assign method from the COMMANDCENTER.AutoAssignMethods enumeration.</p>
-
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).SetAutoAssignTasks" ><strong>COMMANDCENTER:SetAutoAssignTasks(AutoAssign)</strong></a></h2>
-</div>
-    
-<p>Automatically assigns tasks to all TaskGroups.</p>
-
-    
-<p>One of the most important roles of the command center is the management of tasks.
-When this method is used with a parameter true; the command center will scan at regular intervals which players in a slot are not having a task assigned.
-For those players; the tasking is enabled to assign automatically a task.
-An Assign Menu will be accessible for the player under the command center menu, to configure the automatic tasking to switched on or off.</p>
-
-<div id= "#Functions##SetAutoAssignTasks" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #boolean
-            <strong><strong>AutoAssign</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>true for ON and false or nil for OFF.</p>
-
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).SetCommandMenu" ><strong>COMMANDCENTER:SetCommandMenu()</strong></a></h2>
-</div>
-    
-<p>Sets the menu of the command center.</p>
-
-    
-<p>This command is called within the :New() method.</p>
-
-<div id= "#Functions##SetCommandMenu" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).SetFlashStatus" ><strong>COMMANDCENTER:SetFlashStatus(Flash)</strong></a></h2>
-</div>
-    
-<p>Let the command center flash a report of the status of the subscribed task to a group.</p>
-
-<div id= "#Functions##SetFlashStatus" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>Flash</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<h1>boolean</h1>
-
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).SetMenu" ><strong>COMMANDCENTER:SetMenu()</strong></a></h2>
-</div>
-    
-<p>Sets the menu structure of the Missions governed by the HQ command center.</p>
-
-<div id= "#Functions##SetMenu" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).SetMessageDuration" ><strong>COMMANDCENTER:SetMessageDuration(seconds)</strong></a></h2>
-</div>
-    
-<p>Duration a command center message is shown.</p>
-
-<div id= "#Functions##SetMessageDuration" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>seconds</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<h1>number</h1>
-
-          </div>
-        </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).SetModeWWII" ><strong>COMMANDCENTER:SetModeWWII()</strong></a></h2>
-</div>
-    
-<p>Set the commandcenter operations in WWII mode
-This will disable LL, MGRS, BRA, BULLS navigatin messages sent by the Command Center, 
-and will be replaced by a navigation using Reference Zones.</p>
-
-    
-<p>It will also disable the settings at the settings menu for these.</p>
-
-<div id= "#Functions##SetModeWWII" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
-</div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(COMMANDCENTER)">#COMMANDCENTER</a>:</p>
+        <p>#table:</p>
       </div>
       <div class="w3-half">
         
-
+<p>The triangles of the polygon</p>
 
       </div>
     </div>
@@ -4404,64 +3705,28 @@ and will be replaced by a navigation using Reference Zones.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).SetReferenceZones" ><strong>COMMANDCENTER:SetReferenceZones(ReferenceZonePrefix)</strong></a></h2>
+<h2><a id="#(POLYGON).__CalculateSurfaceArea" ><strong>POLYGON:__CalculateSurfaceArea()</strong></a></h2>
 </div>
     
-<p>Set special Reference Zones known by the Command Center to guide airborne pilots during WWII.</p>
+<p>Calculates the surface area of the polygon.</p>
 
     
+<p>The surface area is the sum of the areas of the triangles that make up the polygon.</p>
 
-<p>These Reference Zones are normal trigger zones, with a special naming.
-The Reference Zones need to be set by the Mission Designer in the Mission Editor.
-Reference Zones are set by normal trigger zones. One can color the zones in a specific color, 
-and the radius of the zones doesn't matter, only the center of the zone is important. Place the center of these Reference Zones at
-specific scenery objects or points of interest (like cities, rivers, hills, crossing etc).
-The trigger zones indicating a Reference Zone need to follow a specific syntax.
-The name of each trigger zone expressing a Reference Zone need to start with a classification name of the object,
-followed by a #, followed by a symbolic name of the Reference Zone.
-A few examples:</p>
-
-<ul>
-    <li>A church at Tskinvali would be indicated as: <em>Church#Tskinvali</em></li>
-    <li>A train station near Kobuleti would be indicated as: <em>Station#Kobuleti</em></li>
-</ul>
-
-<p>Taking the above example, this is how this method would be used:</p>
-
-<pre><code>CC:SetReferenceZones( "Church" )
-CC:SetReferenceZones( "Station" )
-</code></pre>
-
-
-
-<div id= "#Functions##SetReferenceZones" class="w3-show w3-white">
+<div id= "#Functions##__CalculateSurfaceArea" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>COMMANDCENTER</p>
+<p>POLYGON</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>ReferenceZonePrefix</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The name before the #-mark indicating the class of the Reference Zones.</p>
-
-          </div>
-        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(COMMANDCENTER)">#COMMANDCENTER</a>:</p>
+        <p>#number:</p>
       </div>
       <div class="w3-half">
         
-
+<p>The surface area of the polygon</p>
 
       </div>
     </div>
@@ -4476,54 +3741,10 @@ CC:SetReferenceZones( "Station" )
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(COMMANDCENTER.AutoAssignMethods)">#COMMANDCENTER.AutoAssignMethods</a>
-<a id="#(COMMANDCENTER).AutoAssignMethods" ><strong>COMMANDCENTER.AutoAssignMethods</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    <a href="DCS.html##(coalition)">DCS#coalition</a>
-<a id="#(COMMANDCENTER).CommandCenterCoalition" ><strong>COMMANDCENTER.CommandCenterCoalition</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(COMMANDCENTER).CommandCenterPositionable" ><strong>COMMANDCENTER.CommandCenterPositionable</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #string
-<a id="#(COMMANDCENTER).CommunicationMode" ><strong>COMMANDCENTER.CommunicationMode</strong></a>
+<a id="#(POLYGON).ClassName" ><strong>POLYGON.ClassName</strong></a>
     
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-<a id="#(COMMANDCENTER).HQ" ><strong>COMMANDCENTER.HQ</strong></a>
-    
-
+<p>Name of the class.</p>
 
 </div>
 
@@ -4532,9 +3753,9 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #table
-<a id="#(COMMANDCENTER).Missions" ><strong>COMMANDCENTER.Missions</strong></a>
+<a id="#(POLYGON).Coords" ><strong>POLYGON.Coords</strong></a>
     
-
+<p>List of COORDINATE defining the path, this will be assigned automatically if you're passing in a drawing from the Mission Editor</p>
 
 </div>
 
@@ -4542,10 +3763,32 @@ CC:SetReferenceZones( "Station" )
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #table
+<a id="#(POLYGON).MarkIDs" ><strong>POLYGON.MarkIDs</strong></a>
     
-<a id="#(COMMANDCENTER).autoAssignTasksScheduleID" ><strong>COMMANDCENTER.autoAssignTasksScheduleID</strong></a>
-    
+<p>List any MARKIDs this class use, this will be assigned automatically if you're passing in a drawing from the Mission Editor</p>
 
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(POLYGON).Points" ><strong>POLYGON.Points</strong></a>
+    
+<p>List of 3D points defining the shape, this will be assigned automatically if you're passing in a drawing from the Mission Editor</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(POLYGON).Triangles" ><strong>POLYGON.Triangles</strong></a>
+    
+<p>List of TRIANGLEs that make up the shape of the POLYGON after being triangulated</p>
 
 </div>
 
@@ -4556,7 +3799,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).ClearState" ><strong>COMMANDCENTER:ClearState(Object, StateName)</strong></a></h2>
+<h2><a id="#(POLYGON).ClearState" ><strong>POLYGON:ClearState(Object, StateName)</strong></a></h2>
 </div>
     
 <p>Clear the state of an object.</p>
@@ -4600,7 +3843,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).CreateEventBirth" ><strong>COMMANDCENTER:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</strong></a></h2>
+<h2><a id="#(POLYGON).CreateEventBirth" ><strong>POLYGON:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</strong></a></h2>
 </div>
     
 <p>Creation of a Birth Event.</p>
@@ -4679,7 +3922,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).CreateEventCrash" ><strong>COMMANDCENTER:CreateEventCrash(EventTime, Initiator, IniObjectCategory)</strong></a></h2>
+<h2><a id="#(POLYGON).CreateEventCrash" ><strong>POLYGON:CreateEventCrash(EventTime, Initiator, IniObjectCategory)</strong></a></h2>
 </div>
     
 <p>Creation of a Crash Event.</p>
@@ -4735,7 +3978,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).CreateEventDead" ><strong>COMMANDCENTER:CreateEventDead(EventTime, Initiator, IniObjectCategory)</strong></a></h2>
+<h2><a id="#(POLYGON).CreateEventDead" ><strong>POLYGON:CreateEventDead(EventTime, Initiator, IniObjectCategory)</strong></a></h2>
 </div>
     
 <p>Creation of a Dead Event.</p>
@@ -4791,7 +4034,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).CreateEventPlayerEnterAircraft" ><strong>COMMANDCENTER:CreateEventPlayerEnterAircraft(PlayerUnit)</strong></a></h2>
+<h2><a id="#(POLYGON).CreateEventPlayerEnterAircraft" ><strong>POLYGON:CreateEventPlayerEnterAircraft(PlayerUnit)</strong></a></h2>
 </div>
     
 <p>Creation of a <code>S_EVENT_PLAYER_ENTER_AIRCRAFT</code> event.</p>
@@ -4824,7 +4067,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).CreateEventRemoveUnit" ><strong>COMMANDCENTER:CreateEventRemoveUnit(EventTime, Initiator)</strong></a></h2>
+<h2><a id="#(POLYGON).CreateEventRemoveUnit" ><strong>POLYGON:CreateEventRemoveUnit(EventTime, Initiator)</strong></a></h2>
 </div>
     
 <p>Creation of a Remove Unit Event.</p>
@@ -4870,7 +4113,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).CreateEventTakeoff" ><strong>COMMANDCENTER:CreateEventTakeoff(EventTime, Initiator)</strong></a></h2>
+<h2><a id="#(POLYGON).CreateEventTakeoff" ><strong>POLYGON:CreateEventTakeoff(EventTime, Initiator)</strong></a></h2>
 </div>
     
 <p>Creation of a Takeoff Event.</p>
@@ -4916,7 +4159,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).CreateEventUnitLost" ><strong>COMMANDCENTER:CreateEventUnitLost(EventTime, Initiator)</strong></a></h2>
+<h2><a id="#(POLYGON).CreateEventUnitLost" ><strong>POLYGON:CreateEventUnitLost(EventTime, Initiator)</strong></a></h2>
 </div>
     
 <p>Creation of a Crash Event.</p>
@@ -4962,7 +4205,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).E" ><strong>COMMANDCENTER:E(Arguments)</strong></a></h2>
+<h2><a id="#(POLYGON).E" ><strong>POLYGON:E(Arguments)</strong></a></h2>
 </div>
     
 <p>Log an exception which will be traced always.</p>
@@ -4997,7 +4240,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).EventDispatcher" ><strong>COMMANDCENTER:EventDispatcher()</strong></a></h2>
+<h2><a id="#(POLYGON).EventDispatcher" ><strong>POLYGON:EventDispatcher()</strong></a></h2>
 </div>
     
 <p>Returns the event dispatcher</p>
@@ -5027,7 +4270,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).EventRemoveAll" ><strong>COMMANDCENTER:EventRemoveAll()</strong></a></h2>
+<h2><a id="#(POLYGON).EventRemoveAll" ><strong>POLYGON:EventRemoveAll()</strong></a></h2>
 </div>
     
 <p>Remove all subscribed events</p>
@@ -5057,7 +4300,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).F" ><strong>COMMANDCENTER:F(Arguments)</strong></a></h2>
+<h2><a id="#(POLYGON).F" ><strong>POLYGON:F(Arguments)</strong></a></h2>
 </div>
     
 <p>Trace a function call.</p>
@@ -5092,7 +4335,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).F2" ><strong>COMMANDCENTER:F2(Arguments)</strong></a></h2>
+<h2><a id="#(POLYGON).F2" ><strong>POLYGON:F2(Arguments)</strong></a></h2>
 </div>
     
 <p>Trace a function call level 2.</p>
@@ -5127,7 +4370,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).F3" ><strong>COMMANDCENTER:F3(Arguments)</strong></a></h2>
+<h2><a id="#(POLYGON).F3" ><strong>POLYGON:F3(Arguments)</strong></a></h2>
 </div>
     
 <p>Trace a function call level 3.</p>
@@ -5162,7 +4405,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).GetClassID" ><strong>COMMANDCENTER:GetClassID()</strong></a></h2>
+<h2><a id="#(POLYGON).GetClassID" ><strong>POLYGON:GetClassID()</strong></a></h2>
 </div>
     
 <p>Get the ClassID of the class instance.</p>
@@ -5192,7 +4435,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).GetClassName" ><strong>COMMANDCENTER:GetClassName()</strong></a></h2>
+<h2><a id="#(POLYGON).GetClassName" ><strong>POLYGON:GetClassName()</strong></a></h2>
 </div>
     
 <p>Get the ClassName of the class instance.</p>
@@ -5222,7 +4465,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).GetClassNameAndID" ><strong>COMMANDCENTER:GetClassNameAndID()</strong></a></h2>
+<h2><a id="#(POLYGON).GetClassNameAndID" ><strong>POLYGON:GetClassNameAndID()</strong></a></h2>
 </div>
     
 <p>Get the ClassName + ClassID of the class instance.</p>
@@ -5255,7 +4498,7 @@ CC:SetReferenceZones( "Station" )
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).GetEventPriority" ><strong>COMMANDCENTER:GetEventPriority()</strong></a></h2>
+<h2><a id="#(POLYGON).GetEventPriority" ><strong>POLYGON:GetEventPriority()</strong></a></h2>
 </div>
     
 <p>Get the Class <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
@@ -5289,7 +4532,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).GetParent" ><strong>COMMANDCENTER:GetParent(Child, FromClass)</strong></a></h2>
+<h2><a id="#(POLYGON).GetParent" ><strong>POLYGON:GetParent(Child, FromClass)</strong></a></h2>
 </div>
     
 <p>This is the worker method to retrieve the Parent class.</p>
@@ -5354,7 +4597,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).GetState" ><strong>COMMANDCENTER:GetState(Object, Key)</strong></a></h2>
+<h2><a id="#(POLYGON).GetState" ><strong>POLYGON:GetState(Object, Key)</strong></a></h2>
 </div>
     
 <p>Get a Value given a Key from the Object.</p>
@@ -5411,7 +4654,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).HandleEvent" ><strong>COMMANDCENTER:HandleEvent(EventID, EventFunction)</strong></a></h2>
+<h2><a id="#(POLYGON).HandleEvent" ><strong>POLYGON:HandleEvent(EventID, EventFunction)</strong></a></h2>
 </div>
     
 <p>Subscribe to a DCS Event.</p>
@@ -5468,7 +4711,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).I" ><strong>COMMANDCENTER:I(Arguments)</strong></a></h2>
+<h2><a id="#(POLYGON).I" ><strong>POLYGON:I(Arguments)</strong></a></h2>
 </div>
     
 <p>Log an information which will be traced always.</p>
@@ -5503,7 +4746,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).Inherit" ><strong>COMMANDCENTER:Inherit(Child, Parent)</strong></a></h2>
+<h2><a id="#(POLYGON).Inherit" ><strong>POLYGON:Inherit(Child, Parent)</strong></a></h2>
 </div>
     
 <p>This is the worker method to inherit from a parent class.</p>
@@ -5559,7 +4802,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).IsInstanceOf" ><strong>COMMANDCENTER:IsInstanceOf(ClassName)</strong></a></h2>
+<h2><a id="#(POLYGON).IsInstanceOf" ><strong>POLYGON:IsInstanceOf(ClassName)</strong></a></h2>
 </div>
     
 <p>This is the worker method to check if an object is an (sub)instance of a class.</p>
@@ -5615,7 +4858,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).IsTrace" ><strong>COMMANDCENTER:IsTrace()</strong></a></h2>
+<h2><a id="#(POLYGON).IsTrace" ><strong>POLYGON:IsTrace()</strong></a></h2>
 </div>
     
 <p>Enquires if tracing is on (for the class).</p>
@@ -5645,7 +4888,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).New" ><strong>COMMANDCENTER:New()</strong></a></h2>
+<h2><a id="#(POLYGON).New" ><strong>POLYGON:New()</strong></a></h2>
 </div>
     
 <p>BASE constructor.</p>
@@ -5686,7 +4929,7 @@ end
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEvent" ><strong>COMMANDCENTER:OnEvent(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEvent" ><strong>POLYGON:OnEvent(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when an Event for an object is triggered.</p>
@@ -5723,7 +4966,7 @@ initiator : The unit that triggered the event. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventBDA" ><strong>COMMANDCENTER:OnEventBDA(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventBDA" ><strong>POLYGON:OnEventBDA(EventData)</strong></a></h2>
 </div>
     
 <p>BDA.</p>
@@ -5759,7 +5002,7 @@ initiator : The unit that triggered the event. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventBaseCaptured" ><strong>COMMANDCENTER:OnEventBaseCaptured(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventBaseCaptured" ><strong>POLYGON:OnEventBaseCaptured(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a ground unit captures either an airbase or a farp.</p>
@@ -5797,7 +5040,7 @@ place: The airbase that was captured, can be a FARP or Airbase. When calling pla
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventBirth" ><strong>COMMANDCENTER:OnEventBirth(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventBirth" ><strong>POLYGON:OnEventBirth(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any object is spawned into the mission.</p>
@@ -5834,7 +5077,7 @@ initiator : The unit that was spawned </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventCrash" ><strong>COMMANDCENTER:OnEventCrash(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventCrash" ><strong>POLYGON:OnEventCrash(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
@@ -5871,7 +5114,7 @@ initiator : The unit that has crashed </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventDead" ><strong>COMMANDCENTER:OnEventDead(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventDead" ><strong>POLYGON:OnEventDead(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when an object is dead.</p>
@@ -5908,7 +5151,7 @@ initiator : The unit that is dead. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventDetailedFailure" ><strong>COMMANDCENTER:OnEventDetailedFailure(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventDetailedFailure" ><strong>POLYGON:OnEventDetailedFailure(EventData)</strong></a></h2>
 </div>
     
 <p>Unknown precisely what creates this event, likely tied into newer damage model.</p>
@@ -5949,7 +5192,7 @@ initiator : The unit that is dead. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventDiscardChairAfterEjection" ><strong>COMMANDCENTER:OnEventDiscardChairAfterEjection(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventDiscardChairAfterEjection" ><strong>POLYGON:OnEventDiscardChairAfterEjection(EventData)</strong></a></h2>
 </div>
     
 <p>Discard chair after ejection.</p>
@@ -5985,7 +5228,7 @@ initiator : The unit that is dead. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventEjection" ><strong>COMMANDCENTER:OnEventEjection(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventEjection" ><strong>POLYGON:OnEventEjection(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a pilot ejects from an aircraft
@@ -6022,7 +5265,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventEngineShutdown" ><strong>COMMANDCENTER:OnEventEngineShutdown(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventEngineShutdown" ><strong>POLYGON:OnEventEngineShutdown(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any aircraft shuts down its engines.</p>
@@ -6059,7 +5302,7 @@ initiator : The unit that is stopping its engines. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventEngineStartup" ><strong>COMMANDCENTER:OnEventEngineStartup(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventEngineStartup" ><strong>POLYGON:OnEventEngineStartup(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any aircraft starts its engines.</p>
@@ -6096,7 +5339,7 @@ initiator : The unit that is starting its engines. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventHit" ><strong>COMMANDCENTER:OnEventHit(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventHit" ><strong>POLYGON:OnEventHit(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs whenever an object is hit by a weapon.</p>
@@ -6135,7 +5378,7 @@ target: The Object that was hit. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventHumanFailure" ><strong>COMMANDCENTER:OnEventHumanFailure(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventHumanFailure" ><strong>POLYGON:OnEventHumanFailure(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any system fails on a human controlled aircraft.</p>
@@ -6172,7 +5415,7 @@ initiator : The unit that had the failure </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventKill" ><strong>COMMANDCENTER:OnEventKill(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventKill" ><strong>POLYGON:OnEventKill(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs on the death of a unit.</p>
@@ -6216,7 +5459,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventLand" ><strong>COMMANDCENTER:OnEventLand(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventLand" ><strong>POLYGON:OnEventLand(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when an aircraft lands at an airbase, farp or ship
@@ -6254,7 +5497,7 @@ place: Object that the unit landed on. Can be an Airbase Object, FARP, or Ships 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventLandingAfterEjection" ><strong>COMMANDCENTER:OnEventLandingAfterEjection(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventLandingAfterEjection" ><strong>POLYGON:OnEventLandingAfterEjection(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs shortly after the landing animation of an ejected pilot touching the ground and standing up.</p>
@@ -6298,7 +5541,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventLandingQualityMark" ><strong>COMMANDCENTER:OnEventLandingQualityMark(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventLandingQualityMark" ><strong>POLYGON:OnEventLandingQualityMark(EventData)</strong></a></h2>
 </div>
     
 <p>Landing quality mark.</p>
@@ -6334,7 +5577,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventMarkAdded" ><strong>COMMANDCENTER:OnEventMarkAdded(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventMarkAdded" ><strong>POLYGON:OnEventMarkAdded(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a new mark was added.</p>
@@ -6371,7 +5614,7 @@ MarkID: ID of the mark. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventMarkChange" ><strong>COMMANDCENTER:OnEventMarkChange(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventMarkChange" ><strong>POLYGON:OnEventMarkChange(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a mark text was changed.</p>
@@ -6408,7 +5651,7 @@ MarkID: ID of the mark. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventMarkRemoved" ><strong>COMMANDCENTER:OnEventMarkRemoved(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventMarkRemoved" ><strong>POLYGON:OnEventMarkRemoved(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a mark was removed.</p>
@@ -6445,7 +5688,7 @@ MarkID: ID of the mark. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventMissionEnd" ><strong>COMMANDCENTER:OnEventMissionEnd(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventMissionEnd" ><strong>POLYGON:OnEventMissionEnd(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a mission ends
@@ -6479,7 +5722,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventMissionStart" ><strong>COMMANDCENTER:OnEventMissionStart(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventMissionStart" ><strong>POLYGON:OnEventMissionStart(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a mission starts
@@ -6513,7 +5756,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventParatrooperLanding" ><strong>COMMANDCENTER:OnEventParatrooperLanding(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventParatrooperLanding" ><strong>POLYGON:OnEventParatrooperLanding(EventData)</strong></a></h2>
 </div>
     
 <p>Weapon add.</p>
@@ -6550,7 +5793,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventPilotDead" ><strong>COMMANDCENTER:OnEventPilotDead(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventPilotDead" ><strong>POLYGON:OnEventPilotDead(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when the pilot of an aircraft is killed.</p>
@@ -6588,7 +5831,7 @@ initiator : The unit that the pilot has died in. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventPlayerEnterAircraft" ><strong>COMMANDCENTER:OnEventPlayerEnterAircraft(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventPlayerEnterAircraft" ><strong>POLYGON:OnEventPlayerEnterAircraft(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a player enters a slot and takes control of an aircraft.</p>
@@ -6626,7 +5869,7 @@ initiator : The unit that is being taken control of. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventPlayerEnterUnit" ><strong>COMMANDCENTER:OnEventPlayerEnterUnit(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventPlayerEnterUnit" ><strong>POLYGON:OnEventPlayerEnterUnit(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any player assumes direct control of a unit.</p>
@@ -6664,7 +5907,7 @@ initiator : The unit that is being taken control of. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventPlayerLeaveUnit" ><strong>COMMANDCENTER:OnEventPlayerLeaveUnit(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventPlayerLeaveUnit" ><strong>POLYGON:OnEventPlayerLeaveUnit(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any player relieves control of a unit to the AI.</p>
@@ -6701,7 +5944,7 @@ initiator : The unit that the player left. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventRefueling" ><strong>COMMANDCENTER:OnEventRefueling(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventRefueling" ><strong>POLYGON:OnEventRefueling(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
@@ -6738,7 +5981,7 @@ initiator : The unit that is receiving fuel. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventRefuelingStop" ><strong>COMMANDCENTER:OnEventRefuelingStop(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventRefuelingStop" ><strong>POLYGON:OnEventRefuelingStop(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when an aircraft is finished taking fuel.</p>
@@ -6775,7 +6018,7 @@ initiator : The unit that was receiving fuel. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventScore" ><strong>COMMANDCENTER:OnEventScore(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventScore" ><strong>POLYGON:OnEventScore(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any modification to the "Score" as seen on the debrief menu would occur.</p>
@@ -6812,7 +6055,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventShootingEnd" ><strong>COMMANDCENTER:OnEventShootingEnd(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventShootingEnd" ><strong>POLYGON:OnEventShootingEnd(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any unit stops firing its weapon.</p>
@@ -6850,7 +6093,7 @@ initiator : The unit that was doing the shooting. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventShootingStart" ><strong>COMMANDCENTER:OnEventShootingStart(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventShootingStart" ><strong>POLYGON:OnEventShootingStart(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
@@ -6889,7 +6132,7 @@ target: The unit that is being targeted.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventShot" ><strong>COMMANDCENTER:OnEventShot(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventShot" ><strong>POLYGON:OnEventShot(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs whenever any unit in a mission fires a weapon.</p>
@@ -6926,7 +6169,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventTakeoff" ><strong>COMMANDCENTER:OnEventTakeoff(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventTakeoff" ><strong>POLYGON:OnEventTakeoff(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
@@ -6964,7 +6207,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventTriggerZone" ><strong>COMMANDCENTER:OnEventTriggerZone(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventTriggerZone" ><strong>POLYGON:OnEventTriggerZone(EventData)</strong></a></h2>
 </div>
     
 <p>Trigger zone.</p>
@@ -7000,7 +6243,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).OnEventUnitLost" ><strong>COMMANDCENTER:OnEventUnitLost(EventData)</strong></a></h2>
+<h2><a id="#(POLYGON).OnEventUnitLost" ><strong>POLYGON:OnEventUnitLost(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when the game thinks an object is destroyed.</p>
@@ -7041,7 +6284,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).ScheduleOnce" ><strong>COMMANDCENTER:ScheduleOnce(Start, SchedulerFunction, ...)</strong></a></h2>
+<h2><a id="#(POLYGON).ScheduleOnce" ><strong>POLYGON:ScheduleOnce(Start, SchedulerFunction, ...)</strong></a></h2>
 </div>
     
 <p>Schedule a new time event.</p>
@@ -7114,7 +6357,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).ScheduleRepeat" ><strong>COMMANDCENTER:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</strong></a></h2>
+<h2><a id="#(POLYGON).ScheduleRepeat" ><strong>POLYGON:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</strong></a></h2>
 </div>
     
 <p>Schedule a new time event.</p>
@@ -7226,7 +6469,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).ScheduleStop" ><strong>COMMANDCENTER:ScheduleStop(SchedulerID)</strong></a></h2>
+<h2><a id="#(POLYGON).ScheduleStop" ><strong>POLYGON:ScheduleStop(SchedulerID)</strong></a></h2>
 </div>
     
 <p>Stops the Schedule.</p>
@@ -7259,7 +6502,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).SetEventPriority" ><strong>COMMANDCENTER:SetEventPriority(EventPriority)</strong></a></h2>
+<h2><a id="#(POLYGON).SetEventPriority" ><strong>POLYGON:SetEventPriority(EventPriority)</strong></a></h2>
 </div>
     
 <p>Set the Class <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
@@ -7307,7 +6550,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).SetState" ><strong>COMMANDCENTER:SetState(Object, Key, Value)</strong></a></h2>
+<h2><a id="#(POLYGON).SetState" ><strong>POLYGON:SetState(Object, Key, Value)</strong></a></h2>
 </div>
     
 <p>Set a state or property of the Object given a Key and a Value.</p>
@@ -7376,7 +6619,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).T" ><strong>COMMANDCENTER:T(Arguments)</strong></a></h2>
+<h2><a id="#(POLYGON).T" ><strong>POLYGON:T(Arguments)</strong></a></h2>
 </div>
     
 <p>Trace a function logic level 1.</p>
@@ -7411,7 +6654,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).T2" ><strong>COMMANDCENTER:T2(Arguments)</strong></a></h2>
+<h2><a id="#(POLYGON).T2" ><strong>POLYGON:T2(Arguments)</strong></a></h2>
 </div>
     
 <p>Trace a function logic level 2.</p>
@@ -7446,7 +6689,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).T3" ><strong>COMMANDCENTER:T3(Arguments)</strong></a></h2>
+<h2><a id="#(POLYGON).T3" ><strong>POLYGON:T3(Arguments)</strong></a></h2>
 </div>
     
 <p>Trace a function logic level 3.</p>
@@ -7481,7 +6724,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).TraceAll" ><strong>COMMANDCENTER:TraceAll(TraceAll)</strong></a></h2>
+<h2><a id="#(POLYGON).TraceAll" ><strong>POLYGON:TraceAll(TraceAll)</strong></a></h2>
 </div>
     
 <p>Trace all methods in MOOSE</p>
@@ -7514,7 +6757,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).TraceClass" ><strong>COMMANDCENTER:TraceClass(Class)</strong></a></h2>
+<h2><a id="#(POLYGON).TraceClass" ><strong>POLYGON:TraceClass(Class)</strong></a></h2>
 </div>
     
 <p>Set tracing for a class</p>
@@ -7547,7 +6790,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).TraceClassMethod" ><strong>COMMANDCENTER:TraceClassMethod(Class, Method)</strong></a></h2>
+<h2><a id="#(POLYGON).TraceClassMethod" ><strong>POLYGON:TraceClassMethod(Class, Method)</strong></a></h2>
 </div>
     
 <p>Set tracing for a specific method of  class</p>
@@ -7593,7 +6836,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).TraceLevel" ><strong>COMMANDCENTER:TraceLevel(Level)</strong></a></h2>
+<h2><a id="#(POLYGON).TraceLevel" ><strong>POLYGON:TraceLevel(Level)</strong></a></h2>
 </div>
     
 <p>Set trace level</p>
@@ -7624,7 +6867,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).TraceOff" ><strong>COMMANDCENTER:TraceOff()</strong></a></h2>
+<h2><a id="#(POLYGON).TraceOff" ><strong>POLYGON:TraceOff()</strong></a></h2>
 </div>
     
 <p>Set trace off.</p>
@@ -7647,7 +6890,7 @@ BASE:TraceOff()</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).TraceOn" ><strong>COMMANDCENTER:TraceOn()</strong></a></h2>
+<h2><a id="#(POLYGON).TraceOn" ><strong>POLYGON:TraceOn()</strong></a></h2>
 </div>
     
 <p>Set trace on.</p>
@@ -7670,7 +6913,7 @@ BASE:TraceOn()</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).TraceOnOff" ><strong>COMMANDCENTER:TraceOnOff(TraceOnOff)</strong></a></h2>
+<h2><a id="#(POLYGON).TraceOnOff" ><strong>POLYGON:TraceOnOff(TraceOnOff)</strong></a></h2>
 </div>
     
 <p>Set trace on or off
@@ -7718,7 +6961,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).UnHandleEvent" ><strong>COMMANDCENTER:UnHandleEvent(EventID)</strong></a></h2>
+<h2><a id="#(POLYGON).UnHandleEvent" ><strong>POLYGON:UnHandleEvent(EventID)</strong></a></h2>
 </div>
     
 <p>UnSubscribe to a DCS event.</p>
@@ -7762,7 +7005,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER)._F" ><strong>COMMANDCENTER:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h2>
+<h2><a id="#(POLYGON)._F" ><strong>POLYGON:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h2>
 </div>
     
 <p>Trace a function call.</p>
@@ -7817,7 +7060,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER)._Serialize" ><strong>COMMANDCENTER:_Serialize(Arguments)</strong></a></h2>
+<h2><a id="#(POLYGON)._Serialize" ><strong>POLYGON:_Serialize(Arguments)</strong></a></h2>
 </div>
     
 <p>(Internal) Serialize arguments</p>
@@ -7859,7 +7102,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER)._T" ><strong>COMMANDCENTER:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h2>
+<h2><a id="#(POLYGON)._T" ><strong>POLYGON:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h2>
 </div>
     
 <p>Trace a function logic.</p>
@@ -7911,7 +7154,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(COMMANDCENTER).onEvent" ><strong>COMMANDCENTER:onEvent(event)</strong></a></h2>
+<h2><a id="#(POLYGON).onEvent" ><strong>POLYGON:onEvent(event)</strong></a></h2>
 </div>
     
 <p>The main event handling function...</p>
@@ -7945,55 +7188,10 @@ When moose is loading dynamically (for moose class development), tracing is swit
 </div>
 
         </div>
-      <div onclick="myFunction('#Types##COMMANDCENTER.AutoAssignMethods')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(COMMANDCENTER.AutoAssignMethods)">Type <strong>COMMANDCENTER.AutoAssignMethods</strong></a></h2></div>
-        <div id= "#Types##COMMANDCENTER.AutoAssignMethods" class="w3-container w3-white w3-padding-16" id="module_other_types">
-          <div class="w3-white" id="record_type">
-<div class="fields w3-container w3-theme-l2">
-  <h2>Field(s)</h2>
-</div>
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(COMMANDCENTER.AutoAssignMethods).Distance" ><strong>COMMANDCENTER.AutoAssignMethods.Distance</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(COMMANDCENTER.AutoAssignMethods).Priority" ><strong>COMMANDCENTER.AutoAssignMethods.Priority</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(COMMANDCENTER.AutoAssignMethods).Random" ><strong>COMMANDCENTER.AutoAssignMethods.Random</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div class="functions  w3-container w3-theme-l2">
-  <h2>Function(s)</h2>
-</div>  
-</div>
-
-        </div>
 </div>
 <script>
 function myLoadFunction() {
-    document.getElementById("myHeader").style.backgroundImage = "url('../Images/Task_Command_Center.JPG')";
+    document.getElementById("myHeader").style.backgroundImage = "url('../Images/')";
 }
 </script>
 
