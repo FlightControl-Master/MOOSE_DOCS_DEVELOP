@@ -2370,6 +2370,24 @@ but it could also be a STATIC object.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WEAPON).IsFoxOne">WEAPON:IsFoxOne()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if weapon is a Fox One missile (Radar Semi-Active).</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WEAPON).IsFoxThree">WEAPON:IsFoxThree()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if weapon is a Fox Three missile (Radar Active).</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WEAPON).IsFoxTwo">WEAPON:IsFoxTwo()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if weapon is a Fox Two missile (IR guided).</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WEAPON).IsMissile">WEAPON:IsMissile()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Check if weapon is a missile.</p>
@@ -2511,6 +2529,12 @@ but it could also be a STATIC object.</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WEAPON).dtTrack">WEAPON.dtTrack</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Time step in seconds for tracking scheduler.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(WEAPON).guidance">WEAPON.guidance</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Missile guidance descriptor.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4111,6 +4135,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="DCS.html##(Desc)">DCS#Desc</a>
+<a id="#(WEAPON).guidance" ><strong>WEAPON.guidance</strong></a>
+    
+<p>Missile guidance descriptor.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(WEAPON).impactArg" ><strong>WEAPON.impactArg</strong></a>
     
@@ -5274,6 +5309,96 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(WEAPON).IsFoxOne" ><strong>WEAPON:IsFoxOne()</strong></a></h2>
+</div>
+    
+<p>Check if weapon is a Fox One missile (Radar Semi-Active).</p>
+
+<div id= "#Functions##IsFoxOne" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WEAPON</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If <code>true</code>, is a Fox One.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(WEAPON).IsFoxThree" ><strong>WEAPON:IsFoxThree()</strong></a></h2>
+</div>
+    
+<p>Check if weapon is a Fox Three missile (Radar Active).</p>
+
+<div id= "#Functions##IsFoxThree" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WEAPON</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If <code>true</code>, is a Fox Three.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(WEAPON).IsFoxTwo" ><strong>WEAPON:IsFoxTwo()</strong></a></h2>
+</div>
+    
+<p>Check if weapon is a Fox Two missile (IR guided).</p>
+
+<div id= "#Functions##IsFoxTwo" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>WEAPON</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If <code>true</code>, is a Fox Two.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(WEAPON).IsMissile" ><strong>WEAPON:IsMissile()</strong></a></h2>
 </div>
     
@@ -6089,6 +6214,17 @@ calculations per second need to be carried out.</p>
 <a id="#(WEAPON).dtTrack" ><strong>WEAPON.dtTrack</strong></a>
     
 <p>Time step in seconds for tracking scheduler.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="DCS.html##(Desc)">DCS#Desc</a>
+<a id="#(WEAPON).guidance" ><strong>WEAPON.guidance</strong></a>
+    
+<p>Missile guidance descriptor.</p>
 
 </div>
 
@@ -10510,6 +10646,17 @@ Coordinates are dependent on the position of the maps origin.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="DCS.html##(Desc)">DCS#Desc</a>
+<a id="#(WEAPON).guidance" ><strong>WEAPON.guidance</strong></a>
+    
+<p>Missile guidance descriptor.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(WEAPON).impactArg" ><strong>WEAPON.impactArg</strong></a>
     
@@ -11460,6 +11607,17 @@ If the Identifiable is alive, true is returned.  </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="DCS.html##(Desc)">DCS#Desc</a>
+<a id="#(WEAPON).guidance" ><strong>WEAPON.guidance</strong></a>
+    
+<p>Missile guidance descriptor.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(WEAPON).impactArg" ><strong>WEAPON.impactArg</strong></a>
     
@@ -12020,6 +12178,17 @@ If the Identifiable is alive, true is returned.  </p>
 <a id="#(WEAPON).dtTrack" ><strong>WEAPON.dtTrack</strong></a>
     
 <p>Time step in seconds for tracking scheduler.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="DCS.html##(Desc)">DCS#Desc</a>
+<a id="#(WEAPON).guidance" ><strong>WEAPON.guidance</strong></a>
+    
+<p>Missile guidance descriptor.</p>
 
 </div>
 
