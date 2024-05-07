@@ -2435,6 +2435,12 @@ Play around with the distance to get an optimal map for your scenario.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetRoutesFromNode">STRATEGO:GetRoutesFromNode(StartPoint)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Get available connecting nodes from one start node</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).GetToFrom">STRATEGO:GetToFrom(StartPoint, EndPoint)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[INTERNAL] Get nice route text</p>
@@ -3303,6 +3309,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO.Data).coalition">STRATEGO.Data.coalition</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO.Data).connections">STRATEGO.Data.connections</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -4645,6 +4657,14 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <p>Complete If true, the route was found end-to-end.</p>
 
         </div>
+        <div class="w3-half">
+          <p>#boolean:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Reverse If true, the route was found with a reverse search, the route table will be from sorted from end point to start point.</p>
+
+        </div>
     </div>
 </div>
 
@@ -5233,6 +5253,58 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <p>Zone The Zone of the node or nil if not found.</p>
 
       </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(STRATEGO).GetRoutesFromNode" ><strong>STRATEGO:GetRoutesFromNode(StartPoint)</strong></a></h2>
+</div>
+    
+<p>[USER] Get available connecting nodes from one start node</p>
+
+<div id= "#Functions##GetRoutesFromNode" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>STRATEGO</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>StartPoint</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The starting name</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#boolean:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>found</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#table:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Nodes </p>
+
+        </div>
     </div>
 </div>
 
@@ -10288,7 +10360,18 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="Core.Point.html##(COORDINATRE)">Core.Point#COORDINATRE</a>
+    #number
+<a id="#(STRATEGO.Data).connections" ><strong>STRATEGO.Data.connections</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
 <a id="#(STRATEGO.Data).coord" ><strong>STRATEGO.Data.coord</strong></a>
     
 
