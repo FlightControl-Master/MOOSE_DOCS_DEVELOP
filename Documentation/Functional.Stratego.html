@@ -2357,7 +2357,7 @@ Play around with the distance to get an optimal map for your scenario.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).FindRoute">STRATEGO:FindRoute(Start, End, Hops, Draw, Color, LineType)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO).FindRoute">STRATEGO:FindRoute(Start, End, Hops, Draw, Color, LineType, NoOptimize)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[USER] Find a route between two nodes.</p>
 </td>
@@ -4555,7 +4555,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(STRATEGO).FindRoute" ><strong>STRATEGO:FindRoute(Start, End, Hops, Draw, Color, LineType)</strong></a></h2>
+<h2><a id="#(STRATEGO).FindRoute" ><strong>STRATEGO:FindRoute(Start, End, Hops, Draw, Color, LineType, NoOptimize)</strong></a></h2>
 </div>
     
 <p>[USER] Find a route between two nodes.</p>
@@ -4642,6 +4642,19 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
               
 <p>(Optional) Line type: 0=No line, 1=Solid, 2=Dashed, 3=Dotted, 4=Dot dash, 5=Long dash, 6=Two dash. Default 6.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>NoOptimize</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If set to true, do not optimize (shorten) the resulting route if possible.</p>
 
           </div>
         </div>
