@@ -2597,6 +2597,24 @@ Play around with the distance to get an optimal map for your scenario.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO)._FloodFill">STRATEGO:_FloodFill(Start, ABTable)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[INTERNAL] Internal helper function to check for islands, aka Floodtest</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO)._FloodNext">STRATEGO:_FloodNext(next, filled, unfilled)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[INTERNAL] Internal helper function to check for islands, aka Floodtest</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO)._FloodTest">STRATEGO:_FloodTest(connect, draw)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[INTERNAL] Internal helper function to check for islands, aka Floodtest</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(STRATEGO)._GetNextClosest">STRATEGO:_GetNextClosest(Start, End, InRoute)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[INTERNAL] Route Finding - Find the next hop towards an end node from a start node</p>
@@ -4796,6 +4814,22 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <p>Weight The consolidated weight associated with the nodes.</p>
 
         </div>
+        <div class="w3-half">
+          <p>#number:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Highest Highest weight found.</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#string:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Name of the node with the highest weight.</p>
+
+        </div>
     </div>
 </div>
 
@@ -6398,6 +6432,206 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <p>self</p>
 
       </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(STRATEGO)._FloodFill" ><strong>STRATEGO:_FloodFill(Start, ABTable)</strong></a></h2>
+</div>
+    
+<p>[INTERNAL] Internal helper function to check for islands, aka Floodtest</p>
+
+<div id= "#Functions##_FloodFill" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>STRATEGO</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Start</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the start node</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>ABTable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) #table of node names to check.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(STRATEGO)">#STRATEGO</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(STRATEGO)._FloodNext" ><strong>STRATEGO:_FloodNext(next, filled, unfilled)</strong></a></h2>
+</div>
+    
+<p>[INTERNAL] Internal helper function to check for islands, aka Floodtest</p>
+
+<div id= "#Functions##_FloodNext" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>STRATEGO</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>next</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the start node</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>filled</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<h1>table of visited nodes</h1>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>unfilled</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<h1>table if unvisited nodes</h1>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(STRATEGO)">#STRATEGO</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(STRATEGO)._FloodTest" ><strong>STRATEGO:_FloodTest(connect, draw)</strong></a></h2>
+</div>
+    
+<p>[INTERNAL] Internal helper function to check for islands, aka Floodtest</p>
+
+<div id= "#Functions##_FloodTest" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>STRATEGO</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(boolen)">#boolen</a>
+            <strong><strong>connect</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true, connect the two resulting islands at the shortest distance if necessary</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(boolen)">#boolen</a>
+            <strong><strong>draw</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true, draw outer vertices of found node networks</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#boolean:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Connected If true, all nodes are in one network</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#table:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Network #table of node names in the network</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#table:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Unconnected #table of node names <strong>not</strong> in the network</p>
+
+        </div>
     </div>
 </div>
 
