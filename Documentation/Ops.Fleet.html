@@ -2640,6 +2640,12 @@ myFleet:AddFlotilla(FlotillaPerry)
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLEET).SetTacticalOverviewOn">FLEET:SetTacticalOverviewOn()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set tactical overview on.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLEET).SetVerbosity">FLEET:SetVerbosity(VerbosityLevel)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set verbosity level.</p>
@@ -2696,7 +2702,7 @@ myFleet:AddFlotilla(FlotillaPerry)
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLEET)._CreateFlightGroup">FLEET:_CreateFlightGroup(asset)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Create a new flight group after an asset was spawned.</p>
+<p>Create a new OPS group after an asset was spawned.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2721,6 +2727,12 @@ myFleet:AddFlotilla(FlotillaPerry)
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLEET)._OptimizeAssetSelection">FLEET._OptimizeAssetSelection(assets, MissionType, TargetVec2, IncludePayload, TotalWeight)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Optimize chosen assets for the mission at hand.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLEET)._TacticalOverview">FLEET:_TacticalOverview()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Display tactical overview.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2931,6 +2943,12 @@ myFleet:AddFlotilla(FlotillaPerry)
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLEET).queueid">FLEET.queueid</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLEET).tacview">FLEET.tacview</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>If <code>true</code>, show tactical overview on status update.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -9871,6 +9889,36 @@ Cohort assets will not be available until relocation is finished.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(FLEET).SetTacticalOverviewOn" ><strong>FLEET:SetTacticalOverviewOn()</strong></a></h2>
+</div>
+    
+<p>Set tactical overview on.</p>
+
+<div id= "#Functions##SetTacticalOverviewOn" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Ops.Legion.html##(LEGION)">Ops.Legion#LEGION</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(LEGION)">#LEGION</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(FLEET).SetVerbosity" ><strong>FLEET:SetVerbosity(VerbosityLevel)</strong></a></h2>
 </div>
     
@@ -10442,7 +10490,7 @@ Cohort assets will not be available until relocation is finished.</p>
 <h2><a id="#(FLEET)._CreateFlightGroup" ><strong>FLEET:_CreateFlightGroup(asset)</strong></a></h2>
 </div>
     
-<p>Create a new flight group after an asset was spawned.</p>
+<p>Create a new OPS group after an asset was spawned.</p>
 
 <div id= "#Functions##_CreateFlightGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -10731,6 +10779,25 @@ Cohort assets will not be available until relocation is finished.</p>
 
           </div>
         </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FLEET)._TacticalOverview" ><strong>FLEET:_TacticalOverview()</strong></a></h2>
+</div>
+    
+<p>Display tactical overview.</p>
+
+<div id= "#Functions##_TacticalOverview" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Ops.Legion.html##(LEGION)">Ops.Legion#LEGION</a></p>
+</div>
 </div>
 
 </div>

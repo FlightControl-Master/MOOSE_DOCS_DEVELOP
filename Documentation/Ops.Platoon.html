@@ -2252,7 +2252,7 @@
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLATOON).DelAsset">PLATOON:DelAsset(Asset)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Remove asset from chort.</p>
+<p>Remove specific asset from chort.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2457,6 +2457,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLATOON).Relocated">PLATOON:Relocated()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "Relocated".</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLATOON).RemoveAssets">PLATOON:RemoveAssets(N)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Remove assets from pool.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4472,7 +4478,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <h2><a id="#(PLATOON).DelAsset" ><strong>PLATOON:DelAsset(Asset)</strong></a></h2>
 </div>
     
-<p>Remove asset from chort.</p>
+<p>Remove specific asset from chort.</p>
 
 <div id= "#Functions##DelAsset" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -5801,6 +5807,53 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p><a href="Ops.Cohort.html##(COHORT)">Ops.Cohort#COHORT</a></p>
 </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(PLATOON).RemoveAssets" ><strong>PLATOON:RemoveAssets(N)</strong></a></h2>
+</div>
+    
+<p>Remove assets from pool.</p>
+
+    
+<p>Not that assets must not be spawned or already reserved or requested.</p>
+
+<div id= "#Functions##RemoveAssets" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Ops.Cohort.html##(COHORT)">Ops.Cohort#COHORT</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>N</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Number of assets to be removed. Default 1.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(COHORT)">#COHORT</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
