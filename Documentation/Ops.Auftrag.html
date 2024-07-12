@@ -3127,7 +3127,7 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewLANDATCOORDINATE">AUFTRAG:NewLANDATCOORDINATE(Coordinate, OuterRadius, InnerRadius, Time, Speed, MissionAlt)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewLANDATCOORDINATE">AUFTRAG:NewLANDATCOORDINATE(Coordinate, OuterRadius, InnerRadius, Time, Speed, MissionAlt, CombatLanding, DirectionAfterLand)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[AIR ROTARY]</strong> Create an LANDATCOORDINATE mission.</p>
 </td>
@@ -14260,7 +14260,7 @@ themselfs. They wait for the CHIEF to tell them whom to engage.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUFTRAG).NewLANDATCOORDINATE" ><strong>AUFTRAG:NewLANDATCOORDINATE(Coordinate, OuterRadius, InnerRadius, Time, Speed, MissionAlt)</strong></a></h2>
+<h2><a id="#(AUFTRAG).NewLANDATCOORDINATE" ><strong>AUFTRAG:NewLANDATCOORDINATE(Coordinate, OuterRadius, InnerRadius, Time, Speed, MissionAlt, CombatLanding, DirectionAfterLand)</strong></a></h2>
 </div>
     
 <p><strong>[AIR ROTARY]</strong> Create an LANDATCOORDINATE mission.</p>
@@ -14347,6 +14347,32 @@ themselfs. They wait for the CHIEF to tell them whom to engage.</p>
           <div class="w3-half">
               
 <p>Altitude to fly towards the mission in feet AGL. Default 1000ft.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>CombatLanding</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) If true, set the Combat Landing option.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>DirectionAfterLand</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Heading after landing in degrees.</p>
 
           </div>
         </div>
