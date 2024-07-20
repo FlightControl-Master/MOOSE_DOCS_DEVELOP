@@ -2133,6 +2133,10 @@ AIRWING analouges, which are called BRIGADE and FLEET. Brigades and fleets will 
 
 <p>A carpet bombing mission can be created with the <a href="##(AUFTRAG).NewBOMBCARPET">AUFTRAG.NewBOMBCARPET</a>() function.</p>
 
+<h2>Strafing</h2>
+
+<p>A strafing mission can be created with the <a href="##(AUFTRAG).NewSTRAFING">AUFTRAG.NewSTRAFING</a>() function.</p>
+
 <h2>CAP</h2>
 
 <p>A CAP mission can be created with the <a href="##(AUFTRAG).NewCAP">AUFTRAG.NewCAP</a>() function.</p>
@@ -3211,6 +3215,12 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewSTRAFING">AUFTRAG:NewSTRAFING(Target, Altitude, Length)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p><strong>[AIR]</strong> Create a STRAFING mission.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewSTRIKE">AUFTRAG:NewSTRIKE(Target, Altitude)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[AIR]</strong> Create a STRIKE mission.</p>
@@ -4124,6 +4134,12 @@ The commander will select the best assets available from all the legions under h
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).engageDirection">AUFTRAG.engageDirection</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Engagement direction in degrees.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).engageLength">AUFTRAG.engageLength</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Length of engage (carpet or strafing) in meters.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -6522,6 +6538,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG.Type).STRAFING">AUFTRAG.Type.STRAFING</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Strafing run.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG.Type).STRIKE">AUFTRAG.Type.STRIKE</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Strike mission.</p>
@@ -7261,6 +7283,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(AUFTRAG).engageDirection" ><strong>AUFTRAG.engageDirection</strong></a>
     
 <p>Engagement direction in degrees.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AUFTRAG).engageLength" ><strong>AUFTRAG.engageLength</strong></a>
+    
+<p>Length of engage (carpet or strafing) in meters.</p>
 
 </div>
 
@@ -12659,7 +12692,8 @@ This determines the payload and the DCS mission task which are used when the air
 <p><strong>[AIR]</strong> Create a BOMBING mission.</p>
 
     
-<p>Flight will drop bombs a specified coordinate.</p>
+<p>Flight will drop bombs a specified coordinate.
+See <a href="https://wiki.hoggitworld.com/view/DCS_task_bombing">DCS task bombing</a>.</p>
 
 <div id= "#Functions##NewBOMBING" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -15432,6 +15466,80 @@ themselfs. They wait for the CHIEF to tell them whom to engage.</p>
           <div class="w3-half">
               
 <p>Engage altitude in feet. Default 25000 ft.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).NewSTRAFING" ><strong>AUFTRAG:NewSTRAFING(Target, Altitude, Length)</strong></a></h2>
+</div>
+    
+<p><strong>[AIR]</strong> Create a STRAFING mission.</p>
+
+    
+<p>Assigns a point on the ground for which the AI will do a strafing run with guns or rockets.
+See <a href="https://wiki.hoggitworld.com/view/DCS_task_strafing">DCS task strafing</a>.</p>
+
+<div id= "#Functions##NewSTRAFING" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>Target</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Target coordinate. Can also be specified as a GROUP, UNIT, STATIC or TARGET object.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Altitude</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Engage altitude in feet. Default 1000 ft.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Length</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The total length of the strafing target in meters. Default <code>nil</code>.</p>
 
           </div>
         </div>
@@ -22239,6 +22347,17 @@ will always return.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(AUFTRAG).engageLength" ><strong>AUFTRAG.engageLength</strong></a>
+    
+<p>Length of engage (carpet or strafing) in meters.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
 <a id="#(AUFTRAG).engageMaxDistance" ><strong>AUFTRAG.engageMaxDistance</strong></a>
     
 <p>Max engage distance.</p>
@@ -25546,6 +25665,17 @@ will always return.</p>
 <a id="#(AUFTRAG).engageDirection" ><strong>AUFTRAG.engageDirection</strong></a>
     
 <p>Engagement direction in degrees.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AUFTRAG).engageLength" ><strong>AUFTRAG.engageLength</strong></a>
+    
+<p>Length of engage (carpet or strafing) in meters.</p>
 
 </div>
 
@@ -31520,6 +31650,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(AUFTRAG.Type).SEAD" ><strong>AUFTRAG.Type.SEAD</strong></a>
     
 <p>Suppression/destruction of enemy air defences.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AUFTRAG.Type).STRAFING" ><strong>AUFTRAG.Type.STRAFING</strong></a>
+    
+<p>Strafing run.</p>
 
 </div>
 
