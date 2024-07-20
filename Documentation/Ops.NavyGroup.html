@@ -2198,15 +2198,33 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).ExtendTurnIntoWind">NAVYGROUP:ExtendTurnIntoWind(Duration, TurnIntoWind)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Extend duration of turn into wind.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).GetHeadingIntoWind">NAVYGROUP:GetHeadingIntoWind(Offset, vdeck)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get heading of group into the wind.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).GetHeadingIntoWind_old">NAVYGROUP:GetHeadingIntoWind_old(Offset)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).GetHeadingIntoWind_new">NAVYGROUP:GetHeadingIntoWind_new(Offset, vdeck)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get heading of group into the wind.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).GetHeadingIntoWind_old">NAVYGROUP:GetHeadingIntoWind_old(Offset, vdeck)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get heading of group into the wind.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).GetTurnIntoWind">NAVYGROUP:GetTurnIntoWind(TID)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get "Turn Into Wind" data.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2357,6 +2375,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).RemoveTurnIntoWind">NAVYGROUP:RemoveTurnIntoWind(IntoWindData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Remove steam into wind window from queue.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).SetIntoWindLegacy">NAVYGROUP:SetIntoWindLegacy(SwitchOn)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set if old into wind calculation is used when carrier turns into the wind for a recovery.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2609,6 +2633,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).intowindcounter">NAVYGROUP.intowindcounter</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Counter of into wind IDs.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).intowindold">NAVYGROUP.intowindold</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Use old calculation to determine heading into wind.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -7345,6 +7375,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
+<a id="#(NAVYGROUP).intowindold" ><strong>NAVYGROUP.intowindold</strong></a>
+    
+<p>Use old calculation to determine heading into wind.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
 <a id="#(NAVYGROUP).isAI" ><strong>NAVYGROUP.isAI</strong></a>
     
 
@@ -8208,6 +8249,63 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(NAVYGROUP).ExtendTurnIntoWind" ><strong>NAVYGROUP:ExtendTurnIntoWind(Duration, TurnIntoWind)</strong></a></h2>
+</div>
+    
+<p>Extend duration of turn into wind.</p>
+
+<div id= "#Functions##ExtendTurnIntoWind" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>NAVYGROUP</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Duration</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Duration in seconds. Default 300 sec.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(NAVYGROUP.IntoWind)">#NAVYGROUP.IntoWind</a>
+            <strong><strong>TurnIntoWind</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Turn into window data table. If not given, the currently open one is used (if there is any).</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(NAVYGROUP)">#NAVYGROUP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(NAVYGROUP).GetHeadingIntoWind" ><strong>NAVYGROUP:GetHeadingIntoWind(Offset, vdeck)</strong></a></h2>
 </div>
     
@@ -8250,16 +8348,24 @@ Implementation based on <a href="https://magwo.github.io/carrier-cruise/">Mags &
 
           </div>
         </div>
-    <h2><strong>Return value:</strong></h2>
+    <h2><strong>Return values:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#number:</p>
-      </div>
-      <div class="w3-half">
-        
+        <div class="w3-half">
+          <p>#number:</p>
+        </div>
+        <div class="w3-half">
+          
 <p>Carrier heading in degrees.</p>
 
-      </div>
+        </div>
+        <div class="w3-half">
+          <p>#number:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Carrier speed in knots.</p>
+
+        </div>
     </div>
 </div>
 
@@ -8269,18 +8375,22 @@ Implementation based on <a href="https://magwo.github.io/carrier-cruise/">Mags &
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(NAVYGROUP).GetHeadingIntoWind_old" ><strong>NAVYGROUP:GetHeadingIntoWind_old(Offset)</strong></a></h2>
+<h2><a id="#(NAVYGROUP).GetHeadingIntoWind_new" ><strong>NAVYGROUP:GetHeadingIntoWind_new(Offset, vdeck)</strong></a></h2>
 </div>
     
 <p>Get heading of group into the wind.</p>
 
-<div id= "#Functions##GetHeadingIntoWind_old" class="w3-show w3-white">
+    
+<p>This minimizes the cross wind for an angled runway.
+Implementation based on <a href="https://magwo.github.io/carrier-cruise/">Mags &amp; Bami</a> work.</p>
+
+<div id= "#Functions##GetHeadingIntoWind_new" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
 <p>NAVYGROUP</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -8294,14 +8404,147 @@ Implementation based on <a href="https://magwo.github.io/carrier-cruise/">Mags &
 
           </div>
         </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>vdeck</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Desired wind speed on deck in Knots.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#number:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Carrier heading in degrees.</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#number:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Carrier speed in knots.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(NAVYGROUP).GetHeadingIntoWind_old" ><strong>NAVYGROUP:GetHeadingIntoWind_old(Offset, vdeck)</strong></a></h2>
+</div>
+    
+<p>Get heading of group into the wind.</p>
+
+<div id= "#Functions##GetHeadingIntoWind_old" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>NAVYGROUP</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Offset</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Offset angle in degrees, e.g. to account for an angled runway.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>vdeck</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Desired wind speed on deck in Knots.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#number:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Carrier heading in degrees.</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#number:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Carrier speed in knots.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(NAVYGROUP).GetTurnIntoWind" ><strong>NAVYGROUP:GetTurnIntoWind(TID)</strong></a></h2>
+</div>
+    
+<p>Get "Turn Into Wind" data.</p>
+
+    
+<p>You can specify a certain ID.</p>
+
+<div id= "#Functions##GetTurnIntoWind" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>NAVYGROUP</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>TID</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Turn Into wind ID. If not given, the currently open "Turn into Wind" data is return (if there is any).</p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p>#number:</p>
+        <p><a href="##(NAVYGROUP.IntoWind)">#NAVYGROUP.IntoWind</a>:</p>
       </div>
       <div class="w3-half">
         
-<p>Carrier heading in degrees.</p>
+<p>Turn into window data table.</p>
 
       </div>
     </div>
@@ -9461,6 +9704,50 @@ Implementation based on <a href="https://magwo.github.io/carrier-cruise/">Mags &
           <div class="w3-half">
               
 <p>Turn into window data table.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(NAVYGROUP)">#NAVYGROUP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(NAVYGROUP).SetIntoWindLegacy" ><strong>NAVYGROUP:SetIntoWindLegacy(SwitchOn)</strong></a></h2>
+</div>
+    
+<p>Set if old into wind calculation is used when carrier turns into the wind for a recovery.</p>
+
+<div id= "#Functions##SetIntoWindLegacy" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>NAVYGROUP</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>SwitchOn</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If <code>true</code> or <code>nil</code>, use old into wind calculation.</p>
 
           </div>
         </div>
@@ -12355,6 +12642,17 @@ Implementation based on <a href="https://magwo.github.io/carrier-cruise/">Mags &
 <a id="#(NAVYGROUP).intowindcounter" ><strong>NAVYGROUP.intowindcounter</strong></a>
     
 <p>Counter of into wind IDs.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(NAVYGROUP).intowindold" ><strong>NAVYGROUP.intowindold</strong></a>
+    
+<p>Use old calculation to determine heading into wind.</p>
 
 </div>
 
@@ -32663,6 +32961,17 @@ Optionally, you can calculate the current max weight possible, which accounts fo
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
+<a id="#(NAVYGROUP).intowindold" ><strong>NAVYGROUP.intowindold</strong></a>
+    
+<p>Use old calculation to determine heading into wind.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
 <a id="#(NAVYGROUP).isAI" ><strong>NAVYGROUP.isAI</strong></a>
     
 
@@ -34452,6 +34761,17 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <a id="#(NAVYGROUP).intowindcounter" ><strong>NAVYGROUP.intowindcounter</strong></a>
     
 <p>Counter of into wind IDs.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(NAVYGROUP).intowindold" ><strong>NAVYGROUP.intowindold</strong></a>
+    
+<p>Use old calculation to determine heading into wind.</p>
 
 </div>
 
