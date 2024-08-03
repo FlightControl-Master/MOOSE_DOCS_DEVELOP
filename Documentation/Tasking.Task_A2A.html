@@ -666,7 +666,9 @@
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.ScheduleDispatcher.html">Core.ScheduleDispatcher</a></strong></h2></div>
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Core</strong> - SCHEDULEDISPATCHER dispatches the different schedules.</p>
+<ul>
+    <li><strong>Core</strong> - SCHEDULEDISPATCHER dispatches the different schedules.</li>
+</ul>
 </p></div>
        </div>         
      </div>
@@ -996,7 +998,7 @@
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.RAT.html">Functional.RAT</a></strong></h2></div>
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Functional</strong> - Create random airtraffic in your missions.</p>
+<p><strong>Functional</strong> - Create random air traffic in your missions.</p>
 </p></div>
        </div>         
      </div>
@@ -1063,6 +1065,17 @@
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> - Suppress fire of ground units when they get hit.</p>
+</p></div>
+       </div>         
+     </div>
+     <div class="w3-col s12 m6 l4">
+       <div class="w3-card-4 w3-white w3-margin-16">
+         <div class="w3-display-container w3-text-white w3-text-shadow">
+           <img src= "../Images/Tactics.JPG" alt="Image">
+           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Tactics.html">Functional.Tactics</a></strong></h2></div>
+         </div>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+<p><strong>Functional</strong> - Improve the autonomous behaviour of ground AI.</p>
 </p></div>
        </div>         
      </div>
@@ -1272,6 +1285,45 @@
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Ops</strong> - Commander of Airwings, Brigades and Fleets.</p>
+</p></div>
+       </div>         
+     </div>
+     <div class="w3-col s12 m6 l4">
+       <div class="w3-card-4 w3-white w3-margin-16">
+         <div class="w3-display-container w3-text-white w3-text-shadow">
+           <img src= "../Images/AI_Air_To_Ground_Dispatching.JPG" alt="Image">
+           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Ops.EasyA2G.html">Ops.EasyA2G</a></strong></h2></div>
+         </div>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+<h2>Easy A2G Class, based on OPS classes</h2>
+<p>Documentation</p>
+
+<p>https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.EasyA2G.html</p>
+
+<hr/>
+<h2>Date: December 2023</h2>
+
+<ul>
+    <li><strong>Ops</strong> - Easy A2G Manager</li>
+</ul>
+
+<hr/>
+
+<p><strong>Main Features:</strong></p>
+
+<ul>
+    <li>Automatically create and manage A2G CAS/BAI/SEAD defenses using an AirWing and Squadrons for one coalition</li>
+    <li>Easy set-up</li>
+    <li>Add additional AirWings on other airbases</li>
+    <li>Each wing can have more than one Squadron - tasking to Squadrons is done on a random basis per AirWing</li>
+    <li>Create borders and zones of engagement</li>
+    <li>Detection can be ground based and/or via AWACS</li>
+</ul>
+
+<hr/>
+
+<h3>AUTHOR: <strong>applevangelist</strong></h3>
+
 </p></div>
        </div>         
      </div>
@@ -2327,7 +2379,7 @@ The task is given a name and a briefing, that is used in the menu structure and 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK_A2A).SetTargetZone">TASK_A2A:SetTargetZone(TargetZone, TaskUnit, Altitude, Heading)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TASK_A2A).SetTargetZone">TASK_A2A:SetTargetZone(TargetZone, Altitude, Heading, TaskUnit)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -6036,6 +6088,9 @@ The task is given a name and a briefing, that is used in the menu structure and 
     
 
 
+    
+<p> @param #TASK_A2A self</p>
+
 <div id= "#Functions##GetPlannedMenuText" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -6055,6 +6110,12 @@ The task is given a name and a briefing, that is used in the menu structure and 
     
 
 
+    
+<p> @param #TASK_A2A self
+ @param Wrapper.Unit#UNIT TaskUnit
+ @return Core.Point#COORDINATE The Coordinate object referencing to the 2D point where the RendezVous point is located on the map.
+ @return #number The RendezVousRange that defines when the player is considered to have arrived at the RendezVous point.</p>
+
 <div id= "#Functions##GetRendezVousCoordinate" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -6065,7 +6126,6 @@ The task is given a name and a briefing, that is used in the menu structure and 
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
             <strong><strong>TaskUnit</strong></strong>
             </p>
           </div>
@@ -6073,25 +6133,6 @@ The task is given a name and a briefing, that is used in the menu structure and 
               <p></p>
           </div>
         </div>
-    <h2><strong>Return values:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-        <div class="w3-half">
-          <p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>:</p>
-        </div>
-        <div class="w3-half">
-          
-<p>The Coordinate object referencing to the 2D point where the RendezVous point is located on the map.</p>
-
-        </div>
-        <div class="w3-half">
-          <p>#number:</p>
-        </div>
-        <div class="w3-half">
-          
-<p>The RendezVousRange that defines when the player is considered to have arrived at the RendezVous point.</p>
-
-        </div>
-    </div>
 </div>
 
 </div>
@@ -6105,6 +6146,11 @@ The task is given a name and a briefing, that is used in the menu structure and 
     
 
 
+    
+<p> @param #TASK_A2A self
+ @param Wrapper.Unit#UNIT TaskUnit
+ @return Core.Zone#ZONE_BASE The Zone object where the RendezVous is located on the map.</p>
+
 <div id= "#Functions##GetRendezVousZone" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -6115,7 +6161,6 @@ The task is given a name and a briefing, that is used in the menu structure and 
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
             <strong><strong>TaskUnit</strong></strong>
             </p>
           </div>
@@ -6123,17 +6168,6 @@ The task is given a name and a briefing, that is used in the menu structure and 
               <p></p>
           </div>
         </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>The Zone object where the RendezVous is located on the map.</p>
-
-      </div>
-    </div>
 </div>
 
 </div>
@@ -6147,6 +6181,11 @@ The task is given a name and a briefing, that is used in the menu structure and 
     
 
 
+    
+<p> @param #TASK_A2A self
+ @param Wrapper.Unit#UNIT TaskUnit
+ @return Core.Point#COORDINATE The Coordinate object where the Target is located on the map.</p>
+
 <div id= "#Functions##GetTargetCoordinate" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -6157,7 +6196,6 @@ The task is given a name and a briefing, that is used in the menu structure and 
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
             <strong><strong>TaskUnit</strong></strong>
             </p>
           </div>
@@ -6165,17 +6203,6 @@ The task is given a name and a briefing, that is used in the menu structure and 
               <p></p>
           </div>
         </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>The Coordinate object where the Target is located on the map.</p>
-
-      </div>
-    </div>
 </div>
 
 </div>
@@ -6189,6 +6216,11 @@ The task is given a name and a briefing, that is used in the menu structure and 
     
 
 
+    
+<p> @param #TASK_A2A self
+ @param Wrapper.Unit#UNIT TaskUnit
+ @return Core.Zone#ZONE_BASE The Zone object where the Target is located on the map.</p>
+
 <div id= "#Functions##GetTargetZone" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -6199,7 +6231,6 @@ The task is given a name and a briefing, that is used in the menu structure and 
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
             <strong><strong>TaskUnit</strong></strong>
             </p>
           </div>
@@ -6207,17 +6238,6 @@ The task is given a name and a briefing, that is used in the menu structure and 
               <p></p>
           </div>
         </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>The Zone object where the Target is located on the map.</p>
-
-      </div>
-    </div>
 </div>
 
 </div>
@@ -6416,6 +6436,12 @@ If the TargetZone parameter is specified, the player will be routed to the cente
     
 
 
+    
+<p> @param #TASK_A2A self
+ @param Core.Point#COORDINATE RendezVousCoordinate The Coordinate object referencing to the 2D point where the RendezVous point is located on the map.
+ @param #number RendezVousRange The RendezVousRange that defines when the player is considered to have arrived at the RendezVous point.
+ @param Wrapper.Unit#UNIT TaskUnit</p>
+
 <div id= "#Functions##SetRendezVousCoordinate" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -6426,33 +6452,26 @@ If the TargetZone parameter is specified, the player will be routed to the cente
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
             <strong><strong>RendezVousCoordinate</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The Coordinate object referencing to the 2D point where the RendezVous point is located on the map.</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #number
             <strong><strong>RendezVousRange</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The RendezVousRange that defines when the player is considered to have arrived at the RendezVous point.</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
             <strong><strong>TaskUnit</strong></strong>
             </p>
           </div>
@@ -6473,6 +6492,11 @@ If the TargetZone parameter is specified, the player will be routed to the cente
     
 
 
+    
+<p> @param #TASK_A2A self
+ @param Core.Zone#ZONE_BASE RendezVousZone The Zone object where the RendezVous is located on the map.
+ @param Wrapper.Unit#UNIT TaskUnit</p>
+
 <div id= "#Functions##SetRendezVousZone" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -6483,20 +6507,16 @@ If the TargetZone parameter is specified, the player will be routed to the cente
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
             <strong><strong>RendezVousZone</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The Zone object where the RendezVous is located on the map.</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
             <strong><strong>TaskUnit</strong></strong>
             </p>
           </div>
@@ -6517,6 +6537,11 @@ If the TargetZone parameter is specified, the player will be routed to the cente
     
 
 
+    
+<p> @param #TASK_A2A self
+ @param Core.Point#COORDINATE TargetCoordinate The Coordinate object where the Target is located on the map.
+ @param Wrapper.Unit#UNIT TaskUnit</p>
+
 <div id= "#Functions##SetTargetCoordinate" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -6527,20 +6552,16 @@ If the TargetZone parameter is specified, the player will be routed to the cente
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
             <strong><strong>TargetCoordinate</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The Coordinate object where the Target is located on the map.</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
             <strong><strong>TaskUnit</strong></strong>
             </p>
           </div>
@@ -6561,6 +6582,10 @@ If the TargetZone parameter is specified, the player will be routed to the cente
     
 
 
+    
+<p> @param #TASK_A2A self
+ @param Core.Set#SET_UNIT TargetSetUnit The set of targets.</p>
+
 <div id= "#Functions##SetTargetSetUnit" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -6571,14 +6596,11 @@ If the TargetZone parameter is specified, the player will be routed to the cente
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
             <strong><strong>TargetSetUnit</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The set of targets.</p>
-
+              <p></p>
           </div>
         </div>
 </div>
@@ -6589,10 +6611,15 @@ If the TargetZone parameter is specified, the player will be routed to the cente
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(TASK_A2A).SetTargetZone" ><strong>TASK_A2A:SetTargetZone(TargetZone, TaskUnit, Altitude, Heading)</strong></a></h2>
+<h2><a id="#(TASK_A2A).SetTargetZone" ><strong>TASK_A2A:SetTargetZone(TargetZone, Altitude, Heading, TaskUnit)</strong></a></h2>
 </div>
     
 
+
+    
+<p> @param #TASK_A2A self
+ @param Core.Zone#ZONE_BASE TargetZone The Zone object where the Target is located on the map.
+ @param Wrapper.Unit#UNIT TaskUnit</p>
 
 <div id= "#Functions##SetTargetZone" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -6604,21 +6631,7 @@ If the TargetZone parameter is specified, the player will be routed to the cente
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
             <strong><strong>TargetZone</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The Zone object where the Target is located on the map.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
-            <strong><strong>TaskUnit</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -6645,6 +6658,16 @@ If the TargetZone parameter is specified, the player will be routed to the cente
               <p></p>
           </div>
         </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>TaskUnit</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
 </div>
 
 </div>
@@ -6657,6 +6680,9 @@ If the TargetZone parameter is specified, the player will be routed to the cente
 </div>
     
 
+
+    
+<p> @param #TASK_A2A self</p>
 
 <div id= "#Functions##UpdateTaskInfo" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -8281,6 +8307,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuAssignToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -8291,7 +8321,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -8352,6 +8381,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuMarkToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -8362,7 +8395,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -9386,6 +9418,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Actions.Act_Assign#ACT_ASSIGN AcceptClass</p>
+
 <div id= "#Functions##SetAssignMethod" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -9396,7 +9432,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Actions.Act_Assign.html##(ACT_ASSIGN)">Actions.Act_Assign#ACT_ASSIGN</a>
             <strong><strong>AcceptClass</strong></strong>
             </p>
           </div>
@@ -13195,6 +13230,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuAssignToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -13205,7 +13244,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -13266,6 +13304,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuMarkToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -13276,7 +13318,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -14300,6 +14341,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Actions.Act_Assign#ACT_ASSIGN AcceptClass</p>
+
 <div id= "#Functions##SetAssignMethod" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -14310,7 +14355,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Actions.Act_Assign.html##(ACT_ASSIGN)">Actions.Act_Assign#ACT_ASSIGN</a>
             <strong><strong>AcceptClass</strong></strong>
             </p>
           </div>
@@ -18109,6 +18153,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuAssignToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -18119,7 +18167,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -18180,6 +18227,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuMarkToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -18190,7 +18241,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -19214,6 +19264,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Actions.Act_Assign#ACT_ASSIGN AcceptClass</p>
+
 <div id= "#Functions##SetAssignMethod" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -19224,7 +19278,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Actions.Act_Assign.html##(ACT_ASSIGN)">Actions.Act_Assign#ACT_ASSIGN</a>
             <strong><strong>AcceptClass</strong></strong>
             </p>
           </div>
@@ -21490,6 +21543,9 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK_A2A_SWEEP self</p>
+
 <div id= "#Functions##onafterGoal" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -23083,6 +23139,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuAssignToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -23093,7 +23153,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -23154,6 +23213,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuMarkToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -23164,7 +23227,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -24188,6 +24250,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Actions.Act_Assign#ACT_ASSIGN AcceptClass</p>
+
 <div id= "#Functions##SetAssignMethod" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -24198,7 +24264,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Actions.Act_Assign.html##(ACT_ASSIGN)">Actions.Act_Assign#ACT_ASSIGN</a>
             <strong><strong>AcceptClass</strong></strong>
             </p>
           </div>

@@ -666,7 +666,9 @@
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Core.ScheduleDispatcher.html">Core.ScheduleDispatcher</a></strong></h2></div>
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Core</strong> - SCHEDULEDISPATCHER dispatches the different schedules.</p>
+<ul>
+    <li><strong>Core</strong> - SCHEDULEDISPATCHER dispatches the different schedules.</li>
+</ul>
 </p></div>
        </div>         
      </div>
@@ -996,7 +998,7 @@
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.RAT.html">Functional.RAT</a></strong></h2></div>
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Functional</strong> - Create random airtraffic in your missions.</p>
+<p><strong>Functional</strong> - Create random air traffic in your missions.</p>
 </p></div>
        </div>         
      </div>
@@ -1063,6 +1065,17 @@
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Functional</strong> - Suppress fire of ground units when they get hit.</p>
+</p></div>
+       </div>         
+     </div>
+     <div class="w3-col s12 m6 l4">
+       <div class="w3-card-4 w3-white w3-margin-16">
+         <div class="w3-display-container w3-text-white w3-text-shadow">
+           <img src= "../Images/Tactics.JPG" alt="Image">
+           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Tactics.html">Functional.Tactics</a></strong></h2></div>
+         </div>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+<p><strong>Functional</strong> - Improve the autonomous behaviour of ground AI.</p>
 </p></div>
        </div>         
      </div>
@@ -1272,6 +1285,45 @@
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Ops</strong> - Commander of Airwings, Brigades and Fleets.</p>
+</p></div>
+       </div>         
+     </div>
+     <div class="w3-col s12 m6 l4">
+       <div class="w3-card-4 w3-white w3-margin-16">
+         <div class="w3-display-container w3-text-white w3-text-shadow">
+           <img src= "../Images/AI_Air_To_Ground_Dispatching.JPG" alt="Image">
+           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Ops.EasyA2G.html">Ops.EasyA2G</a></strong></h2></div>
+         </div>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+<h2>Easy A2G Class, based on OPS classes</h2>
+<p>Documentation</p>
+
+<p>https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.EasyA2G.html</p>
+
+<hr/>
+<h2>Date: December 2023</h2>
+
+<ul>
+    <li><strong>Ops</strong> - Easy A2G Manager</li>
+</ul>
+
+<hr/>
+
+<p><strong>Main Features:</strong></p>
+
+<ul>
+    <li>Automatically create and manage A2G CAS/BAI/SEAD defenses using an AirWing and Squadrons for one coalition</li>
+    <li>Easy set-up</li>
+    <li>Add additional AirWings on other airbases</li>
+    <li>Each wing can have more than one Squadron - tasking to Squadrons is done on a random basis per AirWing</li>
+    <li>Create borders and zones of engagement</li>
+    <li>Detection can be ground based and/or via AWACS</li>
+</ul>
+
+<hr/>
+
+<h3>AUTHOR: <strong>applevangelist</strong></h3>
+
 </p></div>
        </div>         
      </div>
@@ -8219,6 +8271,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuAssignToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -8229,7 +8285,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -8290,6 +8345,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuMarkToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -8300,7 +8359,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -9324,6 +9382,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Actions.Act_Assign#ACT_ASSIGN AcceptClass</p>
+
 <div id= "#Functions##SetAssignMethod" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -9334,7 +9396,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Actions.Act_Assign.html##(ACT_ASSIGN)">Actions.Act_Assign#ACT_ASSIGN</a>
             <strong><strong>AcceptClass</strong></strong>
             </p>
           </div>
@@ -13133,6 +13194,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuAssignToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -13143,7 +13208,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -13204,6 +13268,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuMarkToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -13214,7 +13282,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -14238,6 +14305,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Actions.Act_Assign#ACT_ASSIGN AcceptClass</p>
+
 <div id= "#Functions##SetAssignMethod" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -14248,7 +14319,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Actions.Act_Assign.html##(ACT_ASSIGN)">Actions.Act_Assign#ACT_ASSIGN</a>
             <strong><strong>AcceptClass</strong></strong>
             </p>
           </div>
@@ -18047,6 +18117,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuAssignToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -18057,7 +18131,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -18118,6 +18191,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuMarkToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -18128,7 +18205,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -19152,6 +19228,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Actions.Act_Assign#ACT_ASSIGN AcceptClass</p>
+
 <div id= "#Functions##SetAssignMethod" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -19162,7 +19242,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Actions.Act_Assign.html##(ACT_ASSIGN)">Actions.Act_Assign#ACT_ASSIGN</a>
             <strong><strong>AcceptClass</strong></strong>
             </p>
           </div>
@@ -22961,6 +23040,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuAssignToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -22971,7 +23054,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -23032,6 +23114,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Wrapper.Group#GROUP TaskGroup</p>
+
 <div id= "#Functions##MenuMarkToGroup" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -23042,7 +23128,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
             <strong><strong>TaskGroup</strong></strong>
             </p>
           </div>
@@ -24066,6 +24151,10 @@ If the Unit is part of the Task, true is returned.</p>
     
 
 
+    
+<p> @param #TASK self
+ @param Actions.Act_Assign#ACT_ASSIGN AcceptClass</p>
+
 <div id= "#Functions##SetAssignMethod" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
@@ -24076,7 +24165,6 @@ If the Unit is part of the Task, true is returned.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Actions.Act_Assign.html##(ACT_ASSIGN)">Actions.Act_Assign#ACT_ASSIGN</a>
             <strong><strong>AcceptClass</strong></strong>
             </p>
           </div>
