@@ -1071,17 +1071,6 @@
      <div class="w3-col s12 m6 l4">
        <div class="w3-card-4 w3-white w3-margin-16">
          <div class="w3-display-container w3-text-white w3-text-shadow">
-           <img src= "../Images/Tactics.JPG" alt="Image">
-           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Tactics.html">Functional.Tactics</a></strong></h2></div>
-         </div>
-         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Functional</strong> - Improve the autonomous behaviour of ground AI.</p>
-</p></div>
-       </div>         
-     </div>
-     <div class="w3-col s12 m6 l4">
-       <div class="w3-card-4 w3-white w3-margin-16">
-         <div class="w3-display-container w3-text-white w3-text-shadow">
            <img src= "../Images/Functional.Tiresias.jpg" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Tiresias.html">Functional.Tiresias</a></strong></h2></div>
          </div>
@@ -1285,45 +1274,6 @@
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <p><strong>Ops</strong> - Commander of Airwings, Brigades and Fleets.</p>
-</p></div>
-       </div>         
-     </div>
-     <div class="w3-col s12 m6 l4">
-       <div class="w3-card-4 w3-white w3-margin-16">
-         <div class="w3-display-container w3-text-white w3-text-shadow">
-           <img src= "../Images/AI_Air_To_Ground_Dispatching.JPG" alt="Image">
-           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Ops.EasyA2G.html">Ops.EasyA2G</a></strong></h2></div>
-         </div>
-         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<h2>Easy A2G Class, based on OPS classes</h2>
-<p>Documentation</p>
-
-<p>https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.EasyA2G.html</p>
-
-<hr/>
-<h2>Date: December 2023</h2>
-
-<ul>
-    <li><strong>Ops</strong> - Easy A2G Manager</li>
-</ul>
-
-<hr/>
-
-<p><strong>Main Features:</strong></p>
-
-<ul>
-    <li>Automatically create and manage A2G CAS/BAI/SEAD defenses using an AirWing and Squadrons for one coalition</li>
-    <li>Easy set-up</li>
-    <li>Add additional AirWings on other airbases</li>
-    <li>Each wing can have more than one Squadron - tasking to Squadrons is done on a random basis per AirWing</li>
-    <li>Create borders and zones of engagement</li>
-    <li>Detection can be ground based and/or via AWACS</li>
-</ul>
-
-<hr/>
-
-<h3>AUTHOR: <strong>applevangelist</strong></h3>
-
 </p></div>
        </div>         
      </div>
@@ -7780,6 +7730,9 @@
     
 
 
+    
+<p> Set current airbase.</p>
+
 </div>
 
 </div>   
@@ -7826,6 +7779,9 @@
 <a id="#(FLIGHTGROUP).destbase" ><strong>FLIGHTGROUP.destbase</strong></a>
     
 
+
+    
+<p> Set the destination base.</p>
 
 </div>
 
@@ -7958,6 +7914,17 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).homebase" ><strong>FLIGHTGROUP.homebase</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).isDead" ><strong>FLIGHTGROUP.isDead</strong></a>
     
@@ -7997,13 +7964,10 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
-<a id="#(FLIGHTGROUP).isLateActivated" ><strong>FLIGHTGROUP.isLateActivated</strong></a>
+    
+<a id="#(FLIGHTGROUP).isLandingAtAirbase" ><strong>FLIGHTGROUP.isLandingAtAirbase</strong></a>
     
 
-
-    
-<p> No late activation.</p>
 
 </div>
 
@@ -18406,6 +18370,9 @@ Here we only check if stuck whilst taxiing.</p>
     
 
 
+    
+<p> Set current airbase.</p>
+
 </div>
 
 </div>   
@@ -18452,6 +18419,9 @@ Here we only check if stuck whilst taxiing.</p>
 <a id="#(FLIGHTGROUP).destbase" ><strong>FLIGHTGROUP.destbase</strong></a>
     
 
+
+    
+<p> Set the destination base.</p>
 
 </div>
 
@@ -18584,6 +18554,17 @@ Here we only check if stuck whilst taxiing.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).homebase" ><strong>FLIGHTGROUP.homebase</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).isDead" ><strong>FLIGHTGROUP.isDead</strong></a>
     
@@ -18623,13 +18604,10 @@ Here we only check if stuck whilst taxiing.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
-<a id="#(FLIGHTGROUP).isLateActivated" ><strong>FLIGHTGROUP.isLateActivated</strong></a>
+    
+<a id="#(FLIGHTGROUP).isLandingAtAirbase" ><strong>FLIGHTGROUP.isLandingAtAirbase</strong></a>
     
 
-
-    
-<p> No late activation.</p>
 
 </div>
 
@@ -39068,6 +39046,9 @@ Optionally, you can calculate the current max weight possible, which accounts fo
     
 
 
+    
+<p> Set current airbase.</p>
+
 </div>
 
 </div>   
@@ -39114,6 +39095,9 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <a id="#(FLIGHTGROUP).destbase" ><strong>FLIGHTGROUP.destbase</strong></a>
     
 
+
+    
+<p> Set the destination base.</p>
 
 </div>
 
@@ -39246,6 +39230,17 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).homebase" ><strong>FLIGHTGROUP.homebase</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).isDead" ><strong>FLIGHTGROUP.isDead</strong></a>
     
@@ -39285,13 +39280,10 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
-<a id="#(FLIGHTGROUP).isLateActivated" ><strong>FLIGHTGROUP.isLateActivated</strong></a>
+    
+<a id="#(FLIGHTGROUP).isLandingAtAirbase" ><strong>FLIGHTGROUP.isLandingAtAirbase</strong></a>
     
 
-
-    
-<p> No late activation.</p>
 
 </div>
 
