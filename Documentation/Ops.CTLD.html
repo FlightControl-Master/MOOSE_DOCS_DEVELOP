@@ -2284,6 +2284,8 @@ Create the late-activated troops, vehicles, that will make up your deployable fo
      my_ctld.RadioSound = "beacon.ogg" -- -- this sound will be hearable if you tune in the beacon frequency. Add the sound file to your miz.
      my_ctld.RadioSoundFC3 = "beacon.ogg" -- this sound will be hearable by FC3 users (actually all UHF radios); change to something like "beaconsilent.ogg" and add the sound file to your miz if you don't want to annoy FC3 pilots.
      my_ctld.enableChinookGCLoading = true -- this will effectively suppress the crate load and drop for CTLD_CARGO.Enum.STATIc types for CTLD for the Chinook
+     my_ctld.TroopUnloadDistGround = 1.5 -- If hovering, spawn dropped troops this far away from the helo
+     my_ctld.TroopUnloadDistHover = 5 -- If grounded, spawn dropped troops this far away from the helo
 </code></pre>
 
 <h2>2.1 CH-47 Chinook support</h2>
@@ -7947,7 +7949,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).CtldUnits" ><strong>CTLD.CtldUnits</strong></a>
     
 
@@ -7987,6 +7989,20 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <p>search distance for crates to build or repair</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CTLD).Engineers" ><strong>CTLD.Engineers</strong></a>
+    
+
+
+    
+<p>use as counter</p>
 
 </div>
 
@@ -8246,6 +8262,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #table
 <a id="#(CTLD).Spawned_Crates" ><strong>CTLD.Spawned_Crates</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CTLD).TroopCounter" ><strong>CTLD.TroopCounter</strong></a>
     
 
 
@@ -18493,7 +18520,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).CtldUnits" ><strong>CTLD.CtldUnits</strong></a>
     
 
@@ -18533,6 +18560,20 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     
 <p>search distance for crates to build or repair</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CTLD).Engineers" ><strong>CTLD.Engineers</strong></a>
+    
+
+
+    
+<p>use as counter</p>
 
 </div>
 
@@ -18792,6 +18833,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     #table
 <a id="#(CTLD).Spawned_Crates" ><strong>CTLD.Spawned_Crates</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CTLD).TroopCounter" ><strong>CTLD.TroopCounter</strong></a>
     
 
 
@@ -31462,17 +31514,6 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(CTLD_HERCULES).j" ><strong>CTLD_HERCULES.j</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #string
 <a id="#(CTLD_HERCULES).lid" ><strong>CTLD_HERCULES.lid</strong></a>
     
@@ -32792,17 +32833,6 @@ Use either this method to integrate the Hercules **or** the one from the "normal
 
     
 <p> template for a group of 10 paratroopers</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(CTLD_HERCULES).j" ><strong>CTLD_HERCULES.j</strong></a>
-    
-
 
 </div>
 
