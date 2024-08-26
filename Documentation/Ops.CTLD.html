@@ -2776,13 +2776,13 @@ If you use units build by multiple templates, they will effectively double on lo
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).AddCratesCargo">CTLD:AddCratesCargo(Name, Templates, Type, NoCrates, PerCrateMass, Stock, SubCategory, DontShowInMenu, Location, UnitTypes, TypeName, ShapeName)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).AddCratesCargo">CTLD:AddCratesCargo(Name, Templates, Type, NoCrates, PerCrateMass, Stock, SubCategory, DontShowInMenu, Location, UnitTypes, Category, TypeName, ShapeName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>User function - Add <em>generic</em> crate-type loadable as cargo.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).AddCratesRepair">CTLD:AddCratesRepair(Name, Template, Type, NoCrates, PerCrateMass, Stock, SubCategory, DontShowInMenu, Location, UnitTypes, TypeName, ShapeName)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).AddCratesRepair">CTLD:AddCratesRepair(Name, Template, Type, NoCrates, PerCrateMass, Stock, SubCategory, DontShowInMenu, Location, UnitTypes, Category, TypeName, ShapeName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>User function - Add <em>generic</em> repair crates loadable as cargo.</p>
 </td>
@@ -4971,6 +4971,12 @@ If you use units build by multiple templates, they will effectively double on lo
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_CARGO).GetStaticTypeAndShape">CTLD_CARGO:GetStaticTypeAndShape()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get the specific static type and shape from this CARGO if set.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_CARGO).GetStock">CTLD_CARGO:GetStock()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get Stock.</p>
@@ -5103,7 +5109,7 @@ If you use units build by multiple templates, they will effectively double on lo
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_CARGO).SetStaticTypeAndShape">CTLD_CARGO:SetStaticTypeAndShape(TypeName, ShapeName)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_CARGO).SetStaticTypeAndShape">CTLD_CARGO:SetStaticTypeAndShape(TypeName, ShapeName, Category)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add specific static type and shape to this CARGO.</p>
 </td>
@@ -5118,6 +5124,12 @@ If you use units build by multiple templates, they will effectively double on lo
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_CARGO).SetWasDropped">CTLD_CARGO:SetWasDropped(dropped)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set WasDropped.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_CARGO).StaticCategory">CTLD_CARGO.StaticCategory</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Individual static category if set.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -5154,6 +5166,12 @@ If you use units build by multiple templates, they will effectively double on lo
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_CARGO).TypeNames">CTLD_CARGO.TypeNames</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Table of unit types able to pick this cargo up.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_CARGO).UnitCanCarry">CTLD_CARGO:UnitCanCarry(Unit)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if a specific unit can carry this CARGO (restrict what types can pick this up).</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -7909,17 +7927,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
-<a id="#(CTLD).CrateCounter" ><strong>CTLD.CrateCounter</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
 <a id="#(CTLD).CrateDistance" ><strong>CTLD.CrateDistance</strong></a>
     
 
@@ -7955,7 +7962,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).DroppedTroops" ><strong>CTLD.DroppedTroops</strong></a>
     
 
@@ -7980,27 +7987,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(CTLD).Engineers" ><strong>CTLD.Engineers</strong></a>
     
-
-
-    
-<p>use as counter</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
 <a id="#(CTLD).EngineersInField" ><strong>CTLD.EngineersInField</strong></a>
     
 
-
-    
-<p>holds #CTLD_ENGINEERING objects</p>
 
 </div>
 
@@ -8033,7 +8023,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeFMFrequencies" ><strong>CTLD.FreeFMFrequencies</strong></a>
     
 
@@ -8044,7 +8034,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).FreeUHFFrequencies" ><strong>CTLD.FreeUHFFrequencies</strong></a>
     
 
@@ -8055,7 +8045,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).FreeVHFFrequencies" ><strong>CTLD.FreeVHFFrequencies</strong></a>
     
 
@@ -8144,13 +8134,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).PilotGroups" ><strong>CTLD.PilotGroups</strong></a>
     
 
-
-    
-<p> tables</p>
 
 </div>
 
@@ -8243,17 +8230,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #table
 <a id="#(CTLD).Spawned_Crates" ><strong>CTLD.Spawned_Crates</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(CTLD).TroopCounter" ><strong>CTLD.TroopCounter</strong></a>
     
 
 
@@ -8795,7 +8771,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(CTLD).troopdropzoneradius" ><strong>CTLD.troopdropzoneradius</strong></a>
     
 
@@ -9165,7 +9141,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CTLD).AddCratesCargo" ><strong>CTLD:AddCratesCargo(Name, Templates, Type, NoCrates, PerCrateMass, Stock, SubCategory, DontShowInMenu, Location, UnitTypes, TypeName, ShapeName)</strong></a></h2>
+<h2><a id="#(CTLD).AddCratesCargo" ><strong>CTLD:AddCratesCargo(Name, Templates, Type, NoCrates, PerCrateMass, Stock, SubCategory, DontShowInMenu, Location, UnitTypes, Category, TypeName, ShapeName)</strong></a></h2>
 </div>
     
 <p>User function - Add <em>generic</em> crate-type loadable as cargo.</p>
@@ -9306,7 +9282,20 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Unit type names (optional). If set, only these unit types can pick up the cargo, e.g. "UH-1H" or {"UH-1H","OH-58D"}</p>
+<p>Unit type names (optional). If set, only these unit types can pick up the cargo, e.g. "UH-1H" or {"UH-1H","OH-58D"}.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Category</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Static category name (optional). If set, spawn cargo crate with an alternate category type, e.g. "Cargos".</p>
 
           </div>
         </div>
@@ -9319,7 +9308,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Static type name (optional). If set, spawn cargo crate with an alternate type shape.</p>
+<p>Static type name (optional). If set, spawn cargo crate with an alternate type shape, e.g. "iso_container".</p>
 
           </div>
         </div>
@@ -9332,7 +9321,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Static shape name (optional). If set, spawn cargo crate with an alternate type sub-shape.</p>
+<p>Static shape name (optional). If set, spawn cargo crate with an alternate type sub-shape, e.g. "iso_container_cargo".</p>
 
           </div>
         </div>
@@ -9355,7 +9344,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CTLD).AddCratesRepair" ><strong>CTLD:AddCratesRepair(Name, Template, Type, NoCrates, PerCrateMass, Stock, SubCategory, DontShowInMenu, Location, UnitTypes, TypeName, ShapeName)</strong></a></h2>
+<h2><a id="#(CTLD).AddCratesRepair" ><strong>CTLD:AddCratesRepair(Name, Template, Type, NoCrates, PerCrateMass, Stock, SubCategory, DontShowInMenu, Location, UnitTypes, Category, TypeName, ShapeName)</strong></a></h2>
 </div>
     
 <p>User function - Add <em>generic</em> repair crates loadable as cargo.</p>
@@ -9504,12 +9493,25 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           <div class="w3-half">
             <p>
                 #string
+            <strong><strong>Category</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Static category name (optional). If set, spawn cargo crate with an alternate category type, e.g. "Cargos".</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
             <strong><strong>TypeName</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Static type name (optional). If set, spawn cargo crate with an alternate type shape.</p>
+<p>Static type name (optional). If set, spawn cargo crate with an alternate type shape, e.g. "iso_container".</p>
 
           </div>
         </div>
@@ -9522,7 +9524,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Static shape name (optional). If set, spawn cargo crate with an alternate type sub-shape.</p>
+<p>Static shape name (optional). If set, spawn cargo crate with an alternate type sub-shape, e.g. "iso_container_cargo".</p>
 
           </div>
         </div>
@@ -18566,17 +18568,6 @@ However, if you create a new folder inside the miz file, which contains the soun
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
-<a id="#(CTLD).CrateCounter" ><strong>CTLD.CrateCounter</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
 <a id="#(CTLD).CrateDistance" ><strong>CTLD.CrateDistance</strong></a>
     
 
@@ -18612,7 +18603,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).DroppedTroops" ><strong>CTLD.DroppedTroops</strong></a>
     
 
@@ -18637,27 +18628,10 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(CTLD).Engineers" ><strong>CTLD.Engineers</strong></a>
     
-
-
-    
-<p>use as counter</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
 <a id="#(CTLD).EngineersInField" ><strong>CTLD.EngineersInField</strong></a>
     
 
-
-    
-<p>holds #CTLD_ENGINEERING objects</p>
 
 </div>
 
@@ -18690,7 +18664,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeFMFrequencies" ><strong>CTLD.FreeFMFrequencies</strong></a>
     
 
@@ -18701,7 +18675,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).FreeUHFFrequencies" ><strong>CTLD.FreeUHFFrequencies</strong></a>
     
 
@@ -18712,7 +18686,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).FreeVHFFrequencies" ><strong>CTLD.FreeVHFFrequencies</strong></a>
     
 
@@ -18801,13 +18775,10 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).PilotGroups" ><strong>CTLD.PilotGroups</strong></a>
     
 
-
-    
-<p> tables</p>
 
 </div>
 
@@ -18900,17 +18871,6 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     #table
 <a id="#(CTLD).Spawned_Crates" ><strong>CTLD.Spawned_Crates</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(CTLD).TroopCounter" ><strong>CTLD.TroopCounter</strong></a>
     
 
 
@@ -19452,7 +19412,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(CTLD).troopdropzoneradius" ><strong>CTLD.troopdropzoneradius</strong></a>
     
 
@@ -21620,17 +21580,6 @@ However, if you create a new folder inside the miz file, which contains the soun
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
-<a id="#(CTLD.UnitTypeCapabilities).length" ><strong>CTLD.UnitTypeCapabilities.length</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
 <a id="#(CTLD.UnitTypeCapabilities).trooplimit" ><strong>CTLD.UnitTypeCapabilities.trooplimit</strong></a>
     
 <p>Number of troop units transportable.</p>
@@ -21838,6 +21787,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(CTLD_CARGO).Mark" ><strong>CTLD_CARGO.Mark</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #string
 <a id="#(CTLD_CARGO).Name" ><strong>CTLD_CARGO.Name</strong></a>
     
@@ -21875,6 +21835,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 <a id="#(CTLD_CARGO).ResourceMap" ><strong>CTLD_CARGO.ResourceMap</strong></a>
     
 <p>Resource Map information table if it has been set for static cargo items.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(CTLD_CARGO).StaticCategory" ><strong>CTLD_CARGO.StaticCategory</strong></a>
+    
+<p>Individual static category if set.</p>
 
 </div>
 
@@ -22385,6 +22356,52 @@ However, if you create a new folder inside the miz file, which contains the soun
 <p>ResourceMap</p>
 
       </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CTLD_CARGO).GetStaticTypeAndShape" ><strong>CTLD_CARGO:GetStaticTypeAndShape()</strong></a></h2>
+</div>
+    
+<p>Get the specific static type and shape from this CARGO if set.</p>
+
+<div id= "#Functions##GetStaticTypeAndShape" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CTLD_CARGO</p>
+</div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#string:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Category</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#string:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>TypeName</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#string:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>ShapeName</p>
+
+        </div>
     </div>
 </div>
 
@@ -22954,7 +22971,7 @@ However, if you create a new folder inside the miz file, which contains the soun
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CTLD_CARGO).SetStaticTypeAndShape" ><strong>CTLD_CARGO:SetStaticTypeAndShape(TypeName, ShapeName)</strong></a></h2>
+<h2><a id="#(CTLD_CARGO).SetStaticTypeAndShape" ><strong>CTLD_CARGO:SetStaticTypeAndShape(TypeName, ShapeName, Category)</strong></a></h2>
 </div>
     
 <p>Add specific static type and shape to this CARGO.</p>
@@ -22982,6 +22999,16 @@ However, if you create a new folder inside the miz file, which contains the soun
             <p>
                 #string
             <strong><strong>ShapeName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Category</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -23074,6 +23101,48 @@ However, if you create a new folder inside the miz file, which contains the soun
               <p></p>
           </div>
         </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CTLD_CARGO).UnitCanCarry" ><strong>CTLD_CARGO:UnitCanCarry(Unit)</strong></a></h2>
+</div>
+    
+<p>Check if a specific unit can carry this CARGO (restrict what types can pick this up).</p>
+
+<div id= "#Functions##UnitCanCarry" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CTLD_CARGO</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+            <strong><strong>Unit</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Outcome</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
@@ -23255,6 +23324,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(CTLD_CARGO).Mark" ><strong>CTLD_CARGO.Mark</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #string
 <a id="#(CTLD_CARGO).Name" ><strong>CTLD_CARGO.Name</strong></a>
     
@@ -23292,6 +23372,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 <a id="#(CTLD_CARGO).ResourceMap" ><strong>CTLD_CARGO.ResourceMap</strong></a>
     
 <p>Resource Map information table if it has been set for static cargo items.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(CTLD_CARGO).StaticCategory" ><strong>CTLD_CARGO.StaticCategory</strong></a>
+    
+<p>Individual static category if set.</p>
 
 </div>
 
