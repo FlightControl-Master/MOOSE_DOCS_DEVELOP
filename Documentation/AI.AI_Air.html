@@ -2169,6 +2169,7 @@ Therefore, this class is considered to be deprecated</p>
       <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AI_AIR)">Type <strong>AI_AIR</strong></a></h2></div>
          <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
      <strong><a href="##(AI_AIR)">AI_AIR</a></strong>
+, extends <strong><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></strong>
    </div>
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
@@ -2610,6 +2611,80 @@ Therefore, this class is considered to be deprecated</p>
           </tr>
         </table>
         </div>
+        <div class="w3-card w3-margin">
+        <table class="w3-table w3-border-bottom w3-border-theme-l2">
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from FSM_CONTROLLABLE</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_AIR).Controllable">AI_AIR.Controllable</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_AIR).GetControllable">AI_AIR:GetControllable()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Gets the CONTROLLABLE object that the FSM_CONTROLLABLE governs.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_AIR).New">AI_AIR:New(FSMT, Controllable)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Creates a new FSM_CONTROLLABLE object.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_AIR).OnAfterStop">AI_AIR:OnAfterStop(Controllable, From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>OnAfter Transition Handler for Event Stop.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_AIR).OnBeforeStop">AI_AIR:OnBeforeStop(Controllable, From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>OnBefore Transition Handler for Event Stop.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_AIR).OnEnterStopped">AI_AIR:OnEnterStopped(Controllable, From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>OnEnter Transition Handler for State Stopped.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_AIR).OnLeaveStopped">AI_AIR:OnLeaveStopped(Controllable, From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>OnLeave Transition Handler for State Stopped.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_AIR).SetControllable">AI_AIR:SetControllable(FSMControllable)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Sets the CONTROLLABLE object that the FSM_CONTROLLABLE governs.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_AIR).Stop">AI_AIR:Stop()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Synchronous Event Trigger for Event Stop.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_AIR).__Stop">AI_AIR:__Stop(Delay)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Asynchronous Event Trigger for Event Stop.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_AIR)._call_handler">AI_AIR:_call_handler(step, trigger, params, EventName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+        </table>
+        </div>
 
     <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AI.AI_Air)" >Type <strong>AI.AI_Air</strong></a></h2></div>
     <div class="w3-container w3-white w3-padding-16" id="module_current_type">
@@ -2771,6 +2846,28 @@ Therefore, this class is considered to be deprecated</p>
 
     
 <a id="#(AI_AIR).RTBMinSpeed" ><strong>AI_AIR.RTBMinSpeed</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AI_AIR).RTBSpeedMaxFactor" ><strong>AI_AIR.RTBSpeedMaxFactor</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AI_AIR).RTBSpeedMinFactor" ><strong>AI_AIR.RTBSpeedMinFactor</strong></a>
     
 
 
@@ -5468,6 +5565,764 @@ A random value in this bracket is then applied in the waypoint routing generatio
    <div class="w3-margin-left">
 <p>AI_AIR</p>
 </div>
+</div>
+
+</div>
+</div>
+
+<div class="fields w3-container w3-theme-l2">
+  <h2>Field(s)</h2>
+</div>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AI_AIR).CheckStatus" ><strong>AI_AIR.CheckStatus</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AI_AIR).DisengageRadius" ><strong>AI_AIR.DisengageRadius</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AI_AIR).FuelThresholdPercentage" ><strong>AI_AIR.FuelThresholdPercentage</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AI_AIR).HomeAirbase" ><strong>AI_AIR.HomeAirbase</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AI_AIR).IdleCount" ><strong>AI_AIR.IdleCount</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AI_AIR).OutOfFuelOrbitTime" ><strong>AI_AIR.OutOfFuelOrbitTime</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AI_AIR).PatrolCeilingAltitude" ><strong>AI_AIR.PatrolCeilingAltitude</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AI_AIR).PatrolDamageThreshold" ><strong>AI_AIR.PatrolDamageThreshold</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AI_AIR).PatrolFloorAltitude" ><strong>AI_AIR.PatrolFloorAltitude</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AI_AIR).PatrolManageDamage" ><strong>AI_AIR.PatrolManageDamage</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AI_AIR).PatrolMaxSpeed" ><strong>AI_AIR.PatrolMaxSpeed</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AI_AIR).PatrolMinSpeed" ><strong>AI_AIR.PatrolMinSpeed</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AI_AIR).RTBMaxSpeed" ><strong>AI_AIR.RTBMaxSpeed</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AI_AIR).RTBMinSpeed" ><strong>AI_AIR.RTBMinSpeed</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AI_AIR).RTBSpeedMaxFactor" ><strong>AI_AIR.RTBSpeedMaxFactor</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AI_AIR).RTBSpeedMinFactor" ><strong>AI_AIR.RTBSpeedMinFactor</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AI_AIR).TankerName" ><strong>AI_AIR.TankerName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AI_AIR).TaskDelay" ><strong>AI_AIR.TaskDelay</strong></a>
+    
+
+
+    
+<p> The delay of each task given to the AI.</p>
+
+</div>
+
+</div>   
+<div class="functions  w3-container w3-theme-l2">
+  <h2>Function(s)</h2>
+</div>  
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_AIR).GetControllable" ><strong>AI_AIR:GetControllable()</strong></a></h2>
+</div>
+    
+<p>Gets the CONTROLLABLE object that the FSM_CONTROLLABLE governs.</p>
+
+<div id= "#Functions##GetControllable" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_AIR).New" ><strong>AI_AIR:New(FSMT, Controllable)</strong></a></h2>
+</div>
+    
+<p>Creates a new FSM_CONTROLLABLE object.</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>FSMT</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Finite State Machine Table</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
+            <strong><strong>Controllable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) The CONTROLLABLE object that the FSM_CONTROLLABLE governs.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FSM_CONTROLLABLE)">#FSM_CONTROLLABLE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_AIR).OnAfterStop" ><strong>AI_AIR:OnAfterStop(Controllable, From, Event, To)</strong></a></h2>
+</div>
+    
+<p>OnAfter Transition Handler for Event Stop.</p>
+
+<div id= "#Functions##OnAfterStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
+            <strong><strong>Controllable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Controllable Object managed by the FSM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The From State string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Event string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The To State string.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_AIR).OnBeforeStop" ><strong>AI_AIR:OnBeforeStop(Controllable, From, Event, To)</strong></a></h2>
+</div>
+    
+<p>OnBefore Transition Handler for Event Stop.</p>
+
+<div id= "#Functions##OnBeforeStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
+            <strong><strong>Controllable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Controllable Object managed by the FSM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The From State string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Event string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The To State string.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Return false to cancel Transition.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_AIR).OnEnterStopped" ><strong>AI_AIR:OnEnterStopped(Controllable, From, Event, To)</strong></a></h2>
+</div>
+    
+<p>OnEnter Transition Handler for State Stopped.</p>
+
+<div id= "#Functions##OnEnterStopped" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
+            <strong><strong>Controllable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Controllable Object managed by the FSM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The From State string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Event string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The To State string.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_AIR).OnLeaveStopped" ><strong>AI_AIR:OnLeaveStopped(Controllable, From, Event, To)</strong></a></h2>
+</div>
+    
+<p>OnLeave Transition Handler for State Stopped.</p>
+
+<div id= "#Functions##OnLeaveStopped" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
+            <strong><strong>Controllable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Controllable Object managed by the FSM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The From State string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Event string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The To State string.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Return false to cancel Transition.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_AIR).SetControllable" ><strong>AI_AIR:SetControllable(FSMControllable)</strong></a></h2>
+</div>
+    
+<p>Sets the CONTROLLABLE object that the FSM_CONTROLLABLE governs.</p>
+
+<div id= "#Functions##SetControllable" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
+            <strong><strong>FSMControllable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FSM_CONTROLLABLE)">#FSM_CONTROLLABLE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_AIR).Stop" ><strong>AI_AIR:Stop()</strong></a></h2>
+</div>
+    
+<p>Synchronous Event Trigger for Event Stop.</p>
+
+<div id= "#Functions##Stop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_AIR).__Stop" ><strong>AI_AIR:__Stop(Delay)</strong></a></h2>
+</div>
+    
+<p>Asynchronous Event Trigger for Event Stop.</p>
+
+<div id= "#Functions##__Stop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The delay in seconds.  </p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AI_AIR)._call_handler" ><strong>AI_AIR:_call_handler(step, trigger, params, EventName)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##_call_handler" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>step</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>trigger</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>params</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>EventName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
 </div>
 
 </div>
