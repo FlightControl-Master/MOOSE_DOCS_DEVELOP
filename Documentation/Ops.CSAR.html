@@ -2223,7 +2223,15 @@ Create a late-activated single infantry unit as template in the mission editor a
     mycsar.PilotWeight = 80 --  Loaded pilots weigh 80kgs each
 </code></pre>
 
-<h2>2.1 SRS Features and Other Features</h2>
+<h2>2.1 Create own SET_GROUP to manage CTLD Pilot groups</h2>
+
+<pre><code>    -- Parameter: Set The SET_GROUP object created by the mission designer/user to represent the CSAR pilot groups.
+    -- Needs to be set before starting the CSAR instance.
+    local myset = SET_GROUP:New():FilterPrefixes("Helikopter"):FilterCoalitions("red"):FilterStart()
+    mycsar:SetOwnSetPilotGroups(myset)
+</code></pre>
+
+<h2>2.2 SRS Features and Other Features</h2>
 
 <pre><code>  mycsar.useSRS = false -- Set true to use FF\'s SRS integration
   mycsar.SRSPath = "C:\\Progra~1\\DCS-SimpleRadio-Standalone\\" -- adjust your own path in your SRS installation -- server(!)
@@ -2485,6 +2493,12 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR).PilotGroups">CSAR.PilotGroups</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR).PilotWeight">CSAR.PilotWeight</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -2563,6 +2577,12 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR).SetOwnSetPilotGroups">CSAR:SetOwnSetPilotGroups(Set)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>User - Function to add onw SET_GROUP Set-up for pilot filtering and assignment.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR).ShortCallsign">CSAR.ShortCallsign</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -2599,7 +2619,13 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR)._AddBeaconToGroup">CSAR:_AddBeaconToGroup(_group, _freq)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR).UserSetGroup">CSAR.UserSetGroup</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set of CSAR heli groups as designed by the mission designer (if any set).</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR)._AddBeaconToGroup">CSAR:_AddBeaconToGroup(_group, _freq, _name)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(Internal) Function to add beacon to downed pilot.</p>
 </td>
@@ -2659,7 +2685,7 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR)._CreateDownedPilotTrack">CSAR:_CreateDownedPilotTrack(Group, Groupname, Side, OriginalUnit, Description, Typename, Frequency, Playername, Wetfeet)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR)._CreateDownedPilotTrack">CSAR:_CreateDownedPilotTrack(Group, Groupname, Side, OriginalUnit, Description, Typename, Frequency, Playername, Wetfeet, BeaconName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(Internal) Function to insert downed pilot tracker object.</p>
 </td>
@@ -3779,6 +3805,12 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR.DownedPilot).BeaconName">CSAR.DownedPilot.BeaconName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Name of radio beacon - if any.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR.DownedPilot).alive">CSAR.DownedPilot.alive</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Group is alive or dead/rescued.</p>
@@ -3975,6 +4007,17 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(CSAR).PilotGroups" ><strong>CSAR.PilotGroups</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #number
 <a id="#(CSAR).PilotWeight" ><strong>CSAR.PilotWeight</strong></a>
     
@@ -4132,6 +4175,17 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 <a id="#(CSAR).UsedVHFFrequencies" ><strong>CSAR.UsedVHFFrequencies</strong></a>
     
 
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(CSAR).UserSetGroup" ><strong>CSAR.UserSetGroup</strong></a>
+    
+<p>Set of CSAR heli groups as designed by the mission designer (if any set).</p>
 
 </div>
 
@@ -4399,13 +4453,10 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CSAR).csarUnits" ><strong>CSAR.csarUnits</strong></a>
     
 
-
-    
-<p> table of CSAR unit names</p>
 
 </div>
 
@@ -5985,6 +6036,53 @@ callsigns from playername or group name.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(CSAR).SetOwnSetPilotGroups" ><strong>CSAR:SetOwnSetPilotGroups(Set)</strong></a></h2>
+</div>
+    
+<p>User - Function to add onw SET_GROUP Set-up for pilot filtering and assignment.</p>
+
+    
+<p>Needs to be set before starting the CSAR instance.</p>
+
+<div id= "#Functions##SetOwnSetPilotGroups" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>CSAR</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+            <strong><strong>Set</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The SET_GROUP object created by the mission designer/user to represent the CSAR pilot groups.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(CSAR)">#CSAR</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(CSAR).SpawnCASEVAC" ><strong>CSAR:SpawnCASEVAC(Point, Coalition, Description, Nomessage, Unitname, Typename, Forcedesc)</strong></a></h2>
 </div>
     
@@ -6277,7 +6375,7 @@ callsigns from playername or group name.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CSAR)._AddBeaconToGroup" ><strong>CSAR:_AddBeaconToGroup(_group, _freq)</strong></a></h2>
+<h2><a id="#(CSAR)._AddBeaconToGroup" ><strong>CSAR:_AddBeaconToGroup(_group, _freq, _name)</strong></a></h2>
 </div>
     
 <p>(Internal) Function to add beacon to downed pilot.</p>
@@ -6312,6 +6410,19 @@ callsigns from playername or group name.</p>
           <div class="w3-half">
               
 <p>Frequency to use</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>_name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Beacon Name to use</p>
 
           </div>
         </div>
@@ -6800,7 +6911,7 @@ callsigns from playername or group name.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CSAR)._CreateDownedPilotTrack" ><strong>CSAR:_CreateDownedPilotTrack(Group, Groupname, Side, OriginalUnit, Description, Typename, Frequency, Playername, Wetfeet)</strong></a></h2>
+<h2><a id="#(CSAR)._CreateDownedPilotTrack" ><strong>CSAR:_CreateDownedPilotTrack(Group, Groupname, Side, OriginalUnit, Description, Typename, Frequency, Playername, Wetfeet, BeaconName)</strong></a></h2>
 </div>
     
 <p>(Internal) Function to insert downed pilot tracker object.</p>
@@ -6927,6 +7038,16 @@ callsigns from playername or group name.</p>
               
 <p>Ejected over water</p>
 
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>BeaconName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
@@ -10085,6 +10206,17 @@ callsigns from playername or group name.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(CSAR).PilotGroups" ><strong>CSAR.PilotGroups</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #number
 <a id="#(CSAR).PilotWeight" ><strong>CSAR.PilotWeight</strong></a>
     
@@ -10242,6 +10374,17 @@ callsigns from playername or group name.</p>
 <a id="#(CSAR).UsedVHFFrequencies" ><strong>CSAR.UsedVHFFrequencies</strong></a>
     
 
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(CSAR).UserSetGroup" ><strong>CSAR.UserSetGroup</strong></a>
+    
+<p>Set of CSAR heli groups as designed by the mission designer (if any set).</p>
 
 </div>
 
@@ -10509,13 +10652,10 @@ callsigns from playername or group name.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CSAR).csarUnits" ><strong>CSAR.csarUnits</strong></a>
     
 
-
-    
-<p> table of CSAR unit names</p>
 
 </div>
 
@@ -12713,6 +12853,17 @@ callsigns from playername or group name.</p>
 <div class="fields w3-container w3-theme-l2">
   <h2>Field(s)</h2>
 </div>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(CSAR.DownedPilot).BeaconName" ><strong>CSAR.DownedPilot.BeaconName</strong></a>
+    
+<p>Name of radio beacon - if any.</p>
+
+</div>
+
+</div>   
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
