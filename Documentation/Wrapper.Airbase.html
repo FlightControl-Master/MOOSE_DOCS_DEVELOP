@@ -2155,6 +2155,11 @@ To be able to distinguish easily in your code the difference between a AIRBASE A
 the first letter of the method is also capitalized. So, by example, the DCS Airbase method DCSWrapper.Airbase#Airbase.getName()
 is implemented in the AIRBASE class as <a href="##(AIRBASE).GetName">AIRBASE.GetName</a>().</p>
 
+<h2>Note on the "H" heli pads in the Syria map:</h2>
+
+<p>As of the time of writing (Oct 2024, DCS DCS 2.9.8.1107), these 143 objects have the <strong>same name and object ID</strong>, which makes them unusable in Moose, e.g. you cannot find a specific one for spawning etc.
+Waiting for Ugra and ED to fix this issue.</p>
+
 
 </div>
 
@@ -2459,12 +2464,14 @@ is implemented in the AIRBASE class as <a href="##(AIRBASE).GetName">AIRBASE.Get
 <ul>
     <li>AIRBASE.Kola.Banak</li>
     <li>AIRBASE.Kola.Bodo</li>
+    <li>AIRBASE.Kola.Ivalo</li>
     <li>AIRBASE.Kola.Jokkmokk</li>
     <li>AIRBASE.Kola.Kalixfors</li>
     <li>AIRBASE.Kola.Kallax</li>
     <li>AIRBASE.Kola.Kemi_Tornio</li>
     <li>AIRBASE.Kola.Kirkenes</li>
     <li>AIRBASE.Kola.Kiruna</li>
+    <li>AIRBASE.Kola.Kuusamo</li>
     <li>AIRBASE.Kola.Monchegorsk</li>
     <li>AIRBASE.Kola.Murmansk_International</li>
     <li>AIRBASE.Kola.Olenya</li>
@@ -2857,6 +2864,7 @@ is implemented in the AIRBASE class as <a href="##(AIRBASE).GetName">AIRBASE.Get
     <li>AIRBASE.Syria.Gaziantep</li>
     <li>AIRBASE.Syria.Gazipasa</li>
     <li>AIRBASE.Syria.Gecitkale</li>
+    <li>AIRBASE.Syria.H</li>
     <li>AIRBASE.Syria.H3</li>
     <li>AIRBASE.Syria.H3_Northwest</li>
     <li>AIRBASE.Syria.H3_Southwest</li>
@@ -4821,12 +4829,14 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <ul>
     <li>AIRBASE.Kola.Banak</li>
     <li>AIRBASE.Kola.Bodo</li>
+    <li>AIRBASE.Kola.Ivalo</li>
     <li>AIRBASE.Kola.Jokkmokk</li>
     <li>AIRBASE.Kola.Kalixfors</li>
     <li>AIRBASE.Kola.Kallax</li>
     <li>AIRBASE.Kola.Kemi_Tornio</li>
     <li>AIRBASE.Kola.Kirkenes</li>
     <li>AIRBASE.Kola.Kiruna</li>
+    <li>AIRBASE.Kola.Kuusamo</li>
     <li>AIRBASE.Kola.Monchegorsk</li>
     <li>AIRBASE.Kola.Murmansk_International</li>
     <li>AIRBASE.Kola.Olenya</li>
@@ -5197,6 +5207,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     <li>AIRBASE.Syria.Gaziantep</li>
     <li>AIRBASE.Syria.Gazipasa</li>
     <li>AIRBASE.Syria.Gecitkale</li>
+    <li>AIRBASE.Syria.H</li>
     <li>AIRBASE.Syria.H3</li>
     <li>AIRBASE.Syria.H3_Northwest</li>
     <li>AIRBASE.Syria.H3_Southwest</li>
@@ -7983,12 +7994,14 @@ Note that this DOES NOT remove the airbase from the list. It just makes it unres
 <ul>
     <li>AIRBASE.Kola.Banak</li>
     <li>AIRBASE.Kola.Bodo</li>
+    <li>AIRBASE.Kola.Ivalo</li>
     <li>AIRBASE.Kola.Jokkmokk</li>
     <li>AIRBASE.Kola.Kalixfors</li>
     <li>AIRBASE.Kola.Kallax</li>
     <li>AIRBASE.Kola.Kemi_Tornio</li>
     <li>AIRBASE.Kola.Kirkenes</li>
     <li>AIRBASE.Kola.Kiruna</li>
+    <li>AIRBASE.Kola.Kuusamo</li>
     <li>AIRBASE.Kola.Monchegorsk</li>
     <li>AIRBASE.Kola.Murmansk_International</li>
     <li>AIRBASE.Kola.Olenya</li>
@@ -8359,6 +8372,7 @@ Note that this DOES NOT remove the airbase from the list. It just makes it unres
     <li>AIRBASE.Syria.Gaziantep</li>
     <li>AIRBASE.Syria.Gazipasa</li>
     <li>AIRBASE.Syria.Gecitkale</li>
+    <li>AIRBASE.Syria.H</li>
     <li>AIRBASE.Syria.H3</li>
     <li>AIRBASE.Syria.H3_Northwest</li>
     <li>AIRBASE.Syria.H3_Southwest</li>
@@ -12686,12 +12700,14 @@ Coordinates are dependent on the position of the maps origin.</p>
 <ul>
     <li>AIRBASE.Kola.Banak</li>
     <li>AIRBASE.Kola.Bodo</li>
+    <li>AIRBASE.Kola.Ivalo</li>
     <li>AIRBASE.Kola.Jokkmokk</li>
     <li>AIRBASE.Kola.Kalixfors</li>
     <li>AIRBASE.Kola.Kallax</li>
     <li>AIRBASE.Kola.Kemi_Tornio</li>
     <li>AIRBASE.Kola.Kirkenes</li>
     <li>AIRBASE.Kola.Kiruna</li>
+    <li>AIRBASE.Kola.Kuusamo</li>
     <li>AIRBASE.Kola.Monchegorsk</li>
     <li>AIRBASE.Kola.Murmansk_International</li>
     <li>AIRBASE.Kola.Olenya</li>
@@ -13062,6 +13078,7 @@ Coordinates are dependent on the position of the maps origin.</p>
     <li>AIRBASE.Syria.Gaziantep</li>
     <li>AIRBASE.Syria.Gazipasa</li>
     <li>AIRBASE.Syria.Gecitkale</li>
+    <li>AIRBASE.Syria.H</li>
     <li>AIRBASE.Syria.H3</li>
     <li>AIRBASE.Syria.H3_Northwest</li>
     <li>AIRBASE.Syria.H3_Southwest</li>
@@ -13941,12 +13958,14 @@ If the Identifiable is alive, true is returned.  </p>
 <ul>
     <li>AIRBASE.Kola.Banak</li>
     <li>AIRBASE.Kola.Bodo</li>
+    <li>AIRBASE.Kola.Ivalo</li>
     <li>AIRBASE.Kola.Jokkmokk</li>
     <li>AIRBASE.Kola.Kalixfors</li>
     <li>AIRBASE.Kola.Kallax</li>
     <li>AIRBASE.Kola.Kemi_Tornio</li>
     <li>AIRBASE.Kola.Kirkenes</li>
     <li>AIRBASE.Kola.Kiruna</li>
+    <li>AIRBASE.Kola.Kuusamo</li>
     <li>AIRBASE.Kola.Monchegorsk</li>
     <li>AIRBASE.Kola.Murmansk_International</li>
     <li>AIRBASE.Kola.Olenya</li>
@@ -14317,6 +14336,7 @@ If the Identifiable is alive, true is returned.  </p>
     <li>AIRBASE.Syria.Gaziantep</li>
     <li>AIRBASE.Syria.Gazipasa</li>
     <li>AIRBASE.Syria.Gecitkale</li>
+    <li>AIRBASE.Syria.H</li>
     <li>AIRBASE.Syria.H3</li>
     <li>AIRBASE.Syria.H3_Northwest</li>
     <li>AIRBASE.Syria.H3_Southwest</li>
@@ -14797,12 +14817,14 @@ If the Identifiable is alive, true is returned.  </p>
 <ul>
     <li>AIRBASE.Kola.Banak</li>
     <li>AIRBASE.Kola.Bodo</li>
+    <li>AIRBASE.Kola.Ivalo</li>
     <li>AIRBASE.Kola.Jokkmokk</li>
     <li>AIRBASE.Kola.Kalixfors</li>
     <li>AIRBASE.Kola.Kallax</li>
     <li>AIRBASE.Kola.Kemi_Tornio</li>
     <li>AIRBASE.Kola.Kirkenes</li>
     <li>AIRBASE.Kola.Kiruna</li>
+    <li>AIRBASE.Kola.Kuusamo</li>
     <li>AIRBASE.Kola.Monchegorsk</li>
     <li>AIRBASE.Kola.Murmansk_International</li>
     <li>AIRBASE.Kola.Olenya</li>
@@ -15173,6 +15195,7 @@ If the Identifiable is alive, true is returned.  </p>
     <li>AIRBASE.Syria.Gaziantep</li>
     <li>AIRBASE.Syria.Gazipasa</li>
     <li>AIRBASE.Syria.Gecitkale</li>
+    <li>AIRBASE.Syria.H</li>
     <li>AIRBASE.Syria.H3</li>
     <li>AIRBASE.Syria.H3_Northwest</li>
     <li>AIRBASE.Syria.H3_Southwest</li>
