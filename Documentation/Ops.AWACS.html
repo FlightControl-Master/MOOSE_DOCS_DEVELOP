@@ -3307,7 +3307,7 @@ To add a localization, the following texts need to be translated and set in your
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).SetCallSignOptions">AWACS:SetCallSignOptions(ShortCallsign, Keepnumber, CallsignTranslations)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).SetCallSignOptions">AWACS:SetCallSignOptions(ShortCallsign, Keepnumber, CallsignTranslations, CallsignCustomFunc, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Set player callsign options for TTS output.</p>
 </td>
@@ -4055,6 +4055,18 @@ To add a localization, the following texts need to be translated and set in your
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).__Stop">AWACS:__Stop(delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "Stop" after a delay.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).callsignCustomArgs">AWACS.callsignCustomArgs</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).callsignCustomFunc">AWACS.callsignCustomFunc</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -6654,6 +6666,17 @@ To add a localization, the following texts need to be translated and set in your
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(AWACS).callsignCustomFunc" ><strong>AWACS.callsignCustomFunc</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(AWACS).callsignTranslations" ><strong>AWACS.callsignTranslations</strong></a>
     
@@ -8262,7 +8285,7 @@ The name of the zone will be used in reference calls as bulls eye name, so ensur
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AWACS).SetCallSignOptions" ><strong>AWACS:SetCallSignOptions(ShortCallsign, Keepnumber, CallsignTranslations)</strong></a></h2>
+<h2><a id="#(AWACS).SetCallSignOptions" ><strong>AWACS:SetCallSignOptions(ShortCallsign, Keepnumber, CallsignTranslations, CallsignCustomFunc, ...)</strong></a></h2>
 </div>
     
 <p>[User] Set player callsign options for TTS output.</p>
@@ -8312,8 +8335,34 @@ The name of the zone will be used in reference calls as bulls eye name, so ensur
           </div>
           <div class="w3-half">
               
-<p>(optional) Table to translate between DCS standard callsigns and bespoke ones. Does not apply if using customized
+<p>(Optional) Table to translate between DCS standard callsigns and bespoke ones. Does not apply if using customized.
 callsigns from playername or group name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(func)">#func</a>
+            <strong><strong>CallsignCustomFunc</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) For player names only(!). If given, this function will return the callsign. Needs to take the groupname and the playername as first two arguments.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(arg)">#arg</a>
+            <strong><strong>...</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Comma separated arguments to add to the custom function call after groupname and playername.</p>
 
           </div>
         </div>
@@ -15881,6 +15930,17 @@ Note that this must be installed on your windows system. Can also be Google voic
 
     
 <a id="#(AWACS).ZoneSet" ><strong>AWACS.ZoneSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AWACS).callsignCustomFunc" ><strong>AWACS.callsignCustomFunc</strong></a>
     
 
 
