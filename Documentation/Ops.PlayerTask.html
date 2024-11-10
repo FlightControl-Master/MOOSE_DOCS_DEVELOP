@@ -2555,6 +2555,18 @@ The marker can be deleted any time.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).AddReconSuccessCondition">PLAYERTASK.AddReconSuccessCondition(maxDistance, self, minDistance)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Adds task success condition for AUFTRAG.Type.RECON when a client is at a certain LOS distance from the target.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).AddStaticObjectSuccessCondition">PLAYERTASK:AddStaticObjectSuccessCondition()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Adds task success condition for dead STATIC, SET_STATIC, SCENERY or SET_SCENERY target object.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).ClassName">PLAYERTASK.ClassName</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Name of the class.</p>
@@ -2696,6 +2708,12 @@ The marker can be deleted any time.</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).New">PLAYERTASK:New(Type, Target, Repeat, Times, TTSType)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Constructor</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).NewFromTarget">PLAYERTASK:NewFromTarget(Target, Repeat, Times, TTSType)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Constructor that automatically determines the task type based on the target.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2888,6 +2906,12 @@ The marker can be deleted any time.</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK)._EvalConditionsAny">PLAYERTASK:_EvalConditionsAny(Conditions)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Internal] Check if any of the given conditions is true.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK)._GetTaskTypeForTarget">PLAYERTASK:_GetTaskTypeForTarget(Target)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[Internal] Determines AUFTRAG type based on the target characteristics.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -5497,6 +5521,100 @@ The marker can be deleted any time.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(PLAYERTASK).AddReconSuccessCondition" ><strong>PLAYERTASK.AddReconSuccessCondition(maxDistance, self, minDistance)</strong></a></h2>
+</div>
+    
+<p>[USER] Adds task success condition for AUFTRAG.Type.RECON when a client is at a certain LOS distance from the target.</p>
+
+<div id= "#Functions##AddReconSuccessCondition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>PLAYERTASK</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>maxDistance</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Minimum distance from client to target in LOS for success condition. (Default 5 NM)</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>self</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>minDistance</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(PLAYERTASK)">#PLAYERTASK</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(PLAYERTASK).AddStaticObjectSuccessCondition" ><strong>PLAYERTASK:AddStaticObjectSuccessCondition()</strong></a></h2>
+</div>
+    
+<p>[USER] Adds task success condition for dead STATIC, SET_STATIC, SCENERY or SET_SCENERY target object.</p>
+
+<div id= "#Functions##AddStaticObjectSuccessCondition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>PLAYERTASK</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(PLAYERTASK)">#PLAYERTASK</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(PLAYERTASK).ClientAbort" ><strong>PLAYERTASK:ClientAbort(Client)</strong></a></h2>
 </div>
     
@@ -6215,6 +6333,89 @@ The marker can be deleted any time.</p>
       <div class="w3-half">
         
 <p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(PLAYERTASK).NewFromTarget" ><strong>PLAYERTASK:NewFromTarget(Target, Repeat, Times, TTSType)</strong></a></h2>
+</div>
+    
+<p>Constructor that automatically determines the task type based on the target.</p>
+
+<div id= "#Functions##NewFromTarget" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>PLAYERTASK</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.Target.html##(TARGET)">Ops.Target#TARGET</a>
+            <strong><strong>Target</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Target for this task</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Repeat</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Repeat this task if true (default = false)</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Times</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Repeat on failure this many times if Repeat is true (default = 1)</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>TTSType</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>TTS friendly task type name</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(PLAYERTASK)">#PLAYERTASK</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
 
       </div>
     </div>
@@ -7179,6 +7380,47 @@ The marker can be deleted any time.</p>
       <div class="w3-half">
         
 <p>If true, at least one condition is true.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(PLAYERTASK)._GetTaskTypeForTarget" ><strong>PLAYERTASK:_GetTaskTypeForTarget(Target)</strong></a></h2>
+</div>
+    
+<p>[Internal] Determines AUFTRAG type based on the target characteristics.</p>
+
+<div id= "#Functions##_GetTaskTypeForTarget" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>PLAYERTASK</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Target</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG.Type)">#AUFTRAG.Type</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
 
       </div>
     </div>
@@ -10555,7 +10797,7 @@ The marker can be deleted any time.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
@@ -10623,6 +10865,17 @@ The marker can be deleted any time.</p>
 
     #boolean
 <a id="#(PLAYERTASKCONTROLLER).repeatonfailed" ><strong>PLAYERTASKCONTROLLER.repeatonfailed</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(PLAYERTASKCONTROLLER).repeattimes" ><strong>PLAYERTASKCONTROLLER.repeattimes</strong></a>
     
 
 
@@ -16855,7 +17108,7 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
@@ -16923,6 +17176,17 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 
     #boolean
 <a id="#(PLAYERTASKCONTROLLER).repeatonfailed" ><strong>PLAYERTASKCONTROLLER.repeatonfailed</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(PLAYERTASKCONTROLLER).repeattimes" ><strong>PLAYERTASKCONTROLLER.repeattimes</strong></a>
     
 
 
