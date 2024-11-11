@@ -3599,25 +3599,25 @@ and any spaces before and after the resulting name are removed.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).communication">SPAWN.communication</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).hidden">SPAWN.hidden</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).modulation">SPAWN.modulation</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).livery_id">SPAWN.livery_id</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).skill">SPAWN.skill</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).speed">SPAWN.speed</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -4466,17 +4466,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(SPAWN).SpawnGrouping" ><strong>SPAWN.SpawnGrouping</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #table
 <a id="#(SPAWN).SpawnGroups" ><strong>SPAWN.SpawnGroups</strong></a>
     
@@ -4672,6 +4661,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     
 
 
+    
+<p> Overwrite unit names by default with group name.</p>
+
 </div>
 
 </div>   
@@ -4680,17 +4672,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #boolean
 <a id="#(SPAWN).SpawnInitLimit" ><strong>SPAWN.SpawnInitLimit</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(SPAWN).SpawnInitLivery" ><strong>SPAWN.SpawnInitLivery</strong></a>
     
 
 
@@ -4734,12 +4715,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(SPAWN).SpawnInitPosition" ><strong>SPAWN.SpawnInitPosition</strong></a>
+<a id="#(SPAWN).SpawnInitModu" ><strong>SPAWN.SpawnInitModu</strong></a>
     
 
-
-    
-<p>self:T2( { self.SpawnTemplatePrefix, Vec2} )</p>
 
 </div>
 
@@ -4748,13 +4726,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(SPAWN).SpawnInitSADL" ><strong>SPAWN.SpawnInitSADL</strong></a>
+<a id="#(SPAWN).SpawnInitPosition" ><strong>SPAWN.SpawnInitPosition</strong></a>
     
 
 
     
-<p> we arrived here seeing that self.SpawnInitSADL == nil, but now that we have a SADL (num), we also need to set it to self.SpawnInitSADL in case
- we need to get the next SADL from _DATABASE, or else UTILS.OctalToDecimal() will fail in GetNextSADL</p>
+<p>self:T2( { self.SpawnTemplatePrefix, Vec2} )</p>
 
 </div>
 
@@ -5014,7 +4991,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
 
     
-<p> When the first Spawn executes, all the Groups need to be made visible before start.</p>
+<p> Flag that indicates if all the Groups of the SpawnGroup need to be visible when Spawned.</p>
 
 </div>
 
@@ -5095,6 +5072,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
+<a id="#(SPAWN).communication" ><strong>SPAWN.communication</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
 <a id="#(SPAWN).hidden" ><strong>SPAWN.hidden</strong></a>
     
 
@@ -5106,7 +5094,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(SPAWN).modulation" ><strong>SPAWN.modulation</strong></a>
+<a id="#(SPAWN).livery_id" ><strong>SPAWN.livery_id</strong></a>
     
 
 
@@ -5118,17 +5106,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <a id="#(SPAWN).skill" ><strong>SPAWN.skill</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(SPAWN).speed" ><strong>SPAWN.speed</strong></a>
     
 
 
@@ -10974,17 +10951,6 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(SPAWN).SpawnGrouping" ><strong>SPAWN.SpawnGrouping</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #table
 <a id="#(SPAWN).SpawnGroups" ><strong>SPAWN.SpawnGroups</strong></a>
     
@@ -11180,6 +11146,9 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
     
 
 
+    
+<p> Overwrite unit names by default with group name.</p>
+
 </div>
 
 </div>   
@@ -11188,17 +11157,6 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 
     #boolean
 <a id="#(SPAWN).SpawnInitLimit" ><strong>SPAWN.SpawnInitLimit</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(SPAWN).SpawnInitLivery" ><strong>SPAWN.SpawnInitLivery</strong></a>
     
 
 
@@ -11242,12 +11200,9 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(SPAWN).SpawnInitPosition" ><strong>SPAWN.SpawnInitPosition</strong></a>
+<a id="#(SPAWN).SpawnInitModu" ><strong>SPAWN.SpawnInitModu</strong></a>
     
 
-
-    
-<p>self:T2( { self.SpawnTemplatePrefix, Vec2} )</p>
 
 </div>
 
@@ -11256,13 +11211,12 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(SPAWN).SpawnInitSADL" ><strong>SPAWN.SpawnInitSADL</strong></a>
+<a id="#(SPAWN).SpawnInitPosition" ><strong>SPAWN.SpawnInitPosition</strong></a>
     
 
 
     
-<p> we arrived here seeing that self.SpawnInitSADL == nil, but now that we have a SADL (num), we also need to set it to self.SpawnInitSADL in case
- we need to get the next SADL from _DATABASE, or else UTILS.OctalToDecimal() will fail in GetNextSADL</p>
+<p>self:T2( { self.SpawnTemplatePrefix, Vec2} )</p>
 
 </div>
 
@@ -11522,7 +11476,7 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 
 
     
-<p> When the first Spawn executes, all the Groups need to be made visible before start.</p>
+<p> Flag that indicates if all the Groups of the SpawnGroup need to be visible when Spawned.</p>
 
 </div>
 
@@ -11603,6 +11557,17 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
+<a id="#(SPAWN).communication" ><strong>SPAWN.communication</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
 <a id="#(SPAWN).hidden" ><strong>SPAWN.hidden</strong></a>
     
 
@@ -11614,7 +11579,7 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(SPAWN).modulation" ><strong>SPAWN.modulation</strong></a>
+<a id="#(SPAWN).livery_id" ><strong>SPAWN.livery_id</strong></a>
     
 
 
@@ -11626,17 +11591,6 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 
     
 <a id="#(SPAWN).skill" ><strong>SPAWN.skill</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(SPAWN).speed" ><strong>SPAWN.speed</strong></a>
     
 
 
