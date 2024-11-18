@@ -5616,6 +5616,23 @@ The marker can be deleted any time.</p>
 
       </div>
     </div>
+      <h2><strong>Usage:</strong></h2>
+    <pre class="example"><code>-- We can use either STATIC, SET_STATIC, SCENERY or SET_SCENERY as target objects.
+local opsZone = OPSZONE:New(zone, coalition.side.RED)
+
+...
+
+-- We can use either OPSZONE or SET_OPSZONE.
+local mytask = PLAYERTASK:NewFromTarget(opsZone, true, 50, "Capture the zone")
+mytask:SetMenuName("Capture the ops zone")
+mytask:AddFreetext("Transport capture squad to the ops zone.")
+
+-- We set CaptureSquadGroupNamePrefix the group name prefix as set in the ME or the spawn of the group that need to be present at the OpsZone like a capture squad,
+-- and set the capturing Coalition in order to trigger a successful task.
+mytask:AddOpsZoneCaptureSuccessCondition("capture-squad", coalition.side.BLUE)
+
+playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
+
 </div>
 
 </div>
@@ -5645,7 +5662,7 @@ The marker can be deleted any time.</p>
           </div>
           <div class="w3-half">
               
-<p>Minimum distance in meters from client to target in LOS for success condition. (Default 5 NM)</p>
+<p>(Optional) Minimum distance in meters from client to target in LOS for success condition. (Default 5 NM)</p>
 
           </div>
         </div>
@@ -5660,6 +5677,17 @@ The marker can be deleted any time.</p>
 
       </div>
     </div>
+      <h2><strong>Usage:</strong></h2>
+    <pre class="example"><code>-- target can be any object that has a `GetCoordinate()` function like STATIC, GROUP, ZONE...
+local mytask = PLAYERTASK:New(AUFTRAG.Type.RECON, ZONE:New("WF Zone"), true, 50, "Deep Earth")
+mytask:SetMenuName("Recon weapon factory")
+mytask:AddFreetext("Locate and investigate underground weapons factory near Kovdor.")
+
+-- We set the MinDistance (optional) in meters for the client to be in LOS from the target in order to trigger a successful task.
+mytask:AddReconSuccessCondition(10000) -- 10 km (default is 5 NM if not set)
+
+playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
+
 </div>
 
 </div>
@@ -5690,6 +5718,15 @@ The marker can be deleted any time.</p>
 
       </div>
     </div>
+      <h2><strong>Usage:</strong></h2>
+    <pre class="example"><code>-- We can use either STATIC, SET_STATIC, SCENERY or SET_SCENERY as target objects.
+local mytask = PLAYERTASK:NewFromTarget(static, true, 50, "Destroy the target")
+mytask:SetMenuName("Destroy Power Plant")
+mytask:AddFreetext("Locate and destroy the power plant near Olenya.")
+mytask:AddStaticObjectSuccessCondition()
+
+playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
+
 </div>
 
 </div>
@@ -5734,6 +5771,17 @@ The marker can be deleted any time.</p>
 
       </div>
     </div>
+      <h2><strong>Usage:</strong></h2>
+    <pre class="example"><code>local mytask = PLAYERTASK:New(AUFTRAG.Type.RECON, ZONE:New("WF Zone"), true, 50, "Deep Earth")
+mytask:SetMenuName("Recon weapon factory")
+mytask:AddFreetext("Locate and investigate underground weapons factory near Kovdor.")
+mytask:AddReconSuccessCondition(10000) -- 10 km
+
+-- We set the TimeLimit to 10 minutes (600 seconds) from the moment the task is started, once the time has passed and the task is not yet successful it will trigger a failure.
+mytask:AddTimeLimitFailureCondition(600)
+
+playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
+
 </div>
 
 </div>
@@ -11010,7 +11058,7 @@ The marker can be deleted any time.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
@@ -17310,7 +17358,7 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
