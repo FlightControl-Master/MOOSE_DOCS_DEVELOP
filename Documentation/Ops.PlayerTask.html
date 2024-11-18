@@ -2215,11 +2215,34 @@ from the target objects:  </p>
     <li>Anti-Ship - Any ship targets, if the controller is of type "A2S"</li>
     <li>CTLD - Combat transport and logistics deployment</li>
     <li>CSAR - Combat search and rescue</li>
+    <li>RECON - Identify targets</li>
+    <li>CAPTUREZONE - Capture an Ops.OpsZone#OPSZONE</li>
+    <li>Any #string name can be passed as Auftrag type, but then you need to make sure to define a success condition, and possibly also add the task type to the standard scoring list: <code>PLAYERTASKCONTROLLER.Scores["yournamehere"]=100</code></li>
 </ul>
 
 <h2>3 Task repetition</h2>
 
 <p>On failure, tasks will be replanned by default for a maximum of 5 times.</p>
+
+<h2>3.1 Pre-configured success conditions</h2>
+
+<p>Pre-configured success conditions for #PLAYERTASK tasks are available as follows:</p>
+
+<p><code>mytask:AddStaticObjectSuccessCondition()</code> -- success if static object is at least 80% dead</p>
+
+<p><code>mytask:AddOpsZoneCaptureSuccessCondition(CaptureSquadGroupNamePrefix,Coalition)</code>  -- success if a squad of the given (partial) name and coalition captures the OpsZone</p>
+
+<p><code>mytask:AddReconSuccessCondition(MinDistance)</code>  -- success if object is in line-of-sight with the given min distance in NM</p>
+
+<p><code>mytask:AddTimeLimitSuccessCondition(TimeLimit)</code> -- failure if the task is not completed within the time limit in seconds given</p>
+
+<h2>3.2 Task chaining</h2>
+
+<p>You can create chains of tasks, which will depend on success or failure of the previous task with the following commands:</p>
+
+<p><code>mytask:AddNextTaskAfterSuccess(FollowUpTask)</code> and  </p>
+
+<p><code>mytask:AddNextTaskAfterFailure(FollowUpTask)</code></p>
 
 <h2>4 SETTINGS, SRS and language options (localization)</h2>
 
@@ -7593,21 +7616,24 @@ The marker can be deleted any time.</p>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
+                <a href="Ops.Target.html##(TARGET)">Ops.Target#TARGET</a>
             <strong><strong>Target</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              <p></p>
+              
+<p>Target for this task</p>
+
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AUFTRAG.Type)">#AUFTRAG.Type</a>:</p>
+        <p>#string:</p>
       </div>
       <div class="w3-half">
         
-<p>self</p>
+<p>AUFTRAG.Type </p>
 
       </div>
     </div>
@@ -10984,7 +11010,7 @@ The marker can be deleted any time.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
@@ -17284,7 +17310,7 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
