@@ -2555,6 +2555,12 @@ The marker can be deleted any time.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).AddOpsZoneCaptureSuccessCondition">PLAYERTASK:AddOpsZoneCaptureSuccessCondition(CaptureSquadGroupNamePrefix, Coalition)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Adds task success condition for AUFTRAG.Type.CAPTUREZONE for OpsZone or OpsZone set target object.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).AddReconSuccessCondition">PLAYERTASK:AddReconSuccessCondition(MinDistance)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[USER] Adds task success condition for AUFTRAG.Type.RECON when a client is at a certain LOS distance from the target.</p>
@@ -2564,6 +2570,12 @@ The marker can be deleted any time.</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).AddStaticObjectSuccessCondition">PLAYERTASK:AddStaticObjectSuccessCondition()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[USER] Adds task success condition for dead STATIC, SET_STATIC, SCENERY or SET_SCENERY target object.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).AddTimeLimitFailureCondition">PLAYERTASK:AddTimeLimitFailureCondition(TimeLimit)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Adds a time limit for the task to be completed.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2900,6 +2912,12 @@ The marker can be deleted any time.</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).UUIDS">PLAYERTASK.UUIDS</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK)._CheckCaptureOpsZoneSuccess">PLAYERTASK:_CheckCaptureOpsZoneSuccess(OpsZone, CaptureSquadGroupNamePrefix, Coalition, CheckClientInZone)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[Internal] Check OpsZone capture success condition.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -5521,6 +5539,68 @@ The marker can be deleted any time.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(PLAYERTASK).AddOpsZoneCaptureSuccessCondition" ><strong>PLAYERTASK:AddOpsZoneCaptureSuccessCondition(CaptureSquadGroupNamePrefix, Coalition)</strong></a></h2>
+</div>
+    
+<p>[USER] Adds task success condition for AUFTRAG.Type.CAPTUREZONE for OpsZone or OpsZone set target object.</p>
+
+    
+<ul>
+    <li>At least one of the task clients and one capture group need to be inside the zone in order for the capture to be successful.</li>
+</ul>
+
+<div id= "#Functions##AddOpsZoneCaptureSuccessCondition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>PLAYERTASK</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(SET_BASE)">#SET_BASE</a>
+            <strong><strong>CaptureSquadGroupNamePrefix</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The prefix of the group name that needs to capture the zone.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Coalition</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The coalition that needs to capture the zone.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(PLAYERTASK)">#PLAYERTASK</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(PLAYERTASK).AddReconSuccessCondition" ><strong>PLAYERTASK:AddReconSuccessCondition(MinDistance)</strong></a></h2>
 </div>
     
@@ -5576,6 +5656,50 @@ The marker can be deleted any time.</p>
    <div class="w3-margin-left">
 <p>PLAYERTASK</p>
 </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(PLAYERTASK)">#PLAYERTASK</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(PLAYERTASK).AddTimeLimitFailureCondition" ><strong>PLAYERTASK:AddTimeLimitFailureCondition(TimeLimit)</strong></a></h2>
+</div>
+    
+<p>[USER] Adds a time limit for the task to be completed.</p>
+
+<div id= "#Functions##AddTimeLimitFailureCondition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>PLAYERTASK</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>TimeLimit</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Time limit in seconds for the task to be completed. (Default 0 = no time limit)</p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -6312,7 +6436,7 @@ The marker can be deleted any time.</p>
       </div>
       <div class="w3-half">
         
-<p>self </p>
+<p>self</p>
 
       </div>
     </div>
@@ -7305,6 +7429,89 @@ The marker can be deleted any time.</p>
           <div class="w3-half">
               
 <p> defaults to SMOKECOLOR.Red</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(PLAYERTASK)">#PLAYERTASK</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(PLAYERTASK)._CheckCaptureOpsZoneSuccess" ><strong>PLAYERTASK:_CheckCaptureOpsZoneSuccess(OpsZone, CaptureSquadGroupNamePrefix, Coalition, CheckClientInZone)</strong></a></h2>
+</div>
+    
+<p>[Internal] Check OpsZone capture success condition.</p>
+
+<div id= "#Functions##_CheckCaptureOpsZoneSuccess" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>PLAYERTASK</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.OpsZone.html##(OPSZONE)">Ops.OpsZone#OPSZONE</a>
+            <strong><strong>OpsZone</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The OpsZone target object.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>CaptureSquadGroupNamePrefix</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The prefix of the group name that needs to capture the zone.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Coalition</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The coalition that needs to capture the zone.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>CheckClientInZone</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Check if any of the clients are in zone.</p>
 
           </div>
         </div>
@@ -10777,7 +10984,7 @@ The marker can be deleted any time.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
@@ -17077,7 +17284,7 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
