@@ -2463,6 +2463,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).SetDrawZoneForCoalition">OPSZONE:SetDrawZoneForCoalition(Switch)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set if zone is drawn on the F10 map for the owner coalition only.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).SetMarkZone">OPSZONE:SetMarkZone(Switch, ReadOnly)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set if a marker on the F10 map shows the current zone status.</p>
@@ -2706,6 +2712,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).drawZone">OPSZONE.drawZone</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>If <code>true</code>, draw the zone on the F10 map.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(OPSZONE).drawZoneForCoalition">OPSZONE.drawZoneForCoalition</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -3474,6 +3486,17 @@
 <a id="#(OPSZONE).drawZone" ><strong>OPSZONE.drawZone</strong></a>
     
 <p>If <code>true</code>, draw the zone on the F10 map.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(OPSZONE).drawZoneForCoalition" ><strong>OPSZONE.drawZoneForCoalition</strong></a>
+    
+
 
 </div>
 
@@ -5285,6 +5308,50 @@ myopszone = OPSZONE:New(ZONE_AIRBASE:New("Batumi",6000),coalition.side.BLUE) -- 
           <div class="w3-half">
               
 <p>If <code>true</code> or <code>nil</code>, draw zone. If <code>false</code>, zone is not drawn.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(OPSZONE)">#OPSZONE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(OPSZONE).SetDrawZoneForCoalition" ><strong>OPSZONE:SetDrawZoneForCoalition(Switch)</strong></a></h2>
+</div>
+    
+<p>Set if zone is drawn on the F10 map for the owner coalition only.</p>
+
+<div id= "#Functions##SetDrawZoneForCoalition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>OPSZONE</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Switch</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If <code>false</code> or <code>nil</code>, draw zone for all coalitions. If <code>true</code>, zone is drawn for the owning coalition only if drawZone is true.</p>
 
           </div>
         </div>
@@ -7214,6 +7281,17 @@ myopszone = OPSZONE:New(ZONE_AIRBASE:New("Batumi",6000),coalition.side.BLUE) -- 
 <a id="#(OPSZONE).drawZone" ><strong>OPSZONE.drawZone</strong></a>
     
 <p>If <code>true</code>, draw the zone on the F10 map.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(OPSZONE).drawZoneForCoalition" ><strong>OPSZONE.drawZoneForCoalition</strong></a>
+    
+
 
 </div>
 
