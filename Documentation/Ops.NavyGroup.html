@@ -2431,7 +2431,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).Status">NAVYGROUP:Status(From, Event, To)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).Status">NAVYGROUP:Status()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Update status.</p>
 </td>
@@ -2515,7 +2515,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._InitGroup">NAVYGROUP:_InitGroup(Template)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._InitGroup">NAVYGROUP:_InitGroup(Template, Delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Initialize group parameters.</p>
 </td>
@@ -3096,6 +3096,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).DestroyUnit">NAVYGROUP:DestroyUnit(UnitName, Delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Destroy a unit of the group.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).EPLRS">NAVYGROUP.EPLRS</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -4969,6 +4975,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._SortTaskQueue">NAVYGROUP:_SortTaskQueue()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sort task queue.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP)._Spawn">NAVYGROUP:_Spawn(Delay, Template)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Spawn group from a given template.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -9423,7 +9435,7 @@ Implementation based on <a href="https://magwo.github.io/carrier-cruise/">Mags &
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(NAVYGROUP).Status" ><strong>NAVYGROUP:Status(From, Event, To)</strong></a></h2>
+<h2><a id="#(NAVYGROUP).Status" ><strong>NAVYGROUP:Status()</strong></a></h2>
 </div>
     
 <p>Update status.</p>
@@ -9434,37 +9446,6 @@ Implementation based on <a href="https://magwo.github.io/carrier-cruise/">Mags &
    <div class="w3-margin-left">
 <p>NAVYGROUP</p>
 </div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>From</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>Event</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>To</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
 </div>
 
 </div>
@@ -9870,7 +9851,7 @@ Implementation based on <a href="https://magwo.github.io/carrier-cruise/">Mags &
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(NAVYGROUP)._InitGroup" ><strong>NAVYGROUP:_InitGroup(Template)</strong></a></h2>
+<h2><a id="#(NAVYGROUP)._InitGroup" ><strong>NAVYGROUP:_InitGroup(Template, Delay)</strong></a></h2>
 </div>
     
 <p>Initialize group parameters.</p>
@@ -9884,7 +9865,7 @@ Implementation based on <a href="https://magwo.github.io/carrier-cruise/">Mags &
    <div class="w3-margin-left">
 <p>NAVYGROUP</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -9895,6 +9876,19 @@ Implementation based on <a href="https://magwo.github.io/carrier-cruise/">Mags &
           <div class="w3-half">
               
 <p>Template used to init the group. Default is <code>self.template</code>.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Delay in seconds before group is initialized. Default <code>nil</code>, <em>i.e.</em> instantaneous. </p>
 
           </div>
         </div>
@@ -27082,6 +27076,63 @@ Optionally, you can calculate the current max weight possible, which accounts fo
    <div class="w3-margin-left">
 <p><a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a></p>
 </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(NAVYGROUP)._Spawn" ><strong>NAVYGROUP:_Spawn(Delay, Template)</strong></a></h2>
+</div>
+    
+<p>Spawn group from a given template.</p>
+
+<div id= "#Functions##_Spawn" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Delay in seconds before respawn happens. Default 0.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(Template)">DCS#Template</a>
+            <strong><strong>Template</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) The template of the Group retrieved with GROUP:GetTemplate(). If the template is not provided, the template will be retrieved of the group itself.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(OPSGROUP)">#OPSGROUP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
