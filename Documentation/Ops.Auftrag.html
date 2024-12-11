@@ -2626,6 +2626,12 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).GetMissionIngressCoord">AUFTRAG:GetMissionIngressCoord()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get the mission ingress coordinate if this was defined.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).GetMissionTaskforMissionType">AUFTRAG:GetMissionTaskforMissionType(MissionType)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get DCS task table for an attack group or unit task.</p>
@@ -3521,6 +3527,12 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetIngressCoordinate">AUFTRAG:SetIngressCoordinate(coordinate)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[Air] Set mission (ingress) waypoint coordinate for FLIGHT group.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetInvisible">AUFTRAG:SetInvisible(OnOffSwitch)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set invisibility setting for this mission.</p>
@@ -3542,6 +3554,12 @@ The commander will select the best assets available from all the legions under h
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetMissionEgressCoord">AUFTRAG:SetMissionEgressCoord(Coordinate, Altitude)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set the mission egress coordinate.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetMissionIngressCoord">AUFTRAG:SetMissionIngressCoord(Coordinate, Altitude)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[Air] Set the mission ingress coordinate.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4415,6 +4433,12 @@ The commander will select the best assets available from all the legions under h
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).missionFraction">AUFTRAG.missionFraction</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Mission coordiante fraction. Default is 0.5.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).missionIngressCoord">AUFTRAG.missionIngressCoord</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Mission Ingress waypoint coordinate.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -7236,6 +7260,17 @@ The commander will select the best assets available from all the legions under h
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+<a id="#(AUFTRAG).missionIngressCoord" ><strong>AUFTRAG.missionIngressCoord</strong></a>
+    
+<p>Mission Ingress waypoint coordinate.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #number
 <a id="#(AUFTRAG).missionRange" ><strong>AUFTRAG.missionRange</strong></a>
     
@@ -9867,6 +9902,36 @@ The commander will select the best assets available from all the legions under h
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).GetMissionIngressCoord" ><strong>AUFTRAG:GetMissionIngressCoord()</strong></a></h2>
+</div>
+    
+<p>Get the mission ingress coordinate if this was defined.</p>
+
+<div id= "#Functions##GetMissionIngressCoord" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Coordinate Coordinate or nil.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AUFTRAG).GetMissionTaskforMissionType" ><strong>AUFTRAG:GetMissionTaskforMissionType(MissionType)</strong></a></h2>
 </div>
     
@@ -12243,7 +12308,7 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_bombing">DCS task bombin
           </div>
           <div class="w3-half">
               
-<p>The airbase to bomb. This must be an airdrome (not a FARP or ship) as these to not have a runway.</p>
+<p>The airbase to bomb. This must be an airdrome (not a FARP or ship) as these do not have a runway.</p>
 
           </div>
         </div>
@@ -17093,6 +17158,50 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_strafing">DCS task straf
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).SetIngressCoordinate" ><strong>AUFTRAG:SetIngressCoordinate(coordinate)</strong></a></h2>
+</div>
+    
+<p>[Air] Set mission (ingress) waypoint coordinate for FLIGHT group.</p>
+
+<div id= "#Functions##SetIngressCoordinate" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>coordinate</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Waypoint Coordinate.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AUFTRAG).SetInvisible" ><strong>AUFTRAG:SetInvisible(OnOffSwitch)</strong></a></h2>
 </div>
     
@@ -17266,6 +17375,66 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_strafing">DCS task straf
           <div class="w3-half">
               
 <p>Egrees coordinate.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Altitude</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Altitude in feet. Default is y component of coordinate.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).SetMissionIngressCoord" ><strong>AUFTRAG:SetMissionIngressCoord(Coordinate, Altitude)</strong></a></h2>
+</div>
+    
+<p>[Air] Set the mission ingress coordinate.</p>
+
+    
+<p>This is the coordinate where the assigned group will fly before the actual mission coordinate.</p>
+
+<div id= "#Functions##SetMissionIngressCoord" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>Coordinate</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Ingrees coordinate.</p>
 
           </div>
         </div>
@@ -22285,6 +22454,17 @@ will always return.</p>
 <a id="#(AUFTRAG).missionFraction" ><strong>AUFTRAG.missionFraction</strong></a>
     
 <p>Mission coordiante fraction. Default is 0.5.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+<a id="#(AUFTRAG).missionIngressCoord" ><strong>AUFTRAG.missionIngressCoord</strong></a>
+    
+<p>Mission Ingress waypoint coordinate.</p>
 
 </div>
 
