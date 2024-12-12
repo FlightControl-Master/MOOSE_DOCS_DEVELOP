@@ -2626,6 +2626,12 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).GetMissionHoldingCoord">AUFTRAG:GetMissionHoldingCoord()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get the mission holding coordinate if this was defined.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).GetMissionIngressCoord">AUFTRAG:GetMissionIngressCoord()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the mission ingress coordinate if this was defined.</p>
@@ -3557,6 +3563,12 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetMissionHoldingCoord">AUFTRAG:SetMissionHoldingCoord(Coordinate, Altitude, Duration)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[Air] Set the mission holding coordinate.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetMissionIngressCoord">AUFTRAG:SetMissionIngressCoord(Coordinate, Altitude)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Air] Set the mission ingress coordinate.</p>
@@ -3577,7 +3589,7 @@ The commander will select the best assets available from all the legions under h
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetMissionWaypointCoord">AUFTRAG:SetMissionWaypointCoord(Coordinate)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set the mission waypoint coordinate where the mission is executed.</p>
+<p>[NON-AIR] Set the mission waypoint coordinate where the mission is executed.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4430,15 +4442,45 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).missionEgressCoordAlt">AUFTRAG.missionEgressCoordAlt</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).missionFraction">AUFTRAG.missionFraction</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Mission coordiante fraction. Default is 0.5.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).missionHoldingCoord">AUFTRAG.missionHoldingCoord</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).missionHoldingCoordAlt">AUFTRAG.missionHoldingCoordAlt</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).missionHoldingDuration">AUFTRAG.missionHoldingDuration</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).missionIngressCoord">AUFTRAG.missionIngressCoord</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Mission Ingress waypoint coordinate.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).missionIngressCoordAlt">AUFTRAG.missionIngressCoordAlt</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -7249,10 +7291,43 @@ The commander will select the best assets available from all the legions under h
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(AUFTRAG).missionEgressCoordAlt" ><strong>AUFTRAG.missionEgressCoordAlt</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #number
 <a id="#(AUFTRAG).missionFraction" ><strong>AUFTRAG.missionFraction</strong></a>
     
 <p>Mission coordiante fraction. Default is 0.5.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AUFTRAG).missionHoldingCoord" ><strong>AUFTRAG.missionHoldingCoord</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AUFTRAG).missionHoldingCoordAlt" ><strong>AUFTRAG.missionHoldingCoordAlt</strong></a>
+    
+
 
 </div>
 
@@ -9878,6 +9953,36 @@ The commander will select the best assets available from all the legions under h
 <p>Get the mission egress coordinate if this was defined.</p>
 
 <div id= "#Functions##GetMissionEgressCoord" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Coordinate Coordinate or nil.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).GetMissionHoldingCoord" ><strong>AUFTRAG:GetMissionHoldingCoord()</strong></a></h2>
+</div>
+    
+<p>Get the mission holding coordinate if this was defined.</p>
+
+<div id= "#Functions##GetMissionHoldingCoord" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -17410,6 +17515,79 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_strafing">DCS task straf
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).SetMissionHoldingCoord" ><strong>AUFTRAG:SetMissionHoldingCoord(Coordinate, Altitude, Duration)</strong></a></h2>
+</div>
+    
+<p>[Air] Set the mission holding coordinate.</p>
+
+    
+<p>This is the coordinate where the assigned group will fly before the actual mission execution starts. Do not forget to add a push condition, too!</p>
+
+<div id= "#Functions##SetMissionHoldingCoord" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>Coordinate</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Holding coordinate.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Altitude</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Altitude in feet. Default is y component of coordinate.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Duration</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Duration in seconds on how long to hold, defaults to 15 minutes. Mission continues if either a push condition is met or the time is up.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AUFTRAG).SetMissionIngressCoord" ><strong>AUFTRAG:SetMissionIngressCoord(Coordinate, Altitude)</strong></a></h2>
 </div>
     
@@ -17567,7 +17745,7 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_strafing">DCS task straf
 <h2><a id="#(AUFTRAG).SetMissionWaypointCoord" ><strong>AUFTRAG:SetMissionWaypointCoord(Coordinate)</strong></a></h2>
 </div>
     
-<p>Set the mission waypoint coordinate where the mission is executed.</p>
+<p>[NON-AIR] Set the mission waypoint coordinate where the mission is executed.</p>
 
     
 <p>Note that altitude is set via <code>:SetMissionAltitude</code>.</p>
@@ -22450,10 +22628,43 @@ will always return.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(AUFTRAG).missionEgressCoordAlt" ><strong>AUFTRAG.missionEgressCoordAlt</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #number
 <a id="#(AUFTRAG).missionFraction" ><strong>AUFTRAG.missionFraction</strong></a>
     
 <p>Mission coordiante fraction. Default is 0.5.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AUFTRAG).missionHoldingCoord" ><strong>AUFTRAG.missionHoldingCoord</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AUFTRAG).missionHoldingCoordAlt" ><strong>AUFTRAG.missionHoldingCoordAlt</strong></a>
+    
+
 
 </div>
 
