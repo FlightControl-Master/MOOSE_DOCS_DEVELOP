@@ -3557,19 +3557,19 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetMissionEgressCoord">AUFTRAG:SetMissionEgressCoord(Coordinate, Altitude)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetMissionEgressCoord">AUFTRAG:SetMissionEgressCoord(Coordinate, Altitude, Speed)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set the mission egress coordinate.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetMissionHoldingCoord">AUFTRAG:SetMissionHoldingCoord(Coordinate, Altitude, Duration)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetMissionHoldingCoord">AUFTRAG:SetMissionHoldingCoord(Coordinate, Altitude, Speed, Duration)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Air] Set the mission holding coordinate.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetMissionIngressCoord">AUFTRAG:SetMissionIngressCoord(Coordinate, Altitude)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetMissionIngressCoord">AUFTRAG:SetMissionIngressCoord(Coordinate, Altitude, Speed)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Air] Set the mission ingress coordinate.</p>
 </td>
@@ -3589,7 +3589,7 @@ The commander will select the best assets available from all the legions under h
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetMissionWaypointCoord">AUFTRAG:SetMissionWaypointCoord(Coordinate)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>[NON-AIR] Set the mission waypoint coordinate where the mission is executed.</p>
+<p>[NON-AIR] Set the mission waypoint coordinate from where the mission is executed.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4448,6 +4448,12 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).missionEgressCoordSpeed">AUFTRAG.missionEgressCoordSpeed</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).missionFraction">AUFTRAG.missionFraction</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Mission coordiante fraction. Default is 0.5.</p>
@@ -4466,6 +4472,12 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).missionHoldingCoordSpeed">AUFTRAG.missionHoldingCoordSpeed</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).missionHoldingDuration">AUFTRAG.missionHoldingDuration</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -4479,6 +4491,12 @@ The commander will select the best assets available from all the legions under h
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).missionIngressCoordAlt">AUFTRAG.missionIngressCoordAlt</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).missionIngressCoordSpeed">AUFTRAG.missionIngressCoordSpeed</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -7339,17 +7357,6 @@ The commander will select the best assets available from all the legions under h
 <a id="#(AUFTRAG).missionIngressCoord" ><strong>AUFTRAG.missionIngressCoord</strong></a>
     
 <p>Mission Ingress waypoint coordinate.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUFTRAG).missionIngressCoordAlt" ><strong>AUFTRAG.missionIngressCoordAlt</strong></a>
-    
-
 
 </div>
 
@@ -17466,7 +17473,7 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_strafing">DCS task straf
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUFTRAG).SetMissionEgressCoord" ><strong>AUFTRAG:SetMissionEgressCoord(Coordinate, Altitude)</strong></a></h2>
+<h2><a id="#(AUFTRAG).SetMissionEgressCoord" ><strong>AUFTRAG:SetMissionEgressCoord(Coordinate, Altitude, Speed)</strong></a></h2>
 </div>
     
 <p>Set the mission egress coordinate.</p>
@@ -17507,6 +17514,19 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_strafing">DCS task straf
 
           </div>
         </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Speed in knots to reach this waypoint. Defaults to mission speed.</p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -17526,7 +17546,7 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_strafing">DCS task straf
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUFTRAG).SetMissionHoldingCoord" ><strong>AUFTRAG:SetMissionHoldingCoord(Coordinate, Altitude, Duration)</strong></a></h2>
+<h2><a id="#(AUFTRAG).SetMissionHoldingCoord" ><strong>AUFTRAG:SetMissionHoldingCoord(Coordinate, Altitude, Speed, Duration)</strong></a></h2>
 </div>
     
 <p>[Air] Set the mission holding coordinate.</p>
@@ -17571,6 +17591,19 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_strafing">DCS task straf
           <div class="w3-half">
             <p>
                 #number
+            <strong><strong>Speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Speed in knots to reach this waypoint and hold there. Defaults to mission speed.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
             <strong><strong>Duration</strong></strong>
             </p>
           </div>
@@ -17599,7 +17632,7 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_strafing">DCS task straf
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUFTRAG).SetMissionIngressCoord" ><strong>AUFTRAG:SetMissionIngressCoord(Coordinate, Altitude)</strong></a></h2>
+<h2><a id="#(AUFTRAG).SetMissionIngressCoord" ><strong>AUFTRAG:SetMissionIngressCoord(Coordinate, Altitude, Speed)</strong></a></h2>
 </div>
     
 <p>[Air] Set the mission ingress coordinate.</p>
@@ -17637,6 +17670,19 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_strafing">DCS task straf
           <div class="w3-half">
               
 <p>(Optional) Altitude in feet. Default is y component of coordinate.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Speed in knots to reach this waypoint. Defaults to mission speed.</p>
 
           </div>
         </div>
@@ -17756,7 +17802,7 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_strafing">DCS task straf
 <h2><a id="#(AUFTRAG).SetMissionWaypointCoord" ><strong>AUFTRAG:SetMissionWaypointCoord(Coordinate)</strong></a></h2>
 </div>
     
-<p>[NON-AIR] Set the mission waypoint coordinate where the mission is executed.</p>
+<p>[NON-AIR] Set the mission waypoint coordinate from where the mission is executed.</p>
 
     
 <p>Note that altitude is set via <code>:SetMissionAltitude</code>.</p>
@@ -22687,17 +22733,6 @@ will always return.</p>
 <a id="#(AUFTRAG).missionIngressCoord" ><strong>AUFTRAG.missionIngressCoord</strong></a>
     
 <p>Mission Ingress waypoint coordinate.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUFTRAG).missionIngressCoordAlt" ><strong>AUFTRAG.missionIngressCoordAlt</strong></a>
-    
-
 
 </div>
 
