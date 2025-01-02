@@ -3018,7 +3018,7 @@ The commander will select the best assets available from all the legions under h
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewARTY">AUFTRAG:NewARTY(Target, Nshots, Radius, Altitude)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p><strong>[GROUND, NAVAL]</strong> Create an ARTY mission.</p>
+<p><strong>[GROUND, NAVAL]</strong> Create an ARTY mission ("Fire at point" task).</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -11887,7 +11887,13 @@ This determines the payload and the DCS mission task which are used when the air
 <h2><a id="#(AUFTRAG).NewARTY" ><strong>AUFTRAG:NewARTY(Target, Nshots, Radius, Altitude)</strong></a></h2>
 </div>
     
-<p><strong>[GROUND, NAVAL]</strong> Create an ARTY mission.</p>
+<p><strong>[GROUND, NAVAL]</strong> Create an ARTY mission ("Fire at point" task).</p>
+
+    
+
+<p>If the group has more than one weapon type supporting the "Fire at point" task, the employed weapon type can be set via the <code>AUFTRAG:SetWeaponType()</code> function.</p>
+
+<p><strong>Note</strong> that it is recommended to set the weapon range via the <code>OPSGROUP:AddWeaponRange()</code> function as this cannot be retrieved from the DCS API.</p>
 
 <div id= "#Functions##NewARTY" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
