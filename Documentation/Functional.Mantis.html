@@ -2507,6 +2507,12 @@ in the mission editor are absolute maximum ranges; in-game this is rather 50-75%
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).Groupset">MANTIS.Groupset</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).HQ_CC">MANTIS.HQ_CC</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The #GROUP object of the HQ</p>
@@ -2753,6 +2759,12 @@ in the mission editor are absolute maximum ranges; in-game this is rather 50-75%
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).SetSmokeDecoy">MANTIS:SetSmokeDecoy(Onoff, Color)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Function to set Short Range SAMs to spit out smoke as decoy, if an enemy plane is in range.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).SetUsingDLink">MANTIS:SetUsingDLink(DLink)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set using your own #INTEL_DLINK object instead of #DETECTION</p>
@@ -2804,6 +2816,18 @@ in the mission editor are absolute maximum ranges; in-game this is rather 50-75%
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).SkateZones">MANTIS.SkateZones</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).SmokeDecoy">MANTIS.SmokeDecoy</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>If true, smoke short range SAM units as decoy if a plane is in firing range.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).SmokeDecoyColor">MANTIS.SmokeDecoyColor</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Color to use, defaults to SMOKECOLOR.White</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4642,6 +4666,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(MANTIS).AWACS_Prefix" ><strong>MANTIS.AWACS_Prefix</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(MANTIS).AcceptZones" ><strong>MANTIS.AcceptZones</strong></a>
     
@@ -4763,6 +4798,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(MANTIS).Groupset" ><strong>MANTIS.Groupset</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
 <a id="#(MANTIS).HQ_CC" ><strong>MANTIS.HQ_CC</strong></a>
     
@@ -4818,7 +4864,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Long" ><strong>MANTIS.SAM_Table_Long</strong></a>
     
 
@@ -4829,7 +4875,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Medium" ><strong>MANTIS.SAM_Table_Medium</strong></a>
     
 
@@ -4840,7 +4886,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Short" ><strong>MANTIS.SAM_Table_Short</strong></a>
     
 
@@ -4997,10 +5043,32 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(MANTIS).SkateNumber" ><strong>MANTIS.SkateNumber</strong></a>
+    
+<a id="#(MANTIS).SkateZones" ><strong>MANTIS.SkateZones</strong></a>
     
 
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(MANTIS).SmokeDecoy" ><strong>MANTIS.SmokeDecoy</strong></a>
+    
+<p>If true, smoke short range SAM units as decoy if a plane is in firing range.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(MANTIS).SmokeDecoyColor" ><strong>MANTIS.SmokeDecoyColor</strong></a>
+    
+<p>Color to use, defaults to SMOKECOLOR.White</p>
 
 </div>
 
@@ -5370,6 +5438,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(MANTIS).state2flag" ><strong>MANTIS.state2flag</strong></a>
     
 
+
+    
+<p> switch alarm state RED</p>
 
 </div>
 
@@ -7177,6 +7248,52 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 
       </div>
     </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(MANTIS).SetSmokeDecoy" ><strong>MANTIS:SetSmokeDecoy(Onoff, Color)</strong></a></h2>
+</div>
+    
+<p>Function to set Short Range SAMs to spit out smoke as decoy, if an enemy plane is in range.</p>
+
+<div id= "#Functions##SetSmokeDecoy" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>MANTIS</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Onoff</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Set to true for on and nil/false for off.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Color</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Color to use, defaults to <code>SMOKECOLOR.White</code></p>
+
+          </div>
+        </div>
 </div>
 
 </div>
@@ -9353,6 +9470,17 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(MANTIS).AWACS_Prefix" ><strong>MANTIS.AWACS_Prefix</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(MANTIS).AcceptZones" ><strong>MANTIS.AcceptZones</strong></a>
     
@@ -9474,6 +9602,17 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(MANTIS).Groupset" ><strong>MANTIS.Groupset</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
 <a id="#(MANTIS).HQ_CC" ><strong>MANTIS.HQ_CC</strong></a>
     
@@ -9529,7 +9668,7 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Long" ><strong>MANTIS.SAM_Table_Long</strong></a>
     
 
@@ -9540,7 +9679,7 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Medium" ><strong>MANTIS.SAM_Table_Medium</strong></a>
     
 
@@ -9551,7 +9690,7 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Short" ><strong>MANTIS.SAM_Table_Short</strong></a>
     
 
@@ -9708,10 +9847,32 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(MANTIS).SkateNumber" ><strong>MANTIS.SkateNumber</strong></a>
+    
+<a id="#(MANTIS).SkateZones" ><strong>MANTIS.SkateZones</strong></a>
     
 
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(MANTIS).SmokeDecoy" ><strong>MANTIS.SmokeDecoy</strong></a>
+    
+<p>If true, smoke short range SAM units as decoy if a plane is in firing range.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(MANTIS).SmokeDecoyColor" ><strong>MANTIS.SmokeDecoyColor</strong></a>
+    
+<p>Color to use, defaults to SMOKECOLOR.White</p>
 
 </div>
 
@@ -10081,6 +10242,9 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <a id="#(MANTIS).state2flag" ><strong>MANTIS.state2flag</strong></a>
     
 
+
+    
+<p> switch alarm state RED</p>
 
 </div>
 

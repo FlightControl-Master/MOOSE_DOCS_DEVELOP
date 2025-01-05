@@ -2196,7 +2196,7 @@ Create a late-activated single infantry unit as template in the mission editor a
     mycsar.immortalcrew = true -- Set to true to make wounded crew immortal.
     mycsar.invisiblecrew = false -- Set to true to make wounded crew insvisible.
     mycsar.loadDistance = 75 -- configure distance for pilots to get into helicopter in meters.
-    mycsar.mashprefix = {"MASH"} -- prefixes of #GROUP objects used as MASHes.
+    mycsar.mashprefix = {"MASH"} -- prefixes of #GROUP objects used as MASHes. Will also try to add ZONE and STATIC objects with this prefix once at startup.
     mycsar.max_units = 6 -- max number of pilots that can be carried if #CSAR.AircraftType is undefined.
     mycsar.messageTime = 15 -- Time to show messages for in seconds. Doubled for long messages.
     mycsar.radioSound = "beacon.ogg" -- the name of the sound file to use for the pilots\' radio beacons. 
@@ -3992,7 +3992,7 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CSAR).FreeVHFFrequencies" ><strong>CSAR.FreeVHFFrequencies</strong></a>
     
 
@@ -4438,13 +4438,10 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CSAR).csarUnits" ><strong>CSAR.csarUnits</strong></a>
     
 
-
-    
-<p> table of CSAR unit names</p>
 
 </div>
 
@@ -4466,13 +4463,10 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CSAR).downedPilots" ><strong>CSAR.downedPilots</strong></a>
     
 
-
-    
-<p> Replacement woundedGroups</p>
 
 </div>
 
@@ -4705,9 +4699,6 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
     
 
 
-    
-<p> currently only GROUP objects, maybe support STATICs also?</p>
-
 </div>
 
 </div>   
@@ -4821,20 +4812,6 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
-<a id="#(CSAR).rescuedpilots" ><strong>CSAR.rescuedpilots</strong></a>
-    
-
-
-    
-<p> counter for saved pilots</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
 <a id="#(CSAR).rescuehoverdistance" ><strong>CSAR.rescuehoverdistance</strong></a>
     
 
@@ -4852,20 +4829,6 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 
     
 <p> added 0.1.11r1</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(CSAR).rescues" ><strong>CSAR.rescues</strong></a>
-    
-
-
-    
-<p> counter for successful rescue landings at FARP/AFB/MASH</p>
 
 </div>
 
@@ -10247,7 +10210,7 @@ callsigns from playername or group name.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CSAR).FreeVHFFrequencies" ><strong>CSAR.FreeVHFFrequencies</strong></a>
     
 
@@ -10693,13 +10656,10 @@ callsigns from playername or group name.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CSAR).csarUnits" ><strong>CSAR.csarUnits</strong></a>
     
 
-
-    
-<p> table of CSAR unit names</p>
 
 </div>
 
@@ -10721,13 +10681,10 @@ callsigns from playername or group name.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CSAR).downedPilots" ><strong>CSAR.downedPilots</strong></a>
     
 
-
-    
-<p> Replacement woundedGroups</p>
 
 </div>
 
@@ -10960,9 +10917,6 @@ callsigns from playername or group name.</p>
     
 
 
-    
-<p> currently only GROUP objects, maybe support STATICs also?</p>
-
 </div>
 
 </div>   
@@ -11076,20 +11030,6 @@ callsigns from playername or group name.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
-<a id="#(CSAR).rescuedpilots" ><strong>CSAR.rescuedpilots</strong></a>
-    
-
-
-    
-<p> counter for saved pilots</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
 <a id="#(CSAR).rescuehoverdistance" ><strong>CSAR.rescuehoverdistance</strong></a>
     
 
@@ -11107,20 +11047,6 @@ callsigns from playername or group name.</p>
 
     
 <p> added 0.1.11r1</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(CSAR).rescues" ><strong>CSAR.rescues</strong></a>
-    
-
-
-    
-<p> counter for successful rescue landings at FARP/AFB/MASH</p>
 
 </div>
 
