@@ -3052,7 +3052,7 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewBOMBING">AUFTRAG:NewBOMBING(Target, Altitude)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewBOMBING">AUFTRAG:NewBOMBING(Target, Altitude, EngageWeaponType)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[AIR]</strong> Create a BOMBING mission.</p>
 </td>
@@ -3256,7 +3256,7 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewSTRIKE">AUFTRAG:NewSTRIKE(Target, Altitude)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewSTRIKE">AUFTRAG:NewSTRIKE(Target, Altitude, EngageWeaponType)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[AIR]</strong> Create a STRIKE mission.</p>
 </td>
@@ -7357,17 +7357,6 @@ The commander will select the best assets available from all the legions under h
 <a id="#(AUFTRAG).missionIngressCoord" ><strong>AUFTRAG.missionIngressCoord</strong></a>
     
 <p>Mission Ingress waypoint coordinate.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUFTRAG).missionIngressCoordAlt" ><strong>AUFTRAG.missionIngressCoordAlt</strong></a>
-    
-
 
 </div>
 
@@ -12366,7 +12355,7 @@ This determines the payload and the DCS mission task which are used when the air
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUFTRAG).NewBOMBING" ><strong>AUFTRAG:NewBOMBING(Target, Altitude)</strong></a></h2>
+<h2><a id="#(AUFTRAG).NewBOMBING" ><strong>AUFTRAG:NewBOMBING(Target, Altitude, EngageWeaponType)</strong></a></h2>
 </div>
     
 <p><strong>[AIR]</strong> Create a BOMBING mission.</p>
@@ -12405,6 +12394,19 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_bombing">DCS task bombin
           <div class="w3-half">
               
 <p>Engage altitude in feet. Default 25000 ft.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>EngageWeaponType</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Which weapon to use. Defaults to auto, ie ENUMS.WeaponFlag.Auto. See ENUMS.WeaponFlag for options.</p>
 
           </div>
         </div>
@@ -15242,7 +15244,7 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_strafing">DCS task straf
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUFTRAG).NewSTRIKE" ><strong>AUFTRAG:NewSTRIKE(Target, Altitude)</strong></a></h2>
+<h2><a id="#(AUFTRAG).NewSTRIKE" ><strong>AUFTRAG:NewSTRIKE(Target, Altitude, EngageWeaponType)</strong></a></h2>
 </div>
     
 <p><strong>[AIR]</strong> Create a STRIKE mission.</p>
@@ -15280,6 +15282,19 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_strafing">DCS task straf
           <div class="w3-half">
               
 <p>Engage altitude in feet. Default 2000 ft.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>EngageWeaponType</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Which weapon to use. Defaults to auto, ie ENUMS.WeaponFlag.Auto. See ENUMS.WeaponFlag for options.</p>
 
           </div>
         </div>
@@ -22750,17 +22765,6 @@ will always return.</p>
 <a id="#(AUFTRAG).missionIngressCoord" ><strong>AUFTRAG.missionIngressCoord</strong></a>
     
 <p>Mission Ingress waypoint coordinate.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUFTRAG).missionIngressCoordAlt" ><strong>AUFTRAG.missionIngressCoordAlt</strong></a>
-    
-
 
 </div>
 
