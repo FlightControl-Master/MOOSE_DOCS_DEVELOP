@@ -2961,7 +2961,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).AddWeaponRange">NAVYGROUP:AddWeaponRange(RangeMin, RangeMax, BitType)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).AddWeaponRange">NAVYGROUP:AddWeaponRange(RangeMin, RangeMax, BitType, ConversionToMeters)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add a weapon range for ARTY auftrag.</p>
 </td>
@@ -3099,6 +3099,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).EPLRS">NAVYGROUP.EPLRS</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).ElementStatus">NAVYGROUP.ElementStatus</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -3195,7 +3201,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).GetCoordinateInRange">NAVYGROUP:GetCoordinateInRange(TargetCoord, WeaponBitType, RefCoord)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVYGROUP).GetCoordinateInRange">NAVYGROUP:GetCoordinateInRange(TargetCoord, WeaponBitType, RefCoord, SurfaceTypes)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get a coordinate, which is in weapon range.</p>
 </td>
@@ -12758,7 +12764,7 @@ Implementation based on <a href="https://magwo.github.io/carrier-cruise/">Mags &
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(NAVYGROUP).AddWeaponRange" ><strong>NAVYGROUP:AddWeaponRange(RangeMin, RangeMax, BitType)</strong></a></h2>
+<h2><a id="#(NAVYGROUP).AddWeaponRange" ><strong>NAVYGROUP:AddWeaponRange(RangeMin, RangeMax, BitType, ConversionToMeters)</strong></a></h2>
 </div>
     
 <p>Add a weapon range for ARTY auftrag.</p>
@@ -12806,6 +12812,19 @@ Implementation based on <a href="https://magwo.github.io/carrier-cruise/">Mags &
           <div class="w3-half">
               
 <p>Bit mask of weapon type for which the given min/max ranges apply. Default is <code>ENUMS.WeaponFlag.Auto</code>, i.e. for all weapon types.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #function
+            <strong><strong>ConversionToMeters</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Function that converts input units of ranges to meters. Defaul <code>UTILS.NMToMeters</code>.</p>
 
           </div>
         </div>
@@ -14277,7 +14296,7 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(NAVYGROUP).GetCoordinateInRange" ><strong>NAVYGROUP:GetCoordinateInRange(TargetCoord, WeaponBitType, RefCoord)</strong></a></h2>
+<h2><a id="#(NAVYGROUP).GetCoordinateInRange" ><strong>NAVYGROUP:GetCoordinateInRange(TargetCoord, WeaponBitType, RefCoord, SurfaceTypes)</strong></a></h2>
 </div>
     
 <p>Get a coordinate, which is in weapon range.</p>
@@ -14325,6 +14344,19 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
           <div class="w3-half">
               
 <p>Reference coordinate.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>SurfaceTypes</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Valid surfaces types of the coordinate. Default any (nil).</p>
 
           </div>
         </div>

@@ -3732,7 +3732,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).AddWeaponRange">FLIGHTGROUP:AddWeaponRange(RangeMin, RangeMax, BitType)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).AddWeaponRange">FLIGHTGROUP:AddWeaponRange(RangeMin, RangeMax, BitType, ConversionToMeters)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add a weapon range for ARTY auftrag.</p>
 </td>
@@ -3870,6 +3870,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).EPLRS">FLIGHTGROUP.EPLRS</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).ElementStatus">FLIGHTGROUP.ElementStatus</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -3966,7 +3972,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).GetCoordinateInRange">FLIGHTGROUP:GetCoordinateInRange(TargetCoord, WeaponBitType, RefCoord)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).GetCoordinateInRange">FLIGHTGROUP:GetCoordinateInRange(TargetCoord, WeaponBitType, RefCoord, SurfaceTypes)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get a coordinate, which is in weapon range.</p>
 </td>
@@ -7711,6 +7717,20 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).currbase" ><strong>FLIGHTGROUP.currbase</strong></a>
+    
+
+
+    
+<p> Set current airbase.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).despawnAfterHolding" ><strong>FLIGHTGROUP.despawnAfterHolding</strong></a>
     
@@ -7737,6 +7757,9 @@
 <a id="#(FLIGHTGROUP).destbase" ><strong>FLIGHTGROUP.destbase</strong></a>
     
 
+
+    
+<p> Set the destination base.</p>
 
 </div>
 
@@ -7956,17 +7979,6 @@
 <a id="#(FLIGHTGROUP).isReadyTO" ><strong>FLIGHTGROUP.isReadyTO</strong></a>
     
 <p>Flight is ready for takeoff. This is for FLIGHTCONTROL.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(FLIGHTGROUP).isUncontrolled" ><strong>FLIGHTGROUP.isUncontrolled</strong></a>
-    
-
 
 </div>
 
@@ -18272,6 +18284,20 @@ Here we only check if stuck whilst taxiing.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).currbase" ><strong>FLIGHTGROUP.currbase</strong></a>
+    
+
+
+    
+<p> Set current airbase.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).despawnAfterHolding" ><strong>FLIGHTGROUP.despawnAfterHolding</strong></a>
     
@@ -18298,6 +18324,9 @@ Here we only check if stuck whilst taxiing.</p>
 <a id="#(FLIGHTGROUP).destbase" ><strong>FLIGHTGROUP.destbase</strong></a>
     
 
+
+    
+<p> Set the destination base.</p>
 
 </div>
 
@@ -18517,17 +18546,6 @@ Here we only check if stuck whilst taxiing.</p>
 <a id="#(FLIGHTGROUP).isReadyTO" ><strong>FLIGHTGROUP.isReadyTO</strong></a>
     
 <p>Flight is ready for takeoff. This is for FLIGHTCONTROL.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(FLIGHTGROUP).isUncontrolled" ><strong>FLIGHTGROUP.isUncontrolled</strong></a>
-    
-
 
 </div>
 
@@ -19199,7 +19217,7 @@ Here we only check if stuck whilst taxiing.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(FLIGHTGROUP).AddWeaponRange" ><strong>FLIGHTGROUP:AddWeaponRange(RangeMin, RangeMax, BitType)</strong></a></h2>
+<h2><a id="#(FLIGHTGROUP).AddWeaponRange" ><strong>FLIGHTGROUP:AddWeaponRange(RangeMin, RangeMax, BitType, ConversionToMeters)</strong></a></h2>
 </div>
     
 <p>Add a weapon range for ARTY auftrag.</p>
@@ -19247,6 +19265,19 @@ Here we only check if stuck whilst taxiing.</p>
           <div class="w3-half">
               
 <p>Bit mask of weapon type for which the given min/max ranges apply. Default is <code>ENUMS.WeaponFlag.Auto</code>, i.e. for all weapon types.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #function
+            <strong><strong>ConversionToMeters</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Function that converts input units of ranges to meters. Defaul <code>UTILS.NMToMeters</code>.</p>
 
           </div>
         </div>
@@ -20718,7 +20749,7 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(FLIGHTGROUP).GetCoordinateInRange" ><strong>FLIGHTGROUP:GetCoordinateInRange(TargetCoord, WeaponBitType, RefCoord)</strong></a></h2>
+<h2><a id="#(FLIGHTGROUP).GetCoordinateInRange" ><strong>FLIGHTGROUP:GetCoordinateInRange(TargetCoord, WeaponBitType, RefCoord, SurfaceTypes)</strong></a></h2>
 </div>
     
 <p>Get a coordinate, which is in weapon range.</p>
@@ -20766,6 +20797,19 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
           <div class="w3-half">
               
 <p>Reference coordinate.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>SurfaceTypes</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Valid surfaces types of the coordinate. Default any (nil).</p>
 
           </div>
         </div>
@@ -38943,6 +38987,20 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).currbase" ><strong>FLIGHTGROUP.currbase</strong></a>
+    
+
+
+    
+<p> Set current airbase.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).despawnAfterHolding" ><strong>FLIGHTGROUP.despawnAfterHolding</strong></a>
     
@@ -38969,6 +39027,9 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <a id="#(FLIGHTGROUP).destbase" ><strong>FLIGHTGROUP.destbase</strong></a>
     
 
+
+    
+<p> Set the destination base.</p>
 
 </div>
 
@@ -39188,17 +39249,6 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <a id="#(FLIGHTGROUP).isReadyTO" ><strong>FLIGHTGROUP.isReadyTO</strong></a>
     
 <p>Flight is ready for takeoff. This is for FLIGHTCONTROL.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(FLIGHTGROUP).isUncontrolled" ><strong>FLIGHTGROUP.isUncontrolled</strong></a>
-    
-
 
 </div>
 
