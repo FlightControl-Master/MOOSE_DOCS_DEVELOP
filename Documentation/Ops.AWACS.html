@@ -2875,6 +2875,12 @@ To add a localization, the following texts need to be translated and set in your
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).EscortEngageMaxDistance">AWACS.EscortEngageMaxDistance</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).EscortFormation">AWACS.EscortFormation</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -3343,7 +3349,7 @@ To add a localization, the following texts need to be translated and set in your
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).SetEscort">AWACS:SetEscort(EscortNumber, Formation, OffsetVector)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).SetEscort">AWACS:SetEscort(EscortNumber, Formation, OffsetVector, EscortEngageMaxDistance)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Set AWACS Escorts Template</p>
 </td>
@@ -8551,7 +8557,7 @@ The default callsign used in AWACS is "Magic". With the above change, the AWACS 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AWACS).SetEscort" ><strong>AWACS:SetEscort(EscortNumber, Formation, OffsetVector)</strong></a></h2>
+<h2><a id="#(AWACS).SetEscort" ><strong>AWACS:SetEscort(EscortNumber, Formation, OffsetVector, EscortEngageMaxDistance)</strong></a></h2>
 </div>
     
 <p>[User] Set AWACS Escorts Template</p>
@@ -8598,7 +8604,20 @@ The default callsign used in AWACS is "Magic". With the above change, the AWACS 
           </div>
           <div class="w3-half">
               
-<p>Offset the escorts should fly behind the AWACS, given as table, distance in meters, e.g. <code>{x=500,y=0,z=500}</code> - 500m behind and to the left, no vertical separation.</p>
+<p>Offset the escorts should fly behind the AWACS, given as table, distance in meters, e.g. <code>{x=-500,y=0,z=500}</code> - 500m behind and to the right, no vertical separation.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>EscortEngageMaxDistance</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Escorts engage air targets max this NM away, defaults to 45NM.</p>
 
           </div>
         </div>
