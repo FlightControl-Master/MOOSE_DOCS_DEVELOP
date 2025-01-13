@@ -2875,6 +2875,12 @@ To add a localization, the following texts need to be translated and set in your
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).EscortFormation">AWACS.EscortFormation</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).EscortMission">AWACS.EscortMission</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -3076,6 +3082,12 @@ To add a localization, the following texts need to be translated and set in your
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).NoMissileCalls">AWACS.NoMissileCalls</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Suppress missile callouts</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).OffsetVec">AWACS.OffsetVec</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -3331,7 +3343,7 @@ To add a localization, the following texts need to be translated and set in your
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).SetEscort">AWACS:SetEscort(EscortNumber)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).SetEscort">AWACS:SetEscort(EscortNumber, Formation, OffsetVector)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Set AWACS Escorts Template</p>
 </td>
@@ -5807,6 +5819,17 @@ To add a localization, the following texts need to be translated and set in your
 
     <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
 <a id="#(AWACS).DetectionSet" ><strong>AWACS.DetectionSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AWACS).EscortFormation" ><strong>AWACS.EscortFormation</strong></a>
     
 
 
@@ -8528,7 +8551,7 @@ The default callsign used in AWACS is "Magic". With the above change, the AWACS 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AWACS).SetEscort" ><strong>AWACS:SetEscort(EscortNumber)</strong></a></h2>
+<h2><a id="#(AWACS).SetEscort" ><strong>AWACS:SetEscort(EscortNumber, Formation, OffsetVector)</strong></a></h2>
 </div>
     
 <p>[User] Set AWACS Escorts Template</p>
@@ -8539,7 +8562,7 @@ The default callsign used in AWACS is "Magic". With the above change, the AWACS 
    <div class="w3-margin-left">
 <p>AWACS</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -8550,6 +8573,32 @@ The default callsign used in AWACS is "Magic". With the above change, the AWACS 
           <div class="w3-half">
               
 <p>Number of fighther planes to accompany this AWACS. 0 or nil means no escorts.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Formation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Formation the escort should take (if more than one plane), e.g. <code>ENUMS.Formation.FixedWing.FingerFour.Group</code></p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>OffsetVector</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Offset the escorts should fly behind the AWACS, given as table, distance in meters, e.g. <code>{x=500,y=0,z=500}</code> - 500m behind and to the left, no vertical separation.</p>
 
           </div>
         </div>
@@ -15080,6 +15129,17 @@ Note that this must be installed on your windows system. Can also be Google voic
 
     <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
 <a id="#(AWACS).DetectionSet" ><strong>AWACS.DetectionSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AWACS).EscortFormation" ><strong>AWACS.EscortFormation</strong></a>
     
 
 
