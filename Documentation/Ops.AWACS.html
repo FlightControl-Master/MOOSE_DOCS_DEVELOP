@@ -2204,7 +2204,7 @@ order to set everything up correctly. You will at least need one Squadron contai
 
 <p>Add Escorts Squad (recommended, optional)</p>
 
-<pre><code>       local Squad_Two = SQUADRON:New("Escorts",4,"Escorts North")
+<pre><code>       local Squad_Two = SQUADRON:New("Escorts",4,"Escorts North") -- taking a template with 2 planes here, will result in a group of 2 escorts which can fly in formation escorting the AWACS.
        Squad_Two:AddMissionCapability({AUFTRAG.Type.ESCORT})
        Squad_Two:SetFuelLowRefuel(true)
        Squad_Two:SetFuelLowThreshold(0.3)
@@ -2256,8 +2256,8 @@ The optional border is useful for e.g. "cold war" scenarios - planes across the 
        -- set up in the mission editor with a late activated helo named "Rock#ZONE_POLYGON". Note this also sets the BullsEye to be referenced as "Rock".
        -- The CAP station zone is called "Fremont". We will be on 255 AM.
        local testawacs = AWACS:New("AWACS North",AwacsAW,"blue",AIRBASE.Caucasus.Kutaisi,"Awacs Orbit",ZONE:FindByName("Rock"),"Fremont",255,radio.modulation.AM )
-       -- set two escorts
-       testawacs:SetEscort(2)
+       -- set one escort group; this example has two units in the template group, so they can fly a nice formation.
+       testawacs:SetEscort(1,ENUMS.Formation.FixedWing.FingerFour.Group,{x=-500,y=50,z=500},45)
        -- Callsign will be "Focus". We'll be a Angels 30, doing 300 knots, orbit leg to 88deg with a length of 25nm.
        testawacs:SetAwacsDetails(CALLSIGN.AWACS.Focus,1,30,300,88,25)
        -- Set up SRS on port 5010 - change the below to your path and port
@@ -8578,7 +8578,7 @@ The default callsign used in AWACS is "Magic". With the above change, the AWACS 
           </div>
           <div class="w3-half">
               
-<p>Number of fighther planes to accompany this AWACS. 0 or nil means no escorts.</p>
+<p>Number of fighther plane GROUPs to accompany this AWACS. 0 or nil means no escorts. If you want >1 plane in an escort group, you can either set the respective squadron grouping to the desired number, or use a template for escorts with >1 unit.</p>
 
           </div>
         </div>
@@ -8591,7 +8591,7 @@ The default callsign used in AWACS is "Magic". With the above change, the AWACS 
           </div>
           <div class="w3-half">
               
-<p>Formation the escort should take (if more than one plane), e.g. <code>ENUMS.Formation.FixedWing.FingerFour.Group</code></p>
+<p>Formation the escort should take (if more than one plane), e.g. <code>ENUMS.Formation.FixedWing.FingerFour.Group</code>. Formation is used on GROUP level, multiple groups of one unit will NOT conform to this formation.</p>
 
           </div>
         </div>
@@ -8604,7 +8604,7 @@ The default callsign used in AWACS is "Magic". With the above change, the AWACS 
           </div>
           <div class="w3-half">
               
-<p>Offset the escorts should fly behind the AWACS, given as table, distance in meters, e.g. <code>{x=-500,y=0,z=500}</code> - 500m behind and to the right, no vertical separation.</p>
+<p>Offset the escorts should fly behind the AWACS, given as table, distance in meters, e.g. <code>{x=-500,y=0,z=500}</code> - 500m behind (negative value) and to the right (negative for left), no vertical separation (positive over, negative under the AWACS flight). For multiple groups, the vectors will be slightly changed to avoid collisions.</p>
 
           </div>
         </div>
