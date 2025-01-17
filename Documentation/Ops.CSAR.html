@@ -2759,7 +2759,7 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR)._GetPositionOfWounded">CSAR:_GetPositionOfWounded(_woundedGroup)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR)._GetPositionOfWounded">CSAR:_GetPositionOfWounded(_woundedGroup, _Unit)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(Internal) Function to get string of a group's position.</p>
 </td>
@@ -3998,7 +3998,7 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CSAR).FreeVHFFrequencies" ><strong>CSAR.FreeVHFFrequencies</strong></a>
     
 
@@ -4821,20 +4821,6 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
-<a id="#(CSAR).rescuedpilots" ><strong>CSAR.rescuedpilots</strong></a>
-    
-
-
-    
-<p> counter for saved pilots</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
 <a id="#(CSAR).rescuehoverdistance" ><strong>CSAR.rescuehoverdistance</strong></a>
     
 
@@ -4852,20 +4838,6 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 
     
 <p> added 0.1.11r1</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(CSAR).rescues" ><strong>CSAR.rescues</strong></a>
-    
-
-
-    
-<p> counter for successful rescue landings at FARP/AFB/MASH</p>
 
 </div>
 
@@ -6604,6 +6576,25 @@ callsigns from playername or group name.</p>
 
           </div>
         </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p><a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>PilotInField Pilot GROUP object</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#string:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>AliasName Alias display name</p>
+
+        </div>
+    </div>
 </div>
 
 </div>
@@ -7671,7 +7662,7 @@ callsigns from playername or group name.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CSAR)._GetPositionOfWounded" ><strong>CSAR:_GetPositionOfWounded(_woundedGroup)</strong></a></h2>
+<h2><a id="#(CSAR)._GetPositionOfWounded" ><strong>CSAR:_GetPositionOfWounded(_woundedGroup, _Unit)</strong></a></h2>
 </div>
     
 <p>(Internal) Function to get string of a group's position.</p>
@@ -7682,7 +7673,7 @@ callsigns from playername or group name.</p>
    <div class="w3-margin-left">
 <p>CSAR</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -7693,6 +7684,19 @@ callsigns from playername or group name.</p>
           <div class="w3-half">
               
 <p>Group or Unit object.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+            <strong><strong>_Unit</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Requesting helo pilot unit</p>
 
           </div>
         </div>
@@ -10247,7 +10251,7 @@ callsigns from playername or group name.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CSAR).FreeVHFFrequencies" ><strong>CSAR.FreeVHFFrequencies</strong></a>
     
 
@@ -11070,20 +11074,6 @@ callsigns from playername or group name.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
-<a id="#(CSAR).rescuedpilots" ><strong>CSAR.rescuedpilots</strong></a>
-    
-
-
-    
-<p> counter for saved pilots</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
 <a id="#(CSAR).rescuehoverdistance" ><strong>CSAR.rescuehoverdistance</strong></a>
     
 
@@ -11101,20 +11091,6 @@ callsigns from playername or group name.</p>
 
     
 <p> added 0.1.11r1</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(CSAR).rescues" ><strong>CSAR.rescues</strong></a>
-    
-
-
-    
-<p> counter for successful rescue landings at FARP/AFB/MASH</p>
 
 </div>
 

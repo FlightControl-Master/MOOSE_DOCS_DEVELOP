@@ -2466,6 +2466,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).RoundingPrecision">AUTOLASE.RoundingPrecision</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SRS">AUTOLASE.SRS</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -2553,6 +2559,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetReportingTimes">AUTOLASE:SetReportingTimes(long, short)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(User) Function to set message show times.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetRoundingPrecsion">AUTOLASE:SetRoundingPrecsion(IDP)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(User) Function to set rounding precision for BR distance output.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3097,6 +3109,39 @@
 
     
 <p> set up SRS</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AUTOLASE).SRSFreq" ><strong>AUTOLASE.SRSFreq</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AUTOLASE).SRSMod" ><strong>AUTOLASE.SRSMod</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AUTOLASE).SRSPath" ><strong>AUTOLASE.SRSPath</strong></a>
+    
+
 
 </div>
 
@@ -4871,6 +4916,50 @@ Step 2 - send a message, e.g.
           <div class="w3-half">
               
 <p>Shorter show time</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUTOLASE).SetRoundingPrecsion" ><strong>AUTOLASE:SetRoundingPrecsion(IDP)</strong></a></h2>
+</div>
+    
+<p>(User) Function to set rounding precision for BR distance output.</p>
+
+<div id= "#Functions##SetRoundingPrecsion" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUTOLASE</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>IDP</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Rounding precision before/after the decimal sign. Defaults to zero. Positive values round right of the decimal sign, negative ones left of the decimal sign. </p>
 
           </div>
         </div>
