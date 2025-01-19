@@ -3501,6 +3501,18 @@ The marker can be deleted any time.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).CallsignCustomArgs">PLAYERTASKCONTROLLER.CallsignCustomArgs</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).CallsignCustomFunc">PLAYERTASKCONTROLLER.CallsignCustomFunc</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).CallsignTranslations">PLAYERTASKCONTROLLER.CallsignTranslations</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -3981,7 +3993,7 @@ The marker can be deleted any time.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).SetCallSignOptions">PLAYERTASKCONTROLLER:SetCallSignOptions(ShortCallsign, Keepnumber, CallsignTranslations)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).SetCallSignOptions">PLAYERTASKCONTROLLER:SetCallSignOptions(ShortCallsign, Keepnumber, CallsignTranslations, CallsignCustomFunc, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Set callsign options for TTS output.</p>
 </td>
@@ -10428,6 +10440,17 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(PLAYERTASKCONTROLLER).CallsignCustomFunc" ><strong>PLAYERTASKCONTROLLER.CallsignCustomFunc</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(PLAYERTASKCONTROLLER).CallsignTranslations" ><strong>PLAYERTASKCONTROLLER.CallsignTranslations</strong></a>
     
@@ -11146,7 +11169,7 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
@@ -13373,7 +13396,7 @@ Can optionally be handed as Ops.ArmyGroup#ARMYGROUP - <strong>Note</strong> migh
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(PLAYERTASKCONTROLLER).SetCallSignOptions" ><strong>PLAYERTASKCONTROLLER:SetCallSignOptions(ShortCallsign, Keepnumber, CallsignTranslations)</strong></a></h2>
+<h2><a id="#(PLAYERTASKCONTROLLER).SetCallSignOptions" ><strong>PLAYERTASKCONTROLLER:SetCallSignOptions(ShortCallsign, Keepnumber, CallsignTranslations, CallsignCustomFunc, ...)</strong></a></h2>
 </div>
     
 <p>[User] Set callsign options for TTS output.</p>
@@ -13425,6 +13448,32 @@ Can optionally be handed as Ops.ArmyGroup#ARMYGROUP - <strong>Note</strong> migh
               
 <p>(optional) Table to translate between DCS standard callsigns and bespoke ones. Does not apply if using customized
 callsigns from playername or group name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(func)">#func</a>
+            <strong><strong>CallsignCustomFunc</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) For player names only(!). If given, this function will return the callsign. Needs to take the groupname and the playername as first two arguments.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(arg)">#arg</a>
+            <strong><strong>...</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Comma separated arguments to add to the custom function call after groupname and playername.</p>
 
           </div>
         </div>
@@ -16902,6 +16951,17 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(PLAYERTASKCONTROLLER).CallsignCustomFunc" ><strong>PLAYERTASKCONTROLLER.CallsignCustomFunc</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(PLAYERTASKCONTROLLER).CallsignTranslations" ><strong>PLAYERTASKCONTROLLER.CallsignTranslations</strong></a>
     
@@ -17620,7 +17680,7 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
