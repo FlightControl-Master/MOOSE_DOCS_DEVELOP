@@ -2437,7 +2437,7 @@ Static shapes loadable <em>into</em> the Chinook and thus to <strong>be avoided 
 
 <p>   This function is called when a player has re-boarded already deployed troops from the field:</p>
 
-<pre><code>   function my_ctld:OnAfterTroopsExtracted(From, Event, To, Group, Unit, Troops)
+<pre><code>   function my_ctld:OnAfterTroopsExtracted(From, Event, To, Group, Unit, Troops, Troopname)
      ... your code here ...
    end
 </code></pre>
@@ -3209,7 +3209,7 @@ If you use units build by multiple templates, they will effectively double on lo
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).OnAfterTroopsExtracted">CTLD:OnAfterTroopsExtracted(From, Event, To, Group, Unit, Cargo)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).OnAfterTroopsExtracted">CTLD:OnAfterTroopsExtracted(From, Event, To, Group, Unit, Troops, Troopname)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM Function OnAfterTroopsExtracted.</p>
 </td>
@@ -3269,7 +3269,7 @@ If you use units build by multiple templates, they will effectively double on lo
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).OnBeforeTroopsExtracted">CTLD:OnBeforeTroopsExtracted(From, Event, To, Group, Unit, Cargo)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).OnBeforeTroopsExtracted">CTLD:OnBeforeTroopsExtracted(From, Event, To, Group, Unit, Troops, Troopname)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM Function OnBeforeTroopsExtracted.</p>
 </td>
@@ -4067,7 +4067,7 @@ If you use units build by multiple templates, they will effectively double on lo
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).onbeforeTroopsExtracted">CTLD:onbeforeTroopsExtracted(From, Event, To, Group, Unit, Troops)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).onbeforeTroopsExtracted">CTLD:onbeforeTroopsExtracted(From, Event, To, Group, Unit, Troops, Groupname)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(Internal) FSM Function onbeforeTroopsExtracted.</p>
 </td>
@@ -5418,6 +5418,18 @@ If you use units build by multiple templates, they will effectively double on lo
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_CARGO).GetProperties">CTLD_CARGO:GetProperties()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get all of the properties of an object in a table.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_CARGO).GetProperty">CTLD_CARGO:GetProperty(Key)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get one property of an object by the key.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_CARGO).GetState">CTLD_CARGO:GetState(Object, Key)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get a Value given a Key from the Object.</p>
@@ -5704,6 +5716,12 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_CARGO).Properties">CTLD_CARGO.Properties</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_CARGO).ScheduleOnce">CTLD_CARGO:ScheduleOnce(Start, SchedulerFunction, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Schedule a new time event.</p>
@@ -5731,6 +5749,12 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_CARGO).SetEventPriority">CTLD_CARGO:SetEventPriority(EventPriority)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set the Class <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_CARGO).SetProperty">CTLD_CARGO:SetProperty(Key, Value)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set one property of an object.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -6227,6 +6251,18 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_ENGINEERING).GetProperties">CTLD_ENGINEERING:GetProperties()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get all of the properties of an object in a table.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_ENGINEERING).GetProperty">CTLD_ENGINEERING:GetProperty(Key)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get one property of an object by the key.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_ENGINEERING).GetState">CTLD_ENGINEERING:GetState(Object, Key)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get a Value given a Key from the Object.</p>
@@ -6513,6 +6549,12 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_ENGINEERING).Properties">CTLD_ENGINEERING.Properties</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_ENGINEERING).ScheduleOnce">CTLD_ENGINEERING:ScheduleOnce(Start, SchedulerFunction, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Schedule a new time event.</p>
@@ -6540,6 +6582,12 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_ENGINEERING).SetEventPriority">CTLD_ENGINEERING:SetEventPriority(EventPriority)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set the Class <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_ENGINEERING).SetProperty">CTLD_ENGINEERING:SetProperty(Key, Value)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set one property of an object.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -7023,6 +7071,18 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_HERCULES).GetProperties">CTLD_HERCULES:GetProperties()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get all of the properties of an object in a table.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_HERCULES).GetProperty">CTLD_HERCULES:GetProperty(Key)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get one property of an object by the key.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_HERCULES).GetState">CTLD_HERCULES:GetState(Object, Key)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get a Value given a Key from the Object.</p>
@@ -7309,6 +7369,12 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_HERCULES).Properties">CTLD_HERCULES.Properties</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_HERCULES).ScheduleOnce">CTLD_HERCULES:ScheduleOnce(Start, SchedulerFunction, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Schedule a new time event.</p>
@@ -7336,6 +7402,12 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_HERCULES).SetEventPriority">CTLD_HERCULES:SetEventPriority(EventPriority)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set the Class <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD_HERCULES).SetProperty">CTLD_HERCULES:SetProperty(Key, Value)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set one property of an object.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -8005,6 +8077,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(CTLD).CrateCounter" ><strong>CTLD.CrateCounter</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
 <a id="#(CTLD).CrateDistance" ><strong>CTLD.CrateDistance</strong></a>
     
 
@@ -8112,7 +8195,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).FreeUHFFrequencies" ><strong>CTLD.FreeUHFFrequencies</strong></a>
     
 
@@ -8127,6 +8210,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(CTLD).FreeVHFFrequencies" ><strong>CTLD.FreeVHFFrequencies</strong></a>
     
 
+
+    
+<p> Beacons</p>
 
 </div>
 
@@ -8223,10 +8309,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).PilotGroups" ><strong>CTLD.PilotGroups</strong></a>
     
 
+
+    
+<p> tables</p>
 
 </div>
 
@@ -8366,6 +8455,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #table
 <a id="#(CTLD).UsedVHFFrequencies" ><strong>CTLD.UsedVHFFrequencies</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(CTLD).UserSetGroup" ><strong>CTLD.UserSetGroup</strong></a>
     
 
 
@@ -8786,7 +8886,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
 
     
-<p> noob catch</p>
+<p> time to repairor build a unit/group</p>
 
 </div>
 
@@ -12408,7 +12508,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CTLD).OnAfterTroopsExtracted" ><strong>CTLD:OnAfterTroopsExtracted(From, Event, To, Group, Unit, Cargo)</strong></a></h2>
+<h2><a id="#(CTLD).OnAfterTroopsExtracted" ><strong>CTLD:OnAfterTroopsExtracted(From, Event, To, Group, Unit, Troops, Troopname)</strong></a></h2>
 </div>
     
 <p>FSM Function OnAfterTroopsExtracted.</p>
@@ -12488,13 +12588,26 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="##(CTLD_CARGO)">#CTLD_CARGO</a>
-            <strong><strong>Cargo</strong></strong>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>Troops</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Cargo troops.</p>
+<p>extracted.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Troopname</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the extracted group.</p>
 
           </div>
         </div>
@@ -13454,7 +13567,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CTLD).OnBeforeTroopsExtracted" ><strong>CTLD:OnBeforeTroopsExtracted(From, Event, To, Group, Unit, Cargo)</strong></a></h2>
+<h2><a id="#(CTLD).OnBeforeTroopsExtracted" ><strong>CTLD:OnBeforeTroopsExtracted(From, Event, To, Group, Unit, Troops, Troopname)</strong></a></h2>
 </div>
     
 <p>FSM Function OnBeforeTroopsExtracted.</p>
@@ -13534,13 +13647,26 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="##(CTLD_CARGO)">#CTLD_CARGO</a>
-            <strong><strong>Cargo</strong></strong>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>Troops</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Cargo troops.</p>
+<p>extracted.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Troopname</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the extracted group.</p>
 
           </div>
         </div>
@@ -18555,7 +18681,7 @@ However, if you create a new folder inside the miz file, which contains the soun
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CTLD).onbeforeTroopsExtracted" ><strong>CTLD:onbeforeTroopsExtracted(From, Event, To, Group, Unit, Troops)</strong></a></h2>
+<h2><a id="#(CTLD).onbeforeTroopsExtracted" ><strong>CTLD:onbeforeTroopsExtracted(From, Event, To, Group, Unit, Troops, Groupname)</strong></a></h2>
 </div>
     
 <p>(Internal) FSM Function onbeforeTroopsExtracted.</p>
@@ -18642,6 +18768,19 @@ However, if you create a new folder inside the miz file, which contains the soun
           <div class="w3-half">
               
 <p>Troops #GROUP Object.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Groupname</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the extracted #GROUP.</p>
 
           </div>
         </div>
@@ -18968,6 +19107,17 @@ However, if you create a new folder inside the miz file, which contains the soun
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(CTLD).CrateCounter" ><strong>CTLD.CrateCounter</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
 <a id="#(CTLD).CrateDistance" ><strong>CTLD.CrateDistance</strong></a>
     
 
@@ -19075,7 +19225,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).FreeUHFFrequencies" ><strong>CTLD.FreeUHFFrequencies</strong></a>
     
 
@@ -19090,6 +19240,9 @@ However, if you create a new folder inside the miz file, which contains the soun
 <a id="#(CTLD).FreeVHFFrequencies" ><strong>CTLD.FreeVHFFrequencies</strong></a>
     
 
+
+    
+<p> Beacons</p>
 
 </div>
 
@@ -19186,10 +19339,13 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CTLD).PilotGroups" ><strong>CTLD.PilotGroups</strong></a>
     
 
+
+    
+<p> tables</p>
 
 </div>
 
@@ -19329,6 +19485,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     #table
 <a id="#(CTLD).UsedVHFFrequencies" ><strong>CTLD.UsedVHFFrequencies</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(CTLD).UserSetGroup" ><strong>CTLD.UserSetGroup</strong></a>
     
 
 
@@ -19749,7 +19916,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 
 
     
-<p> noob catch</p>
+<p> time to repairor build a unit/group</p>
 
 </div>
 
@@ -24814,6 +24981,78 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(CTLD_CARGO).GetProperties" ><strong>CTLD_CARGO:GetProperties()</strong></a></h2>
+</div>
+    
+<p>Get all of the properties of an object in a table.</p>
+
+<div id= "#Functions##GetProperties" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Base.html##(BASE)">Core.Base#BASE</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>of values, indexed by keys.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CTLD_CARGO).GetProperty" ><strong>CTLD_CARGO:GetProperty(Key)</strong></a></h2>
+</div>
+    
+<p>Get one property of an object by the key.</p>
+
+<div id= "#Functions##GetProperty" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Base.html##(BASE)">Core.Base#BASE</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Key</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The key that is used as a reference of the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>Value The value that is stored. Note that the value can be a #string, but it can also be any other type! Nil if not found.         </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(CTLD_CARGO).GetState" ><strong>CTLD_CARGO:GetState(Object, Key)</strong></a></h2>
 </div>
     
@@ -26903,6 +27142,50 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
       </div>
     </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CTLD_CARGO).SetProperty" ><strong>CTLD_CARGO:SetProperty(Key, Value)</strong></a></h2>
+</div>
+    
+<p>Set one property of an object.</p>
+
+<div id= "#Functions##SetProperty" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Base.html##(BASE)">Core.Base#BASE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Key</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The key that is used as a reference of the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Value</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The value that is stored. Note that the value can be a #string, but it can also be any other type!</p>
+
+          </div>
+        </div>
 </div>
 
 </div>
@@ -29387,6 +29670,78 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(CTLD_ENGINEERING).GetProperties" ><strong>CTLD_ENGINEERING:GetProperties()</strong></a></h2>
+</div>
+    
+<p>Get all of the properties of an object in a table.</p>
+
+<div id= "#Functions##GetProperties" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Base.html##(BASE)">Core.Base#BASE</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>of values, indexed by keys.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CTLD_ENGINEERING).GetProperty" ><strong>CTLD_ENGINEERING:GetProperty(Key)</strong></a></h2>
+</div>
+    
+<p>Get one property of an object by the key.</p>
+
+<div id= "#Functions##GetProperty" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Base.html##(BASE)">Core.Base#BASE</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Key</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The key that is used as a reference of the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>Value The value that is stored. Note that the value can be a #string, but it can also be any other type! Nil if not found.         </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(CTLD_ENGINEERING).GetState" ><strong>CTLD_ENGINEERING:GetState(Object, Key)</strong></a></h2>
 </div>
     
@@ -31476,6 +31831,50 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
       </div>
     </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CTLD_ENGINEERING).SetProperty" ><strong>CTLD_ENGINEERING:SetProperty(Key, Value)</strong></a></h2>
+</div>
+    
+<p>Set one property of an object.</p>
+
+<div id= "#Functions##SetProperty" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Base.html##(BASE)">Core.Base#BASE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Key</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The key that is used as a reference of the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Value</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The value that is stored. Note that the value can be a #string, but it can also be any other type!</p>
+
+          </div>
+        </div>
 </div>
 
 </div>
@@ -34563,6 +34962,78 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(CTLD_HERCULES).GetProperties" ><strong>CTLD_HERCULES:GetProperties()</strong></a></h2>
+</div>
+    
+<p>Get all of the properties of an object in a table.</p>
+
+<div id= "#Functions##GetProperties" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Base.html##(BASE)">Core.Base#BASE</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>of values, indexed by keys.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CTLD_HERCULES).GetProperty" ><strong>CTLD_HERCULES:GetProperty(Key)</strong></a></h2>
+</div>
+    
+<p>Get one property of an object by the key.</p>
+
+<div id= "#Functions##GetProperty" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Base.html##(BASE)">Core.Base#BASE</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Key</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The key that is used as a reference of the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>Value The value that is stored. Note that the value can be a #string, but it can also be any other type! Nil if not found.         </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(CTLD_HERCULES).GetState" ><strong>CTLD_HERCULES:GetState(Object, Key)</strong></a></h2>
 </div>
     
@@ -36652,6 +37123,50 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
 
       </div>
     </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(CTLD_HERCULES).SetProperty" ><strong>CTLD_HERCULES:SetProperty(Key, Value)</strong></a></h2>
+</div>
+    
+<p>Set one property of an object.</p>
+
+<div id= "#Functions##SetProperty" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Base.html##(BASE)">Core.Base#BASE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Key</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The key that is used as a reference of the value. Note that the key can be a #string, but it can also be any other type!</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Value</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The value that is stored. Note that the value can be a #string, but it can also be any other type!</p>
+
+          </div>
+        </div>
 </div>
 
 </div>
