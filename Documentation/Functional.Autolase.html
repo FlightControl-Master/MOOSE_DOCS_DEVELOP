@@ -2280,6 +2280,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).DisableImproveGroundUnitsDetection">AUTOLASE:DisableImproveGroundUnitsDetection()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[User] Do not improve ground unit detection by using a zone scan and LOS check.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).DisableSmokeMenu">AUTOLASE:DisableSmokeMenu()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(User) Do not show the "Switch smoke target..." menu entry for pilots.</p>
@@ -2289,6 +2295,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).DisableThreatLevelMenu">AUTOLASE:DisableThreatLevelMenu()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(User) Do not show the "Switch min threat lasing..." menu entry for pilots.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).EnableImproveGroundUnitsDetection">AUTOLASE:EnableImproveGroundUnitsDetection()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[User] Improve ground unit detection by using a zone scan and LOS check.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2616,6 +2628,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE)._Prescient">AUTOLASE:_Prescient()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(Internal) Function to do a zone check per ground Recce and make found units and statics "known".</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).__Cancel">AUTOLASE:__Cancel(delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Triggers the FSM event "Cancel" after a delay.</p>
@@ -2659,6 +2677,12 @@
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).forcecooldown">AUTOLASE.forcecooldown</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).increasegroundawareness">AUTOLASE.increasegroundawareness</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -3133,6 +3157,39 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(AUTOLASE).SRSFreq" ><strong>AUTOLASE.SRSFreq</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AUTOLASE).SRSMod" ><strong>AUTOLASE.SRSMod</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AUTOLASE).SRSPath" ><strong>AUTOLASE.SRSPath</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
 <a id="#(AUTOLASE).SRSQueue" ><strong>AUTOLASE.SRSQueue</strong></a>
     
@@ -3210,6 +3267,17 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(AUTOLASE).increasegroundawareness" ><strong>AUTOLASE.increasegroundawareness</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
 <a id="#(AUTOLASE).lid" ><strong>AUTOLASE.lid</strong></a>
     
@@ -3217,6 +3285,17 @@
 
     
 <p> Set some string id for output to DCS.log file.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(AUTOLASE).maxlasing" ><strong>AUTOLASE.maxlasing</strong></a>
+    
+
 
 </div>
 
@@ -3279,17 +3358,6 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(AUTOLASE).smokecolor" ><strong>AUTOLASE.smokecolor</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(AUTOLASE).smokemenu" ><strong>AUTOLASE.smokemenu</strong></a>
     
@@ -3301,7 +3369,7 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
+    
 <a id="#(AUTOLASE).smoketargets" ><strong>AUTOLASE.smoketargets</strong></a>
     
 
@@ -3577,6 +3645,36 @@ To exclude trucks and artillery:
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AUTOLASE).DisableImproveGroundUnitsDetection" ><strong>AUTOLASE:DisableImproveGroundUnitsDetection()</strong></a></h2>
+</div>
+    
+<p>[User] Do not improve ground unit detection by using a zone scan and LOS check.</p>
+
+<div id= "#Functions##DisableImproveGroundUnitsDetection" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUTOLASE</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AUTOLASE).DisableSmokeMenu" ><strong>AUTOLASE:DisableSmokeMenu()</strong></a></h2>
 </div>
     
@@ -3613,6 +3711,36 @@ To exclude trucks and artillery:
 <p>(User) Do not show the "Switch min threat lasing..." menu entry for pilots.</p>
 
 <div id= "#Functions##DisableThreatLevelMenu" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUTOLASE</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUTOLASE).EnableImproveGroundUnitsDetection" ><strong>AUTOLASE:EnableImproveGroundUnitsDetection()</strong></a></h2>
+</div>
+    
+<p>[User] Improve ground unit detection by using a zone scan and LOS check.</p>
+
+<div id= "#Functions##EnableImproveGroundUnitsDetection" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -5322,6 +5450,36 @@ Note that this must be installed on your windows system. Can also be Google voic
               <p></p>
           </div>
         </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUTOLASE)._Prescient" ><strong>AUTOLASE:_Prescient()</strong></a></h2>
+</div>
+    
+<p>(Internal) Function to do a zone check per ground Recce and make found units and statics "known".</p>
+
+<div id= "#Functions##_Prescient" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUTOLASE</p>
+</div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
