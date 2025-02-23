@@ -2537,7 +2537,7 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).SetMaxAliveMissions">EASYGCICAP:SetMaxAliveMissions(Maxiumum)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set Maximum of alive missions to stop airplanes spamming the map</p>
+<p>Set Maximum of alive missions created by this instance to stop airplanes spamming the map</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2586,6 +2586,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._AssignIntercept">EASYGCICAP:_AssignIntercept(Cluster)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Here, we'll decide if we need to launch an intercepting flight, and from where</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._CountAliveAuftrags">EASYGCICAP:_CountAliveAuftrags()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Count alive missions in our internal stack.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -5553,7 +5559,7 @@ be managed by 2 planes from the assigned AirWing. There is an maximum missions l
 <h2><a id="#(EASYGCICAP).SetMaxAliveMissions" ><strong>EASYGCICAP:SetMaxAliveMissions(Maxiumum)</strong></a></h2>
 </div>
     
-<p>Set Maximum of alive missions to stop airplanes spamming the map</p>
+<p>Set Maximum of alive missions created by this instance to stop airplanes spamming the map</p>
 
 <div id= "#Functions##SetMaxAliveMissions" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -5571,7 +5577,7 @@ be managed by 2 planes from the assigned AirWing. There is an maximum missions l
           </div>
           <div class="w3-half">
               
-<p>Maxmimum number of parallel missions allowed. Count is Cap-Missions + Intercept-Missions + Alert5-Missionsm default is 6</p>
+<p>Maxmimum number of parallel missions allowed. Count is Intercept-Missions + Alert5-Missions, default is 8</p>
 
           </div>
         </div>
@@ -6301,6 +6307,36 @@ be managed by 2 planes from the assigned AirWing. There is an maximum missions l
       <div class="w3-half">
         
 <p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP)._CountAliveAuftrags" ><strong>EASYGCICAP:_CountAliveAuftrags()</strong></a></h2>
+</div>
+    
+<p>Count alive missions in our internal stack.</p>
+
+<div id= "#Functions##_CountAliveAuftrags" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#number:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>count</p>
 
       </div>
     </div>
