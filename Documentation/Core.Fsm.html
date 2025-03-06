@@ -2862,6 +2862,7 @@ for multiple objects or the position of the state machine in the process.</p>
       <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(FSM_CONTROLLABLE)">Type <strong>FSM_CONTROLLABLE</strong></a></h2></div>
          <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
      <strong><a href="##(FSM_CONTROLLABLE)">FSM_CONTROLLABLE</a></strong>
+, extends <strong><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></strong>
    </div>
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
@@ -2937,10 +2938,284 @@ for multiple objects or the position of the state machine in the process.</p>
           </tr>
         </table>
         </div>
+        <div class="w3-card w3-margin">
+        <table class="w3-table w3-border-bottom w3-border-theme-l2">
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from FSM</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).AddEndState">FSM_CONTROLLABLE:AddEndState(State)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Adds an End state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).AddProcess">FSM_CONTROLLABLE:AddProcess(From, Event, Process, ReturnEvents)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set the default <a href="##(FSM_PROCESS)">#FSM_PROCESS</a> template with key ProcessName providing the ProcessClass and the process object when it is assigned to a <a href="Wrapper.Controllable.html">Wrapper.Controllable</a> by the task.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).AddScore">FSM_CONTROLLABLE:AddScore(State, ScoreText, Score)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Adds a score for the FSM to be achieved.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).AddScoreProcess">FSM_CONTROLLABLE:AddScoreProcess(From, Event, State, ScoreText, Score)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Adds a score for the FSM_PROCESS to be achieved.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).AddTransition">FSM_CONTROLLABLE:AddTransition(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add a new transition rule to the FSM.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).CallScheduler">FSM_CONTROLLABLE.CallScheduler</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).Events">FSM_CONTROLLABLE.Events</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).GetCurrentState">FSM_CONTROLLABLE:GetCurrentState()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get current state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).GetEndStates">FSM_CONTROLLABLE:GetEndStates()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns the End states.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).GetProcess">FSM_CONTROLLABLE:GetProcess(From, Event)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).GetProcesses">FSM_CONTROLLABLE:GetProcesses()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns a table of the SubFSM rules defined within the FSM.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).GetScores">FSM_CONTROLLABLE:GetScores()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns a table with the scores defined.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).GetStartState">FSM_CONTROLLABLE:GetStartState()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns the start state of the FSM.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).GetState">FSM_CONTROLLABLE:GetState()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get current state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).GetSubs">FSM_CONTROLLABLE:GetSubs()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns a table with the Subs defined.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).GetTransitions">FSM_CONTROLLABLE:GetTransitions()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns a table of the transition rules defined within the FSM.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).Is">FSM_CONTROLLABLE:Is(State)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if FSM is in state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).LoadCallBacks">FSM_CONTROLLABLE:LoadCallBacks(CallBackTable)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Load call backs.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).New">FSM_CONTROLLABLE:New()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Creates a new FSM object.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).Scores">FSM_CONTROLLABLE.Scores</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).SetProcess">FSM_CONTROLLABLE:SetProcess(From, Event, Fsm)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).SetStartState">FSM_CONTROLLABLE:SetStartState(State)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Sets the start state of the FSM.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE)._EndStates">FSM_CONTROLLABLE._EndStates</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE)._EventSchedules">FSM_CONTROLLABLE._EventSchedules</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE)._Processes">FSM_CONTROLLABLE._Processes</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE)._Scores">FSM_CONTROLLABLE._Scores</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE)._StartState">FSM_CONTROLLABLE._StartState</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE)._Transitions">FSM_CONTROLLABLE._Transitions</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE)._add_to_map">FSM_CONTROLLABLE:_add_to_map(Map, Event)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add to map.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE)._call_handler">FSM_CONTROLLABLE:_call_handler(step, trigger, params, EventName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Call handler.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE)._create_transition">FSM_CONTROLLABLE:_create_transition(EventName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Create transition.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE)._delayed_transition">FSM_CONTROLLABLE:_delayed_transition(EventName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Delayed transition.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE)._eventmap">FSM_CONTROLLABLE:_eventmap(Events, EventStructure)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Event map.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE)._gosub">FSM_CONTROLLABLE:_gosub(ParentFrom, ParentEvent)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Go sub.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE)._handler">FSM_CONTROLLABLE:_handler(EventName, ...)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Handler.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE)._isendstate">FSM_CONTROLLABLE:_isendstate(Current)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Is end state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE)._submap">FSM_CONTROLLABLE:_submap(subs, sub, name)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Sub maps.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).can">FSM_CONTROLLABLE:can(e)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if can do an event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).cannot">FSM_CONTROLLABLE:cannot(e)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if cannot do an event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).current">FSM_CONTROLLABLE.current</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).endstates">FSM_CONTROLLABLE.endstates</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).is">FSM_CONTROLLABLE:is(State, state)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if FSM is in state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).options">FSM_CONTROLLABLE.options</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_CONTROLLABLE).subs">FSM_CONTROLLABLE.subs</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+        </table>
+        </div>
 
       <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(FSM_PROCESS)">Type <strong>FSM_PROCESS</strong></a></h2></div>
          <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
      <strong><a href="##(FSM_PROCESS)">FSM_PROCESS</a></strong>
+, extends <strong><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></strong>
+, extends <strong><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></strong>
    </div>
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
@@ -3030,6 +3305,352 @@ for multiple objects or the position of the state machine in the process.</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).onstatechange">FSM_PROCESS:onstatechange(ProcessUnit, Event, From, To, Task)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>StateMachine callback function for a FSM_PROCESS</p>
+</td>
+          </tr>
+        </table>
+        </div>
+        <div class="w3-card w3-margin">
+        <table class="w3-table w3-border-bottom w3-border-theme-l2">
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from FSM_CONTROLLABLE</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).Controllable">FSM_PROCESS.Controllable</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).GetControllable">FSM_PROCESS:GetControllable()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Gets the CONTROLLABLE object that the FSM_CONTROLLABLE governs.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).New">FSM_PROCESS:New(FSMT, Controllable)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Creates a new FSM_CONTROLLABLE object.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).OnAfterStop">FSM_PROCESS:OnAfterStop(Controllable, From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>OnAfter Transition Handler for Event Stop.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).OnBeforeStop">FSM_PROCESS:OnBeforeStop(Controllable, From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>OnBefore Transition Handler for Event Stop.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).OnEnterStopped">FSM_PROCESS:OnEnterStopped(Controllable, From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>OnEnter Transition Handler for State Stopped.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).OnLeaveStopped">FSM_PROCESS:OnLeaveStopped(Controllable, From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>OnLeave Transition Handler for State Stopped.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).SetControllable">FSM_PROCESS:SetControllable(FSMControllable)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Sets the CONTROLLABLE object that the FSM_CONTROLLABLE governs.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).Stop">FSM_PROCESS:Stop()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Synchronous Event Trigger for Event Stop.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).__Stop">FSM_PROCESS:__Stop(Delay)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Asynchronous Event Trigger for Event Stop.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._call_handler">FSM_PROCESS:_call_handler(step, trigger, params, EventName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+        </table>
+        </div>
+        <div class="w3-card w3-margin">
+        <table class="w3-table w3-border-bottom w3-border-theme-l2">
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from FSM</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).AddEndState">FSM_PROCESS:AddEndState(State)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Adds an End state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).AddProcess">FSM_PROCESS:AddProcess(From, Event, Process, ReturnEvents)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set the default <a href="##(FSM_PROCESS)">#FSM_PROCESS</a> template with key ProcessName providing the ProcessClass and the process object when it is assigned to a <a href="Wrapper.Controllable.html">Wrapper.Controllable</a> by the task.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).AddScore">FSM_PROCESS:AddScore(State, ScoreText, Score)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Adds a score for the FSM to be achieved.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).AddScoreProcess">FSM_PROCESS:AddScoreProcess(From, Event, State, ScoreText, Score)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Adds a score for the FSM_PROCESS to be achieved.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).AddTransition">FSM_PROCESS:AddTransition(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add a new transition rule to the FSM.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).CallScheduler">FSM_PROCESS.CallScheduler</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).Events">FSM_PROCESS.Events</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).GetCurrentState">FSM_PROCESS:GetCurrentState()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get current state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).GetEndStates">FSM_PROCESS:GetEndStates()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns the End states.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).GetProcess">FSM_PROCESS:GetProcess(From, Event)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).GetProcesses">FSM_PROCESS:GetProcesses()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns a table of the SubFSM rules defined within the FSM.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).GetScores">FSM_PROCESS:GetScores()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns a table with the scores defined.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).GetStartState">FSM_PROCESS:GetStartState()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns the start state of the FSM.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).GetState">FSM_PROCESS:GetState()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get current state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).GetSubs">FSM_PROCESS:GetSubs()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns a table with the Subs defined.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).GetTransitions">FSM_PROCESS:GetTransitions()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns a table of the transition rules defined within the FSM.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).Is">FSM_PROCESS:Is(State)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if FSM is in state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).LoadCallBacks">FSM_PROCESS:LoadCallBacks(CallBackTable)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Load call backs.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).New">FSM_PROCESS:New()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Creates a new FSM object.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).Scores">FSM_PROCESS.Scores</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).SetProcess">FSM_PROCESS:SetProcess(From, Event, Fsm)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).SetStartState">FSM_PROCESS:SetStartState(State)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Sets the start state of the FSM.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._EndStates">FSM_PROCESS._EndStates</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._EventSchedules">FSM_PROCESS._EventSchedules</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._Processes">FSM_PROCESS._Processes</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._Scores">FSM_PROCESS._Scores</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._StartState">FSM_PROCESS._StartState</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._Transitions">FSM_PROCESS._Transitions</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._add_to_map">FSM_PROCESS:_add_to_map(Map, Event)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add to map.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._call_handler">FSM_PROCESS:_call_handler(step, trigger, params, EventName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Call handler.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._create_transition">FSM_PROCESS:_create_transition(EventName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Create transition.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._delayed_transition">FSM_PROCESS:_delayed_transition(EventName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Delayed transition.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._eventmap">FSM_PROCESS:_eventmap(Events, EventStructure)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Event map.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._gosub">FSM_PROCESS:_gosub(ParentFrom, ParentEvent)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Go sub.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._handler">FSM_PROCESS:_handler(EventName, ...)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Handler.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._isendstate">FSM_PROCESS:_isendstate(Current)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Is end state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS)._submap">FSM_PROCESS:_submap(subs, sub, name)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Sub maps.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).can">FSM_PROCESS:can(e)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if can do an event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).cannot">FSM_PROCESS:cannot(e)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if cannot do an event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).current">FSM_PROCESS.current</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).endstates">FSM_PROCESS.endstates</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).is">FSM_PROCESS:is(State, state)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if FSM is in state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).options">FSM_PROCESS.options</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FSM_PROCESS).subs">FSM_PROCESS.subs</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
         </table>
@@ -3484,6 +4105,20 @@ for multiple objects or the position of the state machine in the process.</p>
 <a id="#(FSM)._Transitions" ><strong>FSM._Transitions</strong></a>
     
 
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(FSM).current" ><strong>FSM.current</strong></a>
+    
+
+
+    
+<p> New current state.</p>
 
 </div>
 
@@ -4964,13 +5599,10 @@ for multiple objects or the position of the state machine in the process.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
 <a id="#(FSM_CONTROLLABLE).Controllable" ><strong>FSM_CONTROLLABLE.Controllable</strong></a>
     
 
-
-    
-<p> self:F( FSMControllable:GetName() )</p>
 
 </div>
 
@@ -5529,6 +6161,1462 @@ for multiple objects or the position of the state machine in the process.</p>
 </div>
 </div>
 
+<div class="fields w3-container w3-theme-l2">
+  <h2>Field(s)</h2>
+</div>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
+<a id="#(FSM_CONTROLLABLE).Controllable" ><strong>FSM_CONTROLLABLE.Controllable</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div class="functions  w3-container w3-theme-l2">
+  <h2>Function(s)</h2>
+</div>  
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).AddEndState" ><strong>FSM_CONTROLLABLE:AddEndState(State)</strong></a></h2>
+</div>
+    
+<p>Adds an End state.</p>
+
+<div id= "#Functions##AddEndState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The FSM state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).AddProcess" ><strong>FSM_CONTROLLABLE:AddProcess(From, Event, Process, ReturnEvents)</strong></a></h2>
+</div>
+    
+<p>Set the default <a href="##(FSM_PROCESS)">#FSM_PROCESS</a> template with key ProcessName providing the ProcessClass and the process object when it is assigned to a <a href="Wrapper.Controllable.html">Wrapper.Controllable</a> by the task.</p>
+
+<div id= "#Functions##AddProcess" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Can contain a string indicating the From state or a table of strings containing multiple From states.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Event name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Fsm.html##(FSM_PROCESS)">Core.Fsm#FSM_PROCESS</a>
+            <strong><strong>Process</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>An sub-process FSM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>ReturnEvents</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>A table indicating for which returned events of the SubFSM which Event must be triggered in the FSM.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Core.Fsm.html##(FSM_PROCESS)">Core.Fsm#FSM_PROCESS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The SubFSM.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).AddScore" ><strong>FSM_CONTROLLABLE:AddScore(State, ScoreText, Score)</strong></a></h2>
+</div>
+    
+<p>Adds a score for the FSM to be achieved.</p>
+
+<div id= "#Functions##AddScore" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is the state of the process when the score needs to be given. (See the relevant state descriptions of the process).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>ScoreText</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is a text describing the score that is given according the status.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Score</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is a number providing the score of the status.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FSM)">#FSM</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).AddScoreProcess" ><strong>FSM_CONTROLLABLE:AddScoreProcess(From, Event, State, ScoreText, Score)</strong></a></h2>
+</div>
+    
+<p>Adds a score for the FSM_PROCESS to be achieved.</p>
+
+<div id= "#Functions##AddScoreProcess" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is the From State of the main process.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is the Event of the main process.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is the state of the process when the score needs to be given. (See the relevant state descriptions of the process).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>ScoreText</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is a text describing the score that is given according the status.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Score</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is a number providing the score of the status.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FSM)">#FSM</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).AddTransition" ><strong>FSM_CONTROLLABLE:AddTransition(From, Event, To)</strong></a></h2>
+</div>
+    
+<p>Add a new transition rule to the FSM.</p>
+
+    
+<p>A transition rule defines when and if the FSM can transition from a state towards another state upon a triggered event.</p>
+
+<div id= "#Functions##AddTransition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Can contain a string indicating the From state or a table of strings containing multiple From states.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Event name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The To state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).GetCurrentState" ><strong>FSM_CONTROLLABLE:GetCurrentState()</strong></a></h2>
+</div>
+    
+<p>Get current state.</p>
+
+<div id= "#Functions##GetCurrentState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#string:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Current FSM state.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).GetEndStates" ><strong>FSM_CONTROLLABLE:GetEndStates()</strong></a></h2>
+</div>
+    
+<p>Returns the End states.</p>
+
+<div id= "#Functions##GetEndStates" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>End states.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).GetProcess" ><strong>FSM_CONTROLLABLE:GetProcess(From, Event)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##GetProcess" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).GetProcesses" ><strong>FSM_CONTROLLABLE:GetProcesses()</strong></a></h2>
+</div>
+    
+<p>Returns a table of the SubFSM rules defined within the FSM.</p>
+
+<div id= "#Functions##GetProcesses" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Sub processes.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).GetScores" ><strong>FSM_CONTROLLABLE:GetScores()</strong></a></h2>
+</div>
+    
+<p>Returns a table with the scores defined.</p>
+
+<div id= "#Functions##GetScores" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Scores.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).GetStartState" ><strong>FSM_CONTROLLABLE:GetStartState()</strong></a></h2>
+</div>
+    
+<p>Returns the start state of the FSM.</p>
+
+<div id= "#Functions##GetStartState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#string:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>A string containing the start state.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).GetState" ><strong>FSM_CONTROLLABLE:GetState()</strong></a></h2>
+</div>
+    
+<p>Get current state.</p>
+
+<div id= "#Functions##GetState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#string:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Current FSM state.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).GetSubs" ><strong>FSM_CONTROLLABLE:GetSubs()</strong></a></h2>
+</div>
+    
+<p>Returns a table with the Subs defined.</p>
+
+<div id= "#Functions##GetSubs" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Sub processes.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).GetTransitions" ><strong>FSM_CONTROLLABLE:GetTransitions()</strong></a></h2>
+</div>
+    
+<p>Returns a table of the transition rules defined within the FSM.</p>
+
+<div id= "#Functions##GetTransitions" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Transitions.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).Is" ><strong>FSM_CONTROLLABLE:Is(State)</strong></a></h2>
+</div>
+    
+<p>Check if FSM is in state.</p>
+
+<div id= "#Functions##Is" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>State name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, FSM is in this state.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).LoadCallBacks" ><strong>FSM_CONTROLLABLE:LoadCallBacks(CallBackTable)</strong></a></h2>
+</div>
+    
+<p>Load call backs.</p>
+
+<div id= "#Functions##LoadCallBacks" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>CallBackTable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Table of call backs.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).New" ><strong>FSM_CONTROLLABLE:New()</strong></a></h2>
+</div>
+    
+<p>Creates a new FSM object.</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FSM)">#FSM</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).SetProcess" ><strong>FSM_CONTROLLABLE:SetProcess(From, Event, Fsm)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##SetProcess" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Fsm</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).SetStartState" ><strong>FSM_CONTROLLABLE:SetStartState(State)</strong></a></h2>
+</div>
+    
+<p>Sets the start state of the FSM.</p>
+
+<div id= "#Functions##SetStartState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>A string defining the start state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE)._add_to_map" ><strong>FSM_CONTROLLABLE:_add_to_map(Map, Event)</strong></a></h2>
+</div>
+    
+<p>Add to map.</p>
+
+<div id= "#Functions##_add_to_map" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Map</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Map.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event table.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE)._call_handler" ><strong>FSM_CONTROLLABLE:_call_handler(step, trigger, params, EventName)</strong></a></h2>
+</div>
+    
+<p>Call handler.</p>
+
+<div id= "#Functions##_call_handler" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>step</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Step "onafter", "onbefore", "onenter", "onleave".</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>trigger</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Trigger.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>params</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Parameters.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>EventName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>Value.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE)._create_transition" ><strong>FSM_CONTROLLABLE:_create_transition(EventName)</strong></a></h2>
+</div>
+    
+<p>Create transition.</p>
+
+<div id= "#Functions##_create_transition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>EventName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#function:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Function.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE)._delayed_transition" ><strong>FSM_CONTROLLABLE:_delayed_transition(EventName)</strong></a></h2>
+</div>
+    
+<p>Delayed transition.</p>
+
+<div id= "#Functions##_delayed_transition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>EventName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#function:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Function.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE)._eventmap" ><strong>FSM_CONTROLLABLE:_eventmap(Events, EventStructure)</strong></a></h2>
+</div>
+    
+<p>Event map.</p>
+
+<div id= "#Functions##_eventmap" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Events</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Events.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>EventStructure</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event structure.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE)._gosub" ><strong>FSM_CONTROLLABLE:_gosub(ParentFrom, ParentEvent)</strong></a></h2>
+</div>
+    
+<p>Go sub.</p>
+
+<div id= "#Functions##_gosub" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>ParentFrom</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Parent from state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>ParentEvent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Parent event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Subs.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE)._handler" ><strong>FSM_CONTROLLABLE:_handler(EventName, ...)</strong></a></h2>
+</div>
+    
+<p>Handler.</p>
+
+<div id= "#Functions##_handler" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>EventName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>...</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Arguments.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE)._isendstate" ><strong>FSM_CONTROLLABLE:_isendstate(Current)</strong></a></h2>
+</div>
+    
+<p>Is end state.</p>
+
+<div id= "#Functions##_isendstate" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Current</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Current state name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#table:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>FSM parent.</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#string:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Event name.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE)._submap" ><strong>FSM_CONTROLLABLE:_submap(subs, sub, name)</strong></a></h2>
+</div>
+    
+<p>Sub maps.</p>
+
+<div id= "#Functions##_submap" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>subs</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Subs.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>sub</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Sub.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).can" ><strong>FSM_CONTROLLABLE:can(e)</strong></a></h2>
+</div>
+    
+<p>Check if can do an event.</p>
+
+<div id= "#Functions##can" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>e</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#boolean:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>If true, FSM can do the event.</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#string:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>To state.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).cannot" ><strong>FSM_CONTROLLABLE:cannot(e)</strong></a></h2>
+</div>
+    
+<p>Check if cannot do an event.</p>
+
+<div id= "#Functions##cannot" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>e</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, FSM cannot do the event.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_CONTROLLABLE).is" ><strong>FSM_CONTROLLABLE:is(State, state)</strong></a></h2>
+</div>
+    
+<p>Check if FSM is in state.</p>
+
+<div id= "#Functions##is" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>State name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>state</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, FSM is in this state.  </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
 </div>
 
         </div>
@@ -5541,7 +7629,7 @@ for multiple objects or the position of the state machine in the process.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    <a href="Tasking.Task.html##(TASK)">Tasking.Task#TASK</a>
 <a id="#(FSM_PROCESS).Task" ><strong>FSM_PROCESS.Task</strong></a>
     
 
@@ -6128,6 +8216,2030 @@ for multiple objects or the position of the state machine in the process.</p>
               <p></p>
           </div>
         </div>
+</div>
+
+</div>
+</div>
+
+<div class="fields w3-container w3-theme-l2">
+  <h2>Field(s)</h2>
+</div>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Tasking.Task.html##(TASK)">Tasking.Task#TASK</a>
+<a id="#(FSM_PROCESS).Task" ><strong>FSM_PROCESS.Task</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div class="functions  w3-container w3-theme-l2">
+  <h2>Function(s)</h2>
+</div>  
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).GetControllable" ><strong>FSM_PROCESS:GetControllable()</strong></a></h2>
+</div>
+    
+<p>Gets the CONTROLLABLE object that the FSM_CONTROLLABLE governs.</p>
+
+<div id= "#Functions##GetControllable" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).New" ><strong>FSM_PROCESS:New(FSMT, Controllable)</strong></a></h2>
+</div>
+    
+<p>Creates a new FSM_CONTROLLABLE object.</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>FSMT</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Finite State Machine Table</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
+            <strong><strong>Controllable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) The CONTROLLABLE object that the FSM_CONTROLLABLE governs.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FSM_CONTROLLABLE)">#FSM_CONTROLLABLE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).OnAfterStop" ><strong>FSM_PROCESS:OnAfterStop(Controllable, From, Event, To)</strong></a></h2>
+</div>
+    
+<p>OnAfter Transition Handler for Event Stop.</p>
+
+<div id= "#Functions##OnAfterStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
+            <strong><strong>Controllable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Controllable Object managed by the FSM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The From State string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Event string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The To State string.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).OnBeforeStop" ><strong>FSM_PROCESS:OnBeforeStop(Controllable, From, Event, To)</strong></a></h2>
+</div>
+    
+<p>OnBefore Transition Handler for Event Stop.</p>
+
+<div id= "#Functions##OnBeforeStop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
+            <strong><strong>Controllable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Controllable Object managed by the FSM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The From State string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Event string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The To State string.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Return false to cancel Transition.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).OnEnterStopped" ><strong>FSM_PROCESS:OnEnterStopped(Controllable, From, Event, To)</strong></a></h2>
+</div>
+    
+<p>OnEnter Transition Handler for State Stopped.</p>
+
+<div id= "#Functions##OnEnterStopped" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
+            <strong><strong>Controllable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Controllable Object managed by the FSM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The From State string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Event string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The To State string.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).OnLeaveStopped" ><strong>FSM_PROCESS:OnLeaveStopped(Controllable, From, Event, To)</strong></a></h2>
+</div>
+    
+<p>OnLeave Transition Handler for State Stopped.</p>
+
+<div id= "#Functions##OnLeaveStopped" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
+            <strong><strong>Controllable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Controllable Object managed by the FSM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The From State string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Event string.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The To State string.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Return false to cancel Transition.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).SetControllable" ><strong>FSM_PROCESS:SetControllable(FSMControllable)</strong></a></h2>
+</div>
+    
+<p>Sets the CONTROLLABLE object that the FSM_CONTROLLABLE governs.</p>
+
+<div id= "#Functions##SetControllable" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
+            <strong><strong>FSMControllable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FSM_CONTROLLABLE)">#FSM_CONTROLLABLE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).Stop" ><strong>FSM_PROCESS:Stop()</strong></a></h2>
+</div>
+    
+<p>Synchronous Event Trigger for Event Stop.</p>
+
+<div id= "#Functions##Stop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).__Stop" ><strong>FSM_PROCESS:__Stop(Delay)</strong></a></h2>
+</div>
+    
+<p>Asynchronous Event Trigger for Event Stop.</p>
+
+<div id= "#Functions##__Stop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The delay in seconds.  </p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS)._call_handler" ><strong>FSM_PROCESS:_call_handler(step, trigger, params, EventName)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##_call_handler" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>step</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>trigger</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>params</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>EventName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+<div class="fields w3-container w3-theme-l2">
+  <h2>Field(s)</h2>
+</div>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Tasking.Task.html##(TASK)">Tasking.Task#TASK</a>
+<a id="#(FSM_PROCESS).Task" ><strong>FSM_PROCESS.Task</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div class="functions  w3-container w3-theme-l2">
+  <h2>Function(s)</h2>
+</div>  
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).AddEndState" ><strong>FSM_PROCESS:AddEndState(State)</strong></a></h2>
+</div>
+    
+<p>Adds an End state.</p>
+
+<div id= "#Functions##AddEndState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The FSM state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).AddProcess" ><strong>FSM_PROCESS:AddProcess(From, Event, Process, ReturnEvents)</strong></a></h2>
+</div>
+    
+<p>Set the default <a href="##(FSM_PROCESS)">#FSM_PROCESS</a> template with key ProcessName providing the ProcessClass and the process object when it is assigned to a <a href="Wrapper.Controllable.html">Wrapper.Controllable</a> by the task.</p>
+
+<div id= "#Functions##AddProcess" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Can contain a string indicating the From state or a table of strings containing multiple From states.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Event name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Fsm.html##(FSM_PROCESS)">Core.Fsm#FSM_PROCESS</a>
+            <strong><strong>Process</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>An sub-process FSM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>ReturnEvents</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>A table indicating for which returned events of the SubFSM which Event must be triggered in the FSM.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Core.Fsm.html##(FSM_PROCESS)">Core.Fsm#FSM_PROCESS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The SubFSM.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).AddScore" ><strong>FSM_PROCESS:AddScore(State, ScoreText, Score)</strong></a></h2>
+</div>
+    
+<p>Adds a score for the FSM to be achieved.</p>
+
+<div id= "#Functions##AddScore" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is the state of the process when the score needs to be given. (See the relevant state descriptions of the process).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>ScoreText</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is a text describing the score that is given according the status.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Score</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is a number providing the score of the status.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FSM)">#FSM</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).AddScoreProcess" ><strong>FSM_PROCESS:AddScoreProcess(From, Event, State, ScoreText, Score)</strong></a></h2>
+</div>
+    
+<p>Adds a score for the FSM_PROCESS to be achieved.</p>
+
+<div id= "#Functions##AddScoreProcess" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is the From State of the main process.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is the Event of the main process.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is the state of the process when the score needs to be given. (See the relevant state descriptions of the process).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>ScoreText</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is a text describing the score that is given according the status.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Score</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is a number providing the score of the status.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FSM)">#FSM</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).AddTransition" ><strong>FSM_PROCESS:AddTransition(From, Event, To)</strong></a></h2>
+</div>
+    
+<p>Add a new transition rule to the FSM.</p>
+
+    
+<p>A transition rule defines when and if the FSM can transition from a state towards another state upon a triggered event.</p>
+
+<div id= "#Functions##AddTransition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Can contain a string indicating the From state or a table of strings containing multiple From states.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Event name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The To state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).GetCurrentState" ><strong>FSM_PROCESS:GetCurrentState()</strong></a></h2>
+</div>
+    
+<p>Get current state.</p>
+
+<div id= "#Functions##GetCurrentState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#string:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Current FSM state.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).GetEndStates" ><strong>FSM_PROCESS:GetEndStates()</strong></a></h2>
+</div>
+    
+<p>Returns the End states.</p>
+
+<div id= "#Functions##GetEndStates" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>End states.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).GetProcess" ><strong>FSM_PROCESS:GetProcess(From, Event)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##GetProcess" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).GetProcesses" ><strong>FSM_PROCESS:GetProcesses()</strong></a></h2>
+</div>
+    
+<p>Returns a table of the SubFSM rules defined within the FSM.</p>
+
+<div id= "#Functions##GetProcesses" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Sub processes.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).GetScores" ><strong>FSM_PROCESS:GetScores()</strong></a></h2>
+</div>
+    
+<p>Returns a table with the scores defined.</p>
+
+<div id= "#Functions##GetScores" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Scores.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).GetStartState" ><strong>FSM_PROCESS:GetStartState()</strong></a></h2>
+</div>
+    
+<p>Returns the start state of the FSM.</p>
+
+<div id= "#Functions##GetStartState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#string:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>A string containing the start state.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).GetState" ><strong>FSM_PROCESS:GetState()</strong></a></h2>
+</div>
+    
+<p>Get current state.</p>
+
+<div id= "#Functions##GetState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#string:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Current FSM state.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).GetSubs" ><strong>FSM_PROCESS:GetSubs()</strong></a></h2>
+</div>
+    
+<p>Returns a table with the Subs defined.</p>
+
+<div id= "#Functions##GetSubs" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Sub processes.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).GetTransitions" ><strong>FSM_PROCESS:GetTransitions()</strong></a></h2>
+</div>
+    
+<p>Returns a table of the transition rules defined within the FSM.</p>
+
+<div id= "#Functions##GetTransitions" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Transitions.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).Is" ><strong>FSM_PROCESS:Is(State)</strong></a></h2>
+</div>
+    
+<p>Check if FSM is in state.</p>
+
+<div id= "#Functions##Is" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>State name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, FSM is in this state.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).LoadCallBacks" ><strong>FSM_PROCESS:LoadCallBacks(CallBackTable)</strong></a></h2>
+</div>
+    
+<p>Load call backs.</p>
+
+<div id= "#Functions##LoadCallBacks" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>CallBackTable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Table of call backs.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).New" ><strong>FSM_PROCESS:New()</strong></a></h2>
+</div>
+    
+<p>Creates a new FSM object.</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FSM)">#FSM</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).SetProcess" ><strong>FSM_PROCESS:SetProcess(From, Event, Fsm)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##SetProcess" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Fsm</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).SetStartState" ><strong>FSM_PROCESS:SetStartState(State)</strong></a></h2>
+</div>
+    
+<p>Sets the start state of the FSM.</p>
+
+<div id= "#Functions##SetStartState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>A string defining the start state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS)._add_to_map" ><strong>FSM_PROCESS:_add_to_map(Map, Event)</strong></a></h2>
+</div>
+    
+<p>Add to map.</p>
+
+<div id= "#Functions##_add_to_map" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Map</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Map.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event table.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS)._call_handler" ><strong>FSM_PROCESS:_call_handler(step, trigger, params, EventName)</strong></a></h2>
+</div>
+    
+<p>Call handler.</p>
+
+<div id= "#Functions##_call_handler" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>step</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Step "onafter", "onbefore", "onenter", "onleave".</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>trigger</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Trigger.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>params</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Parameters.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>EventName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>Value.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS)._create_transition" ><strong>FSM_PROCESS:_create_transition(EventName)</strong></a></h2>
+</div>
+    
+<p>Create transition.</p>
+
+<div id= "#Functions##_create_transition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>EventName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#function:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Function.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS)._delayed_transition" ><strong>FSM_PROCESS:_delayed_transition(EventName)</strong></a></h2>
+</div>
+    
+<p>Delayed transition.</p>
+
+<div id= "#Functions##_delayed_transition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>EventName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#function:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Function.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS)._eventmap" ><strong>FSM_PROCESS:_eventmap(Events, EventStructure)</strong></a></h2>
+</div>
+    
+<p>Event map.</p>
+
+<div id= "#Functions##_eventmap" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Events</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Events.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>EventStructure</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event structure.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS)._gosub" ><strong>FSM_PROCESS:_gosub(ParentFrom, ParentEvent)</strong></a></h2>
+</div>
+    
+<p>Go sub.</p>
+
+<div id= "#Functions##_gosub" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>ParentFrom</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Parent from state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>ParentEvent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Parent event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Subs.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS)._handler" ><strong>FSM_PROCESS:_handler(EventName, ...)</strong></a></h2>
+</div>
+    
+<p>Handler.</p>
+
+<div id= "#Functions##_handler" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>EventName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>...</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Arguments.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS)._isendstate" ><strong>FSM_PROCESS:_isendstate(Current)</strong></a></h2>
+</div>
+    
+<p>Is end state.</p>
+
+<div id= "#Functions##_isendstate" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Current</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Current state name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#table:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>FSM parent.</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#string:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Event name.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS)._submap" ><strong>FSM_PROCESS:_submap(subs, sub, name)</strong></a></h2>
+</div>
+    
+<p>Sub maps.</p>
+
+<div id= "#Functions##_submap" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>subs</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Subs.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>sub</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Sub.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).can" ><strong>FSM_PROCESS:can(e)</strong></a></h2>
+</div>
+    
+<p>Check if can do an event.</p>
+
+<div id= "#Functions##can" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>e</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#boolean:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>If true, FSM can do the event.</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#string:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>To state.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).cannot" ><strong>FSM_PROCESS:cannot(e)</strong></a></h2>
+</div>
+    
+<p>Check if cannot do an event.</p>
+
+<div id= "#Functions##cannot" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>e</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, FSM cannot do the event.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(FSM_PROCESS).is" ><strong>FSM_PROCESS:is(State, state)</strong></a></h2>
+</div>
+    
+<p>Check if FSM is in state.</p>
+
+<div id= "#Functions##is" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>State name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>state</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, FSM is in this state.  </p>
+
+      </div>
+    </div>
 </div>
 
 </div>

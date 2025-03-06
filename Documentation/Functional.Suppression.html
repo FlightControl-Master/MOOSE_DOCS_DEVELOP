@@ -2301,6 +2301,7 @@ If no scenery object is near the group the <strong>TakeCover</strong> event is r
          <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
      <strong><a href="##(SUPPRESSION)">SUPPRESSION</a></strong>
 , extends <strong><a href="Core.Fsm.html##(FSM_CONTROLLABLE)">Core.Fsm#FSM_CONTROLLABLE</a></strong>
+, extends <strong><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></strong>
    </div>
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
@@ -3200,6 +3201,278 @@ If no scenery object is near the group the <strong>TakeCover</strong> event is r
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._call_handler">SUPPRESSION:_call_handler(step, trigger, params, EventName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+        </table>
+        </div>
+        <div class="w3-card w3-margin">
+        <table class="w3-table w3-border-bottom w3-border-theme-l2">
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from FSM</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).AddEndState">SUPPRESSION:AddEndState(State)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Adds an End state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).AddProcess">SUPPRESSION:AddProcess(From, Event, Process, ReturnEvents)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set the default <a href="##(FSM_PROCESS)">#FSM_PROCESS</a> template with key ProcessName providing the ProcessClass and the process object when it is assigned to a <a href="Wrapper.Controllable.html">Wrapper.Controllable</a> by the task.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).AddScore">SUPPRESSION:AddScore(State, ScoreText, Score)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Adds a score for the FSM to be achieved.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).AddScoreProcess">SUPPRESSION:AddScoreProcess(From, Event, State, ScoreText, Score)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Adds a score for the FSM_PROCESS to be achieved.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).AddTransition">SUPPRESSION:AddTransition(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add a new transition rule to the FSM.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).CallScheduler">SUPPRESSION.CallScheduler</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).Events">SUPPRESSION.Events</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).GetCurrentState">SUPPRESSION:GetCurrentState()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get current state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).GetEndStates">SUPPRESSION:GetEndStates()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns the End states.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).GetProcess">SUPPRESSION:GetProcess(From, Event)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).GetProcesses">SUPPRESSION:GetProcesses()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns a table of the SubFSM rules defined within the FSM.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).GetScores">SUPPRESSION:GetScores()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns a table with the scores defined.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).GetStartState">SUPPRESSION:GetStartState()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns the start state of the FSM.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).GetState">SUPPRESSION:GetState()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get current state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).GetSubs">SUPPRESSION:GetSubs()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns a table with the Subs defined.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).GetTransitions">SUPPRESSION:GetTransitions()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Returns a table of the transition rules defined within the FSM.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).Is">SUPPRESSION:Is(State)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if FSM is in state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).LoadCallBacks">SUPPRESSION:LoadCallBacks(CallBackTable)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Load call backs.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).New">SUPPRESSION:New()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Creates a new FSM object.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).Scores">SUPPRESSION.Scores</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).SetProcess">SUPPRESSION:SetProcess(From, Event, Fsm)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).SetStartState">SUPPRESSION:SetStartState(State)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Sets the start state of the FSM.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._EndStates">SUPPRESSION._EndStates</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._EventSchedules">SUPPRESSION._EventSchedules</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._Processes">SUPPRESSION._Processes</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._Scores">SUPPRESSION._Scores</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._StartState">SUPPRESSION._StartState</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._Transitions">SUPPRESSION._Transitions</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._add_to_map">SUPPRESSION:_add_to_map(Map, Event)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add to map.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._call_handler">SUPPRESSION:_call_handler(step, trigger, params, EventName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Call handler.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._create_transition">SUPPRESSION:_create_transition(EventName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Create transition.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._delayed_transition">SUPPRESSION:_delayed_transition(EventName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Delayed transition.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._eventmap">SUPPRESSION:_eventmap(Events, EventStructure)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Event map.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._gosub">SUPPRESSION:_gosub(ParentFrom, ParentEvent)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Go sub.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._handler">SUPPRESSION:_handler(EventName, ...)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Handler.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._isendstate">SUPPRESSION:_isendstate(Current)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Is end state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION)._submap">SUPPRESSION:_submap(subs, sub, name)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Sub maps.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).can">SUPPRESSION:can(e)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if can do an event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).cannot">SUPPRESSION:cannot(e)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if cannot do an event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).current">SUPPRESSION.current</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).endstates">SUPPRESSION.endstates</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).is">SUPPRESSION:is(State, state)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Check if FSM is in state.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).options">SUPPRESSION.options</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SUPPRESSION).subs">SUPPRESSION.subs</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -9730,6 +10003,1941 @@ If the group consists of more than one unit, this referrs to the group strength 
               <p></p>
           </div>
         </div>
+</div>
+
+</div>
+</div>
+
+<div class="fields w3-container w3-theme-l2">
+  <h2>Field(s)</h2>
+</div>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="##(SUPPRESSION.AlarmState)">#SUPPRESSION.AlarmState</a>
+<a id="#(SUPPRESSION).AlarmState" ><strong>SUPPRESSION.AlarmState</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(SUPPRESSION).AutoEngage" ><strong>SUPPRESSION.AutoEngage</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Zone.html##(ZONE)">Core.Zone#ZONE</a>
+<a id="#(SUPPRESSION).BattleZone" ><strong>SUPPRESSION.BattleZone</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(SUPPRESSION).ClassName" ><strong>SUPPRESSION.ClassName</strong></a>
+    
+<p>Name of the class.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a>
+<a id="#(SUPPRESSION).Controllable" ><strong>SUPPRESSION.Controllable</strong></a>
+    
+<p>Controllable of the FSM. Must be a ground group.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(SUPPRESSION).CurrentAlarmState" ><strong>SUPPRESSION.CurrentAlarmState</strong></a>
+    
+<p>Alam state the group is currently in.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(SUPPRESSION).CurrentROE" ><strong>SUPPRESSION.CurrentROE</strong></a>
+    
+<p>ROE the group currently has.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SUPPRESSION).DCSdesc" ><strong>SUPPRESSION.DCSdesc</strong></a>
+    
+
+
+    
+<p> Get DCS descriptors of group.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(SUPPRESSION).Debug" ><strong>SUPPRESSION.Debug</strong></a>
+    
+<p>Write Debug messages to DCS log file and send Debug messages to all players.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(SUPPRESSION).DefaultAlarmState" ><strong>SUPPRESSION.DefaultAlarmState</strong></a>
+    
+<p>Alarm state the group will go to when it is changed back from another state. Default is "Auto".</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(SUPPRESSION).DefaultROE" ><strong>SUPPRESSION.DefaultROE</strong></a>
+    
+<p>ROE the group will get once suppression is over. Default is "Free".</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).FallbackDist" ><strong>SUPPRESSION.FallbackDist</strong></a>
+    
+<p>Distance in meters the unit will fall back.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).FallbackHeading" ><strong>SUPPRESSION.FallbackHeading</strong></a>
+    
+<p>Heading in degrees to which the group should fall back. Default is directly away from the attacking unit.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(SUPPRESSION).FallbackON" ><strong>SUPPRESSION.FallbackON</strong></a>
+    
+<p>If true, group can fall back, i.e. move away from the attacking unit.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).FallbackWait" ><strong>SUPPRESSION.FallbackWait</strong></a>
+    
+<p>Time in seconds the unit will wait at the fall back point before it resumes its mission.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(SUPPRESSION).Formation" ><strong>SUPPRESSION.Formation</strong></a>
+    
+<p>Formation which will be used when falling back, taking cover or retreating. Default "Vee".</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).IniGroupStrength" ><strong>SUPPRESSION.IniGroupStrength</strong></a>
+    
+<p>Number of units in a group at start.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(SUPPRESSION).IsInfantry" ><strong>SUPPRESSION.IsInfantry</strong></a>
+    
+<p>True if group has attribute Infantry.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(SUPPRESSION).MenuF10" ><strong>SUPPRESSION.MenuF10</strong></a>
+    
+<p>Main F10 menu for suppresion, i.e.</p>
+
+    
+<p>F10/Suppression.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(SUPPRESSION).MenuON" ><strong>SUPPRESSION.MenuON</strong></a>
+    
+<p>If true creates a entry in the F10 menu.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).Nhit" ><strong>SUPPRESSION.Nhit</strong></a>
+    
+<p>Number of times the group was hit.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).PmaxFlee" ><strong>SUPPRESSION.PmaxFlee</strong></a>
+    
+<p>Maximum probability in percent that a group will flee (fall back or take cover) at each hit event. Default is 90 %.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).PminFlee" ><strong>SUPPRESSION.PminFlee</strong></a>
+    
+<p>Minimum probability in percent that a group will flee (fall back or take cover) at each hit event. Default is 10 %.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="##(SUPPRESSION.ROE)">#SUPPRESSION.ROE</a>
+<a id="#(SUPPRESSION).ROE" ><strong>SUPPRESSION.ROE</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).RetreatDamage" ><strong>SUPPRESSION.RetreatDamage</strong></a>
+    
+<p>Damage in percent at which the group will be ordered to retreat.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).RetreatWait" ><strong>SUPPRESSION.RetreatWait</strong></a>
+    
+<p>Time in seconds the group will wait in the retreat zone before it resumes its mission. Default two hours. </p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Zone.html##(ZONE)">Core.Zone#ZONE</a>
+<a id="#(SUPPRESSION).RetreatZone" ><strong>SUPPRESSION.RetreatZone</strong></a>
+    
+<p>Zone to which a group retreats.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).Speed" ><strong>SUPPRESSION.Speed</strong></a>
+    
+<p>Speed the unit will use when falling back, taking cover or retreating. Default 999.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).SpeedMax" ><strong>SUPPRESSION.SpeedMax</strong></a>
+    
+<p>Maximum speed of group in km/h.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(SUPPRESSION).TakecoverON" ><strong>SUPPRESSION.TakecoverON</strong></a>
+    
+<p>If true, group can hide at a nearby scenery object.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).TakecoverRange" ><strong>SUPPRESSION.TakecoverRange</strong></a>
+    
+<p>Range in which the group will search for scenery objects to hide at.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).TakecoverWait" ><strong>SUPPRESSION.TakecoverWait</strong></a>
+    
+<p>Time in seconds the group will hide before it will resume its mission.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).Tsuppress_ave" ><strong>SUPPRESSION.Tsuppress_ave</strong></a>
+    
+<p>Average time in seconds a group gets suppressed. Actual value is sampled randomly from a Gaussian distribution.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).Tsuppress_max" ><strong>SUPPRESSION.Tsuppress_max</strong></a>
+    
+<p>Maximum time in seconds the group gets suppressed.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).Tsuppress_min" ><strong>SUPPRESSION.Tsuppress_min</strong></a>
+    
+<p>Minimum time in seconds the group gets suppressed.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).TsuppressionOver" ><strong>SUPPRESSION.TsuppressionOver</strong></a>
+    
+<p>Time at which the suppression will be over.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(SUPPRESSION).Type" ><strong>SUPPRESSION.Type</strong></a>
+    
+<p>Type of the group.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(SUPPRESSION).eventmoose" ><strong>SUPPRESSION.eventmoose</strong></a>
+    
+<p>If true, events are handled by MOOSE. If false, events are handled directly by DCS eventhandler. Default true.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(SUPPRESSION).flare" ><strong>SUPPRESSION.flare</strong></a>
+    
+<p>Flare units when they get hit or die.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+<a id="#(SUPPRESSION).hideout" ><strong>SUPPRESSION.hideout</strong></a>
+    
+<p>Coordinate/place where the group will try to take cover.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(SUPPRESSION).lid" ><strong>SUPPRESSION.lid</strong></a>
+    
+<p>String for DCS log file.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(SUPPRESSION).smoke" ><strong>SUPPRESSION.smoke</strong></a>
+    
+<p>Smoke places to which the group retreats, falls back or hides.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(SUPPRESSION).version" ><strong>SUPPRESSION.version</strong></a>
+    
+<p>PSEUDOATC version.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(SUPPRESSION).waypoints" ><strong>SUPPRESSION.waypoints</strong></a>
+    
+<p>Waypoints of the group as defined in the ME.</p>
+
+</div>
+
+</div>   
+<div class="functions  w3-container w3-theme-l2">
+  <h2>Function(s)</h2>
+</div>  
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).AddEndState" ><strong>SUPPRESSION:AddEndState(State)</strong></a></h2>
+</div>
+    
+<p>Adds an End state.</p>
+
+<div id= "#Functions##AddEndState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The FSM state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).AddProcess" ><strong>SUPPRESSION:AddProcess(From, Event, Process, ReturnEvents)</strong></a></h2>
+</div>
+    
+<p>Set the default <a href="##(FSM_PROCESS)">#FSM_PROCESS</a> template with key ProcessName providing the ProcessClass and the process object when it is assigned to a <a href="Wrapper.Controllable.html">Wrapper.Controllable</a> by the task.</p>
+
+<div id= "#Functions##AddProcess" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Can contain a string indicating the From state or a table of strings containing multiple From states.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Event name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Fsm.html##(FSM_PROCESS)">Core.Fsm#FSM_PROCESS</a>
+            <strong><strong>Process</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>An sub-process FSM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>ReturnEvents</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>A table indicating for which returned events of the SubFSM which Event must be triggered in the FSM.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Core.Fsm.html##(FSM_PROCESS)">Core.Fsm#FSM_PROCESS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The SubFSM.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).AddScore" ><strong>SUPPRESSION:AddScore(State, ScoreText, Score)</strong></a></h2>
+</div>
+    
+<p>Adds a score for the FSM to be achieved.</p>
+
+<div id= "#Functions##AddScore" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is the state of the process when the score needs to be given. (See the relevant state descriptions of the process).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>ScoreText</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is a text describing the score that is given according the status.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Score</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is a number providing the score of the status.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FSM)">#FSM</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).AddScoreProcess" ><strong>SUPPRESSION:AddScoreProcess(From, Event, State, ScoreText, Score)</strong></a></h2>
+</div>
+    
+<p>Adds a score for the FSM_PROCESS to be achieved.</p>
+
+<div id= "#Functions##AddScoreProcess" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is the From State of the main process.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is the Event of the main process.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is the state of the process when the score needs to be given. (See the relevant state descriptions of the process).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>ScoreText</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is a text describing the score that is given according the status.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Score</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>is a number providing the score of the status.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FSM)">#FSM</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).AddTransition" ><strong>SUPPRESSION:AddTransition(From, Event, To)</strong></a></h2>
+</div>
+    
+<p>Add a new transition rule to the FSM.</p>
+
+    
+<p>A transition rule defines when and if the FSM can transition from a state towards another state upon a triggered event.</p>
+
+<div id= "#Functions##AddTransition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Can contain a string indicating the From state or a table of strings containing multiple From states.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Event name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The To state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).GetCurrentState" ><strong>SUPPRESSION:GetCurrentState()</strong></a></h2>
+</div>
+    
+<p>Get current state.</p>
+
+<div id= "#Functions##GetCurrentState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#string:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Current FSM state.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).GetEndStates" ><strong>SUPPRESSION:GetEndStates()</strong></a></h2>
+</div>
+    
+<p>Returns the End states.</p>
+
+<div id= "#Functions##GetEndStates" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>End states.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).GetProcess" ><strong>SUPPRESSION:GetProcess(From, Event)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##GetProcess" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).GetProcesses" ><strong>SUPPRESSION:GetProcesses()</strong></a></h2>
+</div>
+    
+<p>Returns a table of the SubFSM rules defined within the FSM.</p>
+
+<div id= "#Functions##GetProcesses" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Sub processes.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).GetScores" ><strong>SUPPRESSION:GetScores()</strong></a></h2>
+</div>
+    
+<p>Returns a table with the scores defined.</p>
+
+<div id= "#Functions##GetScores" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Scores.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).GetStartState" ><strong>SUPPRESSION:GetStartState()</strong></a></h2>
+</div>
+    
+<p>Returns the start state of the FSM.</p>
+
+<div id= "#Functions##GetStartState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#string:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>A string containing the start state.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).GetState" ><strong>SUPPRESSION:GetState()</strong></a></h2>
+</div>
+    
+<p>Get current state.</p>
+
+<div id= "#Functions##GetState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#string:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Current FSM state.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).GetSubs" ><strong>SUPPRESSION:GetSubs()</strong></a></h2>
+</div>
+    
+<p>Returns a table with the Subs defined.</p>
+
+<div id= "#Functions##GetSubs" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Sub processes.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).GetTransitions" ><strong>SUPPRESSION:GetTransitions()</strong></a></h2>
+</div>
+    
+<p>Returns a table of the transition rules defined within the FSM.</p>
+
+<div id= "#Functions##GetTransitions" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Transitions.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).Is" ><strong>SUPPRESSION:Is(State)</strong></a></h2>
+</div>
+    
+<p>Check if FSM is in state.</p>
+
+<div id= "#Functions##Is" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>State name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, FSM is in this state.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).LoadCallBacks" ><strong>SUPPRESSION:LoadCallBacks(CallBackTable)</strong></a></h2>
+</div>
+    
+<p>Load call backs.</p>
+
+<div id= "#Functions##LoadCallBacks" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>CallBackTable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Table of call backs.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).New" ><strong>SUPPRESSION:New()</strong></a></h2>
+</div>
+    
+<p>Creates a new FSM object.</p>
+
+<div id= "#Functions##New" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(FSM)">#FSM</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).SetProcess" ><strong>SUPPRESSION:SetProcess(From, Event, Fsm)</strong></a></h2>
+</div>
+    
+
+
+<div id= "#Functions##SetProcess" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Fsm</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).SetStartState" ><strong>SUPPRESSION:SetStartState(State)</strong></a></h2>
+</div>
+    
+<p>Sets the start state of the FSM.</p>
+
+<div id= "#Functions##SetStartState" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>A string defining the start state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION)._add_to_map" ><strong>SUPPRESSION:_add_to_map(Map, Event)</strong></a></h2>
+</div>
+    
+<p>Add to map.</p>
+
+<div id= "#Functions##_add_to_map" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Map</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Map.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event table.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION)._call_handler" ><strong>SUPPRESSION:_call_handler(step, trigger, params, EventName)</strong></a></h2>
+</div>
+    
+<p>Call handler.</p>
+
+<div id= "#Functions##_call_handler" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>step</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Step "onafter", "onbefore", "onenter", "onleave".</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>trigger</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Trigger.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>params</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Parameters.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>EventName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+      </div>
+      <div class="w3-half">
+        
+<p>Value.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION)._create_transition" ><strong>SUPPRESSION:_create_transition(EventName)</strong></a></h2>
+</div>
+    
+<p>Create transition.</p>
+
+<div id= "#Functions##_create_transition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>EventName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#function:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Function.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION)._delayed_transition" ><strong>SUPPRESSION:_delayed_transition(EventName)</strong></a></h2>
+</div>
+    
+<p>Delayed transition.</p>
+
+<div id= "#Functions##_delayed_transition" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>EventName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#function:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Function.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION)._eventmap" ><strong>SUPPRESSION:_eventmap(Events, EventStructure)</strong></a></h2>
+</div>
+    
+<p>Event map.</p>
+
+<div id= "#Functions##_eventmap" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>Events</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Events.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>EventStructure</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event structure.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION)._gosub" ><strong>SUPPRESSION:_gosub(ParentFrom, ParentEvent)</strong></a></h2>
+</div>
+    
+<p>Go sub.</p>
+
+<div id= "#Functions##_gosub" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>ParentFrom</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Parent from state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>ParentEvent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Parent event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Subs.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION)._handler" ><strong>SUPPRESSION:_handler(EventName, ...)</strong></a></h2>
+</div>
+    
+<p>Handler.</p>
+
+<div id= "#Functions##_handler" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>EventName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>...</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Arguments.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION)._isendstate" ><strong>SUPPRESSION:_isendstate(Current)</strong></a></h2>
+</div>
+    
+<p>Is end state.</p>
+
+<div id= "#Functions##_isendstate" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Current</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Current state name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#table:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>FSM parent.</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#string:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>Event name.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION)._submap" ><strong>SUPPRESSION:_submap(subs, sub, name)</strong></a></h2>
+</div>
+    
+<p>Sub maps.</p>
+
+<div id= "#Functions##_submap" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>subs</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Subs.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>sub</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Sub.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>name</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).can" ><strong>SUPPRESSION:can(e)</strong></a></h2>
+</div>
+    
+<p>Check if can do an event.</p>
+
+<div id= "#Functions##can" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>e</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#boolean:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>If true, FSM can do the event.</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#string:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>To state.</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).cannot" ><strong>SUPPRESSION:cannot(e)</strong></a></h2>
+</div>
+    
+<p>Check if cannot do an event.</p>
+
+<div id= "#Functions##cannot" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>e</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, FSM cannot do the event.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SUPPRESSION).is" ><strong>SUPPRESSION:is(State, state)</strong></a></h2>
+</div>
+    
+<p>Check if FSM is in state.</p>
+
+<div id= "#Functions##is" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>State</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>State name.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>state</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>If true, FSM is in this state.  </p>
+
+      </div>
+    </div>
 </div>
 
 </div>
