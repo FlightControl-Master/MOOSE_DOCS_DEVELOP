@@ -1866,17 +1866,6 @@
        <div class="w3-card-4 w3-white w3-margin-16">
          <div class="w3-display-container w3-text-white w3-text-shadow">
            <img src= "../Images/MOOSE.JPG" alt="Image">
-           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Utilities.STTS.html">Utilities.STTS</a></strong></h2></div>
-         </div>
-         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
-<p><strong>Utilities</strong>  - DCS Simple Text-To-Speech (STTS).</p>
-</p></div>
-       </div>         
-     </div>
-     <div class="w3-col s12 m6 l4">
-       <div class="w3-card-4 w3-white w3-margin-16">
-         <div class="w3-display-container w3-text-white w3-text-shadow">
-           <img src= "../Images/MOOSE.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Utilities.Socket.html">Utilities.Socket</a></strong></h2></div>
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
@@ -3459,6 +3448,12 @@ The marker can be deleted any time.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).AddPrecisionBombingOpsGroup">PLAYERTASKCONTROLLER:AddPrecisionBombingOpsGroup(FlightGroup, LaserCode, HoldingPoint, Alt, Speed)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[User] Convenience function - add done or ground allowing precision laser-guided bombing on statics and "high-value" ground units (MBT etc)</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).AddRejectZone">PLAYERTASKCONTROLLER:AddRejectZone(RejectZone)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Add reject zone to INTEL detection.</p>
@@ -3603,7 +3598,7 @@ The marker can be deleted any time.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).EnablePrecisionBombing">PLAYERTASKCONTROLLER:EnablePrecisionBombing(FlightGroup, LaserCode, HoldingPoint, Alt, Speed)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).EnablePrecisionBombing">PLAYERTASKCONTROLLER:EnablePrecisionBombing(FlightGroup, LaserCode, HoldingPoint, Alt, Speed, MaxTravelDist)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Allow precision laser-guided bombing on statics and "high-value" ground units (MBT etc)</p>
 </td>
@@ -3699,43 +3694,13 @@ The marker can be deleted any time.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).LaserCode">PLAYERTASKCONTROLLER.LaserCode</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).LasingDrone">PLAYERTASKCONTROLLER.LasingDrone</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).LasingDroneAlt">PLAYERTASKCONTROLLER.LasingDroneAlt</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).LasingDroneIsArmygroup">PLAYERTASKCONTROLLER.LasingDroneIsArmygroup</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).LasingDroneIsFlightgroup">PLAYERTASKCONTROLLER.LasingDroneIsFlightgroup</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).LasingDroneSpeed">PLAYERTASKCONTROLLER.LasingDroneSpeed</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).LasingDroneTemplate">PLAYERTASKCONTROLLER.LasingDroneTemplate</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).LasingDroneSet">PLAYERTASKCONTROLLER.LasingDroneSet</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -4338,6 +4303,12 @@ The marker can be deleted any time.</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER)._EventHandler">PLAYERTASKCONTROLLER:_EventHandler(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Internal] Event handling</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER)._FindLasingDroneForTaskID">PLAYERTASKCONTROLLER:_FindLasingDroneForTaskID(ID)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[Internal] Find matching drone for precision bombing task, if any is assigned.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -10660,32 +10631,13 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
-<a id="#(PLAYERTASKCONTROLLER).LasingDroneIsArmygroup" ><strong>PLAYERTASKCONTROLLER.LasingDroneIsArmygroup</strong></a>
+    <a href="Core.Set.html##(SET_OPSGROUP)">Core.Set#SET_OPSGROUP</a>
+<a id="#(PLAYERTASKCONTROLLER).LasingDroneSet" ><strong>PLAYERTASKCONTROLLER.LasingDroneSet</strong></a>
     
 
 
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(PLAYERTASKCONTROLLER).LasingDroneIsFlightgroup" ><strong>PLAYERTASKCONTROLLER.LasingDroneIsFlightgroup</strong></a>
     
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(PLAYERTASKCONTROLLER).LasingDroneTemplate" ><strong>PLAYERTASKCONTROLLER.LasingDroneTemplate</strong></a>
-    
-
+<p>self.PlayerMenu = {} -- #table</p>
 
 </div>
 
@@ -11169,7 +11121,7 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
@@ -11572,6 +11524,103 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
          
        taskmanager:AddPlayerTaskToQueue(PlayerTask)     </code></pre>
 
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(PLAYERTASKCONTROLLER).AddPrecisionBombingOpsGroup" ><strong>PLAYERTASKCONTROLLER:AddPrecisionBombingOpsGroup(FlightGroup, LaserCode, HoldingPoint, Alt, Speed)</strong></a></h2>
+</div>
+    
+<p>[User] Convenience function - add done or ground allowing precision laser-guided bombing on statics and "high-value" ground units (MBT etc)</p>
+
+<div id= "#Functions##AddPrecisionBombingOpsGroup" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>PLAYERTASKCONTROLLER</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.FlightGroup.html##(FLIGHTGROUP)">Ops.FlightGroup#FLIGHTGROUP</a>
+            <strong><strong>FlightGroup</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The FlightGroup (e.g. drone) to be used for lasing (one unit in one group only).
+Can optionally be handed as Ops.ArmyGroup#ARMYGROUP - <strong>Note</strong> might not find an LOS spot or get lost on the way. Cannot island-hop.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>LaserCode</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The lasercode to be used. Defaults to 1688.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>HoldingPoint</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Point where the drone should initially circle. If not set, defaults to BullsEye of the coalition.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Alt</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Altitude in feet. Only applies if using a FLIGHTGROUP object! Defaults to 10000.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Speed in knots. Only applies if using a FLIGHTGROUP object! Defaults to 120.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(PLAYERTASKCONTROLLER)">#PLAYERTASKCONTROLLER</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
@@ -12003,7 +12052,7 @@ Where **TASK** is the tag that tells the controller this mark is a target locati
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(PLAYERTASKCONTROLLER).EnablePrecisionBombing" ><strong>PLAYERTASKCONTROLLER:EnablePrecisionBombing(FlightGroup, LaserCode, HoldingPoint, Alt, Speed)</strong></a></h2>
+<h2><a id="#(PLAYERTASKCONTROLLER).EnablePrecisionBombing" ><strong>PLAYERTASKCONTROLLER:EnablePrecisionBombing(FlightGroup, LaserCode, HoldingPoint, Alt, Speed, MaxTravelDist)</strong></a></h2>
 </div>
     
 <p>[User] Allow precision laser-guided bombing on statics and "high-value" ground units (MBT etc)</p>
@@ -12078,6 +12127,19 @@ Can optionally be handed as Ops.ArmyGroup#ARMYGROUP - <strong>Note</strong> migh
           <div class="w3-half">
               
 <p>(Optional) Speed in knots. Only applies if using a FLIGHTGROUP object! Defaults to 120.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>MaxTravelDist</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Max distance to travel to traget. Only applies if using a FLIGHTGROUP object! Defaults to 100 NM.</p>
 
           </div>
         </div>
@@ -15365,6 +15427,50 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(PLAYERTASKCONTROLLER)._FindLasingDroneForTaskID" ><strong>PLAYERTASKCONTROLLER:_FindLasingDroneForTaskID(ID)</strong></a></h2>
+</div>
+    
+<p>[Internal] Find matching drone for precision bombing task, if any is assigned.</p>
+
+<div id= "#Functions##_FindLasingDroneForTaskID" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>PLAYERTASKCONTROLLER</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>ID</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Task ID to look for</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Drone</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(PLAYERTASKCONTROLLER)._FlareTask" ><strong>PLAYERTASKCONTROLLER:_FlareTask(Group, Client)</strong></a></h2>
 </div>
     
@@ -17171,32 +17277,13 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
-<a id="#(PLAYERTASKCONTROLLER).LasingDroneIsArmygroup" ><strong>PLAYERTASKCONTROLLER.LasingDroneIsArmygroup</strong></a>
+    <a href="Core.Set.html##(SET_OPSGROUP)">Core.Set#SET_OPSGROUP</a>
+<a id="#(PLAYERTASKCONTROLLER).LasingDroneSet" ><strong>PLAYERTASKCONTROLLER.LasingDroneSet</strong></a>
     
 
 
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(PLAYERTASKCONTROLLER).LasingDroneIsFlightgroup" ><strong>PLAYERTASKCONTROLLER.LasingDroneIsFlightgroup</strong></a>
     
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(PLAYERTASKCONTROLLER).LasingDroneTemplate" ><strong>PLAYERTASKCONTROLLER.LasingDroneTemplate</strong></a>
-    
-
+<p>self.PlayerMenu = {} -- #table</p>
 
 </div>
 
@@ -17680,7 +17767,7 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
+    
 <a id="#(PLAYERTASKCONTROLLER).lasttaskcount" ><strong>PLAYERTASKCONTROLLER.lasttaskcount</strong></a>
     
 
