@@ -2354,6 +2354,12 @@
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).MonitorFrequency">AUTOLASE.MonitorFrequency</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).New">AUTOLASE:New(RecceSet, Coalition, Alias, PilotSet)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Constructor for a new Autolase instance.</p>
@@ -2519,6 +2525,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetMinThreatLevel">AUTOLASE:SetMinThreatLevel(Level)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(User) Set minimum threat level for target selection, can be 0 (lowest) to 10 (highest).</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetMonitorFrequency">AUTOLASE:SetMonitorFrequency(Seconds)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[User] When using Monitor, set the frequency here in which the report will appear</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2912,7 +2924,7 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(AUTOLASE).CurrentLasing" ><strong>AUTOLASE.CurrentLasing</strong></a>
     
 
@@ -3034,7 +3046,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(AUTOLASE).LaserCodes" ><strong>AUTOLASE.LaserCodes</strong></a>
+<a id="#(AUTOLASE).Menu" ><strong>AUTOLASE.Menu</strong></a>
     
 
 
@@ -3044,8 +3056,8 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(AUTOLASE).Menu" ><strong>AUTOLASE.Menu</strong></a>
+    #number
+<a id="#(AUTOLASE).MonitorFrequency" ><strong>AUTOLASE.MonitorFrequency</strong></a>
     
 
 
@@ -3134,17 +3146,6 @@
 
     #table
 <a id="#(AUTOLASE).RecceUnits" ><strong>AUTOLASE.RecceUnits</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(AUTOLASE).RoundingPrecision" ><strong>AUTOLASE.RoundingPrecision</strong></a>
     
 
 
@@ -3267,30 +3268,8 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(AUTOLASE).cooldowntime" ><strong>AUTOLASE.cooldowntime</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #table
 <a id="#(AUTOLASE).deadunitnotes" ><strong>AUTOLASE.deadunitnotes</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AUTOLASE).forcecooldown" ><strong>AUTOLASE.forcecooldown</strong></a>
     
 
 
@@ -3326,7 +3305,29 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(AUTOLASE).maxlasing" ><strong>AUTOLASE.maxlasing</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
 <a id="#(AUTOLASE).minthreatlevel" ><strong>AUTOLASE.minthreatlevel</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AUTOLASE).notifypilots" ><strong>AUTOLASE.notifypilots</strong></a>
     
 
 
@@ -3358,17 +3359,6 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(AUTOLASE).smokecolor" ><strong>AUTOLASE.smokecolor</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(AUTOLASE).smokemenu" ><strong>AUTOLASE.smokemenu</strong></a>
     
@@ -3380,7 +3370,7 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
+    
 <a id="#(AUTOLASE).smoketargets" ><strong>AUTOLASE.smoketargets</strong></a>
     
 
@@ -3391,7 +3381,7 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(AUTOLASE).targetsperrecce" ><strong>AUTOLASE.targetsperrecce</strong></a>
     
 
@@ -4583,7 +4573,7 @@ Step 2 - send a message, e.g.
 <p>[User] Set a table of possible laser codes.</p>
 
     
-<p>Each new RECCE can select a code from this table, default is { 1688, 1130, 4785, 6547, 1465, 4578 } .</p>
+<p>Each new RECCE can select a code from this table, default is { 1688, 1130, 4785, 6547, 1465, 4578 }.</p>
 
 <div id= "#Functions##SetLaserCodes" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -4610,7 +4600,7 @@ Step 2 - send a message, e.g.
       </div>
       <div class="w3-half">
         
-
+<p>self</p>
 
       </div>
     </div>
@@ -4820,6 +4810,50 @@ Step 2 - send a message, e.g.
     <pre class="example"><code>Filter for level 3 and above:
            `myautolase:SetMinThreatLevel(3)`</code></pre>
 
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUTOLASE).SetMonitorFrequency" ><strong>AUTOLASE:SetMonitorFrequency(Seconds)</strong></a></h2>
+</div>
+    
+<p>[User] When using Monitor, set the frequency here in which the report will appear</p>
+
+<div id= "#Functions##SetMonitorFrequency" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUTOLASE</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Seconds</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Run the report loop every number of seconds defined here.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUTOLASE)">#AUTOLASE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
