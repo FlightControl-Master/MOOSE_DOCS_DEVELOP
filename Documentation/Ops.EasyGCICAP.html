@@ -2142,6 +2142,11 @@ E.g. for Kuitaisi this has to have the unit name Kutaisi. This object symbolizes
 Next put a late activated template group for your CAP/GCI Squadron on the map. Last, put a zone on the map for the CAP operations, let's name it "Blue Zone 1". Size of the zone plays no role.
 Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
 
+<h3>Zones</h3>
+
+<p>For our example, you create a RED and a BLUE border, as a closed polygonal zone representing the borderlines. You can also have conflict zone, where - for our example - BLUE will attack
+RED planes, despite being on RED territory. Think of a no-fly zone or an limited area of engagement. Conflict zones take precedence over borders, i.e. they can overlap all borders.</p>
+
 <h3>Code it</h3>
 
 <pre><code>     -- Set up a basic system for the blue side, we'll reside on Kutaisi, and use GROUP objects with "Blue EWR" in the name as EW Radar Systems.
@@ -2154,10 +2159,10 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
      mywing:AddSquadron("Blue Sq1 M2000c","CAP Kutaisi",AIRBASE.Caucasus.Kutaisi,20,AI.Skill.GOOD,102,"ec1.5_Vendee_Jeanne_clean")
 
      -- Add a couple of zones
-     -- We'll defend our border
+     -- We'll defend our own border
      mywing:AddAcceptZone(ZONE_POLYGON:New( "Blue Border", GROUP:FindByName( "Blue Border" ) ))
-     -- We'll attack intruders also here
-     mywing:AddAcceptZone(ZONE_POLYGON:New("Red Defense Zone", GROUP:FindByName( "Red Defense Zone" )))
+     -- We'll attack intruders also here - conflictzones can overlap borders(!) - limited zone of engagement
+     mywing:AddConflictZone(ZONE_POLYGON:New("Red Defense Zone", GROUP:FindByName( "Red Defense Zone" )))
      -- We'll leave the reds alone on their turf
      mywing:AddRejectZone(ZONE_POLYGON:New( "Red Border", GROUP:FindByName( "Red Border" ) ))
 
@@ -2165,10 +2170,10 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
      -- Set up borders on map
      local BlueBorder = ZONE_POLYGON:New( "Blue Border", GROUP:FindByName( "Blue Border" ) )
      BlueBorder:DrawZone(-1,{0,0,1},1,FillColor,FillAlpha,1,true)
-     local BlueNoGoZone = ZONE_POLYGON:New("Red Defense Zone", GROUP:FindByName( "Red Defense Zone" ))
-     BlueNoGoZone:DrawZone(-1,{1,1,0},1,FillColor,FillAlpha,2,true)
-     local BlueNoGoZone2 = ZONE_POLYGON:New( "Red Border", GROUP:FindByName( "Red Border" ) )
-     BlueNoGoZone2:DrawZone(-1,{1,0,0},1,FillColor,FillAlpha,4,true)
+     local ConflictZone = ZONE_POLYGON:New("Red Defense Zone", GROUP:FindByName( "Red Defense Zone" ))
+     ConflictZone:DrawZone(-1,{1,1,0},1,FillColor,FillAlpha,2,true)
+     local BlueNoGoZone = ZONE_POLYGON:New( "Red Border", GROUP:FindByName( "Red Border" ) )
+     BlueNoGoZone:DrawZone(-1,{1,0,0},1,FillColor,FillAlpha,4,true)
 </code></pre>
 
 <h3>Add a second airwing with squads and own CAP point (optional)</h3>
@@ -2261,6 +2266,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).AddConflictZone">EASYGCICAP:AddConflictZone(Zone)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Add a zone to the conflict zones set.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).AddPatrolPointAwacs">EASYGCICAP:AddPatrolPointAwacs(AirbaseName, Coordinate, Altitude, Speed, Heading, LegLength)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add an AWACS patrol point to a Wing</p>
@@ -2316,6 +2327,12 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).ClassName">EASYGCICAP.ClassName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).ConflictZoneSet">EASYGCICAP.ConflictZoneSet</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -3268,6 +3285,17 @@ Put an EW radar system on the map and name it aptly, like "Blue EWR".</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+<a id="#(EASYGCICAP).ConflictZoneSet" ><strong>EASYGCICAP.ConflictZoneSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(EASYGCICAP).DespawnAfterHolding" ><strong>EASYGCICAP.DespawnAfterHolding</strong></a>
     
@@ -3903,6 +3931,48 @@ self.CapZoneName = CapZoneName</p>
             <p>
                 #string
             <strong><strong>Alias</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYGCICAP)">#EASYGCICAP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP).AddConflictZone" ><strong>EASYGCICAP:AddConflictZone(Zone)</strong></a></h2>
+</div>
+    
+<p>Add a zone to the conflict zones set.</p>
+
+<div id= "#Functions##AddConflictZone" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
+            <strong><strong>Zone</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -6899,6 +6969,17 @@ be managed by 2 planes from the assigned AirWing. There is an maximum missions l
 
     #string
 <a id="#(EASYGCICAP).ClassName" ><strong>EASYGCICAP.ClassName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+<a id="#(EASYGCICAP).ConflictZoneSet" ><strong>EASYGCICAP.ConflictZoneSet</strong></a>
     
 
 
