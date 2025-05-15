@@ -2556,7 +2556,7 @@ The marker can be deleted any time.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).AddOpsZoneCaptureSuccessCondition">PLAYERTASK:AddOpsZoneCaptureSuccessCondition(CaptureSquadGroupNamePrefix, Coalition)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).AddOpsZoneCaptureSuccessCondition">PLAYERTASK:AddOpsZoneCaptureSuccessCondition(CaptureSquadGroupNamePrefix, Coalition, CheckClientInZone)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[USER] Adds task success condition for AUFTRAG.Type.CAPTUREZONE for OpsZone or OpsZone set target object.</p>
 </td>
@@ -5588,7 +5588,7 @@ The marker can be deleted any time.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(PLAYERTASK).AddOpsZoneCaptureSuccessCondition" ><strong>PLAYERTASK:AddOpsZoneCaptureSuccessCondition(CaptureSquadGroupNamePrefix, Coalition)</strong></a></h2>
+<h2><a id="#(PLAYERTASK).AddOpsZoneCaptureSuccessCondition" ><strong>PLAYERTASK:AddOpsZoneCaptureSuccessCondition(CaptureSquadGroupNamePrefix, Coalition, CheckClientInZone)</strong></a></h2>
 </div>
     
 <p>[USER] Adds task success condition for AUFTRAG.Type.CAPTUREZONE for OpsZone or OpsZone set target object.</p>
@@ -5631,6 +5631,19 @@ The marker can be deleted any time.</p>
 
           </div>
         </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>CheckClientInZone</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true, a CLIENT assigned to this task also needs to be in the zone for the task to be successful.</p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -5655,7 +5668,7 @@ mytask:AddFreetext("Transport capture squad to the ops zone.")
 
 -- We set CaptureSquadGroupNamePrefix the group name prefix as set in the ME or the spawn of the group that need to be present at the OpsZone like a capture squad,
 -- and set the capturing Coalition in order to trigger a successful task.
-mytask:AddOpsZoneCaptureSuccessCondition("capture-squad", coalition.side.BLUE)
+mytask:AddOpsZoneCaptureSuccessCondition("capture-squad", coalition.side.BLUE, false)
 
 playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
 
@@ -10638,10 +10651,13 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    <a href="Core.Set.html##(SET_OPSGROUP)">Core.Set#SET_OPSGROUP</a>
 <a id="#(PLAYERTASKCONTROLLER).LasingDroneSet" ><strong>PLAYERTASKCONTROLLER.LasingDroneSet</strong></a>
     
 
+
+    
+<p>self.PlayerMenu = {} -- #table</p>
 
 </div>
 
@@ -11193,17 +11209,6 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
 
     #boolean
 <a id="#(PLAYERTASKCONTROLLER).repeatonfailed" ><strong>PLAYERTASKCONTROLLER.repeatonfailed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(PLAYERTASKCONTROLLER).repeattimes" ><strong>PLAYERTASKCONTROLLER.repeattimes</strong></a>
     
 
 
@@ -17422,10 +17427,13 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    <a href="Core.Set.html##(SET_OPSGROUP)">Core.Set#SET_OPSGROUP</a>
 <a id="#(PLAYERTASKCONTROLLER).LasingDroneSet" ><strong>PLAYERTASKCONTROLLER.LasingDroneSet</strong></a>
     
 
+
+    
+<p>self.PlayerMenu = {} -- #table</p>
 
 </div>
 
@@ -17977,17 +17985,6 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 
     #boolean
 <a id="#(PLAYERTASKCONTROLLER).repeatonfailed" ><strong>PLAYERTASKCONTROLLER.repeatonfailed</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(PLAYERTASKCONTROLLER).repeattimes" ><strong>PLAYERTASKCONTROLLER.repeattimes</strong></a>
     
 
 
