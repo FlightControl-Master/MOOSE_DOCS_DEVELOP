@@ -2433,6 +2433,12 @@ in the mission editor are absolute maximum ranges; in-game this is rather 50-75%
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).DLinkCacheTime">MANTIS.DLinkCacheTime</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Seconds after which cached contacts in DLink will decay.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).Debug">MANTIS:Debug(onoff)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Function to set switch-on/off the debug state</p>
@@ -2676,6 +2682,12 @@ in the mission editor are absolute maximum ranges; in-game this is rather 50-75%
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).SetCommandCenter">MANTIS:SetCommandCenter(group)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Function to set the HQ object for further use</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).SetDLinkCacheTime">MANTIS:SetDLinkCacheTime(seconds)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Function to set how long INTEL DLINK remembers contacts.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3035,7 +3047,7 @@ in the mission editor are absolute maximum ranges; in-game this is rather 50-75%
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).checkcounter">MANTIS.checkcounter</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Counter for SAM Table refreshes</p>
+<p>Counter for SAM Table refreshes.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4790,6 +4802,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(MANTIS).DLinkCacheTime" ><strong>MANTIS.DLinkCacheTime</strong></a>
+    
+<p>Seconds after which cached contacts in DLink will decay.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="Functional.Detection.html##(DETECTION_AREAS)">Functional.Detection#DETECTION_AREAS</a>
 <a id="#(MANTIS).Detection" ><strong>MANTIS.Detection</strong></a>
     
@@ -5261,7 +5284,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     #number
 <a id="#(MANTIS).checkcounter" ><strong>MANTIS.checkcounter</strong></a>
     
-<p>Counter for SAM Table refreshes</p>
+<p>Counter for SAM Table refreshes.</p>
 
 </div>
 
@@ -6925,6 +6948,50 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 
           </div>
         </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(MANTIS).SetDLinkCacheTime" ><strong>MANTIS:SetDLinkCacheTime(seconds)</strong></a></h2>
+</div>
+    
+<p>Function to set how long INTEL DLINK remembers contacts.</p>
+
+<div id= "#Functions##SetDLinkCacheTime" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>MANTIS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>seconds</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Remember this many seconds</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(MANTIS)">#MANTIS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
@@ -9595,6 +9662,17 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(MANTIS).DLinkCacheTime" ><strong>MANTIS.DLinkCacheTime</strong></a>
+    
+<p>Seconds after which cached contacts in DLink will decay.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="Functional.Detection.html##(DETECTION_AREAS)">Functional.Detection#DETECTION_AREAS</a>
 <a id="#(MANTIS).Detection" ><strong>MANTIS.Detection</strong></a>
     
@@ -10066,7 +10144,7 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
     #number
 <a id="#(MANTIS).checkcounter" ><strong>MANTIS.checkcounter</strong></a>
     
-<p>Counter for SAM Table refreshes</p>
+<p>Counter for SAM Table refreshes.</p>
 
 </div>
 
