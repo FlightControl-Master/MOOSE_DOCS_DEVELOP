@@ -3107,7 +3107,19 @@ To add a localization, the following texts need to be translated and set in your
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).OnAfterIntercept">AWACS:OnAfterIntercept(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On After "Intercept" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).OnAfterInterceptFailure">AWACS:OnAfterInterceptFailure(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On After "InterceptFailure" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).OnAfterInterceptSuccess">AWACS:OnAfterInterceptSuccess(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On After "InterceptSuccess" event.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3138,6 +3150,18 @@ To add a localization, the following texts need to be translated and set in your
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).OnAfterReAnchor">AWACS:OnAfterReAnchor(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On After "ReAnchor" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).OnAfterVIDFailure">AWACS:OnAfterVIDFailure(From, Event, To, GID, Group, Contact)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On After "VIDFailure" event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AWACS).OnAfterVIDSuccess">AWACS:OnAfterVIDSuccess(From, Event, To, GID, Group, Contact)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>On After "VIDSuccess" event.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -7571,12 +7595,136 @@ The name of the zone will be used in reference calls as bulls eye name, so ensur
 <h2><a id="#(AWACS).OnAfterIntercept" ><strong>AWACS:OnAfterIntercept(From, Event, To)</strong></a></h2>
 </div>
     
+<p>On After "Intercept" event.</p>
+
+    
+<p>CAP send on intercept.</p>
+
+<div id= "#Functions##OnAfterIntercept" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AWACS</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AWACS).OnAfterInterceptFailure" ><strong>AWACS:OnAfterInterceptFailure(From, Event, To)</strong></a></h2>
+</div>
+    
 <p>On After "InterceptFailure" event.</p>
 
     
 <p>Intercept failure.</p>
 
-<div id= "#Functions##OnAfterIntercept" class="w3-show w3-white">
+<div id= "#Functions##OnAfterInterceptFailure" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AWACS</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AWACS).OnAfterInterceptSuccess" ><strong>AWACS:OnAfterInterceptSuccess(From, Event, To)</strong></a></h2>
+</div>
+    
+<p>On After "InterceptSuccess" event.</p>
+
+    
+<p>Intercept successful.</p>
+
+<div id= "#Functions##OnAfterInterceptSuccess" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
@@ -7929,6 +8077,208 @@ The name of the zone will be used in reference calls as bulls eye name, so ensur
           <div class="w3-half">
               
 <p>To state.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AWACS).OnAfterVIDFailure" ><strong>AWACS:OnAfterVIDFailure(From, Event, To, GID, Group, Contact)</strong></a></h2>
+</div>
+    
+<p>On After "VIDFailure" event.</p>
+
+    
+<p>Intercept failure.</p>
+
+<div id= "#Functions##OnAfterVIDFailure" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AWACS</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>GID</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Managed group ID (Player)</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>Group</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Player) Group done the VID</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(AWACS.ManagedContact)">#AWACS.ManagedContact</a>
+            <strong><strong>Contact</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The contact that was VID'd </p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AWACS).OnAfterVIDSuccess" ><strong>AWACS:OnAfterVIDSuccess(From, Event, To, GID, Group, Contact)</strong></a></h2>
+</div>
+    
+<p>On After "VIDSuccess" event.</p>
+
+    
+<p>Intercept successful.</p>
+
+<div id= "#Functions##OnAfterVIDSuccess" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AWACS</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>From state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>To state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>GID</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Managed group ID (Player)</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>Group</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Player) Group done the VID</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(AWACS.ManagedContact)">#AWACS.ManagedContact</a>
+            <strong><strong>Contact</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The contact that was VID'd </p>
 
           </div>
         </div>
