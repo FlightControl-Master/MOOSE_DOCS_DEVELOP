@@ -2260,9 +2260,9 @@ Player and global <a href="Core.Settings.html##(SETTINGS)">Core.Settings#SETTING
        taskmanager:AddRejectZone(ZONE:FindByName("RejectZone"))
 
        -- Set up using SRS for messaging
-       local hereSRSPath = "C:\\Program Files\\DCS-SimpleRadio-Standalone"
+       local hereSRSPath = "C:\\Program Files\\DCS-SimpleRadio-Standalone\\ExternalAudio"
        local hereSRSPort = 5002
-       -- local hereSRSGoogle = "C:\\Program Files\\DCS-SimpleRadio-Standalone\\yourkey.json"
+       -- local hereSRSGoogle = "C:\\Program Files\\DCS-SimpleRadio-Standalone\\ExternalAudio\\yourkey.json"
        taskmanager:SetSRS({130,255},{radio.modulation.AM,radio.modulation.AM},hereSRSPath,"female","en-GB",hereSRSPort,"Microsoft Hazel Desktop",0.7,hereSRSGoogle)
 
        -- Controller will announce itself under these broadcast frequencies, handy to use cold-start frequencies here of your aircraft
@@ -10651,13 +10651,10 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="Core.Set.html##(SET_OPSGROUP)">Core.Set#SET_OPSGROUP</a>
+    
 <a id="#(PLAYERTASKCONTROLLER).LasingDroneSet" ><strong>PLAYERTASKCONTROLLER.LasingDroneSet</strong></a>
     
 
-
-    
-<p>self.PlayerMenu = {} -- #table</p>
 
 </div>
 
@@ -14377,7 +14374,7 @@ If you want to e.g. exclude AAA, so target groups with this attribute are assign
           </div>
           <div class="w3-half">
               
-<p>Defaults to "C:\Program Files\DCS-SimpleRadio-Standalone"</p>
+<p>Defaults to "C:\Program Files\DCS-SimpleRadio-Standalone\ExternalAudio"</p>
 
           </div>
         </div>
@@ -17438,13 +17435,10 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="Core.Set.html##(SET_OPSGROUP)">Core.Set#SET_OPSGROUP</a>
+    
 <a id="#(PLAYERTASKCONTROLLER).LasingDroneSet" ><strong>PLAYERTASKCONTROLLER.LasingDroneSet</strong></a>
     
 
-
-    
-<p>self.PlayerMenu = {} -- #table</p>
 
 </div>
 

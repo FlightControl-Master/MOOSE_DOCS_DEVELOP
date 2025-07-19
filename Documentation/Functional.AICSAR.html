@@ -2087,7 +2087,7 @@
 <hr/>
 
 <h3>Author: <strong>Applevangelist</strong></h3>
-<p>Last Update Sept 2023</p>
+<p>Last Update July 2025</p>
 
 <hr/>
 
@@ -2217,10 +2217,10 @@ Hint - the small black window popping up shortly is visible in Single-Player onl
 <p>To set up AICSAR for SRS TTS output, add e.g. the following to your script:</p>
 
 <pre><code>         -- setup for google TTS, radio 243 AM, SRS server port 5002 with a google standard-quality voice (google cloud account required)
-         my_aicsar:SetSRSTTSRadio(true,"C:\\Program Files\\DCS-SimpleRadio-Standalone",243,radio.modulation.AM,5002,MSRS.Voices.Google.Standard.en_US_Standard_D,"en-US","female","C:\\Program Files\\DCS-SimpleRadio-Standalone\\google.json")
+         my_aicsar:SetSRSTTSRadio(true,"C:\\Program Files\\DCS-SimpleRadio-Standalone\\ExternalAudio",243,radio.modulation.AM,5002,MSRS.Voices.Google.Standard.en_US_Standard_D,"en-US","female","C:\\Program Files\\DCS-SimpleRadio-Standalone\\ExternalAudio\\google.json")
 
          -- alternatively for MS Desktop TTS (voices need to be installed locally first!)
-         my_aicsar:SetSRSTTSRadio(true,"C:\\Program Files\\DCS-SimpleRadio-Standalone",243,radio.modulation.AM,5002,MSRS.Voices.Microsoft.Hazel,"en-GB","female")
+         my_aicsar:SetSRSTTSRadio(true,"C:\\Program Files\\DCS-SimpleRadio-Standalone\\ExternalAudio",243,radio.modulation.AM,5002,MSRS.Voices.Microsoft.Hazel,"en-GB","female")
 
          -- define a different voice for the downed pilot(s)
          my_aicsar:SetPilotTTSVoice(MSRS.Voices.Google.Standard.en_AU_Standard_D,"en-AU","male")
@@ -2243,7 +2243,7 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 
 <p>Switch on radio transmissions via <strong>either</strong> SRS <strong>or</strong> "normal" DCS radio e.g. like so:</p>
 
-<pre><code>     my_aicsar:SetSRSRadio(true,"C:\\Program Files\\DCS-SimpleRadio-Standalone",270,radio.modulation.AM,nil,5002)
+<pre><code>     my_aicsar:SetSRSRadio(true,"C:\\Program Files\\DCS-SimpleRadio-Standalone\\ExternalAudio",270,radio.modulation.AM,nil,5002)
 </code></pre>
 
 <p>or         </p>
@@ -2345,7 +2345,7 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).New">AICSAR:New(Alias, Coalition, Pilottemplate, Helotemplate, FARP, MASHZone)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).New">AICSAR:New(Alias, Coalition, Pilottemplate, Helotemplate, FARP, MASHZone, Helonumber)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Function to create a new AICSAR object</p>
 </td>
@@ -2408,6 +2408,12 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).RadioMessages">AICSAR.RadioMessages</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).RescueZone">AICSAR.RescueZone</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Use this zone as operational area for the AICSAR instance.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -2537,6 +2543,12 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).SetUsingRescueZone">AICSAR:SetUsingRescueZone(Zone)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[User] Use a defined zone as area of operation and not the distance to FARP.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).Speed">AICSAR.Speed</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Default speed setting for the helicopter FLIGHTGROUP is 100kn.</p>
@@ -2558,6 +2570,12 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).UseEventEject">AICSAR.UseEventEject</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>In case Event LandingAfterEjection isn't working, use set this to true.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AICSAR).UseRescueZone">AICSAR.UseRescueZone</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>If true, use a rescue zone and not the max distance to FARP/MASH</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3224,6 +3242,17 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="Core.Zone.html##(ZONE_RADIUS)">Core.Zone#ZONE_RADIUS</a>
+<a id="#(AICSAR).RescueZone" ><strong>AICSAR.RescueZone</strong></a>
+    
+<p>Use this zone as operational area for the AICSAR instance.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
 <a id="#(AICSAR).SRS" ><strong>AICSAR.SRS</strong></a>
     
@@ -3327,6 +3356,17 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
 <a id="#(AICSAR).UseEventEject" ><strong>AICSAR.UseEventEject</strong></a>
     
 <p>In case Event LandingAfterEjection isn't working, use set this to true.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AICSAR).UseRescueZone" ><strong>AICSAR.UseRescueZone</strong></a>
+    
+<p>If true, use a rescue zone and not the max distance to FARP/MASH</p>
 
 </div>
 
@@ -3674,7 +3714,7 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AICSAR).New" ><strong>AICSAR:New(Alias, Coalition, Pilottemplate, Helotemplate, FARP, MASHZone)</strong></a></h2>
+<h2><a id="#(AICSAR).New" ><strong>AICSAR:New(Alias, Coalition, Pilottemplate, Helotemplate, FARP, MASHZone, Helonumber)</strong></a></h2>
 </div>
     
 <p>Function to create a new AICSAR object</p>
@@ -3761,6 +3801,19 @@ save your sound file inside of the .miz mission file. <a href="https://github.co
           <div class="w3-half">
               
 <p>Zone where to drop pilots after rescue.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Helonumber</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Max number of alive Ai Helos at the same time. Defaults to three.</p>
 
           </div>
         </div>
@@ -4688,7 +4741,7 @@ Specific voices override culture and gender!</p>
           </div>
           <div class="w3-half">
               
-<p>Path to your SRS Server Component, e.g. "C:\\Program Files\\DCS-SimpleRadio-Standalone"</p>
+<p>Path to your SRS Server External Audio Component, e.g. "C:\\Program Files\\DCS-SimpleRadio-Standalone\\ExternalAudio"</p>
 
           </div>
         </div>
@@ -4801,7 +4854,7 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
           </div>
           <div class="w3-half">
               
-<p>Path to your SRS Server Component, e.g. "E:\\Program Files\\DCS-SimpleRadio-Standalone"</p>
+<p>Path to your SRS Server Component, e.g. "E:\\Program Files\\DCS-SimpleRadio-Standalone\ExternalAudio"</p>
 
           </div>
         </div>
@@ -4904,6 +4957,50 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
       <div class="w3-half">
         
 <p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AICSAR).SetUsingRescueZone" ><strong>AICSAR:SetUsingRescueZone(Zone)</strong></a></h2>
+</div>
+    
+<p>[User] Use a defined zone as area of operation and not the distance to FARP.</p>
+
+<div id= "#Functions##SetUsingRescueZone" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AICSAR</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Zone.html##(ZONE)">Core.Zone#ZONE</a>
+            <strong><strong>Zone</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The operational zone to use. Downed pilots in this area will be rescued. Can be any known #ZONE type.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AICSAR)">#AICSAR</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
 
       </div>
     </div>
@@ -6224,6 +6321,17 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    <a href="Core.Zone.html##(ZONE_RADIUS)">Core.Zone#ZONE_RADIUS</a>
+<a id="#(AICSAR).RescueZone" ><strong>AICSAR.RescueZone</strong></a>
+    
+<p>Use this zone as operational area for the AICSAR instance.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
 <a id="#(AICSAR).SRS" ><strong>AICSAR.SRS</strong></a>
     
@@ -6327,6 +6435,17 @@ See <code>AICSAR:SetPilotTTSVoice()</code> and <code>AICSAR:SetOperatorTTSVoice(
 <a id="#(AICSAR).UseEventEject" ><strong>AICSAR.UseEventEject</strong></a>
     
 <p>In case Event LandingAfterEjection isn't working, use set this to true.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(AICSAR).UseRescueZone" ><strong>AICSAR.UseRescueZone</strong></a>
+    
+<p>If true, use a rescue zone and not the max distance to FARP/MASH</p>
 
 </div>
 
