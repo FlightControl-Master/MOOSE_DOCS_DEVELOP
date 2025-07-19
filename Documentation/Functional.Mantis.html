@@ -2177,10 +2177,10 @@ This is case-sensitive, so "sa-11" is not equal to "SA-11" is not equal to "Sa-1
     <li>SA-2 (with V759 missile, e.g. "Red SAM SA-2 HDS")</li>
     <li>SA-2 (with HQ-2 launcher, use HQ-2 in the group name, e.g. "Red SAM HQ-2" )</li>
     <li>SA-3 (with V601P missile, e.g. "Red SAM SA-3 HDS")</li>
-    <li>SA-10B (overlap with other SA-10 types, e.g. "Red SAM SA-10B HDS")</li>
-    <li>SA-10C (overlap with other SA-10 types, e.g. "Red SAM SA-10C HDS")</li>
-    <li>SA-12 (launcher dependent range, e.g. "Red SAM SA-12 HDS")</li>
-    <li>SA-23 (launcher dependent range, e.g. "Red SAM SA-23 HDS") </li>
+    <li>SA-10B (overlap with other SA-10 types, e.g. "Red SAM SA-10B HDS" with 5P85CE launcher)</li>
+    <li>SA-10C (overlap with other SA-10 types, e.g. "Red SAM SA-10C HDS" with 5P85SE launcher)</li>
+    <li>SA-12 (launcher dependent range, e.g. "Red SAM SA-12 HDS 2" for the 9A82 variant and "Red SAM SA-12 HDS 1" for the 9A83 variant)</li>
+    <li>SA-23 (launcher dependent range, e.g. "Red SAM SA-23 HDS 2" for the 9A82ME variant and "Red SAM SA-23 HDS 2" for the 9A83ME variant) </li>
 </ul>
 
 <p>The other HDS types work like the rest of the known SAM systems.</p>
@@ -2471,6 +2471,12 @@ in the mission editor are absolute maximum ranges; in-game this is rather 50-75%
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).GetCommandCenter">MANTIS:GetCommandCenter()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Function to get the HQ object for further use</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).Groupset">MANTIS.Groupset</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -4502,13 +4508,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS.SamDataHDS).SA-10C HDS 1">MANTIS.SamDataHDS.SA-10C HDS 1</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS.SamDataHDS).SA-10B HDS">MANTIS.SamDataHDS.SA-10B HDS</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS.SamDataHDS).SA-10C HDS 2">MANTIS.SamDataHDS.SA-10C HDS 2</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS.SamDataHDS).SA-10C HDS">MANTIS.SamDataHDS.SA-10C HDS</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -4735,6 +4741,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(MANTIS).AWACS_Prefix" ><strong>MANTIS.AWACS_Prefix</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(MANTIS).AcceptZones" ><strong>MANTIS.AcceptZones</strong></a>
     
@@ -4867,6 +4884,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(MANTIS).Groupset" ><strong>MANTIS.Groupset</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
 <a id="#(MANTIS).HQ_CC" ><strong>MANTIS.HQ_CC</strong></a>
     
@@ -4922,7 +4950,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Long" ><strong>MANTIS.SAM_Table_Long</strong></a>
     
 
@@ -4933,7 +4961,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Medium" ><strong>MANTIS.SAM_Table_Medium</strong></a>
     
 
@@ -4944,7 +4972,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_PointDef" ><strong>MANTIS.SAM_Table_PointDef</strong></a>
     
 
@@ -4955,7 +4983,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Short" ><strong>MANTIS.SAM_Table_Short</strong></a>
     
 
@@ -5112,8 +5140,8 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(MANTIS).SkateNumber" ><strong>MANTIS.SkateNumber</strong></a>
+    
+<a id="#(MANTIS).SkateZones" ><strong>MANTIS.SkateZones</strong></a>
     
 
 
@@ -5416,61 +5444,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(MANTIS).logsamstatus" ><strong>MANTIS.logsamstatus</strong></a>
     
 <p>Log SAM status in dcs.log every cycle if true</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(MANTIS).maxclassic" ><strong>MANTIS.maxclassic</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(MANTIS).maxlongrange" ><strong>MANTIS.maxlongrange</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(MANTIS).maxmidrange" ><strong>MANTIS.maxmidrange</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(MANTIS).maxpointdefrange" ><strong>MANTIS.maxpointdefrange</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(MANTIS).maxshortrange" ><strong>MANTIS.maxshortrange</strong></a>
-    
-
 
 </div>
 
@@ -9683,6 +9656,17 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(MANTIS).AWACS_Prefix" ><strong>MANTIS.AWACS_Prefix</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #table
 <a id="#(MANTIS).AcceptZones" ><strong>MANTIS.AcceptZones</strong></a>
     
@@ -9815,6 +9799,17 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(MANTIS).Groupset" ><strong>MANTIS.Groupset</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
 <a id="#(MANTIS).HQ_CC" ><strong>MANTIS.HQ_CC</strong></a>
     
@@ -9870,7 +9865,7 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Long" ><strong>MANTIS.SAM_Table_Long</strong></a>
     
 
@@ -9881,7 +9876,7 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Medium" ><strong>MANTIS.SAM_Table_Medium</strong></a>
     
 
@@ -9892,7 +9887,7 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_PointDef" ><strong>MANTIS.SAM_Table_PointDef</strong></a>
     
 
@@ -9903,7 +9898,7 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(MANTIS).SAM_Table_Short" ><strong>MANTIS.SAM_Table_Short</strong></a>
     
 
@@ -10060,8 +10055,8 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(MANTIS).SkateNumber" ><strong>MANTIS.SkateNumber</strong></a>
+    
+<a id="#(MANTIS).SkateZones" ><strong>MANTIS.SkateZones</strong></a>
     
 
 
@@ -10364,61 +10359,6 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <a id="#(MANTIS).logsamstatus" ><strong>MANTIS.logsamstatus</strong></a>
     
 <p>Log SAM status in dcs.log every cycle if true</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(MANTIS).maxclassic" ><strong>MANTIS.maxclassic</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(MANTIS).maxlongrange" ><strong>MANTIS.maxlongrange</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(MANTIS).maxmidrange" ><strong>MANTIS.maxmidrange</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(MANTIS).maxpointdefrange" ><strong>MANTIS.maxpointdefrange</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(MANTIS).maxshortrange" ><strong>MANTIS.maxshortrange</strong></a>
-    
-
 
 </div>
 
@@ -15418,7 +15358,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #table
-<a id="#(MANTIS.SamDataHDS).SA-10C HDS 1" ><strong>MANTIS.SamDataHDS.SA-10C HDS 1</strong></a>
+<a id="#(MANTIS.SamDataHDS).SA-10B HDS" ><strong>MANTIS.SamDataHDS.SA-10B HDS</strong></a>
     
 
 
@@ -15429,7 +15369,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #table
-<a id="#(MANTIS.SamDataHDS).SA-10C HDS 2" ><strong>MANTIS.SamDataHDS.SA-10C HDS 2</strong></a>
+<a id="#(MANTIS.SamDataHDS).SA-10C HDS" ><strong>MANTIS.SamDataHDS.SA-10C HDS</strong></a>
     
 
 
