@@ -3649,6 +3649,12 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetRepeatDelay">AUFTRAG:SetRepeatDelay(Nrepeat, RepeatDelay)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p><strong>[LEGION, COMMANDER, CHIEF]</strong> Set the repeat delay in seconds after a mission is successful/failed.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).SetRepeatOnFailure">AUFTRAG:SetRepeatOnFailure(Nrepeat)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[LEGION, COMMANDER, CHIEF]</strong> Set how many times the mission is repeated if it fails.</p>
@@ -4811,6 +4817,12 @@ The commander will select the best assets available from all the legions under h
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).reinforce">AUFTRAG.reinforce</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).repeatDelay">AUFTRAG.repeatDelay</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -7741,6 +7753,17 @@ The commander will select the best assets available from all the legions under h
 
     
 <a id="#(AUFTRAG).reinforce" ><strong>AUFTRAG.reinforce</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AUFTRAG).repeatDelay" ><strong>AUFTRAG.repeatDelay</strong></a>
     
 
 
@@ -18510,6 +18533,63 @@ no reinforcement can take place, even if the mission is submitted to a COMMANDER
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).SetRepeatDelay" ><strong>AUFTRAG:SetRepeatDelay(Nrepeat, RepeatDelay)</strong></a></h2>
+</div>
+    
+<p><strong>[LEGION, COMMANDER, CHIEF]</strong> Set the repeat delay in seconds after a mission is successful/failed.</p>
+
+    
+<p>Only valid if the mission is handled by a LEGION (AIRWING, BRIGADE, FLEET) or higher level.</p>
+
+<div id= "#Functions##SetRepeatDelay" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Nrepeat</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Repeat delay in seconds. Default 1.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>RepeatDelay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AUFTRAG).SetRepeatOnFailure" ><strong>AUFTRAG:SetRepeatOnFailure(Nrepeat)</strong></a></h2>
 </div>
     
@@ -23232,6 +23312,17 @@ will always return.</p>
 
     
 <a id="#(AUFTRAG).reinforce" ><strong>AUFTRAG.reinforce</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(AUFTRAG).repeatDelay" ><strong>AUFTRAG.repeatDelay</strong></a>
     
 
 
