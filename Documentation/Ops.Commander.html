@@ -2514,6 +2514,12 @@ end
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDER).SetMaxMissionsAssignPerCycle">COMMANDER:SetMaxMissionsAssignPerCycle(Number, MaxMissionsAssignPerCycle)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set how many missions can be assigned in a single status iteration.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDER).SetVerbosity">COMMANDER:SetVerbosity(VerbosityLevel)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set verbosity level.</p>
@@ -2661,6 +2667,12 @@ end
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDER).limitMission">COMMANDER.limitMission</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Table of limits for mission types.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(COMMANDER).maxMissionsAssignPerCycle">COMMANDER.maxMissionsAssignPerCycle</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -6071,6 +6083,64 @@ Cohort assets will not be available until relocation is finished.</p>
       <div class="w3-half">
         
 <p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(COMMANDER).SetMaxMissionsAssignPerCycle" ><strong>COMMANDER:SetMaxMissionsAssignPerCycle(Number, MaxMissionsAssignPerCycle)</strong></a></h2>
+</div>
+    
+<p>Set how many missions can be assigned in a single status iteration.</p>
+
+    
+<p>(eg. This is useful for persistent missions where you need to load all AUFTRAGs on mission start and then change it back to default)
+- Warning: Increasing this value will increase the number of missions started per iteration and thus may lead to performance issues if too many missions are started at once.</p>
+
+<div id= "#Functions##SetMaxMissionsAssignPerCycle" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>COMMANDER</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Number</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>of missions assigned per status iteration. Default is 1.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>MaxMissionsAssignPerCycle</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(COMMANDER)">#COMMANDER</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self.</p>
 
       </div>
     </div>
