@@ -3030,7 +3030,7 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewBOMBING">AUFTRAG:NewBOMBING(Target, Altitude, EngageWeaponType)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewBOMBING">AUFTRAG:NewBOMBING(Target, Altitude, EngageWeaponType, Divebomb)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[AIR]</strong> Create a BOMBING mission.</p>
 </td>
@@ -12373,7 +12373,7 @@ This determines the payload and the DCS mission task which are used when the air
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUFTRAG).NewBOMBING" ><strong>AUFTRAG:NewBOMBING(Target, Altitude, EngageWeaponType)</strong></a></h2>
+<h2><a id="#(AUFTRAG).NewBOMBING" ><strong>AUFTRAG:NewBOMBING(Target, Altitude, EngageWeaponType, Divebomb)</strong></a></h2>
 </div>
     
 <p><strong>[AIR]</strong> Create a BOMBING mission.</p>
@@ -12425,6 +12425,19 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_bombing">DCS task bombin
           <div class="w3-half">
               
 <p>Which weapon to use. Defaults to auto, ie ENUMS.WeaponFlag.Auto. See ENUMS.WeaponFlag for options.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Divebomb</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true, use a dive bombing attack approach.</p>
 
           </div>
         </div>
