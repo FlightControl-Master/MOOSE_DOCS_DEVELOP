@@ -2121,7 +2121,7 @@
     
 <ul>
     <li>Object oriented refactoring of Ciribob's fantastic CSAR script.</li>
-    <li>No need for extra MIST loading. </li>
+    <li>No need for extra MIST loading.</li>
     <li>Additional events to tailor your mission.</li>
     <li>Optional SpawnCASEVAC to create casualties without beacon (e.g. handling dead ground vehicles and create CASVAC requests).</li>
 </ul>
@@ -2158,7 +2158,7 @@ Create a late-activated single infantry unit as template in the mission editor a
     mycsar.coordtype = 1 -- Use Lat/Long DDM (0), Lat/Long DMS (1), MGRS (2), Bullseye imperial (3) or Bullseye metric (4) for coordinates.
     mycsar.csarOncrash = false -- (WIP) If set to true, will generate a downed pilot when a plane crashes as well.
     mycsar.enableForAI = false -- set to false to disable AI pilots from being rescued.
-    mycsar.pilotRuntoExtractPoint = true -- Downed pilot will run to the rescue helicopter up to mycsar.extractDistance in meters. 
+    mycsar.pilotRuntoExtractPoint = true -- Downed pilot will run to the rescue helicopter up to mycsar.extractDistance in meters.
     mycsar.extractDistance = 500 -- Distance the downed pilot will start to run to the rescue helicopter.
     mycsar.immortalcrew = true -- Set to true to make wounded crew immortal.
     mycsar.invisiblecrew = false -- Set to true to make wounded crew insvisible.
@@ -2166,14 +2166,14 @@ Create a late-activated single infantry unit as template in the mission editor a
     mycsar.mashprefix = {"MASH"} -- prefixes of #GROUP objects used as MASHes. Will also try to add ZONE and STATIC objects with this prefix once at startup.
     mycsar.max_units = 6 -- max number of pilots that can be carried if #CSAR.AircraftType is undefined.
     mycsar.messageTime = 15 -- Time to show messages for in seconds. Doubled for long messages.
-    mycsar.radioSound = "beacon.ogg" -- the name of the sound file to use for the pilots\' radio beacons. 
+    mycsar.radioSound = "beacon.ogg" -- the name of the sound file to use for the pilots\' radio beacons.
     mycsar.smokecolor = 4 -- Color of smokemarker, 0 is green, 1 is red, 2 is white, 3 is orange and 4 is blue.
     mycsar.useprefix = true  -- Requires CSAR helicopter #GROUP names to have the prefix(es) defined below.
-    mycsar.csarPrefix = { "helicargo", "MEDEVAC"} -- #GROUP name prefixes used for useprefix=true - DO NOT use # in helicopter names in the Mission Editor! 
+    mycsar.csarPrefix = { "helicargo", "MEDEVAC"} -- #GROUP name prefixes used for useprefix=true - DO NOT use # in helicopter names in the Mission Editor!
     mycsar.verbose = 0 -- set to &gt; 1 for stats output for debugging.
     -- limit amount of downed pilots spawned by **ejection** events
     mycsar.limitmaxdownedpilots = true
-    mycsar.maxdownedpilots = 10 
+    mycsar.maxdownedpilots = 10
     -- allow to set far/near distance for approach and optionally pilot must open doors
     mycsar.approachdist_far = 5000 -- switch do 10 sec interval approach mode, meters
     mycsar.approachdist_near = 3000 -- switch to 5 sec interval approach mode, meters
@@ -2277,7 +2277,7 @@ Create a late-activated single infantry unit as template in the mission editor a
 
      function my_csar:OnAfterRescued(from, event, to, heliunit, heliname, pilotssaved)
        ... your code here ...
-     end     
+     end
 </code></pre>
 
 <h2>5. Spawn downed pilots at location to be picked up.</h2>
@@ -2288,7 +2288,7 @@ Create a late-activated single infantry unit as template in the mission editor a
    my_csar:SpawnCSARAtZone( "CSAR_Start_1", coalition.side.BLUE, "Pilot Wagner", true )
 
  --Create a casualty and CASEVAC request from a "Point" (VEC2) for the blue coalition --shagrat
- my_csar:SpawnCASEVAC(Point, coalition.side.BLUE)  
+ my_csar:SpawnCASEVAC(Point, coalition.side.BLUE)
 </code></pre>
 
 <h2>6. Save and load downed pilots - Persistance</h2>
@@ -2311,7 +2311,7 @@ There is a risk involved in doing that; if you do not know what that means, this
 </code></pre>
 
 <p> <strong>Caveat:</strong>
-Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
+Dropped troop noMessage and forcedesc parameters aren't saved.</p>
 
 
 </div>
@@ -3080,12 +3080,6 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR).index">CSAR.index</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR).invisiblecrew">CSAR.invisiblecrew</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -3232,7 +3226,7 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CSAR).onbeforeReturning">CSAR:onbeforeReturning(From, Event, To, Heliname, Woundedgroupname, IsAirport, IsAirPort)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) Function called before Returning() event. </p>
+<p>(Internal) Function called before Returning() event.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3977,7 +3971,7 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CSAR).FreeVHFFrequencies" ><strong>CSAR.FreeVHFFrequencies</strong></a>
     
 
@@ -4451,8 +4445,22 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CSAR).downedPilots" ><strong>CSAR.downedPilots</strong></a>
+    
+
+
+    
+<p> Replacement woundedGroups</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CSAR).downedpilotcounter" ><strong>CSAR.downedpilotcounter</strong></a>
     
 
 
@@ -4585,24 +4593,13 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(CSAR).index" ><strong>CSAR.index</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(CSAR).invisiblecrew" ><strong>CSAR.invisiblecrew</strong></a>
     
 
 
     
-<p> Set to true to make wounded crew insvisible </p>
+<p> Set to true to make wounded crew insvisible</p>
 
 </div>
 
@@ -4738,7 +4735,7 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 
 
     
-<p> Time to show longer messages for in seconds </p>
+<p> Time to show longer messages for in seconds</p>
 
 </div>
 
@@ -4763,7 +4760,7 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 
 
     
-<p> Downed Pilot will run to the rescue helicopter up to self.extractDistance METERS </p>
+<p> Downed Pilot will run to the rescue helicopter up to self.extractDistance METERS</p>
 
 </div>
 
@@ -4800,6 +4797,20 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(CSAR).rescuedpilots" ><strong>CSAR.rescuedpilots</strong></a>
+    
+
+
+    
+<p> counter for saved pilots</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
 <a id="#(CSAR).rescuehoverdistance" ><strong>CSAR.rescuehoverdistance</strong></a>
     
 
@@ -4817,6 +4828,20 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 
     
 <p> added 0.1.11r1</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CSAR).rescues" ><strong>CSAR.rescues</strong></a>
+    
+
+
+    
+<p> counter for successful rescue landings at FARP/AFB/MASH</p>
 
 </div>
 
@@ -4916,7 +4941,7 @@ Dropped troop noMessage and forcedesc parameters aren't saved.      </p>
 
 
     
-<p> Use the Prefixed defined below, Requires Unit have the Prefix defined below </p>
+<p> Use the Prefixed defined below, Requires Unit have the Prefix defined below</p>
 
 </div>
 
@@ -6063,7 +6088,7 @@ callsigns from playername or group name.</p>
       </div>
       <div class="w3-half">
         
-<p>self </p>
+<p>self</p>
 
       </div>
     </div>
@@ -6181,7 +6206,7 @@ callsigns from playername or group name.</p>
         </div>
       <h2><strong>Usage:</strong></h2>
     <pre class="example"><code>If missions designers want to spawn downed pilots into the field, e.g. at mission begin, to give the helicopter guys work, they can do this like so:
-     
+
        -- Create casualty  "CASEVAC" at coordinate Core.Point#COORDINATE for the blue coalition.
        my_csar:SpawnCASEVAC( coordinate, coalition.side.BLUE )</code></pre>
 
@@ -6314,7 +6339,7 @@ callsigns from playername or group name.</p>
         </div>
       <h2><strong>Usage:</strong></h2>
     <pre class="example"><code>If missions designers want to spawn downed pilots into the field, e.g. at mission begin, to give the helicopter guys work, they can do this like so:
-     
+
        -- Create downed "Pilot Wagner" in #ZONE "CSAR_Start_1" at a random point for the blue coalition
        my_csar:SpawnCSARAtZone( "CSAR_Start_1", coalition.side.BLUE, "Wagner", true, false, "Charly-1-1", "F5E" )</code></pre>
 
@@ -7245,7 +7270,7 @@ callsigns from playername or group name.</p>
           </div>
           <div class="w3-half">
               
-<p>Coalition of message. </p>
+<p>Coalition of message.</p>
 
           </div>
         </div>
@@ -8058,7 +8083,7 @@ callsigns from playername or group name.</p>
       </div>
       <div class="w3-half">
         
-<p>count  </p>
+<p>count</p>
 
       </div>
     </div>
@@ -9914,7 +9939,7 @@ callsigns from playername or group name.</p>
 <h2><a id="#(CSAR).onbeforeReturning" ><strong>CSAR:onbeforeReturning(From, Event, To, Heliname, Woundedgroupname, IsAirport, IsAirPort)</strong></a></h2>
 </div>
     
-<p>(Internal) Function called before Returning() event. </p>
+<p>(Internal) Function called before Returning() event.</p>
 
 <div id= "#Functions##onbeforeReturning" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -10260,7 +10285,7 @@ callsigns from playername or group name.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CSAR).FreeVHFFrequencies" ><strong>CSAR.FreeVHFFrequencies</strong></a>
     
 
@@ -10734,8 +10759,22 @@ callsigns from playername or group name.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #table
 <a id="#(CSAR).downedPilots" ><strong>CSAR.downedPilots</strong></a>
+    
+
+
+    
+<p> Replacement woundedGroups</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CSAR).downedpilotcounter" ><strong>CSAR.downedpilotcounter</strong></a>
     
 
 
@@ -10868,24 +10907,13 @@ callsigns from playername or group name.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(CSAR).index" ><strong>CSAR.index</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #boolean
 <a id="#(CSAR).invisiblecrew" ><strong>CSAR.invisiblecrew</strong></a>
     
 
 
     
-<p> Set to true to make wounded crew insvisible </p>
+<p> Set to true to make wounded crew insvisible</p>
 
 </div>
 
@@ -11021,7 +11049,7 @@ callsigns from playername or group name.</p>
 
 
     
-<p> Time to show longer messages for in seconds </p>
+<p> Time to show longer messages for in seconds</p>
 
 </div>
 
@@ -11046,7 +11074,7 @@ callsigns from playername or group name.</p>
 
 
     
-<p> Downed Pilot will run to the rescue helicopter up to self.extractDistance METERS </p>
+<p> Downed Pilot will run to the rescue helicopter up to self.extractDistance METERS</p>
 
 </div>
 
@@ -11083,6 +11111,20 @@ callsigns from playername or group name.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
+<a id="#(CSAR).rescuedpilots" ><strong>CSAR.rescuedpilots</strong></a>
+    
+
+
+    
+<p> counter for saved pilots</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
 <a id="#(CSAR).rescuehoverdistance" ><strong>CSAR.rescuehoverdistance</strong></a>
     
 
@@ -11100,6 +11142,20 @@ callsigns from playername or group name.</p>
 
     
 <p> added 0.1.11r1</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(CSAR).rescues" ><strong>CSAR.rescues</strong></a>
+    
+
+
+    
+<p> counter for successful rescue landings at FARP/AFB/MASH</p>
 
 </div>
 
@@ -11199,7 +11255,7 @@ callsigns from playername or group name.</p>
 
 
     
-<p> Use the Prefixed defined below, Requires Unit have the Prefix defined below </p>
+<p> Use the Prefixed defined below, Requires Unit have the Prefix defined below</p>
 
 </div>
 
