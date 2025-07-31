@@ -2345,6 +2345,30 @@ RED planes, despite being on RED territory. Think of a no-fly zone or an limited
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).FuelCriticalThreshold">EASYGCICAP.FuelCriticalThreshold</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).FuelLowThreshold">EASYGCICAP.FuelLowThreshold</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).GetAirwing">EASYGCICAP:GetAirwing(AirbaseName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get a specific managed AirWing by name</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).GetAirwingTable">EASYGCICAP:GetAirwingTable()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get a table of all managed AirWings</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).GoZoneSet">EASYGCICAP.GoZoneSet</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -2525,6 +2549,18 @@ RED planes, despite being on RED territory. Think of a no-fly zone or an limited
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).SetFuelCritical">EASYGCICAP:SetFuelCritical(Percent)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set "fuel critical" threshold for CAP and INTERCEPT flights.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).SetFuelLow">EASYGCICAP:SetFuelLow(Percent)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set "fuel low" threshold for CAP and INTERCEPT flights.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP).SetMaxAliveMissions">EASYGCICAP:SetMaxAliveMissions(Maxiumum)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set Maximum of alive missions created by this instance to stop airplanes spamming the map</p>
@@ -2581,7 +2617,7 @@ RED planes, despite being on RED territory. Think of a no-fly zone or an limited
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP)._CountAliveAuftrags">EASYGCICAP:_CountAliveAuftrags()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Count alive missions in our internal stack.</p>
+<p>(internal) Count alive missions in our internal stack.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3327,6 +3363,28 @@ RED planes, despite being on RED territory. Think of a no-fly zone or an limited
     
 <p>or self.coalitionname.." EWR"
 self.CapZoneName = CapZoneName</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYGCICAP).FuelCriticalThreshold" ><strong>EASYGCICAP.FuelCriticalThreshold</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYGCICAP).FuelLowThreshold" ><strong>EASYGCICAP.FuelLowThreshold</strong></a>
+    
+
 
 </div>
 
@@ -4885,6 +4943,80 @@ self.CapZoneName = CapZoneName</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP).GetAirwing" ><strong>EASYGCICAP:GetAirwing(AirbaseName)</strong></a></h2>
+</div>
+    
+<p>Get a specific managed AirWing by name</p>
+
+<div id= "#Functions##GetAirwing" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>AirbaseName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Airbase name of the home of this wing.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Ops.AirWing.html##(AIRWING)">Ops.AirWing#AIRWING</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Airwing or nil if not found</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP).GetAirwingTable" ><strong>EASYGCICAP:GetAirwingTable()</strong></a></h2>
+</div>
+    
+<p>Get a table of all managed AirWings</p>
+
+<div id= "#Functions##GetAirwingTable" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Table of Ops.AirWing#AIRWING Airwings</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(EASYGCICAP).New" ><strong>EASYGCICAP:New(Alias, AirbaseName, Coalition, EWRName)</strong></a></h2>
 </div>
     
@@ -5649,6 +5781,94 @@ be managed by 2 planes from the assigned AirWing. There is an maximum missions l
       <div class="w3-half">
         
 <p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP).SetFuelCritical" ><strong>EASYGCICAP:SetFuelCritical(Percent)</strong></a></h2>
+</div>
+    
+<p>Set "fuel critical" threshold for CAP and INTERCEPT flights.</p>
+
+<div id= "#Functions##SetFuelCritical" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Percent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>RTB if fuel at this percent. Values: 1..100, defaults to 10.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYGCICAP)">#EASYGCICAP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYGCICAP).SetFuelLow" ><strong>EASYGCICAP:SetFuelLow(Percent)</strong></a></h2>
+</div>
+    
+<p>Set "fuel low" threshold for CAP and INTERCEPT flights.</p>
+
+<div id= "#Functions##SetFuelLow" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYGCICAP</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Percent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>RTB if fuel at this percent. Values: 1..100, defaults to 25.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYGCICAP)">#EASYGCICAP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
 
       </div>
     </div>
@@ -6425,7 +6645,7 @@ be managed by 2 planes from the assigned AirWing. There is an maximum missions l
 <h2><a id="#(EASYGCICAP)._CountAliveAuftrags" ><strong>EASYGCICAP:_CountAliveAuftrags()</strong></a></h2>
 </div>
     
-<p>Count alive missions in our internal stack.</p>
+<p>(internal) Count alive missions in our internal stack.</p>
 
 <div id= "#Functions##_CountAliveAuftrags" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -7075,6 +7295,28 @@ be managed by 2 planes from the assigned AirWing. There is an maximum missions l
     
 <p>or self.coalitionname.." EWR"
 self.CapZoneName = CapZoneName</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYGCICAP).FuelCriticalThreshold" ><strong>EASYGCICAP.FuelCriticalThreshold</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYGCICAP).FuelLowThreshold" ><strong>EASYGCICAP.FuelLowThreshold</strong></a>
+    
+
 
 </div>
 
