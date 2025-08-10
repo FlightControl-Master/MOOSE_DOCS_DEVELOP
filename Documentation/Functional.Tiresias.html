@@ -2031,178 +2031,326 @@
    </div>
   </nav>
   
-<img src="..\Images\MOOSE.JPG" alt="Banner Image"/>   
+<img src="..\Images\Functional.Tiresias.jpg" alt="Banner Image"/>   
 <div  id="content">
   <div class="w3-container w3-theme-d5" id="module_title">
-    <h1>Module <strong>Utilities.Socket</strong></h1>
+    <h1>Module <strong>Functional.Tiresias</strong></h1>
   </div>
   <div class="w3-container w3-white" id="module_description">
     
-<p><strong>Utilities</strong> - Socket.</p>
 
-    
-
-<p><strong>Main Features:</strong></p>
-
-<ul>
-    <li>Creates UDP Sockets</li>
-    <li>Send messages to Discord</li>
-    <li>Compatible with <a href="https://github.com/funkyfranky/FunkMan">FunkMan</a></li>
-    <li>Compatible with <a href="https://github.com/Special-K-s-Flightsim-Bots/DCSServerBot">DCSServerBot</a></li>
-</ul>
-
-<hr/>
-
-<h3>Author: <strong>funkyfranky</strong></h3>
 
   </div>
   <div class="w3-container w3-theme-d2"><h2><strong>Global(s)</strong></h2></div>
   <div class="w3-theme-d2 w3-margin-top ">
-    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##SOCKET')">
+    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##TIRESIAS')">
       <tr>
-        <td class="style="width:40%;"><p><h2>Global <strong>SOCKET</strong></h2></p></td>
+        <td class="style="width:40%;"><p><h2>Global <strong>TIRESIAS</strong></h2></p></td>
         <td class="style="width:60%;">
-<p><strong>At times I feel like a socket that remembers its tooth.</strong> -- Saul Bellow</p>
+<p><em>Tiresias, Greek demi-god and shapeshifter, blinded by the Gods, works as oracle for you.</em> (Wiki)</p>
 
 <hr/>
 
-<h1>The SOCKET Concept</h1>
+<h2>TIRESIAS Concept</h2>
 
-<p>Create a UDP socket server.</p>
+<ul>
+    <li>Designed to keep CPU and Network usage lower on missions with a lot of ground units.</li>
+</ul>
 </td>
       </tr>
     </table>
   </div>
-  <div id= "#Globals##SOCKET" class="w3-container w3-white w3-padding-small">
+  <div id= "#Globals##TIRESIAS" class="w3-container w3-white w3-padding-small">
     <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(SOCKET)">#SOCKET</a>
-<a id="SOCKET" ><strong>SOCKET</strong></a>
+    <a href="##(TIRESIAS)">#TIRESIAS</a>
+<a id="TIRESIAS" ><strong>TIRESIAS</strong></a>
     
-<p><strong>At times I feel like a socket that remembers its tooth.</strong> -- Saul Bellow</p>
+<p><em>Tiresias, Greek demi-god and shapeshifter, blinded by the Gods, works as oracle for you.</em> (Wiki)</p>
 
 <hr/>
 
-<h1>The SOCKET Concept</h1>
+<h2>TIRESIAS Concept</h2>
 
-<p>Create a UDP socket server.</p>
+<ul>
+    <li>Designed to keep CPU and Network usage lower on missions with a lot of ground units.</li>
+</ul>
 
     
-<p>It enables you to send messages to discord servers via discord bots.</p>
+<ul>
+    <li>Does not affect ships to keep the Navy guys happy.</li>
+    <li>Does not affect OpsGroup type groups.</li>
+    <li>Distinguishes between SAM groups, AAA groups and other ground groups.</li>
+    <li>Exceptions can be defined in SET_GROUP objects to keep certain actions going.</li>
+    <li>Works coalition-independent in the back</li>
+    <li>Easy setup.</li>
+</ul>
 
-<p><strong>Note</strong> that you have to <strong>de-sanitize</strong> <code>require</code> and <code>package</code> in your <code>MissionScripting.lua</code> file, which is in your <code>DCS/Scripts</code> folder.</p>
+<h2>Setup</h2>
+<p>--  Setup is a one-liner:</p>
 
+<pre><code>      local blinder = TIRESIAS:New()
+</code></pre>
 
+<p>--  Optionally you can set up exceptions, e.g. for convoys driving around</p>
+
+<pre><code>     local exceptionset = SET_GROUP:New():FilterCoalitions(" red" ):FilterPrefixes(" Convoy" ):FilterStart()
+     local blinder = TIRESIAS:New()
+     blinder:AddExceptionSet(exceptionset)
+</code></pre>
+
+<p>--  Options</p>
+
+<pre><code>     --  Setup different radius for activation around helo and airplane groups (applies to AI and humans)
+     blinder:SetActivationRanges(10,25) --  defaults are 10, and 25
+
+     --  Setup engagement ranges for AAA (non-advanced SAM units like Flaks etc) and if you want them to be AIOff
+     blinder:SetAAARanges(60,true) --  defaults are 60, and true
+</code></pre>
+
+<p>-</p>
 
 </div>
 
   </div>
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>  
-      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(SOCKET)">Type <strong>SOCKET</strong></a></h2></div>
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(TIRESIAS)">Type <strong>TIRESIAS</strong></a></h2></div>
          <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
-     <strong><a href="##(SOCKET)">SOCKET</a></strong>
+     <strong><a href="##(TIRESIAS)">TIRESIAS</a></strong>
 , extends <strong><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></strong>
    </div>
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
           <tr class="w3-theme-l1">
-            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from SOCKET</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from TIRESIAS</th>
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).ClassName">SOCKET.ClassName</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Name of the class.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).DataType">SOCKET.DataType</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).AAARange">TIRESIAS.AAARange</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).New">SOCKET:New(Port, Host)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Create a new SOCKET object.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).SendTable">SOCKET:SendTable(Table)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Send a table.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).SendText">SOCKET:SendText(Text)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Send a text message.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).SendTextToSpeech">SOCKET:SendTextToSpeech(Text, Provider, Voice, Culture, Gender, Volume)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Send a text-to-speech message.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).SetHost">SOCKET:SetHost(Host)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set host.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).SetPort">SOCKET:SetPort(Port)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set port.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).UDPSendSocket">SOCKET.UDPSendSocket</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).AAASet">TIRESIAS.AAASet</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).host">SOCKET.host</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).AddExceptionSet">TIRESIAS:AddExceptionSet(Set)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>The host.</p>
+<p>[USER] Add a SET_GROUP of GROUP objects as exceptions.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).json">SOCKET.json</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).ClassName">TIRESIAS.ClassName</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>JSON.</p>
+
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).lid">SOCKET.lid</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).Coalition">TIRESIAS.Coalition</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Class id string for output to DCS log file.</p>
+
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).port">SOCKET.port</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).ExceptionSet">TIRESIAS.ExceptionSet</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>The port.</p>
+
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).socket">SOCKET.socket</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).FlightSet">TIRESIAS.FlightSet</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>The socket.</p>
+
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).verbose">SOCKET.verbose</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).GroundSet">TIRESIAS.GroundSet</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Verbosity level.</p>
+
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).version">SOCKET.version</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).HeloSwitchRange">TIRESIAS.HeloSwitchRange</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>SOCKET class version.</p>
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).Interval">TIRESIAS.Interval</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).New">TIRESIAS:New()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Create a new Tiresias object and start it up.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).OpsGroupSet">TIRESIAS.OpsGroupSet</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).PlaneSwitchRange">TIRESIAS.PlaneSwitchRange</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).SAMSet">TIRESIAS.SAMSet</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).SetAAARanges">TIRESIAS:SetAAARanges(FiringRange, SwitchAAA)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Set AAA Ranges - AAA equals non-SAM systems which qualify as AAA in DCS world.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).SetActivationRanges">TIRESIAS:SetActivationRanges(HeloMiles, PlaneMiles)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Set activation radius for Helos and Planes in Nautical Miles.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).Start">TIRESIAS:Start()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "Start".</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).Stop">TIRESIAS:Stop()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "Stop".</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).SwitchAAA">TIRESIAS.SwitchAAA</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).VehicleSet">TIRESIAS.VehicleSet</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._EventHandler">TIRESIAS:_EventHandler(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[INTERNAL] Event handler function - Optimized</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._FilterAAA">TIRESIAS._FilterAAA(Group)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[INTERNAL] Filter Function - Optimized with cached calls</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._FilterNotAAA">TIRESIAS._FilterNotAAA(Group)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[INTERNAL] Filter Function - Optimized with cached calls</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._FilterNotSAM">TIRESIAS._FilterNotSAM(Group)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[INTERNAL] Filter Function - Optimized with cached calls</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._FilterSAM">TIRESIAS._FilterSAM(Group)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[INTERNAL] Filter Function - Optimized with cached calls</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._InitGroups">TIRESIAS:_InitGroups()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[INTERNAL] Init Groups - Optimized with reduced function calls</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._SwitchOnGroups">TIRESIAS:_SwitchOnGroups(group, radius)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[INTERNAL] Switch Groups Behaviour - Optimized with zone caching</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).__Start">TIRESIAS:__Start(delay)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "Start" after a delay.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).__Stop">TIRESIAS:__Stop(delay)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Triggers the FSM event "Stop" after a delay.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._cached_groupsets">TIRESIAS._cached_groupsets</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._cached_zones">TIRESIAS._cached_zones</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).debug">TIRESIAS.debug</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).lid">TIRESIAS.lid</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).onafterStart">TIRESIAS:onafterStart(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[INTERNAL] FSM Function - Optimized initialization</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).onafterStatus">TIRESIAS:onafterStatus(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[INTERNAL] FSM Function - Optimized status processing</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).onafterStop">TIRESIAS:onafterStop(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[INTERNAL] FSM Function</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).onbeforeStatus">TIRESIAS:onbeforeStatus(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[INTERNAL] FSM Function</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).version">TIRESIAS.version</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
         </table>
@@ -2214,265 +2362,265 @@
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).AddEndState">SOCKET:AddEndState(State)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).AddEndState">TIRESIAS:AddEndState(State)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Adds an End state.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).AddProcess">SOCKET:AddProcess(From, Event, Process, ReturnEvents)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).AddProcess">TIRESIAS:AddProcess(From, Event, Process, ReturnEvents)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set the default <a href="##(FSM_PROCESS)">#FSM_PROCESS</a> template with key ProcessName providing the ProcessClass and the process object when it is assigned to a <a href="Wrapper.Controllable.html">Wrapper.Controllable</a> by the task.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).AddScore">SOCKET:AddScore(State, ScoreText, Score)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).AddScore">TIRESIAS:AddScore(State, ScoreText, Score)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Adds a score for the FSM to be achieved.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).AddScoreProcess">SOCKET:AddScoreProcess(From, Event, State, ScoreText, Score)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).AddScoreProcess">TIRESIAS:AddScoreProcess(From, Event, State, ScoreText, Score)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Adds a score for the FSM_PROCESS to be achieved.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).AddTransition">SOCKET:AddTransition(From, Event, To)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).AddTransition">TIRESIAS:AddTransition(From, Event, To)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add a new transition rule to the FSM.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).CallScheduler">SOCKET.CallScheduler</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).CallScheduler">TIRESIAS.CallScheduler</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).Events">SOCKET.Events</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).Events">TIRESIAS.Events</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).GetCurrentState">SOCKET:GetCurrentState()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).GetCurrentState">TIRESIAS:GetCurrentState()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get current state.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).GetEndStates">SOCKET:GetEndStates()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).GetEndStates">TIRESIAS:GetEndStates()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns the End states.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).GetProcess">SOCKET:GetProcess(From, Event)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).GetProcess">TIRESIAS:GetProcess(From, Event)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).GetProcesses">SOCKET:GetProcesses()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).GetProcesses">TIRESIAS:GetProcesses()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns a table of the SubFSM rules defined within the FSM.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).GetScores">SOCKET:GetScores()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).GetScores">TIRESIAS:GetScores()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns a table with the scores defined.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).GetStartState">SOCKET:GetStartState()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).GetStartState">TIRESIAS:GetStartState()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns the start state of the FSM.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).GetState">SOCKET:GetState()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).GetState">TIRESIAS:GetState()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get current state.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).GetSubs">SOCKET:GetSubs()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).GetSubs">TIRESIAS:GetSubs()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns a table with the Subs defined.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).GetTransitions">SOCKET:GetTransitions()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).GetTransitions">TIRESIAS:GetTransitions()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns a table of the transition rules defined within the FSM.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).Is">SOCKET:Is(State)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).Is">TIRESIAS:Is(State)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Check if FSM is in state.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).LoadCallBacks">SOCKET:LoadCallBacks(CallBackTable)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).LoadCallBacks">TIRESIAS:LoadCallBacks(CallBackTable)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Load call backs.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).New">SOCKET:New()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).New">TIRESIAS:New()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creates a new FSM object.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).Scores">SOCKET.Scores</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).Scores">TIRESIAS.Scores</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).SetProcess">SOCKET:SetProcess(From, Event, Fsm)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).SetProcess">TIRESIAS:SetProcess(From, Event, Fsm)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).SetStartState">SOCKET:SetStartState(State)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).SetStartState">TIRESIAS:SetStartState(State)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sets the start state of the FSM.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET)._EndStates">SOCKET._EndStates</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._EndStates">TIRESIAS._EndStates</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET)._EventSchedules">SOCKET._EventSchedules</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._EventSchedules">TIRESIAS._EventSchedules</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET)._Processes">SOCKET._Processes</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._Processes">TIRESIAS._Processes</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET)._Scores">SOCKET._Scores</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._Scores">TIRESIAS._Scores</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET)._StartState">SOCKET._StartState</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._StartState">TIRESIAS._StartState</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET)._Transitions">SOCKET._Transitions</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._Transitions">TIRESIAS._Transitions</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET)._add_to_map">SOCKET:_add_to_map(Map, Event)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._add_to_map">TIRESIAS:_add_to_map(Map, Event)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add to map.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET)._call_handler">SOCKET:_call_handler(step, trigger, params, EventName)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._call_handler">TIRESIAS:_call_handler(step, trigger, params, EventName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Call handler.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET)._create_transition">SOCKET:_create_transition(EventName)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._create_transition">TIRESIAS:_create_transition(EventName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Create transition.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET)._delayed_transition">SOCKET:_delayed_transition(EventName)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._delayed_transition">TIRESIAS:_delayed_transition(EventName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Delayed transition.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET)._eventmap">SOCKET:_eventmap(Events, EventStructure)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._eventmap">TIRESIAS:_eventmap(Events, EventStructure)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Event map.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET)._gosub">SOCKET:_gosub(ParentFrom, ParentEvent)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._gosub">TIRESIAS:_gosub(ParentFrom, ParentEvent)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Go sub.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET)._handler">SOCKET:_handler(EventName, ...)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._handler">TIRESIAS:_handler(EventName, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Handler.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET)._isendstate">SOCKET:_isendstate(Current)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._isendstate">TIRESIAS:_isendstate(Current)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Is end state.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET)._submap">SOCKET:_submap(subs, sub, name)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS)._submap">TIRESIAS:_submap(subs, sub, name)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Sub maps.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).can">SOCKET:can(e)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).can">TIRESIAS:can(e)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Check if can do an event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).cannot">SOCKET:cannot(e)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).cannot">TIRESIAS:cannot(e)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Check if cannot do an event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).current">SOCKET.current</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).current">TIRESIAS.current</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).endstates">SOCKET.endstates</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).endstates">TIRESIAS.endstates</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).is">SOCKET:is(State, state)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).is">TIRESIAS:is(State, state)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Check if FSM is in state.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).options">SOCKET.options</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).options">TIRESIAS.options</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET).subs">SOCKET.subs</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS).subs">TIRESIAS.subs</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -2480,60 +2628,60 @@
         </table>
         </div>
 
-      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(SOCKET.DataType)">Type <strong>SOCKET.DataType</strong></a></h2></div>
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(TIRESIAS.Data)">Type <strong>TIRESIAS.Data</strong></a></h2></div>
          <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
-     <strong><a href="##(SOCKET.DataType)">SOCKET.DataType</a></strong>
+     <strong><a href="##(TIRESIAS.Data)">TIRESIAS.Data</a></strong>
    </div>
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
           <tr class="w3-theme-l1">
-            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from SOCKET.DataType</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from TIRESIAS.Data</th>
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET.DataType).BOMBRESULT">SOCKET.DataType.BOMBRESULT</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS.Data).AIOff">TIRESIAS.Data.AIOff</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Range bombing.</p>
+
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET.DataType).LSOGRADE">SOCKET.DataType.LSOGRADE</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS.Data).exception">TIRESIAS.Data.exception</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Airboss LSO grade.</p>
+
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET.DataType).STRAFERESULT">SOCKET.DataType.STRAFERESULT</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS.Data).invisible">TIRESIAS.Data.invisible</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Range strafeing result.</p>
+
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET.DataType).TEXT">SOCKET.DataType.TEXT</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS.Data).range">TIRESIAS.Data.range</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Plain text.</p>
+
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SOCKET.DataType).TTS">SOCKET.DataType.TTS</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TIRESIAS.Data).type">TIRESIAS.Data.type</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Text-To-Speech.</p>
+
 </td>
           </tr>
         </table>
         </div>
 
-    <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Utilities.Socket)" >Type <strong>Utilities.Socket</strong></a></h2></div>
+    <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Functional.Tiresias)" >Type <strong>Functional.Tiresias</strong></a></h2></div>
     <div class="w3-container w3-white w3-padding-16" id="module_current_type">
       <div class="w3-white" id="record_type">
 </div>
 
     </div>
-      <div onclick="myFunction('#Types##SOCKET')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(SOCKET)">Type <strong>SOCKET</strong></a></h2></div>
-        <div id= "#Types##SOCKET" class="w3-container w3-white w3-padding-16" id="module_other_types">
+      <div onclick="myFunction('#Types##TIRESIAS')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(TIRESIAS)">Type <strong>TIRESIAS</strong></a></h2></div>
+        <div id= "#Types##TIRESIAS" class="w3-container w3-white w3-padding-16" id="module_other_types">
           <div class="w3-white" id="record_type">
   
-<p>SOCKET class.</p>
+<p><strong>TIRESIAS</strong> class, extends Core.Base#BASE</p>
 
 <div class="fields w3-container w3-theme-l2">
   <h2>Field(s)</h2>
@@ -2541,19 +2689,8 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #string
-<a id="#(SOCKET).ClassName" ><strong>SOCKET.ClassName</strong></a>
-    
-<p>Name of the class.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    <a href="##(SOCKET.DataType)">#SOCKET.DataType</a>
-<a id="#(SOCKET).DataType" ><strong>SOCKET.DataType</strong></a>
+    #number
+<a id="#(TIRESIAS).AAARange" ><strong>TIRESIAS.AAARange</strong></a>
     
 
 
@@ -2563,8 +2700,8 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(SOCKET).UDPSendSocket" ><strong>SOCKET.UDPSendSocket</strong></a>
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(TIRESIAS).AAASet" ><strong>TIRESIAS.AAASet</strong></a>
     
 
 
@@ -2575,31 +2712,9 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #string
-<a id="#(SOCKET).host" ><strong>SOCKET.host</strong></a>
+<a id="#(TIRESIAS).ClassName" ><strong>TIRESIAS.ClassName</strong></a>
     
-<p>The host.</p>
 
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(SOCKET).json" ><strong>SOCKET.json</strong></a>
-    
-<p>JSON.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(SOCKET).lid" ><strong>SOCKET.lid</strong></a>
-    
-<p>Class id string for output to DCS log file.</p>
 
 </div>
 
@@ -2608,9 +2723,9 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
-<a id="#(SOCKET).port" ><strong>SOCKET.port</strong></a>
+<a id="#(TIRESIAS).Coalition" ><strong>TIRESIAS.Coalition</strong></a>
     
-<p>The port.</p>
+
 
 </div>
 
@@ -2618,10 +2733,32 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
-<a id="#(SOCKET).socket" ><strong>SOCKET.socket</strong></a>
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(TIRESIAS).ExceptionSet" ><strong>TIRESIAS.ExceptionSet</strong></a>
     
-<p>The socket.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(TIRESIAS).FlightSet" ><strong>TIRESIAS.FlightSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(TIRESIAS).GroundSet" ><strong>TIRESIAS.GroundSet</strong></a>
+    
+
 
 </div>
 
@@ -2630,9 +2767,108 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
-<a id="#(SOCKET).verbose" ><strong>SOCKET.verbose</strong></a>
+<a id="#(TIRESIAS).HeloSwitchRange" ><strong>TIRESIAS.HeloSwitchRange</strong></a>
     
-<p>Verbosity level.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(TIRESIAS).Interval" ><strong>TIRESIAS.Interval</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_OPSGROUP)">Core.Set#SET_OPSGROUP</a>
+<a id="#(TIRESIAS).OpsGroupSet" ><strong>TIRESIAS.OpsGroupSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(TIRESIAS).PlaneSwitchRange" ><strong>TIRESIAS.PlaneSwitchRange</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(TIRESIAS).SAMSet" ><strong>TIRESIAS.SAMSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(TIRESIAS).SwitchAAA" ><strong>TIRESIAS.SwitchAAA</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(TIRESIAS).VehicleSet" ><strong>TIRESIAS.VehicleSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(TIRESIAS)._cached_groupsets" ><strong>TIRESIAS._cached_groupsets</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(TIRESIAS)._cached_zones" ><strong>TIRESIAS._cached_zones</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(TIRESIAS).debug" ><strong>TIRESIAS.debug</strong></a>
+    
+
 
 </div>
 
@@ -2641,9 +2877,20 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #string
-<a id="#(SOCKET).version" ><strong>SOCKET.version</strong></a>
+<a id="#(TIRESIAS).lid" ><strong>TIRESIAS.lid</strong></a>
     
-<p>SOCKET class version.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(TIRESIAS).version" ><strong>TIRESIAS.version</strong></a>
+    
+
 
 </div>
 
@@ -2654,48 +2901,125 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).New" ><strong>SOCKET:New(Port, Host)</strong></a></h2>
+<h2><a id="#(TIRESIAS).AddExceptionSet" ><strong>TIRESIAS:AddExceptionSet(Set)</strong></a></h2>
 </div>
     
-<p>Create a new SOCKET object.</p>
+<p>[USER] Add a SET_GROUP of GROUP objects as exceptions.</p>
+
+    
+<p>Can be done multiple times. Does <strong>not</strong> work work for GROUP objects spawned into the SET after start, i.e. the groups need to exist in the game already.</p>
+
+<div id= "#Functions##AddExceptionSet" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TIRESIAS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+            <strong><strong>Set</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>to add to the exception list.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(TIRESIAS)">#TIRESIAS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TIRESIAS).New" ><strong>TIRESIAS:New()</strong></a></h2>
+</div>
+    
+<p>[USER] Create a new Tiresias object and start it up.</p>
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>SOCKET</p>
+<p>TIRESIAS</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(TIRESIAS)">#TIRESIAS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TIRESIAS).SetAAARanges" ><strong>TIRESIAS:SetAAARanges(FiringRange, SwitchAAA)</strong></a></h2>
+</div>
+    
+<p>[USER] Set AAA Ranges - AAA equals non-SAM systems which qualify as AAA in DCS world.</p>
+
+<div id= "#Functions##SetAAARanges" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TIRESIAS</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
                 #number
-            <strong><strong>Port</strong></strong>
+            <strong><strong>FiringRange</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>UDP port. Default <code>10042</code>.</p>
+<p>The engagement range that AAA units will be set to. Can be 0 to 100 (percent). Defaults to 60.</p>
 
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #string
-            <strong><strong>Host</strong></strong>
+                #boolean
+            <strong><strong>SwitchAAA</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Host. Default <code>"127.0.0.1"</code>.</p>
+<p>Decide if these system will have their AI switched off, too. Defaults to true.</p>
 
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(SOCKET)">#SOCKET</a>:</p>
+        <p><a href="##(TIRESIAS)">#TIRESIAS</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -2711,35 +3035,134 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).SendTable" ><strong>SOCKET:SendTable(Table)</strong></a></h2>
+<h2><a id="#(TIRESIAS).SetActivationRanges" ><strong>TIRESIAS:SetActivationRanges(HeloMiles, PlaneMiles)</strong></a></h2>
 </div>
     
-<p>Send a table.</p>
+<p>[USER] Set activation radius for Helos and Planes in Nautical Miles.</p>
 
-<div id= "#Functions##SendTable" class="w3-show w3-white">
+<div id= "#Functions##SetActivationRanges" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>SOCKET</p>
+<p>TIRESIAS</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>HeloMiles</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Radius around a Helicopter in which AI ground units will be activated. Defaults to 10NM.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>PlaneMiles</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Radius around an Airplane in which AI ground units will be activated. Defaults to 25NM.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(TIRESIAS)">#TIRESIAS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TIRESIAS).Start" ><strong>TIRESIAS:Start()</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "Start".</p>
+
+    
+<p>Starts TIRESIAS and all its event handlers. Note - <code>:New()</code> already starts the instance.</p>
+
+<div id= "#Functions##Start" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TIRESIAS</p>
+</div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TIRESIAS).Stop" ><strong>TIRESIAS:Stop()</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "Stop".</p>
+
+    
+<p>Stops TIRESIAS and all its event handlers.</p>
+
+<div id= "#Functions##Stop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TIRESIAS</p>
+</div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TIRESIAS)._EventHandler" ><strong>TIRESIAS:_EventHandler(EventData)</strong></a></h2>
+</div>
+    
+<p>[INTERNAL] Event handler function - Optimized</p>
+
+<div id= "#Functions##_EventHandler" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TIRESIAS</p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #table
-            <strong><strong>Table</strong></strong>
+                <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+            <strong><strong>EventData</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>Table to send.</p>
-
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(SOCKET)">#SOCKET</a>:</p>
+        <p><a href="##(TIRESIAS)">#TIRESIAS</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -2755,35 +3178,189 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).SendText" ><strong>SOCKET:SendText(Text)</strong></a></h2>
+<h2><a id="#(TIRESIAS)._FilterAAA" ><strong>TIRESIAS._FilterAAA(Group)</strong></a></h2>
 </div>
     
-<p>Send a text message.</p>
+<p>[INTERNAL] Filter Function - Optimized with cached calls</p>
 
-<div id= "#Functions##SendText" class="w3-show w3-white">
+<div id= "#Functions##_FilterAAA" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>SOCKET</p>
+<p>TIRESIAS</p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #string
-            <strong><strong>Text</strong></strong>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>Group</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>Text message.</p>
-
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(SOCKET)">#SOCKET</a>:</p>
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>isin</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TIRESIAS)._FilterNotAAA" ><strong>TIRESIAS._FilterNotAAA(Group)</strong></a></h2>
+</div>
+    
+<p>[INTERNAL] Filter Function - Optimized with cached calls</p>
+
+<div id= "#Functions##_FilterNotAAA" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TIRESIAS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>Group</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>isin</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TIRESIAS)._FilterNotSAM" ><strong>TIRESIAS._FilterNotSAM(Group)</strong></a></h2>
+</div>
+    
+<p>[INTERNAL] Filter Function - Optimized with cached calls</p>
+
+<div id= "#Functions##_FilterNotSAM" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TIRESIAS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>Group</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>isin</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TIRESIAS)._FilterSAM" ><strong>TIRESIAS._FilterSAM(Group)</strong></a></h2>
+</div>
+    
+<p>[INTERNAL] Filter Function - Optimized with cached calls</p>
+
+<div id= "#Functions##_FilterSAM" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TIRESIAS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>Group</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#boolean:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>isin</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TIRESIAS)._InitGroups" ><strong>TIRESIAS:_InitGroups()</strong></a></h2>
+</div>
+    
+<p>[INTERNAL] Init Groups - Optimized with reduced function calls</p>
+
+<div id= "#Functions##_InitGroups" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TIRESIAS</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(TIRESIAS)">#TIRESIAS</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -2799,100 +3376,182 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).SendTextToSpeech" ><strong>SOCKET:SendTextToSpeech(Text, Provider, Voice, Culture, Gender, Volume)</strong></a></h2>
+<h2><a id="#(TIRESIAS)._SwitchOnGroups" ><strong>TIRESIAS:_SwitchOnGroups(group, radius)</strong></a></h2>
 </div>
     
-<p>Send a text-to-speech message.</p>
+<p>[INTERNAL] Switch Groups Behaviour - Optimized with zone caching</p>
 
-<div id= "#Functions##SendTextToSpeech" class="w3-show w3-white">
+<div id= "#Functions##_SwitchOnGroups" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>SOCKET</p>
+<p>TIRESIAS</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>group</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>radius</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Radius in NM</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(TIRESIAS)">#TIRESIAS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TIRESIAS).__Start" ><strong>TIRESIAS:__Start(delay)</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "Start" after a delay.</p>
+
+    
+<p>Starts TIRESIAS and all its event handlers. Note - <code>:New()</code> already starts the instance.</p>
+
+<div id= "#Functions##__Start" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TIRESIAS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Delay in seconds.  </p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TIRESIAS).__Stop" ><strong>TIRESIAS:__Stop(delay)</strong></a></h2>
+</div>
+    
+<p>Triggers the FSM event "Stop" after a delay.</p>
+
+    
+<p>Stops TIRESIAS and all its event handlers.</p>
+
+<div id= "#Functions##__Stop" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TIRESIAS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>delay</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Delay in seconds.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TIRESIAS).onafterStart" ><strong>TIRESIAS:onafterStart(From, Event, To)</strong></a></h2>
+</div>
+    
+<p>[INTERNAL] FSM Function - Optimized initialization</p>
+
+<div id= "#Functions##onafterStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TIRESIAS</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
                 #string
-            <strong><strong>Text</strong></strong>
+            <strong><strong>From</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The text message to speek.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Provider</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The TTS provider: 0=Microsoft (default), 1=Google.</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
                 #string
-            <strong><strong>Voice</strong></strong>
+            <strong><strong>Event</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The specific voice to use, e.g. <code>"Microsoft David Desktop"</code> or "<code>en-US-Standard-A</code>". If not set, the service will choose a voice based on the other parameters such as culture and gender.</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
                 #string
-            <strong><strong>Culture</strong></strong>
+            <strong><strong>To</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The Culture or language code, <em>e.g.</em> <code>"en-US"</code>.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Gender</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The Gender, <em>i.e.</em> "male", "female". Default "female".</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #number
-            <strong><strong>Volume</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The volume. Microsoft: [0,100] default 50, Google: [-96, 10] default 0.</p>
-
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(SOCKET)">#SOCKET</a>:</p>
+        <p><a href="##(TIRESIAS)">#TIRESIAS</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -2908,35 +3567,55 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).SetHost" ><strong>SOCKET:SetHost(Host)</strong></a></h2>
+<h2><a id="#(TIRESIAS).onafterStatus" ><strong>TIRESIAS:onafterStatus(From, Event, To)</strong></a></h2>
 </div>
     
-<p>Set host.</p>
+<p>[INTERNAL] FSM Function - Optimized status processing</p>
 
-<div id= "#Functions##SetHost" class="w3-show w3-white">
+<div id= "#Functions##onafterStatus" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>SOCKET</p>
+<p>TIRESIAS</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
                 #string
-            <strong><strong>Host</strong></strong>
+            <strong><strong>From</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>Host. Default <code>"127.0.0.1"</code>.</p>
-
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(SOCKET)">#SOCKET</a>:</p>
+        <p><a href="##(TIRESIAS)">#TIRESIAS</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -2952,35 +3631,119 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).SetPort" ><strong>SOCKET:SetPort(Port)</strong></a></h2>
+<h2><a id="#(TIRESIAS).onafterStop" ><strong>TIRESIAS:onafterStop(From, Event, To)</strong></a></h2>
 </div>
     
-<p>Set port.</p>
+<p>[INTERNAL] FSM Function</p>
 
-<div id= "#Functions##SetPort" class="w3-show w3-white">
+<div id= "#Functions##onafterStop" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>SOCKET</p>
+<p>TIRESIAS</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #number
-            <strong><strong>Port</strong></strong>
+                #string
+            <strong><strong>From</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>Port. Default 10042.</p>
-
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(SOCKET)">#SOCKET</a>:</p>
+        <p><a href="##(TIRESIAS)">#TIRESIAS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TIRESIAS).onbeforeStatus" ><strong>TIRESIAS:onbeforeStatus(From, Event, To)</strong></a></h2>
+</div>
+    
+<p>[INTERNAL] FSM Function</p>
+
+<div id= "#Functions##onbeforeStatus" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TIRESIAS</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(TIRESIAS)">#TIRESIAS</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -2999,19 +3762,8 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #string
-<a id="#(SOCKET).ClassName" ><strong>SOCKET.ClassName</strong></a>
-    
-<p>Name of the class.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    <a href="##(SOCKET.DataType)">#SOCKET.DataType</a>
-<a id="#(SOCKET).DataType" ><strong>SOCKET.DataType</strong></a>
+    #number
+<a id="#(TIRESIAS).AAARange" ><strong>TIRESIAS.AAARange</strong></a>
     
 
 
@@ -3021,8 +3773,8 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(SOCKET).UDPSendSocket" ><strong>SOCKET.UDPSendSocket</strong></a>
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(TIRESIAS).AAASet" ><strong>TIRESIAS.AAASet</strong></a>
     
 
 
@@ -3033,31 +3785,9 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #string
-<a id="#(SOCKET).host" ><strong>SOCKET.host</strong></a>
+<a id="#(TIRESIAS).ClassName" ><strong>TIRESIAS.ClassName</strong></a>
     
-<p>The host.</p>
 
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(SOCKET).json" ><strong>SOCKET.json</strong></a>
-    
-<p>JSON.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(SOCKET).lid" ><strong>SOCKET.lid</strong></a>
-    
-<p>Class id string for output to DCS log file.</p>
 
 </div>
 
@@ -3066,9 +3796,9 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
-<a id="#(SOCKET).port" ><strong>SOCKET.port</strong></a>
+<a id="#(TIRESIAS).Coalition" ><strong>TIRESIAS.Coalition</strong></a>
     
-<p>The port.</p>
+
 
 </div>
 
@@ -3076,10 +3806,32 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
-<a id="#(SOCKET).socket" ><strong>SOCKET.socket</strong></a>
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(TIRESIAS).ExceptionSet" ><strong>TIRESIAS.ExceptionSet</strong></a>
     
-<p>The socket.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(TIRESIAS).FlightSet" ><strong>TIRESIAS.FlightSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(TIRESIAS).GroundSet" ><strong>TIRESIAS.GroundSet</strong></a>
+    
+
 
 </div>
 
@@ -3088,9 +3840,108 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #number
-<a id="#(SOCKET).verbose" ><strong>SOCKET.verbose</strong></a>
+<a id="#(TIRESIAS).HeloSwitchRange" ><strong>TIRESIAS.HeloSwitchRange</strong></a>
     
-<p>Verbosity level.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(TIRESIAS).Interval" ><strong>TIRESIAS.Interval</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_OPSGROUP)">Core.Set#SET_OPSGROUP</a>
+<a id="#(TIRESIAS).OpsGroupSet" ><strong>TIRESIAS.OpsGroupSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(TIRESIAS).PlaneSwitchRange" ><strong>TIRESIAS.PlaneSwitchRange</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(TIRESIAS).SAMSet" ><strong>TIRESIAS.SAMSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(TIRESIAS).SwitchAAA" ><strong>TIRESIAS.SwitchAAA</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_GROUP)">Core.Set#SET_GROUP</a>
+<a id="#(TIRESIAS).VehicleSet" ><strong>TIRESIAS.VehicleSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(TIRESIAS)._cached_groupsets" ><strong>TIRESIAS._cached_groupsets</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(TIRESIAS)._cached_zones" ><strong>TIRESIAS._cached_zones</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(TIRESIAS).debug" ><strong>TIRESIAS.debug</strong></a>
+    
+
 
 </div>
 
@@ -3099,9 +3950,20 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #string
-<a id="#(SOCKET).version" ><strong>SOCKET.version</strong></a>
+<a id="#(TIRESIAS).lid" ><strong>TIRESIAS.lid</strong></a>
     
-<p>SOCKET class version.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(TIRESIAS).version" ><strong>TIRESIAS.version</strong></a>
+    
+
 
 </div>
 
@@ -3112,7 +3974,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).AddEndState" ><strong>SOCKET:AddEndState(State)</strong></a></h2>
+<h2><a id="#(TIRESIAS).AddEndState" ><strong>TIRESIAS:AddEndState(State)</strong></a></h2>
 </div>
     
 <p>Adds an End state.</p>
@@ -3145,7 +4007,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).AddProcess" ><strong>SOCKET:AddProcess(From, Event, Process, ReturnEvents)</strong></a></h2>
+<h2><a id="#(TIRESIAS).AddProcess" ><strong>TIRESIAS:AddProcess(From, Event, Process, ReturnEvents)</strong></a></h2>
 </div>
     
 <p>Set the default <a href="##(FSM_PROCESS)">#FSM_PROCESS</a> template with key ProcessName providing the ProcessClass and the process object when it is assigned to a <a href="Wrapper.Controllable.html">Wrapper.Controllable</a> by the task.</p>
@@ -3228,7 +4090,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).AddScore" ><strong>SOCKET:AddScore(State, ScoreText, Score)</strong></a></h2>
+<h2><a id="#(TIRESIAS).AddScore" ><strong>TIRESIAS:AddScore(State, ScoreText, Score)</strong></a></h2>
 </div>
     
 <p>Adds a score for the FSM to be achieved.</p>
@@ -3298,7 +4160,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).AddScoreProcess" ><strong>SOCKET:AddScoreProcess(From, Event, State, ScoreText, Score)</strong></a></h2>
+<h2><a id="#(TIRESIAS).AddScoreProcess" ><strong>TIRESIAS:AddScoreProcess(From, Event, State, ScoreText, Score)</strong></a></h2>
 </div>
     
 <p>Adds a score for the FSM_PROCESS to be achieved.</p>
@@ -3394,7 +4256,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).AddTransition" ><strong>SOCKET:AddTransition(From, Event, To)</strong></a></h2>
+<h2><a id="#(TIRESIAS).AddTransition" ><strong>TIRESIAS:AddTransition(From, Event, To)</strong></a></h2>
 </div>
     
 <p>Add a new transition rule to the FSM.</p>
@@ -3456,7 +4318,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).GetCurrentState" ><strong>SOCKET:GetCurrentState()</strong></a></h2>
+<h2><a id="#(TIRESIAS).GetCurrentState" ><strong>TIRESIAS:GetCurrentState()</strong></a></h2>
 </div>
     
 <p>Get current state.</p>
@@ -3486,7 +4348,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).GetEndStates" ><strong>SOCKET:GetEndStates()</strong></a></h2>
+<h2><a id="#(TIRESIAS).GetEndStates" ><strong>TIRESIAS:GetEndStates()</strong></a></h2>
 </div>
     
 <p>Returns the End states.</p>
@@ -3516,7 +4378,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).GetProcess" ><strong>SOCKET:GetProcess(From, Event)</strong></a></h2>
+<h2><a id="#(TIRESIAS).GetProcess" ><strong>TIRESIAS:GetProcess(From, Event)</strong></a></h2>
 </div>
     
 
@@ -3556,7 +4418,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).GetProcesses" ><strong>SOCKET:GetProcesses()</strong></a></h2>
+<h2><a id="#(TIRESIAS).GetProcesses" ><strong>TIRESIAS:GetProcesses()</strong></a></h2>
 </div>
     
 <p>Returns a table of the SubFSM rules defined within the FSM.</p>
@@ -3586,7 +4448,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).GetScores" ><strong>SOCKET:GetScores()</strong></a></h2>
+<h2><a id="#(TIRESIAS).GetScores" ><strong>TIRESIAS:GetScores()</strong></a></h2>
 </div>
     
 <p>Returns a table with the scores defined.</p>
@@ -3616,7 +4478,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).GetStartState" ><strong>SOCKET:GetStartState()</strong></a></h2>
+<h2><a id="#(TIRESIAS).GetStartState" ><strong>TIRESIAS:GetStartState()</strong></a></h2>
 </div>
     
 <p>Returns the start state of the FSM.</p>
@@ -3646,7 +4508,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).GetState" ><strong>SOCKET:GetState()</strong></a></h2>
+<h2><a id="#(TIRESIAS).GetState" ><strong>TIRESIAS:GetState()</strong></a></h2>
 </div>
     
 <p>Get current state.</p>
@@ -3676,7 +4538,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).GetSubs" ><strong>SOCKET:GetSubs()</strong></a></h2>
+<h2><a id="#(TIRESIAS).GetSubs" ><strong>TIRESIAS:GetSubs()</strong></a></h2>
 </div>
     
 <p>Returns a table with the Subs defined.</p>
@@ -3706,7 +4568,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).GetTransitions" ><strong>SOCKET:GetTransitions()</strong></a></h2>
+<h2><a id="#(TIRESIAS).GetTransitions" ><strong>TIRESIAS:GetTransitions()</strong></a></h2>
 </div>
     
 <p>Returns a table of the transition rules defined within the FSM.</p>
@@ -3736,7 +4598,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).Is" ><strong>SOCKET:Is(State)</strong></a></h2>
+<h2><a id="#(TIRESIAS).Is" ><strong>TIRESIAS:Is(State)</strong></a></h2>
 </div>
     
 <p>Check if FSM is in state.</p>
@@ -3780,7 +4642,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).LoadCallBacks" ><strong>SOCKET:LoadCallBacks(CallBackTable)</strong></a></h2>
+<h2><a id="#(TIRESIAS).LoadCallBacks" ><strong>TIRESIAS:LoadCallBacks(CallBackTable)</strong></a></h2>
 </div>
     
 <p>Load call backs.</p>
@@ -3813,7 +4675,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).New" ><strong>SOCKET:New()</strong></a></h2>
+<h2><a id="#(TIRESIAS).New" ><strong>TIRESIAS:New()</strong></a></h2>
 </div>
     
 <p>Creates a new FSM object.</p>
@@ -3843,7 +4705,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).SetProcess" ><strong>SOCKET:SetProcess(From, Event, Fsm)</strong></a></h2>
+<h2><a id="#(TIRESIAS).SetProcess" ><strong>TIRESIAS:SetProcess(From, Event, Fsm)</strong></a></h2>
 </div>
     
 
@@ -3893,7 +4755,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).SetStartState" ><strong>SOCKET:SetStartState(State)</strong></a></h2>
+<h2><a id="#(TIRESIAS).SetStartState" ><strong>TIRESIAS:SetStartState(State)</strong></a></h2>
 </div>
     
 <p>Sets the start state of the FSM.</p>
@@ -3926,7 +4788,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET)._add_to_map" ><strong>SOCKET:_add_to_map(Map, Event)</strong></a></h2>
+<h2><a id="#(TIRESIAS)._add_to_map" ><strong>TIRESIAS:_add_to_map(Map, Event)</strong></a></h2>
 </div>
     
 <p>Add to map.</p>
@@ -3972,7 +4834,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET)._call_handler" ><strong>SOCKET:_call_handler(step, trigger, params, EventName)</strong></a></h2>
+<h2><a id="#(TIRESIAS)._call_handler" ><strong>TIRESIAS:_call_handler(step, trigger, params, EventName)</strong></a></h2>
 </div>
     
 <p>Call handler.</p>
@@ -4054,7 +4916,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET)._create_transition" ><strong>SOCKET:_create_transition(EventName)</strong></a></h2>
+<h2><a id="#(TIRESIAS)._create_transition" ><strong>TIRESIAS:_create_transition(EventName)</strong></a></h2>
 </div>
     
 <p>Create transition.</p>
@@ -4098,7 +4960,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET)._delayed_transition" ><strong>SOCKET:_delayed_transition(EventName)</strong></a></h2>
+<h2><a id="#(TIRESIAS)._delayed_transition" ><strong>TIRESIAS:_delayed_transition(EventName)</strong></a></h2>
 </div>
     
 <p>Delayed transition.</p>
@@ -4142,7 +5004,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET)._eventmap" ><strong>SOCKET:_eventmap(Events, EventStructure)</strong></a></h2>
+<h2><a id="#(TIRESIAS)._eventmap" ><strong>TIRESIAS:_eventmap(Events, EventStructure)</strong></a></h2>
 </div>
     
 <p>Event map.</p>
@@ -4188,7 +5050,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET)._gosub" ><strong>SOCKET:_gosub(ParentFrom, ParentEvent)</strong></a></h2>
+<h2><a id="#(TIRESIAS)._gosub" ><strong>TIRESIAS:_gosub(ParentFrom, ParentEvent)</strong></a></h2>
 </div>
     
 <p>Go sub.</p>
@@ -4245,7 +5107,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET)._handler" ><strong>SOCKET:_handler(EventName, ...)</strong></a></h2>
+<h2><a id="#(TIRESIAS)._handler" ><strong>TIRESIAS:_handler(EventName, ...)</strong></a></h2>
 </div>
     
 <p>Handler.</p>
@@ -4290,7 +5152,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET)._isendstate" ><strong>SOCKET:_isendstate(Current)</strong></a></h2>
+<h2><a id="#(TIRESIAS)._isendstate" ><strong>TIRESIAS:_isendstate(Current)</strong></a></h2>
 </div>
     
 <p>Is end state.</p>
@@ -4342,7 +5204,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET)._submap" ><strong>SOCKET:_submap(subs, sub, name)</strong></a></h2>
+<h2><a id="#(TIRESIAS)._submap" ><strong>TIRESIAS:_submap(subs, sub, name)</strong></a></h2>
 </div>
     
 <p>Sub maps.</p>
@@ -4401,7 +5263,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).can" ><strong>SOCKET:can(e)</strong></a></h2>
+<h2><a id="#(TIRESIAS).can" ><strong>TIRESIAS:can(e)</strong></a></h2>
 </div>
     
 <p>Check if can do an event.</p>
@@ -4453,7 +5315,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).cannot" ><strong>SOCKET:cannot(e)</strong></a></h2>
+<h2><a id="#(TIRESIAS).cannot" ><strong>TIRESIAS:cannot(e)</strong></a></h2>
 </div>
     
 <p>Check if cannot do an event.</p>
@@ -4497,7 +5359,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(SOCKET).is" ><strong>SOCKET:is(State, state)</strong></a></h2>
+<h2><a id="#(TIRESIAS).is" ><strong>TIRESIAS:is(State, state)</strong></a></h2>
 </div>
     
 <p>Check if FSM is in state.</p>
@@ -4551,25 +5413,52 @@
 </div>
 
         </div>
-      <div onclick="myFunction('#Types##SOCKET.DataType')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(SOCKET.DataType)">Type <strong>SOCKET.DataType</strong></a></h2></div>
-        <div id= "#Types##SOCKET.DataType" class="w3-container w3-white w3-padding-16" id="module_other_types">
+      <div onclick="myFunction('#Types##TIRESIAS.Data')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(TIRESIAS.Data)">Type <strong>TIRESIAS.Data</strong></a></h2></div>
+        <div id= "#Types##TIRESIAS.Data" class="w3-container w3-white w3-padding-16" id="module_other_types">
           <div class="w3-white" id="record_type">
-  
-<p>Data type.</p>
-
-  
-<p>This is the keyword the socket listener uses.</p>
-
 <div class="fields w3-container w3-theme-l2">
   <h2>Field(s)</h2>
 </div>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #string
-<a id="#(SOCKET.DataType).BOMBRESULT" ><strong>SOCKET.DataType.BOMBRESULT</strong></a>
+    #boolean
+<a id="#(TIRESIAS.Data).AIOff" ><strong>TIRESIAS.Data.AIOff</strong></a>
     
-<p>Range bombing.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(TIRESIAS.Data).exception" ><strong>TIRESIAS.Data.exception</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(TIRESIAS.Data).invisible" ><strong>TIRESIAS.Data.invisible</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(TIRESIAS.Data).range" ><strong>TIRESIAS.Data.range</strong></a>
+    
+
 
 </div>
 
@@ -4578,42 +5467,9 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #string
-<a id="#(SOCKET.DataType).LSOGRADE" ><strong>SOCKET.DataType.LSOGRADE</strong></a>
+<a id="#(TIRESIAS.Data).type" ><strong>TIRESIAS.Data.type</strong></a>
     
-<p>Airboss LSO grade.</p>
 
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(SOCKET.DataType).STRAFERESULT" ><strong>SOCKET.DataType.STRAFERESULT</strong></a>
-    
-<p>Range strafeing result.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(SOCKET.DataType).TEXT" ><strong>SOCKET.DataType.TEXT</strong></a>
-    
-<p>Plain text.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(SOCKET.DataType).TTS" ><strong>SOCKET.DataType.TTS</strong></a>
-    
-<p>Text-To-Speech.</p>
 
 </div>
 
@@ -4627,7 +5483,7 @@
 </div>
 <script>
 function myLoadFunction() {
-    document.getElementById("myHeader").style.backgroundImage = "url('../Images/MOOSE.JPG')";
+    document.getElementById("myHeader").style.backgroundImage = "url('../Images/Functional.Tiresias.jpg')";
 }
 </script>
 

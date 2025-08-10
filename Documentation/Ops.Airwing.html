@@ -1071,6 +1071,17 @@
      <div class="w3-col s12 m6 l4">
        <div class="w3-card-4 w3-white w3-margin-16">
          <div class="w3-display-container w3-text-white w3-text-shadow">
+           <img src= "../Images/Functional.Tiresias.jpg" alt="Image">
+           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Tiresias.html">Functional.Tiresias</a></strong></h2></div>
+         </div>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+
+</p></div>
+       </div>         
+     </div>
+     <div class="w3-col s12 m6 l4">
+       <div class="w3-card-4 w3-white w3-margin-16">
+         <div class="w3-display-container w3-text-white w3-text-shadow">
            <img src= "../Images/Warehouse.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Warehouse.html">Functional.Warehouse</a></strong></h2></div>
          </div>
@@ -1274,35 +1285,14 @@
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <h2>Easy CAP/GCI Class, based on OPS classes</h2>
-<p>Documentation</p>
+
+<h2>Documentation:</h2>
 
 <p>https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.EasyGCICAP.html</p>
 
-<hr/>
-<p>Date: September 2023</p>
-<h2>Last Update: Aug 2025</h2>
+<h2>Example Missions:</h2>
 
-<ul>
-    <li><strong>Ops</strong> - Easy GCI &amp; CAP Manager</li>
-</ul>
-
-<hr/>
-
-<p><strong>Main Features:</strong></p>
-
-<ul>
-    <li>Automatically create and manage A2A CAP/GCI defenses using an AirWing and Squadrons for one coalition</li>
-    <li>Easy set-up</li>
-    <li>Add additional AirWings on other airbases</li>
-    <li>Each wing can have more than one Squadron - tasking to Squadrons is done on a random basis per AirWing</li>
-    <li>Create borders and zones of engagement</li>
-    <li>Detection can be ground based and/or via AWACS</li>
-</ul>
-
-<hr/>
-
-<h3>AUTHOR: <strong>applevangelist</strong></h3>
-
+<p>Demo missions can be found on <a href="https://github.com/FlightControl-Master/MOOSE_MISSIONS/tree/develop/Ops/EasyGCICAP">github</a>.</p>
 </p></div>
        </div>         
      </div>
@@ -2551,7 +2541,7 @@ started.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRWING).UpdatePatrolPointMarker">AIRWING.UpdatePatrolPointMarker(point, self)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRWING).UpdatePatrolPointMarker">AIRWING:UpdatePatrolPointMarker(point)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Update marker of the patrol point.</p>
 </td>
@@ -5586,6 +5576,12 @@ started.</p>
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRWING.PatrolData).IsZonePoint">AIRWING.PatrolData.IsZonePoint</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>flag for using a (moving) zone as point for patrol etc.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRWING.PatrolData).altitude">AIRWING.PatrolData.altitude</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Altitude in feet.</p>
@@ -5619,6 +5615,12 @@ started.</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRWING.PatrolData).noccupied">AIRWING.PatrolData.noccupied</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Number of flights on this patrol point.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AIRWING.PatrolData).patrolzone">AIRWING.PatrolData.patrolzone</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>in case Patrol coordinate was handed as zone, store here.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -6336,7 +6338,7 @@ started.</p>
           </div>
           <div class="w3-half">
               
-<p>Coordinate of the patrol point.</p>
+<p>Coordinate of the patrol point. Can be handed as a Core.Zone#ZONE object (e.g. in case you want  the point to align with a moving zone).</p>
 
           </div>
         </div>
@@ -6432,7 +6434,7 @@ started.</p>
           </div>
           <div class="w3-half">
               
-<p>Coordinate of the patrol point.</p>
+<p>Coordinate of the patrol point. Can be handed as a Core.Zone#ZONE object (e.g. in case you want  the point to align with a moving zone).</p>
 
           </div>
         </div>
@@ -6528,7 +6530,7 @@ started.</p>
           </div>
           <div class="w3-half">
               
-<p>Coordinate of the patrol point.</p>
+<p>Coordinate of the patrol point. Can be handed as a Core.Zone#ZONE object (e.g. in case you want  the point to align with a moving zone).</p>
 
           </div>
         </div>
@@ -6624,7 +6626,7 @@ started.</p>
           </div>
           <div class="w3-half">
               
-<p>Coordinate of the patrol point.</p>
+<p>Coordinate of the patrol point. Can be handed as a Core.Zone#ZONE object (e.g. in case you want  the point to align with a moving zone).</p>
 
           </div>
         </div>
@@ -7637,7 +7639,7 @@ started.</p>
           </div>
           <div class="w3-half">
               
-<p>Coordinate of the patrol point. Default 10-15 NM away from the location of the airwing.</p>
+<p>Coordinate of the patrol point. Default 10-15 NM away from the location of the airwing. Can be handed as a Core.Zone#ZONE object (e.g. in case you want  the point to align with a moving zone).</p>
 
           </div>
         </div>
@@ -8999,7 +9001,7 @@ Spawning on runways is not supported.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AIRWING).UpdatePatrolPointMarker" ><strong>AIRWING.UpdatePatrolPointMarker(point, self)</strong></a></h2>
+<h2><a id="#(AIRWING).UpdatePatrolPointMarker" ><strong>AIRWING:UpdatePatrolPointMarker(point)</strong></a></h2>
 </div>
     
 <p>Update marker of the patrol point.</p>
@@ -9010,7 +9012,7 @@ Spawning on runways is not supported.</p>
    <div class="w3-margin-left">
 <p>AIRWING</p>
 </div>
-    <h2><strong>Parameters:</strong></h2>
+    <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -9022,16 +9024,6 @@ Spawning on runways is not supported.</p>
               
 <p>Patrol point table.</p>
 
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>self</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
           </div>
         </div>
 </div>
@@ -31506,6 +31498,17 @@ this request is used to put the groups back into the warehouse stock.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(AIRWING.PatrolData).IsZonePoint" ><strong>AIRWING.PatrolData.IsZonePoint</strong></a>
+    
+<p>flag for using a (moving) zone as point for patrol etc.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #number
 <a id="#(AIRWING.PatrolData).altitude" ><strong>AIRWING.PatrolData.altitude</strong></a>
     
@@ -31565,6 +31568,17 @@ this request is used to put the groups back into the warehouse stock.</p>
 <a id="#(AIRWING.PatrolData).noccupied" ><strong>AIRWING.PatrolData.noccupied</strong></a>
     
 <p>Number of flights on this patrol point.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
+<a id="#(AIRWING.PatrolData).patrolzone" ><strong>AIRWING.PatrolData.patrolzone</strong></a>
+    
+<p>in case Patrol coordinate was handed as zone, store here.</p>
 
 </div>
 

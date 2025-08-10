@@ -1071,6 +1071,17 @@
      <div class="w3-col s12 m6 l4">
        <div class="w3-card-4 w3-white w3-margin-16">
          <div class="w3-display-container w3-text-white w3-text-shadow">
+           <img src= "../Images/Functional.Tiresias.jpg" alt="Image">
+           <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Tiresias.html">Functional.Tiresias</a></strong></h2></div>
+         </div>
+         <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
+
+</p></div>
+       </div>         
+     </div>
+     <div class="w3-col s12 m6 l4">
+       <div class="w3-card-4 w3-white w3-margin-16">
+         <div class="w3-display-container w3-text-white w3-text-shadow">
            <img src= "../Images/Warehouse.JPG" alt="Image">
            <div class="w3-display-bottommiddle" style="word-break:break-word;"><h2><strong><a href="Functional.Warehouse.html">Functional.Warehouse</a></strong></h2></div>
          </div>
@@ -1274,35 +1285,14 @@
          </div>
          <div class="w3-container w3-padding w3-white picturebox" style="word-break:break-word;"><p>
 <h2>Easy CAP/GCI Class, based on OPS classes</h2>
-<p>Documentation</p>
+
+<h2>Documentation:</h2>
 
 <p>https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.EasyGCICAP.html</p>
 
-<hr/>
-<p>Date: September 2023</p>
-<h2>Last Update: Aug 2025</h2>
+<h2>Example Missions:</h2>
 
-<ul>
-    <li><strong>Ops</strong> - Easy GCI &amp; CAP Manager</li>
-</ul>
-
-<hr/>
-
-<p><strong>Main Features:</strong></p>
-
-<ul>
-    <li>Automatically create and manage A2A CAP/GCI defenses using an AirWing and Squadrons for one coalition</li>
-    <li>Easy set-up</li>
-    <li>Add additional AirWings on other airbases</li>
-    <li>Each wing can have more than one Squadron - tasking to Squadrons is done on a random basis per AirWing</li>
-    <li>Create borders and zones of engagement</li>
-    <li>Detection can be ground based and/or via AWACS</li>
-</ul>
-
-<hr/>
-
-<h3>AUTHOR: <strong>applevangelist</strong></h3>
-
+<p>Demo missions can be found on <a href="https://github.com/FlightControl-Master/MOOSE_MISSIONS/tree/develop/Ops/EasyGCICAP">github</a>.</p>
 </p></div>
        </div>         
      </div>
@@ -3894,12 +3884,6 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).DestroyUnit">FLIGHTGROUP:DestroyUnit(UnitName, Delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Destroy a unit of the group.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).EPLRS">FLIGHTGROUP.EPLRS</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
 </td>
           </tr>
           <tr class="w3-border">
@@ -7733,6 +7717,20 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).Twaiting" ><strong>FLIGHTGROUP.Twaiting</strong></a>
+    
+
+
+    
+<p> Set time stamp.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #string
 <a id="#(FLIGHTGROUP).actype" ><strong>FLIGHTGROUP.actype</strong></a>
     
@@ -7799,6 +7797,20 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).dTwait" ><strong>FLIGHTGROUP.dTwait</strong></a>
+    
+
+
+    
+<p> Max waiting time in seconds.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).despawnAfterHolding" ><strong>FLIGHTGROUP.despawnAfterHolding</strong></a>
     
@@ -7825,6 +7837,9 @@
 <a id="#(FLIGHTGROUP).destbase" ><strong>FLIGHTGROUP.destbase</strong></a>
     
 
+
+    
+<p> Set the destination base.</p>
 
 </div>
 
@@ -8018,13 +8033,10 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
-<a id="#(FLIGHTGROUP).isLateActivated" ><strong>FLIGHTGROUP.isLateActivated</strong></a>
+    
+<a id="#(FLIGHTGROUP).isLandingAtAirbase" ><strong>FLIGHTGROUP.isLandingAtAirbase</strong></a>
     
 
-
-    
-<p> No late activation.</p>
 
 </div>
 
@@ -8047,20 +8059,6 @@
 <a id="#(FLIGHTGROUP).isReadyTO" ><strong>FLIGHTGROUP.isReadyTO</strong></a>
     
 <p>Flight is ready for takeoff. This is for FLIGHTCONTROL.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(FLIGHTGROUP).isUncontrolled" ><strong>FLIGHTGROUP.isUncontrolled</strong></a>
-    
-
-
-    
-<p> Spawn in uncontrolled state.</p>
 
 </div>
 
@@ -18505,6 +18503,20 @@ Here we only check if stuck whilst taxiing.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).Twaiting" ><strong>FLIGHTGROUP.Twaiting</strong></a>
+    
+
+
+    
+<p> Set time stamp.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #string
 <a id="#(FLIGHTGROUP).actype" ><strong>FLIGHTGROUP.actype</strong></a>
     
@@ -18571,6 +18583,20 @@ Here we only check if stuck whilst taxiing.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).dTwait" ><strong>FLIGHTGROUP.dTwait</strong></a>
+    
+
+
+    
+<p> Max waiting time in seconds.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).despawnAfterHolding" ><strong>FLIGHTGROUP.despawnAfterHolding</strong></a>
     
@@ -18597,6 +18623,9 @@ Here we only check if stuck whilst taxiing.</p>
 <a id="#(FLIGHTGROUP).destbase" ><strong>FLIGHTGROUP.destbase</strong></a>
     
 
+
+    
+<p> Set the destination base.</p>
 
 </div>
 
@@ -18790,13 +18819,10 @@ Here we only check if stuck whilst taxiing.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
-<a id="#(FLIGHTGROUP).isLateActivated" ><strong>FLIGHTGROUP.isLateActivated</strong></a>
+    
+<a id="#(FLIGHTGROUP).isLandingAtAirbase" ><strong>FLIGHTGROUP.isLandingAtAirbase</strong></a>
     
 
-
-    
-<p> No late activation.</p>
 
 </div>
 
@@ -18819,20 +18845,6 @@ Here we only check if stuck whilst taxiing.</p>
 <a id="#(FLIGHTGROUP).isReadyTO" ><strong>FLIGHTGROUP.isReadyTO</strong></a>
     
 <p>Flight is ready for takeoff. This is for FLIGHTCONTROL.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(FLIGHTGROUP).isUncontrolled" ><strong>FLIGHTGROUP.isUncontrolled</strong></a>
-    
-
-
-    
-<p> Spawn in uncontrolled state.</p>
 
 </div>
 
@@ -39263,6 +39275,20 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).Twaiting" ><strong>FLIGHTGROUP.Twaiting</strong></a>
+    
+
+
+    
+<p> Set time stamp.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #string
 <a id="#(FLIGHTGROUP).actype" ><strong>FLIGHTGROUP.actype</strong></a>
     
@@ -39329,6 +39355,20 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    
+<a id="#(FLIGHTGROUP).dTwait" ><strong>FLIGHTGROUP.dTwait</strong></a>
+    
+
+
+    
+<p> Max waiting time in seconds.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #boolean
 <a id="#(FLIGHTGROUP).despawnAfterHolding" ><strong>FLIGHTGROUP.despawnAfterHolding</strong></a>
     
@@ -39355,6 +39395,9 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <a id="#(FLIGHTGROUP).destbase" ><strong>FLIGHTGROUP.destbase</strong></a>
     
 
+
+    
+<p> Set the destination base.</p>
 
 </div>
 
@@ -39548,13 +39591,10 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
-<a id="#(FLIGHTGROUP).isLateActivated" ><strong>FLIGHTGROUP.isLateActivated</strong></a>
+    
+<a id="#(FLIGHTGROUP).isLandingAtAirbase" ><strong>FLIGHTGROUP.isLandingAtAirbase</strong></a>
     
 
-
-    
-<p> No late activation.</p>
 
 </div>
 
@@ -39577,20 +39617,6 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 <a id="#(FLIGHTGROUP).isReadyTO" ><strong>FLIGHTGROUP.isReadyTO</strong></a>
     
 <p>Flight is ready for takeoff. This is for FLIGHTCONTROL.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(FLIGHTGROUP).isUncontrolled" ><strong>FLIGHTGROUP.isUncontrolled</strong></a>
-    
-
-
-    
-<p> Spawn in uncontrolled state.</p>
 
 </div>
 
