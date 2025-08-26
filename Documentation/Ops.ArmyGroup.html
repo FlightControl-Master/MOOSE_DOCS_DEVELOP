@@ -3027,12 +3027,6 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).EPLRS">ARMYGROUP.EPLRS</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).ElementStatus">ARMYGROUP.ElementStatus</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -4345,6 +4339,12 @@
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).SetTask">ARMYGROUP:SetTask(DCSTask)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set DCS task.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(ARMYGROUP).SetValidateAndRepositionGroundUnits">ARMYGROUP.SetValidateAndRepositionGroundUnits(Enabled, self)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>This function uses Disposition and other fallback logic to find better ground positions for ground units.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -23532,6 +23532,57 @@ Optionally, you can calculate the current max weight possible, which accounts fo
 
       </div>
     </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(ARMYGROUP).SetValidateAndRepositionGroundUnits" ><strong>ARMYGROUP.SetValidateAndRepositionGroundUnits(Enabled, self)</strong></a></h2>
+</div>
+    
+<p>This function uses Disposition and other fallback logic to find better ground positions for ground units.</p>
+
+    
+<ul>
+    <li>NOTE: This is not a spawn randomizer.</li>
+    <li>It will try to find clear ground locations avoiding trees, water, roads, runways, map scenery, statics and other units in the area and modifies the provided positions table.</li>
+    <li>Maintains the original layout and unit positions as close as possible by searching for the next closest valid position to each unit.</li>
+    <li>Uses UTILS.ValidateAndRepositionGroundUnits.</li>
+</ul>
+
+<div id= "#Functions##SetValidateAndRepositionGroundUnits" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Ops.OpsGroup.html##(OPSGROUP)">Ops.OpsGroup#OPSGROUP</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Enabled</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Enable/disable the feature.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>self</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
 </div>
 
 </div>
