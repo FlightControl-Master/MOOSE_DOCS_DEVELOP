@@ -2459,7 +2459,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLATOON).SetCallsign">PLATOON:SetCallsign(Callsign, Index)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLATOON).SetCallsign">PLATOON:SetCallsign(Callsign, Index, CallsignString)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set call sign.</p>
 </td>
@@ -2622,6 +2622,12 @@
           </tr>
           <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLATOON).callsign">PLATOON.callsign</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLATOON).callsignClearName">PLATOON.callsignClearName</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -5372,7 +5378,7 @@
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(PLATOON).SetCallsign" ><strong>PLATOON:SetCallsign(Callsign, Index)</strong></a></h2>
+<h2><a id="#(PLATOON).SetCallsign" ><strong>PLATOON:SetCallsign(Callsign, Index, CallsignString)</strong></a></h2>
 </div>
     
 <p>Set call sign.</p>
@@ -5407,6 +5413,19 @@
           <div class="w3-half">
               
 <p>Callsign index, Chevy-<strong>1</strong>.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>CallsignString</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Set this for tasks like TANKER, AWACS or KIOWA and the like, which have special names. E.g. "Darkstar" or "Roughneck".</p>
 
           </div>
         </div>
