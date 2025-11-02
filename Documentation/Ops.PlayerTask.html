@@ -2400,7 +2400,7 @@ To add a localization, the following texts need to be translated and set in your
 
 <p>The event is triggered when a task was cancelled manually. Use <a href="##(PLAYERTASKCONTROLLER).OnAfterTaskCancelled">PLAYERTASKCONTROLLER.OnAfterTaskCancelled</a>()` to link into this event:</p>
 
-<pre><code>         function taskmanager:OnAfterTaskCancelled(From, Event, To, Task)
+<pre><code>         function taskmanager:OnAfterTaskCancelled(From, Event, To, Task, Silent)
            ... your code here ...
          end
 </code></pre>
@@ -2562,6 +2562,12 @@ The marker can be deleted any time.</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).CanJoinTask">PLAYERTASK:CanJoinTask(Group, Client)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Override this function in order to implement custom logic if a player can join a task or not.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).CanSmoke">PLAYERTASK.CanSmoke</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -2733,7 +2739,7 @@ The marker can be deleted any time.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).OnAfterCancel">PLAYERTASK:OnAfterCancel(From, Event, To)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).OnAfterCancel">PLAYERTASK:OnAfterCancel(From, Event, To, Silent)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On After "Cancel" event.</p>
 </td>
@@ -2829,6 +2835,12 @@ The marker can be deleted any time.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).SetCanSmoke">PLAYERTASK:SetCanSmoke(OnOff)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Set if a task can have a smoke marker.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).SetCoalition">PLAYERTASK:SetCoalition(Coalition)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Set a coalition side for this task</p>
@@ -2841,9 +2853,21 @@ The marker can be deleted any time.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).SetShowThreatDetails">PLAYERTASK:SetShowThreatDetails(OnOff)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>[USER] Set if a task can show threat details.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).SetSubType">PLAYERTASK:SetSubType(Type)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[USER] Set a task sub type description to this task.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).ShowThreatDetails">PLAYERTASK.ShowThreatDetails</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
           <tr class="w3-border">
@@ -2961,7 +2985,7 @@ The marker can be deleted any time.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).onafterCancel">PLAYERTASK:onafterCancel(From, Event, To)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASK).onafterCancel">PLAYERTASK:onafterCancel(From, Event, To, Silent)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Internal] On after cancel call</p>
 </td>
@@ -3506,7 +3530,7 @@ The marker can be deleted any time.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).CancelTask">PLAYERTASKCONTROLLER:CancelTask(Task)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).CancelTask">PLAYERTASKCONTROLLER:CancelTask(Task, Silent)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[User] Manually cancel a specific task</p>
 </td>
@@ -3776,7 +3800,7 @@ The marker can be deleted any time.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).OnAfterTaskCancelled">PLAYERTASKCONTROLLER:OnAfterTaskCancelled(From, Event, To, Task)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).OnAfterTaskCancelled">PLAYERTASKCONTROLLER:OnAfterTaskCancelled(From, Event, To, Task, Silent)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On After "TaskCancelled" event.</p>
 </td>
@@ -4514,7 +4538,7 @@ The marker can be deleted any time.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).onafterTaskCancelled">PLAYERTASKCONTROLLER:onafterTaskCancelled(From, Event, To, Task)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(PLAYERTASKCONTROLLER).onafterTaskCancelled">PLAYERTASKCONTROLLER:onafterTaskCancelled(From, Event, To, Task, Silent)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Internal] On after task cancelled</p>
 </td>
@@ -4946,6 +4970,17 @@ The marker can be deleted any time.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(PLAYERTASK).CanSmoke" ><strong>PLAYERTASK.CanSmoke</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #string
 <a id="#(PLAYERTASK).ClassName" ><strong>PLAYERTASK.ClassName</strong></a>
     
@@ -5069,6 +5104,17 @@ The marker can be deleted any time.</p>
 
     #number
 <a id="#(PLAYERTASK).RepeatNo" ><strong>PLAYERTASK.RepeatNo</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(PLAYERTASK).ShowThreatDetails" ><strong>PLAYERTASK.ShowThreatDetails</strong></a>
     
 
 
@@ -6715,7 +6761,7 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(PLAYERTASK).OnAfterCancel" ><strong>PLAYERTASK:OnAfterCancel(From, Event, To)</strong></a></h2>
+<h2><a id="#(PLAYERTASK).OnAfterCancel" ><strong>PLAYERTASK:OnAfterCancel(From, Event, To, Silent)</strong></a></h2>
 </div>
     
 <p>On After "Cancel" event.</p>
@@ -6766,6 +6812,19 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
           <div class="w3-half">
               
 <p>To state.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(boolen)">#boolen</a>
+            <strong><strong>Silent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true, suppress message output on cancel.</p>
 
           </div>
         </div>
@@ -7463,6 +7522,50 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(PLAYERTASK).SetCanSmoke" ><strong>PLAYERTASK:SetCanSmoke(OnOff)</strong></a></h2>
+</div>
+    
+<p>[USER] Set if a task can have a smoke marker.</p>
+
+<div id= "#Functions##SetCanSmoke" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>PLAYERTASK</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>OnOff</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true (default) it can be smoke, false if not.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(PLAYERTASK)">#PLAYERTASK</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(PLAYERTASK).SetCoalition" ><strong>PLAYERTASK:SetCoalition(Coalition)</strong></a></h2>
 </div>
     
@@ -7528,6 +7631,50 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
           </div>
           <div class="w3-half">
               <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(PLAYERTASK)">#PLAYERTASK</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(PLAYERTASK).SetShowThreatDetails" ><strong>PLAYERTASK:SetShowThreatDetails(OnOff)</strong></a></h2>
+</div>
+    
+<p>[USER] Set if a task can show threat details.</p>
+
+<div id= "#Functions##SetShowThreatDetails" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>PLAYERTASK</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>OnOff</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true (default) it can be shown, false if not.</p>
+
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
@@ -7848,7 +7995,7 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(PLAYERTASK).onafterCancel" ><strong>PLAYERTASK:onafterCancel(From, Event, To)</strong></a></h2>
+<h2><a id="#(PLAYERTASK).onafterCancel" ><strong>PLAYERTASK:onafterCancel(From, Event, To, Silent)</strong></a></h2>
 </div>
     
 <p>[Internal] On after cancel call</p>
@@ -7887,6 +8034,17 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
             <p>
                 #string
             <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Silent</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -8577,6 +8735,17 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #boolean
+<a id="#(PLAYERTASK).CanSmoke" ><strong>PLAYERTASK.CanSmoke</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     #string
 <a id="#(PLAYERTASK).ClassName" ><strong>PLAYERTASK.ClassName</strong></a>
     
@@ -8700,6 +8869,17 @@ playerTaskManager:AddPlayerTaskToQueue(mytask)</code></pre>
 
     #number
 <a id="#(PLAYERTASK).RepeatNo" ><strong>PLAYERTASK.RepeatNo</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(PLAYERTASK).ShowThreatDetails" ><strong>PLAYERTASK.ShowThreatDetails</strong></a>
     
 
 
@@ -11975,7 +12155,7 @@ Can optionally be handed as Ops.ArmyGroup#ARMYGROUP - <strong>Note</strong> migh
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(PLAYERTASKCONTROLLER).CancelTask" ><strong>PLAYERTASKCONTROLLER:CancelTask(Task)</strong></a></h2>
+<h2><a id="#(PLAYERTASKCONTROLLER).CancelTask" ><strong>PLAYERTASKCONTROLLER:CancelTask(Task, Silent)</strong></a></h2>
 </div>
     
 <p>[User] Manually cancel a specific task</p>
@@ -11986,7 +12166,7 @@ Can optionally be handed as Ops.ArmyGroup#ARMYGROUP - <strong>Note</strong> migh
    <div class="w3-margin-left">
 <p>PLAYERTASKCONTROLLER</p>
 </div>
-    <h2><strong>Parameter:</strong></h2>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -11996,7 +12176,20 @@ Can optionally be handed as Ops.ArmyGroup#ARMYGROUP - <strong>Note</strong> migh
           </div>
           <div class="w3-half">
               
-<p>The task to be cancelled</p>
+<p>The task to be cancelled.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Silent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true suppress message output.</p>
 
           </div>
         </div>
@@ -12812,7 +13005,7 @@ Can optionally be handed as Ops.ArmyGroup#ARMYGROUP - <strong>Note</strong> migh
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(PLAYERTASKCONTROLLER).OnAfterTaskCancelled" ><strong>PLAYERTASKCONTROLLER:OnAfterTaskCancelled(From, Event, To, Task)</strong></a></h2>
+<h2><a id="#(PLAYERTASKCONTROLLER).OnAfterTaskCancelled" ><strong>PLAYERTASKCONTROLLER:OnAfterTaskCancelled(From, Event, To, Task, Silent)</strong></a></h2>
 </div>
     
 <p>On After "TaskCancelled" event.</p>
@@ -12875,6 +13068,19 @@ Can optionally be handed as Ops.ArmyGroup#ARMYGROUP - <strong>Note</strong> migh
           </div>
           <div class="w3-half">
               <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Silent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true suppress message output.</p>
+
           </div>
         </div>
 </div>
@@ -16835,7 +17041,7 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(PLAYERTASKCONTROLLER).onafterTaskCancelled" ><strong>PLAYERTASKCONTROLLER:onafterTaskCancelled(From, Event, To, Task)</strong></a></h2>
+<h2><a id="#(PLAYERTASKCONTROLLER).onafterTaskCancelled" ><strong>PLAYERTASKCONTROLLER:onafterTaskCancelled(From, Event, To, Task, Silent)</strong></a></h2>
 </div>
     
 <p>[Internal] On after task cancelled</p>
@@ -16889,6 +17095,19 @@ If you don't want SEAD tasks generated, use as follows where "mycontroller" is y
           </div>
           <div class="w3-half">
               <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Silent</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true, suppress message output on cancel.</p>
+
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
