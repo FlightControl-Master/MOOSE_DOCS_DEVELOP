@@ -2591,12 +2591,12 @@ See the following example:</p>
 
 <pre><code>   -- Create the SetCarrier SET_GROUP collection.
 
-   local SetHelicopter = SET_GROUP:New():FilterPrefixes( "Helicopter" ):FilterStart()
+   local SetHelicopter = SET_GROUP:New():FilterPrefixes("Helicopter"):FilterStart()
 
    -- Put a Dead event handler on SetCarrier, to ensure that when a carrier is destroyed, that all internal parameters are reset.
 
-   function SetHelicopter:OnAfterDead( From, Event, To, GroupObject )
-     --self:F( { GroupObject = GroupObject:GetName() } )
+   function SetHelicopter:OnAfterDead(From, Event, To, GroupObject)
+     --self:F({ GroupObject = GroupObject:GetName() })
    end
 </code></pre>
 
@@ -2609,15 +2609,15 @@ See the modified example:</p>
    -- Within that constructor, we want to set an enclosed event handler OnAfterDead for SetHelicopter.
    -- But within the OnAfterDead method, we want to refer to the self variable of the AI_CARGO_DISPATCHER.
 
-   function AI_CARGO_DISPATCHER:New( SetCarrier, SetCargo, SetDeployZones )
+   function AI_CARGO_DISPATCHER:New(SetCarrier, SetCargo, SetDeployZones)
 
-     local self = BASE:Inherit( self, FSM:New() ) -- #AI_CARGO_DISPATCHER
+     local self = BASE:Inherit(self, FSM:New()) -- #AI_CARGO_DISPATCHER
 
      -- Put a Dead event handler on SetCarrier, to ensure that when a carrier is destroyed, that all internal parameters are reset.
      -- Note the "." notation, and the explicit declaration of SetHelicopter, which would be using the ":" notation the implicit self variable declaration.
 
-     function SetHelicopter.OnAfterDead( SetHelicopter, From, Event, To, GroupObject )
-       SetHelicopter:F( { GroupObject = GroupObject:GetName() } )
+     function SetHelicopter.OnAfterDead(SetHelicopter, From, Event, To, GroupObject)
+       SetHelicopter:F({ GroupObject = GroupObject:GetName() })
        self.PickupCargo[GroupObject] = nil  -- So here I clear the PickupCargo table entry of the self object AI_CARGO_DISPATCHER.
        self.CarrierHome[GroupObject] = nil
      end
@@ -2740,12 +2740,12 @@ See the following example:</p>
 
 <pre><code>   -- Create the SetCarrier SET_OPSGROUP collection.
 
-   local SetHelicopter = SET_OPSGROUP:New():FilterPrefixes( "Helicopter" ):FilterStart()
+   local SetHelicopter = SET_OPSGROUP:New():FilterPrefixes("Helicopter"):FilterStart()
 
    -- Put a Dead event handler on SetCarrier, to ensure that when a carrier is destroyed, that all internal parameters are reset.
 
-   function SetHelicopter:OnAfterDead( From, Event, To, GroupObject )
-     --self:F( { GroupObject = GroupObject:GetName() } )
+   function SetHelicopter:OnAfterDead(From, Event, To, GroupObject)
+     --self:F({ GroupObject = GroupObject:GetName() })
    end
 </code></pre>
 
@@ -3173,12 +3173,12 @@ See the following example:</p>
 
 <pre><code>   -- Create the SetCarrier SET_UNIT collection.
 
-   local SetHelicopter = SET_UNIT:New():FilterPrefixes( "Helicopter" ):FilterStart()
+   local SetHelicopter = SET_UNIT:New():FilterPrefixes("Helicopter"):FilterStart()
 
    -- Put a Dead event handler on SetCarrier, to ensure that when a carrier unit is destroyed, that all internal parameters are reset.
 
-   function SetHelicopter:OnAfterDead( From, Event, To, UnitObject )
-     --self:F( { UnitObject = UnitObject:GetName() } )
+   function SetHelicopter:OnAfterDead(From, Event, To, UnitObject)
+     --self:F({ UnitObject = UnitObject:GetName() })
    end
 </code></pre>
 
@@ -3191,15 +3191,15 @@ See the modified example:</p>
    -- Within that constructor, we want to set an enclosed event handler OnAfterDead for SetHelicopter.
    -- But within the OnAfterDead method, we want to refer to the self variable of the AI_CARGO_DISPATCHER.
 
-   function ACLASS:New( SetCarrier, SetCargo, SetDeployZones )
+   function ACLASS:New(SetCarrier, SetCargo, SetDeployZones)
 
-     local self = BASE:Inherit( self, FSM:New() ) -- #AI_CARGO_DISPATCHER
+     local self = BASE:Inherit(self, FSM:New()) -- #AI_CARGO_DISPATCHER
 
      -- Put a Dead event handler on SetCarrier, to ensure that when a carrier is destroyed, that all internal parameters are reset.
      -- Note the "." notation, and the explicit declaration of SetHelicopter, which would be using the ":" notation the implicit self variable declaration.
 
-     function SetHelicopter.OnAfterDead( SetHelicopter, From, Event, To, UnitObject )
-       SetHelicopter:F( { UnitObject = UnitObject:GetName() } )
+     function SetHelicopter.OnAfterDead(SetHelicopter, From, Event, To, UnitObject)
+       SetHelicopter:F({ UnitObject = UnitObject:GetName() })
        self.array[UnitObject] = nil  -- So here I clear the array table entry of the self object ACLASS.
      end
 
@@ -20393,7 +20393,7 @@ DatabaseSet = SET_AIRBASE:New()</code></pre>
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2( ZONE:New("Test Zone"):GetCoordinate() )</code></pre>
+    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2(ZONE:New("Test Zone"):GetCoordinate())</code></pre>
 
 </div>
 
@@ -26249,7 +26249,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2( ZONE:New("Test Zone"):GetCoordinate() )</code></pre>
+    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2(ZONE:New("Test Zone"):GetCoordinate())</code></pre>
 
 </div>
 
@@ -33079,7 +33079,7 @@ DatabaseSet = SET_CARGO:New()</code></pre>
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2( ZONE:New("Test Zone"):GetCoordinate() )</code></pre>
+    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2(ZONE:New("Test Zone"):GetCoordinate())</code></pre>
 
 </div>
 
@@ -38480,13 +38480,13 @@ Include inactive clients if you provide false.</p>
 ClientSet = SET_CLIENT:New():FilterActive():FilterStart()
 
 -- Include only active clients to the set of the blue coalition, and filter one time.
-ClientSet = SET_CLIENT:New():FilterActive():FilterCoalition( "blue" ):FilterOnce()
+ClientSet = SET_CLIENT:New():FilterActive():FilterCoalition("blue"):FilterOnce()
 
 -- Include only active clients to the set of the blue coalition, and filter one time.
 -- Later, reset to include back inactive clients to the set.
-ClientSet = SET_CLIENT:New():FilterActive():FilterCoalition( "blue" ):FilterOnce()
+ClientSet = SET_CLIENT:New():FilterActive():FilterCoalition("blue"):FilterOnce()
 ... logic ...
-ClientSet = SET_CLIENT:New():FilterActive( false ):FilterCoalition( "blue" ):FilterOnce()
+ClientSet = SET_CLIENT:New():FilterActive(false):FilterCoalition("blue"):FilterOnce()
 </code></pre>
 
 </div>
@@ -38722,7 +38722,7 @@ ClientSet = SET_CLIENT:New():FilterActive( false ):FilterCoalition( "blue" ):Fil
              if client:GetPlayerName() == "Exclude Me" then isinclude = false end
              return isinclude
          end
-         ):FilterOnce()
+        ):FilterOnce()
          BASE:I(groundset:Flush())</code></pre>
 
 </div>
@@ -40252,7 +40252,7 @@ DBObject = SET_CLIENT:New()</code></pre>
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2( ZONE:New("Test Zone"):GetCoordinate() )</code></pre>
+    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2(ZONE:New("Test Zone"):GetCoordinate())</code></pre>
 
 </div>
 
@@ -45764,7 +45764,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
              if dynamiccargo:GetName() == "Exclude Me" then isinclude = false end
              return isinclude
          end
-         ):FilterOnce()
+        ):FilterOnce()
          BASE:I(cargoset:Flush())</code></pre>
 
 </div>
@@ -47135,7 +47135,7 @@ DBObject = SET_DYNAMICCARGO:New()</code></pre>
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2( ZONE:New("Test Zone"):GetCoordinate() )</code></pre>
+    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2(ZONE:New("Test Zone"):GetCoordinate())</code></pre>
 
 </div>
 
@@ -53120,13 +53120,13 @@ Include inactive groups if you provide false.</p>
 GroupSet = SET_GROUP:New():FilterActive():FilterStart()
 
 -- Include only active groups to the set of the blue coalition, and filter one time.
-GroupSet = SET_GROUP:New():FilterActive():FilterCoalition( "blue" ):FilterOnce()
+GroupSet = SET_GROUP:New():FilterActive():FilterCoalition("blue"):FilterOnce()
 
 -- Include only active groups to the set of the blue coalition, and filter one time.
 -- Later, reset to include back inactive groups to the set.
-GroupSet = SET_GROUP:New():FilterActive():FilterCoalition( "blue" ):FilterOnce()
+GroupSet = SET_GROUP:New():FilterActive():FilterCoalition("blue"):FilterOnce()
 ... logic ...
-GroupSet = SET_GROUP:New():FilterActive( false ):FilterCoalition( "blue" ):FilterOnce()
+GroupSet = SET_GROUP:New():FilterActive(false):FilterCoalition("blue"):FilterOnce()
 </code></pre>
 
 </div>
@@ -53481,7 +53481,7 @@ GroupSet = SET_GROUP:New():FilterActive( false ):FilterCoalition( "blue" ):Filte
              if grp:GetName() == "Exclude Me" then isinclude = false end
              return isinclude
          end
-         ):FilterOnce()
+        ):FilterOnce()
          BASE:I(groundset:Flush())</code></pre>
 
 </div>
@@ -55360,7 +55360,7 @@ MySetGroup:SetCargoBayWeightLimit()</code></pre>
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2( ZONE:New("Test Zone"):GetCoordinate() )</code></pre>
+    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2(ZONE:New("Test Zone"):GetCoordinate())</code></pre>
 
 </div>
 
@@ -60964,13 +60964,13 @@ Include inactive groups if you provide false.</p>
 GroupSet = SET_OPSGROUP:New():FilterActive():FilterStart()
 
 -- Include only active groups to the set of the blue coalition, and filter one time.
-GroupSet = SET_OPSGROUP:New():FilterActive():FilterCoalition( "blue" ):FilterOnce()
+GroupSet = SET_OPSGROUP:New():FilterActive():FilterCoalition("blue"):FilterOnce()
 
 -- Include only active groups to the set of the blue coalition, and filter one time.
 -- Later, reset to include back inactive groups to the set.
-GroupSet = SET_OPSGROUP:New():FilterActive():FilterCoalition( "blue" ):FilterOnce()
+GroupSet = SET_OPSGROUP:New():FilterActive():FilterCoalition("blue"):FilterOnce()
 ... logic ...
-GroupSet = SET_OPSGROUP:New():FilterActive( false ):FilterCoalition( "blue" ):FilterOnce()
+GroupSet = SET_OPSGROUP:New():FilterActive(false):FilterCoalition("blue"):FilterOnce()
 </code></pre>
 
 </div>
@@ -62435,7 +62435,7 @@ GroupSet = SET_OPSGROUP:New():FilterActive( false ):FilterCoalition( "blue" ):Fi
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2( ZONE:New("Test Zone"):GetCoordinate() )</code></pre>
+    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2(ZONE:New("Test Zone"):GetCoordinate())</code></pre>
 
 </div>
 
@@ -69054,7 +69054,7 @@ If zones overlap, the first zone that validates the test is returned.</p>
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2( ZONE:New("Test Zone"):GetCoordinate() )</code></pre>
+    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2(ZONE:New("Test Zone"):GetCoordinate())</code></pre>
 
 </div>
 
@@ -75607,7 +75607,7 @@ DBObject = SET_PLAYER:New()</code></pre>
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2( ZONE:New("Test Zone"):GetCoordinate() )</code></pre>
+    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2(ZONE:New("Test Zone"):GetCoordinate())</code></pre>
 
 </div>
 
@@ -82127,7 +82127,7 @@ Thus we will get a smooth percentage decrease, if you use this e.g. as success c
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2( ZONE:New("Test Zone"):GetCoordinate() )</code></pre>
+    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2(ZONE:New("Test Zone"):GetCoordinate())</code></pre>
 
 </div>
 
@@ -87686,7 +87686,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
              if static:GetName() == "Exclude Me" then isinclude = false end
              return isinclude
          end
-         ):FilterOnce()
+        ):FilterOnce()
          BASE:I(groundset:Flush())</code></pre>
 
 </div>
@@ -89284,7 +89284,7 @@ DBObject = SET_STATIC:New()</code></pre>
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2( ZONE:New("Test Zone"):GetCoordinate() )</code></pre>
+    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2(ZONE:New("Test Zone"):GetCoordinate())</code></pre>
 
 </div>
 
@@ -94760,13 +94760,13 @@ Include inactive units if you provide false.</p>
 UnitSet = SET_UNIT:New():FilterActive():FilterStart()
 
 -- Include only active units to the set of the blue coalition, and filter one time.
-UnitSet = SET_UNIT:New():FilterActive():FilterCoalition( "blue" ):FilterOnce()
+UnitSet = SET_UNIT:New():FilterActive():FilterCoalition("blue"):FilterOnce()
 
 -- Include only active units to the set of the blue coalition, and filter one time.
 -- Later, reset to include back inactive units to the set.
-UnitSet = SET_UNIT:New():FilterActive():FilterCoalition( "blue" ):FilterOnce()
+UnitSet = SET_UNIT:New():FilterActive():FilterCoalition("blue"):FilterOnce()
 ... logic ...
-UnitSet = SET_UNIT:New():FilterActive( false ):FilterCoalition( "blue" ):FilterOnce()
+UnitSet = SET_UNIT:New():FilterActive(false):FilterCoalition("blue"):FilterOnce()
 </code></pre>
 
 </div>
@@ -94958,7 +94958,7 @@ UnitSet = SET_UNIT:New():FilterActive( false ):FilterCoalition( "blue" ):FilterO
              if unit:GetName() == "Exclude Me" then isinclude = false end
              return isinclude
          end
-         ):FilterOnce()
+        ):FilterOnce()
          BASE:I(groundset:Flush())</code></pre>
 
 </div>
@@ -95691,12 +95691,12 @@ to warrant a check of below 10 seconds.</p>
     </div>
       <h2><strong>Usage:</strong></h2>
     <pre class="example"><code>
-    UnitSet:ForEachUnitPerThreatLevel( 10, 0,
+    UnitSet:ForEachUnitPerThreatLevel(10, 0,
       -- @param Wrapper.Unit#UNIT UnitObject The UNIT object in the UnitSet, that will be passed to the local function for evaluation.
-      function( UnitObject )
+      function(UnitObject)
         .. logic ..
       end
-    )
+   )
 </code></pre>
 
 </div>
@@ -97100,7 +97100,7 @@ MySetUnit:SetCargoBayWeightLimit()</code></pre>
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2( ZONE:New("Test Zone"):GetCoordinate() )</code></pre>
+    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2(ZONE:New("Test Zone"):GetCoordinate())</code></pre>
 
 </div>
 
@@ -103590,7 +103590,7 @@ DatabaseSet = SET_ZONE:New()</code></pre>
            function(zone)
              zone:DrawZone(-1, {0,1,0}, Alpha, FillColor, FillAlpha, 4, ReadOnly)
            end 
-         )
+        )
          
          -- This FSM function will be called for entering objects
          function zoneset:OnAfterEnteredZone(From,Event,To,Controllable,Zone)
@@ -104396,7 +104396,7 @@ DatabaseSet = SET_ZONE:New()</code></pre>
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2( ZONE:New("Test Zone"):GetCoordinate() )</code></pre>
+    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2(ZONE:New("Test Zone"):GetCoordinate())</code></pre>
 
 </div>
 
@@ -110881,7 +110881,7 @@ DatabaseSet = SET_ZONE_GOAL:New()</code></pre>
       </div>
     </div>
       <h2><strong>Usage:</strong></h2>
-    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2( ZONE:New("Test Zone"):GetCoordinate() )</code></pre>
+    <pre class="example"><code>         myset:FindNearestObjectFromPointVec2(ZONE:New("Test Zone"):GetCoordinate())</code></pre>
 
 </div>
 
