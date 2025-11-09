@@ -2086,217 +2086,212 @@
    </div>
   </nav>
   
-<img src="..\Images\MOOSE.JPG" alt="Banner Image"/>   
+<img src="..\Images\NAVIGATION_Towns.png" alt="Banner Image"/>   
 <div  id="content">
   <div class="w3-container w3-theme-d5" id="module_title">
-    <h1>Module <strong>Wrapper.Identifiable</strong></h1>
+    <h1>Module <strong>Navigation.Towns</strong></h1>
   </div>
   <div class="w3-container w3-white" id="module_description">
     
-<p><strong>Wrapper</strong> - IDENTIFIABLE is an intermediate class wrapping DCS Object class derived Objects.</p>
+<p><strong>NAVIGATION</strong> - Towns of the map/theatre.</p>
 
     
 
+<p><strong>Main Features:</strong></p>
+
+<ul>
+    <li>Find towns of map</li>
+    <li>Road and rail connections</li>
+    <li>Find closest town to a given coordinate</li>
+</ul>
+
 <hr/>
 
-<h3>Author: <strong>FlightControl</strong></h3>
+<h2>Example Missions:</h2>
 
-<h3>Contributions:</h3>
+<p>Demo missions can be found on <a href="https://github.com/FlightControl-Master/MOOSE_MISSIONS/tree/develop/Navigation%20-%20Towns">github</a>.</p>
 
 <hr/>
 
+<h3>Author: <strong>funkyfranky</strong></h3>
+
+<hr/>
 
   </div>
   <div class="w3-container w3-theme-d2"><h2><strong>Global(s)</strong></h2></div>
   <div class="w3-theme-d2 w3-margin-top ">
-    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##IDENTIFIABLE')">
+    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##TOWNS')">
       <tr>
-        <td class="style="width:40%;"><p><h2>Global <strong>IDENTIFIABLE</strong></h2></p></td>
+        <td class="style="width:40%;"><p><h2>Global <strong>TOWNS</strong></h2></p></td>
         <td class="style="width:60%;">
-<p>Wrapper class to handle the DCS Identifiable objects.</p>
+<p><em>Hope is the beacon that guides lost ships back to the shore.</em></p>
+
+<hr/>
+
+<h1>The TOWNS Concept</h1>
+
+<p>This class is desinged to make information about towns of a map/theatre easier accessible.</p>
 </td>
       </tr>
     </table>
   </div>
-  <div id= "#Globals##IDENTIFIABLE" class="w3-container w3-white w3-padding-small">
+  <div id= "#Globals##TOWNS" class="w3-container w3-white w3-padding-small">
     <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(IDENTIFIABLE)">#IDENTIFIABLE</a>
-<a id="IDENTIFIABLE" ><strong>IDENTIFIABLE</strong></a>
+    <a href="##(TOWNS)">#TOWNS</a>
+<a id="TOWNS" ><strong>TOWNS</strong></a>
     
-<p>Wrapper class to handle the DCS Identifiable objects.</p>
+<p><em>Hope is the beacon that guides lost ships back to the shore.</em></p>
+
+<hr/>
+
+<h1>The TOWNS Concept</h1>
+
+<p>This class is desinged to make information about towns of a map/theatre easier accessible.</p>
 
     
+<p>The information contains location and road/rail connections of the towns.</p>
 
-<ul>
-    <li>Support all DCS Identifiable APIs.</li>
-    <li>Enhance with Identifiable specific APIs not in the DCS Identifiable API set.</li>
-    <li>Manage the "state" of the DCS Identifiable.</li>
-</ul>
+<p><strong>Note</strong> that try to avoid hard coding stuff in Moose since DCS is updated frequently and things change. Therefore, the main source of information is either a file <code>towns.lua</code> that can be
+found in the installation directory of DCS for each map or a table that the user needs to provide.</p>
 
-<h2>IDENTIFIABLE constructor</h2>
+<h1>Basic Setup</h1>
 
-<p>The IDENTIFIABLE class provides the following functions to construct a IDENTIFIABLE instance:</p>
+<p>A new <code>TOWNS</code> object can be created with the <a href="##(TOWNS).NewFromFile">TOWNS.NewFromFile</a>(*towns_lua_file*) function.</p>
 
-<ul>
-    <li><a href="##(IDENTIFIABLE).New">IDENTIFIABLE.New</a>(): Create a IDENTIFIABLE instance.</li>
-</ul>
+<pre><code>local towns=TOWNS:NewFromFile("&lt;DCS_Install_Directory&gt;\Mods\terrains\&lt;Map_Name&gt;\towns.lua")
+towns:MarkerShow()
+</code></pre>
+
+<p>This will load the towns from the <code>&lt;DCS_Install_Directory&gt;</code> for the specific map and place markers on the F10 map. This is the first step you should do to ensure that the file
+you provided is correct and all relevant towns are present.</p>
+
+<h1>User Functions</h1>
+
+<h2>F10 Map Markers</h2>
+
+<h2>Position</h2>
+
+<h2>Get Closest Town</h2>
+
 
 
 </div>
 
   </div>
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>  
-      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(IDENTIFIABLE)">Type <strong>IDENTIFIABLE</strong></a></h2></div>
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(TOWNS)">Type <strong>TOWNS</strong></a></h2></div>
          <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
-     <strong><a href="##(IDENTIFIABLE)">IDENTIFIABLE</a></strong>
-, extends <strong><a href="Wrapper.Object.html##(OBJECT)">Wrapper.Object#OBJECT</a></strong>
+     <strong><a href="##(TOWNS)">TOWNS</a></strong>
 , extends <strong><a href="Core.Base.html##(BASE)">Core.Base#BASE</a></strong>
    </div>
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
           <tr class="w3-theme-l1">
-            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from IDENTIFIABLE</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from TOWNS</th>
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetCallsign">IDENTIFIABLE:GetCallsign()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).ClassName">TOWNS.ClassName</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Gets the CallSign of the IDENTIFIABLE, which is a blank by default.</p>
+<p>Name of the class.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetCategory">IDENTIFIABLE:GetCategory()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetClosestTown">TOWNS:GetClosestTown(Coordinate, DistMax, ExcludeList)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns object category of the DCS Identifiable.</p>
+<p>Find closest town to a given coordinate.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetCategoryName">IDENTIFIABLE:GetCategoryName()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetClosestTowns">TOWNS:GetClosestTowns(Coordinate, Nmax, DistMax)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns the DCS Identifiable category name as defined within the DCS Identifiable Descriptor.</p>
+<p>Find closest towns to a given coordinate.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetCoalition">IDENTIFIABLE:GetCoalition()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetConnectionRoad">TOWNS:GetConnectionRoad(townA, townB, Railroad)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns coalition of the Identifiable.</p>
+<p>Get road or rail connection between two towns.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetCoalitionName">IDENTIFIABLE:GetCoalitionName()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetCoordRail">TOWNS:GetCoordRail(town)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns the name of the coalition of the Identifiable.</p>
+<p>Get closest rail coordinate of a town.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetCountry">IDENTIFIABLE:GetCountry()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetCoordRoad">TOWNS:GetCoordRoad(town)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns country of the Identifiable.</p>
+<p>Get closest road coordinate of a town.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetCountryName">IDENTIFIABLE:GetCountryName()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetCoordinate">TOWNS:GetCoordinate(town)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns country name of the Identifiable.</p>
+<p>Get COORDINATE of a specific town.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetDesc">IDENTIFIABLE:GetDesc()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetTowns">TOWNS:GetTowns()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns Identifiable descriptor.</p>
+<p>Get table of all towns, optionally of a given type.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetName">IDENTIFIABLE:GetName()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetVec3">TOWNS:GetVec3(town)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns DCS Identifiable object name.</p>
+<p>Get 3D position vector of a specific town.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetThreatLevel">IDENTIFIABLE:GetThreatLevel()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).MarkerRemove">TOWNS:MarkerRemove(Town)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Gets the threat level.</p>
+<p>Remove markers of all towns from the F10 map.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetTypeName">IDENTIFIABLE:GetTypeName()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).MarkerShow">TOWNS:MarkerShow(Town)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns the type name of the DCS Identifiable.</p>
+<p>Add markers for all towns on the F10 map.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).HasAttribute">IDENTIFIABLE:HasAttribute(AttributeName)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).NewFromFile">TOWNS:NewFromFile(FileName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Check if the Object has the attribute.</p>
+<p>Create a new TOWNS class instance from a given file.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).IdentifiableName">IDENTIFIABLE.IdentifiableName</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).NewFromTable">TOWNS:NewFromTable(TownTable)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>The name of the identifiable.</p>
+<p>Create a new TOWNS class instance from a given table.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).IsAlive">IDENTIFIABLE:IsAlive()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS)._GetMarkerText">TOWNS:_GetMarkerText(town)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns if the Identifiable is alive.</p>
+<p>Get text displayed in the F10 marker.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).IsBlue">IDENTIFIABLE:IsBlue()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).towns">TOWNS.towns</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns true if identifiable is of BLUE coalition.</p>
+<p>Towns.</p>
+
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).IsNeutral">IDENTIFIABLE:IsNeutral()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).verbose">TOWNS.verbose</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns true if identifiable is of NEUTRAL coalition.</p>
+<p>Verbosity of output.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).IsRed">IDENTIFIABLE:IsRed()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).version">TOWNS.version</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns true if identifiable is of RED coalition.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).New">IDENTIFIABLE:New(IdentifiableName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Create a new IDENTIFIABLE from a DCSIdentifiable</p>
-</td>
-          </tr>
-        </table>
-        </div>
-        <div class="w3-card w3-margin">
-        <table class="w3-table w3-border-bottom w3-border-theme-l2">
-          <tr class="w3-theme-l1">
-            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from OBJECT</th>
-            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).Destroy">IDENTIFIABLE:Destroy()</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Destroys the OBJECT.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetID">IDENTIFIABLE:GetID()</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Returns the unit's unique identifier.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).New">IDENTIFIABLE:New(ObjectName)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Create a new OBJECT from a DCSObject</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).ObjectName">IDENTIFIABLE.ObjectName</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>The name of the Object.</p>
+<p>TOWNS class version.</p>
 </td>
           </tr>
         </table>
@@ -2308,563 +2303,563 @@
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).ClassID">IDENTIFIABLE.ClassID</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).ClassID">TOWNS.ClassID</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The ID number of the class.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).ClassName">IDENTIFIABLE.ClassName</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).ClassName">TOWNS.ClassName</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The name of the class.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).ClassNameAndID">IDENTIFIABLE.ClassNameAndID</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).ClassNameAndID">TOWNS.ClassNameAndID</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The name of the class concatenated with the ID number of the class.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).ClearState">IDENTIFIABLE:ClearState(Object, StateName)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).ClearState">TOWNS:ClearState(Object, StateName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Clear the state of an object.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).CreateEventBirth">IDENTIFIABLE:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).CreateEventBirth">TOWNS:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Birth Event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).CreateEventCrash">IDENTIFIABLE:CreateEventCrash(EventTime, Initiator, IniObjectCategory)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).CreateEventCrash">TOWNS:CreateEventCrash(EventTime, Initiator, IniObjectCategory)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Crash Event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).CreateEventDead">IDENTIFIABLE:CreateEventDead(EventTime, Initiator, IniObjectCategory)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).CreateEventDead">TOWNS:CreateEventDead(EventTime, Initiator, IniObjectCategory)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Dead Event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).CreateEventDynamicCargoLoaded">IDENTIFIABLE:CreateEventDynamicCargoLoaded(DynamicCargo)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).CreateEventDynamicCargoLoaded">TOWNS:CreateEventDynamicCargoLoaded(DynamicCargo)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a S_EVENT_DYNAMIC_CARGO_LOADED event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).CreateEventDynamicCargoRemoved">IDENTIFIABLE:CreateEventDynamicCargoRemoved(DynamicCargo)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).CreateEventDynamicCargoRemoved">TOWNS:CreateEventDynamicCargoRemoved(DynamicCargo)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a S_EVENT_DYNAMIC_CARGO_REMOVED event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).CreateEventDynamicCargoUnloaded">IDENTIFIABLE:CreateEventDynamicCargoUnloaded(DynamicCargo)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).CreateEventDynamicCargoUnloaded">TOWNS:CreateEventDynamicCargoUnloaded(DynamicCargo)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a S_EVENT_DYNAMIC_CARGO_UNLOADED event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).CreateEventNewDynamicCargo">IDENTIFIABLE:CreateEventNewDynamicCargo(DynamicCargo)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).CreateEventNewDynamicCargo">TOWNS:CreateEventNewDynamicCargo(DynamicCargo)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a S_EVENT_NEW_DYNAMIC_CARGO event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).CreateEventPlayerEnterAircraft">IDENTIFIABLE:CreateEventPlayerEnterAircraft(PlayerUnit)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).CreateEventPlayerEnterAircraft">TOWNS:CreateEventPlayerEnterAircraft(PlayerUnit)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a <code>S_EVENT_PLAYER_ENTER_AIRCRAFT</code> event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).CreateEventRemoveUnit">IDENTIFIABLE:CreateEventRemoveUnit(EventTime, Initiator)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).CreateEventRemoveUnit">TOWNS:CreateEventRemoveUnit(EventTime, Initiator)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Remove Unit Event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).CreateEventTakeoff">IDENTIFIABLE:CreateEventTakeoff(EventTime, Initiator)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).CreateEventTakeoff">TOWNS:CreateEventTakeoff(EventTime, Initiator)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Takeoff Event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).CreateEventUnitLost">IDENTIFIABLE:CreateEventUnitLost(EventTime, Initiator)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).CreateEventUnitLost">TOWNS:CreateEventUnitLost(EventTime, Initiator)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a Crash Event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).E">IDENTIFIABLE:E(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).E">TOWNS:E(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Log an exception which will be traced always.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).EventDispatcher">IDENTIFIABLE:EventDispatcher()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).EventDispatcher">TOWNS:EventDispatcher()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Returns the event dispatcher</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).EventRemoveAll">IDENTIFIABLE:EventRemoveAll()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).EventRemoveAll">TOWNS:EventRemoveAll()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Remove all subscribed events</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).F">IDENTIFIABLE:F(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).F">TOWNS:F(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function call.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).F2">IDENTIFIABLE:F2(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).F2">TOWNS:F2(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function call level 2.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).F3">IDENTIFIABLE:F3(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).F3">TOWNS:F3(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function call level 3.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetClassID">IDENTIFIABLE:GetClassID()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetClassID">TOWNS:GetClassID()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the ClassID of the class instance.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetClassName">IDENTIFIABLE:GetClassName()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetClassName">TOWNS:GetClassName()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the ClassName of the class instance.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetClassNameAndID">IDENTIFIABLE:GetClassNameAndID()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetClassNameAndID">TOWNS:GetClassNameAndID()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the ClassName + ClassID of the class instance.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetEventPriority">IDENTIFIABLE:GetEventPriority()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetEventPriority">TOWNS:GetEventPriority()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get the Class <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetParent">IDENTIFIABLE:GetParent(Child, FromClass)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetParent">TOWNS:GetParent(Child, FromClass)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>This is the worker method to retrieve the Parent class.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetProperties">IDENTIFIABLE:GetProperties()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetProperties">TOWNS:GetProperties()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get all of the properties of an object in a table.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetProperty">IDENTIFIABLE:GetProperty(Key)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetProperty">TOWNS:GetProperty(Key)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get one property of an object by the key.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).GetState">IDENTIFIABLE:GetState(Object, Key)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).GetState">TOWNS:GetState(Object, Key)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get a Value given a Key from the Object.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).HandleEvent">IDENTIFIABLE:HandleEvent(EventID, EventFunction)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).HandleEvent">TOWNS:HandleEvent(EventID, EventFunction)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Subscribe to a DCS Event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).I">IDENTIFIABLE:I(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).I">TOWNS:I(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Log an information which will be traced always.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).Inherit">IDENTIFIABLE:Inherit(Child, Parent)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).Inherit">TOWNS:Inherit(Child, Parent)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>This is the worker method to inherit from a parent class.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).IsInstanceOf">IDENTIFIABLE:IsInstanceOf(ClassName)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).IsInstanceOf">TOWNS:IsInstanceOf(ClassName)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>This is the worker method to check if an object is an (sub)instance of a class.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).IsTrace">IDENTIFIABLE:IsTrace()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).IsTrace">TOWNS:IsTrace()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Enquires if tracing is on (for the class).</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).New">IDENTIFIABLE:New()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).New">TOWNS:New()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>BASE constructor.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEvent">IDENTIFIABLE:OnEvent(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEvent">TOWNS:OnEvent(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an Event for an object is triggered.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventBDA">IDENTIFIABLE:OnEventBDA(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventBDA">TOWNS:OnEventBDA(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>BDA.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventBaseCaptured">IDENTIFIABLE:OnEventBaseCaptured(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventBaseCaptured">TOWNS:OnEventBaseCaptured(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a ground unit captures either an airbase or a farp.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventBirth">IDENTIFIABLE:OnEventBirth(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventBirth">TOWNS:OnEventBirth(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any object is spawned into the mission.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventCrash">IDENTIFIABLE:OnEventCrash(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventCrash">TOWNS:OnEventCrash(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventDead">IDENTIFIABLE:OnEventDead(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventDead">TOWNS:OnEventDead(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an object is dead.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventDetailedFailure">IDENTIFIABLE:OnEventDetailedFailure(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventDetailedFailure">TOWNS:OnEventDetailedFailure(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Unknown precisely what creates this event, likely tied into newer damage model.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventDiscardChairAfterEjection">IDENTIFIABLE:OnEventDiscardChairAfterEjection(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventDiscardChairAfterEjection">TOWNS:OnEventDiscardChairAfterEjection(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Discard chair after ejection.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventDynamicCargoLoaded">IDENTIFIABLE:OnEventDynamicCargoLoaded(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventDynamicCargoLoaded">TOWNS:OnEventDynamicCargoLoaded(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a player loads a dynamic cargo object with the F8 ground crew menu into a helo.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventDynamicCargoRemoved">IDENTIFIABLE:OnEventDynamicCargoRemoved(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventDynamicCargoRemoved">TOWNS:OnEventDynamicCargoRemoved(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a dynamic cargo crate is removed.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventDynamicCargoUnloaded">IDENTIFIABLE:OnEventDynamicCargoUnloaded(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventDynamicCargoUnloaded">TOWNS:OnEventDynamicCargoUnloaded(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a player unloads a dynamic cargo object with the F8 ground crew menu from a helo.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventEjection">IDENTIFIABLE:OnEventEjection(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventEjection">TOWNS:OnEventEjection(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a pilot ejects from an aircraft
 Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a> as these are just the prototypes.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventEngineShutdown">IDENTIFIABLE:OnEventEngineShutdown(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventEngineShutdown">TOWNS:OnEventEngineShutdown(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any aircraft shuts down its engines.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventEngineStartup">IDENTIFIABLE:OnEventEngineStartup(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventEngineStartup">TOWNS:OnEventEngineStartup(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any aircraft starts its engines.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventHit">IDENTIFIABLE:OnEventHit(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventHit">TOWNS:OnEventHit(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs whenever an object is hit by a weapon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventHumanFailure">IDENTIFIABLE:OnEventHumanFailure(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventHumanFailure">TOWNS:OnEventHumanFailure(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any system fails on a human controlled aircraft.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventKill">IDENTIFIABLE:OnEventKill(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventKill">TOWNS:OnEventKill(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs on the death of a unit.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventLand">IDENTIFIABLE:OnEventLand(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventLand">TOWNS:OnEventLand(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an aircraft lands at an airbase, farp or ship
 Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a> as these are just the prototypes.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventLandingAfterEjection">IDENTIFIABLE:OnEventLandingAfterEjection(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventLandingAfterEjection">TOWNS:OnEventLandingAfterEjection(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs shortly after the landing animation of an ejected pilot touching the ground and standing up.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventLandingQualityMark">IDENTIFIABLE:OnEventLandingQualityMark(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventLandingQualityMark">TOWNS:OnEventLandingQualityMark(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Landing quality mark.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventMarkAdded">IDENTIFIABLE:OnEventMarkAdded(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventMarkAdded">TOWNS:OnEventMarkAdded(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a new mark was added.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventMarkChange">IDENTIFIABLE:OnEventMarkChange(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventMarkChange">TOWNS:OnEventMarkChange(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a mark text was changed.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventMarkRemoved">IDENTIFIABLE:OnEventMarkRemoved(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventMarkRemoved">TOWNS:OnEventMarkRemoved(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a mark was removed.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventMissionEnd">IDENTIFIABLE:OnEventMissionEnd(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventMissionEnd">TOWNS:OnEventMissionEnd(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a mission ends
 Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a> as these are just the prototypes.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventMissionStart">IDENTIFIABLE:OnEventMissionStart(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventMissionStart">TOWNS:OnEventMissionStart(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a mission starts
 Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a> as these are just the prototypes. </p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventNewDynamicCargo">IDENTIFIABLE:OnEventNewDynamicCargo(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventNewDynamicCargo">TOWNS:OnEventNewDynamicCargo(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a player creates a dynamic cargo object from the F8 ground crew menu.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventParatrooperLanding">IDENTIFIABLE:OnEventParatrooperLanding(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventParatrooperLanding">TOWNS:OnEventParatrooperLanding(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Weapon add.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventPilotDead">IDENTIFIABLE:OnEventPilotDead(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventPilotDead">TOWNS:OnEventPilotDead(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when the pilot of an aircraft is killed.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventPlayerEnterAircraft">IDENTIFIABLE:OnEventPlayerEnterAircraft(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventPlayerEnterAircraft">TOWNS:OnEventPlayerEnterAircraft(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when a player enters a slot and takes control of an aircraft.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventPlayerEnterUnit">IDENTIFIABLE:OnEventPlayerEnterUnit(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventPlayerEnterUnit">TOWNS:OnEventPlayerEnterUnit(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any player assumes direct control of a unit.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventPlayerLeaveUnit">IDENTIFIABLE:OnEventPlayerLeaveUnit(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventPlayerLeaveUnit">TOWNS:OnEventPlayerLeaveUnit(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any player relieves control of a unit to the AI.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventRefueling">IDENTIFIABLE:OnEventRefueling(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventRefueling">TOWNS:OnEventRefueling(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventRefuelingStop">IDENTIFIABLE:OnEventRefuelingStop(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventRefuelingStop">TOWNS:OnEventRefuelingStop(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an aircraft is finished taking fuel.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventScore">IDENTIFIABLE:OnEventScore(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventScore">TOWNS:OnEventScore(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any modification to the "Score" as seen on the debrief menu would occur.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventShootingEnd">IDENTIFIABLE:OnEventShootingEnd(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventShootingEnd">TOWNS:OnEventShootingEnd(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any unit stops firing its weapon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventShootingStart">IDENTIFIABLE:OnEventShootingStart(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventShootingStart">TOWNS:OnEventShootingStart(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventShot">IDENTIFIABLE:OnEventShot(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventShot">TOWNS:OnEventShot(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs whenever any unit in a mission fires a weapon.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventTakeoff">IDENTIFIABLE:OnEventTakeoff(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventTakeoff">TOWNS:OnEventTakeoff(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventTriggerZone">IDENTIFIABLE:OnEventTriggerZone(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventTriggerZone">TOWNS:OnEventTriggerZone(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trigger zone.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).OnEventUnitLost">IDENTIFIABLE:OnEventUnitLost(EventData)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).OnEventUnitLost">TOWNS:OnEventUnitLost(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when the game thinks an object is destroyed.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).Properties">IDENTIFIABLE.Properties</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).Properties">TOWNS.Properties</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).ScheduleOnce">IDENTIFIABLE:ScheduleOnce(Start, SchedulerFunction, ...)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).ScheduleOnce">TOWNS:ScheduleOnce(Start, SchedulerFunction, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Schedule a new time event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).ScheduleRepeat">IDENTIFIABLE:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).ScheduleRepeat">TOWNS:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Schedule a new time event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).ScheduleStop">IDENTIFIABLE:ScheduleStop(SchedulerID)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).ScheduleStop">TOWNS:ScheduleStop(SchedulerID)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Stops the Schedule.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).Scheduler">IDENTIFIABLE.Scheduler</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).Scheduler">TOWNS.Scheduler</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The scheduler object.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).SetEventPriority">IDENTIFIABLE:SetEventPriority(EventPriority)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).SetEventPriority">TOWNS:SetEventPriority(EventPriority)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set the Class <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).SetProperty">IDENTIFIABLE:SetProperty(Key, Value)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).SetProperty">TOWNS:SetProperty(Key, Value)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set one property of an object.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).SetState">IDENTIFIABLE:SetState(Object, Key, Value)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).SetState">TOWNS:SetState(Object, Key, Value)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set a state or property of the Object given a Key and a Value.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).T">IDENTIFIABLE:T(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).T">TOWNS:T(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function logic level 1.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).T2">IDENTIFIABLE:T2(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).T2">TOWNS:T2(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function logic level 2.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).T3">IDENTIFIABLE:T3(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).T3">TOWNS:T3(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function logic level 3.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).TraceAll">IDENTIFIABLE:TraceAll(TraceAll)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).TraceAll">TOWNS:TraceAll(TraceAll)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace all methods in MOOSE</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).TraceClass">IDENTIFIABLE:TraceClass(Class)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).TraceClass">TOWNS:TraceClass(Class)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set tracing for a class</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).TraceClassMethod">IDENTIFIABLE:TraceClassMethod(Class, Method)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).TraceClassMethod">TOWNS:TraceClassMethod(Class, Method)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set tracing for a specific method of  class</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).TraceLevel">IDENTIFIABLE:TraceLevel(Level)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).TraceLevel">TOWNS:TraceLevel(Level)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set trace level</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).TraceOff">IDENTIFIABLE:TraceOff()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).TraceOff">TOWNS:TraceOff()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set trace off.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).TraceOn">IDENTIFIABLE:TraceOn()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).TraceOn">TOWNS:TraceOn()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set trace on.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).TraceOnOff">IDENTIFIABLE:TraceOnOff(TraceOnOff)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).TraceOnOff">TOWNS:TraceOnOff(TraceOnOff)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Set trace on or off
 Note that when trace is off, no BASE.Debug statement is performed, increasing performance!
@@ -2872,43 +2867,43 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).UnHandleEvent">IDENTIFIABLE:UnHandleEvent(EventID)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).UnHandleEvent">TOWNS:UnHandleEvent(EventID)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>UnSubscribe to a DCS event.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE)._">IDENTIFIABLE._</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS)._">TOWNS._</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE)._F">IDENTIFIABLE:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS)._F">TOWNS:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function call.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE)._Serialize">IDENTIFIABLE:_Serialize(Arguments)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS)._Serialize">TOWNS:_Serialize(Arguments)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(Internal) Serialize arguments</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE)._T">IDENTIFIABLE:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS)._T">TOWNS:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Trace a function logic.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).__">IDENTIFIABLE.__</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).__">TOWNS.__</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(IDENTIFIABLE).onEvent">IDENTIFIABLE:onEvent(event)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS).onEvent">TOWNS:onEvent(event)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The main event handling function...</p>
 </td>
@@ -2916,15 +2911,85 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         </table>
         </div>
 
-    <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Wrapper.Identifiable)" >Type <strong>Wrapper.Identifiable</strong></a></h2></div>
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(TOWNS.Town)">Type <strong>TOWNS.Town</strong></a></h2></div>
+         <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
+     <strong><a href="##(TOWNS.Town)">TOWNS.Town</a></strong>
+   </div>
+        <div class="w3-card w3-margin">
+        <table class="w3-table w3-border-bottom w3-border-theme-l2">
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from TOWNS.Town</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS.Town).coordRail">TOWNS.Town.coordRail</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>The coordinate of the closest railway.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS.Town).coordRoad">TOWNS.Town.coordRoad</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>The coordinate of the closest road.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS.Town).coordinate">TOWNS.Town.coordinate</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>The coordinate.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS.Town).display_name">TOWNS.Town.display_name</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Displayed name.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS.Town).latitude">TOWNS.Town.latitude</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Latitude.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS.Town).longitude">TOWNS.Town.longitude</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Longitude</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS.Town).markerID">TOWNS.Town.markerID</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>ID for the F10 marker.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS.Town).name">TOWNS.Town.name</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Name of the town.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(TOWNS.Town).vec3">TOWNS.Town.vec3</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Position vector 3D.</p>
+</td>
+          </tr>
+        </table>
+        </div>
+
+    <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Navigation.Towns)" >Type <strong>Navigation.Towns</strong></a></h2></div>
     <div class="w3-container w3-white w3-padding-16" id="module_current_type">
       <div class="w3-white" id="record_type">
 </div>
 
     </div>
-      <div onclick="myFunction('#Types##IDENTIFIABLE')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(IDENTIFIABLE)">Type <strong>IDENTIFIABLE</strong></a></h2></div>
-        <div id= "#Types##IDENTIFIABLE" class="w3-container w3-white w3-padding-16" id="module_other_types">
+      <div onclick="myFunction('#Types##TOWNS')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(TOWNS)">Type <strong>TOWNS</strong></a></h2></div>
+        <div id= "#Types##TOWNS" class="w3-container w3-white w3-padding-16" id="module_other_types">
           <div class="w3-white" id="record_type">
+  
+<p>TOWNS class.</p>
+
 <div class="fields w3-container w3-theme-l2">
   <h2>Field(s)</h2>
 </div>
@@ -2932,9 +2997,43 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #string
-<a id="#(IDENTIFIABLE).IdentifiableName" ><strong>IDENTIFIABLE.IdentifiableName</strong></a>
+<a id="#(TOWNS).ClassName" ><strong>TOWNS.ClassName</strong></a>
     
-<p>The name of the identifiable.</p>
+<p>Name of the class.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(TOWNS).towns" ><strong>TOWNS.towns</strong></a>
+    
+<p>Towns.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(TOWNS).verbose" ><strong>TOWNS.verbose</strong></a>
+    
+<p>Verbosity of output.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(TOWNS).version" ><strong>TOWNS.version</strong></a>
+    
+<p>TOWNS class version.</p>
 
 </div>
 
@@ -2945,25 +3044,65 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetCallsign" ><strong>IDENTIFIABLE:GetCallsign()</strong></a></h2>
+<h2><a id="#(TOWNS).GetClosestTown" ><strong>TOWNS:GetClosestTown(Coordinate, DistMax, ExcludeList)</strong></a></h2>
 </div>
     
-<p>Gets the CallSign of the IDENTIFIABLE, which is a blank by default.</p>
+<p>Find closest town to a given coordinate.</p>
 
-<div id= "#Functions##GetCallsign" class="w3-show w3-white">
+<div id= "#Functions##GetClosestTown" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
+<p>TOWNS</p>
 </div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>Coordinate</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The reference coordinate.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>DistMax</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Max search distance in meters.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>ExcludeList</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) List of towns excluded from the search.</p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p>#string:</p>
+        <p><a href="##(TOWNS.Town)">#TOWNS.Town</a>:</p>
       </div>
       <div class="w3-half">
         
-<p>The CallSign of the IDENTIFIABLE.</p>
+<p>The closest town.</p>
 
       </div>
     </div>
@@ -2975,84 +3114,65 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetCategory" ><strong>IDENTIFIABLE:GetCategory()</strong></a></h2>
+<h2><a id="#(TOWNS).GetClosestTowns" ><strong>TOWNS:GetClosestTowns(Coordinate, Nmax, DistMax)</strong></a></h2>
 </div>
     
-<p>Returns object category of the DCS Identifiable.</p>
+<p>Find closest towns to a given coordinate.</p>
 
-    
-<p>One of</p>
-
-<ul>
-    <li>Object.Category.UNIT = 1</li>
-    <li>Object.Category.WEAPON = 2</li>
-    <li>Object.Category.STATIC = 3</li>
-    <li>Object.Category.BASE = 4</li>
-    <li>Object.Category.SCENERY = 5</li>
-    <li>Object.Category.Cargo = 6</li>
-</ul>
-
-<p> For UNITs this returns a second value, one of</p>
-
-<p> Unit.Category.AIRPLANE      = 0 <br/>
- Unit.Category.HELICOPTER    = 1 <br/>
- Unit.Category.GROUND_UNIT   = 2 <br/>
- Unit.Category.SHIP          = 3 <br/>
- Unit.Category.STRUCTURE     = 4 <br/>
- </p>
-
-<div id= "#Functions##GetCategory" class="w3-show w3-white">
+<div id= "#Functions##GetClosestTowns" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
+<p>TOWNS</p>
 </div>
-    <h2><strong>Return values:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-        <div class="w3-half">
-          <p><a href="DCS.html##(Object.Category)">DCS#Object.Category</a>:</p>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>Coordinate</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The reference coordinate.</p>
+
+          </div>
         </div>
-        <div class="w3-half">
-          
-<p>The category ID, i.e. a number.</p>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Nmax</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Max number of towns. Default 5.</p>
 
+          </div>
         </div>
-        <div class="w3-half">
-          <p><a href="DCS.html##(Unit.Category)">DCS#Unit.Category</a>:</p>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>DistMax</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Max search distance in meters.</p>
+
+          </div>
         </div>
-        <div class="w3-half">
-          
-<p>The unit category ID, i.e. a number. For units only.</p>
-
-        </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetCategoryName" ><strong>IDENTIFIABLE:GetCategoryName()</strong></a></h2>
-</div>
-    
-<p>Returns the DCS Identifiable category name as defined within the DCS Identifiable Descriptor.</p>
-
-<div id= "#Functions##GetCategoryName" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
-</div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p>#string:</p>
+        <p>#table:</p>
       </div>
       <div class="w3-half">
         
-<p>The DCS Identifiable Category Name</p>
+<p>Table of #TOWNS.Town closest towns.</p>
 
       </div>
     </div>
@@ -3064,25 +3184,65 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetCoalition" ><strong>IDENTIFIABLE:GetCoalition()</strong></a></h2>
+<h2><a id="#(TOWNS).GetConnectionRoad" ><strong>TOWNS:GetConnectionRoad(townA, townB, Railroad)</strong></a></h2>
 </div>
     
-<p>Returns coalition of the Identifiable.</p>
+<p>Get road or rail connection between two towns.</p>
 
-<div id= "#Functions##GetCoalition" class="w3-show w3-white">
+<div id= "#Functions##GetConnectionRoad" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
+<p>TOWNS</p>
 </div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(TOWNS.Town)">#TOWNS.Town</a>
+            <strong><strong>townA</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The town data structure.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(TOWNS.Town)">#TOWNS.Town</a>
+            <strong><strong>townB</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The town data structure.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Railroad</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If <code>true</code>, find rail road connection</p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="DCS.html##(coalition.side)">DCS#coalition.side</a>:</p>
+        <p><a href="Core.Pathline.html##(PATHLINE)">Core.Pathline#PATHLINE</a>:</p>
       </div>
       <div class="w3-half">
         
-<p>The side of the coalition or <code>#nil</code> The DCS Identifiable is not existing or alive.  </p>
+<p>Pathline connecting the two towns on road.</p>
 
       </div>
     </div>
@@ -3094,271 +3254,39 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetCoalitionName" ><strong>IDENTIFIABLE:GetCoalitionName()</strong></a></h2>
+<h2><a id="#(TOWNS).GetCoordRail" ><strong>TOWNS:GetCoordRail(town)</strong></a></h2>
 </div>
     
-<p>Returns the name of the coalition of the Identifiable.</p>
+<p>Get closest rail coordinate of a town.</p>
 
-<div id= "#Functions##GetCoalitionName" class="w3-show w3-white">
+<div id= "#Functions##GetCoordRail" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
-</div>
-    <h2><strong>Return values:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-        <div class="w3-half">
-          <p>#string:</p>
-        </div>
-        <div class="w3-half">
-          
-<p>The name of the coalition.</p>
-
-        </div>
-        <div class="w3-half">
-          <p>#nil:</p>
-        </div>
-        <div class="w3-half">
-          
-<p>The DCS Identifiable is not existing or alive.  </p>
-
-        </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetCountry" ><strong>IDENTIFIABLE:GetCountry()</strong></a></h2>
-</div>
-    
-<p>Returns country of the Identifiable.</p>
-
-<div id= "#Functions##GetCountry" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="DCS.html##(country.id)">DCS#country.id</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>The country identifier or <code>#nil</code> The DCS Identifiable is not existing or alive.  </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetCountryName" ><strong>IDENTIFIABLE:GetCountryName()</strong></a></h2>
-</div>
-    
-<p>Returns country name of the Identifiable.</p>
-
-<div id= "#Functions##GetCountryName" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#string:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>Name of the country.  </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetDesc" ><strong>IDENTIFIABLE:GetDesc()</strong></a></h2>
-</div>
-    
-<p>Returns Identifiable descriptor.</p>
-
-    
-<p>Descriptor type depends on Identifiable category.</p>
-
-<div id= "#Functions##GetDesc" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="DCS.html##(Object.Desc)">DCS#Object.Desc</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>The Identifiable descriptor or <code>#nil</code> The DCS Identifiable is not existing or alive.  </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetName" ><strong>IDENTIFIABLE:GetName()</strong></a></h2>
-</div>
-    
-<p>Returns DCS Identifiable object name.</p>
-
-    
-<p>The function provides access to non-activated objects too.</p>
-
-<div id= "#Functions##GetName" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#string:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>The name of the DCS Identifiable or <code>#nil</code>.  </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetThreatLevel" ><strong>IDENTIFIABLE:GetThreatLevel()</strong></a></h2>
-</div>
-    
-<p>Gets the threat level.</p>
-
-<div id= "#Functions##GetThreatLevel" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
-</div>
-    <h2><strong>Return values:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-        <div class="w3-half">
-          <p>#number:</p>
-        </div>
-        <div class="w3-half">
-          
-<p>Threat level.</p>
-
-        </div>
-        <div class="w3-half">
-          <p>#string:</p>
-        </div>
-        <div class="w3-half">
-          
-<p>Type.</p>
-
-        </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetTypeName" ><strong>IDENTIFIABLE:GetTypeName()</strong></a></h2>
-</div>
-    
-<p>Returns the type name of the DCS Identifiable.</p>
-
-<div id= "#Functions##GetTypeName" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#string:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>The type name of the DCS Identifiable.</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).HasAttribute" ><strong>IDENTIFIABLE:HasAttribute(AttributeName)</strong></a></h2>
-</div>
-    
-<p>Check if the Object has the attribute.</p>
-
-<div id= "#Functions##HasAttribute" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
+<p>TOWNS</p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #string
-            <strong><strong>AttributeName</strong></strong>
+                <a href="##(TOWNS.Town)">#TOWNS.Town</a>
+            <strong><strong>town</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The attribute name.</p>
+<p>The town data structure.</p>
 
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p>#boolean:</p>
+        <p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>:</p>
       </div>
       <div class="w3-half">
         
-<p>true if the attribute exists or <code>#nil</code> The DCS Identifiable is not existing or alive.  </p>
+<p>The closest rail coordinate.</p>
 
       </div>
     </div>
@@ -3370,159 +3298,197 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).IsAlive" ><strong>IDENTIFIABLE:IsAlive()</strong></a></h2>
+<h2><a id="#(TOWNS).GetCoordRoad" ><strong>TOWNS:GetCoordRoad(town)</strong></a></h2>
 </div>
     
-<p>Returns if the Identifiable is alive.</p>
+<p>Get closest road coordinate of a town.</p>
 
-    
-<p>If the Identifiable is not alive, nil is returned. <br/>
-If the Identifiable is alive, true is returned.  </p>
-
-<div id= "#Functions##IsAlive" class="w3-show w3-white">
+<div id= "#Functions##GetCoordRoad" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#boolean:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>true if Identifiable is alive or <code>#nil</code> if the Identifiable is not existing or is not alive.  </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).IsBlue" ><strong>IDENTIFIABLE:IsBlue()</strong></a></h2>
-</div>
-    
-<p>Returns true if identifiable is of BLUE coalition.</p>
-
-<div id= "#Functions##IsBlue" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#boolean:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>If the identifiable is blue.</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).IsNeutral" ><strong>IDENTIFIABLE:IsNeutral()</strong></a></h2>
-</div>
-    
-<p>Returns true if identifiable is of NEUTRAL coalition.</p>
-
-<div id= "#Functions##IsNeutral" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#boolean:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>If the identifiable is neutral.</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).IsRed" ><strong>IDENTIFIABLE:IsRed()</strong></a></h2>
-</div>
-    
-<p>Returns true if identifiable is of RED coalition.</p>
-
-<div id= "#Functions##IsRed" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#boolean:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>If the identifiable is red.</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).New" ><strong>IDENTIFIABLE:New(IdentifiableName)</strong></a></h2>
-</div>
-    
-<p>Create a new IDENTIFIABLE from a DCSIdentifiable</p>
-
-<div id= "#Functions##New" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>IDENTIFIABLE</p>
+<p>TOWNS</p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #string
-            <strong><strong>IdentifiableName</strong></strong>
+                <a href="##(TOWNS.Town)">#TOWNS.Town</a>
+            <strong><strong>town</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The DCS Identifiable name</p>
+<p>The town data structure.</p>
 
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(IDENTIFIABLE)">#IDENTIFIABLE</a>:</p>
+        <p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The closest road coordinate.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TOWNS).GetCoordinate" ><strong>TOWNS:GetCoordinate(town)</strong></a></h2>
+</div>
+    
+<p>Get COORDINATE of a specific town.</p>
+
+<div id= "#Functions##GetCoordinate" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TOWNS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(TOWNS.Town)">#TOWNS.Town</a>
+            <strong><strong>town</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The town data structure.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The coordinate.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TOWNS).GetTowns" ><strong>TOWNS:GetTowns()</strong></a></h2>
+</div>
+    
+<p>Get table of all towns, optionally of a given type.</p>
+
+<div id= "#Functions##GetTowns" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TOWNS</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#table:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Table of towns. Each element is of type #TOWN.Town.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TOWNS).GetVec3" ><strong>TOWNS:GetVec3(town)</strong></a></h2>
+</div>
+    
+<p>Get 3D position vector of a specific town.</p>
+
+<div id= "#Functions##GetVec3" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TOWNS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(TOWNS.Town)">#TOWNS.Town</a>
+            <strong><strong>town</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The town data structure.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="DCS.html##(Vec3)">DCS#Vec3</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Position vector.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TOWNS).MarkerRemove" ><strong>TOWNS:MarkerRemove(Town)</strong></a></h2>
+</div>
+    
+<p>Remove markers of all towns from the F10 map.</p>
+
+<div id= "#Functions##MarkerRemove" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TOWNS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(TOWNS.Town)">#TOWNS.Town</a>
+            <strong><strong>Town</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Only this specifc town.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(TOWNS)">#TOWNS</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -3535,115 +3501,38 @@ If the Identifiable is alive, true is returned.  </p>
 </div>
 </div>
 
-<div class="fields w3-container w3-theme-l2">
-  <h2>Field(s)</h2>
-</div>
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(IDENTIFIABLE).IdentifiableName" ><strong>IDENTIFIABLE.IdentifiableName</strong></a>
-    
-<p>The name of the identifiable.</p>
-
-</div>
-
-</div>   
-<div class="functions  w3-container w3-theme-l2">
-  <h2>Function(s)</h2>
-</div>  
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).Destroy" ><strong>IDENTIFIABLE:Destroy()</strong></a></h2>
+<h2><a id="#(TOWNS).MarkerShow" ><strong>TOWNS:MarkerShow(Town)</strong></a></h2>
 </div>
     
-<p>Destroys the OBJECT.</p>
+<p>Add markers for all towns on the F10 map.</p>
 
-<div id= "#Functions##Destroy" class="w3-show w3-white">
+<div id= "#Functions##MarkerShow" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p><a href="Wrapper.Object.html##(OBJECT)">Wrapper.Object#OBJECT</a></p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p>#boolean:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>Returns <code>true</code> if the object is destroyed or #nil if the object is nil.</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetID" ><strong>IDENTIFIABLE:GetID()</strong></a></h2>
-</div>
-    
-<p>Returns the unit's unique identifier.</p>
-
-<div id= "#Functions##GetID" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p><a href="Wrapper.Object.html##(OBJECT)">Wrapper.Object#OBJECT</a></p>
-</div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="DCS.html##(Object.ID)">DCS#Object.ID</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>ObjectID or #nil if the DCS Object is not existing or alive. Note that the ID is passed as a string and not a number. </p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).New" ><strong>IDENTIFIABLE:New(ObjectName)</strong></a></h2>
-</div>
-    
-<p>Create a new OBJECT from a DCSObject</p>
-
-<div id= "#Functions##New" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p><a href="Wrapper.Object.html##(OBJECT)">Wrapper.Object#OBJECT</a></p>
+<p>TOWNS</p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="DCS.html##(Object)">DCS#Object</a>
-            <strong><strong>ObjectName</strong></strong>
+                <a href="##(TOWNS.Town)">#TOWNS.Town</a>
+            <strong><strong>Town</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The Object name</p>
+<p>(Optional) Only this specifc town.</p>
 
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(OBJECT)">#OBJECT</a>:</p>
+        <p><a href="##(TOWNS)">#TOWNS</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -3656,6 +3545,138 @@ If the Identifiable is alive, true is returned.  </p>
 </div>
 </div>
 
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TOWNS).NewFromFile" ><strong>TOWNS:NewFromFile(FileName)</strong></a></h2>
+</div>
+    
+<p>Create a new TOWNS class instance from a given file.</p>
+
+<div id= "#Functions##NewFromFile" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TOWNS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>FileName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Full path to the file containing the towns data.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(TOWNS)">#TOWNS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TOWNS).NewFromTable" ><strong>TOWNS:NewFromTable(TownTable)</strong></a></h2>
+</div>
+    
+<p>Create a new TOWNS class instance from a given table.</p>
+
+<div id= "#Functions##NewFromTable" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TOWNS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>TownTable</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Table with all towns data.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(TOWNS)">#TOWNS</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(TOWNS)._GetMarkerText" ><strong>TOWNS:_GetMarkerText(town)</strong></a></h2>
+</div>
+    
+<p>Get text displayed in the F10 marker.</p>
+
+<div id= "#Functions##_GetMarkerText" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>TOWNS</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="##(TOWNS.Town)">#TOWNS.Town</a>
+            <strong><strong>town</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The town data structure.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p>#string:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Marker text.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
 <div class="fields w3-container w3-theme-l2">
   <h2>Field(s)</h2>
 </div>
@@ -3663,9 +3684,43 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #string
-<a id="#(IDENTIFIABLE).IdentifiableName" ><strong>IDENTIFIABLE.IdentifiableName</strong></a>
+<a id="#(TOWNS).ClassName" ><strong>TOWNS.ClassName</strong></a>
     
-<p>The name of the identifiable.</p>
+<p>Name of the class.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(TOWNS).towns" ><strong>TOWNS.towns</strong></a>
+    
+<p>Towns.</p>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(TOWNS).verbose" ><strong>TOWNS.verbose</strong></a>
+    
+<p>Verbosity of output.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(TOWNS).version" ><strong>TOWNS.version</strong></a>
+    
+<p>TOWNS class version.</p>
 
 </div>
 
@@ -3676,7 +3731,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).ClearState" ><strong>IDENTIFIABLE:ClearState(Object, StateName)</strong></a></h2>
+<h2><a id="#(TOWNS).ClearState" ><strong>TOWNS:ClearState(Object, StateName)</strong></a></h2>
 </div>
     
 <p>Clear the state of an object.</p>
@@ -3720,7 +3775,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).CreateEventBirth" ><strong>IDENTIFIABLE:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</strong></a></h2>
+<h2><a id="#(TOWNS).CreateEventBirth" ><strong>TOWNS:CreateEventBirth(EventTime, Initiator, IniUnitName, place, subplace)</strong></a></h2>
 </div>
     
 <p>Creation of a Birth Event.</p>
@@ -3799,7 +3854,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).CreateEventCrash" ><strong>IDENTIFIABLE:CreateEventCrash(EventTime, Initiator, IniObjectCategory)</strong></a></h2>
+<h2><a id="#(TOWNS).CreateEventCrash" ><strong>TOWNS:CreateEventCrash(EventTime, Initiator, IniObjectCategory)</strong></a></h2>
 </div>
     
 <p>Creation of a Crash Event.</p>
@@ -3855,7 +3910,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).CreateEventDead" ><strong>IDENTIFIABLE:CreateEventDead(EventTime, Initiator, IniObjectCategory)</strong></a></h2>
+<h2><a id="#(TOWNS).CreateEventDead" ><strong>TOWNS:CreateEventDead(EventTime, Initiator, IniObjectCategory)</strong></a></h2>
 </div>
     
 <p>Creation of a Dead Event.</p>
@@ -3911,7 +3966,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).CreateEventDynamicCargoLoaded" ><strong>IDENTIFIABLE:CreateEventDynamicCargoLoaded(DynamicCargo)</strong></a></h2>
+<h2><a id="#(TOWNS).CreateEventDynamicCargoLoaded" ><strong>TOWNS:CreateEventDynamicCargoLoaded(DynamicCargo)</strong></a></h2>
 </div>
     
 <p>Creation of a S_EVENT_DYNAMIC_CARGO_LOADED event.</p>
@@ -3944,7 +3999,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).CreateEventDynamicCargoRemoved" ><strong>IDENTIFIABLE:CreateEventDynamicCargoRemoved(DynamicCargo)</strong></a></h2>
+<h2><a id="#(TOWNS).CreateEventDynamicCargoRemoved" ><strong>TOWNS:CreateEventDynamicCargoRemoved(DynamicCargo)</strong></a></h2>
 </div>
     
 <p>Creation of a S_EVENT_DYNAMIC_CARGO_REMOVED event.</p>
@@ -3977,7 +4032,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).CreateEventDynamicCargoUnloaded" ><strong>IDENTIFIABLE:CreateEventDynamicCargoUnloaded(DynamicCargo)</strong></a></h2>
+<h2><a id="#(TOWNS).CreateEventDynamicCargoUnloaded" ><strong>TOWNS:CreateEventDynamicCargoUnloaded(DynamicCargo)</strong></a></h2>
 </div>
     
 <p>Creation of a S_EVENT_DYNAMIC_CARGO_UNLOADED event.</p>
@@ -4010,7 +4065,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).CreateEventNewDynamicCargo" ><strong>IDENTIFIABLE:CreateEventNewDynamicCargo(DynamicCargo)</strong></a></h2>
+<h2><a id="#(TOWNS).CreateEventNewDynamicCargo" ><strong>TOWNS:CreateEventNewDynamicCargo(DynamicCargo)</strong></a></h2>
 </div>
     
 <p>Creation of a S_EVENT_NEW_DYNAMIC_CARGO event.</p>
@@ -4043,7 +4098,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).CreateEventPlayerEnterAircraft" ><strong>IDENTIFIABLE:CreateEventPlayerEnterAircraft(PlayerUnit)</strong></a></h2>
+<h2><a id="#(TOWNS).CreateEventPlayerEnterAircraft" ><strong>TOWNS:CreateEventPlayerEnterAircraft(PlayerUnit)</strong></a></h2>
 </div>
     
 <p>Creation of a <code>S_EVENT_PLAYER_ENTER_AIRCRAFT</code> event.</p>
@@ -4076,7 +4131,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).CreateEventRemoveUnit" ><strong>IDENTIFIABLE:CreateEventRemoveUnit(EventTime, Initiator)</strong></a></h2>
+<h2><a id="#(TOWNS).CreateEventRemoveUnit" ><strong>TOWNS:CreateEventRemoveUnit(EventTime, Initiator)</strong></a></h2>
 </div>
     
 <p>Creation of a Remove Unit Event.</p>
@@ -4122,7 +4177,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).CreateEventTakeoff" ><strong>IDENTIFIABLE:CreateEventTakeoff(EventTime, Initiator)</strong></a></h2>
+<h2><a id="#(TOWNS).CreateEventTakeoff" ><strong>TOWNS:CreateEventTakeoff(EventTime, Initiator)</strong></a></h2>
 </div>
     
 <p>Creation of a Takeoff Event.</p>
@@ -4168,7 +4223,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).CreateEventUnitLost" ><strong>IDENTIFIABLE:CreateEventUnitLost(EventTime, Initiator)</strong></a></h2>
+<h2><a id="#(TOWNS).CreateEventUnitLost" ><strong>TOWNS:CreateEventUnitLost(EventTime, Initiator)</strong></a></h2>
 </div>
     
 <p>Creation of a Crash Event.</p>
@@ -4214,7 +4269,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).E" ><strong>IDENTIFIABLE:E(Arguments)</strong></a></h2>
+<h2><a id="#(TOWNS).E" ><strong>TOWNS:E(Arguments)</strong></a></h2>
 </div>
     
 <p>Log an exception which will be traced always.</p>
@@ -4249,7 +4304,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).EventDispatcher" ><strong>IDENTIFIABLE:EventDispatcher()</strong></a></h2>
+<h2><a id="#(TOWNS).EventDispatcher" ><strong>TOWNS:EventDispatcher()</strong></a></h2>
 </div>
     
 <p>Returns the event dispatcher</p>
@@ -4279,7 +4334,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).EventRemoveAll" ><strong>IDENTIFIABLE:EventRemoveAll()</strong></a></h2>
+<h2><a id="#(TOWNS).EventRemoveAll" ><strong>TOWNS:EventRemoveAll()</strong></a></h2>
 </div>
     
 <p>Remove all subscribed events</p>
@@ -4309,7 +4364,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).F" ><strong>IDENTIFIABLE:F(Arguments)</strong></a></h2>
+<h2><a id="#(TOWNS).F" ><strong>TOWNS:F(Arguments)</strong></a></h2>
 </div>
     
 <p>Trace a function call.</p>
@@ -4344,7 +4399,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).F2" ><strong>IDENTIFIABLE:F2(Arguments)</strong></a></h2>
+<h2><a id="#(TOWNS).F2" ><strong>TOWNS:F2(Arguments)</strong></a></h2>
 </div>
     
 <p>Trace a function call level 2.</p>
@@ -4379,7 +4434,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).F3" ><strong>IDENTIFIABLE:F3(Arguments)</strong></a></h2>
+<h2><a id="#(TOWNS).F3" ><strong>TOWNS:F3(Arguments)</strong></a></h2>
 </div>
     
 <p>Trace a function call level 3.</p>
@@ -4414,7 +4469,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetClassID" ><strong>IDENTIFIABLE:GetClassID()</strong></a></h2>
+<h2><a id="#(TOWNS).GetClassID" ><strong>TOWNS:GetClassID()</strong></a></h2>
 </div>
     
 <p>Get the ClassID of the class instance.</p>
@@ -4444,7 +4499,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetClassName" ><strong>IDENTIFIABLE:GetClassName()</strong></a></h2>
+<h2><a id="#(TOWNS).GetClassName" ><strong>TOWNS:GetClassName()</strong></a></h2>
 </div>
     
 <p>Get the ClassName of the class instance.</p>
@@ -4474,7 +4529,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetClassNameAndID" ><strong>IDENTIFIABLE:GetClassNameAndID()</strong></a></h2>
+<h2><a id="#(TOWNS).GetClassNameAndID" ><strong>TOWNS:GetClassNameAndID()</strong></a></h2>
 </div>
     
 <p>Get the ClassName + ClassID of the class instance.</p>
@@ -4507,7 +4562,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetEventPriority" ><strong>IDENTIFIABLE:GetEventPriority()</strong></a></h2>
+<h2><a id="#(TOWNS).GetEventPriority" ><strong>TOWNS:GetEventPriority()</strong></a></h2>
 </div>
     
 <p>Get the Class <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
@@ -4541,7 +4596,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetParent" ><strong>IDENTIFIABLE:GetParent(Child, FromClass)</strong></a></h2>
+<h2><a id="#(TOWNS).GetParent" ><strong>TOWNS:GetParent(Child, FromClass)</strong></a></h2>
 </div>
     
 <p>This is the worker method to retrieve the Parent class.</p>
@@ -4606,7 +4661,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetProperties" ><strong>IDENTIFIABLE:GetProperties()</strong></a></h2>
+<h2><a id="#(TOWNS).GetProperties" ><strong>TOWNS:GetProperties()</strong></a></h2>
 </div>
     
 <p>Get all of the properties of an object in a table.</p>
@@ -4636,7 +4691,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetProperty" ><strong>IDENTIFIABLE:GetProperty(Key)</strong></a></h2>
+<h2><a id="#(TOWNS).GetProperty" ><strong>TOWNS:GetProperty(Key)</strong></a></h2>
 </div>
     
 <p>Get one property of an object by the key.</p>
@@ -4678,7 +4733,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).GetState" ><strong>IDENTIFIABLE:GetState(Object, Key)</strong></a></h2>
+<h2><a id="#(TOWNS).GetState" ><strong>TOWNS:GetState(Object, Key)</strong></a></h2>
 </div>
     
 <p>Get a Value given a Key from the Object.</p>
@@ -4735,7 +4790,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).HandleEvent" ><strong>IDENTIFIABLE:HandleEvent(EventID, EventFunction)</strong></a></h2>
+<h2><a id="#(TOWNS).HandleEvent" ><strong>TOWNS:HandleEvent(EventID, EventFunction)</strong></a></h2>
 </div>
     
 <p>Subscribe to a DCS Event.</p>
@@ -4792,7 +4847,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).I" ><strong>IDENTIFIABLE:I(Arguments)</strong></a></h2>
+<h2><a id="#(TOWNS).I" ><strong>TOWNS:I(Arguments)</strong></a></h2>
 </div>
     
 <p>Log an information which will be traced always.</p>
@@ -4827,7 +4882,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).Inherit" ><strong>IDENTIFIABLE:Inherit(Child, Parent)</strong></a></h2>
+<h2><a id="#(TOWNS).Inherit" ><strong>TOWNS:Inherit(Child, Parent)</strong></a></h2>
 </div>
     
 <p>This is the worker method to inherit from a parent class.</p>
@@ -4883,7 +4938,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).IsInstanceOf" ><strong>IDENTIFIABLE:IsInstanceOf(ClassName)</strong></a></h2>
+<h2><a id="#(TOWNS).IsInstanceOf" ><strong>TOWNS:IsInstanceOf(ClassName)</strong></a></h2>
 </div>
     
 <p>This is the worker method to check if an object is an (sub)instance of a class.</p>
@@ -4939,7 +4994,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).IsTrace" ><strong>IDENTIFIABLE:IsTrace()</strong></a></h2>
+<h2><a id="#(TOWNS).IsTrace" ><strong>TOWNS:IsTrace()</strong></a></h2>
 </div>
     
 <p>Enquires if tracing is on (for the class).</p>
@@ -4969,7 +5024,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).New" ><strong>IDENTIFIABLE:New()</strong></a></h2>
+<h2><a id="#(TOWNS).New" ><strong>TOWNS:New()</strong></a></h2>
 </div>
     
 <p>BASE constructor.</p>
@@ -5010,7 +5065,7 @@ end
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEvent" ><strong>IDENTIFIABLE:OnEvent(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEvent" ><strong>TOWNS:OnEvent(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when an Event for an object is triggered.</p>
@@ -5047,7 +5102,7 @@ initiator : The unit that triggered the event. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventBDA" ><strong>IDENTIFIABLE:OnEventBDA(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventBDA" ><strong>TOWNS:OnEventBDA(EventData)</strong></a></h2>
 </div>
     
 <p>BDA.</p>
@@ -5083,7 +5138,7 @@ initiator : The unit that triggered the event. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventBaseCaptured" ><strong>IDENTIFIABLE:OnEventBaseCaptured(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventBaseCaptured" ><strong>TOWNS:OnEventBaseCaptured(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a ground unit captures either an airbase or a farp.</p>
@@ -5121,7 +5176,7 @@ place: The airbase that was captured, can be a FARP or Airbase. When calling pla
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventBirth" ><strong>IDENTIFIABLE:OnEventBirth(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventBirth" ><strong>TOWNS:OnEventBirth(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any object is spawned into the mission.</p>
@@ -5158,7 +5213,7 @@ initiator : The unit that was spawned </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventCrash" ><strong>IDENTIFIABLE:OnEventCrash(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventCrash" ><strong>TOWNS:OnEventCrash(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any aircraft crashes into the ground and is completely destroyed.</p>
@@ -5195,7 +5250,7 @@ initiator : The unit that has crashed </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventDead" ><strong>IDENTIFIABLE:OnEventDead(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventDead" ><strong>TOWNS:OnEventDead(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when an object is dead.</p>
@@ -5232,7 +5287,7 @@ initiator : The unit that is dead. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventDetailedFailure" ><strong>IDENTIFIABLE:OnEventDetailedFailure(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventDetailedFailure" ><strong>TOWNS:OnEventDetailedFailure(EventData)</strong></a></h2>
 </div>
     
 <p>Unknown precisely what creates this event, likely tied into newer damage model.</p>
@@ -5273,7 +5328,7 @@ initiator : The unit that is dead. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventDiscardChairAfterEjection" ><strong>IDENTIFIABLE:OnEventDiscardChairAfterEjection(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventDiscardChairAfterEjection" ><strong>TOWNS:OnEventDiscardChairAfterEjection(EventData)</strong></a></h2>
 </div>
     
 <p>Discard chair after ejection.</p>
@@ -5309,7 +5364,7 @@ initiator : The unit that is dead. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventDynamicCargoLoaded" ><strong>IDENTIFIABLE:OnEventDynamicCargoLoaded(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventDynamicCargoLoaded" ><strong>TOWNS:OnEventDynamicCargoLoaded(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a player loads a dynamic cargo object with the F8 ground crew menu into a helo.</p>
@@ -5345,7 +5400,7 @@ initiator : The unit that is dead. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventDynamicCargoRemoved" ><strong>IDENTIFIABLE:OnEventDynamicCargoRemoved(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventDynamicCargoRemoved" ><strong>TOWNS:OnEventDynamicCargoRemoved(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a dynamic cargo crate is removed.</p>
@@ -5381,7 +5436,7 @@ initiator : The unit that is dead. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventDynamicCargoUnloaded" ><strong>IDENTIFIABLE:OnEventDynamicCargoUnloaded(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventDynamicCargoUnloaded" ><strong>TOWNS:OnEventDynamicCargoUnloaded(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a player unloads a dynamic cargo object with the F8 ground crew menu from a helo.</p>
@@ -5417,7 +5472,7 @@ initiator : The unit that is dead. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventEjection" ><strong>IDENTIFIABLE:OnEventEjection(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventEjection" ><strong>TOWNS:OnEventEjection(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a pilot ejects from an aircraft
@@ -5454,7 +5509,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventEngineShutdown" ><strong>IDENTIFIABLE:OnEventEngineShutdown(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventEngineShutdown" ><strong>TOWNS:OnEventEngineShutdown(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any aircraft shuts down its engines.</p>
@@ -5491,7 +5546,7 @@ initiator : The unit that is stopping its engines. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventEngineStartup" ><strong>IDENTIFIABLE:OnEventEngineStartup(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventEngineStartup" ><strong>TOWNS:OnEventEngineStartup(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any aircraft starts its engines.</p>
@@ -5528,7 +5583,7 @@ initiator : The unit that is starting its engines. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventHit" ><strong>IDENTIFIABLE:OnEventHit(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventHit" ><strong>TOWNS:OnEventHit(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs whenever an object is hit by a weapon.</p>
@@ -5567,7 +5622,7 @@ target: The Object that was hit. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventHumanFailure" ><strong>IDENTIFIABLE:OnEventHumanFailure(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventHumanFailure" ><strong>TOWNS:OnEventHumanFailure(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any system fails on a human controlled aircraft.</p>
@@ -5604,7 +5659,7 @@ initiator : The unit that had the failure </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventKill" ><strong>IDENTIFIABLE:OnEventKill(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventKill" ><strong>TOWNS:OnEventKill(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs on the death of a unit.</p>
@@ -5648,7 +5703,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventLand" ><strong>IDENTIFIABLE:OnEventLand(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventLand" ><strong>TOWNS:OnEventLand(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when an aircraft lands at an airbase, farp or ship
@@ -5686,7 +5741,7 @@ place: Object that the unit landed on. Can be an Airbase Object, FARP, or Ships 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventLandingAfterEjection" ><strong>IDENTIFIABLE:OnEventLandingAfterEjection(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventLandingAfterEjection" ><strong>TOWNS:OnEventLandingAfterEjection(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs shortly after the landing animation of an ejected pilot touching the ground and standing up.</p>
@@ -5730,7 +5785,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventLandingQualityMark" ><strong>IDENTIFIABLE:OnEventLandingQualityMark(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventLandingQualityMark" ><strong>TOWNS:OnEventLandingQualityMark(EventData)</strong></a></h2>
 </div>
     
 <p>Landing quality mark.</p>
@@ -5766,7 +5821,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventMarkAdded" ><strong>IDENTIFIABLE:OnEventMarkAdded(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventMarkAdded" ><strong>TOWNS:OnEventMarkAdded(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a new mark was added.</p>
@@ -5803,7 +5858,7 @@ MarkID: ID of the mark. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventMarkChange" ><strong>IDENTIFIABLE:OnEventMarkChange(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventMarkChange" ><strong>TOWNS:OnEventMarkChange(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a mark text was changed.</p>
@@ -5840,7 +5895,7 @@ MarkID: ID of the mark. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventMarkRemoved" ><strong>IDENTIFIABLE:OnEventMarkRemoved(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventMarkRemoved" ><strong>TOWNS:OnEventMarkRemoved(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a mark was removed.</p>
@@ -5877,7 +5932,7 @@ MarkID: ID of the mark. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventMissionEnd" ><strong>IDENTIFIABLE:OnEventMissionEnd(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventMissionEnd" ><strong>TOWNS:OnEventMissionEnd(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a mission ends
@@ -5911,7 +5966,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventMissionStart" ><strong>IDENTIFIABLE:OnEventMissionStart(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventMissionStart" ><strong>TOWNS:OnEventMissionStart(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a mission starts
@@ -5945,7 +6000,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventNewDynamicCargo" ><strong>IDENTIFIABLE:OnEventNewDynamicCargo(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventNewDynamicCargo" ><strong>TOWNS:OnEventNewDynamicCargo(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a player creates a dynamic cargo object from the F8 ground crew menu.</p>
@@ -5981,7 +6036,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventParatrooperLanding" ><strong>IDENTIFIABLE:OnEventParatrooperLanding(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventParatrooperLanding" ><strong>TOWNS:OnEventParatrooperLanding(EventData)</strong></a></h2>
 </div>
     
 <p>Weapon add.</p>
@@ -6018,7 +6073,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventPilotDead" ><strong>IDENTIFIABLE:OnEventPilotDead(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventPilotDead" ><strong>TOWNS:OnEventPilotDead(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when the pilot of an aircraft is killed.</p>
@@ -6056,7 +6111,7 @@ initiator : The unit that the pilot has died in. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventPlayerEnterAircraft" ><strong>IDENTIFIABLE:OnEventPlayerEnterAircraft(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventPlayerEnterAircraft" ><strong>TOWNS:OnEventPlayerEnterAircraft(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when a player enters a slot and takes control of an aircraft.</p>
@@ -6094,7 +6149,7 @@ initiator : The unit that is being taken control of. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventPlayerEnterUnit" ><strong>IDENTIFIABLE:OnEventPlayerEnterUnit(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventPlayerEnterUnit" ><strong>TOWNS:OnEventPlayerEnterUnit(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any player assumes direct control of a unit.</p>
@@ -6132,7 +6187,7 @@ initiator : The unit that is being taken control of. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventPlayerLeaveUnit" ><strong>IDENTIFIABLE:OnEventPlayerLeaveUnit(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventPlayerLeaveUnit" ><strong>TOWNS:OnEventPlayerLeaveUnit(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any player relieves control of a unit to the AI.</p>
@@ -6169,7 +6224,7 @@ initiator : The unit that the player left. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventRefueling" ><strong>IDENTIFIABLE:OnEventRefueling(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventRefueling" ><strong>TOWNS:OnEventRefueling(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when an aircraft connects with a tanker and begins taking on fuel.</p>
@@ -6206,7 +6261,7 @@ initiator : The unit that is receiving fuel. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventRefuelingStop" ><strong>IDENTIFIABLE:OnEventRefuelingStop(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventRefuelingStop" ><strong>TOWNS:OnEventRefuelingStop(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when an aircraft is finished taking fuel.</p>
@@ -6243,7 +6298,7 @@ initiator : The unit that was receiving fuel. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventScore" ><strong>IDENTIFIABLE:OnEventScore(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventScore" ><strong>TOWNS:OnEventScore(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any modification to the "Score" as seen on the debrief menu would occur.</p>
@@ -6280,7 +6335,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventShootingEnd" ><strong>IDENTIFIABLE:OnEventShootingEnd(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventShootingEnd" ><strong>TOWNS:OnEventShootingEnd(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any unit stops firing its weapon.</p>
@@ -6318,7 +6373,7 @@ initiator : The unit that was doing the shooting. </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventShootingStart" ><strong>IDENTIFIABLE:OnEventShootingStart(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventShootingStart" ><strong>TOWNS:OnEventShootingStart(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when any unit begins firing a weapon that has a high rate of fire.</p>
@@ -6357,7 +6412,7 @@ target: The unit that is being targeted.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventShot" ><strong>IDENTIFIABLE:OnEventShot(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventShot" ><strong>TOWNS:OnEventShot(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs whenever any unit in a mission fires a weapon.</p>
@@ -6394,7 +6449,7 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventTakeoff" ><strong>IDENTIFIABLE:OnEventTakeoff(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventTakeoff" ><strong>TOWNS:OnEventTakeoff(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when an aircraft takes off from an airbase, farp, or ship.</p>
@@ -6432,7 +6487,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventTriggerZone" ><strong>IDENTIFIABLE:OnEventTriggerZone(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventTriggerZone" ><strong>TOWNS:OnEventTriggerZone(EventData)</strong></a></h2>
 </div>
     
 <p>Trigger zone.</p>
@@ -6468,7 +6523,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).OnEventUnitLost" ><strong>IDENTIFIABLE:OnEventUnitLost(EventData)</strong></a></h2>
+<h2><a id="#(TOWNS).OnEventUnitLost" ><strong>TOWNS:OnEventUnitLost(EventData)</strong></a></h2>
 </div>
     
 <p>Occurs when the game thinks an object is destroyed.</p>
@@ -6509,7 +6564,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).ScheduleOnce" ><strong>IDENTIFIABLE:ScheduleOnce(Start, SchedulerFunction, ...)</strong></a></h2>
+<h2><a id="#(TOWNS).ScheduleOnce" ><strong>TOWNS:ScheduleOnce(Start, SchedulerFunction, ...)</strong></a></h2>
 </div>
     
 <p>Schedule a new time event.</p>
@@ -6581,7 +6636,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).ScheduleRepeat" ><strong>IDENTIFIABLE:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</strong></a></h2>
+<h2><a id="#(TOWNS).ScheduleRepeat" ><strong>TOWNS:ScheduleRepeat(Start, Repeat, RandomizeFactor, Stop, SchedulerFunction, ...)</strong></a></h2>
 </div>
     
 <p>Schedule a new time event.</p>
@@ -6693,7 +6748,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).ScheduleStop" ><strong>IDENTIFIABLE:ScheduleStop(SchedulerID)</strong></a></h2>
+<h2><a id="#(TOWNS).ScheduleStop" ><strong>TOWNS:ScheduleStop(SchedulerID)</strong></a></h2>
 </div>
     
 <p>Stops the Schedule.</p>
@@ -6726,7 +6781,7 @@ place: Object from where the AI took-off from. Can be an Airbase Object, FARP, o
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).SetEventPriority" ><strong>IDENTIFIABLE:SetEventPriority(EventPriority)</strong></a></h2>
+<h2><a id="#(TOWNS).SetEventPriority" ><strong>TOWNS:SetEventPriority(EventPriority)</strong></a></h2>
 </div>
     
 <p>Set the Class <a href="Core.Event.html">Core.Event</a> processing Priority.</p>
@@ -6774,7 +6829,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).SetProperty" ><strong>IDENTIFIABLE:SetProperty(Key, Value)</strong></a></h2>
+<h2><a id="#(TOWNS).SetProperty" ><strong>TOWNS:SetProperty(Key, Value)</strong></a></h2>
 </div>
     
 <p>Set one property of an object.</p>
@@ -6818,7 +6873,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).SetState" ><strong>IDENTIFIABLE:SetState(Object, Key, Value)</strong></a></h2>
+<h2><a id="#(TOWNS).SetState" ><strong>TOWNS:SetState(Object, Key, Value)</strong></a></h2>
 </div>
     
 <p>Set a state or property of the Object given a Key and a Value.</p>
@@ -6887,7 +6942,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).T" ><strong>IDENTIFIABLE:T(Arguments)</strong></a></h2>
+<h2><a id="#(TOWNS).T" ><strong>TOWNS:T(Arguments)</strong></a></h2>
 </div>
     
 <p>Trace a function logic level 1.</p>
@@ -6922,7 +6977,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).T2" ><strong>IDENTIFIABLE:T2(Arguments)</strong></a></h2>
+<h2><a id="#(TOWNS).T2" ><strong>TOWNS:T2(Arguments)</strong></a></h2>
 </div>
     
 <p>Trace a function logic level 2.</p>
@@ -6957,7 +7012,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).T3" ><strong>IDENTIFIABLE:T3(Arguments)</strong></a></h2>
+<h2><a id="#(TOWNS).T3" ><strong>TOWNS:T3(Arguments)</strong></a></h2>
 </div>
     
 <p>Trace a function logic level 3.</p>
@@ -6992,7 +7047,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).TraceAll" ><strong>IDENTIFIABLE:TraceAll(TraceAll)</strong></a></h2>
+<h2><a id="#(TOWNS).TraceAll" ><strong>TOWNS:TraceAll(TraceAll)</strong></a></h2>
 </div>
     
 <p>Trace all methods in MOOSE</p>
@@ -7025,7 +7080,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).TraceClass" ><strong>IDENTIFIABLE:TraceClass(Class)</strong></a></h2>
+<h2><a id="#(TOWNS).TraceClass" ><strong>TOWNS:TraceClass(Class)</strong></a></h2>
 </div>
     
 <p>Set tracing for a class</p>
@@ -7058,7 +7113,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).TraceClassMethod" ><strong>IDENTIFIABLE:TraceClassMethod(Class, Method)</strong></a></h2>
+<h2><a id="#(TOWNS).TraceClassMethod" ><strong>TOWNS:TraceClassMethod(Class, Method)</strong></a></h2>
 </div>
     
 <p>Set tracing for a specific method of  class</p>
@@ -7104,7 +7159,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).TraceLevel" ><strong>IDENTIFIABLE:TraceLevel(Level)</strong></a></h2>
+<h2><a id="#(TOWNS).TraceLevel" ><strong>TOWNS:TraceLevel(Level)</strong></a></h2>
 </div>
     
 <p>Set trace level</p>
@@ -7135,7 +7190,7 @@ reflecting the order of the classes subscribed to the Event to be processed.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).TraceOff" ><strong>IDENTIFIABLE:TraceOff()</strong></a></h2>
+<h2><a id="#(TOWNS).TraceOff" ><strong>TOWNS:TraceOff()</strong></a></h2>
 </div>
     
 <p>Set trace off.</p>
@@ -7158,7 +7213,7 @@ BASE:TraceOff()</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).TraceOn" ><strong>IDENTIFIABLE:TraceOn()</strong></a></h2>
+<h2><a id="#(TOWNS).TraceOn" ><strong>TOWNS:TraceOn()</strong></a></h2>
 </div>
     
 <p>Set trace on.</p>
@@ -7181,7 +7236,7 @@ BASE:TraceOn()</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).TraceOnOff" ><strong>IDENTIFIABLE:TraceOnOff(TraceOnOff)</strong></a></h2>
+<h2><a id="#(TOWNS).TraceOnOff" ><strong>TOWNS:TraceOnOff(TraceOnOff)</strong></a></h2>
 </div>
     
 <p>Set trace on or off
@@ -7229,7 +7284,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).UnHandleEvent" ><strong>IDENTIFIABLE:UnHandleEvent(EventID)</strong></a></h2>
+<h2><a id="#(TOWNS).UnHandleEvent" ><strong>TOWNS:UnHandleEvent(EventID)</strong></a></h2>
 </div>
     
 <p>UnSubscribe to a DCS event.</p>
@@ -7273,7 +7328,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE)._F" ><strong>IDENTIFIABLE:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h2>
+<h2><a id="#(TOWNS)._F" ><strong>TOWNS:_F(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h2>
 </div>
     
 <p>Trace a function call.</p>
@@ -7328,7 +7383,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE)._Serialize" ><strong>IDENTIFIABLE:_Serialize(Arguments)</strong></a></h2>
+<h2><a id="#(TOWNS)._Serialize" ><strong>TOWNS:_Serialize(Arguments)</strong></a></h2>
 </div>
     
 <p>(Internal) Serialize arguments</p>
@@ -7370,7 +7425,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE)._T" ><strong>IDENTIFIABLE:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h2>
+<h2><a id="#(TOWNS)._T" ><strong>TOWNS:_T(Arguments, DebugInfoCurrentParam, DebugInfoFromParam)</strong></a></h2>
 </div>
     
 <p>Trace a function logic.</p>
@@ -7422,7 +7477,7 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(IDENTIFIABLE).onEvent" ><strong>IDENTIFIABLE:onEvent(event)</strong></a></h2>
+<h2><a id="#(TOWNS).onEvent" ><strong>TOWNS:onEvent(event)</strong></a></h2>
 </div>
     
 <p>The main event handling function...</p>
@@ -7456,10 +7511,124 @@ When moose is loading dynamically (for moose class development), tracing is swit
 </div>
 
         </div>
+      <div onclick="myFunction('#Types##TOWNS.Town')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(TOWNS.Town)">Type <strong>TOWNS.Town</strong></a></h2></div>
+        <div id= "#Types##TOWNS.Town" class="w3-container w3-white w3-padding-16" id="module_other_types">
+          <div class="w3-white" id="record_type">
+  
+<p>Town data.</p>
+
+<div class="fields w3-container w3-theme-l2">
+  <h2>Field(s)</h2>
+</div>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+<a id="#(TOWNS.Town).coordRail" ><strong>TOWNS.Town.coordRail</strong></a>
+    
+<p>The coordinate of the closest railway.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+<a id="#(TOWNS.Town).coordRoad" ><strong>TOWNS.Town.coordRoad</strong></a>
+    
+<p>The coordinate of the closest road.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+<a id="#(TOWNS.Town).coordinate" ><strong>TOWNS.Town.coordinate</strong></a>
+    
+<p>The coordinate.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(TOWNS.Town).display_name" ><strong>TOWNS.Town.display_name</strong></a>
+    
+<p>Displayed name.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(TOWNS.Town).latitude" ><strong>TOWNS.Town.latitude</strong></a>
+    
+<p>Latitude.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(TOWNS.Town).longitude" ><strong>TOWNS.Town.longitude</strong></a>
+    
+<p>Longitude</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(TOWNS.Town).markerID" ><strong>TOWNS.Town.markerID</strong></a>
+    
+<p>ID for the F10 marker.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(TOWNS.Town).name" ><strong>TOWNS.Town.name</strong></a>
+    
+<p>Name of the town.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="DCS.html##(Vec3)">DCS#Vec3</a>
+<a id="#(TOWNS.Town).vec3" ><strong>TOWNS.Town.vec3</strong></a>
+    
+<p>Position vector 3D.</p>
+
+</div>
+
+</div>   
+<div class="functions  w3-container w3-theme-l2">
+  <h2>Function(s)</h2>
+</div>  
+</div>
+
+        </div>
 </div>
 <script>
 function myLoadFunction() {
-    document.getElementById("myHeader").style.backgroundImage = "url('../Images/MOOSE.JPG')";
+    document.getElementById("myHeader").style.backgroundImage = "url('../Images/NAVIGATION_Towns.png')";
 }
 </script>
 
