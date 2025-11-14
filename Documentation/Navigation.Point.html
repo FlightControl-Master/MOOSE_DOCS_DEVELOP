@@ -2351,6 +2351,12 @@ myTemplate:SetXYZ(X, Y, Z)
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVAID).NewFromBeacon">NAVAID:NewFromBeacon(Beacon)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Create a new NAVFIX class instance from  BEACONS.Beacon data.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVAID).NewFromCoordinate">NAVAID:NewFromCoordinate(Name, Type, Coordinate)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Create a new NAVFIX class instance from a given COORDINATE.</p>
@@ -3224,6 +3230,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVFIX).MarkerShow">NAVFIX:MarkerShow()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Add marker the NAVFIX on the F10 map.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(NAVFIX).NewFromBeacon">NAVFIX:NewFromBeacon(Beacon)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Create a new NAVFIX class instance from  BEACONS.Beacon data.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4687,6 +4699,50 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(NAVAID).NewFromBeacon" ><strong>NAVAID:NewFromBeacon(Beacon)</strong></a></h2>
+</div>
+    
+<p>Create a new NAVFIX class instance from  BEACONS.Beacon data.</p>
+
+<div id= "#Functions##NewFromBeacon" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Navigation.Point.html##(NAVFIX)">Navigation.Point#NAVFIX</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Navigation.Beacons.html##(BEACONS.Beacon)">Navigation.Beacons#BEACONS.Beacon</a>
+            <strong><strong>Beacon</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The beacon data.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(NAVFIX)">#NAVFIX</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(NAVAID).NewFromCoordinate" ><strong>NAVAID:NewFromCoordinate(Name, Type, Coordinate)</strong></a></h2>
 </div>
     
@@ -5260,7 +5316,7 @@ You can, however, use the <code>Reciprocal</code> switch to create the new point
           </div>
           <div class="w3-half">
               
-<p>If <code>true</code>, this is a compusory fix. If <code>false</code> or nil, it is non-compulsory.</p>
+<p>If <code>true</code>, this is a compulsory fix. If <code>false</code> or nil, it is non-compulsory.</p>
 
           </div>
         </div>
@@ -9928,6 +9984,50 @@ When moose is loading dynamically (for moose class development), tracing is swit
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(NAVFIX).NewFromBeacon" ><strong>NAVFIX:NewFromBeacon(Beacon)</strong></a></h2>
+</div>
+    
+<p>Create a new NAVFIX class instance from  BEACONS.Beacon data.</p>
+
+<div id= "#Functions##NewFromBeacon" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>NAVFIX</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Navigation.Beacons.html##(BEACONS.Beacon)">Navigation.Beacons#BEACONS.Beacon</a>
+            <strong><strong>Beacon</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The beacon data.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(NAVFIX)">#NAVFIX</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(NAVFIX).NewFromCoordinate" ><strong>NAVFIX:NewFromCoordinate(Name, Type, Coordinate)</strong></a></h2>
 </div>
     
@@ -10501,7 +10601,7 @@ You can, however, use the <code>Reciprocal</code> switch to create the new point
           </div>
           <div class="w3-half">
               
-<p>If <code>true</code>, this is a compusory fix. If <code>false</code> or nil, it is non-compulsory.</p>
+<p>If <code>true</code>, this is a compulsory fix. If <code>false</code> or nil, it is non-compulsory.</p>
 
           </div>
         </div>
