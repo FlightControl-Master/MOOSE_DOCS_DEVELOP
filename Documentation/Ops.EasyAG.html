@@ -2116,222 +2116,913 @@
    </div>
   </nav>
   
-<img src="..\Images\AI_Combat_Air_Patrol.JPG" alt="Banner Image"/>   
+<img src="..\Images\AI_Air_To_Ground_Dispatching.JPG" alt="Banner Image"/>   
 <div  id="content">
   <div class="w3-container w3-theme-d5" id="module_title">
-    <h1>Module <strong>AI.AI_A2A_Cap</strong></h1>
+    <h1>Module <strong>Ops.EasyAG</strong></h1>
   </div>
   <div class="w3-container w3-white" id="module_description">
     
-<p><strong>AI</strong> - Models the process of Combat Air Patrol (CAP) for airplanes.</p>
+<h2>Easy A2G Engagement Class, based on OPS classes</h2>
+
+<h2>Documentation:</h2>
+
+<p>https://flightcontrol-master.github.io/MOOSE_DOCS_DEVELOP/Documentation/Ops.EasyAG.html</p>
+
+<h2>Example Missions:</h2>
+
+<p>Demo missions can be found on <a href="https://github.com/FlightControl-Master/MOOSE_MISSIONS/tree/develop/Ops/EasyAG">github</a>.</p>
 
     
 
-<p>This is a class used in the <a href="AI.AI_A2A_Dispatcher.html">AI.AI_A2A_Dispatcher</a>.</p>
+<hr/>
+<p>Date: Dec 2025</p>
+<h2>Last Update: Dec 2025</h2>
+
+<ul>
+    <li><strong>Ops</strong> - Easy A2G Manager</li>
+</ul>
 
 <hr/>
 
-<h3>Author: <strong>FlightControl</strong></h3>
+<p><strong>Main Features:</strong></p>
+
+<ul>
+    <li>Automatically create and manage A2G defenses using an AirWing and Squadrons for one coalition</li>
+    <li>Easy set-up</li>
+    <li>Add additional AirWings on other airbases</li>
+    <li>Each wing can have more than one Squadron - tasking to Squadrons is done on a random basis per AirWing</li>
+    <li>Create borders and zones of engagement</li>
+    <li>Detection can be ground based and/or via AWACS</li>
+</ul>
 
 <hr/>
+
+<h3>AUTHOR: <strong>applevangelist</strong></h3>
 
 
   </div>
   <div class="w3-container w3-theme-d2"><h2><strong>Global(s)</strong></h2></div>
   <div class="w3-theme-d2 w3-margin-top ">
-    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##AI_A2A_CAP')">
+    <table class="w3-table w3-left-align w3-theme-d2" onclick="myFunction('#Globals##EASYA2G')">
       <tr>
-        <td class="style="width:40%;"><p><h2>Global <strong>AI_A2A_CAP</strong></h2></p></td>
+        <td class="style="width:40%;"><p><h2>Global <strong>EASYA2G</strong></h2></p></td>
         <td class="style="width:60%;">
-<p>The AI_A2A_CAP class implements the core functions to patrol a <a href="Core.Zone.html">Core.Zone</a> by an AI <a href="Wrapper.Group.html">Wrapper.Group</a> or <a href="Wrapper.Group.html">Wrapper.Group</a>
-and automatically engage any airborne enemies that are within a certain range or within a certain zone.</p>
+<p><em>“High-Threat Close-Air-Support is a Myth.”</em> -- Mike “Starbaby” Pietrucha.</p>
 </td>
       </tr>
     </table>
   </div>
-  <div id= "#Globals##AI_A2A_CAP" class="w3-container w3-white w3-padding-small">
+  <div id= "#Globals##EASYA2G" class="w3-container w3-white w3-padding-small">
     <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    <a href="##(AI_A2A_CAP)">#AI_A2A_CAP</a>
-<a id="AI_A2A_CAP" ><strong>AI_A2A_CAP</strong></a>
+    <a href="##(EASYA2G)">#EASYA2G</a>
+<a id="EASYA2G" ><strong>EASYA2G</strong></a>
     
-<p>The AI_A2A_CAP class implements the core functions to patrol a <a href="Core.Zone.html">Core.Zone</a> by an AI <a href="Wrapper.Group.html">Wrapper.Group</a> or <a href="Wrapper.Group.html">Wrapper.Group</a>
-and automatically engage any airborne enemies that are within a certain range or within a certain zone.</p>
+<p><em>“High-Threat Close-Air-Support is a Myth.”</em> -- Mike “Starbaby” Pietrucha.</p>
 
     
-
-<p><img src="..\Images\deprecated.png" alt="Banner Image"/></p>
-
-<p><img src="..\Presentations\AI_CAP\Dia3.JPG" alt="Process"/></p>
-
-<p>The AI_A2A_CAP is assigned a <a href="Wrapper.Group.html">Wrapper.Group</a> and this must be done before the AI_A2A_CAP process can be started using the <strong>Start</strong> event.</p>
-
-<p><img src="..\Presentations\AI_CAP\Dia4.JPG" alt="Process"/></p>
-
-<p>The AI will fly towards the random 3D point within the patrol zone, using a random speed within the given altitude and speed limits.
-Upon arrival at the 3D point, a new random 3D point will be selected within the patrol zone using the given limits.</p>
-
-<p><img src="..\Presentations\AI_CAP\Dia5.JPG" alt="Process"/></p>
-
-<p>This cycle will continue.</p>
-
-<p><img src="..\Presentations\AI_CAP\Dia6.JPG" alt="Process"/></p>
-
-<p>During the patrol, the AI will detect enemy targets, which are reported through the <strong>Detected</strong> event.</p>
-
-<p><img src="..\Presentations\AI_CAP\Dia9.JPG" alt="Process"/></p>
-
-<p>When enemies are detected, the AI will automatically engage the enemy.</p>
-
-<p><img src="..\Presentations\AI_CAP\Dia10.JPG" alt="Process"/></p>
-
-<p>Until a fuel or damage threshold has been reached by the AI, or when the AI is commanded to RTB.
-When the fuel threshold has been reached, the airplane will fly towards the nearest friendly airbase and will land.</p>
-
-<p><img src="..\Presentations\AI_CAP\Dia13.JPG" alt="Process"/></p>
-
-<h2>1. AI_A2A_CAP constructor</h2>
-
-<ul>
-    <li><a href="##(AI_A2A_CAP).New">AI_A2A_CAP.New</a>(): Creates a new AI_A2A_CAP object.</li>
-</ul>
-
-<h2>2. AI_A2A_CAP is a FSM</h2>
-
-<p><img src="..\Presentations\AI_CAP\Dia2.JPG" alt="Process"/></p>
-
-<h3>2.1 AI_A2A_CAP States</h3>
-
-<ul>
-    <li><strong>None</strong> ( Group ): The process is not started yet.</li>
-    <li><strong>Patrolling</strong> ( Group ): The AI is patrolling the Patrol Zone.</li>
-    <li><strong>Engaging</strong> ( Group ): The AI is engaging the bogeys.</li>
-    <li><strong>Returning</strong> ( Group ): The AI is returning to Base..</li>
-</ul>
-
-<h3>2.2 AI_A2A_CAP Events</h3>
-
-<ul>
-    <li>**<a href="AI.AI_Patrol.html##(AI_PATROL_ZONE).Start">AI.AI_Patrol#AI_PATROL_ZONE.Start</a>**: Start the process.</li>
-    <li>**<a href="AI.AI_Patrol.html##(AI_PATROL_ZONE).Route">AI.AI_Patrol#AI_PATROL_ZONE.Route</a>**: Route the AI to a new random 3D point within the Patrol Zone.</li>
-    <li>**<a href="##(AI_A2A_CAP).Engage">AI_A2A_CAP.Engage</a>**: Let the AI engage the bogeys.</li>
-    <li>**<a href="##(AI_A2A_CAP).Abort">AI_A2A_CAP.Abort</a>**: Aborts the engagement and return patrolling in the patrol zone.</li>
-    <li>**<a href="AI.AI_Patrol.html##(AI_PATROL_ZONE).RTB">AI.AI_Patrol#AI_PATROL_ZONE.RTB</a>**: Route the AI to the home base.</li>
-    <li>**<a href="AI.AI_Patrol.html##(AI_PATROL_ZONE).Detect">AI.AI_Patrol#AI_PATROL_ZONE.Detect</a>**: The AI is detecting targets.</li>
-    <li>**<a href="AI.AI_Patrol.html##(AI_PATROL_ZONE).Detected">AI.AI_Patrol#AI_PATROL_ZONE.Detected</a>**: The AI has detected new targets.</li>
-    <li>**<a href="##(AI_A2A_CAP).Destroy">AI_A2A_CAP.Destroy</a>**: The AI has destroyed a bogey <a href="Wrapper.Unit.html">Wrapper.Unit</a>.</li>
-    <li>**<a href="##(AI_A2A_CAP).Destroyed">AI_A2A_CAP.Destroyed</a>**: The AI has destroyed all bogeys <a href="Wrapper.Unit.html">Wrapper.Unit</a>s assigned in the CAS task.</li>
-    <li><strong>Status</strong> ( Group ): The AI is checking status (fuel and damage). When the thresholds have been reached, the AI will RTB.</li>
-</ul>
-
-<h2>3. Set the Range of Engagement</h2>
-
-<p><img src="..\Presentations\AI_CAP\Dia11.JPG" alt="Range"/></p>
-
-<p>An optional range can be set in meters,
-that will define when the AI will engage with the detected airborne enemy targets.
-The range can be beyond or smaller than the range of the Patrol Zone.
-The range is applied at the position of the AI.
-Use the method <a href="##(AI_A2A_CAP).SetEngageRange">AI_A2A_CAP.SetEngageRange</a>() to define that range.</p>
-
-<h2>4. Set the Zone of Engagement</h2>
-
-<p><img src="..\Presentations\AI_CAP\Dia12.JPG" alt="Zone"/></p>
-
-<p>An optional <a href="Core.Zone.html">Core.Zone</a> can be set,
-that will define when the AI will engage with the detected airborne enemy targets.
-Use the method <a href="##(AI_A2A_CAP).SetEngageZone">AI_A2A_CAP.SetEngageZone</a>() to define that Zone.</p>
-
-<h1>Developer Note</h1>
-
-<p>Note while this class still works, it is no longer supported as the original author stopped active development of MOOSE
-Therefore, this class is considered to be deprecated</p>
 
 <hr/>
+
+<h1>The EasyAG Concept</h1>
+
+<p>The idea of this class is partially to make the OPS classes easier operational for an A2G defense network, and to replace the legacy AI_A2G_Dispatcher system - not to it's
+full extent, but make a basic system work very quickly.</p>
+
+<h1>Setup</h1>
+
+<h2>Basic understanding</h2>
+
+<p>The basics are, there is <strong>one</strong> and only <strong>one</strong> AirWing per airbase. Each AirWing has <strong>at least</strong> one Squadron, who will do A2G tasks. Squadrons will be randomly chosen for the task at hand.
+Each AirWing has <strong>at least</strong> one Conflict Zone that it manages. COnflict Zones will be covered by the AirWing automatically as long as airframes are available. Detected enemy ground forces will be assigned to <strong>one</strong>
+AirWing based on proximity (that is, if you have more than one). </p>
+
+<h2>Assignment of tasks for enemies</h2>
+
+<p>An exisiting plane or a newly spawned plane will take care of the intruders. Standard overhead is 0.1, i.e. a group of 10 intrudes will
+be managed by one planes from the assigned AirWing. There is an maximum missions limitation per AirWing, so we do not spam the skies.</p>
+
+<h2>Basic set-up code</h2>
+
+<h3>Prerequisites</h3>
+
+<p>You have to put a <strong>STATIC WAREHOUSE</strong> object on the airbase with the UNIT name according to the name of the airbase. <strong>Do not put any other static type or it creates a conflict with the airbase name!</strong> 
+E.g. for Kutaisi this has to have the unit name Kutaisi. This object symbolizes the AirWing HQ.
+Next put a late activated template group for your A2G Squadron on the map. Last, put a zone on the map for the Defense operations, let's name it "Blue Zone 1". Size of the zone plays no role.
+Put a scout system on the map and name it aptly, like "Blue SCOUT".</p>
+
+<h3>Zones</h3>
+
+<p>For our example, you create a RED and a BLUE border, as a closed polygonal zone representing the borderlines. You can also have conflict zone, where - for our example - BLUE will attack
+RED groups, despite being on or close to RED territory. Think of a no-fly zone or an limited area of engagement. Conflict zones take precedence over borders, i.e. they can overlap all borders.</p>
+
+<h3>Code it</h3>
+
+<pre><code>     -- Set up a basic system for the blue side, we'll reside on Kutaisi, and use GROUP objects with "Blue SCOUT" in the name as Detecting Systems.
+     local mywing = EASYA2G:New("A2G",AIRBASE.Caucasus.Kutaisi,"blue","SCOUT")
+
+     -- Add a holding/ingress point belonging to our airbase, we'll be at 5k ft doing 250 kn, initial direction 225 degrees (West), leg 5NM
+     -- This will effectively be the ingress coordinate into the cnflict zone
+     local Coordinate = ZONE:New("A2G Loitering"):GetCoordinate()
+     mywing:AddHoldingPointA2G(AIRBASE.Caucasus.Kutaisi,Coordinate,5000,250,225,5)
+
+     -- Add a recon point over the conflict zone, we'll use a reaper for recon
+     local Coordinate2 = ZONE:New("A2G Recon"):GetCoordinate()
+     mywing:AddPatrolPointRecon(AIRBASE.Caucasus.Kutaisi,Coordinate2,15000,225,225,5)
+
+     -- Add three Squadrons with templates "Hero 1" and "Hero 2", 20 airframes, skill as set
+     mywing:AddSquadron("A2G Flight", "Hero 1", AIRBASE.Caucasus.Kutaisi, 5, AI.Skill.GOOD, Modex, Livery)
+     mywing:AddSquadron("A2G Helo", "Hero 2", AIRBASE.Caucasus.Kutaisi, 5, AI.Skill.HIGH, Modex, Livery)
+     mywing:AddReconSquadron("Recon Drone", "SpyInTheSky SCOUT", AIRBASE.Caucasus.Kutaisi, 5, AI.Skill.EXCELLENT, Modex, Livery)
+
+     -- Ensure our reaper doesn't get immediately killed
+     mywing:SetTankerAndScoutsInvisible(true)
+
+     -- Add a couple of zones
+     -- We'll defend our own border
+     mywing:AddAcceptZone(ZONE_POLYGON:New( "Blue Border", GROUP:FindByName( "Blue Border" ) ))
+     -- We'll attack intruders also here - conflictzones can overlap borders(!) - limited zone of engagement
+     mywing:AddConflictZone(ZONE_POLYGON:New("Red Defense Zone", GROUP:FindByName( "Red Defense Zone" )))
+     -- We'll leave the reds alone on their turf
+     mywing:AddRejectZone(ZONE_POLYGON:New( "Red Border", GROUP:FindByName( "Red Border" ) ))
+
+     -- Optional - Draw the borders on the map so we see what's going on
+     -- Set up borders on map
+     local BlueBorder = ZONE_POLYGON:New( "Blue Border", GROUP:FindByName( "Blue Border" ) )
+     BlueBorder:DrawZone(-1,{0,0,1},1,FillColor,FillAlpha,1,true)
+     local ConflictZone = ZONE_POLYGON:New("Red Defense Zone", GROUP:FindByName( "Red Defense Zone" ))
+     ConflictZone:DrawZone(-1,{1,1,0},1,FillColor,FillAlpha,2,true)
+     local BlueNoGoZone = ZONE_POLYGON:New( "Red Border", GROUP:FindByName( "Red Border" ) )
+     BlueNoGoZone:DrawZone(-1,{1,0,0},1,FillColor,FillAlpha,4,true)
+</code></pre>
+
+<h3>Add a second airwing with squads and own patrol point (optional)</h3>
+
+<pre><code>     -- Set this up at Sukhumi
+     mywing:AddAirwing(AIRBASE.Caucasus.Sukhumi_Babushara,"Blue A2G Sukhumi")
+     -- A2G Point "Blue Zone 2"
+     mywing:AddPatrolPointA2G(AIRBASE.Caucasus.Sukhumi_Babushara,ZONE:FindByName("Blue Zone 2"):GetCoordinate(),30000,400,90,20)
+
+     -- This one has two squadrons to choose from
+     mywing:AddSquadron("Blue Sq3 F16","A2G Sukhumi II",AIRBASE.Caucasus.Sukhumi_Babushara,20,AI.Skill.GOOD,402,"JASDF 6th TFS 43-8526 Skull Riders")
+     mywing:AddSquadron("Blue Sq2 F15","A2G Sukhumi I",AIRBASE.Caucasus.Sukhumi_Babushara,20,AI.Skill.GOOD,202,"390th Fighter SQN")
+</code></pre>
+
+<h3>Add a tanker (optional)</h3>
+
+<pre><code>   -- **Note** If you need different tanker types, i.e. Boom and Drogue, set them up at different AirWings!
+   -- Add a tanker point
+   mywing:AddPatrolPointTanker(AIRBASE.Caucasus.Kutaisi,ZONE:FindByName("Blue Zone Tanker"):GetCoordinate(),20000,280,270,50)
+   -- Add a tanker squad - Radio 251 AM, TACAN 51Y
+   mywing:AddTankerSquadron("Blue Tanker","Tanker Ops Kutaisi",AIRBASE.Caucasus.Kutaisi,20,AI.Skill.EXCELLENT,602,nil,251,radio.modulation.AM,51)
+</code></pre>
+
+<h3>Add an AWACS (optional)</h3>
+
+<pre><code>   -- Add an AWACS point
+   mywing:AddPatrolPointAwacs(AIRBASE.Caucasus.Kutaisi,ZONE:FindByName("Blue Zone AWACS"):GetCoordinate(),25000,300,270,50)
+   -- Add an AWACS squad - Radio 251 AM, TACAN 51Y
+   mywing:AddAWACSSquadron("Blue AWACS","AWACS Ops Kutaisi",AIRBASE.Caucasus.Kutaisi,20,AI.Skill.AVERAGE,702,nil,271,radio.modulation.AM)        
+</code></pre>
+
+<h1>Fine-Tuning</h1>
+
+<h2>Change Defaults</h2>
+
+<ul>
+    <li><a href="##(EASYA2G).SetDefaultResurrection">EASYA2G.SetDefaultResurrection</a>: Set how many seconds the AirWing stays inoperable after the AirWing STATIC HQ ist destroyed, default 900 secs. </li>
+    <li><a href="##(EASYA2G).SetDefaultA2GSpeed">EASYA2G.SetDefaultA2GSpeed</a>: Set how many knots the A2G flights should do (will be altitude corrected), default 225 kn.</li>
+    <li><a href="##(EASYA2G).SetDefaultA2GAlt">EASYA2G.SetDefaultA2GAlt</a>: Set at which altitude (ASL) the A2G planes will fly, default 10,000 ft.</li>
+    <li><a href="##(EASYA2G).SetDefaultA2GDirection">EASYA2G.SetDefaultA2GDirection</a>: Set the initial direction from the A2G point the planes will fly in degrees, default is 90°.</li>
+    <li><a href="##(EASYA2G).SetDefaultA2GLeg">EASYA2G.SetDefaultA2GLeg</a>: Set the length of the A2G leg, default is 5 NM.</li>
+    <li><a href="##(EASYA2G).SetDefaultA2GGrouping">EASYA2G.SetDefaultA2GGrouping</a>: Set how many planes will be spawned per mission (CVAP/GCI), defaults to 1.</li>
+    <li><a href="##(EASYA2G).SetDefaultMissionRange">EASYA2G.SetDefaultMissionRange</a>: Set how many NM the planes can go from the home base, defaults to 100.</li>
+    <li><a href="##(EASYA2G).SetDefaultNumberAlert5Standby">EASYA2G.SetDefaultNumberAlert5Standby</a>: Set how many planes will be spawned on cold standby (Alert5), default 2.</li>
+    <li><a href="##(EASYA2G).SetDefaultEngageRange">EASYA2G.SetDefaultEngageRange</a>: Set max engage range for A2G flights if they detect intruders, defaults to 50.</li>
+    <li><a href="##(EASYA2G).SetMaxAliveMissions">EASYA2G.SetMaxAliveMissions</a>: Set max parallel missions can be done (A2G+GCI+Alert5+Tanker+AWACS), defaults to 8.</li>
+    <li><a href="##(EASYA2G).SetDefaultRepeatOnFailure">EASYA2G.SetDefaultRepeatOnFailure</a>: Set max repeats on failure for intercepting/killing intruders, defaults to 3.</li>
+    <li><a href="##(EASYA2G).SetTankerAndScoutsInvisible">EASYA2G.SetTankerAndScoutsInvisible</a>: Set Tanker and Scouts to be invisible to enemy AI eyes. Is set to <code>true</code> by default.</li>
+</ul>
+
+<h2>Debug and Monitor</h2>
+
+<pre><code>     mywing.debug = true -- log information
+     mywing.Monitor = true -- show some statistics on screen
+</code></pre>
+
 
 
 </div>
 
   </div>
   <div class="w3-container w3-theme-l2 w3-margin-top"><h2><strong>Type(s)</strong></h2></div>  
-      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AI_A2A_CAP)">Type <strong>AI_A2A_CAP</strong></a></h2></div>
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(EASYA2G)">Type <strong>EASYA2G</strong></a></h2></div>
          <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
-     <strong><a href="##(AI_A2A_CAP)">AI_A2A_CAP</a></strong>
+     <strong><a href="##(EASYA2G)">EASYA2G</a></strong>
+, extends <strong><a href="Ops.EasyGCIA2G.html##(EASYGCICAP)">Ops.EasyGCIA2G#EASYGCICAP</a></strong>
    </div>
         <div class="w3-card w3-margin">
         <table class="w3-table w3-border-bottom w3-border-theme-l2">
           <tr class="w3-theme-l1">
-            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from AI_A2A_CAP</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from EASYA2G</th>
             <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2A_CAP).CreateAttackUnitTasks">AI_A2A_CAP:CreateAttackUnitTasks(AttackSetUnit, DefenderGroup, EngageAltitude)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).AddHoldingPointA2G">EASYA2G:AddHoldingPointA2G(AirbaseName, Coordinate, Altitude, Speed, Heading, LegLength)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Evaluate the attack and create an AttackUnitTask list.</p>
+<p>Add a A2G patrol/holding point to a Wing</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2A_CAP).EngageRange">AI_A2A_CAP.EngageRange</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).CapFormation">EASYA2G.CapFormation</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2A_CAP).EngageZone">AI_A2A_CAP.EngageZone</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).ClassName">EASYA2G.ClassName</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2A_CAP).New">AI_A2A_CAP:New(AICap, PatrolZone, PatrolFloorAltitude, PatrolCeilingAltitude, PatrolMinSpeed, PatrolMaxSpeed, EngageMinSpeed, EngageMaxSpeed, PatrolAltType)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).ConflictZoneSet">EASYA2G.ConflictZoneSet</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Creates a new AI_A2A_CAP object</p>
+
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2A_CAP).New2">AI_A2A_CAP:New2(AICap, EngageMinSpeed, EngageMaxSpeed, EngageFloorAltitude, EngageCeilingAltitude, EngageAltType, PatrolZone, PatrolMinSpeed, PatrolMaxSpeed, PatrolFloorAltitude, PatrolCeilingAltitude, PatrolAltType)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).DespawnAfterHolding">EASYA2G.DespawnAfterHolding</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Creates a new AI_A2A_CAP object</p>
+
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2A_CAP).SetEngageRange">AI_A2A_CAP:SetEngageRange(EngageRange)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).DespawnAfterLanding">EASYA2G.DespawnAfterLanding</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set the Engage Range when the AI will engage with airborne enemies.</p>
+
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2A_CAP).SetEngageZone">AI_A2A_CAP:SetEngageZone(EngageZone)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).EWRName">EASYA2G.EWRName</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>Set the Engage Zone which defines where the AI will engage bogies.</p>
+
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AI_A2A_CAP).onafterStart">AI_A2A_CAP:onafterStart(AICap, From, Event, To)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).EngageTargetTypes">EASYA2G.EngageTargetTypes</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>onafter State Transition for Event Patrol.</p>
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).FuelCriticalThreshold">EASYA2G.FuelCriticalThreshold</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).FuelLowThreshold">EASYA2G.FuelLowThreshold</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).GoZoneSet">EASYA2G.GoZoneSet</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).Intel">EASYA2G.Intel</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).ListOfAuftrag">EASYA2G.ListOfAuftrag</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).ManagedAW">EASYA2G.ManagedAW</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).ManagedCP">EASYA2G.ManagedCP</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).ManagedEWR">EASYA2G.ManagedEWR</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).ManagedREC">EASYA2G.ManagedREC</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).ManagedSQ">EASYA2G.ManagedSQ</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).ManagedTK">EASYA2G.ManagedTK</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).MaxAliveMissions">EASYA2G.MaxAliveMissions</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).Monitor">EASYA2G.Monitor</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).New">EASYA2G:New(Alias, AirbaseName, Coalition, ScoutName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Create a new GCIA2G Manager</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).NoGoZoneSet">EASYA2G.NoGoZoneSet</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).ReadyFlightGroups">EASYA2G.ReadyFlightGroups</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).SetA2GEngageTargetTypes">EASYA2G:SetA2GEngageTargetTypes(types)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set which target types A2G flights will prefer to engage, defaults to {"Ground"}</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).SetA2GFormation">EASYA2G:SetA2GFormation(Formation)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set A2G Flight formation.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).SetA2GStartTimeVariation">EASYA2G:SetA2GStartTimeVariation(Start, End)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set A2G mission start to vary randomly between Start end End seconds.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).SetDefaultA2GAlt">EASYA2G:SetDefaultA2GAlt(Altitude)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set default A2G Altitude in feet</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).SetDefaultA2GDirection">EASYA2G:SetDefaultA2GDirection(Direction)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set default A2G lieg initial direction in degrees</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).SetDefaultA2GGrouping">EASYA2G:SetDefaultA2GGrouping(Grouping)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set default grouping, i.e.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).SetDefaultA2GLeg">EASYA2G:SetDefaultA2GLeg(Leg)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set default leg length in NM</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).SetDefaultA2GSpeed">EASYA2G:SetDefaultA2GSpeed(Speed)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set default A2G Speed in knots</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).SetTankerAndScoutsInvisible">EASYA2G:SetTankerAndScoutsInvisible(Switch)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Set Tanker and Scouts to be invisible to enemy AI eyes</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).TankerInvisible">EASYA2G.TankerInvisible</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G)._AddSquadron">EASYA2G:_AddSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery, Frequency, Modulation)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(Internal) Add a Squadron to an Airwing of the manager</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G)._AssignMission">EASYA2G:_AssignMission(Cluster)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Here, we'll decide if we need to launch an attacking flight, and from where</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G)._GetClosestHoldingPoint">EASYA2G:_GetClosestHoldingPoint(Group)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Find a holding point closest to the group to be attacked (if any set)</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G)._StartIntel">EASYA2G:_StartIntel()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(Internal) Start detection.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G)._TryAssignMission">EASYA2G:_TryAssignMission(ReadyFlightGroups, Auftrag, Group, WingSize)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(Internal) Try to assign the intercept to a FlightGroup already in air and ready.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).airbase">EASYA2G.airbase</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).airbasename">EASYA2G.airbasename</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).alias">EASYA2G.alias</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).capOptionVaryEndTime">EASYA2G.capOptionVaryEndTime</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).capOptionVaryStartTime">EASYA2G.capOptionVaryStartTime</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).capalt">EASYA2G.capalt</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).capdir">EASYA2G.capdir</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).capgrouping">EASYA2G.capgrouping</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).capleg">EASYA2G.capleg</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).capspeed">EASYA2G.capspeed</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).coalition">EASYA2G.coalition</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).coalitionname">EASYA2G.coalitionname</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).debug">EASYA2G.debug</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).defaulttakeofftype">EASYA2G.defaulttakeofftype</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Take off type</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).engagerange">EASYA2G.engagerange</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).lid">EASYA2G.lid</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).maxinterceptsize">EASYA2G.maxinterceptsize</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).missionrange">EASYA2G.missionrange</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).noalert5">EASYA2G.noalert5</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).onafterStart">EASYA2G:onafterStart(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(Internal) FSM Function onafterStart</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).onafterStatus">EASYA2G:onafterStatus(From, Event, To)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(Internal) FSM Function onafterStatus</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).overhead">EASYA2G.overhead</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).repeatsonfailure">EASYA2G.repeatsonfailure</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).resurrection">EASYA2G.resurrection</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).showpatrolpointmarks">EASYA2G.showpatrolpointmarks</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).version">EASYA2G.version</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>EASYA2G class version.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G).wings">EASYA2G.wings</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
 </td>
           </tr>
         </table>
         </div>
 
-    <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AI.AI_A2A_Cap)" >Type <strong>AI.AI_A2A_Cap</strong></a></h2></div>
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(EASYA2G.CapPoint)">Type <strong>EASYA2G.CapPoint</strong></a></h2></div>
+         <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
+     <strong><a href="##(EASYA2G.CapPoint)">EASYA2G.CapPoint</a></strong>
+   </div>
+        <div class="w3-card w3-margin">
+        <table class="w3-table w3-border-bottom w3-border-theme-l2">
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from EASYA2G.CapPoint</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.CapPoint).AirbaseName">EASYA2G.CapPoint.AirbaseName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.CapPoint).Altitude">EASYA2G.CapPoint.Altitude</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.CapPoint).Coordinate">EASYA2G.CapPoint.Coordinate</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.CapPoint).Heading">EASYA2G.CapPoint.Heading</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.CapPoint).LegLength">EASYA2G.CapPoint.LegLength</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.CapPoint).Speed">EASYA2G.CapPoint.Speed</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.CapPoint).Zone">EASYA2G.CapPoint.Zone</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+        </table>
+        </div>
+
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(EASYA2G.Squad)">Type <strong>EASYA2G.Squad</strong></a></h2></div>
+         <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
+     <strong><a href="##(EASYA2G.Squad)">EASYA2G.Squad</a></strong>
+   </div>
+        <div class="w3-card w3-margin">
+        <table class="w3-table w3-border-bottom w3-border-theme-l2">
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from EASYA2G.Squad</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Squad).AWACS">EASYA2G.Squad.AWACS</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Squad).AirFrames">EASYA2G.Squad.AirFrames</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Squad).AirbaseName">EASYA2G.Squad.AirbaseName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Squad).Frequency">EASYA2G.Squad.Frequency</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Squad).Livery">EASYA2G.Squad.Livery</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Squad).Modex">EASYA2G.Squad.Modex</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Squad).Modulation">EASYA2G.Squad.Modulation</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Squad).RECON">EASYA2G.Squad.RECON</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Squad).Skill">EASYA2G.Squad.Skill</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Squad).SquadName">EASYA2G.Squad.SquadName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Squad).TACAN">EASYA2G.Squad.TACAN</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Squad).Tanker">EASYA2G.Squad.Tanker</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Squad).TemplateName">EASYA2G.Squad.TemplateName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+        </table>
+        </div>
+
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(EASYA2G.Wing)">Type <strong>EASYA2G.Wing</strong></a></h2></div>
+         <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
+     <strong><a href="##(EASYA2G.Wing)">EASYA2G.Wing</a></strong>
+   </div>
+        <div class="w3-card w3-margin">
+        <table class="w3-table w3-border-bottom w3-border-theme-l2">
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from EASYA2G.Wing</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Wing).AirbaseName">EASYA2G.Wing.AirbaseName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Wing).Alias">EASYA2G.Wing.Alias</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYA2G.Wing).CapZoneName">EASYA2G.Wing.CapZoneName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+        </table>
+        </div>
+
+      <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(EASYGCICAP.CapPoint)">Type <strong>EASYGCICAP.CapPoint</strong></a></h2></div>
+         <div class="w3-card-4 w3-padding w3-margin w3-theme-l1">
+     <strong><a href="##(EASYGCICAP.CapPoint)">EASYGCICAP.CapPoint</a></strong>
+   </div>
+        <div class="w3-card w3-margin">
+        <table class="w3-table w3-border-bottom w3-border-theme-l2">
+          <tr class="w3-theme-l1">
+            <th class="w3-half w3-left-align w3-container w3-padding-16"word-wrap: break-word">Fields and Methods inherited from EASYGCICAP.CapPoint</th>
+            <th class="w3-half w3-left-align w3-container w3-padding-16">Description</th>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.CapPoint).AirbaseName">EASYGCICAP.CapPoint.AirbaseName</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.CapPoint).Altitude">EASYGCICAP.CapPoint.Altitude</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.CapPoint).Coordinate">EASYGCICAP.CapPoint.Coordinate</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.CapPoint).Heading">EASYGCICAP.CapPoint.Heading</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.CapPoint).LegLength">EASYGCICAP.CapPoint.LegLength</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.CapPoint).Speed">EASYGCICAP.CapPoint.Speed</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(EASYGCICAP.CapPoint).Zone">EASYGCICAP.CapPoint.Zone</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+        </table>
+        </div>
+
+    <div class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(Ops.EasyAG)" >Type <strong>Ops.EasyAG</strong></a></h2></div>
     <div class="w3-container w3-white w3-padding-16" id="module_current_type">
       <div class="w3-white" id="record_type">
 </div>
 
     </div>
-      <div onclick="myFunction('#Types##AI_A2A_CAP')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(AI_A2A_CAP)">Type <strong>AI_A2A_CAP</strong></a></h2></div>
-        <div id= "#Types##AI_A2A_CAP" class="w3-container w3-white w3-padding-16" id="module_other_types">
+      <div onclick="myFunction('#Types##EASYA2G')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(EASYA2G)">Type <strong>EASYA2G</strong></a></h2></div>
+        <div id= "#Types##EASYA2G" class="w3-container w3-white w3-padding-16" id="module_other_types">
           <div class="w3-white" id="record_type">
+  
+<p>EASYA2G Class</p>
+
 <div class="fields w3-container w3-theme-l2">
   <h2>Field(s)</h2>
 </div>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(EASYA2G).CapFormation" ><strong>EASYA2G.CapFormation</strong></a>
     
-<a id="#(AI_A2A_CAP).EngageRange" ><strong>AI_A2A_CAP.EngageRange</strong></a>
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(EASYA2G).ClassName" ><strong>EASYA2G.ClassName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+<a id="#(EASYA2G).ConflictZoneSet" ><strong>EASYA2G.ConflictZoneSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYA2G).DespawnAfterHolding" ><strong>EASYA2G.DespawnAfterHolding</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYA2G).DespawnAfterLanding" ><strong>EASYA2G.DespawnAfterLanding</strong></a>
     
 
 
@@ -2342,7 +3033,443 @@ Therefore, this class is considered to be deprecated</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(AI_A2A_CAP).EngageZone" ><strong>AI_A2A_CAP.EngageZone</strong></a>
+<a id="#(EASYA2G).EWRName" ><strong>EASYA2G.EWRName</strong></a>
+    
+
+
+    
+<p>or self.coalitionname.." EWR"
+self.CapZoneName = CapZoneName</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(EASYA2G).EngageTargetTypes" ><strong>EASYA2G.EngageTargetTypes</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).FuelCriticalThreshold" ><strong>EASYA2G.FuelCriticalThreshold</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).FuelLowThreshold" ><strong>EASYA2G.FuelLowThreshold</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+<a id="#(EASYA2G).GoZoneSet" ><strong>EASYA2G.GoZoneSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Ops.Intel.html##(INTEL)">Ops.Intel#INTEL</a>
+<a id="#(EASYA2G).Intel" ><strong>EASYA2G.Intel</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #list&lt;Ops.Auftrag#AUFTRAG&gt;
+<a id="#(EASYA2G).ListOfAuftrag" ><strong>EASYA2G.ListOfAuftrag</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(EASYA2G).ManagedAW" ><strong>EASYA2G.ManagedAW</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(EASYA2G).ManagedCP" ><strong>EASYA2G.ManagedCP</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(EASYA2G).ManagedEWR" ><strong>EASYA2G.ManagedEWR</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(EASYA2G).ManagedREC" ><strong>EASYA2G.ManagedREC</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(EASYA2G).ManagedSQ" ><strong>EASYA2G.ManagedSQ</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(EASYA2G).ManagedTK" ><strong>EASYA2G.ManagedTK</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).MaxAliveMissions" ><strong>EASYA2G.MaxAliveMissions</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYA2G).Monitor" ><strong>EASYA2G.Monitor</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Set.html##(SET_ZONE)">Core.Set#SET_ZONE</a>
+<a id="#(EASYA2G).NoGoZoneSet" ><strong>EASYA2G.NoGoZoneSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(EASYA2G).ReadyFlightGroups" ><strong>EASYA2G.ReadyFlightGroups</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYA2G).TankerInvisible" ><strong>EASYA2G.TankerInvisible</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Wrapper.Airbase.html##(AIRBASE)">Wrapper.Airbase#AIRBASE</a>
+<a id="#(EASYA2G).airbase" ><strong>EASYA2G.airbase</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(EASYA2G).airbasename" ><strong>EASYA2G.airbasename</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(EASYA2G).alias" ><strong>EASYA2G.alias</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).capalt" ><strong>EASYA2G.capalt</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).capdir" ><strong>EASYA2G.capdir</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).capgrouping" ><strong>EASYA2G.capgrouping</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).capleg" ><strong>EASYA2G.capleg</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).capspeed" ><strong>EASYA2G.capspeed</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).coalition" ><strong>EASYA2G.coalition</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYA2G).debug" ><strong>EASYA2G.debug</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(EASYA2G).defaulttakeofftype" ><strong>EASYA2G.defaulttakeofftype</strong></a>
+    
+<p>Take off type</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).engagerange" ><strong>EASYA2G.engagerange</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(EASYA2G).lid" ><strong>EASYA2G.lid</strong></a>
+    
+
+
+    
+<p> Set some string id for output to DCS.log file.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).maxinterceptsize" ><strong>EASYA2G.maxinterceptsize</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).missionrange" ><strong>EASYA2G.missionrange</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).noalert5" ><strong>EASYA2G.noalert5</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).overhead" ><strong>EASYA2G.overhead</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).repeatsonfailure" ><strong>EASYA2G.repeatsonfailure</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G).resurrection" ><strong>EASYA2G.resurrection</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYA2G).showpatrolpointmarks" ><strong>EASYA2G.showpatrolpointmarks</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(EASYA2G).version" ><strong>EASYA2G.version</strong></a>
+    
+<p>EASYA2G class version.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(EASYA2G).wings" ><strong>EASYA2G.wings</strong></a>
     
 
 
@@ -2355,41 +3482,41 @@ Therefore, this class is considered to be deprecated</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2A_CAP).CreateAttackUnitTasks" ><strong>AI_A2A_CAP:CreateAttackUnitTasks(AttackSetUnit, DefenderGroup, EngageAltitude)</strong></a></h2>
+<h2><a id="#(EASYA2G).AddHoldingPointA2G" ><strong>EASYA2G:AddHoldingPointA2G(AirbaseName, Coordinate, Altitude, Speed, Heading, LegLength)</strong></a></h2>
 </div>
     
-<p>Evaluate the attack and create an AttackUnitTask list.</p>
+<p>Add a A2G patrol/holding point to a Wing</p>
 
-<div id= "#Functions##CreateAttackUnitTasks" class="w3-show w3-white">
+<div id= "#Functions##AddHoldingPointA2G" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AI_A2A_CAP</p>
+<p>EASYA2G</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Core.Set.html##(SET_UNIT)">Core.Set#SET_UNIT</a>
-            <strong><strong>AttackSetUnit</strong></strong>
+                #string
+            <strong><strong>AirbaseName</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The set of units to attack.</p>
+<p>Name of the Wing's airbase</p>
 
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>DefenderGroup</strong></strong>
+                <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+            <strong><strong>Coordinate</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The group of defenders.</p>
+<p> Can be handed as a Core.Zone#ZONE object (e.g. in case you want  the point to align with a moving zone).</p>
 
           </div>
         </div>
@@ -2397,19 +3524,58 @@ Therefore, this class is considered to be deprecated</p>
           <div class="w3-half">
             <p>
                 #number
-            <strong><strong>EngageAltitude</strong></strong>
+            <strong><strong>Altitude</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The altitude to engage the targets.</p>
+<p>Defaults to 25000 feet ASL.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p> Defaults to 300 knots TAS.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Heading</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Defaults to 90 degrees (East).</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>LegLength</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Defaults to 15 NM.</p>
 
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AI_A2A_CAP)">#AI_A2A_CAP</a>:</p>
+        <p><a href="##(EASYA2G)">#EASYA2G</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -2425,141 +3591,78 @@ Therefore, this class is considered to be deprecated</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2A_CAP).New" ><strong>AI_A2A_CAP:New(AICap, PatrolZone, PatrolFloorAltitude, PatrolCeilingAltitude, PatrolMinSpeed, PatrolMaxSpeed, EngageMinSpeed, EngageMaxSpeed, PatrolAltType)</strong></a></h2>
+<h2><a id="#(EASYA2G).New" ><strong>EASYA2G:New(Alias, AirbaseName, Coalition, ScoutName)</strong></a></h2>
 </div>
     
-<p>Creates a new AI_A2A_CAP object</p>
+<p>Create a new GCIA2G Manager</p>
 
 <div id= "#Functions##New" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AI_A2A_CAP</p>
+<p>EASYA2G</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>AICap</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
-            <strong><strong>PatrolZone</strong></strong>
+                #string
+            <strong><strong>Alias</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The <a href="Core.Zone.html">Core.Zone</a> where the patrol needs to be executed.</p>
+<p>A Name for this A2G Setup</p>
 
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="DCS.html##(Altitude)">DCS#Altitude</a>
-            <strong><strong>PatrolFloorAltitude</strong></strong>
+                #string
+            <strong><strong>AirbaseName</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The lowest altitude in meters where to execute the patrol.</p>
+<p>Name of the Home Airbase</p>
 
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="DCS.html##(Altitude)">DCS#Altitude</a>
-            <strong><strong>PatrolCeilingAltitude</strong></strong>
+                #string
+            <strong><strong>Coalition</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The highest altitude in meters where to execute the patrol.</p>
+<p>Coalition, e.g. "blue" or "red"</p>
 
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="DCS.html##(Speed)">DCS#Speed</a>
-            <strong><strong>PatrolMinSpeed</strong></strong>
+                #string
+            <strong><strong>ScoutName</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The minimum speed of the <a href="Wrapper.Group.html">Wrapper.Group</a> in km/h.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="DCS.html##(Speed)">DCS#Speed</a>
-            <strong><strong>PatrolMaxSpeed</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The maximum speed of the <a href="Wrapper.Group.html">Wrapper.Group</a> in km/h.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="DCS.html##(Speed)">DCS#Speed</a>
-            <strong><strong>EngageMinSpeed</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The minimum speed of the <a href="Wrapper.Group.html">Wrapper.Group</a> in km/h when engaging a target.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="DCS.html##(Speed)">DCS#Speed</a>
-            <strong><strong>EngageMaxSpeed</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The maximum speed of the <a href="Wrapper.Group.html">Wrapper.Group</a> in km/h when engaging a target.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="DCS.html##(AltitudeType)">DCS#AltitudeType</a>
-            <strong><strong>PatrolAltType</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The altitude type ("RADIO"=="AGL", "BARO"=="ASL"). Defaults to RADIO</p>
+<p>(Partial) group name of the detection system of the coalition, e.g. "Red SCOUT", can be handed in as table of names, e.g.{"SCOUT","DRONE","SAM"}</p>
 
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AI_A2A_CAP)">#AI_A2A_CAP</a>:</p>
+        <p><a href="##(EASYA2G)">#EASYA2G</a>:</p>
       </div>
       <div class="w3-half">
         
-
+<p>self</p>
 
       </div>
     </div>
@@ -2571,180 +3674,40 @@ Therefore, this class is considered to be deprecated</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2A_CAP).New2" ><strong>AI_A2A_CAP:New2(AICap, EngageMinSpeed, EngageMaxSpeed, EngageFloorAltitude, EngageCeilingAltitude, EngageAltType, PatrolZone, PatrolMinSpeed, PatrolMaxSpeed, PatrolFloorAltitude, PatrolCeilingAltitude, PatrolAltType)</strong></a></h2>
+<h2><a id="#(EASYA2G).SetA2GEngageTargetTypes" ><strong>EASYA2G:SetA2GEngageTargetTypes(types)</strong></a></h2>
 </div>
     
-<p>Creates a new AI_A2A_CAP object</p>
+<p>Set which target types A2G flights will prefer to engage, defaults to {"Ground"}</p>
 
-<div id= "#Functions##New2" class="w3-show w3-white">
+<div id= "#Functions##SetA2GEngageTargetTypes" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AI_A2A_CAP</p>
+<p>EASYA2G</p>
 </div>
-    <h2><strong>Parameters:</strong></h2>
+    <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>AICap</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="DCS.html##(Speed)">DCS#Speed</a>
-            <strong><strong>EngageMinSpeed</strong></strong>
+                #table
+            <strong><strong>types</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The minimum speed of the <a href="Wrapper.Group.html">Wrapper.Group</a> in km/h when engaging a target.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="DCS.html##(Speed)">DCS#Speed</a>
-            <strong><strong>EngageMaxSpeed</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The maximum speed of the <a href="Wrapper.Group.html">Wrapper.Group</a> in km/h when engaging a target.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="DCS.html##(Altitude)">DCS#Altitude</a>
-            <strong><strong>EngageFloorAltitude</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The lowest altitude in meters where to execute the engagement.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="DCS.html##(Altitude)">DCS#Altitude</a>
-            <strong><strong>EngageCeilingAltitude</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The highest altitude in meters where to execute the engagement.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="DCS.html##(AltitudeType)">DCS#AltitudeType</a>
-            <strong><strong>EngageAltType</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The altitude type ("RADIO"=="AGL", "BARO"=="ASL"). Defaults to "RADIO".</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
-            <strong><strong>PatrolZone</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The <a href="Core.Zone.html">Core.Zone</a> where the patrol needs to be executed.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="DCS.html##(Speed)">DCS#Speed</a>
-            <strong><strong>PatrolMinSpeed</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The minimum speed of the <a href="Wrapper.Group.html">Wrapper.Group</a> in km/h.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="DCS.html##(Speed)">DCS#Speed</a>
-            <strong><strong>PatrolMaxSpeed</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The maximum speed of the <a href="Wrapper.Group.html">Wrapper.Group</a> in km/h.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="DCS.html##(Altitude)">DCS#Altitude</a>
-            <strong><strong>PatrolFloorAltitude</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The lowest altitude in meters where to execute the patrol.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="DCS.html##(Altitude)">DCS#Altitude</a>
-            <strong><strong>PatrolCeilingAltitude</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The highest altitude in meters where to execute the patrol.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="DCS.html##(AltitudeType)">DCS#AltitudeType</a>
-            <strong><strong>PatrolAltType</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The altitude type ("RADIO"=="AGL", "BARO"=="ASL"). Defaults to "RADIO".</p>
+<p>Table of comma separated #string entries, defaults to {"Ground"} (everything that is ground and is not a weapon). Useful other options are e.g. {"Armored vehicles"}, {"Tanks"}, 
+or {"APC"} or combinations like {"APC", "Tanks", "Artillery"}. See <a href="https://wiki.hoggitworld.com/view/DCS_enum_attributes">Hoggit Wiki</a>.</p>
 
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AI_A2A_CAP)">#AI_A2A_CAP</a>:</p>
+        <p><a href="##(EASYA2G)">#EASYA2G</a>:</p>
       </div>
       <div class="w3-half">
         
-
+<p>self</p>
 
       </div>
     </div>
@@ -2756,35 +3719,35 @@ Therefore, this class is considered to be deprecated</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2A_CAP).SetEngageRange" ><strong>AI_A2A_CAP:SetEngageRange(EngageRange)</strong></a></h2>
+<h2><a id="#(EASYA2G).SetA2GFormation" ><strong>EASYA2G:SetA2GFormation(Formation)</strong></a></h2>
 </div>
     
-<p>Set the Engage Range when the AI will engage with airborne enemies.</p>
+<p>Set A2G Flight formation.</p>
 
-<div id= "#Functions##SetEngageRange" class="w3-show w3-white">
+<div id= "#Functions##SetA2GFormation" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AI_A2A_CAP</p>
+<p>EASYA2G</p>
 </div>
     <h2><strong>Parameter:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
                 #number
-            <strong><strong>EngageRange</strong></strong>
+            <strong><strong>Formation</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The Engage Range.</p>
+<p>Formation to fly, defaults to ENUMS.Formation.FixedWing.FingerFour.Group</p>
 
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
-        <p><a href="##(AI_A2A_CAP)">#AI_A2A_CAP</a>:</p>
+        <p><a href="##(EASYA2G)">#EASYA2G</a>:</p>
       </div>
       <div class="w3-half">
         
@@ -2800,75 +3763,691 @@ Therefore, this class is considered to be deprecated</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AI_A2A_CAP).SetEngageZone" ><strong>AI_A2A_CAP:SetEngageZone(EngageZone)</strong></a></h2>
+<h2><a id="#(EASYA2G).SetA2GStartTimeVariation" ><strong>EASYA2G:SetA2GStartTimeVariation(Start, End)</strong></a></h2>
 </div>
     
-<p>Set the Engage Zone which defines where the AI will engage bogies.</p>
+<p>Set A2G mission start to vary randomly between Start end End seconds.</p>
 
-<div id= "#Functions##SetEngageZone" class="w3-show w3-white">
+<div id= "#Functions##SetA2GStartTimeVariation" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
-<p>AI_A2A_CAP</p>
-</div>
-    <h2><strong>Parameter:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Core.Zone.html##(ZONE)">Core.Zone#ZONE</a>
-            <strong><strong>EngageZone</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>The zone where the AI is performing CAP.</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(AI_A2A_CAP)">#AI_A2A_CAP</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(AI_A2A_CAP).onafterStart" ><strong>AI_A2A_CAP:onafterStart(AICap, From, Event, To)</strong></a></h2>
-</div>
-    
-<p>onafter State Transition for Event Patrol.</p>
-
-<div id= "#Functions##onafterStart" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>AI_A2A_CAP</p>
+<p>EASYA2G</p>
 </div>
     <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>AICap</strong></strong>
+                #number
+            <strong><strong>Start</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>End</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYA2G)">#EASYA2G</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYA2G).SetDefaultA2GAlt" ><strong>EASYA2G:SetDefaultA2GAlt(Altitude)</strong></a></h2>
+</div>
+    
+<p>Set default A2G Altitude in feet</p>
+
+<div id= "#Functions##SetDefaultA2GAlt" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYA2G</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Altitude</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The AI Group managed by the FSM.</p>
+<p>Altitude defaults to 25000</p>
 
           </div>
         </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYA2G)">#EASYA2G</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYA2G).SetDefaultA2GDirection" ><strong>EASYA2G:SetDefaultA2GDirection(Direction)</strong></a></h2>
+</div>
+    
+<p>Set default A2G lieg initial direction in degrees</p>
+
+<div id= "#Functions##SetDefaultA2GDirection" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYA2G</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Direction</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Direction defaults to 90 (East)</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYA2G)">#EASYA2G</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYA2G).SetDefaultA2GGrouping" ><strong>EASYA2G:SetDefaultA2GGrouping(Grouping)</strong></a></h2>
+</div>
+    
+<p>Set default grouping, i.e.</p>
+
+    
+<p>how many airplanes per A2G point</p>
+
+<div id= "#Functions##SetDefaultA2GGrouping" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYA2G</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Grouping</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Grouping defaults to 2</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYA2G)">#EASYA2G</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYA2G).SetDefaultA2GLeg" ><strong>EASYA2G:SetDefaultA2GLeg(Leg)</strong></a></h2>
+</div>
+    
+<p>Set default leg length in NM</p>
+
+<div id= "#Functions##SetDefaultA2GLeg" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYA2G</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Leg</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Leg defaults to 5</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYA2G)">#EASYA2G</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYA2G).SetDefaultA2GSpeed" ><strong>EASYA2G:SetDefaultA2GSpeed(Speed)</strong></a></h2>
+</div>
+    
+<p>Set default A2G Speed in knots</p>
+
+<div id= "#Functions##SetDefaultA2GSpeed" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYA2G</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Speed</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Speed defaults to 300</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYA2G)">#EASYA2G</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYA2G).SetTankerAndScoutsInvisible" ><strong>EASYA2G:SetTankerAndScoutsInvisible(Switch)</strong></a></h2>
+</div>
+    
+<p>Set Tanker and Scouts to be invisible to enemy AI eyes</p>
+
+<div id= "#Functions##SetTankerAndScoutsInvisible" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYA2G</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>Switch</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Set to true or false, by default this is set to true already</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYA2G)">#EASYA2G</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYA2G)._AddSquadron" ><strong>EASYA2G:_AddSquadron(TemplateName, SquadName, AirbaseName, AirFrames, Skill, Modex, Livery, Frequency, Modulation)</strong></a></h2>
+</div>
+    
+<p>(Internal) Add a Squadron to an Airwing of the manager</p>
+
+<div id= "#Functions##_AddSquadron" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYA2G</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>TemplateName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the group template.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>SquadName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Squadron name - must be unique!</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>AirbaseName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Name of the airbase the airwing resides on, e.g. AIRBASE.Caucasus.Kutaisi</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>AirFrames</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Number of available airframes, e.g. 20.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Skill</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>optional) Skill level, e.g. AI.Skill.AVERAGE</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Modex</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Modex to be used,e.g. 402.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Livery</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Livery name to be used.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Frequency</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Radio Frequency to be used. </p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>Modulation</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(optional) Radio Modulation to be used, e.g. radio.modulation.AM or radio.modulation.FM</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYA2G)">#EASYA2G</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYA2G)._AssignMission" ><strong>EASYA2G:_AssignMission(Cluster)</strong></a></h2>
+</div>
+    
+<p>Here, we'll decide if we need to launch an attacking flight, and from where</p>
+
+<div id= "#Functions##_AssignMission" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYA2G</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.Intel.html##(INTEL.Cluster)">Ops.Intel#INTEL.Cluster</a>
+            <strong><strong>Cluster</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYA2G)">#EASYA2G</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self </p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYA2G)._GetClosestHoldingPoint" ><strong>EASYA2G:_GetClosestHoldingPoint(Group)</strong></a></h2>
+</div>
+    
+<p>Find a holding point closest to the group to be attacked (if any set)</p>
+
+<div id= "#Functions##_GetClosestHoldingPoint" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYA2G</p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>Group</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>Point (can be nil!)</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYA2G)._StartIntel" ><strong>EASYA2G:_StartIntel()</strong></a></h2>
+</div>
+    
+<p>(Internal) Start detection.</p>
+
+<div id= "#Functions##_StartIntel" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYA2G</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYA2G)">#EASYA2G</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYA2G)._TryAssignMission" ><strong>EASYA2G:_TryAssignMission(ReadyFlightGroups, Auftrag, Group, WingSize)</strong></a></h2>
+</div>
+    
+<p>(Internal) Try to assign the intercept to a FlightGroup already in air and ready.</p>
+
+<div id= "#Functions##_TryAssignMission" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYA2G</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #table
+            <strong><strong>ReadyFlightGroups</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>ReadyFlightGroups</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Ops.Auftrag.html##(AUFTRAG)">Ops.Auftrag#AUFTRAG</a>
+            <strong><strong>Auftrag</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Auftrag</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>Group</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Target</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>WingSize</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Calculated number of Flights</p>
+
+          </div>
+        </div>
+    <h2><strong>Return values:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+        <div class="w3-half">
+          <p>#boolean:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>assigned</p>
+
+        </div>
+        <div class="w3-half">
+          <p>#number:</p>
+        </div>
+        <div class="w3-half">
+          
+<p>leftover</p>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYA2G).onafterStart" ><strong>EASYA2G:onafterStart(From, Event, To)</strong></a></h2>
+</div>
+    
+<p>(Internal) FSM Function onafterStart</p>
+
+<div id= "#Functions##onafterStart" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYA2G</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
@@ -2877,9 +4456,7 @@ Therefore, this class is considered to be deprecated</p>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The From State string.</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -2890,9 +4467,7 @@ Therefore, this class is considered to be deprecated</p>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The Event string.</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -2903,23 +4478,439 @@ Therefore, this class is considered to be deprecated</p>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>The To State string.</p>
-
+              <p></p>
           </div>
         </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYA2G)">#EASYA2G</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
 </div>
 
 </div>
 </div>
 
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(EASYA2G).onafterStatus" ><strong>EASYA2G:onafterStatus(From, Event, To)</strong></a></h2>
+</div>
+    
+<p>(Internal) FSM Function onafterStatus</p>
+
+<div id= "#Functions##onafterStatus" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>EASYA2G</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>From</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Event</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>To</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(EASYGCICAP)">#EASYGCICAP</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+        </div>
+      <div onclick="myFunction('#Types##EASYA2G.CapPoint')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(EASYA2G.CapPoint)">Type <strong>EASYA2G.CapPoint</strong></a></h2></div>
+        <div id= "#Types##EASYA2G.CapPoint" class="w3-container w3-white w3-padding-16" id="module_other_types">
+          <div class="w3-white" id="record_type">
+  
+<p>Internal CapPoint data type</p>
+
+<div class="fields w3-container w3-theme-l2">
+  <h2>Field(s)</h2>
+</div>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(EASYA2G.CapPoint).AirbaseName" ><strong>EASYA2G.CapPoint.AirbaseName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G.CapPoint).Altitude" ><strong>EASYA2G.CapPoint.Altitude</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
+<a id="#(EASYA2G.CapPoint).Coordinate" ><strong>EASYA2G.CapPoint.Coordinate</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G.CapPoint).Heading" ><strong>EASYA2G.CapPoint.Heading</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G.CapPoint).LegLength" ><strong>EASYA2G.CapPoint.LegLength</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G.CapPoint).Speed" ><strong>EASYA2G.CapPoint.Speed</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    <a href="Core.Zone.html##(ZONE_BASE)">Core.Zone#ZONE_BASE</a>
+<a id="#(EASYA2G.CapPoint).Zone" ><strong>EASYA2G.CapPoint.Zone</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div class="functions  w3-container w3-theme-l2">
+  <h2>Function(s)</h2>
+</div>  
+</div>
+
+        </div>
+      <div onclick="myFunction('#Types##EASYA2G.Squad')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(EASYA2G.Squad)">Type <strong>EASYA2G.Squad</strong></a></h2></div>
+        <div id= "#Types##EASYA2G.Squad" class="w3-container w3-white w3-padding-16" id="module_other_types">
+          <div class="w3-white" id="record_type">
+  
+<p>Internal Squadron data type</p>
+
+<div class="fields w3-container w3-theme-l2">
+  <h2>Field(s)</h2>
+</div>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYA2G.Squad).AWACS" ><strong>EASYA2G.Squad.AWACS</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G.Squad).AirFrames" ><strong>EASYA2G.Squad.AirFrames</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(EASYA2G.Squad).AirbaseName" ><strong>EASYA2G.Squad.AirbaseName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G.Squad).Frequency" ><strong>EASYA2G.Squad.Frequency</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(EASYA2G.Squad).Livery" ><strong>EASYA2G.Squad.Livery</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(EASYA2G.Squad).Modex" ><strong>EASYA2G.Squad.Modex</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G.Squad).Modulation" ><strong>EASYA2G.Squad.Modulation</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYA2G.Squad).RECON" ><strong>EASYA2G.Squad.RECON</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(EASYA2G.Squad).Skill" ><strong>EASYA2G.Squad.Skill</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(EASYA2G.Squad).SquadName" ><strong>EASYA2G.Squad.SquadName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(EASYA2G.Squad).TACAN" ><strong>EASYA2G.Squad.TACAN</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(EASYA2G.Squad).Tanker" ><strong>EASYA2G.Squad.Tanker</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(EASYA2G.Squad).TemplateName" ><strong>EASYA2G.Squad.TemplateName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div class="functions  w3-container w3-theme-l2">
+  <h2>Function(s)</h2>
+</div>  
+</div>
+
+        </div>
+      <div onclick="myFunction('#Types##EASYA2G.Wing')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(EASYA2G.Wing)">Type <strong>EASYA2G.Wing</strong></a></h2></div>
+        <div id= "#Types##EASYA2G.Wing" class="w3-container w3-white w3-padding-16" id="module_other_types">
+          <div class="w3-white" id="record_type">
+  
+<p>Internal Wing data type</p>
+
+<div class="fields w3-container w3-theme-l2">
+  <h2>Field(s)</h2>
+</div>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(EASYA2G.Wing).AirbaseName" ><strong>EASYA2G.Wing.AirbaseName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(EASYA2G.Wing).Alias" ><strong>EASYA2G.Wing.Alias</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(EASYA2G.Wing).CapZoneName" ><strong>EASYA2G.Wing.CapZoneName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div class="functions  w3-container w3-theme-l2">
+  <h2>Function(s)</h2>
+</div>  
+</div>
+
+        </div>
+      <div onclick="myFunction('#Types##EASYGCICAP.CapPoint')" class="w3-container w3-theme-l2 w3-margin-top"><h2><a id="#(EASYGCICAP.CapPoint)">Type <strong>EASYGCICAP.CapPoint</strong></a></h2></div>
+        <div id= "#Types##EASYGCICAP.CapPoint" class="w3-container w3-white w3-padding-16" id="module_other_types">
+          <div class="w3-white" id="record_type">
+<div class="fields w3-container w3-theme-l2">
+  <h2>Field(s)</h2>
+</div>
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(EASYGCICAP.CapPoint).AirbaseName" ><strong>EASYGCICAP.CapPoint.AirbaseName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(EASYGCICAP.CapPoint).Coordinate" ><strong>EASYGCICAP.CapPoint.Coordinate</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(EASYGCICAP.CapPoint).Zone" ><strong>EASYGCICAP.CapPoint.Zone</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div class="functions  w3-container w3-theme-l2">
+  <h2>Function(s)</h2>
+</div>  
 </div>
 
         </div>
 </div>
 <script>
 function myLoadFunction() {
-    document.getElementById("myHeader").style.backgroundImage = "url('../Images/AI_Combat_Air_Patrol.JPG')";
+    document.getElementById("myHeader").style.backgroundImage = "url('../Images/AI_Air_To_Ground_Dispatching.JPG')";
 }
 </script>
 
