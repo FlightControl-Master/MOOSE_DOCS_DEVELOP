@@ -3405,7 +3405,7 @@ If you use units built by multiple templates, they will effectively double on lo
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).OnAfterCratesPickedUp">CTLD:OnAfterCratesPickedUp(From, Event, To, Group, Unit, Cargo)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).OnAfterCratesPickedUp">CTLD:OnAfterCratesPickedUp(From, Event, To, Group, Unit, Cargotable)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>FSM Function OnAfterCratesPickedUp.</p>
 </td>
@@ -4524,18 +4524,6 @@ If you use units built by multiple templates, they will effectively double on lo
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).onafterTroopsDeployed">CTLD:onafterTroopsDeployed(From, Event, To, Group, Unit, Troops, Type)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(Internal) FSM Function onafterTroopsDeployed.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).onaftergetcrates">CTLD:onaftergetcrates(From, Event, To, Group, Unit, Cargotable)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) FSM Function onafterGetCrates.</p>
-</td>
-          </tr>
-          <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(CTLD).onafterremovecratesnearby">CTLD:onafterremovecratesnearby(From, Event, To, Group, Unit, Cargotable)</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-<p>(Internal) FSM Function onafterGetCrates.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -9364,7 +9352,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).CtldUnits" ><strong>CTLD.CtldUnits</strong></a>
     
 
@@ -9386,7 +9374,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).DroppedTroops" ><strong>CTLD.DroppedTroops</strong></a>
     
 
@@ -9411,13 +9399,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).EngineersInField" ><strong>CTLD.EngineersInField</strong></a>
     
 
-
-    
-<p>holds #CTLD_ENGINEERING objects</p>
 
 </div>
 
@@ -9514,7 +9499,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeUHFFrequencies" ><strong>CTLD.FreeUHFFrequencies</strong></a>
     
 
@@ -9616,10 +9601,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #string
+    
 <a id="#(CTLD).RadioPath" ><strong>CTLD.RadioPath</strong></a>
     
 
+
+    
+<p> Folderpath.</p>
 
 </div>
 
@@ -9659,17 +9647,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <p> Smokes and Flares</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(CTLD).Spawned_Cargo" ><strong>CTLD.Spawned_Cargo</strong></a>
-    
-
 
 </div>
 
@@ -9751,6 +9728,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #table
 <a id="#(CTLD).UsedVHFFrequencies" ><strong>CTLD.UsedVHFFrequencies</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(CTLD).UserSetGroup" ><strong>CTLD.UserSetGroup</strong></a>
     
 
 
@@ -9911,17 +9899,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <p> #1570</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CTLD).droppedBeacons" ><strong>CTLD.droppedBeacons</strong></a>
-    
-
 
 </div>
 
@@ -10196,17 +10173,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <p> enfore engineer build only?</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(CTLD).onestepmenu" ><strong>CTLD.onestepmenu</strong></a>
-    
-
 
 </div>
 
@@ -14122,7 +14088,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CTLD).OnAfterCratesPickedUp" ><strong>CTLD:OnAfterCratesPickedUp(From, Event, To, Group, Unit, Cargo)</strong></a></h2>
+<h2><a id="#(CTLD).OnAfterCratesPickedUp" ><strong>CTLD:OnAfterCratesPickedUp(From, Event, To, Group, Unit, Cargotable)</strong></a></h2>
 </div>
     
 <p>FSM Function OnAfterCratesPickedUp.</p>
@@ -14202,13 +14168,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                <a href="##(CTLD_CARGO)">#CTLD_CARGO</a>
-            <strong><strong>Cargo</strong></strong>
+                #table
+            <strong><strong>Cargotable</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>Cargo crate. Can be a Wrapper.DynamicCargo#DYNAMICCARGO object, if ground crew loaded!</p>
+<p>Table of #CTLD_CARGO cargo crates. Can be a Wrapper.DynamicCargo#DYNAMICCARGO objects, if ground crew loaded!</p>
 
           </div>
         </div>
@@ -22637,224 +22603,6 @@ However, if you create a new folder inside the miz file, which contains the soun
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(CTLD).onaftergetcrates" ><strong>CTLD:onaftergetcrates(From, Event, To, Group, Unit, Cargotable)</strong></a></h2>
-</div>
-    
-<p>(Internal) FSM Function onafterGetCrates.</p>
-
-<div id= "#Functions##onaftergetcrates" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>CTLD</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>From</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>State.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Event</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Trigger.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>To</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>State.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>Group</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Group Object.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
-            <strong><strong>Unit</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Unit Object.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #table
-            <strong><strong>Cargotable</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Table of #CTLD_CARGO objects spawned via "Get".</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(CTLD)">#CTLD</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
-<h2><a id="#(CTLD).onafterremovecratesnearby" ><strong>CTLD:onafterremovecratesnearby(From, Event, To, Group, Unit, Cargotable)</strong></a></h2>
-</div>
-    
-<p>(Internal) FSM Function onafterGetCrates.</p>
-
-<div id= "#Functions##onafterremovecratesnearby" class="w3-show w3-white">
-  <div class="w3-container w3-white" id="functiontype">
-   <h2><strong>Defined in:</strong></h2>
-   <div class="w3-margin-left">
-<p>CTLD</p>
-</div>
-    <h2><strong>Parameters:</strong></h2>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>From</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>State.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>Event</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Trigger.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #string
-            <strong><strong>To</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>State.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
-            <strong><strong>Group</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Group Object.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
-            <strong><strong>Unit</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Unit Object.</p>
-
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-                #table
-            <strong><strong>Cargotable</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              
-<p>Table of #CTLD_CARGO objects spawned via "Get".</p>
-
-          </div>
-        </div>
-    <h2><strong>Return value:</strong></h2>
-    <div class="w3-row w3-border-bottom w3-margin-left">
-      <div class="w3-half">
-        <p><a href="##(CTLD)">#CTLD</a>:</p>
-      </div>
-      <div class="w3-half">
-        
-<p>self</p>
-
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
-
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-<div class="w3-theme-l2">
 <h2><a id="#(CTLD).onbeforeCratesBuild" ><strong>CTLD:onbeforeCratesBuild(From, Event, To, Group, Unit, Vehicle)</strong></a></h2>
 </div>
     
@@ -24001,7 +23749,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).CtldUnits" ><strong>CTLD.CtldUnits</strong></a>
     
 
@@ -24023,7 +23771,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).DroppedTroops" ><strong>CTLD.DroppedTroops</strong></a>
     
 
@@ -24048,13 +23796,10 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).EngineersInField" ><strong>CTLD.EngineersInField</strong></a>
     
 
-
-    
-<p>holds #CTLD_ENGINEERING objects</p>
 
 </div>
 
@@ -24151,7 +23896,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeUHFFrequencies" ><strong>CTLD.FreeUHFFrequencies</strong></a>
     
 
@@ -24253,10 +23998,13 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #string
+    
 <a id="#(CTLD).RadioPath" ><strong>CTLD.RadioPath</strong></a>
     
 
+
+    
+<p> Folderpath.</p>
 
 </div>
 
@@ -24296,17 +24044,6 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     
 <p> Smokes and Flares</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(CTLD).Spawned_Cargo" ><strong>CTLD.Spawned_Cargo</strong></a>
-    
-
 
 </div>
 
@@ -24388,6 +24125,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     #table
 <a id="#(CTLD).UsedVHFFrequencies" ><strong>CTLD.UsedVHFFrequencies</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(CTLD).UserSetGroup" ><strong>CTLD.UserSetGroup</strong></a>
     
 
 
@@ -24548,17 +24296,6 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     
 <p> #1570</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CTLD).droppedBeacons" ><strong>CTLD.droppedBeacons</strong></a>
-    
-
 
 </div>
 
@@ -24833,17 +24570,6 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     
 <p> enfore engineer build only?</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(CTLD).onestepmenu" ><strong>CTLD.onestepmenu</strong></a>
-    
-
 
 </div>
 
@@ -26653,7 +26379,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).CtldUnits" ><strong>CTLD.CtldUnits</strong></a>
     
 
@@ -26675,7 +26401,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).DroppedTroops" ><strong>CTLD.DroppedTroops</strong></a>
     
 
@@ -26700,13 +26426,10 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).EngineersInField" ><strong>CTLD.EngineersInField</strong></a>
     
 
-
-    
-<p>holds #CTLD_ENGINEERING objects</p>
 
 </div>
 
@@ -26803,7 +26526,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeUHFFrequencies" ><strong>CTLD.FreeUHFFrequencies</strong></a>
     
 
@@ -26905,10 +26628,13 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #string
+    
 <a id="#(CTLD).RadioPath" ><strong>CTLD.RadioPath</strong></a>
     
 
+
+    
+<p> Folderpath.</p>
 
 </div>
 
@@ -26948,17 +26674,6 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     
 <p> Smokes and Flares</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(CTLD).Spawned_Cargo" ><strong>CTLD.Spawned_Cargo</strong></a>
-    
-
 
 </div>
 
@@ -27040,6 +26755,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     #table
 <a id="#(CTLD).UsedVHFFrequencies" ><strong>CTLD.UsedVHFFrequencies</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(CTLD).UserSetGroup" ><strong>CTLD.UserSetGroup</strong></a>
     
 
 
@@ -27200,17 +26926,6 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     
 <p> #1570</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CTLD).droppedBeacons" ><strong>CTLD.droppedBeacons</strong></a>
-    
-
 
 </div>
 
@@ -27485,17 +27200,6 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     
 <p> enfore engineer build only?</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(CTLD).onestepmenu" ><strong>CTLD.onestepmenu</strong></a>
-    
-
 
 </div>
 
@@ -32279,17 +31983,6 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(CTLD.UnitTypeCapabilities).crates" ><strong>CTLD.UnitTypeCapabilities.crates</strong></a>
     
 <p>Can transport crate.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(CTLD.UnitTypeCapabilities).length" ><strong>CTLD.UnitTypeCapabilities.length</strong></a>
-    
-
 
 </div>
 
