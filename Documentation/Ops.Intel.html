@@ -8935,8 +8935,11 @@ Note that conflict zones overrule all other zones, i.e. if a unit is outside of 
 <p>[Air] Add corrdidor zone floor and height.</p>
 
     
-<p>Are considered as ASL (above sea level or barometric) values.
-Overrides corridor exception for objects flying outside this limitations.</p>
+<p>This is generally applicable to all(!) corridor zones. Considered as ASL (above sea level or barometric) values.
+Overrides corridor exception for objects flying outside this limitations.
+To set an individual ceiling/floor on any Core.Zone#ZONE you wish to use, set these properties on the Core.Zone#ZONE object:
+<code>mycorridorzone:SetProperty("CorridorFloor",500)</code> -- meters, case sensitivity matters!
+<code>mycorridorzone:SetProperty("CorridorCeiling",10000)</code> -- meters, case sensitivity matters!</p>
 
 <div id= "#Functions##SetCorridorLimits" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
@@ -8996,8 +8999,11 @@ Overrides corridor exception for objects flying outside this limitations.</p>
 <p>[Air] Add corrdidor zone floor and height.</p>
 
     
-<p>Are considered as ASL (above sea level or barometric) values.
-Overrides corridor exception for objects flying outside this limitations.</p>
+<p>This is generally applicable to all(!) corridor zones. Considered as ASL (above sea level or barometric) values.
+Overrides corridor exception for objects flying outside this limitations.
+To set an individual ceiling/floor on any Core.Zone#ZONE you wish to use, set these properties on the Core.Zone#ZONE object:
+<code>mycorridorzone:SetProperty("CorridorFloor",UTILS.FeetToMeters(5000))</code> -- feet, case sensitivity matters!
+<code>mycorridorzone:SetProperty("CorridorCeiling",UTILS.FeetToMeters(20000))</code> -- feet, case sensitivity matters!</p>
 
 <div id= "#Functions##SetCorridorLimitsFeet" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
