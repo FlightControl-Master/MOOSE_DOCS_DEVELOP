@@ -2780,7 +2780,7 @@ in the mission editor are absolute maximum ranges; in-game this is rather 50-75%
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).SeadAllowSuppression">MANTIS:SeadAllowSuppression(targetGroup, targetName, Wrapper, weaponName, weaponWrapper, tti, delay, attackerGroup)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).SeadAllowSuppression">MANTIS:SeadAllowSuppression(targetGroup, targetName, attackerGroup, weaponName, weaponWrapper, tti, delay)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>[Internal] Check if a system can and should defend for HARMs itself</p>
 </td>
@@ -5034,17 +5034,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
-<a id="#(MANTIS).AcceptZones" ><strong>MANTIS.AcceptZones</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     
 <a id="#(MANTIS).AcceptZonesNo" ><strong>MANTIS.AcceptZonesNo</strong></a>
     
@@ -5080,17 +5069,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #string
 <a id="#(MANTIS).ClassName" ><strong>MANTIS.ClassName</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(MANTIS).ConflictZones" ><strong>MANTIS.ConflictZones</strong></a>
     
 
 
@@ -5255,7 +5233,18 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #table
-<a id="#(MANTIS).RejectZones" ><strong>MANTIS.RejectZones</strong></a>
+<a id="#(MANTIS).InboundARMs" ><strong>MANTIS.InboundARMs</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(MANTIS).LastThreatEval" ><strong>MANTIS.LastThreatEval</strong></a>
     
 
 
@@ -5894,9 +5883,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(MANTIS).state2flag" ><strong>MANTIS.state2flag</strong></a>
     
 
-
-    
-<p> switch alarm state RED</p>
 
 </div>
 
@@ -7357,7 +7343,7 @@ Accept- and RejectZones. Last, if it is inside a conflict zone, it is accepted. 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(MANTIS).SeadAllowSuppression" ><strong>MANTIS:SeadAllowSuppression(targetGroup, targetName, Wrapper, weaponName, weaponWrapper, tti, delay, attackerGroup)</strong></a></h2>
+<h2><a id="#(MANTIS).SeadAllowSuppression" ><strong>MANTIS:SeadAllowSuppression(targetGroup, targetName, attackerGroup, weaponName, weaponWrapper, tti, delay)</strong></a></h2>
 </div>
     
 <p>[Internal] Check if a system can and should defend for HARMs itself</p>
@@ -7394,13 +7380,12 @@ Accept- and RejectZones. Last, if it is inside a conflict zone, it is accepted. 
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-            <strong><strong>Wrapper</strong></strong>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>attackerGroup</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>Group#GROUPattackerGroup</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
@@ -7441,16 +7426,6 @@ Accept- and RejectZones. Last, if it is inside a conflict zone, it is accepted. 
             <p>
                 #number
             <strong><strong>delay</strong></strong>
-            </p>
-          </div>
-          <div class="w3-half">
-              <p></p>
-          </div>
-        </div>
-        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
-          <div class="w3-half">
-            <p>
-            <strong><strong>attackerGroup</strong></strong>
             </p>
           </div>
           <div class="w3-half">
@@ -10684,17 +10659,6 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
-<a id="#(MANTIS).AcceptZones" ><strong>MANTIS.AcceptZones</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     
 <a id="#(MANTIS).AcceptZonesNo" ><strong>MANTIS.AcceptZonesNo</strong></a>
     
@@ -10730,17 +10694,6 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 
     #string
 <a id="#(MANTIS).ClassName" ><strong>MANTIS.ClassName</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(MANTIS).ConflictZones" ><strong>MANTIS.ConflictZones</strong></a>
     
 
 
@@ -10905,7 +10858,18 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #table
-<a id="#(MANTIS).RejectZones" ><strong>MANTIS.RejectZones</strong></a>
+<a id="#(MANTIS).InboundARMs" ><strong>MANTIS.InboundARMs</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(MANTIS).LastThreatEval" ><strong>MANTIS.LastThreatEval</strong></a>
     
 
 
@@ -11544,9 +11508,6 @@ E.g. `mymantis:SetAdvancedMode(true, 90)`</code></pre>
 <a id="#(MANTIS).state2flag" ><strong>MANTIS.state2flag</strong></a>
     
 
-
-    
-<p> switch alarm state RED</p>
 
 </div>
 
