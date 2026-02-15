@@ -1931,7 +1931,7 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).GetDCSMissionTask">AUFTRAG:GetDCSMissionTask()</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).GetDCSMissionTask">AUFTRAG:GetDCSMissionTask(MissionGroup)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get DCS task table for the given mission.</p>
 </td>
@@ -2504,6 +2504,12 @@ The commander will select the best assets available from all the legions under h
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewFACA">AUFTRAG:NewFACA(Target, Designation, DataLink, Frequency, Modulation)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p><strong>[AIR]</strong> Create a FACA mission.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).NewFREIGHTTRANSPORT">AUFTRAG:NewFREIGHTTRANSPORT(StaticCargo, Destination)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p><strong>[AIR]</strong> Create a FREIGHT TRANSPORT mission.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4550,6 +4556,12 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG)._ClearFSMEvent">AUFTRAG:_ClearFSMEvent(EventName)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Clear scheduled FSM event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG)._EndStates">AUFTRAG._EndStates</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
@@ -6013,6 +6025,12 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG.Type).FERRY">AUFTRAG.Type.FERRY</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Ferry mission.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG.Type).FREIGHTTRANSPORT">AUFTRAG.Type.FREIGHTTRANSPORT</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Freight transport.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -9639,7 +9657,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUFTRAG).GetDCSMissionTask" ><strong>AUFTRAG:GetDCSMissionTask()</strong></a></h2>
+<h2><a id="#(AUFTRAG).GetDCSMissionTask" ><strong>AUFTRAG:GetDCSMissionTask(MissionGroup)</strong></a></h2>
 </div>
     
 <p>Get DCS task table for the given mission.</p>
@@ -9650,6 +9668,20 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
    <div class="w3-margin-left">
 <p>AUFTRAG</p>
 </div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Group.html##(GROUP)">Wrapper.Group#GROUP</a>
+            <strong><strong>MissionGroup</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) Group that is supposed to carry out the mission. This might not exist when the AUFTRAG is created but only when the AUFTRAG is passed to a certain group.</p>
+
+          </div>
+        </div>
     <h2><strong>Return value:</strong></h2>
     <div class="w3-row w3-border-bottom w3-margin-left">
       <div class="w3-half">
@@ -13628,6 +13660,67 @@ Only ME zones have an ID that can be referenced.</p>
           <div class="w3-half">
               
 <p>Radio modulation band. Default 0=AM. Use 1 for FM. See radio.modulation.AM or radio.modulaton.FM.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="##(AUFTRAG)">#AUFTRAG</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>self</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).NewFREIGHTTRANSPORT" ><strong>AUFTRAG:NewFREIGHTTRANSPORT(StaticCargo, Destination)</strong></a></h2>
+</div>
+    
+<p><strong>[AIR]</strong> Create a FREIGHT TRANSPORT mission.</p>
+
+    
+<p>This mission type can be used to transport cargo items internally via suitable transport aircraft (planes and helicopters), e.g. C-130 or CH-47.
+It supports transporting one or multiple cargos (weight limits are not checked).</p>
+
+<div id= "#Functions##NewFREIGHTTRANSPORT" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Static.html##(STATIC)">Wrapper.Static#STATIC</a>
+            <strong><strong>StaticCargo</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Static cargo object. Can also be passed as a <code>SET_STATIC</code> object.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Airbase.html##(AIRBASE)">Wrapper.Airbase#AIRBASE</a>
+            <strong><strong>Destination</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Destination airbase, where the cargo is unloaded.</p>
 
           </div>
         </div>
@@ -24681,6 +24774,39 @@ will always return.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG)._ClearFSMEvent" ><strong>AUFTRAG:_ClearFSMEvent(EventName)</strong></a></h2>
+</div>
+    
+<p>Clear scheduled FSM event.</p>
+
+<div id= "#Functions##_ClearFSMEvent" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Fsm.html##(FSM)">Core.Fsm#FSM</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>EventName</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>Event name.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(AUFTRAG)._add_to_map" ><strong>AUFTRAG:_add_to_map(Map, Event)</strong></a></h2>
 </div>
     
@@ -32254,6 +32380,17 @@ When moose is loading dynamically (for moose class development), tracing is swit
 <a id="#(AUFTRAG.Type).FERRY" ><strong>AUFTRAG.Type.FERRY</strong></a>
     
 <p>Ferry mission.</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #string
+<a id="#(AUFTRAG.Type).FREIGHTTRANSPORT" ><strong>AUFTRAG.Type.FREIGHTTRANSPORT</strong></a>
+    
+<p>Freight transport.</p>
 
 </div>
 
