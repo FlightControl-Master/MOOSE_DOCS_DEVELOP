@@ -1925,6 +1925,12 @@ The commander will select the best assets available from all the legions under h
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).GetCargoSet">AUFTRAG:GetCargoSet()</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Get cargo items as set SET object.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUFTRAG).GetCasualties">AUFTRAG:GetCasualties()</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Get casualties, <em>i.e.</em> number of own units that died during this mission.</p>
@@ -7421,17 +7427,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(AUFTRAG).missionIngressCoordAlt" ><strong>AUFTRAG.missionIngressCoordAlt</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #number
 <a id="#(AUFTRAG).missionRange" ><strong>AUFTRAG.missionRange</strong></a>
     
@@ -9616,6 +9611,39 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
       <div class="w3-half">
         
 <p>Group data or <em>nil</em> if OPS group does not exist.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(AUFTRAG).GetCargoSet" ><strong>AUFTRAG:GetCargoSet()</strong></a></h2>
+</div>
+    
+<p>Get cargo items as set SET object.</p>
+
+    
+<p>This returns the cargo item(s) as set <code>SET</code> object for mission types <code>CARGOTRANSPORT</code>, <code>TROOPTRANSPORT</code> and <code>FREIGHTTRANSPORT</code>.</p>
+
+<div id= "#Functions##GetCargoSet" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p>AUFTRAG</p>
+</div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="Core.Set.html##(SET_BASE)">Core.Set#SET_BASE</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The cargo set.</p>
 
       </div>
     </div>
@@ -13067,7 +13095,8 @@ See <a href="https://wiki.hoggitworld.com/view/DCS_task_bombing">DCS task bombin
 <p><strong>[AIR ROTARY]</strong> Create a CARGO TRANSPORT mission.</p>
 
     
-<p><strong>Important Note:</strong>
+<p>This mission is for helicopters only, which transport cargo externally via slingload.
+<strong>Important Note:</strong>
 The dropoff zone has to be a zone defined in the Mission Editor. This is due to a restriction in the used DCS task, which takes the zone ID as input.
 Only ME zones have an ID that can be referenced.</p>
 
@@ -23238,17 +23267,6 @@ will always return.</p>
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(AUFTRAG).missionIngressCoordAlt" ><strong>AUFTRAG.missionIngressCoordAlt</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #number
 <a id="#(AUFTRAG).missionRange" ><strong>AUFTRAG.missionRange</strong></a>
     
@@ -26656,17 +26674,6 @@ will always return.</p>
 <a id="#(AUFTRAG).missionIngressCoord" ><strong>AUFTRAG.missionIngressCoord</strong></a>
     
 <p>Mission Ingress waypoint coordinate.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUFTRAG).missionIngressCoordAlt" ><strong>AUFTRAG.missionIngressCoordAlt</strong></a>
-    
-
 
 </div>
 
