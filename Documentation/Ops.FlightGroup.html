@@ -2466,7 +2466,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP)._LandAtAirbase">FLIGHTGROUP:_LandAtAirbase(airbase, SpeedTo, SpeedHold, SpeedLand)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP)._LandAtAirbase">FLIGHTGROUP:_LandAtAirbase(airbase, (, (, (, SpeedTo, SpeedHold, SpeedLand)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Land at an airbase.</p>
 </td>
@@ -2881,7 +2881,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).onafterLandAt">FLIGHTGROUP:onafterLandAt(From, Event, To, Coordinate, Duration)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).onafterLandAt">FLIGHTGROUP:onafterLandAt(From, Event, To, (, Duration, Coordinate)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On after "LandAt" event.</p>
 </td>
@@ -2977,7 +2977,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).onbeforeLandAt">FLIGHTGROUP:onbeforeLandAt(From, Event, To, Coordinate, Duration)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(FLIGHTGROUP).onbeforeLandAt">FLIGHTGROUP:onbeforeLandAt(From, Event, To, (, Duration, Coordinate)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>On before "LandAt" event.</p>
 </td>
@@ -8465,7 +8465,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Speed in knots. Default is cruise speed.</p>
+<p>(Optional) Speed in knots. Default is cruise speed.</p>
 
           </div>
         </div>
@@ -8478,7 +8478,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Insert waypoint after waypoint given ID. Default is to insert as last waypoint.</p>
+<p>(Optional) Insert waypoint after waypoint given ID. Default is to insert as last waypoint.</p>
 
           </div>
         </div>
@@ -8491,7 +8491,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Altitude in feet. Default is y-component of Coordinate. Note that these altitudes are wrt to sea level (barometric altitude).</p>
+<p>(Optional) Altitude in feet. Default is y-component of Coordinate. Note that these altitudes are wrt to sea level (barometric altitude).</p>
 
           </div>
         </div>
@@ -8504,7 +8504,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>If true or nil, call UpdateRoute. If false, no call.</p>
+<p>(Optional) If true or nil, call UpdateRoute. If false, no call.</p>
 
           </div>
         </div>
@@ -8561,7 +8561,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Speed in knots. Default 350 kts.</p>
+<p>(Optional) Speed in knots. Default 350 kts.</p>
 
           </div>
         </div>
@@ -8574,7 +8574,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Insert waypoint after waypoint given ID. Default is to insert as last waypoint.</p>
+<p>(Optional) Insert waypoint after waypoint given ID. Default is to insert as last waypoint.</p>
 
           </div>
         </div>
@@ -8587,7 +8587,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Altitude in feet. Default is y-component of Coordinate. Note that these altitudes are wrt to sea level (barometric altitude).</p>
+<p>(Optional) Altitude in feet. Default is y-component of Coordinate. Note that these altitudes are wrt to sea level (barometric altitude).</p>
 
           </div>
         </div>
@@ -8600,7 +8600,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>If true or nil, call UpdateRoute. If false, no call.</p>
+<p>(Optional) If true or nil, call UpdateRoute. If false, no call.</p>
 
           </div>
         </div>
@@ -8776,7 +8776,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Search radius in NM. Default 50 NM.</p>
+<p>(Optional) Search radius in NM. Default 50 NM.</p>
 
           </div>
         </div>
@@ -8820,7 +8820,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Search radius in NM. Default 50 NM.</p>
+<p>(Optional) Search radius in NM. Default 50 NM.</p>
 
           </div>
         </div>
@@ -9194,7 +9194,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Distance threshold in meters. Default 5 m.</p>
+<p>(Optional) Distance threshold in meters. Default 5 m.</p>
 
           </div>
         </div>
@@ -9817,7 +9817,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Waypoint. Default final waypoint.</p>
+<p>(Optional) Waypoint. Default final waypoint.</p>
 
           </div>
         </div>
@@ -9861,7 +9861,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Waypoint. Default final waypoint.</p>
+<p>(Optional) Waypoint. Default final waypoint.</p>
 
           </div>
         </div>
@@ -13504,7 +13504,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Fuel threshold in percent. Default 10 %.</p>
+<p>(Optional) Fuel threshold in percent. Default 10 %.</p>
 
           </div>
         </div>
@@ -13639,7 +13639,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Fuel threshold in percent. Default 25 %.</p>
+<p>(Optional) Fuel threshold in percent. Default 25 %.</p>
 
           </div>
         </div>
@@ -14096,7 +14096,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
           </div>
           <div class="w3-half">
               
-<p>Delay in seconds before value is set. Default 0 sec.</p>
+<p>(Optional) Delay in seconds before value is set. Default 0 sec.</p>
 
           </div>
         </div>
@@ -14862,7 +14862,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Template used to init the group. Default is <code>self.template</code>.</p>
+<p>(Optional) Template used to init the group. Default is <code>self.template</code>.</p>
 
           </div>
         </div>
@@ -14875,7 +14875,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Delay in seconds before group is initialized. Default <code>nil</code>, <em>i.e.</em> instantaneous.</p>
+<p>(Optional) Delay in seconds before group is initialized. Default <code>nil</code>, <em>i.e.</em> instantaneous.</p>
 
           </div>
         </div>
@@ -15030,7 +15030,7 @@ Here we only check if stuck whilst taxiing.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(FLIGHTGROUP)._LandAtAirbase" ><strong>FLIGHTGROUP:_LandAtAirbase(airbase, SpeedTo, SpeedHold, SpeedLand)</strong></a></h2>
+<h2><a id="#(FLIGHTGROUP)._LandAtAirbase" ><strong>FLIGHTGROUP:_LandAtAirbase(airbase, (, (, (, SpeedTo, SpeedHold, SpeedLand)</strong></a></h2>
 </div>
     
 <p>Land at an airbase.</p>
@@ -15059,39 +15059,69 @@ Here we only check if stuck whilst taxiing.</p>
           <div class="w3-half">
             <p>
                 #number
+            <strong><strong>(</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>ptional) SpeedTo Speed used for travelling from current position to holding point in knots. Defaults to speedCruise.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>(</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>ptional) SpeedHold Holding speed in knots. Defaults to 250kts.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #number
+            <strong><strong>(</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>ptional) SpeedLand Landing speed in knots. Default 170 kts.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
             <strong><strong>SpeedTo</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>Speed used for travelling from current position to holding point in knots.</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #number
             <strong><strong>SpeedHold</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>Holding speed in knots.</p>
-
+              <p></p>
           </div>
         </div>
         <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
           <div class="w3-half">
             <p>
-                #number
             <strong><strong>SpeedLand</strong></strong>
             </p>
           </div>
           <div class="w3-half">
-              
-<p>Landing speed in knots. Default 170 kts.</p>
-
+              <p></p>
           </div>
         </div>
 </div>
@@ -16808,7 +16838,7 @@ Here we only check if stuck whilst taxiing.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(FLIGHTGROUP).onafterLandAt" ><strong>FLIGHTGROUP:onafterLandAt(From, Event, To, Coordinate, Duration)</strong></a></h2>
+<h2><a id="#(FLIGHTGROUP).onafterLandAt" ><strong>FLIGHTGROUP:onafterLandAt(From, Event, To, (, Duration, Coordinate)</strong></a></h2>
 </div>
     
 <p>On after "LandAt" event.</p>
@@ -16866,12 +16896,12 @@ Here we only check if stuck whilst taxiing.</p>
           <div class="w3-half">
             <p>
                 <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
-            <strong><strong>Coordinate</strong></strong>
+            <strong><strong>(</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The coordinate where to land. Default is current position.</p>
+<p>ptional) Coordinate The coordinate where to land. Default is current position.</p>
 
           </div>
         </div>
@@ -16884,8 +16914,18 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>The duration in seconds to remain on ground. Default <code>nil</code> = forever.</p>
+<p>(Optional) The duration in seconds to remain on ground. Default <code>nil</code> = forever.</p>
 
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Coordinate</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
 </div>
@@ -17414,7 +17454,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Speed used for traveling from current position to holding point in knots. Default 75% of max speed.</p>
+<p>(Optional) Speed used for traveling from current position to holding point in knots. Default 75% of max speed.</p>
 
           </div>
         </div>
@@ -17427,7 +17467,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Holding speed in knots. Default 250 kts.</p>
+<p>(Optional) Holding speed in knots. Default 250 kts.</p>
 
           </div>
         </div>
@@ -17440,7 +17480,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Landing speed in knots. Default 170 kts.</p>
+<p>(Optional) Landing speed in knots. Default 170 kts.</p>
 
           </div>
         </div>
@@ -17833,7 +17873,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Next waypoint index. Default is the one coming after that one that has been passed last.</p>
+<p>(Optional) Next waypoint index. Default is the one coming after that one that has been passed last.</p>
 
           </div>
         </div>
@@ -17846,7 +17886,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Waypoint  Max waypoint index to be included in the route. Default is the final waypoint.</p>
+<p>(Optional) Waypoint  Max waypoint index to be included in the route. Default is the final waypoint.</p>
 
           </div>
         </div>
@@ -17918,7 +17958,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Duration how long the group will be waiting in seconds. Default <code>nil</code> (=forever).</p>
+<p>(Optional) Duration how long the group will be waiting in seconds. Default <code>nil</code> (=forever).</p>
 
           </div>
         </div>
@@ -17931,7 +17971,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Altitude in feet. Default 10,000 ft for airplanes and 1,000 feet for helos.</p>
+<p>(Optional) Altitude in feet. Default 10,000 ft for airplanes and 1,000 feet for helos.</p>
 
           </div>
         </div>
@@ -17944,7 +17984,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Speed in knots. Default 250 kts for airplanes and 20 kts for helos.</p>
+<p>(Optional) Speed in knots. Default 250 kts for airplanes and 20 kts for helos.</p>
 
           </div>
         </div>
@@ -17956,7 +17996,7 @@ Here we only check if stuck whilst taxiing.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(FLIGHTGROUP).onbeforeLandAt" ><strong>FLIGHTGROUP:onbeforeLandAt(From, Event, To, Coordinate, Duration)</strong></a></h2>
+<h2><a id="#(FLIGHTGROUP).onbeforeLandAt" ><strong>FLIGHTGROUP:onbeforeLandAt(From, Event, To, (, Duration, Coordinate)</strong></a></h2>
 </div>
     
 <p>On before "LandAt" event.</p>
@@ -18014,12 +18054,12 @@ Here we only check if stuck whilst taxiing.</p>
           <div class="w3-half">
             <p>
                 <a href="Core.Point.html##(COORDINATE)">Core.Point#COORDINATE</a>
-            <strong><strong>Coordinate</strong></strong>
+            <strong><strong>(</strong></strong>
             </p>
           </div>
           <div class="w3-half">
               
-<p>The coordinate where to land. Default is current position.</p>
+<p>ptional) Coordinate The coordinate where to land. Default is current position.</p>
 
           </div>
         </div>
@@ -18032,8 +18072,18 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>The duration in seconds to remain on ground. Default 600 sec (10 min).</p>
+<p>(Optional) The duration in seconds to remain on ground. Default 600 sec (10 min).</p>
 
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>Coordinate</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
 </div>
@@ -18277,7 +18327,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Next waypoint index. Default is the one coming after that one that has been passed last.</p>
+<p>(Optional) Next waypoint index. Default is the one coming after that one that has been passed last.</p>
 
           </div>
         </div>
@@ -18290,7 +18340,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Waypoint  Max waypoint index to be included in the route. Default is the final waypoint.</p>
+<p>Optional)  Waypoint  Max waypoint index to be included in the route. Default is the final waypoint.</p>
 
           </div>
         </div>
@@ -18373,7 +18423,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Duration how long the group will be waiting in seconds. Default <code>nil</code> (=forever).</p>
+<p>(Optional) Duration how long the group will be waiting in seconds. Default <code>nil</code> (=forever).</p>
 
           </div>
         </div>
@@ -18386,7 +18436,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Altitude in feet. Default 10,000 ft for airplanes and 1,000 feet for helos.</p>
+<p>(Optional) Altitude in feet. Default 10,000 ft for airplanes and 1,000 feet for helos.</p>
 
           </div>
         </div>
@@ -18399,7 +18449,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Speed in knots. Default 250 kts for airplanes and 20 kts for helos.</p>
+<p>(Optional) Speed in knots. Default 250 kts for airplanes and 20 kts for helos.</p>
 
           </div>
         </div>
@@ -19357,7 +19407,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Mission time when task is executed. Default in 5 seconds. If argument passed as #number, it defines a relative delay in seconds.</p>
+<p>(Optional) Mission time when task is executed. Default in 5 seconds. If argument passed as #number, it defines a relative delay in seconds.</p>
 
           </div>
         </div>
@@ -19383,7 +19433,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Priority of the task.</p>
+<p>(Optional) Priority of the task. Default is 50.</p>
 
           </div>
         </div>
@@ -19396,7 +19446,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Duration before task is cancelled in seconds counted after task started. Default never.</p>
+<p>(Optional) Duration before task is cancelled in seconds counted after task started. Default never.</p>
 
           </div>
         </div>
@@ -19486,7 +19536,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>where the task is executed. Default is the at <em>next</em> waypoint.</p>
+<p>(Optional) where the task is executed. Default is the at <em>next</em> waypoint.</p>
 
           </div>
         </div>
@@ -19512,7 +19562,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Priority of the task. Number between 1 and 100. Default is 50.</p>
+<p>(Optional) Priority of the task. Number between 1 and 100. Default is 50.</p>
 
           </div>
         </div>
@@ -19525,7 +19575,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Duration before task is cancelled in seconds counted after task started. Default never.</p>
+<p>Optional)  Duration before task is cancelled in seconds counted after task started. Default never.</p>
 
           </div>
         </div>
@@ -19569,7 +19619,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Minimum range in nautical miles. Default 0 NM.</p>
+<p>(Optional) Minimum range in nautical miles. Default 0 NM.</p>
 
           </div>
         </div>
@@ -19582,7 +19632,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Maximum range in nautical miles. Default 10 NM.</p>
+<p>(Optional) Maximum range in nautical miles. Default 10 NM.</p>
 
           </div>
         </div>
@@ -19595,7 +19645,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Bit mask of weapon type for which the given min/max ranges apply. Default is <code>ENUMS.WeaponFlag.Auto</code>, i.e. for all weapon types.</p>
+<p>(Optional) Bit mask of weapon type for which the given min/max ranges apply. Default is <code>ENUMS.WeaponFlag.Auto</code>, i.e. for all weapon types.</p>
 
           </div>
         </div>
@@ -19608,7 +19658,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Function that converts input units of ranges to meters. Defaul <code>UTILS.NMToMeters</code>.</p>
+<p>(Optional) Function that converts input units of ranges to meters. Defaul <code>UTILS.NMToMeters</code>.</p>
 
           </div>
         </div>
@@ -19652,7 +19702,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Name of the unit. Default is of the whole group.</p>
+<p>(Optional) Name of the unit. Default is of the whole group.</p>
 
           </div>
         </div>
@@ -19839,7 +19889,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Clear waypoints up to this min WP index. Default 1.</p>
+<p>(Optional) Clear waypoints up to this min WP index. Default 1.</p>
 
           </div>
         </div>
@@ -19852,7 +19902,7 @@ Here we only check if stuck whilst taxiing.</p>
           </div>
           <div class="w3-half">
               
-<p>Clear waypoints up to this max WP index. Default <code>#self.waypoints</code>.</p>
+<p>(Optional) Clear waypoints up to this max WP index. Default <code>#self.waypoints</code>.</p>
 
           </div>
         </div>
@@ -20185,7 +20235,7 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
           </div>
           <div class="w3-half">
               
-<p>Delay in seconds before the group will be despawned. Default immediately.</p>
+<p>(Optional) Delay in seconds before the group will be despawned. Default immediately.</p>
 
           </div>
         </div>
@@ -20255,7 +20305,7 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
           </div>
           <div class="w3-half">
               
-<p>Delay in seconds before the element will be despawned. Default immediately.</p>
+<p>(Optional) Delay in seconds before the element will be despawned. Default immediately.</p>
 
           </div>
         </div>
@@ -20268,7 +20318,7 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
           </div>
           <div class="w3-half">
               
-<p>If true, no event "Remove Unit" is generated.</p>
+<p>(Optional) If true, no event "Remove Unit" is generated.</p>
 
           </div>
         </div>
@@ -20328,7 +20378,7 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
           </div>
           <div class="w3-half">
               
-<p>Delay in seconds before the group will be despawned. Default immediately.</p>
+<p>(Optional) Delay in seconds before the group will be despawned. Default immediately.</p>
 
           </div>
         </div>
@@ -20341,7 +20391,7 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
           </div>
           <div class="w3-half">
               
-<p>If true, no event "Remove Unit" is generated.</p>
+<p>(Optional) If true, no event "Remove Unit" is generated.</p>
 
           </div>
         </div>
@@ -20388,7 +20438,7 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
           </div>
           <div class="w3-half">
               
-<p>Delay in seconds before the group will be destroyed. Default immediately.</p>
+<p>(Optional) Delay in seconds before the group will be destroyed. Default immediately.</p>
 
           </div>
         </div>
@@ -20448,7 +20498,7 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
           </div>
           <div class="w3-half">
               
-<p>Delay in seconds before the group will be destroyed. Default immediately.</p>
+<p>(Optional) Delay in seconds before the group will be destroyed. Default immediately.</p>
 
           </div>
         </div>
@@ -20763,7 +20813,7 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
           </div>
           <div class="w3-half">
               
-<p>Display ammo table as message to all. Default false.</p>
+<p>(Optional) Display ammo table as message to all. Default false.</p>
 
           </div>
         </div>
@@ -21140,7 +21190,7 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
           </div>
           <div class="w3-half">
               
-<p>Valid surfaces types of the coordinate. Default any (nil).</p>
+<p>(Optional) Valid surfaces types of the coordinate. Default any (nil).</p>
 
           </div>
         </div>
@@ -21274,7 +21324,7 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
           </div>
           <div class="w3-half">
               
-<p>Number of the unit in the group. Default first unit.</p>
+<p>(Optional) Number of the unit in the group. Default first unit.</p>
 
           </div>
         </div>
@@ -21408,7 +21458,7 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
           </div>
           <div class="w3-half">
               
-<p>Waypoint index. Default is the next waypoint.</p>
+<p>(Optional) Waypoint index. Default is the next waypoint.</p>
 
           </div>
         </div>
@@ -21748,7 +21798,7 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
           </div>
           <div class="w3-half">
               
-<p>Name of the unit. Default is of the whole group.</p>
+<p>(Optional) Name of the unit. Default is of the whole group.</p>
 
           </div>
         </div>
@@ -21761,7 +21811,7 @@ If this group belongs to an AIRWING, BRIGADE or FLEET, it will be added to the w
           </div>
           <div class="w3-half">
               
-<p>If <code>false</code>, cargo weight that is only <em>reserved</em> is <strong>not</strong> counted. By default (<code>true</code> or <code>nil</code>), the reserved cargo is included.</p>
+<p>(Optional) If <code>false</code>, cargo weight that is only <em>reserved</em> is <strong>not</strong> counted. By default (<code>true</code> or <code>nil</code>), the reserved cargo is included.</p>
 
           </div>
         </div>
@@ -21853,7 +21903,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Name of the unit. Default is of the whole group.</p>
+<p>(Optional) Name of the unit. Default is of the whole group.</p>
 
           </div>
         </div>
@@ -21866,7 +21916,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>If <code>false</code>, cargo weight that is only <em>reserved</em> is <strong>not</strong> counted. By default (<code>true</code> or <code>nil</code>), the reserved cargo is included.</p>
+<p>(Optional) If <code>false</code>, cargo weight that is only <em>reserved</em> is <strong>not</strong> counted. By default (<code>true</code> or <code>nil</code>), the reserved cargo is included.</p>
 
           </div>
         </div>
@@ -22930,7 +22980,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Only consider threats with level greater or equal to this number. Default 1 (so unarmed units wont be considered).</p>
+<p>(Optional) Only consider threats with level greater or equal to this number. Default 1 (so unarmed units wont be considered).</p>
 
           </div>
         </div>
@@ -22943,7 +22993,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Only consider threats with level smaller or queal to this number. Default 10.</p>
+<p>(Optional) Only consider threats with level smaller or queal to this number. Default 10.</p>
 
           </div>
         </div>
@@ -22995,7 +23045,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Waypoint index. Default is the next waypoint.</p>
+<p>(Optional) Waypoint index. Default is the next waypoint.</p>
 
           </div>
         </div>
@@ -23039,7 +23089,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Number of the unit in the group. Default first unit.</p>
+<p>(Optional) Number of the unit in the group. Default first unit.</p>
 
           </div>
         </div>
@@ -23083,7 +23133,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Name of the unit. Default is of the whole group.</p>
+<p>(Optional) Name of the unit. Default is of the whole group.</p>
 
           </div>
         </div>
@@ -23096,7 +23146,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>If <code>false</code>, cargo weight that is only <em>reserved</em> is <strong>not</strong> counted. By default (<code>true</code> or <code>nil</code>), the reserved cargo is included.</p>
+<p>(Optional) If <code>false</code>, cargo weight that is only <em>reserved</em> is <strong>not</strong> counted. By default (<code>true</code> or <code>nil</code>), the reserved cargo is included.</p>
 
           </div>
         </div>
@@ -23629,7 +23679,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Unique ID of the waypoint. Default is new waypoint index after the last current one.</p>
+<p>(Optional) Unique ID of the waypoint. Default is new waypoint index after the last current one.</p>
 
           </div>
         </div>
@@ -23706,7 +23756,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>If <code>true</code>, return first waypoint if last waypoint was reached. Default is patrol ad infinitum value set.</p>
+<p>(Optional) If <code>true</code>, return first waypoint if last waypoint was reached. Default is patrol ad infinitum value set.</p>
 
           </div>
         </div>
@@ -23719,7 +23769,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Waypoint index from which the next index is returned. Default is the last waypoint passed.</p>
+<p>(Optional) Waypoint index from which the next index is returned. Default is the last waypoint passed.</p>
 
           </div>
         </div>
@@ -24016,7 +24066,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Name of the unit. Default is of the whole group.</p>
+<p>(Optional) Name of the unit. Default is of the whole group.</p>
 
           </div>
         </div>
@@ -24029,7 +24079,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>If <code>false</code>, cargo weight that is only <em>reserved</em> is <strong>not</strong> counted. By default (<code>true</code> or <code>nil</code>), the reserved cargo is included.</p>
+<p>(Optional) If <code>false</code>, cargo weight that is only <em>reserved</em> is <strong>not</strong> counted. By default (<code>true</code> or <code>nil</code>), the reserved cargo is included.</p>
 
           </div>
         </div>
@@ -24076,7 +24126,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Name of the unit. Default is of the whole group.</p>
+<p>(Optional) Name of the unit. Default is of the whole group.</p>
 
           </div>
         </div>
@@ -24123,7 +24173,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Name of the unit. Default is of the whole group.</p>
+<p>(Optional) Name of the unit. Default is of the whole group.</p>
 
           </div>
         </div>
@@ -24136,7 +24186,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>If <code>false</code>, cargo weight that is only <em>reserved</em> is <strong>not</strong> counted. By default (<code>true</code> or <code>nil</code>), the reserved cargo is included.</p>
+<p>(Optional) If <code>false</code>, cargo weight that is only <em>reserved</em> is <strong>not</strong> counted. By default (<code>true</code> or <code>nil</code>), the reserved cargo is included.</p>
 
           </div>
         </div>
@@ -25926,7 +25976,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Duration in seconds how long the waypoints are displayed before they are automatically removed. Default is that they are never removed.</p>
+<p>(Optional) Duration in seconds how long the waypoints are displayed before they are automatically removed. Default is that they are never removed.</p>
 
           </div>
         </div>
@@ -26159,7 +26209,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Mission time when task is executed. Default in 5 seconds. If argument passed as #number, it defines a relative delay in seconds.</p>
+<p>(Optional) Mission time when task is executed. Default in 5 seconds. If argument passed as #number, it defines a relative delay in seconds.</p>
 
           </div>
         </div>
@@ -26185,7 +26235,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Priority of the task.</p>
+<p>(Optional) Priority of the task. Default is 50.</p>
 
           </div>
         </div>
@@ -26198,7 +26248,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Duration before task is cancelled in seconds counted after task started. Default never.</p>
+<p>(Optional) Duration before task is cancelled in seconds counted after task started. Default never.</p>
 
           </div>
         </div>
@@ -27564,7 +27614,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>If <code>true</code>, the callsign is prepended to the given text. Default <code>false</code>.</p>
+<p>(Optional) If <code>true</code>, the callsign is prepended to the given text. Default <code>false</code>.</p>
 
           </div>
         </div>
@@ -27577,7 +27627,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Override sender frequency, helpful when you need multiple radios from the same sender. Default is the frequency set for the OpsGroup.</p>
+<p>(Optional) Override sender frequency, helpful when you need multiple radios from the same sender. Default is the frequency set for the OpsGroup.</p>
 
           </div>
         </div>
@@ -27843,7 +27893,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Delay in seconds before the markers are removed. Default is immediately.</p>
+<p>(Optional) Delay in seconds before the markers are removed. Default is immediately.</p>
 
           </div>
         </div>
@@ -27890,7 +27940,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Delay in seconds before the group will be despawned. Default immediately</p>
+<p>(Optional) Delay in seconds before the group will be despawned. Default immediately</p>
 
           </div>
         </div>
@@ -28040,7 +28090,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Delay in seconds. Default now.</p>
+<p>(Optional) Delay in seconds. Default now.</p>
 
           </div>
         </div>
@@ -28066,7 +28116,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Name of the element that should be destroyed. Default is all elements.</p>
+<p>(Optional) Name of the element that should be destroyed. Default is all elements.</p>
 
           </div>
         </div>
@@ -28110,7 +28160,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Altitude in feet. Default is 10,000 ft for airplanes and 1,500 feet for helicopters.</p>
+<p>(Optional) Altitude in feet. Default is 10,000 ft for airplanes and 1,500 feet for helicopters.</p>
 
           </div>
         </div>
@@ -28234,7 +28284,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Length of loading zone in meters. Default 50 m.</p>
+<p>(Optional) Length of loading zone in meters. Default 50 m.</p>
 
           </div>
         </div>
@@ -28247,7 +28297,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Width of loading zone in meters. Default 20 m.</p>
+<p>(Optional) Width of loading zone in meters. Default 20 m.</p>
 
           </div>
         </div>
@@ -28291,7 +28341,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Length of loading zone in meters. Default 50 m.</p>
+<p>(Optional) Length of loading zone in meters. Default 50 m.</p>
 
           </div>
         </div>
@@ -28304,7 +28354,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Width of loading zone in meters. Default 20 m.</p>
+<p>(Optional) Width of loading zone in meters. Default 20 m.</p>
 
           </div>
         </div>
@@ -28348,7 +28398,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Length of loading zone in meters. Default 50 m.</p>
+<p>(Optional) Length of loading zone in meters. Default 50 m.</p>
 
           </div>
         </div>
@@ -28361,7 +28411,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Width of loading zone in meters. Default 20 m.</p>
+<p>(Optional) Width of loading zone in meters. Default 20 m.</p>
 
           </div>
         </div>
@@ -28405,7 +28455,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Length of loading zone in meters. Default 50 m.</p>
+<p>(Optional) Length of loading zone in meters. Default 50 m.</p>
 
           </div>
         </div>
@@ -28418,7 +28468,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Width of loading zone in meters. Default 20 m.</p>
+<p>(Optional) Width of loading zone in meters. Default 20 m.</p>
 
           </div>
         </div>
@@ -28462,7 +28512,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Length of loading zone in meters. Default 50 m.</p>
+<p>(Optional) Length of loading zone in meters. Default 50 m.</p>
 
           </div>
         </div>
@@ -28475,7 +28525,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Width of loading zone in meters. Default 20 m.</p>
+<p>(Optional) Width of loading zone in meters. Default 20 m.</p>
 
           </div>
         </div>
@@ -28519,7 +28569,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Length of loading zone in meters. Default 50 m.</p>
+<p>(Optional) Length of loading zone in meters. Default 50 m.</p>
 
           </div>
         </div>
@@ -28532,7 +28582,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Width of loading zone in meters. Default 20 m.</p>
+<p>(Optional) Width of loading zone in meters. Default 20 m.</p>
 
           </div>
         </div>
@@ -28576,7 +28626,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Length of loading zone in meters. Default 50 m.</p>
+<p>(Optional) Length of loading zone in meters. Default 50 m.</p>
 
           </div>
         </div>
@@ -28589,7 +28639,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Width of loading zone in meters. Default 20 m.</p>
+<p>(Optional) Width of loading zone in meters. Default 20 m.</p>
 
           </div>
         </div>
@@ -28633,7 +28683,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Length of loading zone in meters. Default 50 m.</p>
+<p>(Optional) Length of loading zone in meters. Default 50 m.</p>
 
           </div>
         </div>
@@ -28646,7 +28696,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Width of loading zone in meters. Default 20 m.</p>
+<p>(Optional) Width of loading zone in meters. Default 20 m.</p>
 
           </div>
         </div>
@@ -28690,7 +28740,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Length of loading zone in meters. Default 50 m.</p>
+<p>(Optional) Length of loading zone in meters. Default 50 m.</p>
 
           </div>
         </div>
@@ -28703,7 +28753,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Width of loading zone in meters. Default 20 m.</p>
+<p>(Optional) Width of loading zone in meters. Default 20 m.</p>
 
           </div>
         </div>
@@ -28747,7 +28797,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Length of loading zone in meters. Default 50 m.</p>
+<p>(Optional) Length of loading zone in meters. Default 50 m.</p>
 
           </div>
         </div>
@@ -28760,7 +28810,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Width of loading zone in meters. Default 20 m.</p>
+<p>(Optional) Width of loading zone in meters. Default 20 m.</p>
 
           </div>
         </div>
@@ -28851,7 +28901,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Alarm state of group. Default is <code>AI.Option.Ground.val.ALARM_STATE.AUTO</code> (0).</p>
+<p>(Optional) Alarm state of group. Default is <code>AI.Option.Ground.val.ALARM_STATE.AUTO</code> (0).</p>
 
           </div>
         </div>
@@ -28895,7 +28945,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Altitude in feet. Default is 10,000 ft for airplanes and 1,500 feet for helicopters.</p>
+<p>(Optional) Altitude in feet. Default is 10,000 ft for airplanes and 1,500 feet for helicopters.</p>
 
           </div>
         </div>
@@ -28952,7 +29002,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Callsign number. Default 1.</p>
+<p>(Optional) Callsign number. Default 1.</p>
 
           </div>
         </div>
@@ -28996,7 +29046,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>If <code>true</code>, EPLRS is on by default. If <code>false</code> default EPLRS setting is off. If <code>nil</code>, default is on if group has EPLRS and off if it does not have a datalink.</p>
+<p>(Optional) If <code>true</code>, EPLRS is on by default. If <code>false</code> default EPLRS setting is off. If <code>nil</code>, default is on if group has EPLRS and off if it does not have a datalink.</p>
 
           </div>
         </div>
@@ -29040,7 +29090,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>If <code>true</code>, EPLRS is on by default. If <code>false</code> default EPLRS setting is off. If <code>nil</code>, default is on if group has EPLRS and off if it does not have a datalink.</p>
+<p>(Optional) If <code>true</code>, EPLRS is on by default. If <code>false</code> default EPLRS setting is off. If <code>nil</code>, default is on if group has EPLRS and off if it does not have a datalink.</p>
 
           </div>
         </div>
@@ -29128,7 +29178,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>ICLS channel. Default is 1.</p>
+<p>(Optional) ICLS channel. Default is 1.</p>
 
           </div>
         </div>
@@ -29141,7 +29191,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Morse code. Default "XXX".</p>
+<p>(Optional) Morse code. Default "XXX".</p>
 
           </div>
         </div>
@@ -29167,7 +29217,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>If true, TACAN is off by default.</p>
+<p>(Optional) If true, TACAN is off by default.</p>
 
           </div>
         </div>
@@ -29211,7 +29261,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>If <code>true</code>, group is immortal by default.</p>
+<p>(Optional) If <code>true</code>, group is immortal by default.</p>
 
           </div>
         </div>
@@ -29255,7 +29305,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>If <code>true</code>, group is ivisible by default.</p>
+<p>(Optional) If <code>true</code>, group is ivisible by default.</p>
 
           </div>
         </div>
@@ -29302,7 +29352,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>ROE of group. Default is <code>ENUMS.ROE.ReturnFire</code>.</p>
+<p>(Optional) ROE of group. Default is <code>ENUMS.ROE.ReturnFire</code>.</p>
 
           </div>
         </div>
@@ -29349,7 +29399,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>ROT of group. Default is <code>ENUMS.ROT.PassiveDefense</code>.</p>
+<p>(Optional) ROT of group. Default is <code>ENUMS.ROT.PassiveDefense</code>.</p>
 
           </div>
         </div>
@@ -29393,7 +29443,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Radio frequency in MHz. Default 251 MHz.</p>
+<p>(Optional) Radio frequency in MHz. Default 251 MHz.</p>
 
           </div>
         </div>
@@ -29406,7 +29456,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Radio modulation. Default <code>radio.modulation.AM</code>.</p>
+<p>(Optional) Radio modulation. Default <code>radio.modulation.AM</code>.</p>
 
           </div>
         </div>
@@ -29419,7 +29469,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>If true, radio is OFF by default.</p>
+<p>(Optional) If true, radio is OFF by default.</p>
 
           </div>
         </div>
@@ -29507,7 +29557,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>TACAN channel. Default is 74.</p>
+<p>(Optional) TACAN channel. Default is 74.</p>
 
           </div>
         </div>
@@ -29520,7 +29570,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Morse code. Default "XXX".</p>
+<p>Optional)  Morse code. Default "XXX".</p>
 
           </div>
         </div>
@@ -29546,7 +29596,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>TACAN mode. Default is "X" for ground and "Y" for airborne units.</p>
+<p>(Optional) TACAN mode. Default is "X" for ground and "Y" for airborne units.</p>
 
           </div>
         </div>
@@ -29559,7 +29609,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>If true, TACAN is off by default.</p>
+<p>(Optional) If true, TACAN is off by default.</p>
 
           </div>
         </div>
@@ -29606,7 +29656,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>If <code>true</code>, detection is on. If <code>false</code> or <code>nil</code>, detection is off. Default is off.</p>
+<p>(Optional) If <code>true</code>, detection is on. If <code>false</code> or <code>nil</code>, detection is off. Default is off.</p>
 
           </div>
         </div>
@@ -29680,7 +29730,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Max range in NM. Only detected targets within this radius from the group will be engaged. Default is 25 NM.</p>
+<p>(Optional) Max range in NM. Only detected targets within this radius from the group will be engaged. Default is 25 NM.</p>
 
           </div>
         </div>
@@ -29693,7 +29743,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Types of target attributes that will be engaged. See <a href="https://wiki.hoggitworld.com/view/DCS_enum_attributes">DCS enum attributes</a>. Default "All".</p>
+<p>(Optional) Types of target attributes that will be engaged. See <a href="https://wiki.hoggitworld.com/view/DCS_enum_attributes">DCS enum attributes</a>. Default "All".</p>
 
           </div>
         </div>
@@ -29706,7 +29756,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Set of zones in which targets are engaged. Default is anywhere.</p>
+<p>(Optional) Set of zones in which targets are engaged. Default is anywhere.</p>
 
           </div>
         </div>
@@ -29719,7 +29769,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Set of zones in which targets are <em>not</em> engaged. Default is nowhere.</p>
+<p>(Optional) Set of zones in which targets are <em>not</em> engaged. Default is nowhere.</p>
 
           </div>
         </div>
@@ -29763,7 +29813,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Laser code. Default 1688.</p>
+<p>(Optional) Laser code. Default 1688.</p>
 
           </div>
         </div>
@@ -29776,7 +29826,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Check if lasing unit has line of sight to target coordinate. Default is <code>true</code>.</p>
+<p>(Optional) Check if lasing unit has line of sight to target coordinate. Default is <code>true</code>.</p>
 
           </div>
         </div>
@@ -29802,7 +29852,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Time interval in seconds the beam gets up for moving targets. Default every 0.5 sec.</p>
+<p>(Optional) Time interval in seconds the beam gets up for moving targets. Default every 0.5 sec.</p>
 
           </div>
         </div>
@@ -30029,7 +30079,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Gender: "male" or "female" (default).</p>
+<p>(Optional) Gender: "male" or "female" (default).</p>
 
           </div>
         </div>
@@ -30042,7 +30092,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Culture, e.g. "en-GB" (default).</p>
+<p>(Optional) Culture, e.g. "en-GB" (default).</p>
 
           </div>
         </div>
@@ -30055,7 +30105,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Specific voice. Overrides <code>Gender</code> and <code>Culture</code>.</p>
+<p>(Optional) Specific voice. Overrides <code>Gender</code> and <code>Culture</code>.</p>
 
           </div>
         </div>
@@ -30068,7 +30118,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>SRS port. Default 5002.</p>
+<p>(Optional) SRS port. Default 5002.</p>
 
           </div>
         </div>
@@ -30081,7 +30131,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Full path to the google credentials JSON file, e.g. <code>"C:\Users\myUsername\Downloads\key.json"</code>.</p>
+<p>(Optional) Full path to the google credentials JSON file, e.g. <code>"C:\Users\myUsername\Downloads\key.json"</code>.</p>
 
           </div>
         </div>
@@ -30094,7 +30144,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Label of the SRS comms for the SRS Radio overlay. Defaults to "ROBOT". No spaces allowed!</p>
+<p>(Optional) Label of the SRS comms for the SRS Radio overlay. Defaults to "ROBOT". No spaces allowed!</p>
 
           </div>
         </div>
@@ -30107,7 +30157,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Volume to be set, 0.0 = silent, 1.0 = loudest. Defaults to 1.0</p>
+<p>(Optional) Volume to be set, 0.0 = silent, 1.0 = loudest. Defaults to 1.0</p>
 
           </div>
         </div>
@@ -30151,7 +30201,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Speed in knots. Default is 70% of max speed.</p>
+<p>(Optional) Speed in knots. Default is 70% of max speed.</p>
 
           </div>
         </div>
@@ -30319,7 +30369,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Level of output (higher=more). Default 0.</p>
+<p>(Optional) Level of output (higher=more). Default 0.</p>
 
           </div>
         </div>
@@ -30413,7 +30463,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Alarm state of group. Default is 0="Auto".</p>
+<p>(Optional) Alarm state of group. Default is 0="Auto".</p>
 
           </div>
         </div>
@@ -30602,7 +30652,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>New formation the group will fly in. Default is the setting of <code>SetDefaultFormation()</code>.</p>
+<p>(Optional) New formation the group will fly in. Default is the setting of <code>SetDefaultFormation()</code>.</p>
 
           </div>
         </div>
@@ -30646,7 +30696,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>ICLS Channel. Default is what is set in <code>SetDefaultICLS()</code> so usually channel 1.</p>
+<p>(Optional) ICLS Channel. Default is what is set in <code>SetDefaultICLS()</code> so usually channel 1.</p>
 
           </div>
         </div>
@@ -30659,7 +30709,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>ICLS morse code. Default is what is set in <code>SetDefaultICLS()</code> so usually "XXX".</p>
+<p>(Optional) ICLS morse code. Default is what is set in <code>SetDefaultICLS()</code> so usually "XXX".</p>
 
           </div>
         </div>
@@ -30672,7 +30722,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Name of the unit in the group which should activate the ICLS beacon. Can also be given as #number to specify the unit number. Default is the first unit of the group.</p>
+<p>(Optional) Name of the unit in the group which should activate the ICLS beacon. Can also be given as #number to specify the unit number. Default is the first unit of the group.</p>
 
           </div>
         </div>
@@ -30804,7 +30854,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>ROE of group. Default is value set in <code>SetDefaultROE</code> (usually <code>ENUMS.ROE.ReturnFire</code>).</p>
+<p>(Optional) ROE of group. Default is value set in <code>SetDefaultROE</code> (usually <code>ENUMS.ROE.ReturnFire</code>).</p>
 
           </div>
         </div>
@@ -30848,7 +30898,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>ROT of group. Default is value set in <code>:SetDefaultROT</code> (usually <code>ENUMS.ROT.PassiveDefense</code>).</p>
+<p>(Optional) ROT of group. Default is value set in <code>:SetDefaultROT</code> (usually <code>ENUMS.ROT.PassiveDefense</code>).</p>
 
           </div>
         </div>
@@ -30892,7 +30942,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Radio frequency in MHz. Default is value set in <code>SetDefaultRadio</code> (usually 251 MHz).</p>
+<p>(Optional) Radio frequency in MHz. Default is value set in <code>SetDefaultRadio</code> (usually 251 MHz).</p>
 
           </div>
         </div>
@@ -30905,7 +30955,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Radio modulation. Default is value set in <code>SetDefaultRadio</code> (usually <code>radio.modulation.AM</code>).</p>
+<p>(Optional) Radio modulation. Default is value set in <code>SetDefaultRadio</code> (usually <code>radio.modulation.AM</code>).</p>
 
           </div>
         </div>
@@ -30962,7 +31012,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>TACAN morse code. Default is the value set in <a href="##(OPSGROUP).SetDefaultTACAN">OPSGROUP.SetDefaultTACAN</a> or if not set "XXX".</p>
+<p>(Optional) TACAN morse code. Default is the value set in <a href="##(OPSGROUP).SetDefaultTACAN">OPSGROUP.SetDefaultTACAN</a> or if not set "XXX".</p>
 
           </div>
         </div>
@@ -30975,7 +31025,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Name of the unit in the group which should activate the TACAN beacon. Can also be given as #number to specify the unit number. Default is the first unit of the group.</p>
+<p>(Optional) Name of the unit in the group which should activate the TACAN beacon. Can also be given as #number to specify the unit number. Default is the first unit of the group.</p>
 
           </div>
         </div>
@@ -30988,7 +31038,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>TACAN channel mode "X" or "Y". Default is "Y" for aircraft and "X" for ground and naval groups.</p>
+<p>(Optional) TACAN channel mode "X" or "Y". Default is "Y" for aircraft and "X" for ground and naval groups.</p>
 
           </div>
         </div>
@@ -31045,7 +31095,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Delay in seconds before respawn happens. Default 0.</p>
+<p>(Optional) Delay in seconds before respawn happens. Default 0.</p>
 
           </div>
         </div>
@@ -31058,7 +31108,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>If <code>true</code>, dont pause a running mission.</p>
+<p>(Optional) If <code>true</code>, dont pause a running mission.</p>
 
           </div>
         </div>
@@ -31516,7 +31566,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Waypoint index/number. Default is as last waypoint.</p>
+<p>(Optional) Waypoint index/number. Default is as last waypoint.</p>
 
           </div>
         </div>
@@ -33493,7 +33543,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Delay in seconds before respawn happens. Default 0.</p>
+<p>(Optional) Delay in seconds before respawn happens. Default 0.</p>
 
           </div>
         </div>
@@ -33506,7 +33556,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>(optional) The template of the Group retrieved with GROUP:GetTemplate(). If the template is not provided, the template will be retrieved of the group itself.</p>
+<p>(Optional) The template of the Group retrieved with GROUP:GetTemplate(). If the template is not provided, the template will be retrieved of the group itself.</p>
 
           </div>
         </div>
@@ -33519,7 +33569,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Reset waypoints and reinit group if <code>true</code>.</p>
+<p>(Optional) Reset waypoints and reinit group if <code>true</code>.</p>
 
           </div>
         </div>
@@ -33587,7 +33637,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Set task instead of pushing it.</p>
+<p>(Optional) Set task instead of pushing it. Default is to push it.</p>
 
           </div>
         </div>
@@ -33600,7 +33650,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Delay in seconds. Default nil.</p>
+<p>(Optional) Delay in seconds. Default nil.</p>
 
           </div>
         </div>
@@ -33802,7 +33852,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Template to set. Default is from the GROUP.</p>
+<p>(Optional) Template to set. Default is from the GROUP.</p>
 
           </div>
         </div>
@@ -34002,7 +34052,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>Delay in seconds before respawn happens. Default 0.</p>
+<p>(Optional) Delay in seconds before respawn happens. Default 0.</p>
 
           </div>
         </div>
@@ -34015,7 +34065,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>(optional) The template of the Group retrieved with GROUP:GetTemplate(). If the template is not provided, the template will be retrieved of the group itself.</p>
+<p>(Optional) The template of the Group retrieved with GROUP:GetTemplate(). If the template is not provided, the template will be retrieved of the group itself.</p>
 
           </div>
         </div>
@@ -34103,7 +34153,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>TACAN data table. Default is the default TACAN settings.</p>
+<p>(Optional) TACAN data table. Default is the default TACAN settings.</p>
 
           </div>
         </div>
@@ -37606,7 +37656,7 @@ Optionally, you can calculate the current max weight possible, which accounts fo
           </div>
           <div class="w3-half">
               
-<p>The task to cancel. Default is the current task (if any).</p>
+<p>(Optional) The task to cancel. Default is the current task (if any).</p>
 
           </div>
         </div>
