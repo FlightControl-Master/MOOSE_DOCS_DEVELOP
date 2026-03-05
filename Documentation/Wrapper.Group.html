@@ -3511,7 +3511,7 @@ amount of fuel in the group.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(GROUP).TaskAttackGroup">GROUP:TaskAttackGroup(AttackGroup, WeaponType, WeaponExpend, AttackQty, Direction, Altitude, GroupAttack)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(GROUP).TaskAttackGroup">GROUP:TaskAttackGroup(AttackGroup, WeaponType, WeaponExpend, AttackQty, Direction, Altitude, GroupAttack, AttackQtyLimit)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(AIR + GROUND) Attack a Controllable.</p>
 </td>
@@ -5563,18 +5563,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
     
 
 
@@ -10758,18 +10747,7 @@ These settings can be provided by calling the relevant Init...() methods of the 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
     
 
 
@@ -11205,7 +11183,7 @@ Note that a controllable can only have one beacon activated at a time with the e
           </div>
           <div class="w3-half">
               
-<p>(Optional) Link4 Frequency in MHz, e.g. 336 (defaults to 336 MHz)</p>
+<p>Link4 Frequency in MHz, e.g. 336 (defaults to 336 MHz)</p>
 
           </div>
         </div>
@@ -20862,7 +20840,7 @@ Warning! When you switch this option off, the airborne group will continue to fl
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(GROUP).TaskAttackGroup" ><strong>GROUP:TaskAttackGroup(AttackGroup, WeaponType, WeaponExpend, AttackQty, Direction, Altitude, GroupAttack)</strong></a></h2>
+<h2><a id="#(GROUP).TaskAttackGroup" ><strong>GROUP:TaskAttackGroup(AttackGroup, WeaponType, WeaponExpend, AttackQty, Direction, Altitude, GroupAttack, AttackQtyLimit)</strong></a></h2>
 </div>
     
 <p>(AIR + GROUND) Attack a Controllable.</p>
@@ -20963,6 +20941,16 @@ Warning! When you switch this option off, the airborne group will continue to fl
               
 <p>(Optional) If true, attack as group.</p>
 
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+            <strong><strong>AttackQtyLimit</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              <p></p>
           </div>
         </div>
     <h2><strong>Return value:</strong></h2>
@@ -24544,18 +24532,7 @@ mygroup:WayPointExecute()</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
     
 
 
@@ -28815,18 +28792,7 @@ Coordinates are dependent on the position of the maps origin.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
     
 
 
@@ -29607,18 +29573,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
     
 
 
@@ -29910,18 +29865,7 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
     
 
 
