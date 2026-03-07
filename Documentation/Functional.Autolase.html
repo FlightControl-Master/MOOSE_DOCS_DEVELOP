@@ -1964,7 +1964,7 @@
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetUsingSRS">AUTOLASE:SetUsingSRS(OnOff, Path, Frequency, Modulation, Label, Gender, Culture, Port, Voice, Volume, PathToGoogleKey)</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(AUTOLASE).SetUsingSRS">AUTOLASE:SetUsingSRS(OnOff, Path, Frequency, Modulation, Label, Gender, Culture, Port, Voice, Volume, PathToGoogleKey, Provider)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(User) Function enable sending messages via SRS.</p>
 </td>
@@ -2411,39 +2411,6 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(AUTOLASE).LaseDistance" ><strong>AUTOLASE.LaseDistance</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(AUTOLASE).LaseDuration" ><strong>AUTOLASE.LaseDuration</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).LaserCodes" ><strong>AUTOLASE.LaserCodes</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     
 <a id="#(AUTOLASE).Menu" ><strong>AUTOLASE.Menu</strong></a>
     
@@ -2554,17 +2521,6 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(AUTOLASE).RoundingPrecision" ><strong>AUTOLASE.RoundingPrecision</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     
 <a id="#(AUTOLASE).SRS" ><strong>AUTOLASE.SRS</strong></a>
     
@@ -2572,39 +2528,6 @@
 
     
 <p> set up SRS</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(AUTOLASE).SRSFreq" ><strong>AUTOLASE.SRSFreq</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(AUTOLASE).SRSMod" ><strong>AUTOLASE.SRSMod</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #string
-<a id="#(AUTOLASE).SRSPath" ><strong>AUTOLASE.SRSPath</strong></a>
-    
-
 
 </div>
 
@@ -2758,19 +2681,8 @@
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #number
-<a id="#(AUTOLASE).minthreatlevel" ><strong>AUTOLASE.minthreatlevel</strong></a>
     
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
-<a id="#(AUTOLASE).notifypilots" ><strong>AUTOLASE.notifypilots</strong></a>
+<a id="#(AUTOLASE).minthreatlevel" ><strong>AUTOLASE.minthreatlevel</strong></a>
     
 
 
@@ -2793,28 +2705,6 @@
 
     #table
 <a id="#(AUTOLASE).playermenus" ><strong>AUTOLASE.playermenus</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(AUTOLASE).reporttimelong" ><strong>AUTOLASE.reporttimelong</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(AUTOLASE).reporttimeshort" ><strong>AUTOLASE.reporttimeshort</strong></a>
     
 
 
@@ -4697,7 +4587,7 @@ Step 2 - send a message, e.g.
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
-<h2><a id="#(AUTOLASE).SetUsingSRS" ><strong>AUTOLASE:SetUsingSRS(OnOff, Path, Frequency, Modulation, Label, Gender, Culture, Port, Voice, Volume, PathToGoogleKey)</strong></a></h2>
+<h2><a id="#(AUTOLASE).SetUsingSRS" ><strong>AUTOLASE:SetUsingSRS(OnOff, Path, Frequency, Modulation, Label, Gender, Culture, Port, Voice, Volume, PathToGoogleKey, Provider)</strong></a></h2>
 </div>
     
 <p>(User) Function enable sending messages via SRS.</p>
@@ -4836,7 +4726,7 @@ Note that this must be installed on your windows system. Can also be Google voic
           </div>
           <div class="w3-half">
               
-<p>(Optional) Volume - between 0.0 (silent) and 1.0 (loudest)</p>
+<p>(Optional) Volume - between 0.0 (silent) and 1.0 (loudest).</p>
 
           </div>
         </div>
@@ -4849,7 +4739,20 @@ Note that this must be installed on your windows system. Can also be Google voic
           </div>
           <div class="w3-half">
               
-<p>(Optional) Path to your google key if you want to use google TTS</p>
+<p>(Optional) Path to your google key if you want to use google TTS.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #string
+            <strong><strong>Provider</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>(Optional) TTS Provider to be used.</p>
 
           </div>
         </div>
