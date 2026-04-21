@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TARS — Optical Footprint Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #0a0d10;
+    --panel:    #0f1419;
+    --border:   #1e2d3d;
+    --accent:   #00c8ff;
+    --accent2:  #ff6b35;
+    --green:    #39ff85;
+    --dim:      #3a4a5a;
+    --text:     #c8d8e8;
+    --mono:     'Share Tech Mono', monospace;
+    --sans:     'Barlow Condensed', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Scanline overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,200,255,0.015) 2px,
+      rgba(0,200,255,0.015) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 18px 32px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    background: var(--panel);
+  }
+
+  header .logo {
+    font-family: var(--mono);
+    font-size: 22px;
+    color: var(--accent);
+    letter-spacing: 4px;
+    text-shadow: 0 0 20px rgba(0,200,255,0.5);
+  }
+
+  header .subtitle {
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: var(--dim);
+    text-transform: uppercase;
+  }
+
+  header .version {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--dim);
+    border: 1px solid var(--border);
+    padding: 3px 8px;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 0;
+    min-height: calc(100vh - 61px);
+  }
+
+  /* ── LEFT PANEL ── */
+  .controls {
+    background: var(--panel);
+    border-right: 1px solid var(--border);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow-y: auto;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    padding: 14px 0 8px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8px;
+  }
+
+  .section-label:first-child { padding-top: 0; }
+
+  .slider-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px 0;
+  }
+
+  .slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .slider-name {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text);
+    text-transform: uppercase;
+  }
+
+  .slider-value {
+    font-family: var(--mono);
+    font-size: 15px;
+    color: var(--accent);
+    min-width: 80px;
+    text-align: right;
+  }
+
+  .slider-hint {
+    font-size: 11px;
+    color: var(--dim);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 3px;
+    background: var(--border);
+    outline: none;
+    border-radius: 0;
+    cursor: pointer;
+    margin: 4px 0;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+    border-radius: 0;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    cursor: pointer;
+    box-shadow: 0 0 8px var(--accent);
+    transition: transform 0.1s;
+  }
+
+  input[type=range]::-webkit-slider-thumb:active {
+    transform: scale(1.3);
+  }
+
+  input[type=range]:hover { background: var(--dim); }
+
+  /* ── RESULTS ── */
+  .results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .result-card {
+    background: rgba(0,200,255,0.04);
+    border: 1px solid var(--border);
+    padding: 12px 14px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .result-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--accent);
+  }
+
+  .result-card.orange::before { background: var(--accent2); }
+  .result-card.green::before  { background: var(--green); }
+
+  .result-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--dim);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .result-value {
+    font-family: var(--mono);
+    font-size: 20px;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .result-card.orange .result-value { color: var(--accent2); }
+  .result-card.green  .result-value { color: var(--green); }
+
+  .result-unit {
+    font-size: 11px;
+    color: var(--dim);
+    margin-top: 2px;
+  }
+
+  .warning-box {
+    display: none;
+    background: rgba(255,107,53,0.08);
+    border: 1px solid var(--accent2);
+    border-left: 3px solid var(--accent2);
+    padding: 10px 12px;
+    font-size: 12px;
+    color: var(--accent2);
+    margin-top: 4px;
+    font-family: var(--mono);
+    line-height: 1.5;
+  }
+
+  /* ── RIGHT PANEL: DIAGRAM ── */
+  .diagram-panel {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: var(--bg);
+    position: relative;
+  }
+
+  .diagram-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(rgba(0,200,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,200,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  .diagram-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--dim);
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+
+  canvas#footprintCanvas {
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    border: 1px solid var(--border);
+    background: #080b0e;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Side view canvas */
+  canvas#sideCanvas {
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    border: 1px solid var(--border);
+    background: #080b0e;
+    position: relative;
+    z-index: 1;
+    margin-top: 4px;
+  }
+
+  .diagram-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--dim);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-family: var(--mono);
+  }
+
+  /* Validity indicator */
+  .validity-strip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+  }
+
+  .validity-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .validity-dot.warn {
+    background: var(--accent2);
+    box-shadow: 0 0 8px var(--accent2);
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">TARS</div>
+  <div class="subtitle">Optical Footprint Calculator</div>
+  <div class="version">v2.2</div>
+</header>
+
+<div class="main">
+
+  <!-- LEFT: CONTROLS -->
+  <div class="controls">
+
+    <div class="section-label">Platform Parameters</div>
+
+    <div class="slider-row">
+      <div class="slider-header">
+        <span class="slider-name">Altitude AGL</span>
+        <span class="slider-value" id="val-alt">3000 m</span>
+      </div>
+      <div class="slider-hint">Height above ground level</div>
+      <input type="range" id="s-alt" min="50" max="12000" step="50" value="3000">
+    </div>
+
+    <div class="slider-row">
+      <div class="slider-header">
+        <span class="slider-name">Camera Offset</span>
+        <span class="slider-value" id="val-offset">60°</span>
+      </div>
+      <div class="slider-hint">Forward look angle from vertical</div>
+      <input type="range" id="s-offset" min="5" max="85" step="1" value="60">
+    </div>
+
+    <div class="slider-row">
+      <div class="slider-header">
+        <span class="slider-name">Field of View</span>
+        <span class="slider-value" id="val-fov">23°</span>
+      </div>
+      <div class="slider-hint">Camera half-angle (full cone width)</div>
+      <input type="range" id="s-fov" min="2" max="90" step="1" value="23">
+    </div>
+
+    <div class="section-label">Flight Parameters</div>
+
+    <div class="slider-row">
+      <div class="slider-header">
+        <span class="slider-name">Speed</span>
+        <span class="slider-value" id="val-speed">450 kn</span>
+      </div>
+      <div class="slider-hint">True airspeed in knots</div>
+      <input type="range" id="s-speed" min="50" max="600" step="10" value="450">
+    </div>
+
+    <div class="slider-row">
+      <div class="slider-header">
+        <span class="slider-name">Overlap</span>
+        <span class="slider-value" id="val-overlap">25%</span>
+      </div>
+      <div class="slider-hint">Desired frame overlap (0 = no overlap)</div>
+      <input type="range" id="s-overlap" min="0" max="80" step="5" value="25">
+    </div>
+
+    <div class="section-label">Footprint Results</div>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-label">Semi-axis A</div>
+        <div class="result-value" id="r-a">—</div>
+        <div class="result-unit">metres (along track)</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Semi-axis B</div>
+        <div class="result-value" id="r-b">—</div>
+        <div class="result-unit">metres (cross track)</div>
+      </div>
+      <div class="result-card orange">
+        <div class="result-label">Centre offset</div>
+        <div class="result-value" id="r-shift">—</div>
+        <div class="result-unit">metres ahead of A/C</div>
+      </div>
+      <div class="result-card orange">
+        <div class="result-label">Ground dist.</div>
+        <div class="result-value" id="r-dground">—</div>
+        <div class="result-unit">metres (nadir point)</div>
+      </div>
+      <div class="result-card green">
+        <div class="result-label">Shot interval</div>
+        <div class="result-value" id="r-interval">—</div>
+        <div class="result-unit">seconds</div>
+      </div>
+      <div class="result-card green">
+        <div class="result-label">Effective overlap</div>
+        <div class="result-value" id="r-eff-overlap">—</div>
+        <div class="result-unit">at current speed</div>
+      </div>
+    </div>
+
+    <div class="warning-box" id="warn-box"></div>
+
+  </div>
+
+  <!-- RIGHT: DIAGRAM -->
+  <div class="diagram-panel">
+
+    <div>
+      <div class="diagram-label">Top View — Ground Footprint (ellipse to scale)</div>
+      <canvas id="footprintCanvas" width="700" height="340"></canvas>
+    </div>
+
+    <div>
+      <div class="diagram-label">Side View — Camera Geometry</div>
+      <canvas id="sideCanvas" width="700" height="220"></canvas>
+    </div>
+
+    <div class="validity-strip" id="validity-strip">
+      <div class="validity-dot" id="validity-dot"></div>
+      <span id="validity-text">GEOMETRY VALID</span>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const RAD = Math.PI / 180;
+
+// Sliders
+const sAlt     = document.getElementById('s-alt');
+const sOffset  = document.getElementById('s-offset');
+const sFov     = document.getElementById('s-fov');
+const sSpeed   = document.getElementById('s-speed');
+const sOverlap = document.getElementById('s-overlap');
+
+// Value labels
+const vAlt     = document.getElementById('val-alt');
+const vOffset  = document.getElementById('val-offset');
+const vFov     = document.getElementById('val-fov');
+const vSpeed   = document.getElementById('val-speed');
+const vOverlap = document.getElementById('val-overlap');
+
+// Result cards
+const rA         = document.getElementById('r-a');
+const rB         = document.getElementById('r-b');
+const rShift     = document.getElementById('r-shift');
+const rDground   = document.getElementById('r-dground');
+const rInterval  = document.getElementById('r-interval');
+const rEffOvlap  = document.getElementById('r-eff-overlap');
+const warnBox    = document.getElementById('warn-box');
+
+// Canvases
+const cvTop  = document.getElementById('footprintCanvas');
+const ctxTop = cvTop.getContext('2d');
+const cvSide = document.getElementById('sideCanvas');
+const ctxSide= cvSide.getContext('2d');
+
+const validDot  = document.getElementById('validity-dot');
+const validText = document.getElementById('validity-text');
+
+function fmt(v, decimals=0) {
+  return v.toFixed(decimals);
+}
+
+function compute() {
+  const alt     = parseFloat(sAlt.value);
+  const offset  = parseFloat(sOffset.value) * RAD;   // radians
+  const fov     = parseFloat(sFov.value) * RAD;       // full FOV in rad
+  const half_fov= fov / 2;
+  const speed_ms= parseFloat(sSpeed.value) * 0.5144; // kn → m/s
+  const overlap = parseFloat(sOverlap.value) / 100;
+
+  // Labels
+  vAlt.textContent    = sAlt.value + ' m';
+  vOffset.textContent = sOffset.value + '°';
+  vFov.textContent    = sFov.value + '°';
+  vSpeed.textContent  = sSpeed.value + ' kn';
+  vOverlap.textContent= sOverlap.value + '%';
+
+  // Geometry
+  const d_ground = alt / Math.tan(offset);
+  const b        = d_ground * Math.tan(half_fov);
+
+  // Check if elev ± half_fov is geometrically valid
+  const elev_near = offset + half_fov;
+  const elev_far  = offset - half_fov;
+
+  let a, shift, valid = true, warnMsg = '';
+
+  if (elev_far <= RAD * 2) {
+    // Fallback: circle
+    a     = b;
+    shift = 0;
+    valid = false;
+    warnMsg = '⚠ ELEV − FOV/2 ≤ 2° — geometry degenerate.\nFallback: circular footprint (a = b).';
+  } else {
+    const d_near = alt / Math.tan(elev_near);
+    const d_far  = alt / Math.tan(elev_far);
+    a     = (d_far - d_near) / 2;
+    shift = (d_far + d_near) / 2 - d_ground;
+  }
+
+  // Shot interval
+  const diameter   = 2 * b;
+  const interval_raw = (diameter * (1 - overlap)) / speed_ms;
+  const interval   = Math.max(1, Math.min(120, interval_raw));
+  const clamped    = interval_raw < 1 || interval_raw > 120;
+
+  // Effective overlap at actual interval
+  const advance      = speed_ms * interval;
+  const eff_overlap  = Math.max(0, 1 - advance / diameter);
+
+  // Warnings
+  let warnings = [];
+  if (!valid) warnings.push(warnMsg);
+  if (clamped && interval_raw < 1)
+    warnings.push('⚠ Speed too high for desired overlap — interval clamped to 1s minimum.\nEffective overlap is lower than requested.');
+  if (interval_raw > 120)
+    warnings.push('⚠ Very slow speed — interval clamped to 120s maximum.');
+
+  if (warnings.length > 0) {
+    warnBox.style.display = 'block';
+    warnBox.textContent = warnings.join('\n\n');
+    validDot.classList.add('warn');
+    validText.textContent = 'GEOMETRY WARNING';
+  } else {
+    warnBox.style.display = 'none';
+    validDot.classList.remove('warn');
+    validText.textContent = 'GEOMETRY VALID';
+  }
+
+  // Update result cards
+  rA.textContent       = fmt(a) + ' m';
+  rB.textContent       = fmt(b) + ' m';
+  rShift.textContent   = fmt(d_ground + shift) + ' m';
+  rDground.textContent = fmt(d_ground) + ' m';
+  rInterval.textContent= fmt(interval, 1) + 's';
+  rEffOvlap.textContent= fmt(eff_overlap * 100, 0) + '%';
+
+  drawTop(a, b, shift, d_ground, alt);
+  drawSide(alt, offset, half_fov, d_ground, shift, a, b);
+}
+
+// ─── TOP VIEW ───
+function drawTop(a, b, shift, d_ground, alt) {
+  const W = cvTop.width, H = cvTop.height;
+  ctxTop.clearRect(0, 0, W, H);
+
+  const cx = W / 2;   // aircraft at horizontal centre
+  const ay = H - 50;  // aircraft position (bottom area)
+
+  // Scale: make sure ellipse fits
+  const ellipseCentre_y = ay - (d_ground + shift);
+  const maxExtent = Math.max(a, b, d_ground + shift + a + 60);
+  const scale = Math.min((H - 80) / maxExtent, (W * 0.38) / b);
+
+  const ec_y_px = ay - (d_ground + shift) * scale;
+
+  // Background grid lines
+  ctxTop.strokeStyle = 'rgba(30,45,61,0.8)';
+  ctxTop.lineWidth = 1;
+  for (let i = 0; i <= W; i += 40) {
+    ctxTop.beginPath();
+    ctxTop.moveTo(i, 0); ctxTop.lineTo(i, H);
+    ctxTop.stroke();
+  }
+  for (let j = 0; j <= H; j += 40) {
+    ctxTop.beginPath();
+    ctxTop.moveTo(0, j); ctxTop.lineTo(W, j);
+    ctxTop.stroke();
+  }
+
+  // Flight path line
+  ctxTop.strokeStyle = 'rgba(0,200,255,0.25)';
+  ctxTop.setLineDash([6, 6]);
+  ctxTop.lineWidth = 1;
+  ctxTop.beginPath();
+  ctxTop.moveTo(cx, 0);
+  ctxTop.lineTo(cx, H);
+  ctxTop.stroke();
+  ctxTop.setLineDash([]);
+
+  // Direction arrow at top
+  ctxTop.fillStyle = 'rgba(0,200,255,0.5)';
+  ctxTop.beginPath();
+  ctxTop.moveTo(cx, 20);
+  ctxTop.lineTo(cx - 6, 34);
+  ctxTop.lineTo(cx + 6, 34);
+  ctxTop.closePath();
+  ctxTop.fill();
+
+  // Ellipse fill
+  const bPx = b * scale;
+  const aPx = a * scale;
+
+  const grad = ctxTop.createRadialGradient(cx, ec_y_px, 0, cx, ec_y_px, Math.max(aPx, bPx));
+  grad.addColorStop(0, 'rgba(0,200,255,0.18)');
+  grad.addColorStop(0.6, 'rgba(0,200,255,0.07)');
+  grad.addColorStop(1, 'rgba(0,200,255,0)');
+
+  ctxTop.save();
+  ctxTop.translate(cx, ec_y_px);
+  ctxTop.scale(1, aPx / bPx);
+  ctxTop.beginPath();
+  ctxTop.arc(0, 0, bPx, 0, Math.PI * 2);
+  ctxTop.fillStyle = grad;
+  ctxTop.fill();
+  ctxTop.restore();
+
+  // Ellipse border
+  ctxTop.save();
+  ctxTop.translate(cx, ec_y_px);
+  ctxTop.scale(1, aPx / bPx);
+  ctxTop.beginPath();
+  ctxTop.arc(0, 0, bPx, 0, Math.PI * 2);
+  ctxTop.strokeStyle = 'rgba(0,200,255,0.8)';
+  ctxTop.lineWidth = 1.5;
+  ctxTop.stroke();
+  ctxTop.restore();
+
+  // Axes
+  ctxTop.strokeStyle = 'rgba(0,200,255,0.4)';
+  ctxTop.setLineDash([3, 4]);
+  ctxTop.lineWidth = 1;
+  ctxTop.beginPath();
+  ctxTop.moveTo(cx, ec_y_px - aPx);
+  ctxTop.lineTo(cx, ec_y_px + aPx);
+  ctxTop.stroke();
+  ctxTop.beginPath();
+  ctxTop.moveTo(cx - bPx, ec_y_px);
+  ctxTop.lineTo(cx + bPx, ec_y_px);
+  ctxTop.stroke();
+  ctxTop.setLineDash([]);
+
+  // Centre dot
+  ctxTop.beginPath();
+  ctxTop.arc(cx, ec_y_px, 4, 0, Math.PI * 2);
+  ctxTop.fillStyle = 'rgba(0,200,255,0.9)';
+  ctxTop.fill();
+
+  // Aircraft icon
+  drawAircraft(ctxTop, cx, ay);
+
+  // Dimension labels — A (along track)
+  const mono = "'Share Tech Mono', monospace";
+  ctxTop.font = `11px ${mono}`;
+  ctxTop.fillStyle = 'rgba(0,200,255,0.7)';
+  ctxTop.textAlign = 'left';
+  // a arrow
+  drawArrow(ctxTop, cx + bPx + 12, ec_y_px - aPx, cx + bPx + 12, ec_y_px + aPx, '#00c8ff');
+  ctxTop.fillText(`2a = ${fmt(a*2)} m`, cx + bPx + 20, ec_y_px + 4);
+
+  // b arrow
+  drawArrow(ctxTop, cx - bPx, ec_y_px + aPx + 14, cx + bPx, ec_y_px + aPx + 14, '#ff6b35');
+  ctxTop.fillStyle = 'rgba(255,107,53,0.9)';
+  ctxTop.textAlign = 'center';
+  ctxTop.fillText(`2b = ${fmt(b*2)} m`, cx, ec_y_px + aPx + 28);
+
+  // Shift label
+  const shiftPx = shift * scale;
+  const dgroundPx = d_ground * scale;
+  ctxTop.strokeStyle = 'rgba(57,255,133,0.4)';
+  ctxTop.setLineDash([2, 4]);
+  ctxTop.lineWidth = 1;
+  ctxTop.beginPath();
+  ctxTop.moveTo(cx - 80, ay - dgroundPx);
+  ctxTop.lineTo(cx + 80, ay - dgroundPx);
+  ctxTop.stroke();
+  ctxTop.setLineDash([]);
+  ctxTop.font = `10px ${mono}`;
+  ctxTop.fillStyle = 'rgba(57,255,133,0.7)';
+  ctxTop.textAlign = 'right';
+  ctxTop.fillText(`nadir: ${fmt(d_ground)} m`, cx - 84, ay - dgroundPx + 4);
+
+  // "AIRCRAFT" label
+  ctxTop.fillStyle = 'rgba(0,200,255,0.5)';
+  ctxTop.textAlign = 'center';
+  ctxTop.font = `10px ${mono}`;
+  ctxTop.fillText('AIRCRAFT', cx, ay + 28);
+}
+
+function drawArrow(ctx, x1, y1, x2, y2, color) {
+  ctx.strokeStyle = color;
+  ctx.fillStyle = color;
+  ctx.lineWidth = 1.5;
+  const dx = x2-x1, dy = y2-y1;
+  const len = Math.sqrt(dx*dx+dy*dy);
+  const ux = dx/len, uy = dy/len;
+  ctx.beginPath();
+  ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
+  ctx.stroke();
+  // Arrowheads
+  const hs = 6;
+  ctx.beginPath();
+  ctx.moveTo(x1, y1);
+  ctx.lineTo(x1 - uy*hs + ux*hs, y1 + ux*hs + uy*hs);
+  ctx.lineTo(x1 + uy*hs + ux*hs, y1 - ux*hs + uy*hs);
+  ctx.closePath(); ctx.fill();
+  ctx.beginPath();
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - uy*hs - ux*hs, y2 + ux*hs - uy*hs);
+  ctx.lineTo(x2 + uy*hs - ux*hs, y2 - ux*hs - uy*hs);
+  ctx.closePath(); ctx.fill();
+}
+
+function drawAircraft(ctx, x, y) {
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.strokeStyle = '#00c8ff';
+  ctx.fillStyle   = 'rgba(0,200,255,0.15)';
+  ctx.lineWidth   = 1.5;
+  // Fuselage
+  ctx.beginPath();
+  ctx.moveTo(0, -12); ctx.lineTo(0, 12);
+  ctx.stroke();
+  // Wings
+  ctx.beginPath();
+  ctx.moveTo(-16, 2); ctx.lineTo(16, 2);
+  ctx.stroke();
+  // Tail
+  ctx.beginPath();
+  ctx.moveTo(-8, 10); ctx.lineTo(8, 10);
+  ctx.stroke();
+  ctx.restore();
+}
+
+// ─── SIDE VIEW ───
+function drawSide(alt, offset, half_fov, d_ground, shift, a, b) {
+  const W = cvSide.width, H = cvSide.height;
+  ctxSide.clearRect(0, 0, W, H);
+
+  const mono = "'Share Tech Mono', monospace";
+
+  // Grid
+  ctxSide.strokeStyle = 'rgba(30,45,61,0.6)';
+  ctxSide.lineWidth = 1;
+  for (let i = 0; i <= W; i += 40) {
+    ctxSide.beginPath(); ctxSide.moveTo(i,0); ctxSide.lineTo(i,H); ctxSide.stroke();
+  }
+  for (let j = 0; j <= H; j += 40) {
+    ctxSide.beginPath(); ctxSide.moveTo(0,j); ctxSide.lineTo(W,j); ctxSide.stroke();
+  }
+
+  // Scale: fit alt and d_far in view
+  const elev_far = offset - half_fov;
+  const d_far  = elev_far > 0.001 ? alt / Math.tan(elev_far) : alt * 10;
+  const d_near = alt / Math.tan(offset + half_fov);
+
+  const margin = 40;
+  const scaleH = (H - margin * 2) / alt;
+  const scaleW_raw = (W - margin * 2) / Math.max(d_far * 1.1, 100);
+  const scale = Math.min(scaleH, scaleW_raw);
+
+  // Aircraft position
+  const acX = margin;
+  const acY = margin;   // top = aircraft altitude
+
+  // Ground line
+  const groundY = acY + alt * scale;
+  ctxSide.strokeStyle = 'rgba(57,255,133,0.3)';
+  ctxSide.lineWidth = 1.5;
+  ctxSide.beginPath();
+  ctxSide.moveTo(0, groundY); ctxSide.lineTo(W, groundY);
+  ctxSide.stroke();
+  ctxSide.fillStyle = 'rgba(57,255,133,0.15)';
+  ctxSide.fillRect(0, groundY, W, H - groundY);
+
+  // GROUND label
+  ctxSide.font = `10px ${mono}`;
+  ctxSide.fillStyle = 'rgba(57,255,133,0.5)';
+  ctxSide.textAlign = 'right';
+  ctxSide.fillText('GROUND', W - 8, groundY - 4);
+
+  // FOV cone (filled)
+  const elev_near_angle = offset + half_fov;
+  const elev_far_angle  = Math.max(offset - half_fov, 0.01);
+
+  const nearX = acX + d_near * scale;
+  const farX  = acX + Math.min(d_far, 9999) * scale;
+
+  ctxSide.beginPath();
+  ctxSide.moveTo(acX, acY);
+  ctxSide.lineTo(Math.min(nearX, W), groundY);
+  ctxSide.lineTo(Math.min(farX, W), groundY);
+  ctxSide.closePath();
+  ctxSide.fillStyle = 'rgba(0,200,255,0.06)';
+  ctxSide.fill();
+  ctxSide.strokeStyle = 'rgba(0,200,255,0.5)';
+  ctxSide.lineWidth = 1;
+  ctxSide.stroke();
+
+  // Centre ray (offset angle)
+  const centreX = acX + d_ground * scale;
+  ctxSide.strokeStyle = 'rgba(0,200,255,0.4)';
+  ctxSide.setLineDash([4, 4]);
+  ctxSide.lineWidth = 1;
+  ctxSide.beginPath();
+  ctxSide.moveTo(acX, acY);
+  ctxSide.lineTo(Math.min(centreX, W), groundY);
+  ctxSide.stroke();
+  ctxSide.setLineDash([]);
+
+  // Footprint on ground (d_near to d_far)
+  ctxSide.strokeStyle = 'rgba(255,107,53,0.9)';
+  ctxSide.lineWidth = 3;
+  ctxSide.beginPath();
+  ctxSide.moveTo(Math.min(nearX, W), groundY);
+  ctxSide.lineTo(Math.min(farX, W - 2), groundY);
+  ctxSide.stroke();
+
+  // Near / far / centre ticks
+  const tickH = 8;
+  function tick(px, color, label, above=true) {
+    if (px > W - 4) return;
+    ctxSide.strokeStyle = color;
+    ctxSide.lineWidth = 1.5;
+    ctxSide.beginPath();
+    ctxSide.moveTo(px, groundY - tickH);
+    ctxSide.lineTo(px, groundY + tickH);
+    ctxSide.stroke();
+    ctxSide.fillStyle = color;
+    ctxSide.textAlign = 'center';
+    ctxSide.font = `10px ${mono}`;
+    if (above)
+      ctxSide.fillText(label, px, groundY - tickH - 4);
+    else
+      ctxSide.fillText(label, px, groundY + tickH + 12);
+  }
+
+  tick(nearX, 'rgba(0,200,255,0.7)', `near\n${fmt(d_near)}m`, false);
+  tick(centreX, 'rgba(0,200,255,0.5)', `nadir ${fmt(d_ground)}m`);
+  tick(farX, 'rgba(255,107,53,0.8)', `far ${fmt(Math.min(d_far, 99999))}m`);
+
+  // Altitude label
+  ctxSide.strokeStyle = 'rgba(57,255,133,0.4)';
+  ctxSide.setLineDash([2, 4]);
+  ctxSide.lineWidth = 1;
+  ctxSide.beginPath();
+  ctxSide.moveTo(acX + 20, acY);
+  ctxSide.lineTo(acX + 20, groundY);
+  ctxSide.stroke();
+  ctxSide.setLineDash([]);
+  ctxSide.fillStyle = 'rgba(57,255,133,0.8)';
+  ctxSide.textAlign = 'left';
+  ctxSide.font = `11px ${mono}`;
+  ctxSide.fillText(`AGL: ${parseFloat(document.getElementById('s-alt').value)} m`,
+    acX + 28, (acY + groundY) / 2 + 4);
+
+  // Angle arcs
+  ctxSide.strokeStyle = 'rgba(0,200,255,0.3)';
+  ctxSide.lineWidth = 1;
+  const arcR = 40;
+  ctxSide.beginPath();
+  ctxSide.arc(acX, acY, arcR,
+    Math.PI / 2 - (offset + half_fov),
+    Math.PI / 2 - (offset - half_fov));
+  ctxSide.stroke();
+
+  // FOV label
+  ctxSide.fillStyle = 'rgba(0,200,255,0.6)';
+  ctxSide.textAlign = 'left';
+  ctxSide.font = `10px ${mono}`;
+  const midAngle = Math.PI / 2 - offset;
+  ctxSide.fillText(`FOV ${sFov.value}°`, acX + arcR + 8,
+    acY + Math.sin(-midAngle) * (arcR + 14) + 4);
+
+  // Aircraft dot
+  ctxSide.beginPath();
+  ctxSide.arc(acX, acY, 5, 0, Math.PI * 2);
+  ctxSide.fillStyle = '#00c8ff';
+  ctxSide.fill();
+  ctxSide.fillStyle = 'rgba(0,200,255,0.7)';
+  ctxSide.textAlign = 'left';
+  ctxSide.font = `10px ${mono}`;
+  ctxSide.fillText('A/C', acX + 10, acY + 4);
+}
+
+// Wire up all sliders
+[sAlt, sOffset, sFov, sSpeed, sOverlap].forEach(s => {
+  s.addEventListener('input', compute);
+});
+
+compute();
+</script>
+</body>
+</html>
