@@ -1686,7 +1686,8 @@ Create the late-activated troops, vehicles, that will make up your deployable fo
      my_ctld.C130DynamicCargoAutoBuildMergeSeconds = 0 -- Merge window in seconds for C-130 auto-build handoff; set to 0 to disable batching (default).
      my_ctld.locale = "en" -- Language locale to use.
                            -- Supported: "en" English (default), "de" German, "fr" French, "es" Spanish,
-                           --            "pt-br" Brazilian Portuguese, "ru" Russian, "tr" Turkish, "zh-cn" Simplified Chinese (Mainland China), "zh-tw" Traditional Chinese (Taiwan).
+                           --            "it" Italian, "pt-br" Brazilian Portuguese, "ru" Russian, "tr" Turkish,
+                           --            "zh-cn" Simplified Chinese (Mainland China), "zh-tw" Traditional Chinese (Taiwan).
 </code></pre>
 
 <h2>2.1 CH-47 Chinook support</h2>
@@ -6160,7 +6161,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).CtldUnits" ><strong>CTLD.CtldUnits</strong></a>
     
 
@@ -6307,7 +6308,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeUHFFrequencies" ><strong>CTLD.FreeUHFFrequencies</strong></a>
     
 
@@ -6318,13 +6319,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeVHFFrequencies" ><strong>CTLD.FreeVHFFrequencies</strong></a>
     
 
-
-    
-<p> Beacons</p>
 
 </div>
 
@@ -6401,13 +6399,10 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).PilotGroups" ><strong>CTLD.PilotGroups</strong></a>
     
 
-
-    
-<p> tables</p>
 
 </div>
 
@@ -6437,10 +6432,13 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #string
+    
 <a id="#(CTLD).RadioPath" ><strong>CTLD.RadioPath</strong></a>
     
 
+
+    
+<p> Folderpath.</p>
 
 </div>
 
@@ -6505,6 +6503,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <p> Smokes and Flares</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(CTLD).Spawned_Cargo" ><strong>CTLD.Spawned_Cargo</strong></a>
+    
+
 
 </div>
 
@@ -6621,62 +6630,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(CTLD).VehicleMoveFormation" ><strong>CTLD.VehicleMoveFormation</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
 <a id="#(CTLD)._c130DcAutoActiveSetId" ><strong>CTLD._c130DcAutoActiveSetId</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CTLD)._c130DcAutoBatches" ><strong>CTLD._c130DcAutoBatches</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CTLD)._c130DcAutoMap" ><strong>CTLD._c130DcAutoMap</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(CTLD)._c130DcAutoSeq" ><strong>CTLD._c130DcAutoSeq</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CTLD)._c130DcAutoSets" ><strong>CTLD._c130DcAutoSets</strong></a>
     
 
 
@@ -6837,17 +6791,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <p> #1570</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CTLD).droppedBeacons" ><strong>CTLD.droppedBeacons</strong></a>
-    
-
 
 </div>
 
@@ -7151,17 +7094,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
-<a id="#(CTLD).onestepmenu" ><strong>CTLD.onestepmenu</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #table
 <a id="#(CTLD).pickupZones" ><strong>CTLD.pickupZones</strong></a>
     
@@ -7210,7 +7142,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
 
     
-<p> time to repairor build a unit/group</p>
+<p> noob catch</p>
 
 </div>
 
@@ -15164,7 +15096,7 @@ Return true to allow the request, or false to block it. When blocked, _LoadTroop
 <p>[User] Set a resolver used to select a CTLD locale for group-specific menus and messages.</p>
 
     
-<p>Supported locales: "en", "de", "fr", "es", "pt-br", "ru", "tr", "zh-cn", "zh-tw".
+<p>Supported locales: "en", "de", "fr", "es", "it", "pt-br", "ru", "tr", "zh-cn", "zh-tw".
 If unset, CTLD keeps using <code>self.locale</code> as before.</p>
 
 <div id= "#Functions##SetGroupLocaleResolver" class="w3-show w3-white">
@@ -24086,7 +24018,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).CtldUnits" ><strong>CTLD.CtldUnits</strong></a>
     
 
@@ -24233,7 +24165,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeUHFFrequencies" ><strong>CTLD.FreeUHFFrequencies</strong></a>
     
 
@@ -24244,13 +24176,10 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeVHFFrequencies" ><strong>CTLD.FreeVHFFrequencies</strong></a>
     
 
-
-    
-<p> Beacons</p>
 
 </div>
 
@@ -24327,13 +24256,10 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).PilotGroups" ><strong>CTLD.PilotGroups</strong></a>
     
 
-
-    
-<p> tables</p>
 
 </div>
 
@@ -24363,10 +24289,13 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #string
+    
 <a id="#(CTLD).RadioPath" ><strong>CTLD.RadioPath</strong></a>
     
 
+
+    
+<p> Folderpath.</p>
 
 </div>
 
@@ -24431,6 +24360,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     
 <p> Smokes and Flares</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(CTLD).Spawned_Cargo" ><strong>CTLD.Spawned_Cargo</strong></a>
+    
+
 
 </div>
 
@@ -24547,62 +24487,7 @@ However, if you create a new folder inside the miz file, which contains the soun
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(CTLD).VehicleMoveFormation" ><strong>CTLD.VehicleMoveFormation</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
 <a id="#(CTLD)._c130DcAutoActiveSetId" ><strong>CTLD._c130DcAutoActiveSetId</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CTLD)._c130DcAutoBatches" ><strong>CTLD._c130DcAutoBatches</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CTLD)._c130DcAutoMap" ><strong>CTLD._c130DcAutoMap</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(CTLD)._c130DcAutoSeq" ><strong>CTLD._c130DcAutoSeq</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CTLD)._c130DcAutoSets" ><strong>CTLD._c130DcAutoSets</strong></a>
     
 
 
@@ -24763,17 +24648,6 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     
 <p> #1570</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CTLD).droppedBeacons" ><strong>CTLD.droppedBeacons</strong></a>
-    
-
 
 </div>
 
@@ -25077,17 +24951,6 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
-<a id="#(CTLD).onestepmenu" ><strong>CTLD.onestepmenu</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #table
 <a id="#(CTLD).pickupZones" ><strong>CTLD.pickupZones</strong></a>
     
@@ -25136,7 +24999,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 
 
     
-<p> time to repairor build a unit/group</p>
+<p> noob catch</p>
 
 </div>
 
@@ -26992,7 +26855,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).CtldUnits" ><strong>CTLD.CtldUnits</strong></a>
     
 
@@ -27139,7 +27002,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeUHFFrequencies" ><strong>CTLD.FreeUHFFrequencies</strong></a>
     
 
@@ -27150,13 +27013,10 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).FreeVHFFrequencies" ><strong>CTLD.FreeVHFFrequencies</strong></a>
     
 
-
-    
-<p> Beacons</p>
 
 </div>
 
@@ -27233,13 +27093,10 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #table
+    
 <a id="#(CTLD).PilotGroups" ><strong>CTLD.PilotGroups</strong></a>
     
 
-
-    
-<p> tables</p>
 
 </div>
 
@@ -27269,10 +27126,13 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #string
+    
 <a id="#(CTLD).RadioPath" ><strong>CTLD.RadioPath</strong></a>
     
 
+
+    
+<p> Folderpath.</p>
 
 </div>
 
@@ -27337,6 +27197,17 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     
 <p> Smokes and Flares</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(CTLD).Spawned_Cargo" ><strong>CTLD.Spawned_Cargo</strong></a>
+    
+
 
 </div>
 
@@ -27453,62 +27324,7 @@ However, if you create a new folder inside the miz file, which contains the soun
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(CTLD).VehicleMoveFormation" ><strong>CTLD.VehicleMoveFormation</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
 <a id="#(CTLD)._c130DcAutoActiveSetId" ><strong>CTLD._c130DcAutoActiveSetId</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CTLD)._c130DcAutoBatches" ><strong>CTLD._c130DcAutoBatches</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CTLD)._c130DcAutoMap" ><strong>CTLD._c130DcAutoMap</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #number
-<a id="#(CTLD)._c130DcAutoSeq" ><strong>CTLD._c130DcAutoSeq</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CTLD)._c130DcAutoSets" ><strong>CTLD._c130DcAutoSets</strong></a>
     
 
 
@@ -27669,17 +27485,6 @@ However, if you create a new folder inside the miz file, which contains the soun
 
     
 <p> #1570</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(CTLD).droppedBeacons" ><strong>CTLD.droppedBeacons</strong></a>
-    
-
 
 </div>
 
@@ -27983,17 +27788,6 @@ However, if you create a new folder inside the miz file, which contains the soun
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    #boolean
-<a id="#(CTLD).onestepmenu" ><strong>CTLD.onestepmenu</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #table
 <a id="#(CTLD).pickupZones" ><strong>CTLD.pickupZones</strong></a>
     
@@ -28042,7 +27836,7 @@ However, if you create a new folder inside the miz file, which contains the soun
 
 
     
-<p> time to repairor build a unit/group</p>
+<p> noob catch</p>
 
 </div>
 
