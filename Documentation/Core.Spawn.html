@@ -3024,7 +3024,13 @@ and any spaces before and after the resulting name are removed.</p>
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).livery_id">SPAWN.livery_id</a></p></td>
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).communication">SPAWN.communication</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).modulation">SPAWN.modulation</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 
 </td>
@@ -3113,6 +3119,12 @@ and any spaces before and after the resulting name are removed.</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).CreateEventDynamicCargoUnloaded">SPAWN:CreateEventDynamicCargoUnloaded(DynamicCargo)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Creation of a S_EVENT_DYNAMIC_CARGO_UNLOADED event.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).CreateEventGroupChangeOption">SPAWN:CreateEventGroupChangeOption(EventTime, Initiator)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Creation of a <code>S_EVENT_GROUP_CHANGE_OPTION</code> event.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -3348,6 +3360,12 @@ Have a look at the class <a href="Core.Event.html##(EVENT)">Core.Event#EVENT</a>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).OnEventEngineStartup">SPAWN:OnEventEngineStartup(EventData)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Occurs when any aircraft starts its engines.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(SPAWN).OnEventGroupChangeOption">SPAWN:OnEventGroupChangeOption(EventData)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>Occurs when an option is changed for an AI group.</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -4137,6 +4155,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     
 
 
+    
+<p> By default, no InitLimit</p>
+
 </div>
 
 </div>   
@@ -4144,7 +4165,40 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(SPAWN).SpawnInitModu" ><strong>SPAWN.SpawnInitModu</strong></a>
+<a id="#(SPAWN).SpawnInitLivery" ><strong>SPAWN.SpawnInitLivery</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).SpawnInitModex" ><strong>SPAWN.SpawnInitModex</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).SpawnInitModexPostfix" ><strong>SPAWN.SpawnInitModexPostfix</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).SpawnInitModexPrefix" ><strong>SPAWN.SpawnInitModexPrefix</strong></a>
     
 
 
@@ -4161,21 +4215,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     
 <p>self:T2( { self.SpawnTemplatePrefix, Vec2} )</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(SPAWN).SpawnInitSADL" ><strong>SPAWN.SpawnInitSADL</strong></a>
-    
-
-
-    
-<p> we arrived here seeing that self.SpawnInitSADL == nil, but now that we have a SADL (num), we also need to set it to self.SpawnInitSADL in case
- we need to get the next SADL from _DATABASE, or else UTILS.OctalToDecimal() will fail in GetNextSADL</p>
 
 </div>
 
@@ -4208,7 +4247,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(SPAWN).SpawnMaxGroups" ><strong>SPAWN.SpawnMaxGroups</strong></a>
     
 
@@ -4222,7 +4261,7 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(SPAWN).SpawnMaxUnitsAlive" ><strong>SPAWN.SpawnMaxUnitsAlive</strong></a>
     
 
@@ -4397,17 +4436,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
-<a id="#(SPAWN).SpawnUnControlled" ><strong>SPAWN.SpawnUnControlled</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
 <a id="#(SPAWN).SpawnUnitsWithAbsolutePositions" ><strong>SPAWN.SpawnUnitsWithAbsolutePositions</strong></a>
     
 
@@ -4560,7 +4588,18 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(SPAWN).livery_id" ><strong>SPAWN.livery_id</strong></a>
+<a id="#(SPAWN).communication" ><strong>SPAWN.communication</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).modulation" ><strong>SPAWN.modulation</strong></a>
     
 
 
@@ -10856,6 +10895,9 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
     
 
 
+    
+<p> By default, no InitLimit</p>
+
 </div>
 
 </div>   
@@ -10863,7 +10905,40 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(SPAWN).SpawnInitModu" ><strong>SPAWN.SpawnInitModu</strong></a>
+<a id="#(SPAWN).SpawnInitLivery" ><strong>SPAWN.SpawnInitLivery</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).SpawnInitModex" ><strong>SPAWN.SpawnInitModex</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).SpawnInitModexPostfix" ><strong>SPAWN.SpawnInitModexPostfix</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).SpawnInitModexPrefix" ><strong>SPAWN.SpawnInitModexPrefix</strong></a>
     
 
 
@@ -10880,21 +10955,6 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 
     
 <p>self:T2( { self.SpawnTemplatePrefix, Vec2} )</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(SPAWN).SpawnInitSADL" ><strong>SPAWN.SpawnInitSADL</strong></a>
-    
-
-
-    
-<p> we arrived here seeing that self.SpawnInitSADL == nil, but now that we have a SADL (num), we also need to set it to self.SpawnInitSADL in case
- we need to get the next SADL from _DATABASE, or else UTILS.OctalToDecimal() will fail in GetNextSADL</p>
 
 </div>
 
@@ -10927,7 +10987,7 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(SPAWN).SpawnMaxGroups" ><strong>SPAWN.SpawnMaxGroups</strong></a>
     
 
@@ -10941,7 +11001,7 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
+    #number
 <a id="#(SPAWN).SpawnMaxUnitsAlive" ><strong>SPAWN.SpawnMaxUnitsAlive</strong></a>
     
 
@@ -11116,17 +11176,6 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
-<a id="#(SPAWN).SpawnUnControlled" ><strong>SPAWN.SpawnUnControlled</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #boolean
 <a id="#(SPAWN).SpawnUnitsWithAbsolutePositions" ><strong>SPAWN.SpawnUnitsWithAbsolutePositions</strong></a>
     
 
@@ -11279,7 +11328,18 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(SPAWN).livery_id" ><strong>SPAWN.livery_id</strong></a>
+<a id="#(SPAWN).communication" ><strong>SPAWN.communication</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(SPAWN).modulation" ><strong>SPAWN.modulation</strong></a>
     
 
 
@@ -11648,6 +11708,52 @@ This is needed to ensure that Re-SPAWNing only is done for landed AIR Groups.</p
           <div class="w3-half">
               
 <p>the dynamic cargo object</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SPAWN).CreateEventGroupChangeOption" ><strong>SPAWN:CreateEventGroupChangeOption(EventTime, Initiator)</strong></a></h2>
+</div>
+    
+<p>Creation of a <code>S_EVENT_GROUP_CHANGE_OPTION</code> event.</p>
+
+<div id= "#Functions##CreateEventGroupChangeOption" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Base.html##(BASE)">Core.Base#BASE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(Time)">DCS#Time</a>
+            <strong><strong>EventTime</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The time stamp of the event.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(Group)">DCS#Group</a>
+            <strong><strong>Initiator</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The initiating group of the event.</p>
 
           </div>
         </div>
@@ -13150,6 +13256,42 @@ initiator : The unit that is stopping its engines. </p>
 initiator : The unit that is starting its engines. </p>
 
 <div id= "#Functions##OnEventEngineStartup" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Core.Base.html##(BASE)">Core.Base#BASE</a></p>
+</div>
+    <h2><strong>Parameter:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Core.Event.html##(EVENTDATA)">Core.Event#EVENTDATA</a>
+            <strong><strong>EventData</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The EventData structure.</p>
+
+          </div>
+        </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(SPAWN).OnEventGroupChangeOption" ><strong>SPAWN:OnEventGroupChangeOption(EventData)</strong></a></h2>
+</div>
+    
+<p>Occurs when an option is changed for an AI group.</p>
+
+    
+<p>The event identifies the initiating group, but does not provide the option ID or value.</p>
+
+<div id= "#Functions##OnEventGroupChangeOption" class="w3-show w3-white">
   <div class="w3-container w3-white" id="functiontype">
    <h2><strong>Defined in:</strong></h2>
    <div class="w3-margin-left">
