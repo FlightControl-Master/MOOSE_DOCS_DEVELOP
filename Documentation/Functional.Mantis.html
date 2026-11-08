@@ -1956,12 +1956,6 @@ in the mission editor are absolute maximum ranges; in-game this is rather 50-75%
 </td>
           </tr>
           <tr class="w3-border">
-            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).Groupset">MANTIS.Groupset</a></p></td>
-            <td class="summary w3-half w3-container" style="word-wrap: break-word">
-
-</td>
-          </tr>
-          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(MANTIS).HQ_CC">MANTIS.HQ_CC</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>The #GROUP object of the HQ</p>
@@ -6136,8 +6130,8 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(MANTIS).AWACS_Prefix" ><strong>MANTIS.AWACS_Prefix</strong></a>
+    #table
+<a id="#(MANTIS).AcceptZones" ><strong>MANTIS.AcceptZones</strong></a>
     
 
 
@@ -6193,6 +6187,17 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #string
 <a id="#(MANTIS).ClassName" ><strong>MANTIS.ClassName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(MANTIS).ConflictZones" ><strong>MANTIS.ConflictZones</strong></a>
     
 
 
@@ -6268,17 +6273,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(MANTIS).DetectAccousticPlayersOnly" ><strong>MANTIS.DetectAccousticPlayersOnly</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #number
 <a id="#(MANTIS).DetectAccousticRadius" ><strong>MANTIS.DetectAccousticRadius</strong></a>
     
@@ -6327,17 +6321,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(MANTIS).FilterZones" ><strong>MANTIS.FilterZones</strong></a>
     
 <p>Table of Core.Zone#ZONE Zones Consider SAM groups in this zone(s) only for this MANTIS instance, must be handed as #table of Zone objects.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(MANTIS).Groupset" ><strong>MANTIS.Groupset</strong></a>
-    
-
 
 </div>
 
@@ -6445,7 +6428,74 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
+<a id="#(MANTIS).NavalAutonomy" ><strong>MANTIS.NavalAutonomy</strong></a>
+    
+
+
+    
+<p> ship groups outside EWR radar coverage go alarm RED and search autonomously (see SetNavalAutonomy)</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(MANTIS).NavalAutonomyRadius" ><strong>MANTIS.NavalAutonomyRadius</strong></a>
+    
+
+
+    
+<p> meters; a ship group within this distance of an alive EWR group counts as covered</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(MANTIS).NavalPerUnit" ><strong>MANTIS.NavalPerUnit</strong></a>
+    
+
+
+    
+<p> classify &amp; switch every ship unit individually (see SetNavalPerUnit)</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(MANTIS).NavalSurfaceWakeup" ><strong>MANTIS.NavalSurfaceWakeup</strong></a>
+    
+
+
+    
+<p> quiet ships go active when enemy surface combatants close (see SetNavalSurfaceWakeup)</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
 <a id="#(MANTIS).NavalThreatSet" ><strong>MANTIS.NavalThreatSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(MANTIS).RejectZones" ><strong>MANTIS.RejectZones</strong></a>
     
 
 
@@ -6536,6 +6586,20 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(MANTIS).SAM_Templates_Prefix" ><strong>MANTIS.SAM_Templates_Prefix</strong></a>
     
 <p>Prefix to build the #SET_GROUP for SAM sites</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(MANTIS).SEADNaval" ><strong>MANTIS.SEADNaval</strong></a>
+    
+
+
+    
+<p> ships hard-kill inbound missiles; they do not go EMCON under SEAD (see SetNavalSEAD)</p>
 
 </div>
 
@@ -6689,8 +6753,8 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(MANTIS).SkateZones" ><strong>MANTIS.SkateZones</strong></a>
+    #number
+<a id="#(MANTIS).SkateNumber" ><strong>MANTIS.SkateNumber</strong></a>
     
 
 
@@ -6815,17 +6879,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 
     #table
 <a id="#(MANTIS)._jammerResolverCache" ><strong>MANTIS._jammerResolverCache</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(MANTIS)._jammerSnapshot" ><strong>MANTIS._jammerSnapshot</strong></a>
     
 
 
@@ -7168,6 +7221,61 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(MANTIS).maxclassic" ><strong>MANTIS.maxclassic</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(MANTIS).maxlongrange" ><strong>MANTIS.maxlongrange</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(MANTIS).maxmidrange" ><strong>MANTIS.maxmidrange</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(MANTIS).maxpointdefrange" ><strong>MANTIS.maxpointdefrange</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(MANTIS).maxshortrange" ><strong>MANTIS.maxshortrange</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
 <a id="#(MANTIS).mysead" ><strong>MANTIS.mysead</strong></a>
     
@@ -7231,9 +7339,6 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
     
 
 
-    
-<p> switch alarm state RED</p>
-
 </div>
 
 </div>   
@@ -7255,6 +7360,9 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
 <a id="#(MANTIS).usezones" ><strong>MANTIS.usezones</strong></a>
     
 
+
+    
+<p>self.SAMCheckRanges = {}</p>
 
 </div>
 
@@ -14174,8 +14282,8 @@ Substring matching with digit-boundary protection prevents false matches
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(MANTIS).AWACS_Prefix" ><strong>MANTIS.AWACS_Prefix</strong></a>
+    #table
+<a id="#(MANTIS).AcceptZones" ><strong>MANTIS.AcceptZones</strong></a>
     
 
 
@@ -14231,6 +14339,17 @@ Substring matching with digit-boundary protection prevents false matches
 
     #string
 <a id="#(MANTIS).ClassName" ><strong>MANTIS.ClassName</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(MANTIS).ConflictZones" ><strong>MANTIS.ConflictZones</strong></a>
     
 
 
@@ -14306,17 +14425,6 @@ Substring matching with digit-boundary protection prevents false matches
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(MANTIS).DetectAccousticPlayersOnly" ><strong>MANTIS.DetectAccousticPlayersOnly</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
     #number
 <a id="#(MANTIS).DetectAccousticRadius" ><strong>MANTIS.DetectAccousticRadius</strong></a>
     
@@ -14365,17 +14473,6 @@ Substring matching with digit-boundary protection prevents false matches
 <a id="#(MANTIS).FilterZones" ><strong>MANTIS.FilterZones</strong></a>
     
 <p>Table of Core.Zone#ZONE Zones Consider SAM groups in this zone(s) only for this MANTIS instance, must be handed as #table of Zone objects.</p>
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    
-<a id="#(MANTIS).Groupset" ><strong>MANTIS.Groupset</strong></a>
-    
-
 
 </div>
 
@@ -14483,7 +14580,74 @@ Substring matching with digit-boundary protection prevents false matches
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     #boolean
+<a id="#(MANTIS).NavalAutonomy" ><strong>MANTIS.NavalAutonomy</strong></a>
+    
+
+
+    
+<p> ship groups outside EWR radar coverage go alarm RED and search autonomously (see SetNavalAutonomy)</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(MANTIS).NavalAutonomyRadius" ><strong>MANTIS.NavalAutonomyRadius</strong></a>
+    
+
+
+    
+<p> meters; a ship group within this distance of an alive EWR group counts as covered</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(MANTIS).NavalPerUnit" ><strong>MANTIS.NavalPerUnit</strong></a>
+    
+
+
+    
+<p> classify &amp; switch every ship unit individually (see SetNavalPerUnit)</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(MANTIS).NavalSurfaceWakeup" ><strong>MANTIS.NavalSurfaceWakeup</strong></a>
+    
+
+
+    
+<p> quiet ships go active when enemy surface combatants close (see SetNavalSurfaceWakeup)</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
 <a id="#(MANTIS).NavalThreatSet" ><strong>MANTIS.NavalThreatSet</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #table
+<a id="#(MANTIS).RejectZones" ><strong>MANTIS.RejectZones</strong></a>
     
 
 
@@ -14574,6 +14738,20 @@ Substring matching with digit-boundary protection prevents false matches
 <a id="#(MANTIS).SAM_Templates_Prefix" ><strong>MANTIS.SAM_Templates_Prefix</strong></a>
     
 <p>Prefix to build the #SET_GROUP for SAM sites</p>
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #boolean
+<a id="#(MANTIS).SEADNaval" ><strong>MANTIS.SEADNaval</strong></a>
+    
+
+
+    
+<p> ships hard-kill inbound missiles; they do not go EMCON under SEAD (see SetNavalSEAD)</p>
 
 </div>
 
@@ -14727,8 +14905,8 @@ Substring matching with digit-boundary protection prevents false matches
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
-    
-<a id="#(MANTIS).SkateZones" ><strong>MANTIS.SkateZones</strong></a>
+    #number
+<a id="#(MANTIS).SkateNumber" ><strong>MANTIS.SkateNumber</strong></a>
     
 
 
@@ -14853,17 +15031,6 @@ Substring matching with digit-boundary protection prevents false matches
 
     #table
 <a id="#(MANTIS)._jammerResolverCache" ><strong>MANTIS._jammerResolverCache</strong></a>
-    
-
-
-</div>
-
-</div>   
-<div>   
-        <div class="w3-card-2 w3-padding-small w3-margin-top">
-
-    #table
-<a id="#(MANTIS)._jammerSnapshot" ><strong>MANTIS._jammerSnapshot</strong></a>
     
 
 
@@ -15206,6 +15373,61 @@ Substring matching with digit-boundary protection prevents false matches
 <div>   
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
+    #number
+<a id="#(MANTIS).maxclassic" ><strong>MANTIS.maxclassic</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(MANTIS).maxlongrange" ><strong>MANTIS.maxlongrange</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(MANTIS).maxmidrange" ><strong>MANTIS.maxmidrange</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(MANTIS).maxpointdefrange" ><strong>MANTIS.maxpointdefrange</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    #number
+<a id="#(MANTIS).maxshortrange" ><strong>MANTIS.maxshortrange</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
     
 <a id="#(MANTIS).mysead" ><strong>MANTIS.mysead</strong></a>
     
@@ -15269,9 +15491,6 @@ Substring matching with digit-boundary protection prevents false matches
     
 
 
-    
-<p> switch alarm state RED</p>
-
 </div>
 
 </div>   
@@ -15293,6 +15512,9 @@ Substring matching with digit-boundary protection prevents false matches
 <a id="#(MANTIS).usezones" ><strong>MANTIS.usezones</strong></a>
     
 
+
+    
+<p>self.SAMCheckRanges = {}</p>
 
 </div>
 

@@ -3542,6 +3542,12 @@ amount of fuel in the group.</p>
 </td>
           </tr>
           <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(GROUP).TaskAttachTrailer">GROUP:TaskAttachTrailer(TractorUnit, TrailerUnit, OnStartMission)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(GROUND) Attach a trailer to a tractor vehicle</p>
+</td>
+          </tr>
+          <tr class="w3-border">
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(GROUP).TaskAttackGroup">GROUP:TaskAttackGroup(AttackGroup, WeaponType, WeaponExpend, AttackQty, Direction, Altitude, GroupAttack)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>(AIR + GROUND) Attack a Controllable.</p>
@@ -3593,6 +3599,12 @@ amount of fuel in the group.</p>
             <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(GROUP).TaskControlled">GROUP:TaskControlled(DCSTask, DCSStopCondition)</a></p></td>
             <td class="summary w3-half w3-container" style="word-wrap: break-word">
 <p>Return a Controlled Task taking a Task and a TaskCondition.</p>
+</td>
+          </tr>
+          <tr class="w3-border">
+            <td class="name w3-half w3-container" style="word-wrap: break-word"><p><a href="##(GROUP).TaskDetachTrailer">GROUP:TaskDetachTrailer(TractorUnit, PositionVec2)</a></p></td>
+            <td class="summary w3-half w3-container" style="word-wrap: break-word">
+<p>(GROUND) Detach a trailer to a tractor vehicle</p>
 </td>
           </tr>
           <tr class="w3-border">
@@ -5606,7 +5618,18 @@ When Moose is loaded statically, (as one file), tracing is switched off by defau
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -11038,7 +11061,18 @@ These settings can be provided by calling the relevant Init...() methods of the 
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -21309,6 +21343,76 @@ Warning! When you switch this option off, the airborne group will continue to fl
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
 <div class="w3-theme-l2">
+<h2><a id="#(GROUP).TaskAttachTrailer" ><strong>GROUP:TaskAttachTrailer(TractorUnit, TrailerUnit, OnStartMission)</strong></a></h2>
+</div>
+    
+<p>(GROUND) Attach a trailer to a tractor vehicle</p>
+
+<div id= "#Functions##TaskAttachTrailer" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+            <strong><strong>TractorUnit</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Tractor UNIT.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+            <strong><strong>TrailerUnit</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Trailer UNIT.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                #boolean
+            <strong><strong>OnStartMission</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>If true, attach on mission start. Default - false.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="DCS.html##(Task)">DCS#Task</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The DCS task structure.</p>
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
 <h2><a id="#(GROUP).TaskAttackGroup" ><strong>GROUP:TaskAttackGroup(AttackGroup, WeaponType, WeaponExpend, AttackQty, Direction, Altitude, GroupAttack)</strong></a></h2>
 </div>
     
@@ -22264,6 +22368,63 @@ return DCS#Task</p>
       <div class="w3-half">
         
 
+
+      </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+<div class="w3-theme-l2">
+<h2><a id="#(GROUP).TaskDetachTrailer" ><strong>GROUP:TaskDetachTrailer(TractorUnit, PositionVec2)</strong></a></h2>
+</div>
+    
+<p>(GROUND) Detach a trailer to a tractor vehicle</p>
+
+<div id= "#Functions##TaskDetachTrailer" class="w3-show w3-white">
+  <div class="w3-container w3-white" id="functiontype">
+   <h2><strong>Defined in:</strong></h2>
+   <div class="w3-margin-left">
+<p><a href="Wrapper.Controllable.html##(CONTROLLABLE)">Wrapper.Controllable#CONTROLLABLE</a></p>
+</div>
+    <h2><strong>Parameters:</strong></h2>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="Wrapper.Unit.html##(UNIT)">Wrapper.Unit#UNIT</a>
+            <strong><strong>TractorUnit</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>The Tractor UNIT.</p>
+
+          </div>
+        </div>
+        <div class="w3-row w3-margin-left w3-border-bottom w3-border-l2">
+          <div class="w3-half">
+            <p>
+                <a href="DCS.html##(Vec2)">DCS#Vec2</a>
+            <strong><strong>PositionVec2</strong></strong>
+            </p>
+          </div>
+          <div class="w3-half">
+              
+<p>where to put the trailer - same as Waypoint position.</p>
+
+          </div>
+        </div>
+    <h2><strong>Return value:</strong></h2>
+    <div class="w3-row w3-border-bottom w3-margin-left">
+      <div class="w3-half">
+        <p><a href="DCS.html##(Task)">DCS#Task</a>:</p>
+      </div>
+      <div class="w3-half">
+        
+<p>The DCS task structure.</p>
 
       </div>
     </div>
@@ -24991,7 +25152,18 @@ mygroup:WayPointExecute()</code></pre>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -29278,7 +29450,18 @@ Coordinates are dependent on the position of the maps origin.</p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -30059,7 +30242,18 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
@@ -30351,7 +30545,18 @@ If the Identifiable is alive, true is returned.  </p>
         <div class="w3-card-2 w3-padding-small w3-margin-top">
 
     
-<a id="#(GROUP).InitRespawnRandomizePositionZone" ><strong>GROUP.InitRespawnRandomizePositionZone</strong></a>
+<a id="#(GROUP).InitRespawnRandomizePositionInner" ><strong>GROUP.InitRespawnRandomizePositionInner</strong></a>
+    
+
+
+</div>
+
+</div>   
+<div>   
+        <div class="w3-card-2 w3-padding-small w3-margin-top">
+
+    
+<a id="#(GROUP).InitRespawnRandomizePositionOuter" ><strong>GROUP.InitRespawnRandomizePositionOuter</strong></a>
     
 
 
